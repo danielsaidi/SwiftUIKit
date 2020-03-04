@@ -3,27 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A9E9A267241062C900844844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A266241062C900844844 /* AppDelegate.swift */; };
 		A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A268241062C900844844 /* SceneDelegate.swift */; };
-		A9E9A26B241062C900844844 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A26A241062C900844844 /* ContentView.swift */; };
+		A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A26A241062C900844844 /* HomeScreen.swift */; };
 		A9E9A26D241062CB00844844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A26C241062CB00844844 /* Assets.xcassets */; };
 		A9E9A270241062CB00844844 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A26F241062CB00844844 /* Preview Assets.xcassets */; };
 		A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A271241062CB00844844 /* LaunchScreen.storyboard */; };
+		A9E9A280241065B700844844 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A9E9A27F241065B700844844 /* SwiftUIKit */; };
+		A9E9A282241065D900844844 /* BlurScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A281241065D900844844 /* BlurScreen.swift */; };
+		A9E9A284241065E700844844 /* BlurCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A283241065E700844844 /* BlurCell.swift */; };
+		A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9E9A263241062C900844844 /* SwiftUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9A266241062C900844844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E9A268241062C900844844 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9E9A26A241062C900844844 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9E9A26A241062C900844844 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		A9E9A26C241062CB00844844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9E9A26F241062CB00844844 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9E9A272241062CB00844844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9E9A274241062CB00844844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9E9A281241065D900844844 /* BlurScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurScreen.swift; sourceTree = "<group>"; };
+		A9E9A283241065E700844844 /* BlurCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurCell.swift; sourceTree = "<group>"; };
+		A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBlurEffectStyle+DisplayName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E9A280241065B700844844 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +64,10 @@
 		A9E9A265241062C900844844 /* SwiftUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A9E9A2882410669000844844 /* App */,
 				A9E9A27D241063AE00844844 /* Blur */,
-				A9E9A266241062C900844844 /* AppDelegate.swift */,
-				A9E9A268241062C900844844 /* SceneDelegate.swift */,
-				A9E9A26A241062C900844844 /* ContentView.swift */,
+				A9E9A26A241062C900844844 /* HomeScreen.swift */,
 				A9E9A26C241062CB00844844 /* Assets.xcassets */,
-				A9E9A271241062CB00844844 /* LaunchScreen.storyboard */,
-				A9E9A274241062CB00844844 /* Info.plist */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
 			);
 			path = SwiftUIKitDemo;
@@ -79,8 +84,22 @@
 		A9E9A27D241063AE00844844 /* Blur */ = {
 			isa = PBXGroup;
 			children = (
+				A9E9A283241065E700844844 /* BlurCell.swift */,
+				A9E9A281241065D900844844 /* BlurScreen.swift */,
+				A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */,
 			);
 			path = Blur;
+			sourceTree = "<group>";
+		};
+		A9E9A2882410669000844844 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A266241062C900844844 /* AppDelegate.swift */,
+				A9E9A274241062CB00844844 /* Info.plist */,
+				A9E9A271241062CB00844844 /* LaunchScreen.storyboard */,
+				A9E9A268241062C900844844 /* SceneDelegate.swift */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +119,7 @@
 			);
 			name = SwiftUIKitDemo;
 			packageProductDependencies = (
+				A9E9A27F241065B700844844 /* SwiftUIKit */,
 			);
 			productName = SwiftUIKitDemo;
 			productReference = A9E9A263241062C900844844 /* SwiftUIKitDemo.app */;
@@ -130,6 +150,7 @@
 			);
 			mainGroup = A9E9A25A241062C900844844;
 			packageReferences = (
+				A9E9A27E241065B700844844 /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
 			);
 			productRefGroup = A9E9A264241062C900844844 /* Products */;
 			projectDirPath = "";
@@ -160,7 +181,10 @@
 			files = (
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
-				A9E9A26B241062C900844844 /* ContentView.swift in Sources */,
+				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
+				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
+				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
+				A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9E9A27E241065B700844844 /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9E9A27F241065B700844844 /* SwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9E9A27E241065B700844844 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = SwiftUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9E9A25B241062C900844844 /* Project object */;
 }
