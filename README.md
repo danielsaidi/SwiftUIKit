@@ -17,13 +17,13 @@
 
 ## <a name="about"></a>About SwiftUIKit
 
-SwiftUIKit contains additional functionality to SwiftUI; both things that should be in the framework (and most probably will be added later on, in one form or another), extensions to currently existing component as well as custom things that may never (and most probably never will or should be be) be added to SwiftUI.
+`SwiftUIKit` contains additional functionality to `SwiftUI`, both things that should be in `SwiftUI` (and most probably will be soon) as well as custom things that may never (and most probably never will or should be be) be added to SwiftUI.
 
-Read more about the different parts of this library in separate sections:
+You can read more about the different parts of this library:
 
 * [Blur][Blur]
 
-As things in this library are added to SwiftUI, the functionality in this library will be deprecated and refer to the new features in SwiftUI, even if the api:s will differ.
+As things that exist in this library are added to `SwiftUI`, the corresponding functionality in this library will be deprecated and refer to those new features.
 
 
 
