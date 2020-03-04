@@ -13,7 +13,7 @@ import UIKit
  This view wraps a `UIView` and applies a `UIKit` blur to it.
  
  You can easily add a blur view to a `SwiftUI` `View`, using
- the `systemBlur` `View` extension.
+ the `blur(style:)` extension.
  */
 public struct BlurView: UIViewRepresentable {
     
