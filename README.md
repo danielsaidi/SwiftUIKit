@@ -1,5 +1,5 @@
 <p align="center">
-    <img src ="Resources/Logo.png" width=400 />
+    <img src ="Resources/Logo.png" width=500 />
 </p>
 
 <p align="center">
@@ -45,12 +45,6 @@ https://github.com/danielsaidi/SwiftUIKit.git
 ```
 pod "SwiftUIKit"
 ```
-
-### Carthage
-
-```
-github "danielsaidi/SwiftUIKit"
-``` 
 
 
 ## Contact me
