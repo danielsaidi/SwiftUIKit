@@ -31,6 +31,14 @@
 		A9E9A281241065D900844844 /* BlurScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurScreen.swift; sourceTree = "<group>"; };
 		A9E9A283241065E700844844 /* BlurCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurCell.swift; sourceTree = "<group>"; };
 		A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBlurEffectStyle+DisplayName.swift"; sourceTree = "<group>"; };
+		A9E9A2982410756100844844 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = Fastlane/Fastfile; sourceTree = "<group>"; };
+		A9E9A2992410756A00844844 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		A9E9A29A2410756A00844844 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A9E9A29B2410756A00844844 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A9E9A29C2410757200844844 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A9E9A29D2410757200844844 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A9E9A29E241075A300844844 /* Release Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Release Notes.md"; sourceTree = "<group>"; };
+		A9E9A29F241075A900844844 /* SwiftUIKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftUIKit.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,7 @@
 		A9E9A25A241062C900844844 = {
 			isa = PBXGroup;
 			children = (
+				A9E9A2972410753D00844844 /* Project Files */,
 				A9E9A265241062C900844844 /* SwiftUIKitDemo */,
 				A9E9A264241062C900844844 /* Products */,
 			);
@@ -65,9 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				A9E9A2882410669000844844 /* App */,
-				A9E9A27D241063AE00844844 /* Blur */,
-				A9E9A26A241062C900844844 /* HomeScreen.swift */,
 				A9E9A26C241062CB00844844 /* Assets.xcassets */,
+				A9E9A27D241063AE00844844 /* Blur */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
 			);
 			path = SwiftUIKitDemo;
@@ -95,11 +103,27 @@
 			isa = PBXGroup;
 			children = (
 				A9E9A266241062C900844844 /* AppDelegate.swift */,
+				A9E9A26A241062C900844844 /* HomeScreen.swift */,
 				A9E9A274241062CB00844844 /* Info.plist */,
 				A9E9A271241062CB00844844 /* LaunchScreen.storyboard */,
 				A9E9A268241062C900844844 /* SceneDelegate.swift */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		A9E9A2972410753D00844844 /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A29D2410757200844844 /* .gitignore */,
+				A9E9A29C2410757200844844 /* .swiftlint.yml */,
+				A9E9A2982410756100844844 /* Fastfile */,
+				A9E9A29B2410756A00844844 /* LICENSE */,
+				A9E9A2992410756A00844844 /* Package.swift */,
+				A9E9A29A2410756A00844844 /* README.md */,
+				A9E9A29E241075A300844844 /* Release Notes.md */,
+				A9E9A29F241075A900844844 /* SwiftUIKit.podspec */,
+			);
+			name = "Project Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -4,40 +4,17 @@ default_platform :ios
 
 platform :ios do
 
-
-  # Dependencies ***********************
-
-  desc "Resolve External Dependencies (the shell script makes Bitrise work)"
-  lane :resolve_dependencies do
-    sh("cd .. && xcodebuild -showBuildSettings -project SwiftUIBlurView.xcodeproj -scheme SwiftUIBlurView")
-    spm(command: "resolve")
-  end
-
-
-  # Test =======================
-  
-  desc "Run unit tests"
-  lane :test do
-    swiftlint(strict: true)
-    resolve_dependencies
-    run_tests(scheme: "SwiftUIBlurView")
-  end
-
-
-  # Version ================
-
   desc "Create a new version"
   lane :version do |options|
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')
-    test
     
     bump_type = options[:type]
     if bump_type == nil or bump_type.empty?
       bump_type = "patch"
     end
 
-    version = version_bump_podspec(path: "SwiftUIBlurView.podspec", bump_type: bump_type)
+    version = version_bump_podspec(path: "SwiftUIKit.podspec", bump_type: bump_type)
     increment_version_number(version_number: version)
   
     git_commit(
