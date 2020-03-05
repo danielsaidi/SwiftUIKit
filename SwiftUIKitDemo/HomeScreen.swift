@@ -13,6 +13,7 @@ struct HomeScreen: View {
         NavigationView {
             List {
                 NavigationLink("Blur", destination: BlurScreen())
+                NavigationLink("Gestures", destination: GesturesScreen())
             }.navigationBarTitle("SwiftUIKit Demo")
         }
     }

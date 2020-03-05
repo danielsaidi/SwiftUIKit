@@ -15,8 +15,7 @@ struct BlurScreen: View {
                 BlurCell(style: style)
                     .padding(.top)
             }
-        }
-        .navigationBarTitle("BlurView")
+        }.navigationBarTitle("BlurView")
     }
 }
 

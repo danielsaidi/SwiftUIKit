@@ -17,6 +17,9 @@
 		A9E9A282241065D900844844 /* BlurScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A281241065D900844844 /* BlurScreen.swift */; };
 		A9E9A284241065E700844844 /* BlurCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A283241065E700844844 /* BlurCell.swift */; };
 		A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */; };
+		A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A7241076FF00844844 /* GesturesScreen.swift */; };
+		A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */; };
+		A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		A9E9A29D2410757200844844 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A9E9A29E241075A300844844 /* Release Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Release Notes.md"; sourceTree = "<group>"; };
 		A9E9A29F241075A900844844 /* SwiftUIKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftUIKit.podspec; sourceTree = "<group>"; };
+		A9E9A2A7241076FF00844844 /* GesturesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesScreen.swift; sourceTree = "<group>"; };
+		A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
+		A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableViewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 				A9E9A2882410669000844844 /* App */,
 				A9E9A26C241062CB00844844 /* Assets.xcassets */,
 				A9E9A27D241063AE00844844 /* Blur */,
+				A9E9A2A6241076F200844844 /* Gestures */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
 			);
 			path = SwiftUIKitDemo;
@@ -124,6 +131,16 @@
 				A9E9A29F241075A900844844 /* SwiftUIKit.podspec */,
 			);
 			name = "Project Files";
+			sourceTree = "<group>";
+		};
+		A9E9A2A6241076F200844844 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A2A7241076FF00844844 /* GesturesScreen.swift */,
+				A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */,
+				A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */,
+			);
+			path = Gestures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +222,12 @@
 			files = (
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
+				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
+				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
+				A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */,
 				A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
