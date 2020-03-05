@@ -2,7 +2,7 @@
 .DS_Store
 /.build
 /Packages
-.swiftpm
+.swiftpm/
 
 # Build generated
 build/
