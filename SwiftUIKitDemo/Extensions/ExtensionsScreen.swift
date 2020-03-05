@@ -17,8 +17,7 @@ struct ExtensionsScreen: View {
             Since this namespace will grow, extensions are not listed, described or demoed here. Instead, have a look at the source code to see what kind of extensions this library contains.
             """).lineLimit(1000)
                 .padding()
-                .navigationBarTitle("Extensions")
-        }
+        }.navigationBarTitle("Extensions")
     }
 }
 

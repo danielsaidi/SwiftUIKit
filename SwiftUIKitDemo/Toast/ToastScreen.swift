@@ -19,18 +19,38 @@ struct ToastScreen: View, DemoList {
     var body: some View {
         ScrollView {
             topSpacer
-            Text("HEJ").onTapGesture {
-                self.toastView = Text("HOJ").any()
+            VStack(spacing: listSpacing) {
+                ToastCell(
+                    title: "Tap to show a text toast toast",
+                    color: .red
+                ).onTapGesture(perform: showTextToast)
+
+                ToastCell(
+                    title: "Tap to show a german flag toast",
+                    color: .yellow
+                ).onTapGesture(perform: showViewToast)
             }
-        }.toast(isPresented: $isToastActive, text: "Toast message deluxe!")
+        }.toast(
+            isPresented: $isToastActive,
+            content: toastView,
+            background: Color.primary.colorInvert()
+        )
     }
 }
 
 private extension ToastScreen {
     
-//    var cell1: some View {
-//        DemoListCell(title: nil, content: <#T##_#>, effect: <#T##(AnyView) -> _#>)
-//    }
+    func showTextToast() {
+        toastView = Text("This is a text toast").any()
+    }
+    
+    func showViewToast() {
+        toastView = VStack(spacing: 0) {
+            Color.black.frame(width: 200, height: 50)
+            Color.red.frame(width: 200, height: 50)
+            Color.yellow.frame(width: 200, height: 50)
+        }.any()
+    }
 }
 
 struct ToastScreen_Previews: PreviewProvider {
