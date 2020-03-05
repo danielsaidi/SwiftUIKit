@@ -18,7 +18,7 @@ public extension View {
      background, an `Image` over a background `Image`, or an
      even more complex view hierarchy.
      */
-    func toast<Content: View, Background: View>(
+    func toast(
         isPresented: Binding<Bool>,
         text: String,
         backgroundColor: Color? = nil,
@@ -31,7 +31,8 @@ public extension View {
             background: backgroundColor,
             cornerRadius: cornerRadius,
             shadowStyle: shadowStyle,
-            duration: duration)
+            duration: duration
+        )
     }
     
     /**
@@ -52,10 +53,20 @@ public extension View {
         Toast(
             isPresented: isPresented,
             content: content,
-            background: background,
+            background: backgroundView(for: background),
             cornerRadius: cornerRadius,
             shadowStyle: shadowStyle,
             duration: duration,
-            presenter: { self })
+            presenter: { self }
+        )
+    }
+}
+
+private extension View {
+    
+    func backgroundView<Background: View>(for view: Background?) -> AnyView {
+        let fallback = Color.secondary.colorInvert().any()
+        guard let view = view else { return fallback }
+        return view.any()
     }
 }

@@ -22,7 +22,7 @@ struct ToastScreen: View, DemoList {
             Text("HEJ").onTapGesture {
                 self.toastView = Text("HOJ").any()
             }
-        }
+        }.toast(isPresented: $isToastActive, text: "Toast message deluxe!")
     }
 }
 
