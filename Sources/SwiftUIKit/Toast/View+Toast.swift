@@ -65,7 +65,7 @@ public extension View {
 private extension View {
     
     func backgroundView<Background: View>(for view: Background?) -> AnyView {
-        let fallback = Color.secondary.colorInvert().any()
+        let fallback = Color.primary.colorInvert().any()
         guard let view = view else { return fallback }
         return view.any()
     }

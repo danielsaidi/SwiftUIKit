@@ -16,6 +16,7 @@ struct HomeScreen: View {
                 NavigationLink("Extensions", destination: ExtensionsScreen())
                 NavigationLink("Gestures", destination: GesturesScreen())
                 NavigationLink("Shadows", destination: ShadowsScreen())
+                NavigationLink("Toast", destination: ToastScreen())
             }.navigationBarTitle("SwiftUIKit Demo")
         }
     }
