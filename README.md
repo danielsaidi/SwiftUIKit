@@ -22,6 +22,7 @@
 You can read more about the different parts of this library:
 
 * [Blur][Blur]
+* [Gestures][Gestures]
 
 As things that exist in this library are added to `SwiftUI`, the corresponding functionality in this library will be deprecated and refer to those new features.
 
@@ -68,3 +69,4 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
 
 [Blur]: Readmes/Blur.md
+[Gestures]: Readmes/Gestures.md
