@@ -20,10 +20,10 @@ struct FlippableViewScreen: View {
 private extension FlippableViewScreen {
     
     func side(_ color: Color) -> AnyView {
-        AnyView(ZStack {
+        ZStack {
             color
             Text("Flip me in any direction")
-        }.cornerRadius(10))
+        }.cornerRadius(10).any()
     }
 }
 

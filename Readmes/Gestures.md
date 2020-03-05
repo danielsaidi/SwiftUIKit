@@ -1,6 +1,6 @@
 # Gestures
 
-SwiftUIKit contains additional gesture logic, to make it possible to use e.g. swipe gestures in `SwiftUI`.
+`SwiftUIKit` contains additional gesture logic, to make it possible to use e.g. swipe gestures in `SwiftUI`.
 
 
 ## SwipeGesture

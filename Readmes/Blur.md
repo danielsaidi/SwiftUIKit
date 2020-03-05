@@ -1,6 +1,6 @@
 # Blur
 
-SwiftUIKit contains additional blur logic, to make it possible to use the full range of `UIKit` blur effects in `SwiftUI`.
+`SwiftUIKit` contains additional blur logic, to make it possible to use the full range of `UIKit` blur effects in `SwiftUI`.
 
 
 ## BlurView
