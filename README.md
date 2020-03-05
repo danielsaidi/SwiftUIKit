@@ -72,3 +72,4 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [Blur]: Readmes/Blur.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
+[Shadows]: Readmes/Shadows.md

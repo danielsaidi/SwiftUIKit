@@ -3,7 +3,7 @@
 //  SwiftUIKitDemo
 //
 //  Created by Daniel Saidi on 2019-09-11.
-//  Copyright © 2019 Daniel Saidi. All rights reserved.
+//  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
