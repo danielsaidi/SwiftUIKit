@@ -31,7 +31,7 @@ struct Toast<Presenter: View, Content: View, Background: View>: View {
     public let shadowStyle: ShadowStyle
     public let duration: TimeInterval
     public let presenter: () -> Presenter
-
+    
     public var body: some View {
         if isPresented { hide(after: duration) }
         return ZStack(alignment: .center) {

@@ -47,6 +47,10 @@
 		A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
 		A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableViewScreen.swift; sourceTree = "<group>"; };
 		A9E9A2AE24107E7900844844 /* ExtensionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsScreen.swift; sourceTree = "<group>"; };
+		A9E9A2B124114E7400844844 /* Gestures.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Gestures.md; sourceTree = "<group>"; };
+		A9E9A2B224114E7400844844 /* Blur.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Blur.md; sourceTree = "<group>"; };
+		A9E9A2B324114E7400844844 /* Shadows.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Shadows.md; sourceTree = "<group>"; };
+		A9E9A2B424114E7400844844 /* Extensions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Extensions.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +68,9 @@
 		A9E9A25A241062C900844844 = {
 			isa = PBXGroup;
 			children = (
-				A9E9A2972410753D00844844 /* Project Files */,
 				A9E9A265241062C900844844 /* SwiftUIKitDemo */,
 				A9E9A264241062C900844844 /* Products */,
+				A9E9A2972410753D00844844 /* Project Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +128,7 @@
 		A9E9A2972410753D00844844 /* Project Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9E9A2B024114E7400844844 /* Readmes */,
 				A9E9A29D2410757200844844 /* .gitignore */,
 				A9E9A29C2410757200844844 /* .swiftlint.yml */,
 				A9E9A2982410756100844844 /* Fastfile */,
@@ -152,6 +157,17 @@
 				A9E9A2AE24107E7900844844 /* ExtensionsScreen.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9E9A2B024114E7400844844 /* Readmes */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A2B124114E7400844844 /* Gestures.md */,
+				A9E9A2B224114E7400844844 /* Blur.md */,
+				A9E9A2B324114E7400844844 /* Shadows.md */,
+				A9E9A2B424114E7400844844 /* Extensions.md */,
+			);
+			path = Readmes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
