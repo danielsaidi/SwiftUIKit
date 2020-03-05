@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-private var standardCornerRadius: CGFloat { 10 }
-private var standardDuration: TimeInterval { 2 }
-
-extension View {
+public extension View {
 
     /**
      Shows a vertically and horizontally centered toast over
@@ -25,17 +22,16 @@ extension View {
         isPresented: Binding<Bool>,
         text: String,
         backgroundColor: Color? = nil,
-        cornerRadius: CGFloat = standardCornerRadius,
+        cornerRadius: CGFloat = 10,
         shadowStyle: ShadowStyle = .standardToast,
-        duration: TimeInterval = standardDuration) -> some View {
-        Toast(
+        duration: TimeInterval = 2) -> some View {
+        toast(
             isPresented: isPresented,
             content: Text(text),
             background: backgroundColor,
             cornerRadius: cornerRadius,
             shadowStyle: shadowStyle,
-            duration: duration,
-            presenter: { self })
+            duration: duration)
     }
     
     /**
@@ -50,9 +46,9 @@ extension View {
         isPresented: Binding<Bool>,
         content: Content,
         background: Background? = nil,
-        cornerRadius: CGFloat = standardCornerRadius,
+        cornerRadius: CGFloat = 10,
         shadowStyle: ShadowStyle = .standardToast,
-        duration: TimeInterval = standardDuration) -> some View {
+        duration: TimeInterval = 2) -> some View {
         Toast(
             isPresented: isPresented,
             content: content,

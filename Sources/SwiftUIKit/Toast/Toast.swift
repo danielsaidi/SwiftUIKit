@@ -21,7 +21,7 @@ import SwiftUI
  The easiest way to add a `Toast` to a `View`, is to use the
  `toast(...)` `View` extensions.
  */
-struct Toast<Presenter: View, Content: View, Background: View>: View {
+public struct Toast<Presenter: View, Content: View, Background: View>: View {
 
     @Binding var isPresented: Bool
     

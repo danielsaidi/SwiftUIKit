@@ -7,11 +7,30 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
-struct ToastScreen: View {
-    var body: some View {
-        Text("HEJ")
+struct ToastScreen: View, DemoList {
+    
+    @State private var isToastActive = false
+    @State private var toastView: AnyView = EmptyView().any() {
+        didSet { isToastActive = true }
     }
+    
+    var body: some View {
+        ScrollView {
+            topSpacer
+            Text("HEJ").onTapGesture {
+                self.toastView = Text("HOJ").any()
+            }
+        }
+    }
+}
+
+private extension ToastScreen {
+    
+//    var cell1: some View {
+//        DemoListCell(title: nil, content: <#T##_#>, effect: <#T##(AnyView) -> _#>)
+//    }
 }
 
 struct ToastScreen_Previews: PreviewProvider {
