@@ -9,20 +9,25 @@
 import SwiftUI
 import SwiftUIKit
 
-struct FlippableViewScreen: View {
+struct FlippableViewScreen: View, DemoList {
     var body: some View {
-        FlippableView(front: side(.red), back: side(.green))
-            .padding()
-            .navigationBarTitle("FlippableView")
+        view.navigationBarTitle("FlippableView")
     }
 }
 
 private extension FlippableViewScreen {
     
-    func side(_ color: Color) -> AnyView {
+    var view: some View {
+        FlippableView(
+            front: side(.red, text: "Flip me!"),
+            back: side(.green)
+        ).padding()
+    }
+    
+    func side(_ color: Color, text: String = "") -> AnyView {
         ZStack {
             color
-            Text("Flip me in any direction")
+            Text(text)
         }.cornerRadius(10).any()
     }
 }

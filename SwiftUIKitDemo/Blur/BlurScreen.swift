@@ -8,12 +8,15 @@
 
 import SwiftUI
 
-struct BlurScreen: View {
+struct BlurScreen: View, DemoList {
+    
     var body: some View {
         ScrollView {
-            ForEach(UIBlurEffect.Style.allCases, id: \.displayName) { style in
-                BlurCell(style: style)
-                    .padding(.top)
+            topSpacer
+            VStack(spacing: listSpacing) {
+                ForEach(UIBlurEffect.Style.allCases, id: \.displayName) { style in
+                    BlurCell(style: style)
+                }
             }
         }.navigationBarTitle("BlurView")
     }

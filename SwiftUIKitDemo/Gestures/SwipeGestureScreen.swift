@@ -9,33 +9,16 @@
 import SwiftUI
 import SwiftUIKit
 
-struct SwipeGestureScreen: View {
-    
-    @State private var title = "Swipe me in any direction"
+struct SwipeGestureScreen: View, DemoList {
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                Color.red.onSwipeGesture(
-                    up: self.handleSwipeUp,
-                    left: self.handleSwipeLeft,
-                    right: self.handleSwipeRight,
-                    down: self.handleSwipeDown).cornerRadius(10)
-                Text(self.title)
-            }.frame(
-                width: 0.9*geo.size.width,
-                height: 0.9*geo.size.height,
-                alignment: .center)
-        }.navigationBarTitle("SwipeGesture")
+        VStack {
+            SwipeGestureCell(color: .red)
+                .padding(.top, topSpacing)
+                .navigationBarTitle("SwipeGesture")
+            Spacer()
+        }
     }
-}
-
-private extension SwipeGestureScreen {
-    
-    func handleSwipeUp() { title = "Up!" }
-    func handleSwipeLeft() { title = "Left!" }
-    func handleSwipeRight() { title = "Right!" }
-    func handleSwipeDown() { title = "Down!" }
 }
 
 struct SwipeGestureScreen_Previews: PreviewProvider {

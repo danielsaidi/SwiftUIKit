@@ -21,6 +21,12 @@
 		A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */; };
 		A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */; };
 		A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AE24107E7900844844 /* ExtensionsScreen.swift */; };
+		A9E9A2B7241193C400844844 /* ShadowsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B6241193C400844844 /* ShadowsScreen.swift */; };
+		A9E9A2B9241193DB00844844 /* ShadowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B8241193DB00844844 /* ShadowCell.swift */; };
+		A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BB2411962E00844844 /* ToastScreen.swift */; };
+		A9E9A2BF2411979700844844 /* DemoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BE2411979700844844 /* DemoListCell.swift */; };
+		A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C024119B5E00844844 /* DemoList.swift */; };
+		A9E9A2C324119DD300844844 /* SwipeGestureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C224119DD300844844 /* SwipeGestureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +57,12 @@
 		A9E9A2B224114E7400844844 /* Blur.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Blur.md; sourceTree = "<group>"; };
 		A9E9A2B324114E7400844844 /* Shadows.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Shadows.md; sourceTree = "<group>"; };
 		A9E9A2B424114E7400844844 /* Extensions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Extensions.md; sourceTree = "<group>"; };
+		A9E9A2B6241193C400844844 /* ShadowsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsScreen.swift; sourceTree = "<group>"; };
+		A9E9A2B8241193DB00844844 /* ShadowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCell.swift; sourceTree = "<group>"; };
+		A9E9A2BB2411962E00844844 /* ToastScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScreen.swift; sourceTree = "<group>"; };
+		A9E9A2BE2411979700844844 /* DemoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListCell.swift; sourceTree = "<group>"; };
+		A9E9A2C024119B5E00844844 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
+		A9E9A2C224119DD300844844 /* SwipeGestureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +100,12 @@
 				A9E9A2882410669000844844 /* App */,
 				A9E9A26C241062CB00844844 /* Assets.xcassets */,
 				A9E9A27D241063AE00844844 /* Blur */,
+				A9E9A2BD2411978D00844844 /* Common */,
 				A9E9A2AD24107E6F00844844 /* Extensions */,
 				A9E9A2A6241076F200844844 /* Gestures */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
+				A9E9A2B5241193B500844844 /* Shadows */,
+				A9E9A2BA2411961F00844844 /* Toast */,
 			);
 			path = SwiftUIKitDemo;
 			sourceTree = "<group>";
@@ -144,9 +159,10 @@
 		A9E9A2A6241076F200844844 /* Gestures */ = {
 			isa = PBXGroup;
 			children = (
-				A9E9A2A7241076FF00844844 /* GesturesScreen.swift */,
-				A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */,
 				A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */,
+				A9E9A2A7241076FF00844844 /* GesturesScreen.swift */,
+				A9E9A2C224119DD300844844 /* SwipeGestureCell.swift */,
+				A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */,
 			);
 			path = Gestures;
 			sourceTree = "<group>";
@@ -168,6 +184,32 @@
 				A9E9A2B424114E7400844844 /* Extensions.md */,
 			);
 			path = Readmes;
+			sourceTree = "<group>";
+		};
+		A9E9A2B5241193B500844844 /* Shadows */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A2B8241193DB00844844 /* ShadowCell.swift */,
+				A9E9A2B6241193C400844844 /* ShadowsScreen.swift */,
+			);
+			path = Shadows;
+			sourceTree = "<group>";
+		};
+		A9E9A2BA2411961F00844844 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A2BB2411962E00844844 /* ToastScreen.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		A9E9A2BD2411978D00844844 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A2C024119B5E00844844 /* DemoList.swift */,
+				A9E9A2BE2411979700844844 /* DemoListCell.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,14 +290,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
+				A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */,
 				A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
+				A9E9A2BF2411979700844844 /* DemoListCell.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
+				A9E9A2C324119DD300844844 /* SwipeGestureCell.swift in Sources */,
 				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
 				A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */,
+				A9E9A2B9241193DB00844844 /* ShadowCell.swift in Sources */,
+				A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */,
+				A9E9A2B7241193C400844844 /* ShadowsScreen.swift in Sources */,
 				A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
