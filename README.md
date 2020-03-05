@@ -46,9 +46,12 @@ https://github.com/danielsaidi/SwiftUIKit.git
 
 ### CocoaPods
 
-```
-pod "SwiftUIKit"
-```
+Not yet supported.
+
+
+### Carthage
+
+Not yet supported.
 
 
 ## Contact me
