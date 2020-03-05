@@ -4,10 +4,10 @@ Pod::Spec.new do |s|
   s.name             = 'SwiftUIKit'
   s.version          = '0.1.0'
   s.swift_versions   = ['5.1']
-  s.summary          = 'SwiftUIKit contains extra struff for SwiftUI.'
+  s.summary          = 'SwiftUIKit contains extra functionality for SwiftUI.'
 
   s.description      = <<-DESC
-  SwiftUIKit contains extra struff for SwiftUI.
+  SwiftUIKit contains extra functionality for SwiftUI, like gestures, shadows, extensions etc.
                        DESC
 
   s.homepage         = 'https://github.com/danielsaidi/SwiftUIKit'
