@@ -7,35 +7,39 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct DemoListCell<Content: View, Effect: View>: View {
     
     init(
         title: String? = nil,
         content: Content,
+        cornerRadius: CornerRadiusStyle = CornerRadiusStyle(radius: 10),
         effect: @escaping (AnyView) -> Effect) {
         self.title = title
         self.content = content
+        self.cornerRadius = cornerRadius
         self.effect = effect
     }
     
     private let title: String?
     private let content: Content
+    private let cornerRadius: CornerRadiusStyle
     private let effect: (AnyView) -> Effect
     
     var body: some View {
-        VStack {
-            if title != nil {
-                Text(title ?? "").font(.callout)
-            }
-            
+        ZStack {
             effect(
                 content
                     .frame(height: 200)
-                    .cornerRadius(10)
+                    .cornerRadius(cornerRadius)
                     .padding(.horizontal)
                     .any()
             )
+            
+            if title != nil {
+                Text(title ?? "").font(.callout)
+            }
         }
     }
 }

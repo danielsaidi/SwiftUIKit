@@ -1,5 +1,5 @@
 //
-//  ShadowsScreen.swift
+//  ShadowStyleScreen.swift
 //  SwiftUIKitDemo
 //
 //  Created by Daniel Saidi on 2020-03-05.
@@ -9,24 +9,23 @@
 import SwiftUI
 import SwiftUIKit
 
-struct ShadowsScreen: View, DemoList {
+struct ShadowStyleScreen: View, DemoList {
     
-    let crazy = ShadowStyle(
+    private let crazyRed = ShadowStyle(
         color: .red, radius: 20, x: -5, y: 10)
     
     var body: some View {
         ScrollView {
-            topSpacer
             VStack(spacing: listSpacing) {
-                ShadowCell(title: "Toast shadow", color: .green, style: .standardToast)
-                ShadowCell(title: "Demo shadow", color: .gray, style: crazy)
+                ShadowStyleCell(title: "Discrete", color: .green, style: .standardToast)
+                ShadowStyleCell(title: "Crazy red", color: .gray, style: crazyRed)
             }
         }.navigationBarTitle("ShadowStyle")
     }
 }
 
-struct ShadowsScreen_Previews: PreviewProvider {
+struct ShadowStyleScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ShadowsScreen()
+        ShadowStyleScreen()
     }
 }

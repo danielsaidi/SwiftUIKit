@@ -25,7 +25,7 @@ private extension BlurCell {
     var image: some View {
         Image("BlurImage")
             .resizable()
-            .blur(style: style)
+            .blur(style)
     }
     
     func effect(_ view: AnyView) -> some View {

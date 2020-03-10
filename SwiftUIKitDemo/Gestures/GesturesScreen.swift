@@ -11,8 +11,8 @@ import SwiftUI
 struct GesturesScreen: View {
     var body: some View {
         List {
-            NavigationLink("SwipeGesture", destination: SwipeGestureScreen())
-            NavigationLink("FlippableView", destination: FlippableViewScreen())
+            NavigationLink("Swipe Gesture", destination: SwipeGestureScreen())
+            NavigationLink("Flippable View", destination: FlippableViewScreen())
         }.navigationBarTitle("Gestures")
     }
 }

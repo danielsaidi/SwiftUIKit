@@ -18,7 +18,6 @@ struct ToastScreen: View, DemoList {
     
     var body: some View {
         ScrollView {
-            topSpacer
             VStack(spacing: listSpacing) {
                 ToastCell(
                     title: "Tap to show a text toast toast",
@@ -34,7 +33,7 @@ struct ToastScreen: View, DemoList {
             isPresented: $isToastActive,
             content: toastView,
             background: Color.primary.colorInvert()
-        )
+        ).navigationBarTitle("Toast")
     }
 }
 

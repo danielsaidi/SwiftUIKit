@@ -1,42 +1,43 @@
 //
-//  ShadowCell.swift
+//  CornerRadiusStyleCell.swift
 //  SwiftUIKitDemo
 //
-//  Created by Daniel Saidi on 2020-03-05.
+//  Created by Daniel Saidi on 2020-03-10.
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 import SwiftUIKit
 
-struct ShadowCell: View {
+struct CornerRadiusStyleCell: View {
     
     let title: String
     let color: Color
-    let style: ShadowStyle
+    let style: CornerRadiusStyle
     
     var body: some View {
         DemoListCell(
             title: title,
             content: color,
+            cornerRadius: style,
             effect: effect
         )
     }
 }
 
-private extension ShadowCell {
+private extension CornerRadiusStyleCell {
     
     func effect(_ view: AnyView) -> some View {
-        view.shadow(style)
+        view
     }
 }
 
-struct ShadowCell_Previews: PreviewProvider {
+struct CornerRadiusStyleCell_Previews: PreviewProvider {
     static var previews: some View {
-        ShadowCell(
+        CornerRadiusStyleCell(
             title: "Hi!",
             color: .red,
-            style: .standardToast
+            style: CornerRadiusStyle(radius: 5)
         )
     }
 }

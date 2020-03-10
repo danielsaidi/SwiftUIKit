@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DA2417995300EDE944 /* StylesScreen.swift */; };
+		84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */; };
+		84DDC8DF24179A8900EDE944 /* CornerRadiusStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DE24179A8900EDE944 /* CornerRadiusStyleCell.swift */; };
 		A9E9A267241062C900844844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A266241062C900844844 /* AppDelegate.swift */; };
 		A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A268241062C900844844 /* SceneDelegate.swift */; };
 		A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A26A241062C900844844 /* HomeScreen.swift */; };
@@ -21,8 +24,8 @@
 		A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */; };
 		A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */; };
 		A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AE24107E7900844844 /* ExtensionsScreen.swift */; };
-		A9E9A2B7241193C400844844 /* ShadowsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B6241193C400844844 /* ShadowsScreen.swift */; };
-		A9E9A2B9241193DB00844844 /* ShadowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B8241193DB00844844 /* ShadowCell.swift */; };
+		A9E9A2B7241193C400844844 /* ShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */; };
+		A9E9A2B9241193DB00844844 /* ShadowStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B8241193DB00844844 /* ShadowStyleCell.swift */; };
 		A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BB2411962E00844844 /* ToastScreen.swift */; };
 		A9E9A2BF2411979700844844 /* DemoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BE2411979700844844 /* DemoListCell.swift */; };
 		A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C024119B5E00844844 /* DemoList.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84DDC8DA2417995300EDE944 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
+		84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
+		84DDC8DE24179A8900EDE944 /* CornerRadiusStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleCell.swift; sourceTree = "<group>"; };
 		A9E9A263241062C900844844 /* SwiftUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9A266241062C900844844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E9A268241062C900844844 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +64,8 @@
 		A9E9A2B224114E7400844844 /* Blur.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Blur.md; sourceTree = "<group>"; };
 		A9E9A2B324114E7400844844 /* Shadows.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Shadows.md; sourceTree = "<group>"; };
 		A9E9A2B424114E7400844844 /* Extensions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Extensions.md; sourceTree = "<group>"; };
-		A9E9A2B6241193C400844844 /* ShadowsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsScreen.swift; sourceTree = "<group>"; };
-		A9E9A2B8241193DB00844844 /* ShadowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCell.swift; sourceTree = "<group>"; };
+		A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyleScreen.swift; sourceTree = "<group>"; };
+		A9E9A2B8241193DB00844844 /* ShadowStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyleCell.swift; sourceTree = "<group>"; };
 		A9E9A2BB2411962E00844844 /* ToastScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScreen.swift; sourceTree = "<group>"; };
 		A9E9A2BE2411979700844844 /* DemoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListCell.swift; sourceTree = "<group>"; };
 		A9E9A2C024119B5E00844844 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
@@ -106,7 +112,7 @@
 				A9E9A2AD24107E6F00844844 /* Extensions */,
 				A9E9A2A6241076F200844844 /* Gestures */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
-				A9E9A2B5241193B500844844 /* Shadows */,
+				A9E9A2B5241193B500844844 /* Styles */,
 				A9E9A2BA2411961F00844844 /* Toast */,
 			);
 			path = SwiftUIKitDemo;
@@ -188,13 +194,16 @@
 			path = Readmes;
 			sourceTree = "<group>";
 		};
-		A9E9A2B5241193B500844844 /* Shadows */ = {
+		A9E9A2B5241193B500844844 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				A9E9A2B8241193DB00844844 /* ShadowCell.swift */,
-				A9E9A2B6241193C400844844 /* ShadowsScreen.swift */,
+				84DDC8DE24179A8900EDE944 /* CornerRadiusStyleCell.swift */,
+				84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */,
+				A9E9A2B8241193DB00844844 /* ShadowStyleCell.swift */,
+				A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */,
+				84DDC8DA2417995300EDE944 /* StylesScreen.swift */,
 			);
-			path = Shadows;
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		A9E9A2BA2411961F00844844 /* Toast */ = {
@@ -295,9 +304,12 @@
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
 				A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */,
 				A9E9A2C52411B7BF00844844 /* ToastCell.swift in Sources */,
+				84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */,
 				A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
+				84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */,
 				A9E9A2BF2411979700844844 /* DemoListCell.swift in Sources */,
+				84DDC8DF24179A8900EDE944 /* CornerRadiusStyleCell.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
@@ -305,9 +317,9 @@
 				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
 				A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */,
-				A9E9A2B9241193DB00844844 /* ShadowCell.swift in Sources */,
+				A9E9A2B9241193DB00844844 /* ShadowStyleCell.swift in Sources */,
 				A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */,
-				A9E9A2B7241193C400844844 /* ShadowsScreen.swift in Sources */,
+				A9E9A2B7241193C400844844 /* ShadowStyleScreen.swift in Sources */,
 				A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

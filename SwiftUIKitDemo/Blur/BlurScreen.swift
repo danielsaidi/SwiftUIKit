@@ -12,7 +12,6 @@ struct BlurScreen: View, DemoList {
     
     var body: some View {
         ScrollView {
-            topSpacer
             VStack(spacing: listSpacing) {
                 ForEach(UIBlurEffect.Style.allCases, id: \.displayName) { style in
                     BlurCell(style: style)
