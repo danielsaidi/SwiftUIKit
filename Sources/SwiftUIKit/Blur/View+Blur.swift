@@ -21,4 +21,3 @@ public extension View {
         overlay(BlurView(style: style))
     }
 }
-
