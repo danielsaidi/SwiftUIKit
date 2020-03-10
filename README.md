@@ -24,7 +24,7 @@ You can read more about the different parts of this library:
 * [Blur][Blur]
 * [Extensions][Extensions]
 * [Gestures][Gestures]
-* [Shadows][Shadows]
+* [Styles][Styles]
 * [Toast][Toast]
 
 As things that exist in this library are added to `SwiftUI`, the corresponding functionality in this library will be deprecated and refer to those new features.
@@ -87,5 +87,5 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [Blur]: Readmes/Blur.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
-[Shadows]: Readmes/Shadows.md
+[Styles]: Readmes/Styles.md
 [Toast]: Readmes/Toast.md
