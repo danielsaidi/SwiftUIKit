@@ -1,14 +1,11 @@
 # Release notes
 
 
-## 0.3.0
-
-This release adds a `cornerRadius(...)` view modifier and changes the signature of the `blur(...)` modifier.
-
-
 ## 0.2.0
 
-This release adds a `blur(...)` view modifier, which simplifies using this library.
+This release adds a `CornerRadiusStyle` style and a corresponding `cornerRadius(...)` view modifier.
+
+It also adds a `blur(...)` view modifier that simplifies using this library.
 
 
 ## 0.1.0
