@@ -12,10 +12,12 @@ import UIKit
 public extension View {
     
     /**
-     Adds a `BlurView` as an overlay to the view, applying a
-     provided blur effect style to the entire view.
+     Applies a `UIBlurEffect.Style` to the view.
+     
+     The blur is applied by adding a `BlurView` overlay over
+     the view.
      */
-    func blur(style: UIBlurEffect.Style) -> some View {
+    func blur(_ style: UIBlurEffect.Style) -> some View {
         overlay(BlurView(style: style))
     }
 }

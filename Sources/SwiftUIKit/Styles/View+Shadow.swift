@@ -11,10 +11,10 @@ import SwiftUI
 public extension View {
     
     /**
-     Applies a shadow style to the view.
+     Applies a `ShadowStyle` to the view.
      
-     The result is identical to when applying the properties
-     directly, using the standard `shadow` view modifier.
+     The result is identical to when using the standard view
+     modifier directly.
      */
     func shadow(_ style: ShadowStyle) -> some View {
         shadow(

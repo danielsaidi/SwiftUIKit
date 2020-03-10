@@ -9,12 +9,14 @@
 import SwiftUI
 
 /**
- This struct can be used to contain all shadow config params
- for SwiftUI views within a single struct.
+ This struct represents a style with properties that matches
+ the `SwiftUI`s `shadow` modifier.
  
- This struct makes it easier to create various shadow styles,
- which is easily done with a static, calculated `ShadowStyle`
- extension property.
+ You can use the style properties together with the standard
+ modifier or use the `View` `shadow(_ style:)` extension.
+ 
+ You can specify your own standard styles by creating static,
+ calculated `ShadowStyle` extension properties.
  */
 public struct ShadowStyle {
     

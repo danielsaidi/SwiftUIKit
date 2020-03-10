@@ -1,5 +1,5 @@
 //
-//  BlurViewTests.swift
+//  ShadowStyleTests.swift
 //  SwiftUIKitTests
 //
 //  Created by Daniel Saidi on 2020-03-05.
