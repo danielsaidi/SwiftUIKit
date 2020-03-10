@@ -13,7 +13,7 @@ import SwiftUI
  the `SwiftUI`s `shadow` modifier.
  
  You can use the style properties together with the standard
- modifier or use the `View` `shadow(_ style:)` extension.
+ modifier or use the `shadow(_ style:)` `View` extension.
  
  You can specify your own standard styles by creating static,
  calculated `ShadowStyle` extension properties.

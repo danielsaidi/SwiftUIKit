@@ -13,7 +13,7 @@ import SwiftUI
  the `SwiftUI`s `cornerRadius` modifier.
  
  You can use the style's property with the standard modifier
- or use the `View` `cornerRadius(_ style:)` extension.
+ or use the `cornerRadius(_ style:)` `View` extension.
  
  You can specify your own standard styles by creating static,
  calculated `CornerRadiusStyle` extension properties.
