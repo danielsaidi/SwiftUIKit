@@ -27,7 +27,6 @@
 		A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BB2411962E00844844 /* ToastScreen.swift */; };
 		A9E9A2BF2411979700844844 /* DemoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BE2411979700844844 /* DemoListItem.swift */; };
 		A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C024119B5E00844844 /* DemoList.swift */; };
-		A9E9A2C52411B7BF00844844 /* ToastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C42411B7BF00844844 /* ToastCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +63,6 @@
 		A9E9A2BB2411962E00844844 /* ToastScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScreen.swift; sourceTree = "<group>"; };
 		A9E9A2BE2411979700844844 /* DemoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListItem.swift; sourceTree = "<group>"; };
 		A9E9A2C024119B5E00844844 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
-		A9E9A2C42411B7BF00844844 /* ToastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +198,6 @@
 		A9E9A2BA2411961F00844844 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
-				A9E9A2C42411B7BF00844844 /* ToastCell.swift */,
 				A9E9A2BB2411962E00844844 /* ToastScreen.swift */,
 			);
 			path = Toast;
@@ -294,7 +291,6 @@
 			files = (
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
 				A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */,
-				A9E9A2C52411B7BF00844844 /* ToastCell.swift in Sources */,
 				84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */,
 				A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
