@@ -57,6 +57,9 @@ extension FontStyle {
 let view1 = Text("Hello!").font(.uglyTitle)
 ```
 
+You can also use the `FontIdentifier` protocol instead of `name`. This makes it possible to use e.g. `SwiftGen`s `FontConvertible` together with this extension.
+
+
 ## ShadowStyle
 
 `ShadowStyle` represents a style with properties that matches the `SwiftUI`s `shadow` modifier.
