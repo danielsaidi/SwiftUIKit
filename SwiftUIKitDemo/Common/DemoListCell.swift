@@ -15,17 +15,19 @@ struct DemoListCell<Content: View, Effect: View>: View {
         title: String? = nil,
         content: Content,
         cornerRadius: CornerRadiusStyle = CornerRadiusStyle(radius: 10),
-        effect: @escaping (AnyView) -> Effect) {
+        effect: @escaping ViewEffect) {
         self.title = title
         self.content = content
         self.cornerRadius = cornerRadius
         self.effect = effect
     }
     
+    typealias ViewEffect = (AnyView) -> Effect
+    
     private let title: String?
     private let content: Content
     private let cornerRadius: CornerRadiusStyle
-    private let effect: (AnyView) -> Effect
+    private let effect: ViewEffect
     
     var body: some View {
         ZStack {

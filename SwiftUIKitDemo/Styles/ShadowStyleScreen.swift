@@ -11,16 +11,27 @@ import SwiftUIKit
 
 struct ShadowStyleScreen: View, DemoList {
     
-    private let crazyRed = ShadowStyle(
-        color: .red, radius: 20, x: -5, y: 10)
-    
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                ShadowStyleCell(title: "Discrete", color: .green, style: .standardToast)
-                ShadowStyleCell(title: "Crazy red", color: .gray, style: crazyRed)
+                cell(title: "Discrete", color: .green, style: .standardToast)
+                cell(title: "Crazy red", color: .gray, style: .crazyRed)
             }
         }.navigationBarTitle("ShadowStyle")
+    }
+}
+
+private extension ShadowStyleScreen {
+    
+    func cell(title: String, color: Color, style: ShadowStyle) -> some View {
+        DemoListCell(title: title, content: color, effect: { $0.shadow(style) })
+    }
+}
+
+private extension ShadowStyle {
+    
+    static var crazyRed: ShadowStyle {
+        ShadowStyle(color: .red, radius: 20, x: -5, y: 10)
     }
 }
 
