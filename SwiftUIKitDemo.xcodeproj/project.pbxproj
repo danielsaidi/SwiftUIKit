@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DA2417995300EDE944 /* StylesScreen.swift */; };
 		84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */; };
-		84DDC8DF24179A8900EDE944 /* CornerRadiusStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DE24179A8900EDE944 /* CornerRadiusStyleCell.swift */; };
 		A9E9A267241062C900844844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A266241062C900844844 /* AppDelegate.swift */; };
 		A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A268241062C900844844 /* SceneDelegate.swift */; };
 		A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A26A241062C900844844 /* HomeScreen.swift */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		84DDC8DA2417995300EDE944 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
 		84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
-		84DDC8DE24179A8900EDE944 /* CornerRadiusStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleCell.swift; sourceTree = "<group>"; };
 		A9E9A263241062C900844844 /* SwiftUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9A266241062C900844844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E9A268241062C900844844 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 		A9E9A2B5241193B500844844 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				84DDC8DE24179A8900EDE944 /* CornerRadiusStyleCell.swift */,
 				84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */,
 				A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */,
 				84DDC8DA2417995300EDE944 /* StylesScreen.swift */,
@@ -306,7 +303,6 @@
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
 				84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */,
 				A9E9A2BF2411979700844844 /* DemoListCell.swift in Sources */,
-				84DDC8DF24179A8900EDE944 /* CornerRadiusStyleCell.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,

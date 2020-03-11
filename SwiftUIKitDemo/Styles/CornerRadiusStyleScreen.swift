@@ -11,18 +11,36 @@ import SwiftUIKit
 
 struct CornerRadiusStyleScreen: View, DemoList {
     
-    private let five = CornerRadiusStyle(radius: 5)
-    private let ten = CornerRadiusStyle(radius: 10)
-    private let twenty = CornerRadiusStyle(radius: 20)
-    
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                CornerRadiusStyleCell(title: "5 points", color: .red, style: five)
-                CornerRadiusStyleCell(title: "10 points", color: .green, style: ten)
-                CornerRadiusStyleCell(title: "20 points", color: .blue, style: twenty)
+                cell(title: ".five", color: .red, style: .five)
+                cell(title: ".ten", color: .green, style: .ten)
+                cell(title: ".twenty", color: .blue, style: .twenty)
             }
-        }.navigationBarTitle("ShadowStyle")
+        }.navigationBarTitle("CornerRadiusStyle")
+    }
+}
+
+private extension CornerRadiusStyleScreen {
+    
+    func cell(title: String, color: Color, style: CornerRadiusStyle) -> some View {
+        DemoListCell(title: title, content: color, effect: { $0.cornerRadius(style) })
+    }
+}
+
+private extension CornerRadiusStyle {
+    
+    static var five: CornerRadiusStyle {
+        CornerRadiusStyle(radius: 5)
+    }
+    
+    static var ten: CornerRadiusStyle {
+        CornerRadiusStyle(radius: 10)
+    }
+    
+    static var twenty: CornerRadiusStyle {
+        CornerRadiusStyle(radius: 20)
     }
 }
 
