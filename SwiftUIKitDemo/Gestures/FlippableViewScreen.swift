@@ -11,18 +11,15 @@ import SwiftUIKit
 
 struct FlippableViewScreen: View, DemoList {
     var body: some View {
-        view.navigationBarTitle("FlippableView")
-    }
-}
-
-private extension FlippableViewScreen {
-    
-    var view: some View {
         FlippableView(
             front: side(.red, text: "Flip me!"),
             back: side(.green)
         ).padding()
+        .navigationBarTitle("FlippableView")
     }
+}
+
+private extension FlippableViewScreen {
     
     func side(_ color: Color, text: String = "") -> AnyView {
         ZStack {

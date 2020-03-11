@@ -14,9 +14,9 @@ struct CornerRadiusStyleScreen: View, DemoList {
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                cell(title: ".five", color: .red, style: .five)
-                cell(title: ".ten", color: .green, style: .ten)
-                cell(title: ".twenty", color: .blue, style: .twenty)
+                item(title: ".five", color: .red, style: .five)
+                item(title: ".ten", color: .green, style: .ten)
+                item(title: ".twenty", color: .blue, style: .twenty)
             }
         }.navigationBarTitle("CornerRadiusStyle")
     }
@@ -24,8 +24,8 @@ struct CornerRadiusStyleScreen: View, DemoList {
 
 private extension CornerRadiusStyleScreen {
     
-    func cell(title: String, color: Color, style: CornerRadiusStyle) -> some View {
-        DemoListCell(title: title, content: color, effect: { $0.cornerRadius(style) })
+    func item(title: String, color: Color, style: CornerRadiusStyle) -> some View {
+        DemoListItem(title: title, content: color, effect: { $0.cornerRadius(style) })
     }
 }
 

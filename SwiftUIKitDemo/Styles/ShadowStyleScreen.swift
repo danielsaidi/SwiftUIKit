@@ -14,9 +14,9 @@ struct ShadowStyleScreen: View, DemoList {
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                cell(title: ".discrete", color: .red, style: .discrete)
-                cell(title: ".thinBlue", color: .green, style: .thinBlue)
-                cell(title: ".crazyRed", color: .blue, style: .crazyRed)
+                item(title: ".discrete", color: .red, style: .discrete)
+                item(title: ".thinBlue", color: .green, style: .thinBlue)
+                item(title: ".crazyRed", color: .blue, style: .crazyRed)
             }
         }.navigationBarTitle("ShadowStyle")
     }
@@ -24,8 +24,8 @@ struct ShadowStyleScreen: View, DemoList {
 
 private extension ShadowStyleScreen {
     
-    func cell(title: String, color: Color, style: ShadowStyle) -> some View {
-        DemoListCell(title: title, content: color, effect: { $0.shadow(style) })
+    func item(title: String, color: Color, style: ShadowStyle) -> some View {
+        DemoListItem(title: title, content: color, effect: { $0.shadow(style) })
     }
 }
 

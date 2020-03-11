@@ -1,5 +1,5 @@
 //
-//  DemoListCell.swift
+//  DemoListItem.swift
 //  SwiftUIKitDemo
 //
 //  Created by Daniel Saidi on 2020-03-05.
@@ -9,7 +9,7 @@
 import SwiftUI
 import SwiftUIKit
 
-struct DemoListCell<Content: View, Effect: View>: View {
+struct DemoListItem<Content: View, Effect: View>: View {
     
     init(
         title: String? = nil,
@@ -46,9 +46,9 @@ struct DemoListCell<Content: View, Effect: View>: View {
     }
 }
 
-struct DemoListCell_Previews: PreviewProvider {
+struct DemoListItem_Previews: PreviewProvider {
     static var previews: some View {
-        DemoListCell(
+        DemoListItem(
             title: "Hello!",
             content: Color.red,
             effect: { $0.padding() }

@@ -16,7 +16,7 @@ struct ToastCell: View {
     
     var body: some View {
         ZStack {
-            DemoListCell(
+            DemoListItem(
                 content: color,
                 effect: { $0 }
             )

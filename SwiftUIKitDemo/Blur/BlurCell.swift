@@ -13,7 +13,7 @@ struct BlurCell: View {
     let style: UIBlurEffect.Style
     
     var body: some View {
-        DemoListCell(
+        DemoListItem(
             title: style.displayName,
             content: image,
             effect: effect)

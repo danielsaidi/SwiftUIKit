@@ -18,8 +18,9 @@ struct SwipeGestureScreen: View, DemoList {
     
     var body: some View {
         VStack {
-            cell(title: "Swipe me!", color: .red)
-            cell(title: "Swipe me too!", color: .green)
+            item(title: "Swipe me!", color: .red)
+            item(title: "Swipe me too!", color: .green)
+            item(title: "Swipe me tooooo!", color: .blue)
             Spacer()
         }
         .toast(isPresented: $isToastActive, text: toastMessage)
@@ -29,8 +30,8 @@ struct SwipeGestureScreen: View, DemoList {
 
 private extension SwipeGestureScreen {
     
-    func cell(title: String, color: Color) -> some View {
-        DemoListCell(
+    func item(title: String, color: Color) -> some View {
+        DemoListItem(
             title: title,
             content: color,
             effect: effect
