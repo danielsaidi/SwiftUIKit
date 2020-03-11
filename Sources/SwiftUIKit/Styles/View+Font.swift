@@ -26,6 +26,21 @@ public extension View {
     }
     
     /**
+     Apply a custom font with a certain `identifier`, `style`
+     and font `weight`.
+     */
+    func font(
+        identifier: FontIdentifier,
+        style: UIFont.TextStyle,
+        weight: Font.Weight = .regular) -> some View {
+        font(
+            name: identifier.fontName,
+            style: style,
+            weight: weight
+        )
+    }
+    
+    /**
      Apply a custom font of a certain `style`.
      */
     func font(_ style: FontStyle) -> some View {

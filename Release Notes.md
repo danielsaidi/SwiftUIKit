@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.2.1
+
+This release adds a new `FontIdentifier`, which makes it possible to use anything that identifies a font with the `View+Font` extension, e.g. `SwiftGen`s `FontConvertible` type. 
+
+
 ## 0.2.0
 
 This release adds new style structs:

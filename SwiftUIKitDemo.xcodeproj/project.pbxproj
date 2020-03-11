@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845EA61E24190562005976EE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA61924190562005976EE /* Fonts.swift */; };
+		845EA61F24190562005976EE /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61B24190562005976EE /* AbrilFatface-Regular.ttf */; };
+		845EA62024190562005976EE /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61C24190562005976EE /* LuckiestGuy-Regular.ttf */; };
+		845EA62124190562005976EE /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61D24190562005976EE /* Lobster-Regular.ttf */; };
+		845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA622241905CB005976EE /* FontStyleScreen.swift */; };
 		84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DA2417995300EDE944 /* StylesScreen.swift */; };
 		84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */; };
 		A9E9A267241062C900844844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A266241062C900844844 /* AppDelegate.swift */; };
@@ -30,6 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		845EA61724190519005976EE /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		845EA61924190562005976EE /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		845EA61B24190562005976EE /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		845EA61C24190562005976EE /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		845EA61D24190562005976EE /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
+		845EA622241905CB005976EE /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
 		84DDC8DA2417995300EDE944 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
 		84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
 		A9E9A263241062C900844844 /* SwiftUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +88,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		845EA6162419045A005976EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A26C241062CB00844844 /* Assets.xcassets */,
+				845EA61A24190562005976EE /* Fonts */,
+				845EA61924190562005976EE /* Fonts.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		845EA61A24190562005976EE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				845EA61B24190562005976EE /* AbrilFatface-Regular.ttf */,
+				845EA61D24190562005976EE /* Lobster-Regular.ttf */,
+				845EA61C24190562005976EE /* LuckiestGuy-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A9E9A25A241062C900844844 = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				A9E9A2882410669000844844 /* App */,
-				A9E9A26C241062CB00844844 /* Assets.xcassets */,
 				A9E9A27D241063AE00844844 /* Blur */,
 				A9E9A2BD2411978D00844844 /* Common */,
 				A9E9A2AD24107E6F00844844 /* Extensions */,
 				A9E9A2A6241076F200844844 /* Gestures */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
+				845EA6162419045A005976EE /* Resources */,
 				A9E9A2B5241193B500844844 /* Styles */,
 				A9E9A2BA2411961F00844844 /* Toast */,
 			);
@@ -151,6 +182,7 @@
 				A9E9A2992410756A00844844 /* Package.swift */,
 				A9E9A29A2410756A00844844 /* README.md */,
 				A9E9A29E241075A300844844 /* Release Notes.md */,
+				845EA61724190519005976EE /* swiftgen.yml */,
 				A9E9A29F241075A900844844 /* SwiftUIKit.podspec */,
 			);
 			name = "Project Files";
@@ -189,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */,
+				845EA622241905CB005976EE /* FontStyleScreen.swift */,
 				A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */,
 				84DDC8DA2417995300EDE944 /* StylesScreen.swift */,
 			);
@@ -219,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9E9A277241062CB00844844 /* Build configuration list for PBXNativeTarget "SwiftUIKitDemo" */;
 			buildPhases = (
+				845EA6182419053C005976EE /* SwiftGen */,
 				A9E9A25F241062C900844844 /* Sources */,
 				A9E9A260241062C900844844 /* Frameworks */,
 				A9E9A261241062C900844844 /* Resources */,
@@ -277,12 +311,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */,
+				845EA62124190562005976EE /* Lobster-Regular.ttf in Resources */,
 				A9E9A270241062CB00844844 /* Preview Assets.xcassets in Resources */,
 				A9E9A26D241062CB00844844 /* Assets.xcassets in Resources */,
+				845EA62024190562005976EE /* LuckiestGuy-Regular.ttf in Resources */,
+				845EA61F24190562005976EE /* AbrilFatface-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		845EA6182419053C005976EE /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Uncomment this to regenerate enums from available resources\n# swiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9E9A25F241062C900844844 /* Sources */ = {
@@ -295,7 +353,9 @@
 				A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
 				84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */,
+				845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */,
 				A9E9A2BF2411979700844844 /* DemoListItem.swift in Sources */,
+				845EA61E24190562005976EE /* Fonts.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,

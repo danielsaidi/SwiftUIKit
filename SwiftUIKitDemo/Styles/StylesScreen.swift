@@ -12,6 +12,7 @@ struct StylesScreen: View {
     var body: some View {
         List {
             NavigationLink("Corner Radius Style", destination: CornerRadiusStyleScreen())
+            NavigationLink("Font Style", destination: FontStyleScreen())
             NavigationLink("Shadow Style", destination: ShadowStyleScreen())
         }.navigationBarTitle("Styles")
     }
