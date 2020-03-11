@@ -12,6 +12,8 @@ import SwiftUI
  This struct represents a custom font with a `name`, `style`
  and `weight`.
  
+ You can create styles with font names of `FontIdentifier`s.
+ 
  You can apply this style with the `shadow(_ style:)` `View`
  extension or use its properties directly using the built-in
  `font(name:,style:,weight:)` extension.
@@ -21,9 +23,27 @@ import SwiftUI
  */
 public struct FontStyle {
     
-    public var name: String
-    public var style: UIFont.TextStyle
-    public var weight: Font.Weight = .regular
+    public init(
+        name: String,
+        style: UIFont.TextStyle,
+        weight: Font.Weight = .regular) {
+        self.name = name
+        self.style = style
+        self.weight = weight
+    }
+    
+    public init(
+        identifier: FontIdentifier,
+        style: UIFont.TextStyle,
+        weight: Font.Weight = .regular) {
+        self.name = identifier.fontName
+        self.style = style
+        self.weight = weight
+    }
+    
+    public let name: String
+    public let style: UIFont.TextStyle
+    public let weight: Font.Weight
     
     public var font: Font {
         Font.custom(name, size: size).weight(weight)
