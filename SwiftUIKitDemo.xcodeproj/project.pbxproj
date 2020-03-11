@@ -27,7 +27,6 @@
 		A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BB2411962E00844844 /* ToastScreen.swift */; };
 		A9E9A2BF2411979700844844 /* DemoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BE2411979700844844 /* DemoListCell.swift */; };
 		A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C024119B5E00844844 /* DemoList.swift */; };
-		A9E9A2C324119DD300844844 /* SwipeGestureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C224119DD300844844 /* SwipeGestureCell.swift */; };
 		A9E9A2C52411B7BF00844844 /* ToastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C42411B7BF00844844 /* ToastCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 		A9E9A2BB2411962E00844844 /* ToastScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScreen.swift; sourceTree = "<group>"; };
 		A9E9A2BE2411979700844844 /* DemoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListCell.swift; sourceTree = "<group>"; };
 		A9E9A2C024119B5E00844844 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
-		A9E9A2C224119DD300844844 /* SwipeGestureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureCell.swift; sourceTree = "<group>"; };
 		A9E9A2C42411B7BF00844844 /* ToastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +163,6 @@
 			children = (
 				A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */,
 				A9E9A2A7241076FF00844844 /* GesturesScreen.swift */,
-				A9E9A2C224119DD300844844 /* SwipeGestureCell.swift */,
 				A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */,
 			);
 			path = Gestures;
@@ -306,7 +303,6 @@
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
-				A9E9A2C324119DD300844844 /* SwipeGestureCell.swift in Sources */,
 				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
 				A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */,

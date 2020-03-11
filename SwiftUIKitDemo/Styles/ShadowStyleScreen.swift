@@ -14,8 +14,9 @@ struct ShadowStyleScreen: View, DemoList {
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                cell(title: "Discrete", color: .green, style: .standardToast)
-                cell(title: "Crazy red", color: .gray, style: .crazyRed)
+                cell(title: ".discrete", color: .red, style: .discrete)
+                cell(title: ".thinBlue", color: .green, style: .thinBlue)
+                cell(title: ".crazyRed", color: .blue, style: .crazyRed)
             }
         }.navigationBarTitle("ShadowStyle")
     }
@@ -32,6 +33,14 @@ private extension ShadowStyle {
     
     static var crazyRed: ShadowStyle {
         ShadowStyle(color: .red, radius: 20, x: -5, y: 10)
+    }
+    
+    static var discrete: ShadowStyle {
+        .standardToast
+    }
+    
+    static var thinBlue: ShadowStyle {
+        ShadowStyle(color: .blue, radius: 2, x: 0, y: 0)
     }
 }
 
