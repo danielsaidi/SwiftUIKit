@@ -25,7 +25,7 @@ import UIKit
  */
 public struct SwipeGesture: UIViewRepresentable {
     
-    init(
+    public init(
         up: @escaping Action = {},
         left: @escaping Action = {},
         right: @escaping Action = {},
