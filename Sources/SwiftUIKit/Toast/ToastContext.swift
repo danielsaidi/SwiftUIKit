@@ -1,5 +1,5 @@
 //
-//  Toast.swift
+//  ToastContext.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-03-18.
@@ -10,13 +10,16 @@ import SwiftUI
 
 /**
  This class can be used to manage the presentation state and
- content of a view's toast.
+ content of a view's toast, so that you don't have to manage
+ several properties.
  */
 public class ToastContext: ObservableObject {
     
-    @Published var isPresented = false
-    @Published var text = ""
-    @Published var content = EmptyView().any()
+    public init() {}
+    
+    @Published public var isPresented = false
+    @Published public var text = ""
+    @Published public var content = EmptyView().any()
     
     public func setText(_ text: String) {
         self.text = text

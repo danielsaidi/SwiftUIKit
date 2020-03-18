@@ -3,12 +3,17 @@
 
 ## 0.3.0
 
-This release makes some small changes:
+This release adds some new toast features:
+
+* `ToastContext` is an observable object can be used to manage a view's toast.
+* `ToastStyle` is a new struct that contains all available styles for a toast.
+
+This release makes some small api changes:
 
 * The `SwipeGesture` initializer has been made public.
-* `Toast` now uses a `ToastStyle`  instead of separate style properties.
-* The text-based `Toast` extension will automatically center the text.
-* The `Toast` extensions now require you to specify a background.    
+* `Toast` now uses `ToastStyle`  instead of separate style properties.
+* The `Toast` extensions now require you to specify a background.
+* The text-based `Toast` extension automatically centers the text.    
 
 
 ## 0.2.1
