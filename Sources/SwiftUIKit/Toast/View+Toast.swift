@@ -12,23 +12,19 @@ public extension View {
 
     /**
      Shows a vertically and horizontally centered toast over
-     the view, with custom `content` and `background` views.
-     
-     For instance, you can have a `Text` view over a `Color`
-     background, an `Image` over a background `Image`, or an
-     even more complex view hierarchy.
+     the view, with a custom `text` and `background`.
      */
-    func toast(
+    func toast<Background: View>(
         isPresented: Binding<Bool>,
         text: String,
-        backgroundColor: Color? = nil,
+        background: Background,
         cornerRadius: CGFloat = 10,
         shadowStyle: ShadowStyle = .standardToast,
         duration: TimeInterval = 2) -> some View {
         toast(
             isPresented: isPresented,
-            content: Text(text),
-            background: backgroundColor,
+            content: Text(text).multilineTextAlignment(.center),
+            background: background,
             cornerRadius: cornerRadius,
             shadowStyle: shadowStyle,
             duration: duration
@@ -37,36 +33,23 @@ public extension View {
     
     /**
      Shows a vertically and horizontally centered toast over
-     the view, with custom `content` and `background` views.
-     
-     For instance, you can have a `Text` view over a `Color`
-     background, an `Image` over a background `Image`, or an
-     even more complex view hierarchy.
+     the view, with a custom `content` and `background`.
      */
     func toast<Content: View, Background: View>(
         isPresented: Binding<Bool>,
         content: Content,
-        background: Background? = nil,
+        background: Background,
         cornerRadius: CGFloat = 10,
         shadowStyle: ShadowStyle = .standardToast,
         duration: TimeInterval = 2) -> some View {
         Toast(
             isPresented: isPresented,
             content: content,
-            background: backgroundView(for: background),
+            background: background,
             cornerRadius: cornerRadius,
             shadowStyle: shadowStyle,
             duration: duration,
             presenter: { self }
         )
-    }
-}
-
-private extension View {
-    
-    func backgroundView<Background: View>(for view: Background?) -> AnyView {
-        let fallback = Color.primary.colorInvert().any()
-        guard let view = view else { return fallback }
-        return view.any()
     }
 }

@@ -9,14 +9,17 @@
 import SwiftUI
 
 /**
- `Toast` is a view with a custom `content` and `background`,
- that is intended to be briefly presented to notify the user
- about something.
+ A `Toast` is a brief overlay view with custom `content` and
+ `background`. It is intended to briefly present information
+ to the user, and will hide itself after a custom `duration`.
  
- When it's presented, it wraps itself and the `presenter` in
- a `ZStack` and centers itself over the presenter. It uses a
- fade in animation, stays for a custom `duration` then fades
- out again.
+ Toasts can for instance present a `Text` over a `Color`, an
+ `Image` over an `Image`, or use even more complex views.
+ 
+ When a toast is presented, it wraps itself and a `presenter`
+ within a `ZStack` and centers itself over the presenter. It
+ has a fade in animation, stays for a custom `duration` then
+ fades out.
  
  The easiest way to add a `Toast` to a `View`, is to use the
  `toast(...)` `View` extensions.
