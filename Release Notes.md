@@ -1,13 +1,14 @@
 # Release notes
 
 
-## 0.2.2
+## 0.3.0
 
 This release makes some small changes:
 
 * The `SwipeGesture` initializer has been made public.
+* `Toast` now uses a `ToastStyle`  instead of separate style properties.
 * The text-based `Toast` extension will automatically center the text.
-* The `Toast` extensions now require you to specify a background.  
+* The `Toast` extensions now require you to specify a background.    
 
 
 ## 0.2.1

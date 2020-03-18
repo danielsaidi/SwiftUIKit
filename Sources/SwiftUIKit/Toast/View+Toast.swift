@@ -18,15 +18,13 @@ public extension View {
         isPresented: Binding<Bool>,
         text: String,
         background: Background,
-        cornerRadius: CGFloat = 10,
-        shadowStyle: ShadowStyle = .standardToast,
+        style: ToastStyle = .standard,
         duration: TimeInterval = 2) -> some View {
         toast(
             isPresented: isPresented,
             content: Text(text).multilineTextAlignment(.center),
             background: background,
-            cornerRadius: cornerRadius,
-            shadowStyle: shadowStyle,
+            style: style,
             duration: duration
         )
     }
@@ -39,15 +37,13 @@ public extension View {
         isPresented: Binding<Bool>,
         content: Content,
         background: Background,
-        cornerRadius: CGFloat = 10,
-        shadowStyle: ShadowStyle = .standardToast,
+        style: ToastStyle = .standard,
         duration: TimeInterval = 2) -> some View {
         Toast(
             isPresented: isPresented,
             content: content,
             background: background,
-            cornerRadius: cornerRadius,
-            shadowStyle: shadowStyle,
+            style: style,
             duration: duration,
             presenter: { self }
         )

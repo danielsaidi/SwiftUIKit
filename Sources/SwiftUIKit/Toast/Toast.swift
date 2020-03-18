@@ -30,8 +30,7 @@ public struct Toast<Presenter: View, Content: View, Background: View>: View {
     
     public let content: Content
     public let background: Background
-    public let cornerRadius: CGFloat
-    public let shadowStyle: ShadowStyle
+    public let style: ToastStyle
     public let duration: TimeInterval
     public let presenter: () -> Presenter
     
@@ -42,8 +41,8 @@ public struct Toast<Presenter: View, Content: View, Background: View>: View {
             content
                 .padding()
                 .background(background)
-                .cornerRadius(cornerRadius)
-                .shadow(shadowStyle)
+                .cornerRadius(style.cornerRadius)
+                .shadow(style.shadowStyle)
                 .opacity(isPresented ? 1 : 0)
         }
     }
