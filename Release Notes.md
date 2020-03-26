@@ -16,7 +16,7 @@ UIColor.red.bindGeometry(to: $height) { $0.size.height }
 
 Breaking changes:
 
-* The `readSafeAreaInsets` `View` extension is renamed to `bindSafeAreaInsets`.
+* The `readSafeAreaInsets` `View` extension is renamed to `bindSafeAreaInset(of:to:)`.
 
 
 ## 0.3.0

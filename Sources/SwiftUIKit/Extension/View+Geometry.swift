@@ -15,11 +15,11 @@ public extension View {
      to an external binding.
      */
     func bindGeometry(
-        to value: Binding<CGFloat>,
+        to binding: Binding<CGFloat>,
         reader: @escaping (GeometryProxy) -> CGFloat) -> some View {
         self.background(GeometryBinding(reader: reader))
             .onPreferenceChange(GeometryPreference.self) {
-                value.wrappedValue = $0
+                binding.wrappedValue = $0
         }
     }
 }
