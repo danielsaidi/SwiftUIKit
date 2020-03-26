@@ -14,9 +14,14 @@ You can use it like this:
 UIColor.red.bindGeometry(to: $height) { $0.size.height }
 ```
 
-Breaking changes:
+To harmonize with this new extension, the `readSafeAreaInsets` extension has been renamed to `bindSafeAreaInset(of:to:)`.
 
-* The `readSafeAreaInsets` `View` extension is renamed to `bindSafeAreaInset(of:to:)`.
+You can use it like this:
+
+```swift
+@State private var topInset: CGFloat = 0
+UIColor.red.bindSafeAreaInset(of: .top, to: $topInset)
+```
 
 
 ## 0.3.0
