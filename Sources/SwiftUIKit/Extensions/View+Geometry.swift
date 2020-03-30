@@ -11,40 +11,45 @@ import SwiftUI
 public extension View {
     
     /**
-     Bind any `CGFloat` value within a `GeometryProxy` value
-     to an external binding.
+     Bind the view's safe area to a binding.
      */
-    func bindGeometry(
-        to binding: Binding<CGFloat>,
-        reader: @escaping (GeometryProxy) -> CGFloat) -> some View {
-        self.background(GeometryBinding(reader: reader))
-            .onPreferenceChange(GeometryPreference.self) {
-                binding.wrappedValue = $0
-        }
+    func bindSafeAreaInsets(to binding: Binding<EdgeInsets>) -> some View {
+        background(safeAreaBindingView(for: binding))
+    }
+    
+    /**
+    Bind the view's size to a binding.
+    */
+    func bindSize(to binding: Binding<CGSize>) -> some View {
+        background(sizeBindingView(for: binding))
     }
 }
 
-private struct GeometryBinding: View {
+private extension View {
     
-    let reader: (GeometryProxy) -> CGFloat
+    func changeStateAsync(_ action: @escaping () -> Void) {
+        DispatchQueue.main.async(execute: action)
+    }
     
-    var body: some View {
+    func safeAreaBindingView(for binding: Binding<EdgeInsets>) -> some View {
         GeometryReader { geo in
-            Color.clear.preference(
-                key: GeometryPreference.self,
-                value: self.reader(geo)
-            )
+            self.safeAreaBindingView(for: binding, geo: geo)
         }
     }
-}
-
-private struct GeometryPreference: PreferenceKey {
     
-    typealias Value = CGFloat
-
-    static var defaultValue: CGFloat = 0
-
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = max(value, nextValue())
+    func safeAreaBindingView(for binding: Binding<EdgeInsets>, geo: GeometryProxy) -> some View {
+        changeStateAsync { binding.wrappedValue = geo.safeAreaInsets }
+        return Color.clear
+    }
+    
+    func sizeBindingView(for binding: Binding<CGSize>) -> some View {
+        GeometryReader { geo in
+            self.sizeBindingView(for: binding, geo: geo)
+        }
+    }
+    
+    func sizeBindingView(for binding: Binding<CGSize>, geo: GeometryProxy) -> some View {
+        changeStateAsync { binding.wrappedValue = geo.size }
+        return Color.clear
     }
 }

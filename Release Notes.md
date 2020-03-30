@@ -1,27 +1,29 @@
 # Release notes
 
 
-## 0.4.0
+## 0.4.1
 
-This release adds a new geometry `View` extension.
+This release changes the `View` geometry extensions and replaces `bindGeometry(to: ...)` with:
 
-`bindGeometry(to: ...)` lets you bind any `CGFloat` geometry value for a view. It injects a `GeometryReader` and provides it back to the extension's value resolve block.
+* `bindSafeAreaInsets(to: ...)`
+* `bindSize(to: ...)`
 
-You can use it like this:
+You can use them like this:
 
 ```swift
-@State private var height: CGFloat = 0
+@State private var size: CGSize = .zero
+@State private var size: CGSize = .zero
 UIColor.red.bindGeometry(to: $height) { $0.size.height }
 ```
 
-To harmonize with this new extension, the `readSafeAreaInsets` extension has been renamed to `bindSafeAreaInset(of:to:)`.
 
-You can use it like this:
+## 0.4.0
 
-```swift
-@State private var topInset: CGFloat = 0
-UIColor.red.bindSafeAreaInset(of: .top, to: $topInset)
-```
+This release adds a new geometry `View` extension:
+
+* `bindGeometry(to: ...)` lets you bind any `CGFloat` geometry value for a view.
+
+The extension injects a `GeometryReader` and provides values to the provided binding.
 
 
 ## 0.3.0
