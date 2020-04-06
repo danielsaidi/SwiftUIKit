@@ -2,7 +2,7 @@
 //  ImagePicker.swift
 //  SwiftUIKit
 //
-//  Created by Daniel Saidi on 2020-04-02.
+//  Created by Daniel Saidi on 2020-04-07.
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
@@ -27,13 +27,13 @@ public struct ImagePicker: UIViewControllerRepresentable {
         self.localization = localization
     }
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @Binding private(set) var image: UIImage?
     private let completionHandler: ImagePickerCompletionHandler
     private let localization: Localization
     
     public typealias Context = UIViewControllerRepresentableContext<ImagePicker>
-    
-    @Environment(\.presentationMode) var presentationMode
     
     public func makeCoordinator() -> Coordinator {
         Coordinator(self)

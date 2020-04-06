@@ -3,7 +3,10 @@
 
 ## 0.5.0
 
-This release adds a new `ImagePicker` component, which can be used to present a `UIImagePickerController` `UIKit` controller.
+This release adds:
+
+* a new `ImagePicker`  that can be used to present a `UIImagePickerController`.
+* a new `FilePicker` that can be used to present a `UIDocumentPickerViewController`.  
 
 
 ## 0.4.1

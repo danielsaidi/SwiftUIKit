@@ -2,7 +2,7 @@
 //  ImagePickerCompletionHandler.swift
 //  SwiftUIKit
 //
-//  Created by Daniel Saidi on 2020-04-06.
+//  Created by Daniel Saidi on 2020-04-07.
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
