@@ -6,7 +6,8 @@
 This release adds:
 
 * a new `ImagePicker`  that can be used to present a `UIImagePickerController`.
-* a new `FilePicker` that can be used to present a `UIDocumentPickerViewController`.  
+* a new `FilePicker` that can be used to present a `UIDocumentPickerViewController`.
+* a new `ShareSheet` that can be used to present a `UIActivityViewController`.  
 
 
 ## 0.4.1
