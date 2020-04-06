@@ -1,12 +1,16 @@
 # Release notes
 
 
+<<<<<<< HEAD
+## 0.4.1
+=======
 ## 0.5.0
 
 This release adds a new `ImagePicker` component, which can be used to present a `UIImagePickerController` `UIKit` controller.
 
 
-## 0.4.1
+## 0.4.0
+>>>>>>> Add image picker
 
 This release changes the `View` geometry extensions and replaces `bindGeometry(to: ...)` with:
 
