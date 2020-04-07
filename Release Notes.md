@@ -5,9 +5,10 @@
 
 This release adds:
 
-* a new `ImagePicker`  that can be used to present a `UIImagePickerController`.
-* a new `FilePicker` that can be used to present a `UIDocumentPickerViewController`.
-* a new `ShareSheet` that can be used to present a `UIActivityViewController`.  
+* An `ImagePicker`  that can be used to present a `UIImagePickerController`.
+* An `FilePicker` that can be used to present a `UIDocumentPickerViewController`.
+* An `ShareSheet` that can be used to present a `UIActivityViewController`.
+* An `UserDefaultsPersisted` property wrapper that lets you persist data to `UserDefaults`.
 
 
 ## 0.4.1
