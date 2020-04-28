@@ -17,9 +17,9 @@
 
 ## About SwiftUIKit
 
-`SwiftUIKit` contains additional functionality to `SwiftUI`, both things that should be in `SwiftUI` (and most probably will be soon) as well as custom things that may never (and most probably never will or should be be) be added to SwiftUI.
+`SwiftUIKit` adds functionality to `SwiftUI`, both things that most probably will be part of the SwiftUI in the next upcoming versions, as well as custom useful functionality.
 
-You can read more about the different parts of this library:
+You can read more about the different parts of `SwiftUIKit` in separate readmes:
 
 * [Blur][Blur]
 * [Extensions][Extensions]
@@ -50,20 +50,15 @@ pod DSSwiftUIKit
 ```
 
 
-### Carthage
-
-Not yet supported.
-
-
 ## <a name="why"></a>Why a big "Kit"?
 
-Yep, it's an absolutely horrible idea. Putting a bunch of functionality together in a big library makes it too big for people to find what they're looking for. If they want a toast view for SwiftUI, they're not going to dig in "SwiftUIKit" too see if it has one. No, they're going to find the most toasty library out there with the most amount of stars and use that one.
+Having a big "kit" is a bad idea, since it may become too generic and hard to overview. For instance, if I want a SwiftUI toast, I'm not going to dig around in SwiftUIKit for one, but rather use the best single-purpose toast library.
 
-On top of this, there are actual GitHub stars too tell the story. Many years ago, I started putting reusable iOS functionality into a library I call [iExtra](https://github.com/danielsaidi/iExtra). To this day, it has 10 stars, while the tiny `SwiftUIBlurView` I created a few months ago already has 80. That should also tell me something.
+The GitHub stars confirm this as well. Many years ago, I started putting reusable iOS functionality into a library I call [iExtra](https://github.com/danielsaidi/iExtra). I think it's an amazing library and I use it in most of my apps. To this day, it has 12 stars.
 
-However, each open source project comes with a bunch of overhead. If I wanted to create a new library for each little SwiftUI thing I make, I'd have to spend a night on setup for each new project. There are names to come up with, icons and logos to be made etc. and then there's the actual maintenance.
+However, each project comes with overhead. If I decided to create a new library for each little thing I make, I'd spend a lot of time setting up each new project. There are funny names to come up with, icons and logos to be made, maintenance etc.
 
-SO instead of honoring every little idea I have with a new library, I'm just going to put them here until they are either too large or too good to be part of this library. When that happens, they'll break out of their little cage and move into a library of their own.
+SO instead of honoring every little idea with a new library, I'm going to put most here until they are either too large or too good to be a part of this library. When that happens, they'll break out of their little cage and move into a library of their own.
 
 
 ## Contact me
