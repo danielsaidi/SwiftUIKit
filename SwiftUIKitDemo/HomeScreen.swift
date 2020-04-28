@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeScreen.swift
 //  SwiftUIKitDemo
 //
 //  Created by Daniel Saidi on 2020-03-04.
@@ -22,7 +22,7 @@ struct HomeScreen: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreen()
     }

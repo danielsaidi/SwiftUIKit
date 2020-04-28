@@ -130,7 +130,7 @@
 			children = (
 				A9E9A2882410669000844844 /* App */,
 				A9E9A27D241063AE00844844 /* Blur */,
-				A9E9A2BD2411978D00844844 /* Common */,
+				A9E9A2BD2411978D00844844 /* Demo */,
 				A9E9A2AD24107E6F00844844 /* Extensions */,
 				A9E9A2A6241076F200844844 /* Gestures */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
@@ -236,13 +236,13 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
-		A9E9A2BD2411978D00844844 /* Common */ = {
+		A9E9A2BD2411978D00844844 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				A9E9A2C024119B5E00844844 /* DemoList.swift */,
 				A9E9A2BE2411979700844844 /* DemoListItem.swift */,
 			);
-			path = Common;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,7 +509,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.danielsaidi.SwiftUIKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielsaidi.swiftuikit.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,7 +529,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.danielsaidi.SwiftUIKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielsaidi.swiftuikit.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
