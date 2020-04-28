@@ -49,6 +49,8 @@ https://github.com/danielsaidi/SwiftUIKit.git
 pod DSSwiftUIKit
 ```
 
+Note that you have to import `SwiftUIKit` with `import DSSwiftUIKit` if you add it with CocoaPods. The name `SwiftUIKit` was (not surprising) already taken.
+
 
 ## <a name="why"></a>Why a big "Kit"?
 
