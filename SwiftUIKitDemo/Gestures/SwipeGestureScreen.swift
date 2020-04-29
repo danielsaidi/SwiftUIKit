@@ -23,7 +23,7 @@ struct SwipeGestureScreen: View, DemoList {
             item(title: "Swipe me tooooo!", color: .blue)
             Spacer()
         }
-        .toast(isPresented: $isToastActive, text: toastMessage)
+        .toast(isPresented: $isToastActive, text: toastMessage, background: Color.white)
         .navigationBarTitle("SwipeGesture")
     }
 }
