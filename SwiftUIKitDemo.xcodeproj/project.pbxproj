@@ -19,6 +19,10 @@
 		A9AE2E1A248BFBA500D9BC2A /* Toast.md in Resources */ = {isa = PBXBuildFile; fileRef = A9AE2E17248BFBA500D9BC2A /* Toast.md */; };
 		A9AE2E1D248BFCAC00D9BC2A /* SheetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E1C248BFCAC00D9BC2A /* SheetsScreen.swift */; };
 		A9AE2E1F248BFE7800D9BC2A /* DemoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E1E248BFE7800D9BC2A /* DemoSheet.swift */; };
+		A9AE2E26248C03F900D9BC2A /* Data.md in Resources */ = {isa = PBXBuildFile; fileRef = A9AE2E25248C03F800D9BC2A /* Data.md */; };
+		A9AE2E2B248C055800D9BC2A /* QrCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E2A248C055800D9BC2A /* QrCodeGeneratorScreen.swift */; };
+		A9AE2E2D248C056900D9BC2A /* DataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E2C248C056900D9BC2A /* DataScreen.swift */; };
+		A9AE2E2F248C059D00D9BC2A /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E2E248C059D00D9BC2A /* UserDefaultsPersistedScreen.swift */; };
 		A9E9A267241062C900844844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A266241062C900844844 /* AppDelegate.swift */; };
 		A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A268241062C900844844 /* SceneDelegate.swift */; };
 		A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A26A241062C900844844 /* HomeScreen.swift */; };
@@ -53,6 +57,10 @@
 		A9AE2E17248BFBA500D9BC2A /* Toast.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Toast.md; sourceTree = "<group>"; };
 		A9AE2E1C248BFCAC00D9BC2A /* SheetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsScreen.swift; sourceTree = "<group>"; };
 		A9AE2E1E248BFE7800D9BC2A /* DemoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSheet.swift; sourceTree = "<group>"; };
+		A9AE2E25248C03F800D9BC2A /* Data.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Data.md; sourceTree = "<group>"; };
+		A9AE2E2A248C055800D9BC2A /* QrCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeGeneratorScreen.swift; sourceTree = "<group>"; };
+		A9AE2E2C248C056900D9BC2A /* DataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScreen.swift; sourceTree = "<group>"; };
+		A9AE2E2E248C059D00D9BC2A /* UserDefaultsPersistedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistedScreen.swift; sourceTree = "<group>"; };
 		A9E9A263241062C900844844 /* SwiftUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9A266241062C900844844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E9A268241062C900844844 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +134,16 @@
 			path = Sheets;
 			sourceTree = "<group>";
 		};
+		A9AE2E27248C053E00D9BC2A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A9AE2E2C248C056900D9BC2A /* DataScreen.swift */,
+				A9AE2E2A248C055800D9BC2A /* QrCodeGeneratorScreen.swift */,
+				A9AE2E2E248C059D00D9BC2A /* UserDefaultsPersistedScreen.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A9E9A25A241062C900844844 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +164,7 @@
 		A9E9A265241062C900844844 /* SwiftUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A9AE2E27248C053E00D9BC2A /* Data */,
 				A9E9A2882410669000844844 /* App */,
 				A9E9A27D241063AE00844844 /* Blur */,
 				A9E9A2BD2411978D00844844 /* Demo */,
@@ -229,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E9A2B224114E7400844844 /* Blur.md */,
+				A9AE2E25248C03F800D9BC2A /* Data.md */,
 				A9E9A2B424114E7400844844 /* Extensions.md */,
 				A9E9A2B124114E7400844844 /* Gestures.md */,
 				A9AE2E15248BFBA500D9BC2A /* Sheets.md */,
@@ -331,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AE2E26248C03F900D9BC2A /* Data.md in Resources */,
 				A9AE2E1A248BFBA500D9BC2A /* Toast.md in Resources */,
 				A9AE2E18248BFBA500D9BC2A /* Sheets.md in Resources */,
 				A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */,
@@ -374,15 +395,18 @@
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
 				A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */,
 				84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */,
+				A9AE2E2F248C059D00D9BC2A /* UserDefaultsPersistedScreen.swift in Sources */,
 				A9E9A2AF24107E7900844844 /* ExtensionsScreen.swift in Sources */,
 				A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */,
 				84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */,
+				A9AE2E2B248C055800D9BC2A /* QrCodeGeneratorScreen.swift in Sources */,
 				845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */,
 				A9E9A2BF2411979700844844 /* DemoListItem.swift in Sources */,
 				A9AE2E1F248BFE7800D9BC2A /* DemoSheet.swift in Sources */,
 				845EA61E24190562005976EE /* Fonts.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
+				A9AE2E2D248C056900D9BC2A /* DataScreen.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
 				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,

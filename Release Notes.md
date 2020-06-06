@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 0.6.0
+
+This release adds:
+
+* A `SheetContext`  that simplifies working with action sheets.
+* A `QrCodeGenerator` and a `StandardQrCodeGenerator` implementation.
+
+
 ## 0.5.0
 
 This release adds:
