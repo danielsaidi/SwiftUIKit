@@ -12,9 +12,9 @@ struct ExtensionsScreen: View {
     var body: some View {
         ScrollView(.vertical) {
             Text("""
-            SwiftUIKit contains extensions to SwiftUI components, e.g. re-applying safe area insets within a parent that ignores them, type erasures etc.
+            SwiftUIKit contains a bunch of extensions that makes using SwiftUI easier.
 
-            Since this namespace will probably grow much, individual extensions are not listed or demonstrated here. Instead, have a look at the source code to see what kind of extensions this library contains. They should all be pretty well documented.
+            Since this namespace will probably grow much and fast, extensions are not demonstrated in this app. Instead, have a look at code to see what extensions this library contains.
             """).lineLimit(1000)
                 .padding()
         }.navigationBarTitle("Extensions")
