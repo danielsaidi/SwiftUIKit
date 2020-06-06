@@ -24,6 +24,7 @@ You can read more about the different parts of `SwiftUIKit` in separate readmes:
 * [Blur][Blur]
 * [Extensions][Extensions]
 * [Gestures][Gestures]
+* [Sheets][Sheets]
 * [Styles][Styles]
 * [Toast][Toast]
 
@@ -86,5 +87,6 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [Blur]: Readmes/Blur.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
+[Sheets]: Readmes/Sheets.md
 [Styles]: Readmes/Styles.md
 [Toast]: Readmes/Toast.md

@@ -14,6 +14,11 @@
 		845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA622241905CB005976EE /* FontStyleScreen.swift */; };
 		84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DA2417995300EDE944 /* StylesScreen.swift */; };
 		84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */; };
+		A9AE2E18248BFBA500D9BC2A /* Sheets.md in Resources */ = {isa = PBXBuildFile; fileRef = A9AE2E15248BFBA500D9BC2A /* Sheets.md */; };
+		A9AE2E19248BFBA500D9BC2A /* Styles.md in Resources */ = {isa = PBXBuildFile; fileRef = A9AE2E16248BFBA500D9BC2A /* Styles.md */; };
+		A9AE2E1A248BFBA500D9BC2A /* Toast.md in Resources */ = {isa = PBXBuildFile; fileRef = A9AE2E17248BFBA500D9BC2A /* Toast.md */; };
+		A9AE2E1D248BFCAC00D9BC2A /* SheetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E1C248BFCAC00D9BC2A /* SheetsScreen.swift */; };
+		A9AE2E1F248BFE7800D9BC2A /* DemoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2E1E248BFE7800D9BC2A /* DemoSheet.swift */; };
 		A9E9A267241062C900844844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A266241062C900844844 /* AppDelegate.swift */; };
 		A9E9A269241062C900844844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A268241062C900844844 /* SceneDelegate.swift */; };
 		A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A26A241062C900844844 /* HomeScreen.swift */; };
@@ -43,6 +48,11 @@
 		845EA622241905CB005976EE /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
 		84DDC8DA2417995300EDE944 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
 		84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
+		A9AE2E15248BFBA500D9BC2A /* Sheets.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Sheets.md; sourceTree = "<group>"; };
+		A9AE2E16248BFBA500D9BC2A /* Styles.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Styles.md; sourceTree = "<group>"; };
+		A9AE2E17248BFBA500D9BC2A /* Toast.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Toast.md; sourceTree = "<group>"; };
+		A9AE2E1C248BFCAC00D9BC2A /* SheetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsScreen.swift; sourceTree = "<group>"; };
+		A9AE2E1E248BFE7800D9BC2A /* DemoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSheet.swift; sourceTree = "<group>"; };
 		A9E9A263241062C900844844 /* SwiftUIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9A266241062C900844844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E9A268241062C900844844 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +78,6 @@
 		A9E9A2AE24107E7900844844 /* ExtensionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsScreen.swift; sourceTree = "<group>"; };
 		A9E9A2B124114E7400844844 /* Gestures.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Gestures.md; sourceTree = "<group>"; };
 		A9E9A2B224114E7400844844 /* Blur.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Blur.md; sourceTree = "<group>"; };
-		A9E9A2B324114E7400844844 /* Shadows.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Shadows.md; sourceTree = "<group>"; };
 		A9E9A2B424114E7400844844 /* Extensions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Extensions.md; sourceTree = "<group>"; };
 		A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyleScreen.swift; sourceTree = "<group>"; };
 		A9E9A2BB2411962E00844844 /* ToastScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScreen.swift; sourceTree = "<group>"; };
@@ -108,6 +117,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A9AE2E1B248BFCA200D9BC2A /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				A9AE2E1C248BFCAC00D9BC2A /* SheetsScreen.swift */,
+				A9AE2E1E248BFE7800D9BC2A /* DemoSheet.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
 		A9E9A25A241062C900844844 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +153,7 @@
 				A9E9A2A6241076F200844844 /* Gestures */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
 				845EA6162419045A005976EE /* Resources */,
+				A9AE2E1B248BFCA200D9BC2A /* Sheets */,
 				A9E9A2B5241193B500844844 /* Styles */,
 				A9E9A2BA2411961F00844844 /* Toast */,
 			);
@@ -209,10 +228,12 @@
 		A9E9A2B024114E7400844844 /* Readmes */ = {
 			isa = PBXGroup;
 			children = (
-				A9E9A2B124114E7400844844 /* Gestures.md */,
 				A9E9A2B224114E7400844844 /* Blur.md */,
-				A9E9A2B324114E7400844844 /* Shadows.md */,
 				A9E9A2B424114E7400844844 /* Extensions.md */,
+				A9E9A2B124114E7400844844 /* Gestures.md */,
+				A9AE2E15248BFBA500D9BC2A /* Sheets.md */,
+				A9AE2E16248BFBA500D9BC2A /* Styles.md */,
+				A9AE2E17248BFBA500D9BC2A /* Toast.md */,
 			);
 			path = Readmes;
 			sourceTree = "<group>";
@@ -310,9 +331,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AE2E1A248BFBA500D9BC2A /* Toast.md in Resources */,
+				A9AE2E18248BFBA500D9BC2A /* Sheets.md in Resources */,
 				A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */,
 				845EA62124190562005976EE /* Lobster-Regular.ttf in Resources */,
 				A9E9A270241062CB00844844 /* Preview Assets.xcassets in Resources */,
+				A9AE2E19248BFBA500D9BC2A /* Styles.md in Resources */,
 				A9E9A26D241062CB00844844 /* Assets.xcassets in Resources */,
 				845EA62024190562005976EE /* LuckiestGuy-Regular.ttf in Resources */,
 				845EA61F24190562005976EE /* AbrilFatface-Regular.ttf in Resources */,
@@ -355,6 +379,7 @@
 				84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */,
 				845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */,
 				A9E9A2BF2411979700844844 /* DemoListItem.swift in Sources */,
+				A9AE2E1F248BFE7800D9BC2A /* DemoSheet.swift in Sources */,
 				845EA61E24190562005976EE /* Fonts.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlurScreen.swift in Sources */,
@@ -365,6 +390,7 @@
 				A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */,
 				A9E9A2B7241193C400844844 /* ShadowStyleScreen.swift in Sources */,
 				A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */,
+				A9AE2E1D248BFCAC00D9BC2A /* SheetsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
