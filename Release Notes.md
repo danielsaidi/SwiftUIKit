@@ -5,7 +5,8 @@
 
 This release adds:
 
-* A `SheetContext`  that simplifies working with action sheets.
+* An `AlertContext`  that simplifies working with alerts.
+* A `SheetContext`  that simplifies working with modal sheets.
 * A `QrCodeGenerator` and a `StandardQrCodeGenerator` implementation.
 
 

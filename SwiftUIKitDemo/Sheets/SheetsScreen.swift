@@ -16,21 +16,28 @@ struct SheetsScreen: View, DemoList {
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                item(.red)
-                item(.green)
-                item(.blue)
+                itemUsingSheetPresentable(.red)
+                itemUsingSheetPresentable(.green)
+                itemUsingView(.blue)
             }
         }
         .navigationBarTitle("Sheets")
-        .sheet(isPresented: $context.isActive, content: context.view)
+        .sheet(isPresented: $context.isActive, content: context.sheet)
     }
 }
 
 private extension SheetsScreen {
     
-    func item(_ sheet: DemoSheet) -> some View {
+    func itemUsingSheetPresentable(_ sheet: DemoSheet) -> some View {
         let title = "Show a \(sheet.title) sheet"
         let action = { self.context.present(sheet) }
+        return DemoListItem(title: title, content: sheet.color, effect: { $0 })
+            .onTapGesture(perform: action)
+    }
+    
+    func itemUsingView(_ sheet: DemoSheet) -> some View {
+        let title = "Show a \(sheet.title) sheet"
+        let action = { self.context.present(sheet.sheet) }
         return DemoListItem(title: title, content: sheet.color, effect: { $0 })
             .onTapGesture(perform: action)
     }

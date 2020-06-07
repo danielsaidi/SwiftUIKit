@@ -1,5 +1,5 @@
 //
-//  DemoSheet.swift
+//  DemoAlert.swift
 //  SwiftUIKitDemo
 //
 //  Created by Daniel Saidi on 2020-06-06.
@@ -9,12 +9,15 @@
 import SwiftUI
 import SwiftUIKit
 
-enum DemoSheet: SheetPresentable {
+enum DemoAlert: AlertPresentable {
     
     case red, green, blue
     
-    var sheet: AnyView {
-        color.edgesIgnoringSafeArea(.all).any()
+    var alert: Alert {
+        Alert(
+            title: Text("\(title.capitalized)"),
+            message: Text("Ok, so this alert isn't \(title), but at least it says \"\(title)\". Tap OK to close"),
+            dismissButton: Alert.Button.default(Text("OK")))
     }
     
     var color: Color {

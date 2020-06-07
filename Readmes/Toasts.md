@@ -1,6 +1,9 @@
-# Toast
+# Toasts
 
-`SwiftUIKit` contains logic for presenting a customizable toast message above another view.
+`SwiftUIKit` contains logic for presenting customizable toast messages above another view.
+
+
+## Toast
 
 The `Toast` view has custom `content` and `background` views, which means that you can present anything in this toast.
 

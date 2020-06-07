@@ -21,12 +21,14 @@
 
 You can read more about the different parts of `SwiftUIKit` in separate readmes:
 
-* [Blur][Blur]
+* [Alerts][Alerts]
+* [Blurs][Blurs]
+* [Data][Data]
 * [Extensions][Extensions]
 * [Gestures][Gestures]
 * [Sheets][Sheets]
 * [Styles][Styles]
-* [Toast][Toast]
+* [Toasts][Toasts]
 
 As things that exist in this library are added to `SwiftUI`, the corresponding functionality in this library will be deprecated and refer to those new features.
 
@@ -84,9 +86,11 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [GitHub]: https://github.com/danielsaidi/SwiftUIKit
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
 
-[Blur]: Readmes/Blur.md
+[Alerts]: Readmes/Alerts.md
+[Blurs]: Readmes/Blurs.md
+[Data]: Readmes/Data.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
 [Sheets]: Readmes/Sheets.md
 [Styles]: Readmes/Styles.md
-[Toast]: Readmes/Toast.md
+[Toasts]: Readmes/Toasts.md

@@ -1,5 +1,5 @@
 //
-//  BlurScreen.swift
+//  BlursScreen.swift
 //  SwiftUIKitDemo
 //
 //  Created by Daniel Saidi on 2020-03-04.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct BlurScreen: View, DemoList {
+struct BlursScreen: View, DemoList {
     
     var body: some View {
         ScrollView {
@@ -21,8 +21,8 @@ struct BlurScreen: View, DemoList {
     }
 }
 
-struct BlurScreen_Previews: PreviewProvider {
+struct BlursScreen_Previews: PreviewProvider {
     static var previews: some View {
-        BlurScreen()
+        BlursScreen()
     }
 }

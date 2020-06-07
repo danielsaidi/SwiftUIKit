@@ -10,24 +10,22 @@ import Combine
 import SwiftUI
 
 /**
- This context can be used to manage action sheets, so a view
- can present a wide range of sheets with a single modifier.
+ This context can be used to present any `View` and anything
+ that implements`SheetPresentable` as modal sheets.
  
- `SheetPresentable` can be implemented by any types that can
- provide a view to this context. It could for instance be an
- app-wide or view-specific enum...or both. This means that a
- view can display a bunch of sheets in the same way.
+ `SheetPresentable` can be implemented by any enum, class or
+ struct that can provide a `sheet` to this context. It means
+ that you can implement custom sheets in many different ways
+ and present all of them the same way, using this context.
  
  To use this context within your view, create an instance of
- it and set its `sheet` property whenever you want to show a
- sheet. You can also use `present(_ sheet: SheetPresentable)`
- which just sets the sheet property.
- 
- To bind the sheet to your view, you can just use the `sheet`
- modifier as you would do with any other sheet:
+ it then call any of the `present(_ sheet: SheetPresentable)`
+ or `present<Sheet: View>(_ sheet: Sheet)` to present sheets.
+ To bind the sheet to views, use the `sheet` modifier as you
+ normally do:
  
  ```swift
- .sheet(isPresented: $sheetContext.isActive, content: sheetContext.view)
+ .sheet(isPresented: $sheetContext.isActive, content: sheetContext.sheet)
  ```
  */
 public class SheetContext: ObservableObject {
@@ -36,16 +34,19 @@ public class SheetContext: ObservableObject {
     
     @Published public var isActive = false
     
-    public var sheet: SheetPresentable? {
-        didSet { isActive = sheet != nil }
-    }
-    
-    public func view() -> AnyView {
-        if let view = sheet?.sheetView { return view.any() }
-        return EmptyView().any()
+    public private(set) var sheetView: AnyView? {
+        didSet { isActive = sheetView != nil }
     }
     
     public func present(_ sheet: SheetPresentable) {
-        self.sheet = sheet
+        sheetView = sheet.sheet
+    }
+    
+    public func present<Sheet: View>(_ sheet: Sheet) {
+        sheetView = sheet.any()
+    }
+    
+    public func sheet() -> AnyView {
+        sheetView?.any() ?? EmptyView().any()
     }
 }

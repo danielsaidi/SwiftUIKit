@@ -9,10 +9,11 @@
 import SwiftUI
 
 /**
- This protocol can be implemented by any type (e.g. an enum)
- that can provide a view to be displayed in a modal sheet.
+ This protocol can be implemented by anything (e.g. a custom
+ enum, struct or a class) that can provide views that should
+ be presented as modal sheets.
  */
 public protocol SheetPresentable {
     
-    var sheetView: AnyView { get }
+    var sheet: AnyView { get }
 }
