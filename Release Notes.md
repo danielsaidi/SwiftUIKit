@@ -20,7 +20,7 @@ This release adds:
 * An `UserDefaultsPersisted` property wrapper that lets you persist data to `UserDefaults`.
 
 
-## 0.4.1
+## 0.4.2
 
 This release changes the `View` geometry extensions and replaces `bindGeometry(to: ...)` with:
 
@@ -34,6 +34,10 @@ You can use them like this:
 @State private var size: CGSize = .zero
 UIColor.red.bindGeometry(to: $height) { $0.size.height }
 ```
+
+## 0.4.1
+
+This release makes the podspec is updated to require Swift 5.2.
 
 
 ## 0.4.0

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84060AFB248E666500D65DD1 /* Views.md in Resources */ = {isa = PBXBuildFile; fileRef = 84060AFA248E666500D65DD1 /* Views.md */; };
 		845EA61E24190562005976EE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA61924190562005976EE /* Fonts.swift */; };
 		845EA61F24190562005976EE /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61B24190562005976EE /* AbrilFatface-Regular.ttf */; };
 		845EA62024190562005976EE /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61C24190562005976EE /* LuckiestGuy-Regular.ttf */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84060AFA248E666500D65DD1 /* Views.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Views.md; sourceTree = "<group>"; };
 		845EA61724190519005976EE /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		845EA61924190562005976EE /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		845EA61B24190562005976EE /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				A9AE2E15248BFBA500D9BC2A /* Sheets.md */,
 				A9AE2E16248BFBA500D9BC2A /* Styles.md */,
 				A9A0581D248D1D5300BCD097 /* Toasts.md */,
+				84060AFA248E666500D65DD1 /* Views.md */,
 			);
 			path = Readmes;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				A9A0581E248D1D5300BCD097 /* Alerts.md in Resources */,
 				A9AE2E18248BFBA500D9BC2A /* Sheets.md in Resources */,
 				A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */,
+				84060AFB248E666500D65DD1 /* Views.md in Resources */,
 				A9A0581F248D1D5300BCD097 /* Blurs.md in Resources */,
 				845EA62124190562005976EE /* Lobster-Regular.ttf in Resources */,
 				A9A05820248D1D5300BCD097 /* Toasts.md in Resources */,
