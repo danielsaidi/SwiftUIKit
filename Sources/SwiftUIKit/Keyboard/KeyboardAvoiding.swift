@@ -34,8 +34,8 @@ public struct KeyboardAvoiding: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .padding(.bottom, self.currentHeight)
-            .edgesIgnoringSafeArea(self.currentHeight == 0 ? Edge.Set() : .bottom)
+            .padding(.bottom, currentHeight)
+            .edgesIgnoringSafeArea(currentHeight == 0 ? Edge.Set() : .bottom)
             .onAppear(perform: subscribeToKeyboardEvents)
     }
     

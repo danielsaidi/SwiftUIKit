@@ -1,11 +1,19 @@
 # Release notes
 
 
+## 0.7.0
+
+This release adds:
+
+* A `KeyboardAvoiding` modifier and view extension.
+* A `MultilineTextView` .
+
+
 ## 0.6.0
 
 This release adds:
 
-* An `AlertContext`  that simplifies working with alerts.
+* An `AlertContext` that simplifies working with alerts.
 * A `SheetContext`  that simplifies working with modal sheets.
 * A `QrCodeGenerator` and a `StandardQrCodeGenerator` implementation.
 

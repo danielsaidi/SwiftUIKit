@@ -26,9 +26,11 @@ You can read more about the different parts of `SwiftUIKit` in separate readmes:
 * [Data][Data]
 * [Extensions][Extensions]
 * [Gestures][Gestures]
+* [Keyboard][Keyboard]
 * [Sheets][Sheets]
 * [Styles][Styles]
 * [Toasts][Toasts]
+* [Views][Views]
 
 As things that exist in this library are added to `SwiftUI`, the corresponding functionality in this library will be deprecated and refer to those new features.
 
@@ -91,6 +93,8 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [Data]: Readmes/Data.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
+[Keyboard]: Readmes/Keyboard.md
 [Sheets]: Readmes/Sheets.md
 [Styles]: Readmes/Styles.md
 [Toasts]: Readmes/Toasts.md
+[Views]: Readmes/Views.md
