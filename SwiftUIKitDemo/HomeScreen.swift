@@ -20,6 +20,7 @@ struct HomeScreen: View {
                 NavigationLink("Data", destination: DataScreen())
                 NavigationLink("Extensions", destination: ExtensionsScreen())
                 NavigationLink("Gestures", destination: GesturesScreen())
+                NavigationLink("Keyboard", destination: KeyboardAvoidingScreen())
                 NavigationLink("Sheets", destination: SheetsScreen())
                 NavigationLink("Styles", destination: StylesScreen())
             }.navigationBarTitle("SwiftUIKit Demo")

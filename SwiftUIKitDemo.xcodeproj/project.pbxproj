@@ -46,6 +46,7 @@
 		A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BB2411962E00844844 /* ToastScreen.swift */; };
 		A9E9A2BF2411979700844844 /* DemoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BE2411979700844844 /* DemoListItem.swift */; };
 		A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2C024119B5E00844844 /* DemoList.swift */; };
+		A9FEDE0D248EE8D6005D6A34 /* KeyboardAvoidingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FEDE0C248EE8D6005D6A34 /* KeyboardAvoidingScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		A9E9A2BB2411962E00844844 /* ToastScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScreen.swift; sourceTree = "<group>"; };
 		A9E9A2BE2411979700844844 /* DemoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListItem.swift; sourceTree = "<group>"; };
 		A9E9A2C024119B5E00844844 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
+		A9FEDE0C248EE8D6005D6A34 /* KeyboardAvoidingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		A9E9A265241062C900844844 /* SwiftUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A9FEDE0B248EE8C0005D6A34 /* Keyboard */,
 				A9A05821248D1DD900BCD097 /* Alerts */,
 				A9AE2E27248C053E00D9BC2A /* Data */,
 				A9E9A2882410669000844844 /* App */,
@@ -307,6 +310,14 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
+		A9FEDE0B248EE8C0005D6A34 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A9FEDE0C248EE8D6005D6A34 /* KeyboardAvoidingScreen.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,6 +430,7 @@
 				A9A05823248D1DE500BCD097 /* AlertsScreen.swift in Sources */,
 				A9E9A267241062C900844844 /* AppDelegate.swift in Sources */,
 				A9E9A2C124119B5E00844844 /* DemoList.swift in Sources */,
+				A9FEDE0D248EE8D6005D6A34 /* KeyboardAvoidingScreen.swift in Sources */,
 				84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */,
 				A9AE2E2F248C059D00D9BC2A /* UserDefaultsPersistedScreen.swift in Sources */,
 				A9A05825248D1E0300BCD097 /* DemoAlert.swift in Sources */,
