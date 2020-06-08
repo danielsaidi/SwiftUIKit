@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    @State private var text: String = ""
+    
     var body: some View {
         NavigationView {
             List {
@@ -19,7 +22,6 @@ struct HomeScreen: View {
                 NavigationLink("Gestures", destination: GesturesScreen())
                 NavigationLink("Sheets", destination: SheetsScreen())
                 NavigationLink("Styles", destination: StylesScreen())
-                NavigationLink("Toast", destination: ToastScreen())
             }.navigationBarTitle("SwiftUIKit Demo")
         }
     }
