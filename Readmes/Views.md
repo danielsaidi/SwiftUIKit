@@ -3,6 +3,6 @@
 `SwiftUIKit` contains custom views. For now, they are not in the demo.
 
 
-## MultilineTextView
+## MultilineTextField
 
-This view makes it possible to get multiline text editing in SwiftUI.
+This view makes it possible to use multiline text editing to SwiftUI apps.
