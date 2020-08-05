@@ -5,8 +5,9 @@
 
 This release adds:
 
+* A `DismissableView` view protocol that simplifies dismissing views programatically.
 * A `KeyboardAvoiding` modifier and view extension.
-* A `MultilineTextView` .
+* A `MultilineTextView`  that wraps a `UITextView`.
 
 
 ## 0.6.0
