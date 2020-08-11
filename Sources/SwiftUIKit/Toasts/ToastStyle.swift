@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+/**
+ This style can be used when presenting a toast over a view,
+ to apply a custom style to the toast.
+ */
 public struct ToastStyle {
     
     public var cornerRadius: CGFloat
@@ -16,6 +20,10 @@ public struct ToastStyle {
 
 public extension ToastStyle {
     
+    /**
+     This is the standard toast style that will be used when
+     no explicit style is specified.
+     */
     static var standard: ToastStyle {
         ToastStyle(
             cornerRadius: 10,

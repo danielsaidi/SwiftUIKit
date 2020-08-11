@@ -9,25 +9,36 @@
 import SwiftUI
 
 /**
- This class can be used to manage the presentation state and
- content of a view's toast, so that you don't have to manage
- several properties.
+ This context can be used to present a toast over a view.
+ 
+ To use this context within your view, create an instance of
+ it then call `present(_ text: String)` to show a plain text
+ toast, or call `present<Content: View>(_ content: Content)`
+ to present a custom view as a toast.
+ 
+ To bind the toast to a view, just use the `toast` modifier:
+ 
+ ```swift
+ .toast(isPresented: $context.isActive, content: sheetContext.sheet, background: ...)
+ ```
+ 
+ Note that the context only manages the toast content, since
+ the background, style and everything else can be set when a
+ toast is bound to the view.
  */
 public class ToastContext: ObservableObject {
     
     public init() {}
     
-    @Published public var isPresented = false
-    @Published public var text = ""
+    @Published public var isActive = false
     @Published public var content = EmptyView().any()
     
-    public func setText(_ text: String) {
-        self.text = text
-        self.isPresented = !text.isEmpty
+    public func present(_ text: String) {
+        present(Text(text).multilineTextAlignment(.center))
     }
     
-    public func setContent<Content: View>(_ content: Content) {
+    public func present<Content: View>(_ content: Content) {
         self.content = content.any()
-        self.isPresented = true
+        self.isActive = true
     }
 }

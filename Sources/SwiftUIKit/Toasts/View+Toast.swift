@@ -11,17 +11,17 @@ import SwiftUI
 public extension View {
 
     /**
-     Shows a vertically and horizontally centered toast over
-     the view, with a custom `text` and `background`.
+     Present a centered toast over the view, using a custom
+     `text` and `background`.
      */
     func toast<Background: View>(
-        isPresented: Binding<Bool>,
+        isActive: Binding<Bool>,
         text: String,
         background: Background,
         style: ToastStyle = .standard,
         duration: TimeInterval = 2) -> some View {
         toast(
-            isPresented: isPresented,
+            isActive: isActive,
             content: Text(text).multilineTextAlignment(.center),
             background: background,
             style: style,
@@ -30,17 +30,17 @@ public extension View {
     }
     
     /**
-     Shows a vertically and horizontally centered toast over
-     the view, with a custom `content` and `background`.
+     Present a centered toast over the view, using a custom
+     `content` view and `background`.
      */
     func toast<Content: View, Background: View>(
-        isPresented: Binding<Bool>,
+        isActive: Binding<Bool>,
         content: Content,
         background: Background,
         style: ToastStyle = .standard,
         duration: TimeInterval = 2) -> some View {
         Toast(
-            isPresented: isPresented,
+            isActive: isActive,
             content: content,
             background: background,
             style: style,
