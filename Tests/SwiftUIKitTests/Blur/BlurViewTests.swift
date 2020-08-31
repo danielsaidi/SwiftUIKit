@@ -9,6 +9,7 @@
 import XCTest
 @testable import SwiftUIKit
 
+#if os(iOS)
 final class BlurViewTests: XCTestCase {
     
     func testVisualEffectViewIsCorrectlyAdded() {
@@ -18,3 +19,4 @@ final class BlurViewTests: XCTestCase {
         XCTAssertNotNil(blur, "View adds visual effect subview")
     }
 }
+#endif

@@ -10,6 +10,7 @@ import XCTest
 import SwiftUI
 import SwiftUIKit
 
+#if os(iOS)
 final class View_BlurTests: XCTestCase {
     
     func testExtensionExists() {
@@ -18,3 +19,4 @@ final class View_BlurTests: XCTestCase {
         XCTAssertNotNil(result)
     }
 }
+#endif

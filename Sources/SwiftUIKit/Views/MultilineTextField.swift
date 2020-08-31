@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -62,3 +63,4 @@ public struct MultilineTextField: UIViewRepresentable {
         configuration(uiView)
     }
 }
+#endif

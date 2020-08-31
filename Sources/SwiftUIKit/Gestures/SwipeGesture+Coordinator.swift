@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(iOS)
 public extension SwipeGesture {
     
     /**
@@ -33,3 +34,4 @@ public extension SwipeGesture {
         Coordinator(gesture: self)
     }
 }
+#endif

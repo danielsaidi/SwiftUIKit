@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -47,3 +48,4 @@ public struct ShareSheet: UIViewControllerRepresentable {
       
     public func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
+#endif

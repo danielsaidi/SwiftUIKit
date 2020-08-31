@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+
+#if os(iOS) || os(tvOS)
 import UIKit
 
 public extension View {
@@ -21,3 +23,4 @@ public extension View {
         overlay(BlurView(style: style))
     }
 }
+#endif

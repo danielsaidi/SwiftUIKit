@@ -9,8 +9,11 @@
 //  https://stackoverflow.com/questions/56716311/how-to-show-complete-list-when-keyboard-is-showing-up-in-swiftui
 //
 
+#if os(iOS)
 import Combine
+import Foundation
 import SwiftUI
+import UIKit
 
 public extension View {
     
@@ -54,3 +57,4 @@ public struct KeyboardAvoiding: ViewModifier {
             .assign(to: \.currentHeight, on: self)
     }
 }
+#endif

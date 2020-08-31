@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -20,3 +21,4 @@ public protocol ImagePickerCompletionHandler: AnyObject {
     
     func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> ())
 }
+#endif

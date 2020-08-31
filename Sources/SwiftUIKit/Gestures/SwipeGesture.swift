@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 import UIKit
 
@@ -51,3 +52,4 @@ public struct SwipeGesture: UIViewRepresentable {
     
     public func updateUIView(_ uiView: UIView, context: Context) {}
 }
+#endif

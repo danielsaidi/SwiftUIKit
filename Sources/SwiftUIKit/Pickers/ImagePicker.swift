@@ -6,8 +6,10 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import SwiftUI
+#if os(iOS)
 import Photos
+import SwiftUI
+import UIKit
 
 /**
  This image picker presents a `UIImagePickerController` with
@@ -148,3 +150,4 @@ private extension UIImagePickerController {
         present(alert, animated: true, completion: nil)
     }
 }
+#endif

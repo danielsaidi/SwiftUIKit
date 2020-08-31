@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -23,3 +24,4 @@ public class ImagePickerStandardCompletionHandler: ImagePickerCompletionHandler 
         completion(image)
     }
 }
+#endif

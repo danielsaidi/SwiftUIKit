@@ -6,6 +6,7 @@
 //  Copyright © 2020 Obviuse. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 import UIKit
   
@@ -16,7 +17,7 @@ import UIKit
  */
 public struct UIViewWrapper: UIViewRepresentable {
     
-    public init(view: UIView) {
+    public init(view: UIView) {
         self.view = view
     }
     
@@ -26,3 +27,4 @@ public struct UIViewWrapper: UIViewRepresentable {
     
     public func updateUIView(_ uiView: UIView, context: Context) {}
 }
+#endif

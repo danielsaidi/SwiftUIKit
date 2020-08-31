@@ -6,7 +6,6 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
 
 public class StandardQrCodeGenerator: QrCodeGenerator {
@@ -17,7 +16,7 @@ public class StandardQrCodeGenerator: QrCodeGenerator {
     
     private let transform: CGAffineTransform
 
-    public func generateQRCode(from string: String) -> UIImage? {
+    public func generateQRCode(from string: String) -> Image? {
         let ciContext = CIContext()
         let data = string.data(using: String.Encoding.utf8)
         guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
@@ -26,12 +25,6 @@ public class StandardQrCodeGenerator: QrCodeGenerator {
             let ciImage = filter.outputImage?.transformed(by: transform),
             let cgImage = ciContext.createCGImage(ciImage, from: ciImage.extent)
             else { return nil }
-        let result = UIImage(cgImage: cgImage)
-        return result
-    }
-    
-    public func generateQRCode(from string: String) -> Image? {
-        guard let image: UIImage = generateQRCode(from: string) else { return nil }
-        return Image(uiImage: image).renderingMode(.original)
+        return Image(cgImage, scale: 2, label: Text("QR Code"))
     }
 }

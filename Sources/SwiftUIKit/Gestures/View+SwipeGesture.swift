@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(iOS)
 public extension View {
     
     /**
@@ -23,3 +24,4 @@ public extension View {
         return overlay(gesture)
     }
 }
+#endif

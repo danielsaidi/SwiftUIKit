@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 import Photos
 
@@ -35,3 +36,4 @@ public class ImagePickerPhotosCompletionHandler: ImagePickerCompletionHandler {
         }
     }
 }
+#endif

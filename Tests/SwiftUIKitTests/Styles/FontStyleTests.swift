@@ -10,6 +10,7 @@ import XCTest
 import SwiftUI
 import SwiftUIKit
 
+#if os(iOS)
 final class FontStyleTests: XCTestCase {
     
     func testSetupWithName() {
@@ -32,3 +33,4 @@ private struct TestIdentifier: FontIdentifier {
     
     var fontName: String { "MyFont" }
 }
+#endif

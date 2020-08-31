@@ -8,6 +8,7 @@
 
 import Foundation
 
+#if os(iOS)
 public extension SwipeGesture {
     
     /**
@@ -33,3 +34,4 @@ public extension SwipeGesture {
         let down: Action
     }
 }
+#endif

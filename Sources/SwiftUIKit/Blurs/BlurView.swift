@@ -6,8 +6,8 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
-import UIKit
 
 /**
  This view wraps a `UIView` and applies a `UIKit` blur to it.
@@ -64,3 +64,4 @@ private extension BlurView {
         return view
     }
 }
+#endif

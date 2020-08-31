@@ -6,7 +6,9 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
+import UIKit
 
 /**
  This file picker presents a `UIDocumentPickerViewController`
@@ -86,3 +88,4 @@ private extension FilePicker {
         presentationMode.wrappedValue.dismiss()
     }
 }
+#endif

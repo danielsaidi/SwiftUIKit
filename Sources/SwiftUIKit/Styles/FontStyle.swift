@@ -6,6 +6,8 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -53,3 +55,4 @@ public struct FontStyle {
         UIFont.preferredFont(forTextStyle: style).pointSize
     }
 }
+#endif

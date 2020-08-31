@@ -6,7 +6,6 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
 
 /**
@@ -14,7 +13,6 @@ import SwiftUI
  QR code images.
  */
 public protocol QrCodeGenerator {
-    
-    func generateQRCode(from string: String) -> UIImage?
+
     func generateQRCode(from string: String) -> Image?
 }

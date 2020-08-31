@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import XCTest
 import SwiftUIKit
 import UIKit
@@ -43,3 +44,4 @@ final class UIBlurEffectStyle_AllCasesTests: XCTestCase {
         XCTAssertEqual(result, expected)
     }
 }
+#endif

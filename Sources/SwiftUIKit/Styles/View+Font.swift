@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 public extension View {
@@ -47,3 +48,4 @@ public extension View {
         font(style.font)
     }
 }
+#endif
