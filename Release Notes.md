@@ -3,10 +3,11 @@
 
 ## 0.8.0
 
-This release adjusts the `Toast` so that it fits better with the alert and sheet contexts.
+This release:
 
-The release also adds:
-* A new `UIViewWrapper` that simplifies wrapping `UIKit` views.
+* adds support for macOS, and disables a bunch of features that require UIKit.
+* adjusts the `Toast` so that it fits better with the alert and sheet contexts.
+* adds a new `UIViewWrapper` that simplifies wrapping `UIKit` views.
 
 
 ## 0.7.0
