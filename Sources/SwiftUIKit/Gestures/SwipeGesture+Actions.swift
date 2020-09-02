@@ -6,9 +6,9 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import Foundation
 
-#if os(iOS)
 public extension SwipeGesture {
     
     /**

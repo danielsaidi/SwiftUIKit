@@ -8,6 +8,17 @@
 
 import SwiftUI
 
+/**
+ This protocol can be implemented by SwiftUI views that have
+ a `Binding<PresentationMode>` property and provides a clean
+ `dismiss` function that dismisses the wrapped binding value.
+ 
+ You can add a `presentationMode` to your views like this:
+ 
+ ```
+ @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+ ```
+ */
 public protocol DismissableView: View {
     
     var presentationMode: Binding<PresentationMode> { get }

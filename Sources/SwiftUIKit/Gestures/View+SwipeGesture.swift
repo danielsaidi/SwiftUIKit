@@ -6,9 +6,9 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
-#if os(iOS)
 public extension View {
     
     /**

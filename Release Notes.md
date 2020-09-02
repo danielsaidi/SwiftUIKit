@@ -3,7 +3,7 @@
 
 ## 0.8.1
 
-This release fixes invalid iOS platform version  build problems.
+This release fixes invalid iOS platform version build problems and adds a `Color+Random` extension.
 
 
 ## 0.8.0
