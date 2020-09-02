@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.8.1
+
+This release fixes invalid iOS platform version  build problems.
+
+
 ## 0.8.0
 
 This release:
