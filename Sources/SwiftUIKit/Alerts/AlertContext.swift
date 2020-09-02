@@ -10,22 +10,23 @@ import Combine
 import SwiftUI
 
 /**
- This context can be used to present any `Alert`, as well as
- anything that implements`AlertPresentable`.
+ This context can be used to present `SwiftUI` `Alert`s.
  
- `AlertPresentable` can be implemented by any enum, class or
- struct that can provide an `alert` to the context. It means
- that you can implement custom alerts in many different ways
- and present all of them the same way, using this context.
- 
- To use this context within your view, create an instance of
- it then call any of the `present(_ alert: AlertPresentable)`
- or `present(_ alert: Alert)` to present alerts. To bind the
- alert to views, use the `alert` modifier as you normally do:
+ To use the context, first create an observed instance, then
+ bind it to your view using a regular `sheet` modifier, then
+ call the context's `present` function to present an alert:
  
  ```swift
- .alert(isPresented: $alertContext.isActive, content: alertContext.alert)
+ @ObservedObject var context = AlertContext()
+ 
+ .alert(isPresented: $context.isActive, content: context.alert)
+ 
+ context.present(Alert(title: "Hello, world!")
  ```
+ 
+ You can also use the `AlertProvider` protocol to present an
+ alert for basically anything, e.g. an enum with cases, that
+ each returns a specific alert.
  */
 public class AlertContext: ObservableObject {
     
@@ -45,7 +46,7 @@ public class AlertContext: ObservableObject {
         alertView = alert
     }
     
-    public func present(_ alert: AlertPresentable) {
+    public func present(_ alert: AlertProvider) {
         alertView = alert.alert
     }
 }

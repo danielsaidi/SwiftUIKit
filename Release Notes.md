@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.8.2
+
+This release renames the alert and sheet `Presentable` protocols to `Provider`. The old presentables are still around, but marked as deprecated.
+
+
 ## 0.8.1
 
 This release fixes invalid iOS platform version build problems and adds a `Color+Random` extension.

@@ -10,23 +10,24 @@ import Combine
 import SwiftUI
 
 /**
- This context can be used to present any `View` and anything
- that implements`SheetPresentable` as modal sheets.
+ This context can be used to present any `SwiftUI` view as a
+ modal sheet.
  
- `SheetPresentable` can be implemented by any enum, class or
- struct that can provide a `sheet` to this context. It means
- that you can implement custom sheets in many different ways
- and present all of them the same way, using this context.
- 
- To use this context within your view, create an instance of
- it then call any of the `present(_ sheet: SheetPresentable)`
- or `present<Sheet: View>(_ sheet: Sheet)` to present sheets.
- To bind the sheet to views, use the `sheet` modifier as you
- normally do:
+ To use the context, first create an observed instance, then
+ bind it to your view using a regular `alert` modifier, then
+ call the context's `present` function to present a sheet:
  
  ```swift
- .sheet(isPresented: $sheetContext.isActive, content: sheetContext.sheet)
+ @ObservedObject var context = SheetContext()
+ 
+ view.sheet(isPresented: $context.isActive, content: context.sheet)
+ 
+ context.present(Text("Hello, world!"))
  ```
+ 
+ You can also use the `SheetProvider` protocol to present an
+ alert for basically anything, e.g. an enum with cases, that
+ each returns a specific alert.
  */
 public class SheetContext: ObservableObject {
     
@@ -38,7 +39,7 @@ public class SheetContext: ObservableObject {
         didSet { isActive = sheetView != nil }
     }
     
-    public func present(_ sheet: SheetPresentable) {
+    public func present(_ sheet: SheetProvider) {
         sheetView = sheet.sheet
     }
     

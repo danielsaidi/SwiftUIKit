@@ -9,17 +9,19 @@
 import SwiftUI
 
 /**
- This context can be used to present a toast over a view.
+ This context can be used to present any `SwiftUI` view as a
+ toast overlay over any view.
  
- To use this context within your view, create an instance of
- it then call `present(_ text: String)` to show a plain text
- toast, or call `present<Content: View>(_ content: Content)`
- to present a custom view as a toast.
- 
- To bind the toast to a view, just use the `toast` modifier:
+ To use the context, first create an observed instance, then
+ bind it to a view using the `toast` modifier, then call the
+ context's `present` function to present a toast:
  
  ```swift
- .toast(isPresented: $context.isActive, content: sheetContext.sheet, background: ...)
+ @ObservedObject var context = ToastContext()
+ 
+ view.sheet(isPresented: $context.isActive, content: context.content)
+ 
+ context.present(Text("Hello, world!"))
  ```
  
  Note that the context only manages the toast content, since
@@ -31,14 +33,14 @@ public class ToastContext: ObservableObject {
     public init() {}
     
     @Published public var isActive = false
-    @Published public var content = EmptyView().any()
+    @Published public var toast = EmptyView().any()
     
     public func present(_ text: String) {
         present(Text(text).multilineTextAlignment(.center))
     }
     
-    public func present<Content: View>(_ content: Content) {
-        self.content = content.any()
+    public func present<Toast: View>(_ content: Toast) {
+        self.toast = toast.any()
         self.isActive = true
     }
 }
