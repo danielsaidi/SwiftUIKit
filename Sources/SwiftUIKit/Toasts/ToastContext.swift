@@ -39,7 +39,7 @@ public class ToastContext: ObservableObject {
         present(Text(text).multilineTextAlignment(.center))
     }
     
-    public func present<Toast: View>(_ content: Toast) {
+    public func present<Toast: View>(_ toast: Toast) {
         self.toast = toast.any()
         self.isActive = true
     }

@@ -11,10 +11,7 @@ import SwiftUIKit
 
 struct SwipeGestureScreen: View, DemoList {
     
-    @State private var isToastActive = false
-    @State private var toastMessage = "" {
-        didSet { isToastActive = true }
-    }
+    @ObservedObject var context = ToastContext()
     
     var body: some View {
         VStack {
@@ -23,7 +20,10 @@ struct SwipeGestureScreen: View, DemoList {
             item(title: "Swipe me tooooo!", color: .blue)
             Spacer()
         }
-        .toast(isPresented: $isToastActive, text: toastMessage, background: Color.white)
+        .toast(
+            isActive: $context.isActive,
+            content: context.toast,
+            background: Color.white)
         .navigationBarTitle("SwipeGesture")
     }
 }
@@ -47,10 +47,14 @@ private extension SwipeGestureScreen {
         )
     }
     
-    func handleSwipeUp() { toastMessage = "Up!" }
-    func handleSwipeLeft() { toastMessage = "Left!" }
-    func handleSwipeRight() { toastMessage = "Right!" }
-    func handleSwipeDown() { toastMessage = "Down!" }
+    func handleSwipeUp() { present("Up!") }
+    func handleSwipeLeft() { present("Left!") }
+    func handleSwipeRight() { present("Right!") }
+    func handleSwipeDown() { present("Down!") }
+    
+    func present(_ text: String) {
+        context.present(Text(text))
+    }
 }
 
 struct SwipeGestureScreen_Previews: PreviewProvider {

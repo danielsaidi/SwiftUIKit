@@ -9,7 +9,7 @@
 import SwiftUI
 import SwiftUIKit
 
-enum DemoSheet: SheetPresentable {
+enum DemoSheet: SheetProvider {
     
     case red, green, blue
     

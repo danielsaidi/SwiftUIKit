@@ -9,14 +9,14 @@
 import SwiftUI
 import SwiftUIKit
 
-enum DemoAlert: AlertPresentable {
+enum DemoAlert: AlertProvider {
     
     case red, green, blue
     
     var alert: Alert {
         Alert(
             title: Text("\(title.capitalized)"),
-            message: Text("Ok, so this alert isn't \(title), but at least it says \"\(title)\". Tap OK to close"),
+            message: Text("Ok, so this alert isn't \(title), but at least it says \"\(title)\"."),
             dismissButton: Alert.Button.default(Text("OK")))
     }
     

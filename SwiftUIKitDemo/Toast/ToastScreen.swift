@@ -11,10 +11,7 @@ import SwiftUIKit
 
 struct ToastScreen: View, DemoList {
     
-    @State private var isToastActive = false
-    @State private var toastView: AnyView = EmptyView().any() {
-        didSet { isToastActive = true }
-    }
+    @ObservedObject var context = ToastContext()
     
     var body: some View {
         ScrollView {
@@ -24,8 +21,8 @@ struct ToastScreen: View, DemoList {
                 item(title: "Tap me to show an emoji toast", color: .blue, action: showEmojiToast)
             }
         }.toast(
-            isPresented: $isToastActive,
-            content: toastView,
+            isActive: $context.isActive,
+            content: context.toast,
             background: Color.primary.colorInvert()
         ).navigationBarTitle("Toast")
     }
@@ -39,19 +36,19 @@ private extension ToastScreen {
     }
     
     func showEmojiToast() {
-        toastView = Text("😀❤️👏👍🎉🎊🍾").any()
+        context.present(Text("😀❤️👏👍🎉🎊🍾").any())
     }
     
     func showFlagToast() {
-        toastView = VStack(spacing: 0) {
+        context.present(VStack(spacing: 0) {
             Color.black.frame(width: 200, height: 50)
             Color.red.frame(width: 200, height: 50)
             Color.yellow.frame(width: 200, height: 50)
-        }.any()
+        }.any())
     }
     
     func showTextToast() {
-        toastView = Text("This is a text toast").any()
+        context.present(Text("This is a text toast").any())
     }
 }
 
