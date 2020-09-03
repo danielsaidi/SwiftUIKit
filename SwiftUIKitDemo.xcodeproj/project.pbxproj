@@ -13,6 +13,7 @@
 		845EA62024190562005976EE /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61C24190562005976EE /* LuckiestGuy-Regular.ttf */; };
 		845EA62124190562005976EE /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845EA61D24190562005976EE /* Lobster-Regular.ttf */; };
 		845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EA622241905CB005976EE /* FontStyleScreen.swift */; };
+		84A3926A2500EB0E009E5CC0 /* DemoToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A392692500EB0E009E5CC0 /* DemoToast.swift */; };
 		84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DA2417995300EDE944 /* StylesScreen.swift */; };
 		84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */; };
 		A9A0581E248D1D5300BCD097 /* Alerts.md in Resources */ = {isa = PBXBuildFile; fileRef = A9A0581B248D1D5300BCD097 /* Alerts.md */; };
@@ -57,6 +58,7 @@
 		845EA61C24190562005976EE /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		845EA61D24190562005976EE /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		845EA622241905CB005976EE /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
+		84A392692500EB0E009E5CC0 /* DemoToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoToast.swift; sourceTree = "<group>"; };
 		84DDC8DA2417995300EDE944 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
 		84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
 		A9A0581B248D1D5300BCD097 /* Alerts.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Alerts.md; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E9A2BB2411962E00844844 /* ToastScreen.swift */,
+				84A392692500EB0E009E5CC0 /* DemoToast.swift */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				845EA623241905CB005976EE /* FontStyleScreen.swift in Sources */,
 				A9E9A2BF2411979700844844 /* DemoListItem.swift in Sources */,
 				A9AE2E1F248BFE7800D9BC2A /* DemoSheet.swift in Sources */,
+				84A3926A2500EB0E009E5CC0 /* DemoToast.swift in Sources */,
 				845EA61E24190562005976EE /* Fonts.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlursScreen.swift in Sources */,

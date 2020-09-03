@@ -20,11 +20,12 @@ struct ToastScreen: View, DemoList {
                 item(title: "Tap me to show a flag toast", color: .green, action: showFlagToast)
                 item(title: "Tap me to show an emoji toast", color: .blue, action: showEmojiToast)
             }
-        }.toast(
+        }
+        .navigationBarTitle("Toast")
+        .toast(
             isActive: $context.isActive,
             content: context.toast,
-            background: Color.primary.colorInvert()
-        ).navigationBarTitle("Toast")
+            style: .standard)
     }
 }
 

@@ -27,7 +27,7 @@ import SwiftUI
  
  You can also use the `SheetProvider` protocol to present an
  alert for basically anything, e.g. an enum with cases, that
- each returns a specific alert.
+ each returns a specific alert. View the demo for more info.
  */
 public class SheetContext: ObservableObject {
     
@@ -39,8 +39,8 @@ public class SheetContext: ObservableObject {
         didSet { isActive = sheetView != nil }
     }
     
-    public func present(_ sheet: SheetProvider) {
-        sheetView = sheet.sheet
+    public func present(_ provider: SheetProvider) {
+        sheetView = provider.sheet
     }
     
     public func present<Sheet: View>(_ sheet: Sheet) {

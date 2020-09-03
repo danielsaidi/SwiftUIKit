@@ -26,7 +26,7 @@ import SwiftUI
  
  You can also use the `AlertProvider` protocol to present an
  alert for basically anything, e.g. an enum with cases, that
- each returns a specific alert.
+ each returns a specific alert. View the demo for more info.
  */
 public class AlertContext: ObservableObject {
     

@@ -14,11 +14,37 @@ import SwiftUI
  */
 public struct ToastStyle {
     
-    public var cornerRadius: CGFloat
-    public var shadowStyle: ShadowStyle
+    public init<Background: View>(
+        background: Background,
+        backgroundPadding: CGFloat,
+        cornerRadius: CGFloat,
+        shadowStyle: ShadowStyle) {
+        self.background = background.any()
+        self.backgroundPadding = backgroundPadding
+        self.cornerRadius = cornerRadius
+        self.shadowStyle = shadowStyle
+    }
+    
+    public let background: AnyView
+    public let backgroundPadding: CGFloat
+    public let cornerRadius: CGFloat
+    public let shadowStyle: ShadowStyle
 }
 
 public extension ToastStyle {
+    
+    /**
+     This style does not apply anything and can be used when
+     a style is required, but none is desired.
+     */
+    static var none: ToastStyle {
+        ToastStyle(
+            background: Color.clear,
+            backgroundPadding: 0,
+            cornerRadius: 0,
+            shadowStyle: .none
+        )
+    }
     
     /**
      This is the standard toast style that will be used when
@@ -26,6 +52,8 @@ public extension ToastStyle {
      */
     static var standard: ToastStyle {
         ToastStyle(
+            background: Color.primary.colorInvert(),
+            backgroundPadding: 10,
             cornerRadius: 10,
             shadowStyle: .standardToast
         )

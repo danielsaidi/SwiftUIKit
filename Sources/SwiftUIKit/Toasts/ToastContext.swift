@@ -19,28 +19,34 @@ import SwiftUI
  ```swift
  @ObservedObject var context = ToastContext()
  
- view.sheet(isPresented: $context.isActive, content: context.content)
+ view.toast(isPresented: $context.isActive, content: context.toast)
  
- context.present(Text("Hello, world!"))
+ context.present(Text("Hello, world!").background(Color.white))
  ```
  
- Note that the context only manages the toast content, since
- the background, style and everything else can be set when a
- toast is bound to the view.
+ You can also use the `ToastProvider` protocol, to present a
+ toast for basically anything, e.g. an enum with cases, that
+ each returns a specific toast. View the demo for more info.
  */
 public class ToastContext: ObservableObject {
     
     public init() {}
     
     @Published public var isActive = false
-    @Published public var toast = EmptyView().any()
     
-    public func present(_ text: String) {
-        present(Text(text).multilineTextAlignment(.center))
+    public private(set) var toastView: AnyView? {
+        didSet { isActive = toastView != nil }
+    }
+    
+    public func present(_ provider: ToastProvider) {
+        toastView = provider.toast
     }
     
     public func present<Toast: View>(_ toast: Toast) {
-        self.toast = toast.any()
-        self.isActive = true
+        toastView = toast.any()
+    }
+    
+    public func toast() -> AnyView {
+        toastView?.any() ?? EmptyView().any()
     }
 }

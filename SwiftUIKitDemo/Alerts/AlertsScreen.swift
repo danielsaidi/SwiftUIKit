@@ -16,9 +16,9 @@ struct AlertsScreen: View, DemoList {
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                itemUsingAlertPresentable(.red)
-                itemUsingAlertPresentable(.green)
-                itemUsingAlert(.blue)
+                itemUsingAlert(.red)
+                itemUsingAlert(.green)
+                itemUsingAlertPresentable(.blue)
             }
         }
         .navigationBarTitle("Alerts")

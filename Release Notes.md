@@ -1,6 +1,18 @@
 # Release notes
 
 
+## 0.9.0
+
+This version contains more breaking changes for the toast components.
+
+* `ToastContext` works just like `SheetContext` and `AlertContext`.
+* The is a new `ToastProvider` that can be used with this context.
+* The `toast` modifier handles presenting and dismissing the toast.
+* The `Toast` view has been removed, since it's no longer needed.
+
+You can now use any views with the toast context and modifier, so it should make the toast easier to understand and to use.
+
+
 ## 0.8.2
 
 This release renames the alert and sheet `Presentable` protocols to `Provider`. The old presentables are still around, but marked as deprecated.

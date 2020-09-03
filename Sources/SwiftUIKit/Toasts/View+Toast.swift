@@ -9,43 +9,46 @@
 import SwiftUI
 
 public extension View {
-
+    
     /**
-     Present a centered toast over the view, using a custom
-     `text` and `background`.
+     Present a toast over the view, using a custom `content`
+     view for a certain `duration`.
+     
+     You can use the `style` parameter to apply a style that
+     applies a style to the toast view, which means that you
+     can use different views and apply the same style to all.
+     By default `.none` is used, which doesn't do anything.
      */
-    func toast<Background: View>(
+    func toast<Content: View>(
         isActive: Binding<Bool>,
-        text: String,
-        background: Background,
-        style: ToastStyle = .standard,
-        duration: TimeInterval = 2) -> some View {
-        toast(
-            isActive: isActive,
-            content: Text(text).multilineTextAlignment(.center),
-            background: background,
-            style: style,
-            duration: duration
-        )
+        content: () -> Content,
+        duration seconds: TimeInterval = 2,
+        style: ToastStyle = .none) -> some View {
+        if isActive.wrappedValue { deactivate(isActive, afterDuration: seconds) }
+        let opacity = isActive.wrappedValue ? 1.0 : 0.0
+        return overlay(content()
+            .toastStyle(style)
+            .opacity(opacity))
     }
     
     /**
-     Present a centered toast over the view, using a custom
-     `content` view and `background`.
+     Apply a certain toast style to the view.
      */
-    func toast<Content: View, Background: View>(
-        isActive: Binding<Bool>,
-        content: Content,
-        background: Background,
-        style: ToastStyle = .standard,
-        duration: TimeInterval = 2) -> some View {
-        Toast(
-            isActive: isActive,
-            content: content,
-            background: background,
-            style: style,
-            duration: duration,
-            presenter: { self }
-        )
+    func toastStyle(_ style: ToastStyle) -> some View {
+        self.padding(style.backgroundPadding)
+            .background(style.background)
+            .cornerRadius(style.cornerRadius)
+            .shadow(style.shadowStyle)
+    }
+}
+
+private extension View {
+    
+    func deactivate(
+        _ isActive: Binding<Bool>,
+        afterDuration seconds: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            withAnimation { isActive.wrappedValue = false }
+        }
     }
 }

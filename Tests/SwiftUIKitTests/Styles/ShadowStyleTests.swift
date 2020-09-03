@@ -19,4 +19,12 @@ final class ShadowStyleTests: XCTestCase {
         XCTAssertEqual(style.x, 7)
         XCTAssertEqual(style.y, 9)
     }
+    
+    func testNoStyle() {
+        let style = ShadowStyle.none
+        XCTAssertEqual(style.color, .clear)
+        XCTAssertEqual(style.radius, 0)
+        XCTAssertEqual(style.x, 0)
+        XCTAssertEqual(style.y, 0)
+    }
 }

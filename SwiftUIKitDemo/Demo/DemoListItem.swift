@@ -33,7 +33,7 @@ struct DemoListItem<Content: View, Effect: View>: View {
         ZStack {
             effect(
                 content
-                    .frame(height: 200)
+                    .frame(height: 150)
                     .cornerRadius(cornerRadius)
                     .padding(.horizontal)
                     .any()

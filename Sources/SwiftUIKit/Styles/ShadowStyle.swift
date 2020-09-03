@@ -36,3 +36,14 @@ public struct ShadowStyle {
     public let x: CGFloat
     public let y: CGFloat
 }
+
+public extension ShadowStyle {
+    
+    /**
+     This style does not apply anything and can be used when
+     a style is required, but none is desired.
+     */
+    static var none: ShadowStyle {
+        ShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
+    }
+}
