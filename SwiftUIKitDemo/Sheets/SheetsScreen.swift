@@ -21,8 +21,8 @@ struct SheetsScreen: View, DemoList {
                 itemUsingView(.blue)
             }
         }
+        .sheet(context: context)
         .navigationBarTitle("Sheets")
-        .sheet(isPresented: $context.isActive, content: context.sheet)
     }
 }
 

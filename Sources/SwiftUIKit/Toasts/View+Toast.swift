@@ -19,12 +19,12 @@ public extension View {
      be applied to the toast view.
      */
     func toast<Content: View>(
-        isActive: Binding<Bool>,
+        isPresented: Binding<Bool>,
         content: () -> Content,
         duration seconds: TimeInterval = 2,
         style: ToastStyle = .none) -> some View {
-        if isActive.wrappedValue { deactivate(isActive, afterDuration: seconds) }
-        let opacity = isActive.wrappedValue ? 1.0 : 0.0
+        if isPresented.wrappedValue { deactivate(isPresented, afterDuration: seconds) }
+        let opacity = isPresented.wrappedValue ? 1.0 : 0.0
         return overlay(content()
             .toastStyle(style)
             .opacity(opacity))
@@ -42,8 +42,8 @@ public extension View {
         context: ToastContext,
         duration seconds: TimeInterval = 2,
         style: ToastStyle = .none) -> some View {
-        toast(isActive: context.isActiveBinding,
-              content: context.toast,
+        toast(isPresented: context.isActiveBinding,
+              content: context.content,
               duration: seconds,
               style: style)
     }
@@ -62,10 +62,10 @@ public extension View {
 private extension View {
     
     func deactivate(
-        _ isActive: Binding<Bool>,
+        _ isPresented: Binding<Bool>,
         afterDuration seconds: TimeInterval) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            withAnimation { isActive.wrappedValue = false }
+            withAnimation { isPresented.wrappedValue = false }
         }
     }
 }

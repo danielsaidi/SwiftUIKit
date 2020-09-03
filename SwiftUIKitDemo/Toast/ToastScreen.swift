@@ -9,7 +9,7 @@
 import SwiftUI
 import SwiftUIKit
 
-struct ToastScreen: View, DemoList {
+struct ToastsScreen: View, DemoList {
     
     @ObservedObject var context = ToastContext()
     
@@ -21,17 +21,8 @@ struct ToastScreen: View, DemoList {
                 item(title: "Tap me to show an emoji toast", color: .blue, action: showEmojiToast)
             }
         }
-        .navigationBarTitle("Toast")
-        .toast(context: context)
-    }
-}
-
-extension View {
-    
-    func toast(context: ToastContext) -> some View {
-        self.toast(
-            isActive: context.binding,
-            content: context.toast)
+        .toast(context: context, style: .standard)
+        .navigationBarTitle("Toasts")
     }
 }
 
@@ -44,7 +35,7 @@ extension ToastContext {
     }
 }
 
-private extension ToastScreen {
+private extension ToastsScreen {
     
     func item(title: String, color: Color, action: @escaping () -> Void) -> some View {
         DemoListItem(title: title, content: color, effect: { $0 })
@@ -52,7 +43,7 @@ private extension ToastScreen {
     }
     
     func showEmojiToast() {
-        context.present(Text("😀❤️👏👍🎉🎊🍾").any())
+        context.present(Text("😀❤️👏👍🎉🎊🍾"))
     }
     
     func showFlagToast() {
@@ -60,16 +51,16 @@ private extension ToastScreen {
             Color.black.frame(width: 200, height: 50)
             Color.red.frame(width: 200, height: 50)
             Color.yellow.frame(width: 200, height: 50)
-        }.any())
+        })
     }
     
     func showTextToast() {
-        context.present(Text("This is a text toast").any())
+        context.present(Text("This is a text toast"))
     }
 }
 
 struct ToastScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ToastScreen()
+        ToastsScreen()
     }
 }

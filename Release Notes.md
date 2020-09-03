@@ -3,14 +3,15 @@
 
 ## 0.9.0
 
+There are now more convenient `alert`, `sheet` and `toast` view modifiers, that take a context instead of a binding and a content.
+
 This version contains more breaking changes for the toast components.
 
 * `ToastContext` works just like `SheetContext` and `AlertContext`.
-* The is a new `ToastProvider` that can be used with this context.
+* `ToastContext`, `SheetContext` and `AlertContext` share a base class.
+* The is a new `ToastProvider` that can be used with `ToastContext`.
 * The `toast` modifier handles presenting and dismissing the toast.
 * The `Toast` view has been removed, since it's no longer needed.
-
-There are now more convenient `alert`, `sheet` and `toast` view modifiers that take a context instead of a binding and a content.
 
 You can now use any views with the toast context and modifier, so it should make the toast easier to understand and to use.
 

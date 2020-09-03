@@ -21,8 +21,8 @@ struct AlertsScreen: View, DemoList {
                 itemUsingAlertPresentable(.blue)
             }
         }
+        .alert(context: context)
         .navigationBarTitle("Alerts")
-        .alert(isPresented: $context.isActive, content: context.alert)
     }
 }
 
