@@ -12,12 +12,11 @@ public extension View {
     
     /**
      Present a toast over the view, using a custom `content`
-     view for a certain `duration`.
+     view for a certain `duration` (by default `2` seconds).
      
-     You can use the `style` parameter to apply a style that
-     applies a style to the toast view, which means that you
-     can use different views and apply the same style to all.
-     By default `.none` is used, which doesn't do anything.
+     You can use `style` to apply a style to the toast view.
+     It's `.none` by default, which means that no style will
+     be applied to the toast view.
      */
     func toast<Content: View>(
         isActive: Binding<Bool>,
@@ -29,6 +28,24 @@ public extension View {
         return overlay(content()
             .toastStyle(style)
             .opacity(opacity))
+    }
+    
+    /**
+     Present a toast over the view, using a custom `content`
+     view for a certain `duration` (by default `2` seconds).
+     
+     You can use `style` to apply a style to the toast view.
+     It's `.none` by default, which means that no style will
+     be applied to the toast view.     
+     */
+    func toast(
+        context: ToastContext,
+        duration seconds: TimeInterval = 2,
+        style: ToastStyle = .none) -> some View {
+        toast(isActive: context.isActiveBinding,
+              content: context.toast,
+              duration: seconds,
+              style: style)
     }
     
     /**

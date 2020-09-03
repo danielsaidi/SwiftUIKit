@@ -10,6 +10,8 @@ This version contains more breaking changes for the toast components.
 * The `toast` modifier handles presenting and dismissing the toast.
 * The `Toast` view has been removed, since it's no longer needed.
 
+There are now more convenient `alert`, `sheet` and `toast` view modifiers that take a context instead of a binding and a content.
+
 You can now use any views with the toast context and modifier, so it should make the toast easier to understand and to use.
 
 

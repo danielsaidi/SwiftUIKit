@@ -19,10 +19,15 @@ import SwiftUI
  ```swift
  @ObservedObject var context = AlertContext()
  
- .alert(isPresented: $context.isActive, content: context.alert)
+ view.alert(context: context)   // or, for more flexibility:
+ view.alert(isPresented: $context.isActive, content: context.alert)
  
  context.present(Alert(title: "Hello, world!")
  ```
+ 
+ The context-specific `alert` modifier is more conveinent if
+ you use contexts, but the binding/content-specific one is a
+ bit more flexible and can be used in other scenarios.
  
  You can also use the `AlertProvider` protocol to present an
  alert for basically anything, e.g. an enum with cases, that
@@ -33,6 +38,12 @@ public class AlertContext: ObservableObject {
     public init() {}
     
     @Published public var isActive = false
+    
+    public var isActiveBinding: Binding<Bool> {
+        .init(get: { self.isActive },
+              set: { self.isActive = $0 }
+        )
+    }
     
     public private(set) var alertView: Alert? {
         didSet { isActive = alertView != nil }

@@ -22,10 +22,25 @@ struct ToastScreen: View, DemoList {
             }
         }
         .navigationBarTitle("Toast")
-        .toast(
-            isActive: $context.isActive,
-            content: context.toast,
-            style: .standard)
+        .toast(context: context)
+    }
+}
+
+extension View {
+    
+    func toast(context: ToastContext) -> some View {
+        self.toast(
+            isActive: context.binding,
+            content: context.toast)
+    }
+}
+
+extension ToastContext {
+    
+    var binding: Binding<Bool> {
+        .init(get: { self.isActive },
+              set: { self.isActive = $0 }
+        )
     }
 }
 
