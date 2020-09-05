@@ -85,7 +85,9 @@ public extension ImagePicker {
         
         let parent: ImagePicker
         
-        public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        public func imagePickerController(
+            _ picker: UIImagePickerController,
+            didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             defer { parent.dismiss() }
             let handler = self.parent.completionHandler
             handler.tryGetImage(from: info) { image in

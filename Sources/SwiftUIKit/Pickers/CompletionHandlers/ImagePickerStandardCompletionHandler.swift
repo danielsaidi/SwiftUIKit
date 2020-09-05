@@ -19,7 +19,7 @@ public class ImagePickerStandardCompletionHandler: ImagePickerCompletionHandler 
     
     public var requiresAuthorization: Bool { false }
     
-    public func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> ()) {
+    public func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> Void) {
         let image = info[.originalImage] as? UIImage
         completion(image)
     }

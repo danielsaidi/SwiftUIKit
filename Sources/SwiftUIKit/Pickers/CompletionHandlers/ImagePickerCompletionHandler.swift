@@ -19,6 +19,6 @@ public protocol ImagePickerCompletionHandler: AnyObject {
     
     var requiresAuthorization: Bool { get }
     
-    func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> ())
+    func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> Void)
 }
 #endif

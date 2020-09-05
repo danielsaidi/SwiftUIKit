@@ -23,7 +23,7 @@ public class ImagePickerPhotosCompletionHandler: ImagePickerCompletionHandler {
     
     public var requiresAuthorization: Bool { true }
     
-    public func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> ()) {
+    public func tryGetImage(from info: ImagePickerInfo, completion: @escaping (UIImage?) -> Void) {
         guard let asset = info[.phAsset] as? PHAsset else { return completion(nil) }
         let manager = PHImageManager.default()
         let options = PHImageRequestOptions()
