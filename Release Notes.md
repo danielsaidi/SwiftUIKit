@@ -5,7 +5,7 @@
 
 This version adds improved support for watchOS, tvOS and macOS.
 
-The bump version process has been improved tp also add linting and a unit test confirmation.
+The bump version process has been improved to also add linting and a unit test confirmation.
 
 
 ## 0.9.0
