@@ -6,7 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import SwiftUI
 
 /**

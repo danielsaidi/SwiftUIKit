@@ -6,9 +6,8 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import SwiftUI
-
 #if os(iOS) || os(tvOS)
+import SwiftUI
 import UIKit
 
 public extension View {
