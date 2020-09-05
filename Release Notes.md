@@ -1,6 +1,13 @@
 # Release notes
 
 
+## 0.9.1
+
+This version adds improved support for watchOS, tvOS and macOS.
+
+The bump version process has been improved tp also add linting and a unit test confirmation.
+
+
 ## 0.9.0
 
 There are now more convenient `alert`, `sheet` and `toast` view modifiers, that take a context instead of a binding and a content.
@@ -9,7 +16,7 @@ This version contains more breaking changes for the toast components.
 
 * `ToastContext` works just like `SheetContext` and `AlertContext`.
 * `ToastContext`, `SheetContext` and `AlertContext` share a base class.
-* The is a new `ToastProvider` that can be used with `ToastContext`.
+* There is a new `ToastProvider` that can be used with `ToastContext`.
 * The `toast` modifier handles presenting and dismissing the toast.
 * The `Toast` view has been removed, since it's no longer needed.
 
