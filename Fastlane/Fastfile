@@ -4,10 +4,32 @@ default_platform :ios
 
 platform :ios do
 
+
+  # Test ===================
+
+  desc "Run unit tests"
+  lane :test do
+    # Note: Since UIKit tests must be run from a project and
+    # this project has no such project, we instead ask for a
+    # confirmation that the test suite has been run.
+    # resolve_dependencies
+    # run_tests(scheme: "KeyboardKit")
+    confirm = prompt(text: "Have you successfully run all unit tests? [y/n]: ")
+    if confirm != "y"
+        UI.user_error!("You must run all unit tests before releasing a new version!")
+    end
+  end
+  
+  
+  # Version ================
+
   desc "Create a new version"
   lane :version do |options|
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')
+    
+    lint
+    test
     
     bump_type = options[:type]
     if bump_type == nil or bump_type.empty?
