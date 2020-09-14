@@ -1,6 +1,17 @@
 # Release notes
 
 
+## 0.9.2
+
+This version adds a `dismiss` function to `PresentationContext`.
+
+This means that these contexts get access to this function:
+
+* `AlertContext`
+* `SheetContext`
+* `ToastContext`
+
+
 ## 0.9.1
 
 This version adds improved support for watchOS, tvOS and macOS.

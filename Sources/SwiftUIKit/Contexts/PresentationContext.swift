@@ -50,6 +50,10 @@ public class PresentationContext<Content>: ObservableObject {
         didSet { isActive = contentView != nil }
     }
     
+    public func dismiss() {
+        isActive = false
+    }
+    
     public func present(_ content: Content) {
         contentView = content
     }
