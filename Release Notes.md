@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.9.3
+
+This version adds a `DocumentCamera` view, which can be used to scan documents with the device camera.
+
+
 ## 0.9.2
 
 This version adds a `dismiss` function to `PresentationContext`.

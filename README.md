@@ -23,10 +23,13 @@ You can read more about the different parts of `SwiftUIKit` in separate readmes:
 
 * [Alerts][Alerts]
 * [Blurs][Blurs]
+* [Camera][Camera]
 * [Data][Data]
 * [Extensions][Extensions]
 * [Gestures][Gestures]
 * [Keyboard][Keyboard]
+* [Pickers][Pickers]
+* [Sharing][Sharing]
 * [Sheets][Sheets]
 * [Styles][Styles]
 * [Toasts][Toasts]
@@ -90,10 +93,13 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 
 [Alerts]: Readmes/Alerts.md
 [Blurs]: Readmes/Blurs.md
+[Camera]: Readmes/Camera.md
 [Data]: Readmes/Data.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
 [Keyboard]: Readmes/Keyboard.md
+[Pickers]: Readmes/Pickers.md
+[Sharing]: Readmes/Sharing.md
 [Sheets]: Readmes/Sheets.md
 [Styles]: Readmes/Styles.md
 [Toasts]: Readmes/Toasts.md

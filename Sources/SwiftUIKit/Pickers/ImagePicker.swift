@@ -17,6 +17,9 @@ import UIKit
  
  The picker can present error alerts. These titles and texts
  can be localized with the `ImagePicker.Localization` struct.
+ 
+ You can use this view with `SheetContext` to easily present
+ it as a modal sheet.
  */
 public struct ImagePicker: UIViewControllerRepresentable {
     

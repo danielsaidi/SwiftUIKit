@@ -24,6 +24,9 @@ import UIKit
     UIImage(data: $0)
  }
  ```
+ 
+ You can use this view with `SheetContext` to easily present
+ it as a modal sheet.
  */
 public struct FilePicker<Type>: UIViewControllerRepresentable {
     
