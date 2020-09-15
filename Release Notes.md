@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.9.4
+
+This version adds new extensions.
+
+
 ## 0.9.3
 
 This version adds a `DocumentCamera` view, which can be used to scan documents with the device camera.
