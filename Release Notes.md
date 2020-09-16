@@ -3,7 +3,7 @@
 
 ## 0.9.4
 
-This version adds new extensions.
+This version adds new extensions, e.g. for taking a screenshot of any `SwiftUI` view.
 
 
 ## 0.9.3
