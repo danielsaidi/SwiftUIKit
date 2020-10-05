@@ -3,7 +3,11 @@
 
 ## 0.9.4
 
-This version adds new extensions, e.g. for taking a screenshot of any `SwiftUI` view.
+This version adds a `UrlOpener`, as well as new extensions:
+
+* `EdgeInsets+Edge` simplifies getting the inset for a certain edge.
+* `View+Screenshot` can be used to snapshot any SwiftUI view.
+* `View+Visible` has conditional extensions to hide or show a view.
 
 
 ## 0.9.3
