@@ -1,9 +1,9 @@
 # Release notes
 
 
-## 0.9.4
+## 0.9.4 - 0.9.5
 
-This version adds a `UrlOpener`, as well as new extensions:
+These versions add a `UrlOpener`, as well as new extensions:
 
 * `EdgeInsets+Edge` simplifies getting the inset for a certain edge.
 * `View+Screenshot` can be used to snapshot any SwiftUI view.
