@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DSSwiftUIKit'
-  s.version          = '0.9.4'
+  s.version          = '0.9.5'
   s.swift_versions   = ['5.2']
   s.summary          = 'SwiftUIKit contains extra functionality for SwiftUI.'
 
