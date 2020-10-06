@@ -1,6 +1,13 @@
 # Release notes
 
 
+## 0.9.6
+
+After comments, the `View+Screenshot` `takeScreenshot` function has been renamed to `snapshot`. The `origin` parameter has `.zero` as default value.
+
+The `View+Keyboard` keyboard avoiding logic has been removed, since SwiftUI now supports it natively.
+
+
 ## 0.9.4 - 0.9.5
 
 These versions add a `UrlOpener`, as well as new extensions:

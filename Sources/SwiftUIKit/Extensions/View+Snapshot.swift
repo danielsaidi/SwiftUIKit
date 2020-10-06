@@ -1,5 +1,5 @@
 //
-//  View+Screenshot.swift
+//  View+Snapshot.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-09-17.
@@ -9,8 +9,14 @@
 #if os(iOS)
 import SwiftUI
 
-extension View {
-    func takeScreenshot(origin: CGPoint, size: CGSize) -> UIImage {
+public extension View {
+    
+    /**
+     Take a snapshot of the view.
+     
+     `TODO` Add support for macOS, watchOS and tvOS.
+     */
+    func snapshot(origin: CGPoint = .zero, size: CGSize) -> UIImage {
         let window = UIWindow(frame: CGRect(origin: origin, size: size))
         let hosting = UIHostingController(rootView: self)
         hosting.view.frame = window.frame

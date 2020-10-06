@@ -27,7 +27,6 @@ You can read more about the different parts of `SwiftUIKit` in separate readmes:
 * [Data][Data]
 * [Extensions][Extensions]
 * [Gestures][Gestures]
-* [Keyboard][Keyboard]
 * [Pickers][Pickers]
 * [Sharing][Sharing]
 * [Sheets][Sheets]
@@ -97,7 +96,6 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [Data]: Readmes/Data.md
 [Extensions]: Readmes/Extensions.md
 [Gestures]: Readmes/Gestures.md
-[Keyboard]: Readmes/Keyboard.md
 [Pickers]: Readmes/Pickers.md
 [Sharing]: Readmes/Sharing.md
 [Sheets]: Readmes/Sheets.md
