@@ -14,12 +14,12 @@ import SwiftUI
  that implements the `SheetProvider` protocol (e.g. a custom
  enum where each case returns a specific sheet).
  
- To use the context, first create an observed instance, then
- bind it to a view using the `sheet` modifier, then call any
- context `present` function to present a sheet:
+ To use the context, first create a state instance then bind
+ it to a view with the `sheet` modifier. You can now present
+ sheets by calling any `present` function on the context:
  
  ```swift
- @ObservedObject var context = SheetContext()
+ @State var context = SheetContext()
  
  view.sheet(context: context)
  

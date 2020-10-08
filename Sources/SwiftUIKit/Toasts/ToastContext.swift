@@ -14,12 +14,12 @@ import SwiftUI
  implements the `ToastProvider` protocol (e.g. a custom enum
  where each case returns a specific toast).
  
- To use the context, first create an observed instance, then
- bind it to a view using the `alert` modifier, then call any
- context `present` function to present a toast:
+ To use the context, first create a state instance then bind
+ it to a view with the `toast` modifier. You can now present
+ toasts by calling any `present` function on the context:
  
  ```swift
- @ObservedObject var context = ToastContext()
+ @State var context = ToastContext()
  
  view.toast(context: context)
  

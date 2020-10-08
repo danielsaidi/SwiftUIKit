@@ -18,12 +18,12 @@ import SwiftUI
  To use the context, first create an observed instance, then
  bind it to a presentation-specific view modifier that takes
  an `isPresented` binding and a `content` vuew builder, then
- call the context's `present` function to present the view.
+ call any of the context's `present` functions.
  
  For instance, using the `AlertContext` involves these steps:
  
  ```swift
- @ObservedObject var context = AlertContext()
+ @State var context = AlertContext()
  
  view.alert(context: context)
  

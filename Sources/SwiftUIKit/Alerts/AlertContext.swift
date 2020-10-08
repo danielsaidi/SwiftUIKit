@@ -14,12 +14,12 @@ import SwiftUI
  implements the `AlertProvider` protocol (e.g. an enum where
  each case returns a specific alert).
  
- To use the context, first create an observed instance, then
- bind it to a view using the `alert` modifier, then call any
- context `present` function to present an alert:
+ To use the context, first create a state instance then bind
+ it to a view with the `alert` modifier. You can now present
+ alerts by calling any `present` function on the context:
  
  ```swift
- @ObservedObject var context = AlertContext()
+ @State var context = AlertContext()
  
  view.alert(context: context)
  
