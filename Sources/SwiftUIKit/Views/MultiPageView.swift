@@ -23,11 +23,12 @@ public struct MultiPageView: View {
         self.currentPageIndex = currentPageIndex
     }
     
-    public init(
-        pages: [AnyView],
+    public init<Model, ViewType: View>(
+        items: [Model],
         indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
-        currentPageIndex: Binding<Int>) {
-        self.pages = pages
+        currentPageIndex: Binding<Int>,
+        pageBuilder: (Model) -> ViewType) {
+        self.pages = items.map { pageBuilder($0).any() }
         self.indexDisplayMode = indexDisplayMode
         self.currentPageIndex = currentPageIndex
     }
