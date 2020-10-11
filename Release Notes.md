@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.9.7
+
+This release contains a new `MultiPageView`, which can be used to present multiple views in a horizontal page control. 
+
+
 ## 0.9.6
 
 After comments, the `View+Screenshot` `takeScreenshot` function has been renamed to `snapshot`. The `origin` parameter has `.zero` as default value.
