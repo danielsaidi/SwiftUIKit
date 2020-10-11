@@ -5,12 +5,17 @@
 
 ## DismissableView
 
-This view protocol simplifies programatically dismissing a SwiftUI-based "screen".
+This protocol simplifies dismissing SwiftUI screens programatically. Just implement this protocol and add a `PresentationMode` binding and you can dismiss a view with the `dismiss` function. 
 
 
 ## MultilineTextField
 
-This view makes it possible to use multiline text editing to SwiftUI apps.
+This text field view makes it possible to use multiline text editing in SwiftUI.
+
+
+## MultiPageView
+
+This view represents a `UIKit` page control and lets you present multiple views in a horizontally pages list. You can either create it with page views or model items and a page builder.
 
 
 ## UIViewWrapper

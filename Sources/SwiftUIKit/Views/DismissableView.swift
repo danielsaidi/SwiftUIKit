@@ -9,14 +9,16 @@
 import SwiftUI
 
 /**
- This protocol can be implemented by SwiftUI views that have
- a `Binding<PresentationMode>` property and provides a clean
- `dismiss` function that dismisses the wrapped binding value.
+ This protocol simplifies dismissing `SwiftUI` views, e.g. a
+ view that is presented as a modal sheet.
  
- You can add a `presentationMode` to your views like this:
+ Implement this protocol and add a presentation mode binding
+ and you can dismiss a view with the `dismiss()` function.
+ 
+ You can add a `presentationMode` property to a view as such:
  
  ```
- @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+ @Environment(\.presentationMode) var presentationMode
  ```
  */
 public protocol DismissableView: View {

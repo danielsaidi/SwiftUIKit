@@ -11,12 +11,11 @@ import SwiftUI
 
 /**
  This view wraps a `UITextView` and provides multi-line text
- editing.
+ editing to SwiftUI apps.
  
  For now, this view does not adapt size as text changes. You
- can specify a fixed size with the `frame` modifier. You can
- configure the text view by providing a `configuration` when
- you create the view.
+ can however configure the view by providing `configuration`
+ information when you create it.
  */
 public struct MultilineTextField: UIViewRepresentable {
     

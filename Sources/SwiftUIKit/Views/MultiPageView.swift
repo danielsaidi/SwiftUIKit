@@ -11,6 +11,13 @@
 
 import SwiftUI
 
+/**
+ This view represents a `UIKit` page control and can be used
+ to present multiple views in a horizontal paged scroll view.
+ 
+ You can either create this view by providing it with a view
+ collection or an item list with a page builder function.
+ */
 @available(iOS 14.0, *)
 public struct MultiPageView: View {
     
