@@ -14,12 +14,13 @@ import SwiftUI
  implements the `ToastProvider` protocol (e.g. a custom enum
  where each case returns a specific toast).
  
- To use the context, first create a state instance then bind
- it to a view with the `toast` modifier. You can now present
- toasts by calling any `present` function on the context:
+ To use the context, first create an instance in a view that
+ should be able to show toasts. Then bind the context to the
+ view using the `toast` modifier. You can now present toasts
+ by calling any `present` function on the context:
  
  ```swift
- @State var context = ToastContext()
+ @ObservedObject var context = ToastContext()
  
  view.toast(context: context)
  
@@ -29,11 +30,18 @@ import SwiftUI
  ```
  
  The `toast` modifier also lets you specify a `duration` and
- a `style` as well. 
+ a toast `style`.
  
- The context-specific `toast` modifier is more convenient if
- you use contexts, but the binding/content-specific one is a
- bit more flexible and can be used in other scenarios.
+ The `context`-specific `toast` modifier is a convenient way
+ to present toasts with the `ToastContext`, but you can also
+ use the native modifiers if you want or need to.
+ 
+ `IMPORTANT` `@ObservedObject` most often works great, but I
+ have had problems with it in apps that target iOS 14, where
+ toasts either don't appear or immediately closes. Replacing
+ `@ObservedObject` with `@State` has solved the problem, but
+ it is not consistent. My advice is to try `@ObservedObject`
+ first and only replace it with `@State` if it doesn't work.
  */
 public class ToastContext: PresentationContext<AnyView> {
     

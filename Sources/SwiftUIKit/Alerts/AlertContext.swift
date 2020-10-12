@@ -12,14 +12,15 @@ import SwiftUI
  This context can be used to present `SwiftUI` `Alert`s. You
  can either present plain `Alert` instances or anything that
  implements the `AlertProvider` protocol (e.g. an enum where
- each case returns a specific alert).
+ every case returns a specific alert).
  
- To use the context, first create a state instance then bind
- it to a view with the `alert` modifier. You can now present
- alerts by calling any `present` function on the context:
+ To use the context, first create an instance in a view that
+ should be able to show alerts. Then bind the context to the
+ view using the `alert` modifier. You can now present alerts
+ by calling any `present` function on the context:
  
  ```swift
- @State var context = AlertContext()
+ @ObservedObject var context = AlertContext()
  
  view.alert(context: context)
  
@@ -28,9 +29,16 @@ import SwiftUI
  context.present(AppAlert.generalWarning)
  ```
  
- The context-specific `alert` modifier is more conveinent if
- you use contexts, but the binding/content-specific one is a
- bit more flexible and can be used in other scenarios.
+ The `context`-specific `alert` modifier is a convenient way
+ to present alerts with the `AlertContext`, but you can also
+ use the native modifiers if you want or need to.
+ 
+ `IMPORTANT` `@ObservedObject` most often works great, but I
+ have had problems with it in apps that target iOS 14, where
+ alerts either don't appear or immediately closes. Replacing
+ `@ObservedObject` with `@State` has solved the problem, but
+ it is not consistent. My advice is to try `@ObservedObject`
+ first and only replace it with `@State` if it doesn't work.
  */
 public class AlertContext: PresentationContext<Alert> {
     

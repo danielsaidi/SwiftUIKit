@@ -14,12 +14,13 @@ import SwiftUI
  that implements the `SheetProvider` protocol (e.g. a custom
  enum where each case returns a specific sheet).
  
- To use the context, first create a state instance then bind
- it to a view with the `sheet` modifier. You can now present
- sheets by calling any `present` function on the context:
+ To use the context, first create an instance in a view that
+ should be able to show sheets. Then bind the context to the
+ view using the `sheet` modifier. You can now present sheets
+ by calling any `present` function on the context:
  
  ```swift
- @State var context = SheetContext()
+ @ObservedObject var context = SheetContext()
  
  view.sheet(context: context)
  
@@ -28,9 +29,16 @@ import SwiftUI
  context.present(AppSheet.settings)
  ```
  
- The context-specific `sheet` modifier is more convenient if
- you use contexts, but the binding/content-specific one is a
- bit more flexible and can be used in other scenarios.
+ The `context`-specific `sheet` modifier is a convenient way
+ to present sheets with the `SheetContext`, but you can also
+ use the native modifiers if you want or need to.
+ 
+ `IMPORTANT` `@ObservedObject` most often works great, but I
+ have had problems with it in apps that target iOS 14, where
+ sheets either don't appear or immediately closes. Replacing
+ `@ObservedObject` with `@State` has solved the problem, but
+ it is not consistent. My advice is to try `@ObservedObject`
+ first and only replace it with `@State` if it doesn't work.
  */
 public class SheetContext: PresentationContext<AnyView> {
     
