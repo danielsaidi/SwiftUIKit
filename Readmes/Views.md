@@ -5,7 +5,17 @@
 
 ## DismissableView
 
-This protocol simplifies dismissing SwiftUI screens programatically. Just implement this protocol and add a `PresentationMode` binding and you can dismiss a view with the `dismiss` function. 
+This protocol simplifies dismissing SwiftUI screens programatically. Just implement this protocol and add a `PresentationMode` binding and you can dismiss a view with the `dismiss` function.
+
+
+## LazyNavigationLink
+
+Lazy navigation links can be used to improve performance, e.g. when you have many of then. The destination is wrapped in a `LazyView`, which resolves its body upon presentation.
+
+
+## LazyView
+
+Lazy views can be used to improve performance, since the view body is resolved first when the view is presented. 
 
 
 ## MultilineTextField

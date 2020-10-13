@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 0.9.8
+
+This release contains a new `LazyView` and `LazyNavigationView`, which can be used to improve performance, since they resolve views upon presentation. 
+
+
 ## 0.9.7
 
 This release contains a new `MultiPageView`, which can be used to present multiple views in a horizontal page control. 
