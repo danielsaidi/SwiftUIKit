@@ -23,7 +23,7 @@ import SwiftUI
  For instance, using the `AlertContext` involves these steps:
  
  ```swift
- @State var context = AlertContext()
+ @StateObject var context = AlertContext()
  
  view.alert(context: context)
  
@@ -31,6 +31,10 @@ import SwiftUI
  ```
  
  Have a look at more specific contexts for more information.
+ 
+ `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
+ of `@StateObject`, but then there can be glitches may cause
+ the presentation state to cancel. `@StateObject` fixes this.
  */
 public class PresentationContext<Content>: ObservableObject {
     
