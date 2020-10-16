@@ -11,7 +11,7 @@ import SwiftUIKit
 
 struct AlertsScreen: View, DemoList {
     
-    @ObservedObject private var context = AlertContext()
+    @StateObject private var context = AlertContext()
     
     var body: some View {
         ScrollView {

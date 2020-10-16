@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct StylesScreen: View {
+    
     var body: some View {
         List {
             NavigationLink("Corner Radius Style", destination: CornerRadiusStyleScreen())

@@ -11,7 +11,7 @@ import SwiftUIKit
 
 struct ToastsScreen: View, DemoList {
     
-    @ObservedObject var context = ToastContext()
+    @StateObject var context = ToastContext()
     
     var body: some View {
         ScrollView {

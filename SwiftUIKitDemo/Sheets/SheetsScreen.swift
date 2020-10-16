@@ -11,7 +11,7 @@ import SwiftUIKit
 
 struct SheetsScreen: View, DemoList {
     
-    @ObservedObject private var context = SheetContext()
+    @StateObject private var context = SheetContext()
     
     var body: some View {
         ScrollView {
