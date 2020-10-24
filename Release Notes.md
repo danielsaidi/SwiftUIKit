@@ -3,7 +3,7 @@
 
 ## 0.9.9
 
-This release wraps the logic within os checks to make it build on tvOS and watchOS.
+This release wraps more logic within os checks to make it build on tvOS and watchOS.
 
 The release also adds:
 
