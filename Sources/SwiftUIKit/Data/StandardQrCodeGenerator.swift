@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(iOS) || os(tvOS) || os(macOS)
 public class StandardQrCodeGenerator: QrCodeGenerator {
     
     public init(scale: CGFloat) {
@@ -28,3 +29,4 @@ public class StandardQrCodeGenerator: QrCodeGenerator {
         return Image(cgImage, scale: 2, label: Text("QR Code"))
     }
 }
+#endif

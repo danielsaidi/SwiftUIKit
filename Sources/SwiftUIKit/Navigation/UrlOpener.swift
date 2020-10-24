@@ -34,6 +34,7 @@ public extension UrlOpener {
         return app.canOpenURL(url)
         #else
         assertionFailure("Not yet implemented")
+        return false
         #endif
     }
     

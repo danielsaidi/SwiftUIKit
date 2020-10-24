@@ -1,6 +1,15 @@
 # Release notes
 
 
+## 0.9.9
+
+This release wraps the logic within os checks to make it build on tvOS and watchOS.
+
+The release also adds:
+
+* `CircularProgressBar` which renders a progress in a circle.
+
+
 ## 0.9.8
 
 This release contains a new `LazyView` and `LazyNavigationView`, which can be used to improve performance, since they resolve views upon presentation. 

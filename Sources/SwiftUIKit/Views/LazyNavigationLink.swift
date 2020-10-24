@@ -30,6 +30,7 @@ struct LazyNavigationLink<Destination: View, Content: View>: View {
     }
 }
 
+#if os(iOS) || os(tvOS) || os(macOS)
 struct LazyNavigationLink_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -39,3 +40,4 @@ struct LazyNavigationLink_Previews: PreviewProvider {
         }
     }
 }
+#endif

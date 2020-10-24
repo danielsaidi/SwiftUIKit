@@ -9,6 +9,7 @@
 //  https://stackoverflow.com/questions/58388071/how-can-i-implement-pageview-in-swiftui/63159912
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -53,3 +54,4 @@ public struct MultiPageView: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: indexDisplayMode))
     }
 }
+#endif

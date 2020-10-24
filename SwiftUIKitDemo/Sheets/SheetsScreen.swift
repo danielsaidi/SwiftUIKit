@@ -13,6 +13,12 @@ struct SheetsScreen: View, DemoList {
     
     @StateObject private var context = SheetContext()
     
+    func a() {
+        
+        let a = Text("hufeiah")
+        a.hidden(if: <#T##Bool#>)
+    }
+    
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
