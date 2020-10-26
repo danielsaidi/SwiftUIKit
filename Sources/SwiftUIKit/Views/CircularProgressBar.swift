@@ -52,9 +52,6 @@ public struct CircularProgressBar: View {
     }
 }
 
-
-// MARK: - Views
-
 private extension CircularProgressBar {
     
     var baseCircle: some View {
@@ -80,12 +77,24 @@ private extension CircularProgressBar {
     }
 }
 
-
-// MARK: - Logic
-
 private extension CircularProgressBar {
     
     var displayProgress: Double {
         max(min(progress * 100, 100), 0)
+    }
+}
+
+struct CircularProgressBar_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        CircularProgressBar(
+            progress: .constant(0.7),
+            backgroundColor: .blue,
+            strokeColor: .yellow,
+            strokeWidth: 10,
+            progressColor: .red,
+            progressWidth: 16,
+            textColor: .black,
+            decimals: 2)
     }
 }
