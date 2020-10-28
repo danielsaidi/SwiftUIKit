@@ -14,10 +14,10 @@ import SwiftUI
  implements the `ToastProvider` protocol (e.g. a custom enum
  where each case returns a specific toast).
  
- To use the context, first create an instance in a view that
- should be able to show toasts. Then bind the context to the
- view using the `toast` modifier. You can now present toasts
- by calling any `present` function on the context:
+ To use this class, create a `@StateObject` instance in your
+ presenting view, then bind the context to the view with the
+ context-specific modifier. You can now use `present` on the
+ context to present toasts:
  
  ```swift
  @StateObject var context = ToastContext()
@@ -30,9 +30,7 @@ import SwiftUI
  ```
  
  The `toast` modifier also lets you specify a `duration` and
- a toast `style`.
- 
- You can also use the native toast modifier if you want/need.
+ a toast `style`, which determines what the toast looks like.
  
  `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
  of `@StateObject`, but then there can be glitches may cause

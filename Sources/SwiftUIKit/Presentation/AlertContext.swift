@@ -14,10 +14,10 @@ import SwiftUI
  implements the `AlertProvider` protocol (e.g. an enum where
  every case returns a specific alert).
  
- To use the context, first create an instance in a view that
- should be able to show alerts, then bind the context to the
- view using the `alert` modifier. You can now present alerts
- by calling any `present` function on the context:
+ To use this class, create a `@StateObject` instance in your
+ presenting view, then bind the context to the view with the
+ context-specific modifier. You can now use `present` on the
+ context to present alerts:
  
  ```swift
  @StateObject var context = AlertContext()
@@ -28,8 +28,6 @@ import SwiftUI
  // ...or if an `AppAlert` enum implements `AlertProvider`:
  context.present(AppAlert.generalWarning)
  ```
- 
- You can also use the native alert modifier if you want/need.
  
  `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
  of `@StateObject`, but then there can be glitches may cause

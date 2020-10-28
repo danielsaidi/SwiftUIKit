@@ -8,9 +8,6 @@
 
 import SwiftUI
 
-@available(*, deprecated, renamed: "AlertProvider")
-public typealias AlertPresentable = AlertProvider
-
 /**
  This protocol can be implemented by anything (e.g. a struct,
  enum or class) that can provide a SwiftUI `Alert`.

@@ -7,7 +7,9 @@ This release wraps the logic within os checks to make it build on tvOS and watch
 
 The release also adds:
 
-* `CircularProgressBar` which renders a progress in a circle.
+* A new `CircularProgressBar` which renders a progress in a circle.
+* A new `FullScreenCover` namespace that lets you apply full screen covers like sheets, alerts and toasts.
+
 
 
 ## 0.9.8

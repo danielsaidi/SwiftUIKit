@@ -14,10 +14,10 @@ import SwiftUI
  that implements the `SheetProvider` protocol (e.g. a custom
  enum where each case returns a specific sheet).
  
- To use the context, first create an instance in a view that
- should be able to show sheets. Then bind the context to the
- view using the `sheet` modifier. You can now present sheets
- by calling any `present` function on the context:
+ To use this class, create a `@StateObject` instance in your
+ presenting view, then bind the context to the view with the
+ context-specific modifier. You can now use `present` on the
+ context to present sheets:
  
  ```swift
  @StateObject var context = SheetContext()
@@ -28,8 +28,6 @@ import SwiftUI
  // ...or if an `AppSheet` enum implements `SheetProvider`:
  context.present(AppSheet.settings)
  ```
- 
- You can also use the native sheet modifier if you want/need.
  
  `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
  of `@StateObject`, but then there can be glitches may cause
