@@ -13,6 +13,7 @@ struct PresentationScreen: View {
     var body: some View {
         List {
             NavigationLink("Alerts", destination: AlertsScreen())
+            NavigationLink("Full Screen Covers", destination: FullScreenCoversScreen())
             NavigationLink("Sheets", destination: SheetsScreen())
             NavigationLink("Toasts", destination: ToastsScreen())
         }.navigationBarTitle("Presentation")

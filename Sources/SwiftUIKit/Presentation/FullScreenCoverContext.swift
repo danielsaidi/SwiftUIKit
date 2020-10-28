@@ -44,6 +44,6 @@ public class FullScreenCoverContext: PresentationContext<AnyView> {
     }
     
     public func present(_ provider: FullScreenCoverProvider) {
-        contentView = provider.cover
+        present(provider.cover)
     }
 }

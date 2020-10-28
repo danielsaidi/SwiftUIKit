@@ -47,6 +47,6 @@ public class ToastContext: PresentationContext<AnyView> {
     }
     
     public func present(_ provider: ToastProvider) {
-        contentView = provider.toast
+        present(provider.toast)
     }
 }

@@ -44,6 +44,6 @@ public class SheetContext: PresentationContext<AnyView> {
     }
     
     public func present(_ provider: SheetProvider) {
-        contentView = provider.sheet
+        present(provider.sheet)
     }
 }
