@@ -5,9 +5,9 @@
         "package": "SwiftUIKit",
         "repositoryURL": "https://github.com/danielsaidi/SwiftUIKit.git",
         "state": {
-          "branch": null,
-          "revision": "76cc6aa8ff3f2e23b088b7c7ad86518c809ad438",
-          "version": "0.9.7"
+          "branch": "master",
+          "revision": "716412264657f74f982d0c4738a29faed9c5ac97",
+          "version": null
         }
       }
     ]

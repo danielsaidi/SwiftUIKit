@@ -10,19 +10,15 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    @State private var text: String = ""
-    
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Alerts", destination: AlertsScreen())
                 NavigationLink("Blurs", destination: BlursScreen())
                 NavigationLink("Data", destination: DataScreen())
                 NavigationLink("Extensions", destination: ExtensionsScreen())
                 NavigationLink("Gestures", destination: GesturesScreen())
-                NavigationLink("Sheets", destination: SheetsScreen())
+                NavigationLink("Presentation", destination: PresentationScreen())
                 NavigationLink("Styles", destination: StylesScreen())
-                NavigationLink("Toasts", destination: ToastsScreen())
             }.navigationBarTitle("SwiftUIKit Demo")
         }
     }

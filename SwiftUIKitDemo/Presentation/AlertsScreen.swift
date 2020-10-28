@@ -18,7 +18,7 @@ struct AlertsScreen: View, DemoList {
             VStack(spacing: listSpacing) {
                 itemUsingAlert(.red)
                 itemUsingAlert(.green)
-                itemUsingAlertPresentable(.blue)
+                itemUsingProvider(.blue)
             }
         }
         .alert(context: context)
@@ -35,7 +35,7 @@ private extension AlertsScreen {
             .onTapGesture(perform: action)
     }
     
-    func itemUsingAlertPresentable(_ alert: DemoAlert) -> some View {
+    func itemUsingProvider(_ alert: DemoAlert) -> some View {
         let title = "Show a \(alert.title) alert"
         let action = { self.context.present(alert) }
         return DemoListItem(title: title, content: alert.color, effect: { $0 })

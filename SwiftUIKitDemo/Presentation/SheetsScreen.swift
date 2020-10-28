@@ -13,18 +13,12 @@ struct SheetsScreen: View, DemoList {
     
     @StateObject private var context = SheetContext()
     
-    func a() {
-        
-        let a = Text("hufeiah")
-        a.hidden(if: <#T##Bool#>)
-    }
-    
     var body: some View {
         ScrollView {
             VStack(spacing: listSpacing) {
-                itemUsingSheetPresentable(.red)
-                itemUsingSheetPresentable(.green)
-                itemUsingView(.blue)
+                itemUsingView(.red)
+                itemUsingView(.green)
+                itemUsingProvider(.blue)
             }
         }
         .sheet(context: context)
@@ -34,7 +28,7 @@ struct SheetsScreen: View, DemoList {
 
 private extension SheetsScreen {
     
-    func itemUsingSheetPresentable(_ sheet: DemoSheet) -> some View {
+    func itemUsingProvider(_ sheet: DemoSheet) -> some View {
         let title = "Show a \(sheet.title) sheet"
         let action = { self.context.present(sheet) }
         return DemoListItem(title: title, content: sheet.color, effect: { $0 })
