@@ -8,8 +8,8 @@ This release wraps more logic within os checks to make it build on tvOS and watc
 The release also adds:
 
 * A new `CircularProgressBar` which renders a progress in a circle.
+* A new `FetchedDataView` view that shows a spinner, fetched data or a failure view.
 * A new `FullScreenCover` namespace that lets you apply full screen covers like sheets, alerts and toasts.
-
 
 
 ## 0.9.8
