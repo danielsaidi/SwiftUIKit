@@ -31,9 +31,9 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
     public init(
         data: Model?,
         isLoading: Bool,
-        @ViewBuilder content: @escaping ContentBuilder,
-        @ViewBuilder loadingView: @escaping LoadingViewBuilder,
-        @ViewBuilder noDataView: @escaping NoDataViewBuilder) {
+        loadingView: LoadingView,
+        noDataView: NoDataView,
+        @ViewBuilder content: @escaping ContentBuilder) {
         self.data = data
         self.isLoading = isLoading
         self.content = content
@@ -43,22 +43,20 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
     
     private let data: Model?
     private let isLoading: Bool
+    private let loadingView: LoadingView
+    private let noDataView: NoDataView
     private let content: ContentBuilder
-    private let loadingView: LoadingViewBuilder
-    private let noDataView: NoDataViewBuilder
     
     public typealias ContentBuilder = (Model) -> Content
-    public typealias LoadingViewBuilder = () -> LoadingView
-    public typealias NoDataViewBuilder = () -> NoDataView
     
     public var body: some View {
         Group {
             if let data = data {
                 content(data)
             } else if isLoading {
-                loadingView()
+                loadingView
             } else {
-                noDataView()
+                noDataView
             }
         }
     }
@@ -68,14 +66,14 @@ struct FetchedDataView_Previews: PreviewProvider {
     static var previews: some View {
         let nilData: String? = nil
         let content: (String) -> AnyView = { Text($0).any() }
-        let loadingView = { Text("Loading...") }
-        let noDataView = { Text("No data") }
+        let loadingView = Text("Loading...")
+        let noDataView = Text("No data")
         
         return Group {
-            FetchedDataView(data: "Fetched data", isLoading: true, content: content, loadingView: loadingView, noDataView: noDataView)
-            FetchedDataView(data: "Fetched data", isLoading: false, content: content, loadingView: loadingView, noDataView: noDataView)
-            FetchedDataView(data: nilData, isLoading: true, content: content, loadingView: loadingView, noDataView: noDataView)
-            FetchedDataView(data: nilData, isLoading: false, content: content, loadingView: loadingView, noDataView: noDataView)
+            FetchedDataView(data: "Fetched data", isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
+            FetchedDataView(data: "Fetched data", isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
+            FetchedDataView(data: nilData, isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
+            FetchedDataView(data: nilData, isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
         }.previewLayout(.sizeThatFits)
     }
 }
