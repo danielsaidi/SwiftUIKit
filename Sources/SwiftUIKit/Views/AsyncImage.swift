@@ -41,14 +41,14 @@ public struct AsyncImage<PlaceholderView: View>: View {
         content.onAppear(perform: loadImage)
     }
     
+    @ViewBuilder
     private var content: some View {
-        Group {
-            if let image = loader.image {
-                image.resizable()
-                    .aspectRatio(contentMode: contentMode)
-            } else {
-                placeholder()
-            }
+        if let image = loader.image {
+            image
+                .resizable()
+                .aspectRatio(contentMode: contentMode)
+        } else {
+            placeholder()
         }
     }
     

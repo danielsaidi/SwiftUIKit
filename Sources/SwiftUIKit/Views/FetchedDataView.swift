@@ -49,15 +49,14 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
     
     public typealias ContentBuilder = (Model) -> Content
     
+    @ViewBuilder
     public var body: some View {
-        Group {
-            if let data = data {
-                content(data)
-            } else if isLoading {
-                loadingView
-            } else {
-                noDataView
-            }
+        if let data = data {
+            content(data)
+        } else if isLoading {
+            loadingView
+        } else {
+            noDataView
         }
     }
 }

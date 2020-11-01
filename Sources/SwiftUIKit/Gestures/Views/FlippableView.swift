@@ -46,7 +46,7 @@ public struct FlippableView: View, Flippable {
     }
     
     public var body: some View {
-        Group { isFlipped ? backView : frontView }
+        content
             .rotation3DEffect(Angle(degrees: self.rotationX), axis: (x: 1, y: 0, z: 0))
             .rotation3DEffect(Angle(degrees: self.rotationY), axis: (x: 0, y: 1, z: 0))
             .onSwipeGesture(
@@ -56,6 +56,11 @@ public struct FlippableView: View, Flippable {
                 down: { self.flip(.down) }
             )
             .onTapGesture { self.flip(.right) }
+    }
+    
+    @ViewBuilder
+    private var content: some View {
+        isFlipped ? backView : frontView
     }
 }
 #endif
