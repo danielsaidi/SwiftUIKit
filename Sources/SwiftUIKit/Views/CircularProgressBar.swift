@@ -9,8 +9,8 @@
 import SwiftUI
 
 /**
- This view displays a progress as a stroked circle, with the
- progress text in its center.
+ This view displays a percentual progress as a circle stroke,
+ with the progress text in the center of the circle.
 
  Override the static `standard` style instance to change how
  these views look when you don't provide a `style` in `init`.
