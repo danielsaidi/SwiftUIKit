@@ -13,6 +13,7 @@ import SwiftUI
  enum etc.) that can provide a `full screen cover` view that
  can be presented as a full screen cover.
  */
+@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public protocol FullScreenCoverProvider {
     
     var cover: AnyView { get }

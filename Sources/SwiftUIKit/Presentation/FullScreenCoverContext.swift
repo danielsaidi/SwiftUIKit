@@ -33,6 +33,7 @@ import SwiftUI
  of `@StateObject`, but then there can be glitches may cause
  the presentation state to cancel. `@StateObject` fixes this.
  */
+@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public class FullScreenCoverContext: PresentationContext<AnyView> {
     
     public override func content() -> AnyView {
