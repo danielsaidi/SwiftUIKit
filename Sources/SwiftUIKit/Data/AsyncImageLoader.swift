@@ -1,5 +1,5 @@
 //
-//  ImageLoader.swift
+//  AsyncImageLoader.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-10-01.
@@ -9,7 +9,7 @@
 import Combine
 import SwiftUI
 
-#if os(iOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 #elseif os(macOS)
 import Cocoa
@@ -19,7 +19,7 @@ import Cocoa
  This class can be used to fetch an image from an url, using
  an async network request.
  */
-public class ImageLoader: ObservableObject {
+public class AsyncImageLoader: ObservableObject {
     
     public init(
         url: URL,
@@ -51,11 +51,11 @@ public class ImageLoader: ObservableObject {
     }
 }
 
-private extension ImageLoader {
+private extension AsyncImageLoader {
     
     func getImage(from data: Data?) -> Image? {
         guard let data = data else { return nil }
-        #if os(iOS)
+        #if os(iOS) || os(tvOS) || os(watchOS)
         let image = UIImage(data: data) ?? UIImage()
         return Image(uiImage: image)
         #elseif os(macOS)

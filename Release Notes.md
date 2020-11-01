@@ -8,11 +8,11 @@ This release wraps more logic within os checks to make it build on tvOS and watc
 The release also adds new views and utils:
 
 * `AsyncImage` is a view that loads an async image from the network.
+* `AsyncImageLoader` is an observable class that loads an async image from the network.
 * `CircularProgressBar` renders a percentual progress in a circle.
 * `CircularProgressView` renders a round spinner.
 * `FetchedDataView` shows a spinner, fetched data or a failure view.
 * `FullScreenCoverContext/Provider` lets you handle full screen covers like sheets, alerts etc.
-* `ImageLoader` loads an async image from the network.
 
 
 ## 0.9.8

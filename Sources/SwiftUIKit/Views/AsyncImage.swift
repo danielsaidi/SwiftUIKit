@@ -26,7 +26,7 @@ public struct AsyncImage<PlaceholderView: View>: View {
         self.loadDelay = loadDelay
         self.contentMode = contentMode
         self.placeholder = placeholder
-        _loader = StateObject(wrappedValue: ImageLoader(url: url))
+        _loader = StateObject(wrappedValue: AsyncImageLoader(url: url))
     }
     
     public typealias Placeholder = () -> PlaceholderView
@@ -35,7 +35,7 @@ public struct AsyncImage<PlaceholderView: View>: View {
     private let loadDelay: DispatchTimeInterval
     private let placeholder: Placeholder
     
-    @StateObject private var loader: ImageLoader
+    @StateObject private var loader: AsyncImageLoader
 
     public var body: some View {
         content.onAppear(perform: loadImage)
