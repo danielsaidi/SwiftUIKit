@@ -17,7 +17,7 @@ import SwiftUI
  The standard colors are not adaptive and will not adjust to
  e.g. dark mode.
  */
-@available(iOS 13.0, watchOS 6.0, macOS 10.15, tvOS 13.0, *)
+@available(iOS 13, watchOS 6.0, macOS 10.15, tvOS 13, *)
 public struct CircularProgressBar: View {
     
     public init(
@@ -76,7 +76,7 @@ public struct CircularProgressBar: View {
     }
 }
 
-@available(iOS 13.0, watchOS 6.0, macOS 10.15, tvOS 13.0, *)
+@available(iOS 13, watchOS 6.0, macOS 10.15, tvOS 13, *)
 public struct CircularProgressBarStyle {
     
     public init(
@@ -112,7 +112,7 @@ public struct CircularProgressBarStyle {
     public static var standard = CircularProgressBarStyle()
 }
 
-@available(iOS 13.0, watchOS 6.0, macOS 10.15, tvOS 13.0, *)
+@available(iOS 13, watchOS 6.0, macOS 10.15, tvOS 13, *)
 struct CircularProgressBar_Previews: PreviewProvider {
     
     static var previews: some View {

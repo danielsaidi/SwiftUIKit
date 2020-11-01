@@ -5,12 +5,14 @@
 
 This release wraps more logic within os checks to make it build on tvOS and watchOS.
 
-The release also adds:
+The release also adds new views and utils:
 
-* A new `CircularProgressBar` which renders a percentual progress in a circle.
-* A new `CircularProgressView` which renders a spinner.
-* A new `FetchedDataView` view that shows a spinner, fetched data or a failure view.
-* A new `FullScreenCover` namespace that lets you apply full screen covers like sheets, alerts and toasts.
+* `AsyncImage` is a view that loads an async image from the network.
+* `CircularProgressBar` renders a percentual progress in a circle.
+* `CircularProgressView` renders a round spinner.
+* `FetchedDataView` shows a spinner, fetched data or a failure view.
+* `FullScreenCoverContext/Provider` lets you handle full screen covers like sheets, alerts etc.
+* `ImageLoader` loads an async image from the network.
 
 
 ## 0.9.8

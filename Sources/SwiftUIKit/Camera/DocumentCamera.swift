@@ -21,7 +21,7 @@ import VisionKit
  You can use this view with `SheetContext` to easily present
  it as a modal sheet.
  */
-@available(iOS 13.0, *)
+@available(iOS 13, *)
 public struct DocumentCamera: UIViewControllerRepresentable {
     
     public init(delegate: VNDocumentCameraViewControllerDelegate) {
@@ -39,7 +39,7 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     public func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) {}
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13, *)
 public extension DocumentCamera {
     
     class Delegate: NSObject, VNDocumentCameraViewControllerDelegate {
