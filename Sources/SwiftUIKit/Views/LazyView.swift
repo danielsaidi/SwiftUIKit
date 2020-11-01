@@ -13,15 +13,15 @@ import SwiftUI
  is resolved upon presentation. This can be used e.g. within
  `NavigationLink`s to postpone the body creation.
  */
-struct LazyView<Content: View>: View {
+public struct LazyView<Content: View>: View {
     
-    init(@ViewBuilder content: @escaping () -> Content) {
+    public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
     
-    let content: () -> Content
+    public let content: () -> Content
     
-    var body: Content {
+    public var body: Content {
         content()
     }
 }
