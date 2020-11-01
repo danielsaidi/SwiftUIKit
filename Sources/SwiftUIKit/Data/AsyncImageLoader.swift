@@ -36,7 +36,7 @@ public class AsyncImageLoader: ObservableObject {
     
     @Published public var image: Image?
 
-    func load() {
+    public func load() {
         cancellable = session.dataTaskPublisher(for: url)
             .map { $0.data }
             .replaceError(with: nil)
@@ -46,7 +46,7 @@ public class AsyncImageLoader: ObservableObject {
             }
     }
 
-    func cancel() {
+    public func cancel() {
         cancellable?.cancel()
     }
 }
