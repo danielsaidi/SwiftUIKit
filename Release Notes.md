@@ -13,6 +13,7 @@ The release also adds new views and utils:
 * `CircularProgressView` renders a round spinner.
 * `FetchedDataView` shows a spinner, fetched data or a failure view.
 * `FullScreenCoverContext/Provider` lets you handle full screen covers like sheets, alerts etc.
+* `OptionalView` returns the provided content if the provided value is not nil, else `EmptyView`.
 
 
 ## 0.9.8
