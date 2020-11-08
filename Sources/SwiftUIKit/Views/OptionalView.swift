@@ -11,6 +11,15 @@ import SwiftUI
 /**
  This view will render the provided content builder with the
  provided value if the value is not nil, else `EmptyView`.
+ 
+ For instance, if you want to print an optional `age` int in
+ a text, you can use this view like this:
+ 
+ ```
+ OptionalView(person.age) { age in
+     Text("\(age) years old")
+ }
+ ```
  */
 public struct OptionalView<Value, Content: View>: View {
     
