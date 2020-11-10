@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
 /**
  This struct represents a row in a multi-row collection, for
  use in e.g. a `CatalogCollectionView`.
@@ -24,3 +25,4 @@ public struct CollectionViewRow<Section: Hashable, Item: Hashable>: Hashable {
         self.items = items
     }
 }
+#endif

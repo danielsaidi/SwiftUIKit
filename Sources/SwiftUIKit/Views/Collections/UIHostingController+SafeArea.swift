@@ -5,6 +5,7 @@
 //  Created by Daniel Saidi on 2020-11-10.
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 
+#if os(iOS) || os(tvOS)
 import Foundation
 import SwiftUI
 
@@ -54,3 +55,4 @@ private extension UIHostingController {
         }
     }
 }
+#endif
