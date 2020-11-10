@@ -27,7 +27,7 @@ public extension CollectionViewLayout {
             let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let layoutItem = NSCollectionLayoutItem(layoutSize: layoutSize)
             layoutItem.contentInsets = itemInsets
-            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(1), heightDimension: .absolute(itemHeight))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(itemHeight))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: layoutItem, count: itemsPerRow)
             return NSCollectionLayoutSection(group: group)
         }
