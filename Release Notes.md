@@ -15,6 +15,11 @@ The release also adds new views and utils:
 * `FullScreenCoverContext/Provider` lets you handle full screen covers like sheets, alerts etc.
 * `OptionalView` returns the provided content if the provided value is not nil, else `EmptyView`.
 
+The release also adds a highly performant set of collection views, based on the amazing work of @defagos, which can be found [here](https://github.com/defagos/SwiftUICollection):
+
+* `CatalogCollectionView` for vertically scrolling collection views with horizontally scrolling rows.
+* `GridCollectionView` for vertically scrolling collection views that layout items in a grid. 
+
 
 ## 0.9.8
 

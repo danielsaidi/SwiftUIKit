@@ -1,0 +1,44 @@
+//
+//  CollectionViewLayout+Catalog.swift
+//  SwiftUIKit
+//
+//  Created by Daniel Saidi on 2020-11-10.
+//  Copyright © 2020 Daniel Saidi. All rights reserved.
+
+import UIKit
+
+public extension CollectionViewLayout {
+    
+    /**
+     This layout makes a `CollectionView` render itself as a
+     vertical list with horizontally scrolling rows.
+     
+     You can apply this layout using `layout: .catalog()` in
+     the `CollectionView` init. The default parameters below
+     create a list with square item cells where each row can
+     scroll horizontally when its items don't fit the screen.
+     */
+    static func catalog(
+        itemSize: CGSize = CGSize(width: 200, height: 200),
+        headerHeight: CGFloat = 44,
+        sectionInsets: NSDirectionalEdgeInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0),
+        itemSpacing: CGFloat = 60) -> CollectionViewLayout {
+        CollectionViewLayout { sectionIndex, layoutEnvironment in
+            let itemLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(itemSize.width), heightDimension: .absolute(itemSize.height))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            let header = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(headerHeight)),
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .topLeading
+            )
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = sectionInsets
+            section.interGroupSpacing = itemSpacing
+            section.orthogonalScrollingBehavior = .continuous
+            section.boundarySupplementaryItems = [header]
+            return section
+        }
+    }
+}
