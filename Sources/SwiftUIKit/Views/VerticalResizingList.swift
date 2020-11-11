@@ -11,6 +11,9 @@ import SwiftUI
 /**
  This view can list a collection of views in a vertical list
  and resize them to the widest view.
+ 
+ `TODO` For now, this triggers the following warning message:
+ Bound preference MaximumWidthPreferenceKey tried to update multiple times per frame.
  */
 public struct VerticalResizingList<Content: View>: View {
     
