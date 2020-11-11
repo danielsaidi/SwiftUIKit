@@ -11,10 +11,11 @@ The release also adds new views and utils:
 * `AsyncImageLoader` is an observable class that loads an async image from the network.
 * `CircularProgressBar` renders a percentual progress in a circle.
 * `CircularProgressView` renders a round spinner.
+* `ConditionalView` returns the provided content if the provided condition is `true`, else `EmptyView`.
 * `FetchedDataView` shows a spinner, fetched data or a failure view.
 * `FullScreenCoverContext/Provider` lets you handle full screen covers like sheets, alerts etc.
 * `OptionalView` returns the provided content if the provided value is not nil, else `EmptyView`.
-* `VerticalResizingList` This view can list a collection of views in a vertical list and resize them to the widest view.
+* `VerticalResizingList` can list a collection of views in a vertical list and resize them to the widest view.
 
 The release also adds a highly performant set of collection views, based on the amazing work of @defagos, which can be found [here](https://github.com/defagos/SwiftUICollection):
 

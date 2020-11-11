@@ -25,6 +25,11 @@ This view wraps a `UIKit` collection view to get muuuch better performance than 
 You can apply any kind of layout to the collection view. `SwiftUIKit` has two built-in layouts: `shelves` and `verticalGrid`.
 
 
+## ConditionalView
+
+This view returns the provided content if the provided condition is `true`, else `EmptyView`.
+
+
 ## DismissableView
 
 This protocol simplifies dismissing SwiftUI screens programatically. Just implement this protocol and add a `PresentationMode` binding and you can dismiss a view with the `dismiss` function.
