@@ -1,9 +1,9 @@
 //
 //  UIViewWrapper.swift
-//  ERASweden-Flippen
+//  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-08-11.
-//  Copyright © 2020 Obviuse. All rights reserved.
+//  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)

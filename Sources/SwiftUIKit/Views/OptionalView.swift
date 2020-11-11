@@ -42,7 +42,7 @@ public struct OptionalView<Value, Content: View>: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct OptionalView_Previews: PreviewProvider {
     
     static var previews: some View {
         let nilValue: Int? = nil

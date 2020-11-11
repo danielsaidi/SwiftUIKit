@@ -63,3 +63,9 @@ This view takes an optional model and either displays a view for the model when 
 ## UIViewWrapper
 
 This view makes it easy to wrap a `UIKit` view to make it possible to use it in SwiftUI.
+
+
+## VerticalResizingList
+
+This view can list a collection of views in a vertical list and resize them to the widest view.
+
