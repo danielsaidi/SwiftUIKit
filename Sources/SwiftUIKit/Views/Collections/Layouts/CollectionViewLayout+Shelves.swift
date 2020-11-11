@@ -25,10 +25,10 @@ public extension CollectionViewLayout {
         sectionInsets: NSDirectionalEdgeInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0),
         itemSpacing: CGFloat = 60) -> CollectionViewLayout {
         CollectionViewLayout { sectionIndex, layoutEnvironment in
-            let itemLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
+            let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let layoutItem = NSCollectionLayoutItem(layoutSize: layoutSize)
             let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(itemSize.width), heightDimension: .absolute(itemSize.height))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
             let header = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(headerHeight)),
                 elementKind: UICollectionView.elementKindSectionHeader,
