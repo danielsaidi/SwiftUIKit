@@ -1,5 +1,5 @@
 //
-//  CollectionViewLayout+Catalog.swift
+//  CollectionViewLayout+Shelves.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-11-10.
@@ -12,14 +12,14 @@ public extension CollectionViewLayout {
     
     /**
      This layout makes a `CollectionView` render itself as a
-     vertical list with horizontally scrolling rows.
+     vertical list with horizontally scrolling row "shelves".
      
-     You can apply this layout using `layout: .catalog()` in
+     You can apply this layout using `layout: .shelves()` in
      the `CollectionView` init. The default parameters below
      create a list with square item cells where each row can
      scroll horizontally when its items don't fit the screen.
      */
-    static func catalog(
+    static func shelves(
         itemSize: CGSize = CGSize(width: 200, height: 200),
         headerHeight: CGFloat = 44,
         sectionInsets: NSDirectionalEdgeInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0),

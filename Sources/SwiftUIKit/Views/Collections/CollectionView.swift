@@ -16,8 +16,8 @@ import SwiftUI
  You find the various layouts in the `Layouts` folder. There
  are currently these following layouts to choose from:
  
- * `.catalog` creates a vertical list with horizontal rows.
- * `.grid` creates a vertical grid with x items per grid row.
+ * `.shelves` creates a vertical list with horizontally scrolling shelves.
+ * `.verticalGrid` creates a vertical grid with x items per grid row.
  
  The view can trigger the provided `lazyLoadAction` when the
  last **row** in a multi-row collection or the last **item**

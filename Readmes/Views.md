@@ -22,7 +22,7 @@ This view displays a circular spinner. It's just a `ProgressView()` with a `Circ
 
 This view wraps a `UIKit` collection view to get muuuch better performance than a set of lazy stacks and grids, which perform horribly on `tvOS`.
 
-You can apply any kind of layout to the collection view. `SwiftUIKit` has two built-in layouts: `catalog` and `verticalGrid`.
+You can apply any kind of layout to the collection view. `SwiftUIKit` has two built-in layouts: `shelves` and `verticalGrid`.
 
 
 ## DismissableView
