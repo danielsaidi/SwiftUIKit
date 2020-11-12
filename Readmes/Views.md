@@ -70,6 +70,16 @@ This view represents a `UIKit` page control and lets you present multiple views 
 This view takes an optional model and either displays a view for the model when it's not `nil` else an `EmptyView`.
 
 
+## SimplePicker
+
+This view renders a simple list of buttons that can be used to pick a single option in a list of available options.
+
+
+## SimpleMultiPicker
+
+This view renders a simple list of buttons that can be used to pick multiple options in a list of available options.
+
+
 ## UIViewWrapper
 
 This view makes it easy to wrap a `UIKit` view to make it possible to use it in SwiftUI.
