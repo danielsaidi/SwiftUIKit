@@ -26,12 +26,14 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
         selection: Binding<Value?>,
         options: [Value],
         buttonBuilder: @escaping ButtonBuilder = Self.standardButtonBuilder) {
-        self._selection = selection
+        self._selectionBinding = selection
         self.options = options
         self.buttonBuilder = buttonBuilder
     }
     
-    @Binding public var selection: Value?
+    @Binding public var selectionBinding: Value?
+    @State public var selection: Value?
+    
     public let options: [Value]
     public let buttonBuilder: ButtonBuilder
     
@@ -42,7 +44,7 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
             ForEach(options, id: \.id) { value in
                 buttonBuilder(value, isSelected(value), { select($0) })
             }
-        }
+        }.onReceive(selectionBinding.publisher, perform: { _ in selection = selectionBinding })
     }
     
     /**

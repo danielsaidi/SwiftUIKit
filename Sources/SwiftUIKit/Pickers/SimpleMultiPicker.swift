@@ -26,23 +26,25 @@ public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
         selection: Binding<[Value]>,
         options: [Value],
         buttonBuilder: @escaping ButtonBuilder = Self.standardButtonBuilder) {
-        self._selection = selection
+        self._selectionBinding = selection
         self.options = options
         self.buttonBuilder = buttonBuilder
     }
     
-    @Binding public var selection: [Value]
+    @Binding public var selectionBinding: [Value]
+    @State public var selection: [Value] = []
+    
     public let options: [Value]
     public let buttonBuilder: ButtonBuilder
     
     public typealias ButtonBuilder = (Value, _ isSelected: Bool, _ action: @escaping (Value) -> Void) -> AnyView
     
     public var body: some View {
-        VStack {
+        LazyVStack {
             ForEach(options, id: \.id) { value in
                 buttonBuilder(value, isSelected(value), { toggle($0) })
             }
-        }
+        }.onReceive(selectionBinding.publisher, perform: { _ in selection = selectionBinding })
     }
     
     /**
