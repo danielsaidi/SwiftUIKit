@@ -38,7 +38,7 @@ public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
     public typealias ButtonBuilder = (Value, _ isSelected: Bool, _ action: @escaping (Value) -> Void) -> AnyView
     
     public var body: some View {
-        LazyVStack {
+        VStack {
             ForEach(options, id: \.id) { value in
                 buttonBuilder(value, isSelected(value), { toggle($0) })
             }
