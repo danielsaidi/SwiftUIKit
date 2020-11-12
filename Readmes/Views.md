@@ -42,12 +42,17 @@ This view either displays a loading view when content is being fetched, a conten
 
 ## LazyNavigationLink
 
-Lazy navigation links can be used to improve performance, e.g. when you have many of then. The destination is wrapped in a `LazyView`, which resolves its body upon presentation.
+This navigation link can be used to improve performance, e.g. when you have many of then. The destination is wrapped in a `LazyView`, which resolves its body upon presentation.
 
 
 ## LazyView
 
-Lazy views can be used to improve performance, since the view body is resolved first when the view is presented. 
+This view can be used to improve performance, since the view body is resolved first when the view is presented.
+
+
+## MinWidthButton
+
+This button type applies a min width to it's wrapped content.
 
 
 ## MultilineTextField
