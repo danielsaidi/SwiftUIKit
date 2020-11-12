@@ -35,11 +35,11 @@ import SwiftUI
  */
 public class AlertContext: PresentationContext<Alert> {
     
-    public override func content() -> Alert {
-        contentView ?? Alert(title: Text(""))
+    public func present(_ alert: @autoclosure @escaping () -> Alert) {
+        presentContent(alert())
     }
     
     public func present(_ provider: AlertProvider) {
-        contentView = provider.alert
+        present(provider.alert)
     }
 }

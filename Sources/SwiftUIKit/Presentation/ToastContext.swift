@@ -38,12 +38,8 @@ import SwiftUI
  */
 public class ToastContext: PresentationContext<AnyView> {
     
-    public override func content() -> AnyView {
-        contentView ?? EmptyView().any()
-    }
-    
-    public func present<Toast: View>(_ toast: Toast) {
-        present(toast.any())
+    public func present<Toast: View>(_ toast: @autoclosure @escaping () -> Toast) {
+        presentContent(toast().any())
     }
     
     public func present(_ provider: ToastProvider) {

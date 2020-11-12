@@ -42,23 +42,21 @@ public class PresentationContext<Content>: ObservableObject {
     
     @Published public var isActive = false
     
+    @Published public internal(set) var content: (() -> Content)? {
+        didSet { isActive = content != nil }
+    }
+    
     public var isActiveBinding: Binding<Bool> {
         .init(get: { self.isActive },
               set: { self.isActive = $0 }
         )
     }
-    
-    open func content() -> Content { contentView! }
-    
-    public internal(set) var contentView: Content? {
-        didSet { isActive = contentView != nil }
-    }
-    
+        
     public func dismiss() {
         isActive = false
     }
     
-    public func present(_ content: Content) {
-        contentView = content
+    public func presentContent(_ content: @autoclosure @escaping () -> Content) {
+        self.content = content
     }
 }

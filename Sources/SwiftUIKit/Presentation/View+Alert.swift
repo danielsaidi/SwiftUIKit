@@ -15,6 +15,6 @@ public extension View {
      be presented when the context is active.
      */
     func alert(context: AlertContext) -> some View {
-        alert(isPresented: context.isActiveBinding, content: context.content)
+        alert(isPresented: context.isActiveBinding, content: context.content ?? { Alert(title: Text("")) })
     }
 }

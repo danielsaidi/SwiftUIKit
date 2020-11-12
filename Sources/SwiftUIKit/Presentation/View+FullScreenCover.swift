@@ -16,6 +16,6 @@ public extension View {
      will be presented when the context is active.
      */
     func fullScreenCover(context: FullScreenCoverContext) -> some View {
-        fullScreenCover(isPresented: context.isActiveBinding, content: context.content)
+        fullScreenCover(isPresented: context.isActiveBinding, content: context.content ?? EmptyView().any)
     }
 }

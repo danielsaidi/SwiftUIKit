@@ -43,7 +43,7 @@ public extension View {
         duration seconds: TimeInterval = 2,
         style: ToastStyle = .none) -> some View {
         toast(isPresented: context.isActiveBinding,
-              content: context.content,
+              content: context.content ?? EmptyView().any,
               duration: seconds,
               style: style)
     }

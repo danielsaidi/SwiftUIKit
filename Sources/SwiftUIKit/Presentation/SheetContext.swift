@@ -35,12 +35,8 @@ import SwiftUI
  */
 public class SheetContext: PresentationContext<AnyView> {
     
-    public override func content() -> AnyView {
-        contentView ?? EmptyView().any()
-    }
-    
-    public func present<Sheet: View>(_ sheet: Sheet) {
-        present(sheet.any())
+    public func present<Sheet: View>(_ sheet: @autoclosure @escaping () -> Sheet) {
+        presentContent(sheet().any())
     }
     
     public func present(_ provider: SheetProvider) {
