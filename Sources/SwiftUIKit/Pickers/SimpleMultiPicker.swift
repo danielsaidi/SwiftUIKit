@@ -19,7 +19,7 @@ import SwiftUI
  views for the available option. If you don't, the init will
  use `SimpleMultiPicker.standardButtonBuilder` by default.
  */
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
     
     public init(
@@ -60,7 +60,7 @@ public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 private extension SimpleMultiPicker {
     
     func deselect(_ value: Value) {
@@ -82,7 +82,7 @@ private extension SimpleMultiPicker {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SimpleMultiPicker_Previews: PreviewProvider {
     
     enum Option: String, CaseIterable, SimplePickerValue {

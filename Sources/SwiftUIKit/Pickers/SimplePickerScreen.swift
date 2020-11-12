@@ -45,7 +45,7 @@ public struct SimplePickerScreen<Picker: View, Title: View>: DismissableView {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SimplePickerScreen_Previews: PreviewProvider {
     
     enum Option: String, CaseIterable, SimplePickerValue {
