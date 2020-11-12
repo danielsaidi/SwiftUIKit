@@ -25,11 +25,6 @@ This view wraps a `UIKit` collection view to get muuuch better performance than 
 You can apply any kind of layout to the collection view. `SwiftUIKit` has two built-in layouts: `shelves` and `verticalGrid`.
 
 
-## ConditionalView
-
-This view returns the provided content if the provided condition is `true`, else `EmptyView`.
-
-
 ## DismissableView
 
 This protocol simplifies dismissing SwiftUI screens programatically. Just implement this protocol and add a `PresentationMode` binding and you can dismiss a view with the `dismiss` function.
@@ -70,14 +65,19 @@ This view represents a `UIKit` page control and lets you present multiple views 
 This view takes an optional model and either displays a view for the model when it's not `nil` else an `EmptyView`.
 
 
-## SimplePicker
-
-This view renders a simple list of buttons that can be used to pick a single option in a list of available options.
-
-
 ## SimpleMultiPicker
 
 This view renders a simple list of buttons that can be used to pick multiple options in a list of available options.
+
+
+## SimplePickerScreen
+
+This view can be used to present a simple picker with a main title and an OK button.
+
+
+## SimpleSinglePicker
+
+This view renders a simple list of buttons that can be used to pick a single option in a list of available options.
 
 
 ## UIViewWrapper
