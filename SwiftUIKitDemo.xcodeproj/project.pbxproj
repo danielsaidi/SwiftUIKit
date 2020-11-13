@@ -650,7 +650,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
 			requirement = {
-				branch = master;
+				branch = "presentation-context";
 				kind = branch;
 			};
 		};

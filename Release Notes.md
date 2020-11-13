@@ -25,6 +25,10 @@ The release also adds a highly performant set of collection views, based on the 
 * `CatalogCollectionView` for vertically scrolling collection views with horizontally scrolling rows.
 * `GridCollectionView` for vertically scrolling collection views that layout items in a grid. 
 
+The release also makes some changes in the various presentation contexts, where passing around views could mess up @Binding properties and cause the views to not update. The code has been refactored to use closures instead, which solves this problem.
+
+My eternal gratitude to [@hybridcattt](https://twitter.com/hybridcattt) for realizing that this was what caused the strange errors I was experiencing due to this.  
+
 
 ## 0.9.8
 
