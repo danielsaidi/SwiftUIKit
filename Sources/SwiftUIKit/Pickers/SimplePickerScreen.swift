@@ -64,7 +64,7 @@ struct SimplePickerScreen_Previews: PreviewProvider {
         SimplePickerScreen(
             title: Text("Välj grejer").font(.title),
             okButtonText: "Donediddely") {
-            SimpleSinglePicker<Option>(
+            SimpleOptionalPicker<Option>(
                 selection: $context.selection,
                 options: Option.allCases)
                 .frame(width: 300)

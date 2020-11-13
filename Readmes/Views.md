@@ -70,6 +70,11 @@ This view takes an optional model and either displays a view for the model when 
 This view renders a simple list of buttons that can be used to pick multiple options in a list of available options.
 
 
+## SimpleOptionalPicker
+
+This view renders a simple list of buttons that can be used to pick a single, optional option in a list of available options.
+
+
 ## SimplePickerScreen
 
 This view can be used to present a simple picker with a main title and an OK button.
@@ -77,7 +82,7 @@ This view can be used to present a simple picker with a main title and an OK but
 
 ## SimpleSinglePicker
 
-This view renders a simple list of buttons that can be used to pick a single option in a list of available options.
+This view renders a simple list of buttons that can be used to pick a single, non-optional option in a list of available options.
 
 
 ## UIViewWrapper

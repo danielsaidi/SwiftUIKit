@@ -1,5 +1,5 @@
 //
-//  SimpleSinglePicker.swift
+//  SimpleOptionalPicker.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-11-12.
@@ -10,20 +10,20 @@ import SwiftUI
 
 /**
  This view renders a simple list of buttons that can be used
- to pick a single nonoptional in a list of available options.
+ to pick a single optional in a list of available options.
  
  This list is a basic alternative that can be used where the
  native pickers aren't supported or desired, e.g. in tvOS.
  
  You can provide a `buttonBuilder` to generate custom button
  views for the available option. If you don't, the init will
- use `SimpleSinglePicker.standardButtonBuilder` by default.
+ use `SimpleOptionalPicker.standardButtonBuilder` by default.
  */
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
+public struct SimpleOptionalPicker<Value: SimplePickerValue>: SimplePicker {
     
     public init(
-        selection: Binding<Value>,
+        selection: Binding<Value?>,
         options: [Value],
         buttonBuilder: @escaping ButtonBuilder = Self.standardButtonBuilder) {
         self._selection = selection
@@ -31,7 +31,7 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
         self.buttonBuilder = buttonBuilder
     }
     
-    @Binding public var selection: Value
+    @Binding public var selection: Value?
     
     public let options: [Value]
     public let buttonBuilder: ButtonBuilder
@@ -41,7 +41,7 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
     public var body: some View {
         LazyVStack {
             ForEach(options, id: \.id) { value in
-                buttonBuilder(value, isSelected(value), { select($0) })
+                buttonBuilder(value, isSelected(value), { toggle($0) })
             }
         }
     }
@@ -62,20 +62,19 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
 }
 
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-private extension SimpleSinglePicker {
+private extension SimpleOptionalPicker {
 
     func isSelected(_ value: Value) -> Bool {
-        selection.id == value.id
+        selection?.id == value.id
     }
     
-    func select(_ value: Value) {
-        if isSelected(value) { return }
-        selection = value
+    func toggle(_ value: Value) {
+        selection = isSelected(value) ? nil : value
     }
 }
 
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-struct SimpleSinglePicker_Previews: PreviewProvider {
+struct SimpleOptionalPicker_Previews: PreviewProvider {
     
     enum Option: String, CaseIterable, SimplePickerValue {
         case first, second, third
@@ -84,13 +83,13 @@ struct SimpleSinglePicker_Previews: PreviewProvider {
     }
     
     class Context: ObservableObject {
-        @Published var selection: Option = .first
+        @Published var selection: Option? = .first
     }
     
     @ObservedObject static var context = Context()
     
     static var previews: some View {
-        SimpleSinglePicker<Option>(
+        SimpleOptionalPicker<Option>(
             selection: $context.selection,
             options: Option.allCases)
             .frame(width: 300)

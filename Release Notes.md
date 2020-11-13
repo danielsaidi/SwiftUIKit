@@ -16,6 +16,7 @@ The release also adds new views and utils:
 * `MinWidthButton` applies a min width to it's wrapped content.
 * `OptionalView` returns the provided content if the provided value is not nil, else `EmptyView`.
 * `SimpleMultiPicker` renders a simple list of buttons that can be used to pick multiple options in a list of available options.
+* `SimpleOptionalPicker` renders a simple list of buttons that can be used to pick multiple options in a list of available options.
 * `SimplePickerScreen` can be used to present a simple picker with a main title and an OK button.
 * `SimpleSinglePicker` renders a simple list of buttons that can be used to pick a single option in a list of available options.
 * `VerticalResizingList` can list a collection of views in a vertical list and resize them to the widest view.
