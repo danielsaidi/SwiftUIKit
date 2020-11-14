@@ -41,12 +41,14 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
         rows: [CollectionViewRow<Section, Item>],
         layout: CollectionViewLayout,
         lazyLoadAction: @escaping () -> Void = {},
+        scrollOffset: Binding<CGPoint>? = nil,
         @ViewBuilder cell: @escaping (IndexPath, Item) -> Cell,
         @ViewBuilder supplementaryView: @escaping (String, IndexPath) -> SupplementaryView) {
         self.init(
             rows: rows,
             sectionLayoutProvider: layout.sectionLayoutProvider,
             lazyLoadAction: lazyLoadAction,
+            scrollOffset: scrollOffset,
             cell: cell,
             supplementaryView: supplementaryView)
     }
@@ -58,10 +60,12 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
         rows: [CollectionViewRow<Section, Item>],
         sectionLayoutProvider: @escaping (Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection,
         lazyLoadAction: @escaping () -> Void = {},
+        scrollOffset: Binding<CGPoint>? = nil,
         @ViewBuilder cell: @escaping (IndexPath, Item) -> Cell,
         @ViewBuilder supplementaryView: @escaping (String, IndexPath) -> SupplementaryView) {
         self.cell = cell
         self.lazyLoadAction = lazyLoadAction
+        self.scrollOffset = scrollOffset
         self.rows = rows
         self.sectionLayoutProvider = sectionLayoutProvider
         self.supplementaryView = supplementaryView
@@ -74,6 +78,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
     
     private let cell: (IndexPath, Item) -> Cell
     private let lazyLoadAction: () -> Void
+    private let scrollOffset: Binding<CGPoint>?
     private let sectionLayoutProvider: (Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection
     private let supplementaryView: (String, IndexPath) -> SupplementaryView
     
@@ -84,7 +89,10 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
     // MARK: - Public Functions
     
     public func makeCoordinator() -> Coordinator {
-        Coordinator(lazyLoadFunction: lazyLoadAction, lazyLoadTrigger: shouldTriggerLazyLoad)
+        Coordinator(
+            lazyLoadFunction: lazyLoadAction,
+            lazyLoadTrigger: shouldTriggerLazyLoad,
+            scrollOffset: scrollOffset)
     }
     
     public func makeUIView(context: Context) -> UICollectionView {
@@ -187,21 +195,28 @@ public extension CollectionView {
         
         init(
             lazyLoadFunction: @escaping () -> Void,
-            lazyLoadTrigger: @escaping (IndexPath) -> Bool) {
+            lazyLoadTrigger: @escaping (IndexPath) -> Bool,
+            scrollOffset: Binding<CGPoint>?) {
             self.lazyLoadFunction = lazyLoadFunction
             self.lazyLoadTrigger = lazyLoadTrigger
+            self.scrollOffset = scrollOffset
         }
         
         typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
         
         private let lazyLoadFunction: () -> Void
         private let lazyLoadTrigger: (IndexPath) -> Bool
-        
+        private let scrollOffset: Binding<CGPoint>?
+
         var dataSource: DataSource? = nil
         var sectionLayoutProvider: ((Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection)?
         var rowsHash: Int? = nil
         var registeredSupplementaryViewKinds: [String] = []
         var isFocusable: Bool = false
+        
+        public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            scrollOffset?.wrappedValue = scrollView.contentOffset
+        }
         
         public func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
             isFocusable
