@@ -33,8 +33,7 @@ import SwiftUI
  a toast `style`, which determines what the toast looks like.
  
  `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
- of `@StateObject`, but then there can be glitches may cause
- the presentation state to cancel. `@StateObject` fixes this.
+ of `@StateObject`, but this can cause presentation glitches.
  */
 public class ToastContext: PresentationContext<AnyView> {
     
