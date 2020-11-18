@@ -11,7 +11,8 @@ import SwiftUIKit
 
 struct SheetsScreen: View, DemoList {
     
-    @StateObject private var context = SheetContext()
+    @StateObject private var coverContext = FullScreenCoverContext()
+    @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
         ScrollView {
@@ -20,8 +21,9 @@ struct SheetsScreen: View, DemoList {
                 itemUsingView(.green)
                 itemUsingProvider(.blue)
             }
+            .sheet(context: sheetContext)
+            EmptyView().fullScreenCover(context: coverContext)
         }
-        .sheet(context: context)
         .navigationBarTitle("Sheets")
     }
 }
@@ -30,14 +32,14 @@ private extension SheetsScreen {
     
     func itemUsingProvider(_ sheet: DemoSheet) -> some View {
         let title = "Show a \(sheet.title) sheet"
-        let action = { self.context.present(sheet) }
+        let action = { self.sheetContext.present(sheet) }
         return DemoListItem(title: title, content: sheet.color, effect: { $0 })
             .onTapGesture(perform: action)
     }
     
     func itemUsingView(_ sheet: DemoSheet) -> some View {
         let title = "Show a \(sheet.title) sheet"
-        let action = { self.context.present(sheet.sheet) }
+        let action = { self.sheetContext.present(sheet.sheet) }
         return DemoListItem(title: title, content: sheet.color, effect: { $0 })
             .onTapGesture(perform: action)
     }

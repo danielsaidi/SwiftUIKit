@@ -154,10 +154,10 @@
 				847CC5D82549D6F9008A36AF /* DemoCover.swift */,
 				A9AE2E1E248BFE7800D9BC2A /* DemoSheet.swift */,
 				84A392692500EB0E009E5CC0 /* DemoToast.swift */,
+				847CC5DC2549D80A008A36AF /* FullScreenCoversScreen.swift */,
 				847CC5C72549D29F008A36AF /* PresentationScreen.swift */,
 				A9AE2E1C248BFCAC00D9BC2A /* SheetsScreen.swift */,
 				A9E9A2BB2411962E00844844 /* ToastScreen.swift */,
-				847CC5DC2549D80A008A36AF /* FullScreenCoversScreen.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";

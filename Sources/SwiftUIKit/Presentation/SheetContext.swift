@@ -32,6 +32,23 @@ import SwiftUI
  `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
  of `@StateObject`, but then there can be glitches may cause
  the presentation state to cancel. `@StateObject` fixes this.
+ 
+ `IMPORTANT` `fullScreenCover` and `sheet` view modifiers do
+ not work together when they are added to the same view. The
+ outmost modifier will take over and the innermost will fail.
+ You can solve this by adding each modifier to an individial
+ view in the same lever in the view hierarchy, for intance:
+ 
+ ```
+ // Adding them like this, full screen cover will not work:
+ VStack(spacing: listSpacing) { ... }
+     .fullScreenCover(context: fullScreenCover)
+     .sheet(context: sheetContext)
+ 
+ // Adding them like this, both modifers will work:
+ EmptyView().fullScreenCover(context: fullScreenCover)
+ EmptyView().sheet(context: sheetContext)
+ ```
  */
 public class SheetContext: PresentationContext<AnyView> {
     

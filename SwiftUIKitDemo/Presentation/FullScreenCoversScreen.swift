@@ -11,7 +11,8 @@ import SwiftUIKit
 
 struct FullScreenCoversScreen: View, DemoList {
     
-    @StateObject private var context = FullScreenCoverContext()
+    @StateObject private var coverContext = FullScreenCoverContext()
+    @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
         ScrollView {
@@ -20,8 +21,9 @@ struct FullScreenCoversScreen: View, DemoList {
                 itemUsingView(.green)
                 itemUsingProvider(.blue)
             }
+            .fullScreenCover(context: coverContext)
+            EmptyView().sheet(context: sheetContext)
         }
-        .fullScreenCover(context: context)
         .navigationBarTitle("Full Screen Covers")
     }
 }
@@ -30,14 +32,14 @@ private extension FullScreenCoversScreen {
     
     func itemUsingProvider(_ cover: DemoCover) -> some View {
         let title = "Show a \(cover.title) cover"
-        let action = { self.context.present(cover) }
+        let action = { self.coverContext.present(cover) }
         return DemoListItem(title: title, content: cover.color, effect: { $0 })
             .onTapGesture(perform: action)
     }
     
     func itemUsingView(_ cover: DemoCover) -> some View {
         let title = "Show a \(cover.title) cover"
-        let action = { self.context.present(cover.cover) }
+        let action = { self.coverContext.present(cover.cover) }
         return DemoListItem(title: title, content: cover.color, effect: { $0 })
             .onTapGesture(perform: action)
     }
