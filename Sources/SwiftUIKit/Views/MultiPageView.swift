@@ -17,7 +17,8 @@ import SwiftUI
  to present multiple views in a horizontal paged scroll view.
  
  You can either create this view by providing it with a view
- collection or an item list with a page builder function.
+ collection or an item list with a `pageBuilder` that builds
+ a page view for each item.
  */
 @available(iOS 14.0, *)
 public struct MultiPageView: View {

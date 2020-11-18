@@ -11,6 +11,10 @@ import SwiftUI
 /**
  This view displays a percentual progress as a circle stroke,
  with the progress text in the center of the circle.
+ 
+ `startAngle` is the number of degrees from the circle's top
+ from which the arc starts. The default `0` value means that
+ the arc starts from the top, `90` from the right etc.
 
  Override the static `standard` style instance to change how
  these views look when you don't provide a `style` in `init`.
@@ -23,13 +27,16 @@ public struct CircularProgressBar: View {
     public init(
         progress: Binding<Double>,
         decimals: Int = 0,
+        startAngle: Double = 0,
         style: CircularProgressBarStyle = .standard) {
         _progress = progress
         self.decimals = decimals
+        self.startAngle = startAngle
         self.style = style
     }
     
     private let decimals: Int
+    private let startAngle: Double
     private let style: CircularProgressBarStyle
     
     @Binding private var progress: Double
@@ -56,7 +63,7 @@ public struct CircularProgressBar: View {
         style.progressModifier(
             Circle()
                 .trim(from: 0.0, to: CGFloat(progress))
-                .rotation(.degrees(-90))
+                .rotation(.degrees(startAngle - 90))
                 .stroke(style: StrokeStyle(lineWidth: style.progressWidth, lineCap: .round, lineJoin: .round))
                 .foregroundColor(style.progressColor)
                 .animation(.linear)
@@ -133,6 +140,7 @@ struct CircularProgressBar_Previews: PreviewProvider {
             CircularProgressBar(
                 progress: .constant(0.256),
                 decimals: 0,
+                startAngle: 20,
                 style: swedishStyle)
         }
         .background(Color.green.edgesIgnoringSafeArea(.all))

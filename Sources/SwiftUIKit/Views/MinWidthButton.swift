@@ -11,7 +11,7 @@ import SwiftUI
 /**
  This button applies a min width to it's wrapped content. It
  simplifies working with buttons on platforms that applies a
- solid background below the button content.
+ solid background below the button content, e.g. tvOS.
  */
 public struct MinWidthButton<Content: View>: View {
     

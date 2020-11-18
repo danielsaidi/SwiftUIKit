@@ -1,6 +1,13 @@
 # Data
 
-`SwiftUIKit` contains `Data`-specific utilities.
+`SwiftUIKit` contains `Data`-specific utilities, like async image loading, QR codes etc.
+
+
+## AsyncImageLoader
+
+This class can be used to fetch an image from an url, using an async network request.
+
+This is a very basic implementation, so you probably want to use a library like Kingfisher for more complex operations.
 
 
 ## QrCodeGenerator

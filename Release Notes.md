@@ -11,10 +11,11 @@ The release also adds new views and utils:
 * `AsyncImageLoader` is an observable class that loads an async image from the network.
 * `CircularProgressBar` renders a percentual progress in a circle.
 * `CircularProgressView` renders a round spinner.
+* `ConditionalView` returns the provided content view if the provided expression is `true`, else a fallback view (`EmptyView` by default).
 * `FetchedDataView` shows a spinner, fetched data or a failure view.
 * `FullScreenCoverContext/Provider` lets you handle full screen covers like sheets, alerts etc.
 * `MinWidthButton` applies a min width to it's wrapped content.
-* `OptionalView` returns the provided content if the provided value is not nil, else `EmptyView`.
+* `OptionalView` returns the provided content view if the provided value is not nil, else a fallback view (`EmptyView` by default).
 * `SimpleMultiPicker` renders a simple list of buttons that can be used to pick multiple options in a list of available options.
 * `SimpleOptionalPicker` renders a simple list of buttons that can be used to pick multiple options in a list of available options.
 * `SimplePickerScreen` can be used to present a simple picker with a main title and an OK button.

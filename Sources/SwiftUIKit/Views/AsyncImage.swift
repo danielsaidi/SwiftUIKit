@@ -14,6 +14,9 @@ import SwiftUI
  an url using an async network request. A `placeholder` will
  be displayed when an image is being fetched as well as when
  the fetch operation fails.
+ 
+ This is a very basic implementation, so you may want to use
+ a library like Kingfisher for more complex operations.
  */
 @available(iOS 14, macOS 11.0, tvOS 14, watchOS 7.0, *)
 public struct AsyncImage<PlaceholderView: View>: View {

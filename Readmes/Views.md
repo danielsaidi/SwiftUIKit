@@ -1,16 +1,20 @@
 # Views
 
-`SwiftUIKit` contains custom views. For now, they are not in the demo.
+`SwiftUIKit` contains custom views. 
+
+They are not in the demo for now, but will be later. 
 
 
 ## AsyncImage
 
-This `Image` view can be used to load images asynchronously. It's a very basic implementation, so you probably want to use a library like Kingfisher for more complex operations.
+This `Image` view can be used to load images asynchronously. 
+
+This is a very basic implementation, so you probably want to use a library like Kingfisher for more complex operations.
 
 
 ## CircularProgressBar
 
-This view displays a percentual progress in a circle, where the progress is drawn along the border.
+This view displays a percentual progress in a circle, where the progress is drawn as an arc along the border.
 
 
 ## CircularProgressView
@@ -23,6 +27,11 @@ This view displays a circular spinner. It's just a `ProgressView()` with a `Circ
 This view wraps a `UIKit` collection view to get muuuch better performance than a set of lazy stacks and grids, which perform horribly on `tvOS`.
 
 You can apply any kind of layout to the collection view. `SwiftUIKit` has two built-in layouts: `shelves` and `verticalGrid`.
+
+
+## ConditionalView
+
+This view takes a bool expression and either displays a view for when it's `true` else another view.
 
 
 ## DismissableView
@@ -47,7 +56,7 @@ This view can be used to improve performance, since the view body is resolved fi
 
 ## MinWidthButton
 
-This button type applies a min width to it's wrapped content.
+This button type applies a min width to it's wrapped content. It simplifies working with buttons on platforms that applies a solid background below the button content, e.g. tvOS.
 
 
 ## MultilineTextField
@@ -57,12 +66,14 @@ This text field view makes it possible to use multiline text editing in SwiftUI.
 
 ## MultiPageView
 
-This view represents a `UIKit` page control and lets you present multiple views in a horizontally pages list. You can either create it with page views or model items and a page builder.
+This view represents a `UIKit` page control and lets you present multiple views in a horizontally pages list. 
+
+You can either create this view by providing it with a view collection or an item list with a `pageBuilder` that builds a page view for each item.
 
 
 ## OptionalView
 
-This view takes an optional model and either displays a view for the model when it's not `nil` else an `EmptyView`.
+This view takes an optional model and either displays a view for the model when it's not `nil` else a fallback view.
 
 
 ## SimpleMultiPicker

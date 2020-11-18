@@ -12,8 +12,15 @@ import SwiftUI
  This view can list a collection of views in a vertical list
  and resize them to the widest view.
  
- `TODO` For now, this triggers the following warning message:
+ Note that you must run a live preview for this view to work
+ in the previews.
+ 
+ `TODO` For now, this triggers the following warning message
+ when you run it in an app:
+ 
+ ```
  Bound preference MaximumWidthPreferenceKey tried to update multiple times per frame.
+ ```
  */
 public struct VerticalResizingList<Content: View>: View {
     
@@ -67,11 +74,8 @@ struct VerticalSizingList_Previews: PreviewProvider {
     
     static func button(for width: CGFloat) -> some View {
         Button(action: {}) {
-            HStack {
-                Spacer()
-                Text("\(Int.random(in: 0...1000))")
-                Spacer()
-            }
+            Text("\(Int.random(in: 0...100_000))")
+                    .frame(width: width)
         }
     }
     

@@ -5,4 +5,4 @@
 
 ## ShareSheet
 
-The `ShareSheet` view lets you easily share data in a system share sheet.
+Ths view lets you easily share data in a system share sheet.
