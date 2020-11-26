@@ -9,6 +9,12 @@
 import SwiftUI
 import SwiftUIKit
 
+/**
+ This screen has an additional context that could be used to
+ verify that `sheet` and `fullScreenCover` modifiers work if
+ applied to parallel views. Use `sheetContext` in one action
+ and `coverContext` in the other to verify that it works.
+ */
 struct SheetsScreen: View, DemoList {
     
     @StateObject private var coverContext = FullScreenCoverContext()

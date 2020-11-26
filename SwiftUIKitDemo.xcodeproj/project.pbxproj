@@ -24,6 +24,7 @@
 		84A3926A2500EB0E009E5CC0 /* DemoToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A392692500EB0E009E5CC0 /* DemoToast.swift */; };
 		84DDC8DB2417995300EDE944 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DA2417995300EDE944 /* StylesScreen.swift */; };
 		84DDC8DD241799B800EDE944 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */; };
+		A9355026256F6D3D00BBE9CE /* Image+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355025256F6D3D00BBE9CE /* Image+Demo.swift */; };
 		A9A0581F248D1D5300BCD097 /* Blurs.md in Resources */ = {isa = PBXBuildFile; fileRef = A9A0581C248D1D5300BCD097 /* Blurs.md */; };
 		A9A05823248D1DE500BCD097 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A05822248D1DE500BCD097 /* AlertsScreen.swift */; };
 		A9A05825248D1E0300BCD097 /* DemoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A05824248D1E0300BCD097 /* DemoAlert.swift */; };
@@ -73,6 +74,7 @@
 		84A392692500EB0E009E5CC0 /* DemoToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoToast.swift; sourceTree = "<group>"; };
 		84DDC8DA2417995300EDE944 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
 		84DDC8DC241799B800EDE944 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
+		A9355025256F6D3D00BBE9CE /* Image+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Demo.swift"; sourceTree = "<group>"; };
 		A9A0581C248D1D5300BCD097 /* Blurs.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Blurs.md; sourceTree = "<group>"; };
 		A9A05822248D1DE500BCD097 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
 		A9A05824248D1E0300BCD097 /* DemoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAlert.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				A9E9A2C024119B5E00844844 /* DemoList.swift */,
 				A9E9A2BE2411979700844844 /* DemoListItem.swift */,
+				A9355025256F6D3D00BBE9CE /* Image+Demo.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9E9A282241065D900844844 /* BlursScreen.swift in Sources */,
 				A9AE2E2D248C056900D9BC2A /* DataScreen.swift in Sources */,
+				A9355026256F6D3D00BBE9CE /* Image+Demo.swift in Sources */,
 				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
 				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
@@ -650,7 +654,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
 			requirement = {
-				branch = "presentation-context";
+				branch = master;
 				kind = branch;
 			};
 		};
