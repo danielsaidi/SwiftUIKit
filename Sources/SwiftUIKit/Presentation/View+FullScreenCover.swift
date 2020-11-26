@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS) 
 import SwiftUI
 
 @available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
@@ -19,3 +20,4 @@ public extension View {
         fullScreenCover(isPresented: context.isActiveBinding, content: context.content ?? EmptyView().any)
     }
 }
+#endif
