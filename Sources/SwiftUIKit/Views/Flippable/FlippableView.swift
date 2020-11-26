@@ -12,15 +12,15 @@ import SwiftUI
 /**
  This view consists of a front and a back view, where the amd can be flipped by either tapping the view or.
  */
-public struct FlippableView: View, Flippable {
+public struct FlippableView<Front: View, Back: View>: View, Flippable {
     
-    public init(front: AnyView, back: AnyView) {
+    public init(front: Front, back: Back) {
         self.frontView = front
         self.backView = back
     }
     
-    private let frontView: AnyView
-    private let backView: AnyView
+    private let frontView: Front
+    private let backView: Back
     
     @State private var isFlipped = false
     @State private var rotationX = 0.0
@@ -60,7 +60,11 @@ public struct FlippableView: View, Flippable {
     
     @ViewBuilder
     private var content: some View {
-        isFlipped ? backView : frontView
+        if isFlipped {
+            backView
+        } else {
+            frontView
+        }
     }
 }
 #endif

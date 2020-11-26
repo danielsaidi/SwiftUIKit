@@ -20,16 +20,23 @@ The release also adds new views and utils:
 * `SimpleOptionalPicker` renders a simple list of buttons that can be used to pick multiple options in a list of available options.
 * `SimplePickerScreen` can be used to present a simple picker with a main title and an OK button.
 * `SimpleSinglePicker` renders a simple list of buttons that can be used to pick a single option in a list of available options.
-* `VerticalResizingList` can list a collection of views in a vertical list and resize them to the widest view.
+* `WidthVStack` lists views in a vertical stack and provides them with with the largest view width.
 
 The release also adds a highly performant set of collection views, based on the amazing work of @defagos, which can be found [here](https://github.com/defagos/SwiftUICollection):
 
 * `CatalogCollectionView` for vertically scrolling collection views with horizontally scrolling rows.
 * `GridCollectionView` for vertically scrolling collection views that layout items in a grid. 
 
-The release also makes some changes in the various presentation contexts, where passing around views could mess up @Binding properties and cause the views to not update. The code has been refactored to use closures instead, which solves this problem.
+The release also makes some changes in the various `presentation` contexts:
 
-My eternal gratitude to [@hybridcattt](https://twitter.com/hybridcattt) for realizing that this was what caused the strange errors I was experiencing due to this.  
+* Passing around views could mess up `@Binding` properties and cause the views to not update.
+* The code has been refactored to use closures instead, which solves this problem.
+* My eternal gratitude to [@hybridcattt](https://twitter.com/hybridcattt) for realizing that this was what caused problems.  
+
+This release also:
+
+* Removes  `LazyView` and `LazyNavigationView` since SwiftUI handles this now.
+* Improves  `FlippableView` with a bunch of new features and no breaking changes.
 
 
 ## 0.9.8

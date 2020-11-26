@@ -1,5 +1,5 @@
 //
-//  VerticalResizingList.swift
+//  WidthVStack.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-11-11.
@@ -9,8 +9,8 @@
 import SwiftUI
 
 /**
- This view can list a collection of views in a vertical list
- and resize them to the widest view.
+ This view lists views vertically and provides them with the
+ widest width in the provided content builder.
  
  Note that you must run a live preview for this view to work
  in the previews.
@@ -22,7 +22,7 @@ import SwiftUI
  Bound preference MaximumWidthPreferenceKey tried to update multiple times per frame.
  ```
  */
-public struct VerticalResizingList<Content: View>: View {
+public struct WidthVStack<Content: View>: View {
     
     public init(
         spacing: CGFloat = 20,
@@ -80,7 +80,7 @@ struct VerticalSizingList_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        VerticalResizingList { width in
+        WidthVStack { width in
             button(for: width)
             button(for: width)
             button(for: width)
