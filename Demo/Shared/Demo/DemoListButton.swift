@@ -23,7 +23,6 @@ struct DemoListButton: View {
     private let button: Button<DemoListItem>
     
     var body: some View { button
-        .font(Font.body.bold())
         .buttonStyle(PlainButtonStyle())
     }
 }

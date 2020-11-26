@@ -39,8 +39,6 @@
 		A9E9A270241062CB00844844 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A26F241062CB00844844 /* Preview Assets.xcassets */; };
 		A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A271241062CB00844844 /* LaunchScreen.storyboard */; };
 		A9E9A280241065B700844844 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A9E9A27F241065B700844844 /* SwiftUIKit */; };
-		A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A7241076FF00844844 /* GesturesScreen.swift */; };
-		A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */; };
 		A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */; };
 		A9E9A2B7241193C400844844 /* ShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2B6241193C400844844 /* ShadowStyleScreen.swift */; };
 		A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2BB2411962E00844844 /* ToastScreen.swift */; };
@@ -91,8 +89,6 @@
 		A9E9A29C2410757200844844 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A9E9A29D2410757200844844 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A9E9A29E241075A300844844 /* Release Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Release Notes.md"; sourceTree = "<group>"; };
-		A9E9A2A7241076FF00844844 /* GesturesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesScreen.swift; sourceTree = "<group>"; };
-		A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
 		A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableViewScreen.swift; sourceTree = "<group>"; };
 		A9E9A2B124114E7400844844 /* Gestures.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Gestures.md; sourceTree = "<group>"; };
 		A9E9A2B424114E7400844844 /* Extensions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Extensions.md; sourceTree = "<group>"; };
@@ -134,6 +130,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A901F0C9256FE3A700F1C285 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A9A05821248D1DD900BCD097 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,9 +174,9 @@
 		A9E9A265241062C900844844 /* SwiftUIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A901F0C9256FE3A700F1C285 /* Views */,
 				A9E9A2882410669000844844 /* App */,
 				A9E9A2BD2411978D00844844 /* Demo */,
-				A9E9A2A6241076F200844844 /* Gestures */,
 				A9A05821248D1DD900BCD097 /* Presentation */,
 				A9E9A26E241062CB00844844 /* Preview Content */,
 				845EA6162419045A005976EE /* Resources */,
@@ -216,16 +220,6 @@
 				845EA61724190519005976EE /* swiftgen.yml */,
 			);
 			name = "Project Files";
-			sourceTree = "<group>";
-		};
-		A9E9A2A6241076F200844844 /* Gestures */ = {
-			isa = PBXGroup;
-			children = (
-				A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */,
-				A9E9A2A7241076FF00844844 /* GesturesScreen.swift */,
-				A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */,
-			);
-			path = Gestures;
 			sourceTree = "<group>";
 		};
 		A9E9A2B024114E7400844844 /* Readmes */ = {
@@ -392,9 +386,7 @@
 				A9AE2E1F248BFE7800D9BC2A /* DemoSheet.swift in Sources */,
 				84A3926A2500EB0E009E5CC0 /* DemoToast.swift in Sources */,
 				845EA61E24190562005976EE /* Fonts.swift in Sources */,
-				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
 				A9355026256F6D3D00BBE9CE /* Image+Demo.swift in Sources */,
-				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
 				A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */,
 				A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */,

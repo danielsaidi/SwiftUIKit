@@ -205,6 +205,16 @@
 		A901F0B2256FBCCC00F1C285 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0B0256FBCCC00F1C285 /* DemoList.swift */; };
 		A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */; };
 		A901F0BD256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */; };
+		A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */; };
+		A901F0CC256FE62E00F1C285 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */; };
+		A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CF256FE63A00F1C285 /* CoversScreen.swift */; };
+		A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CF256FE63A00F1C285 /* CoversScreen.swift */; };
+		A901F0D5256FE64500F1C285 /* SheetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D4256FE64500F1C285 /* SheetsScreen.swift */; };
+		A901F0D6256FE64500F1C285 /* SheetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D4256FE64500F1C285 /* SheetsScreen.swift */; };
+		A901F0DA256FE65200F1C285 /* ToastsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D9256FE65200F1C285 /* ToastsScreen.swift */; };
+		A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D9256FE65200F1C285 /* ToastsScreen.swift */; };
+		A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
+		A901F0E0256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
 		A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355031256F7E3C00BBE9CE /* ContentView.swift */; };
@@ -315,6 +325,11 @@
 		A901F0A9256FB53700F1C285 /* DemoListText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListText.swift; sourceTree = "<group>"; };
 		A901F0B0256FBCCC00F1C285 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
 		A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
+		A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
+		A901F0CF256FE63A00F1C285 /* CoversScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoversScreen.swift; sourceTree = "<group>"; };
+		A901F0D4256FE64500F1C285 /* SheetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsScreen.swift; sourceTree = "<group>"; };
+		A901F0D9256FE65200F1C285 /* ToastsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsScreen.swift; sourceTree = "<group>"; };
+		A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPresentable.swift; sourceTree = "<group>"; };
 		A9355030256F7E3C00BBE9CE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		A9355031256F7E3C00BBE9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9355032256F7E3D00BBE9CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -592,6 +607,11 @@
 			isa = PBXGroup;
 			children = (
 				A901F048256F8CC900F1C285 /* PresentationScreen.swift */,
+				A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */,
+				A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */,
+				A901F0CF256FE63A00F1C285 /* CoversScreen.swift */,
+				A901F0D4256FE64500F1C285 /* SheetsScreen.swift */,
+				A901F0D9256FE65200F1C285 /* ToastsScreen.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -807,6 +827,7 @@
 			files = (
 				A901EFF3256F8C1B00F1C285 /* CircularProgressView.swift in Sources */,
 				A901F099256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */,
+				A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */,
 				A901F021256F8C1B00F1C285 /* ToastContext.swift in Sources */,
 				A901EFAF256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
@@ -834,7 +855,9 @@
 				A901F015256F8C1B00F1C285 /* View+Alert.swift in Sources */,
 				A901F05F256F936700F1C285 /* DemoListItem.swift in Sources */,
 				A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */,
+				A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
 				A901F009256F8C1B00F1C285 /* MultiPageView.swift in Sources */,
+				A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F003256F8C1B00F1C285 /* VerticalResizingList.swift in Sources */,
 				A901EFC3256F8C1B00F1C285 /* FlippableView.swift in Sources */,
 				A901EFF7256F8C1B00F1C285 /* LazyNavigationLink.swift in Sources */,
@@ -844,6 +867,7 @@
 				A901F0AA256FB53700F1C285 /* DemoListText.swift in Sources */,
 				A901EFD5256F8C1B00F1C285 /* SimpleMultiPicker.swift in Sources */,
 				A901F074256F962600F1C285 /* CameraScreen.swift in Sources */,
+				A901F0DA256FE65200F1C285 /* ToastsScreen.swift in Sources */,
 				A901F02B256F8C1B00F1C285 /* View+Blur.swift in Sources */,
 				A901EFF9256F8C1B00F1C285 /* LazyView.swift in Sources */,
 				A901F07B256F963400F1C285 /* PickersScreen.swift in Sources */,
@@ -871,6 +895,7 @@
 				A901EF99256F8C1B00F1C285 /* EdgeInsets+Edge.swift in Sources */,
 				A901F005256F8C1B00F1C285 /* UIViewWrapper.swift in Sources */,
 				A901EFA5256F8C1B00F1C285 /* View+AnyView.swift in Sources */,
+				A901F0D5256FE64500F1C285 /* SheetsScreen.swift in Sources */,
 				A901EFCB256F8C1B00F1C285 /* SimplePicker.swift in Sources */,
 				A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */,
 				A901F007256F8C1B00F1C285 /* OptionalView.swift in Sources */,
@@ -916,6 +941,7 @@
 			files = (
 				A901EFF4256F8C1B00F1C285 /* CircularProgressView.swift in Sources */,
 				A901F09A256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */,
+				A901F0E0256FE65E00F1C285 /* DemoPresentable.swift in Sources */,
 				A901F022256F8C1B00F1C285 /* ToastContext.swift in Sources */,
 				A901EFB0256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F045256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
@@ -943,7 +969,9 @@
 				A901F016256F8C1B00F1C285 /* View+Alert.swift in Sources */,
 				A901F060256F936700F1C285 /* DemoListItem.swift in Sources */,
 				A901F086256F964600F1C285 /* ViewsScreen.swift in Sources */,
+				A901F0CC256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
 				A901F00A256F8C1B00F1C285 /* MultiPageView.swift in Sources */,
+				A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F004256F8C1B00F1C285 /* VerticalResizingList.swift in Sources */,
 				A901EFC4256F8C1B00F1C285 /* FlippableView.swift in Sources */,
 				A901EFF8256F8C1B00F1C285 /* LazyNavigationLink.swift in Sources */,
@@ -953,6 +981,7 @@
 				A901F0AB256FB53700F1C285 /* DemoListText.swift in Sources */,
 				A901EFD6256F8C1B00F1C285 /* SimpleMultiPicker.swift in Sources */,
 				A901F075256F962600F1C285 /* CameraScreen.swift in Sources */,
+				A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */,
 				A901F02C256F8C1B00F1C285 /* View+Blur.swift in Sources */,
 				A901EFFA256F8C1B00F1C285 /* LazyView.swift in Sources */,
 				A901F07C256F963400F1C285 /* PickersScreen.swift in Sources */,
@@ -980,6 +1009,7 @@
 				A901EF9A256F8C1B00F1C285 /* EdgeInsets+Edge.swift in Sources */,
 				A901F006256F8C1B00F1C285 /* UIViewWrapper.swift in Sources */,
 				A901EFA6256F8C1B00F1C285 /* View+AnyView.swift in Sources */,
+				A901F0D6256FE64500F1C285 /* SheetsScreen.swift in Sources */,
 				A901EFCC256F8C1B00F1C285 /* SimplePicker.swift in Sources */,
 				A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */,
 				A901F008256F8C1B00F1C285 /* OptionalView.swift in Sources */,
