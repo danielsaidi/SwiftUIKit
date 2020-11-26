@@ -17,7 +17,7 @@ struct ContentView: View {
                 #endif
                 DemoListLink("Camera (not done)", .camera, CameraScreen())
                 DemoListLink("Data", .data, DataScreen())
-                DemoListLink("Extensions (not done)", .extensions, ExtensionsScreen())
+                DemoListLink("Extensions", .extensions, ExtensionsScreen())
                 DemoListLink("Gestures (not done)", .gestures, GesturesScreen())
                 DemoListLink("Pickers (not done)", .pickers, PickersScreen())
                 DemoListLink("Presentation (not done)", .presentation, PresentationScreen())

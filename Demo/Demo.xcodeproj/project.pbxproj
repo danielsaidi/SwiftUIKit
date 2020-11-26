@@ -201,6 +201,8 @@
 		A901F0A6256FB41A00F1C285 /* View+Enabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A4256FB41A00F1C285 /* View+Enabled.swift */; };
 		A901F0AA256FB53700F1C285 /* DemoListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A9256FB53700F1C285 /* DemoListText.swift */; };
 		A901F0AB256FB53700F1C285 /* DemoListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A9256FB53700F1C285 /* DemoListText.swift */; };
+		A901F0B1256FBCCC00F1C285 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0B0256FBCCC00F1C285 /* DemoList.swift */; };
+		A901F0B2256FBCCC00F1C285 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0B0256FBCCC00F1C285 /* DemoList.swift */; };
 		A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355031256F7E3C00BBE9CE /* ContentView.swift */; };
@@ -309,6 +311,7 @@
 		A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistedScreen.swift; sourceTree = "<group>"; };
 		A901F0A4256FB41A00F1C285 /* View+Enabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Enabled.swift"; sourceTree = "<group>"; };
 		A901F0A9256FB53700F1C285 /* DemoListText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListText.swift; sourceTree = "<group>"; };
+		A901F0B0256FBCCC00F1C285 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
 		A9355030256F7E3C00BBE9CE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		A9355031256F7E3C00BBE9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9355032256F7E3D00BBE9CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -690,6 +693,7 @@
 			children = (
 				A9355031256F7E3C00BBE9CE /* ContentView.swift */,
 				A9355030256F7E3C00BBE9CE /* DemoApp.swift */,
+				A901F0B0256FBCCC00F1C285 /* DemoList.swift */,
 				A901F065256F94C600F1C285 /* DemoListButton.swift */,
 				A901F05E256F936700F1C285 /* DemoListItem.swift */,
 				A901F059256F932C00F1C285 /* DemoListLink.swift */,
@@ -875,6 +879,7 @@
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901EFB9256F8C1B00F1C285 /* UIView+SwipeGesture.swift in Sources */,
 				A901EFD7256F8C1B00F1C285 /* SimpleSinglePicker.swift in Sources */,
+				A901F0B1256FBCCC00F1C285 /* DemoList.swift in Sources */,
 				A901EFDD256F8C1B00F1C285 /* QrCodeGenerator.swift in Sources */,
 				A901EFA1256F8C1B00F1C285 /* Text+SingleLine.swift in Sources */,
 				A901F00B256F8C1B00F1C285 /* ToastProvider.swift in Sources */,
@@ -982,6 +987,7 @@
 				A901F04F256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901EFBA256F8C1B00F1C285 /* UIView+SwipeGesture.swift in Sources */,
 				A901EFD8256F8C1B00F1C285 /* SimpleSinglePicker.swift in Sources */,
+				A901F0B2256FBCCC00F1C285 /* DemoList.swift in Sources */,
 				A901EFDE256F8C1B00F1C285 /* QrCodeGenerator.swift in Sources */,
 				A901EFA2256F8C1B00F1C285 /* Text+SingleLine.swift in Sources */,
 				A901F00C256F8C1B00F1C285 /* ToastProvider.swift in Sources */,

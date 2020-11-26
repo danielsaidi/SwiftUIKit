@@ -20,7 +20,7 @@ struct DemoListItem: View {
     
     var body: some View {
         HStack {
-            OptionalView(image) {
+            OptionalView(image) {
                 $0.frame(width: 20).padding(.trailing, 10)
             }
             Text(text)

@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ExtensionsScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DemoList("Extensions") {
+            Section {
+                DemoListText("""
+SwiftUIKit contains a bunch of extensions that makes using SwiftUI easier.
+                    
+Since this namespace will grow, extensions are not demonstrated. Instead, some are used in the demo examples.
+""")
+            }
+        }
     }
 }
 

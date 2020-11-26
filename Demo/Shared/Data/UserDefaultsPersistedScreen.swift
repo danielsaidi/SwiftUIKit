@@ -19,7 +19,7 @@ struct UserDefaultsPersistedScreen: View {
     @StateObject private var context = PersistentContext()
         
     var body: some View {
-        List {
+        DemoList("UserDefaultsPersisted") {
             Section {
                 DemoListText("Any text you type below is automatically persisted in UserDefaults, using the @UserDefaultsPersisted property wrapper.")
             }
@@ -32,8 +32,6 @@ struct UserDefaultsPersistedScreen: View {
                 DemoListButton("Clear text", .clear) { context.text = "" }
             }
         }
-        .listStyle(GroupedListStyle())
-        .navigationTitle("UserDefaultsPersisted")
     }
 }
 

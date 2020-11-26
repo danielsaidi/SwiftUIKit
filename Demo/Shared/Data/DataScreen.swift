@@ -10,10 +10,10 @@ import SwiftUI
 
 struct DataScreen: View {
     var body: some View {
-        List {
+        DemoList("Data") {
             DemoListLink("QrCodeGenerator", .qrCode, QrCodeGeneratorScreen())
             DemoListLink("UserDefaultsPersisted", .data, UserDefaultsPersistedScreen())
-        }.navigationTitle("Data")
+        }
     }
 }
 

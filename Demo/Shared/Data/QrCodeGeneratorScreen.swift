@@ -21,7 +21,7 @@ struct QrCodeGeneratorScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        List {
+        DemoList("QrCodeGenerator") {
             Section {
                 DemoListText("Enter a url and tap the button to show a code that you can scan with your phone.")
             }
@@ -36,8 +36,6 @@ struct QrCodeGeneratorScreen: View {
             }
         }
         .sheet(context: sheetContext)
-        .listStyle(GroupedListStyle())
-        .navigationTitle("QrCodeGenerator")
     }
 }
 

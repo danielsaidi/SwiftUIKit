@@ -20,7 +20,6 @@ struct DemoListText: View {
         Text(text)
             .lineSpacing(8)
             .padding(.vertical, 13)
-            .multilineTextAlignment(.center)
     }
 }
 

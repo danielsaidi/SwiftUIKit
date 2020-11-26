@@ -43,7 +43,9 @@ private extension BlursScreen {
 
 struct BlursScreen_Previews: PreviewProvider {
     static var previews: some View {
-        BlursScreen()
+        NavigationView {
+            BlursScreen()
+        }
     }
 }
 #endif
