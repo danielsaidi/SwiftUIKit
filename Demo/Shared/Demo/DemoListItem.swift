@@ -10,17 +10,19 @@ import SwiftUI
 
 struct DemoListItem: View {
     
-    init(_ text: String, _ image: Image) {
+    init(_ text: String, _ image: Image?) {
         self.text = text
         self.image = image
     }
     
     private let text: String
-    private let image: Image
+    private let image: Image?
     
     var body: some View {
         HStack {
-            image.frame(width: 20).padding(.trailing, 10)
+            OptionalView(image) {
+                $0.frame(width: 20).padding(.trailing, 10)
+            }
             Text(text)
         }
     }

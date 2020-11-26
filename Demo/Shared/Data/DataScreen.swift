@@ -10,12 +10,17 @@ import SwiftUI
 
 struct DataScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            DemoListLink("QrCodeGenerator", .qrCode, QrCodeGeneratorScreen())
+            DemoListLink("UserDefaultsPersisted", .data, UserDefaultsPersistedScreen())
+        }.navigationTitle("Data")
     }
 }
 
 struct DataScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DataScreen()
+        NavigationView {
+            DataScreen()
+        }
     }
 }

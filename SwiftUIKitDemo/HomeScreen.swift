@@ -13,7 +13,6 @@ struct HomeScreen: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Blurs", destination: BlursScreen())
                 NavigationLink("Data", destination: DataScreen())
                 NavigationLink("Extensions", destination: ExtensionsScreen())
                 NavigationLink("Gestures", destination: GesturesScreen())

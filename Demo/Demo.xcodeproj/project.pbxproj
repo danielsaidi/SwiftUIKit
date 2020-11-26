@@ -193,6 +193,14 @@
 		A901F081256F963E00F1C285 /* SharingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F07F256F963E00F1C285 /* SharingScreen.swift */; };
 		A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F084256F964600F1C285 /* ViewsScreen.swift */; };
 		A901F086256F964600F1C285 /* ViewsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F084256F964600F1C285 /* ViewsScreen.swift */; };
+		A901F099256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */; };
+		A901F09A256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */; };
+		A901F0A0256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */; };
+		A901F0A1256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */; };
+		A901F0A5256FB41A00F1C285 /* View+Enabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A4256FB41A00F1C285 /* View+Enabled.swift */; };
+		A901F0A6256FB41A00F1C285 /* View+Enabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A4256FB41A00F1C285 /* View+Enabled.swift */; };
+		A901F0AA256FB53700F1C285 /* DemoListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A9256FB53700F1C285 /* DemoListText.swift */; };
+		A901F0AB256FB53700F1C285 /* DemoListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A9256FB53700F1C285 /* DemoListText.swift */; };
 		A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355031256F7E3C00BBE9CE /* ContentView.swift */; };
@@ -297,6 +305,10 @@
 		A901F07A256F963400F1C285 /* PickersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersScreen.swift; sourceTree = "<group>"; };
 		A901F07F256F963E00F1C285 /* SharingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingScreen.swift; sourceTree = "<group>"; };
 		A901F084256F964600F1C285 /* ViewsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsScreen.swift; sourceTree = "<group>"; };
+		A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeGeneratorScreen.swift; sourceTree = "<group>"; };
+		A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistedScreen.swift; sourceTree = "<group>"; };
+		A901F0A4256FB41A00F1C285 /* View+Enabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Enabled.swift"; sourceTree = "<group>"; };
+		A901F0A9256FB53700F1C285 /* DemoListText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListText.swift; sourceTree = "<group>"; };
 		A9355030256F7E3C00BBE9CE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		A9355031256F7E3C00BBE9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9355032256F7E3D00BBE9CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -380,6 +392,7 @@
 				A901EF3E256F8C1A00F1C285 /* View+Geometry.swift */,
 				A901EF3A256F8C1A00F1C285 /* View+Snapshot.swift */,
 				A901EF3D256F8C1A00F1C285 /* View+Visible.swift */,
+				A901F0A4256FB41A00F1C285 /* View+Enabled.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,7 +463,6 @@
 		A901EF61256F8C1A00F1C285 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A901EF62256F8C1A00F1C285 /* AsyncImageLoader.swift */,
 				A901EF63256F8C1A00F1C285 /* QrCodeGenerator.swift */,
 				A901EF65256F8C1A00F1C285 /* StandardQrCodeGenerator.swift */,
 				A901EF64256F8C1A00F1C285 /* UserDefaultsPersisted.swift */,
@@ -463,6 +475,7 @@
 			children = (
 				A901EF69256F8C1A00F1C285 /* CollectionView */,
 				A901EF76256F8C1A00F1C285 /* AsyncImage.swift */,
+				A901EF62256F8C1A00F1C285 /* AsyncImageLoader.swift */,
 				A901EF68256F8C1A00F1C285 /* CircularProgressBar.swift */,
 				A901EF71256F8C1A00F1C285 /* CircularProgressView.swift */,
 				A901EF75256F8C1A00F1C285 /* ConditionalView.swift */,
@@ -554,6 +567,8 @@
 			isa = PBXGroup;
 			children = (
 				A901F039256F8CA600F1C285 /* DataScreen.swift */,
+				A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */,
+				A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -678,6 +693,7 @@
 				A901F065256F94C600F1C285 /* DemoListButton.swift */,
 				A901F05E256F936700F1C285 /* DemoListItem.swift */,
 				A901F059256F932C00F1C285 /* DemoListLink.swift */,
+				A901F0A9256FB53700F1C285 /* DemoListText.swift */,
 				A9355054256F7E6C00BBE9CE /* Image+Demo.swift */,
 			);
 			path = Demo;
@@ -782,6 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A901EFF3256F8C1B00F1C285 /* CircularProgressView.swift in Sources */,
+				A901F099256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */,
 				A901F021256F8C1B00F1C285 /* ToastContext.swift in Sources */,
 				A901EFAF256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
@@ -815,6 +832,7 @@
 				A901F025256F8C1B00F1C285 /* AlertContext.swift in Sources */,
 				A901EFEF256F8C1B00F1C285 /* CollectionViewRow.swift in Sources */,
 				A901EFE5256F8C1B00F1C285 /* CircularProgressBar.swift in Sources */,
+				A901F0AA256FB53700F1C285 /* DemoListText.swift in Sources */,
 				A901EFD5256F8C1B00F1C285 /* SimpleMultiPicker.swift in Sources */,
 				A901F074256F962600F1C285 /* CameraScreen.swift in Sources */,
 				A901F02B256F8C1B00F1C285 /* View+Blur.swift in Sources */,
@@ -835,6 +853,7 @@
 				A901EFFD256F8C1B00F1C285 /* AsyncImage.swift in Sources */,
 				A901EFC1256F8C1B00F1C285 /* Flippable.swift in Sources */,
 				A901EFBF256F8C1B00F1C285 /* FlipDirection.swift in Sources */,
+				A901F0A5256FB41A00F1C285 /* View+Enabled.swift in Sources */,
 				A901EFD9256F8C1B00F1C285 /* FilePicker.swift in Sources */,
 				A901EFB3256F8C1B00F1C285 /* View+Shadow.swift in Sources */,
 				A901EFC9256F8C1B00F1C285 /* ImagePickerCompletionHandler.swift in Sources */,
@@ -864,6 +883,7 @@
 				A901EFCF256F8C1B00F1C285 /* SimplePickerValue.swift in Sources */,
 				A901F027256F8C1B00F1C285 /* FullScreenCoverProvider.swift in Sources */,
 				A901EFE1256F8C1B00F1C285 /* StandardQrCodeGenerator.swift in Sources */,
+				A901F0A0256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */,
 				A901F080256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901EFC5256F8C1B00F1C285 /* ImagePickerPhotosCompletionHandler.swift in Sources */,
 				A901F01D256F8C1B00F1C285 /* View+Toast.swift in Sources */,
@@ -885,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A901EFF4256F8C1B00F1C285 /* CircularProgressView.swift in Sources */,
+				A901F09A256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */,
 				A901F022256F8C1B00F1C285 /* ToastContext.swift in Sources */,
 				A901EFB0256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F045256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
@@ -918,6 +939,7 @@
 				A901F026256F8C1B00F1C285 /* AlertContext.swift in Sources */,
 				A901EFF0256F8C1B00F1C285 /* CollectionViewRow.swift in Sources */,
 				A901EFE6256F8C1B00F1C285 /* CircularProgressBar.swift in Sources */,
+				A901F0AB256FB53700F1C285 /* DemoListText.swift in Sources */,
 				A901EFD6256F8C1B00F1C285 /* SimpleMultiPicker.swift in Sources */,
 				A901F075256F962600F1C285 /* CameraScreen.swift in Sources */,
 				A901F02C256F8C1B00F1C285 /* View+Blur.swift in Sources */,
@@ -938,6 +960,7 @@
 				A901EFFE256F8C1B00F1C285 /* AsyncImage.swift in Sources */,
 				A901EFC2256F8C1B00F1C285 /* Flippable.swift in Sources */,
 				A901EFC0256F8C1B00F1C285 /* FlipDirection.swift in Sources */,
+				A901F0A6256FB41A00F1C285 /* View+Enabled.swift in Sources */,
 				A901EFDA256F8C1B00F1C285 /* FilePicker.swift in Sources */,
 				A901EFB4256F8C1B00F1C285 /* View+Shadow.swift in Sources */,
 				A901EFCA256F8C1B00F1C285 /* ImagePickerCompletionHandler.swift in Sources */,
@@ -967,6 +990,7 @@
 				A901EFD0256F8C1B00F1C285 /* SimplePickerValue.swift in Sources */,
 				A901F028256F8C1B00F1C285 /* FullScreenCoverProvider.swift in Sources */,
 				A901EFE2256F8C1B00F1C285 /* StandardQrCodeGenerator.swift in Sources */,
+				A901F0A1256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */,
 				A901F081256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901EFC6256F8C1B00F1C285 /* ImagePickerPhotosCompletionHandler.swift in Sources */,
 				A901F01E256F8C1B00F1C285 /* View+Toast.swift in Sources */,

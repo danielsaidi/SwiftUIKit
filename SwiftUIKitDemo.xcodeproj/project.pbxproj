@@ -42,9 +42,6 @@
 		A9E9A270241062CB00844844 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A26F241062CB00844844 /* Preview Assets.xcassets */; };
 		A9E9A273241062CB00844844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E9A271241062CB00844844 /* LaunchScreen.storyboard */; };
 		A9E9A280241065B700844844 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A9E9A27F241065B700844844 /* SwiftUIKit */; };
-		A9E9A282241065D900844844 /* BlursScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A281241065D900844844 /* BlursScreen.swift */; };
-		A9E9A284241065E700844844 /* BlurCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A283241065E700844844 /* BlurCell.swift */; };
-		A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */; };
 		A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A7241076FF00844844 /* GesturesScreen.swift */; };
 		A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2A92410770B00844844 /* SwipeGestureScreen.swift */; };
 		A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E9A2AB2410776C00844844 /* FlippableViewScreen.swift */; };
@@ -94,9 +91,6 @@
 		A9E9A26F241062CB00844844 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9E9A272241062CB00844844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9E9A274241062CB00844844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9E9A281241065D900844844 /* BlursScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlursScreen.swift; sourceTree = "<group>"; };
-		A9E9A283241065E700844844 /* BlurCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurCell.swift; sourceTree = "<group>"; };
-		A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBlurEffectStyle+DisplayName.swift"; sourceTree = "<group>"; };
 		A9E9A2982410756100844844 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = Fastlane/Fastfile; sourceTree = "<group>"; };
 		A9E9A2992410756A00844844 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		A9E9A29A2410756A00844844 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -195,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				A9E9A2882410669000844844 /* App */,
-				A9E9A27D241063AE00844844 /* Blurs */,
 				A9AE2E27248C053E00D9BC2A /* Data */,
 				A9E9A2BD2411978D00844844 /* Demo */,
 				A9E9A2AD24107E6F00844844 /* Extensions */,
@@ -214,16 +207,6 @@
 				A9E9A26F241062CB00844844 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A9E9A27D241063AE00844844 /* Blurs */ = {
-			isa = PBXGroup;
-			children = (
-				A9E9A283241065E700844844 /* BlurCell.swift */,
-				A9E9A281241065D900844844 /* BlursScreen.swift */,
-				A9E9A2852410661200844844 /* UIBlurEffectStyle+DisplayName.swift */,
-			);
-			path = Blurs;
 			sourceTree = "<group>";
 		};
 		A9E9A2882410669000844844 /* App */ = {
@@ -441,17 +424,14 @@
 				84A3926A2500EB0E009E5CC0 /* DemoToast.swift in Sources */,
 				845EA61E24190562005976EE /* Fonts.swift in Sources */,
 				A9E9A2AA2410770B00844844 /* SwipeGestureScreen.swift in Sources */,
-				A9E9A282241065D900844844 /* BlursScreen.swift in Sources */,
 				A9AE2E2D248C056900D9BC2A /* DataScreen.swift in Sources */,
 				A9355026256F6D3D00BBE9CE /* Image+Demo.swift in Sources */,
-				A9E9A284241065E700844844 /* BlurCell.swift in Sources */,
 				A9E9A2A8241076FF00844844 /* GesturesScreen.swift in Sources */,
 				A9E9A26B241062C900844844 /* HomeScreen.swift in Sources */,
 				A9E9A2AC2410776C00844844 /* FlippableViewScreen.swift in Sources */,
 				A9E9A2BC2411962E00844844 /* ToastScreen.swift in Sources */,
 				A9E9A2B7241193C400844844 /* ShadowStyleScreen.swift in Sources */,
 				847CC5DD2549D80A008A36AF /* FullScreenCoversScreen.swift in Sources */,
-				A9E9A2862410661200844844 /* UIBlurEffectStyle+DisplayName.swift in Sources */,
 				A9AE2E1D248BFCAC00D9BC2A /* SheetsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

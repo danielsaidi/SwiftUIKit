@@ -10,7 +10,11 @@ import SwiftUI
 
 struct DemoListButton: View {
     
-    init(_ text: String, _ image: Image, _ action: @escaping () -> Void) {
+    init(_ text: String, _ action: @escaping () -> Void) {
+        self.init(text, nil, action)
+    }
+    
+    init(_ text: String, _ image: Image?, _ action: @escaping () -> Void) {
         button = Button(action: action) {
             DemoListItem(text, image)
         }
@@ -18,7 +22,10 @@ struct DemoListButton: View {
     
     private let button: Button<DemoListItem>
     
-    var body: some View { button.buttonStyle(PlainButtonStyle()) }
+    var body: some View { button
+        .font(Font.body.bold())
+        .buttonStyle(PlainButtonStyle())
+    }
 }
 
 struct DemoListButton_Previews: PreviewProvider {
