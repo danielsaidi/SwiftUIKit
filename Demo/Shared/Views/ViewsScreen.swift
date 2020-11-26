@@ -18,7 +18,7 @@ struct ViewsScreen: View {
     
     private var list1: some View {
         Group {
-            DemoListLink("* Async Image", .photo, CornerRadiusStyleScreen())
+            DemoListLink("Async Image", .photo, AsyncImageScreen())
             DemoListLink("* Collection View (shelves)", .collectionViewShelves, CornerRadiusStyleScreen())
             DemoListLink("* Collection View (grid)", .collectionViewGrid, CornerRadiusStyleScreen())
             DemoListLink("* Circular Progress Bar", .circularProgressBar, CornerRadiusStyleScreen())

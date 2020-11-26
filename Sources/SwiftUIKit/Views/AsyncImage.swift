@@ -24,24 +24,22 @@ public struct AsyncImage<PlaceholderView: View>: View {
     public init(
         url: URL,
         contentMode: ContentMode = .fit,
-        loadDelay: DispatchTimeInterval = .seconds(0),
         @ViewBuilder placeholder: @escaping Placeholder) {
-        self.loadDelay = loadDelay
         self.contentMode = contentMode
         self.placeholder = placeholder
-        _loader = StateObject(wrappedValue: AsyncImageLoader(url: url))
+        _loader = ObservedObject(wrappedValue: AsyncImageLoader(url: url))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: loadImage)
     }
     
     public typealias Placeholder = () -> PlaceholderView
     
     private let contentMode: ContentMode
-    private let loadDelay: DispatchTimeInterval
     private let placeholder: Placeholder
     
-    @StateObject private var loader: AsyncImageLoader
+    @ObservedObject private var loader: AsyncImageLoader
 
     public var body: some View {
-        content.onAppear(perform: loadImage)
+        content
     }
     
     @ViewBuilder
@@ -55,10 +53,7 @@ public struct AsyncImage<PlaceholderView: View>: View {
         }
     }
     
-    private func loadImage() {
-        let queue = DispatchQueue.main
-        queue.asyncAfter(deadline: .now() + loadDelay, execute: loader.load)
-    }
+    private func loadImage() { loader.load() }
 }
 
 @available(iOS 14, macOS 11.0, tvOS 14, watchOS 7.0, *)

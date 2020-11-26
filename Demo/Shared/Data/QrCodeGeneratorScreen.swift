@@ -41,9 +41,7 @@ struct QrCodeGeneratorScreen: View {
 
 private extension QrCodeGeneratorScreen {
     
-    var hasUrl: Bool {
-        !urlString.trimmingCharacters(in: .whitespaces).isEmpty
-    }
+    var hasUrl: Bool { URL(string: urlString) != nil }
 }
 
 private extension QrCodeGeneratorScreen {
@@ -58,7 +56,7 @@ private extension QrCodeGeneratorScreen {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     Spacer()
-                }.navigationBarTitle("Congratulations!")
+                }.navigationBarTitle("Scan, ohoy!")
             }
         )
     }
