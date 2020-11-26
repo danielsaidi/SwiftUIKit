@@ -55,8 +55,6 @@
 		A901EFBE256F8C1B00F1C285 /* SwipeGesture+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF4F256F8C1A00F1C285 /* SwipeGesture+Actions.swift */; };
 		A901EFBF256F8C1B00F1C285 /* FlipDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF51256F8C1A00F1C285 /* FlipDirection.swift */; };
 		A901EFC0256F8C1B00F1C285 /* FlipDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF51256F8C1A00F1C285 /* FlipDirection.swift */; };
-		A901EFC1256F8C1B00F1C285 /* Flippable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF52256F8C1A00F1C285 /* Flippable.swift */; };
-		A901EFC2256F8C1B00F1C285 /* Flippable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF52256F8C1A00F1C285 /* Flippable.swift */; };
 		A901EFC3256F8C1B00F1C285 /* FlippableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF53256F8C1A00F1C285 /* FlippableView.swift */; };
 		A901EFC4256F8C1B00F1C285 /* FlippableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF53256F8C1A00F1C285 /* FlippableView.swift */; };
 		A901EFC5256F8C1B00F1C285 /* ImagePickerPhotosCompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF56256F8C1A00F1C285 /* ImagePickerPhotosCompletionHandler.swift */; };
@@ -256,7 +254,6 @@
 		A901EF4E256F8C1A00F1C285 /* SwipeGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeGesture.swift; sourceTree = "<group>"; };
 		A901EF4F256F8C1A00F1C285 /* SwipeGesture+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeGesture+Actions.swift"; sourceTree = "<group>"; };
 		A901EF51256F8C1A00F1C285 /* FlipDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipDirection.swift; sourceTree = "<group>"; };
-		A901EF52256F8C1A00F1C285 /* Flippable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flippable.swift; sourceTree = "<group>"; };
 		A901EF53256F8C1A00F1C285 /* FlippableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippableView.swift; sourceTree = "<group>"; };
 		A901EF56256F8C1A00F1C285 /* ImagePickerPhotosCompletionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerPhotosCompletionHandler.swift; sourceTree = "<group>"; };
 		A901EF57256F8C1A00F1C285 /* ImagePickerStandardCompletionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerStandardCompletionHandler.swift; sourceTree = "<group>"; };
@@ -457,7 +454,6 @@
 			isa = PBXGroup;
 			children = (
 				A901EF51256F8C1A00F1C285 /* FlipDirection.swift */,
-				A901EF52256F8C1A00F1C285 /* Flippable.swift */,
 				A901EF53256F8C1A00F1C285 /* FlippableView.swift */,
 			);
 			path = Flippable;
@@ -910,7 +906,6 @@
 				A901EF9B256F8C1B00F1C285 /* Color+Random.swift in Sources */,
 				A901F066256F94C600F1C285 /* DemoListButton.swift in Sources */,
 				A901EFFD256F8C1B00F1C285 /* AsyncImage.swift in Sources */,
-				A901EFC1256F8C1B00F1C285 /* Flippable.swift in Sources */,
 				A901EFBF256F8C1B00F1C285 /* FlipDirection.swift in Sources */,
 				A901F0A5256FB41A00F1C285 /* View+Enabled.swift in Sources */,
 				A901EFD9256F8C1B00F1C285 /* FilePicker.swift in Sources */,
@@ -1027,7 +1022,6 @@
 				A901EF9C256F8C1B00F1C285 /* Color+Random.swift in Sources */,
 				A901F067256F94C600F1C285 /* DemoListButton.swift in Sources */,
 				A901EFFE256F8C1B00F1C285 /* AsyncImage.swift in Sources */,
-				A901EFC2256F8C1B00F1C285 /* Flippable.swift in Sources */,
 				A901EFC0256F8C1B00F1C285 /* FlipDirection.swift in Sources */,
 				A901F0A6256FB41A00F1C285 /* View+Enabled.swift in Sources */,
 				A901EFDA256F8C1B00F1C285 /* FilePicker.swift in Sources */,
