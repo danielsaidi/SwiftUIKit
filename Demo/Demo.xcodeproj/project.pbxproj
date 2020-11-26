@@ -215,6 +215,20 @@
 		A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D9256FE65200F1C285 /* ToastsScreen.swift */; };
 		A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
 		A901F0E0256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
+		A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */; };
+		A901F0EA2570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */; };
+		A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */; };
+		A901F0EF2570027F00F1C285 /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */; };
+		A901F0F32570028800F1C285 /* ShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */; };
+		A901F0F42570028800F1C285 /* ShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */; };
+		A901F0FF2570042000F1C285 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0FA2570042000F1C285 /* Fonts.swift */; };
+		A901F1002570042000F1C285 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0FA2570042000F1C285 /* Fonts.swift */; };
+		A901F1012570042000F1C285 /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A901F0FC2570042000F1C285 /* AbrilFatface-Regular.ttf */; };
+		A901F1022570042000F1C285 /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A901F0FC2570042000F1C285 /* AbrilFatface-Regular.ttf */; };
+		A901F1032570042000F1C285 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A901F0FD2570042000F1C285 /* LuckiestGuy-Regular.ttf */; };
+		A901F1042570042000F1C285 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A901F0FD2570042000F1C285 /* LuckiestGuy-Regular.ttf */; };
+		A901F1052570042000F1C285 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A901F0FE2570042000F1C285 /* Lobster-Regular.ttf */; };
+		A901F1062570042000F1C285 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A901F0FE2570042000F1C285 /* Lobster-Regular.ttf */; };
 		A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355031256F7E3C00BBE9CE /* ContentView.swift */; };
@@ -330,6 +344,13 @@
 		A901F0D4256FE64500F1C285 /* SheetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsScreen.swift; sourceTree = "<group>"; };
 		A901F0D9256FE65200F1C285 /* ToastsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsScreen.swift; sourceTree = "<group>"; };
 		A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPresentable.swift; sourceTree = "<group>"; };
+		A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
+		A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
+		A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyleScreen.swift; sourceTree = "<group>"; };
+		A901F0FA2570042000F1C285 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fonts.swift; path = ../../../SwiftUIKitDemo/Resources/Fonts.swift; sourceTree = "<group>"; };
+		A901F0FC2570042000F1C285 /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		A901F0FD2570042000F1C285 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		A901F0FE2570042000F1C285 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		A9355030256F7E3C00BBE9CE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		A9355031256F7E3C00BBE9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9355032256F7E3D00BBE9CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -620,6 +641,9 @@
 			isa = PBXGroup;
 			children = (
 				A901F04D256F8CFE00F1C285 /* StylesScreen.swift */,
+				A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */,
+				A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */,
+				A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -656,6 +680,27 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A901F0F92570041100F1C285 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9355032256F7E3D00BBE9CE /* Assets.xcassets */,
+				A901F0FB2570042000F1C285 /* Fonts */,
+				A901F0FA2570042000F1C285 /* Fonts.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A901F0FB2570042000F1C285 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A901F0FC2570042000F1C285 /* AbrilFatface-Regular.ttf */,
+				A901F0FD2570042000F1C285 /* LuckiestGuy-Regular.ttf */,
+				A901F0FE2570042000F1C285 /* Lobster-Regular.ttf */,
+			);
+			name = Fonts;
+			path = ../../../SwiftUIKitDemo/Resources/Fonts;
+			sourceTree = "<group>";
+		};
 		A935502A256F7E3C00BBE9CE = {
 			isa = PBXGroup;
 			children = (
@@ -669,7 +714,6 @@
 		A935502F256F7E3C00BBE9CE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A9355032256F7E3D00BBE9CE /* Assets.xcassets */,
 				A901F031256F8C8F00F1C285 /* Blurs */,
 				A901F089256F964C00F1C285 /* Camera */,
 				A901F053256F8D1700F1C285 /* Data */,
@@ -678,6 +722,7 @@
 				A901F054256F8D1D00F1C285 /* Gestures */,
 				A901F08A256F965300F1C285 /* Pickers */,
 				A901F055256F8D2400F1C285 /* Presentation */,
+				A901F0F92570041100F1C285 /* Resources */,
 				A901F08B256F965900F1C285 /* Sharing */,
 				A901F056256F8D2A00F1C285 /* Styles */,
 				A901EF32256F8C1A00F1C285 /* SwiftUIKit */,
@@ -807,6 +852,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9355047256F7E3D00BBE9CE /* Assets.xcassets in Resources */,
+				A901F1052570042000F1C285 /* Lobster-Regular.ttf in Resources */,
+				A901F1012570042000F1C285 /* AbrilFatface-Regular.ttf in Resources */,
+				A901F1032570042000F1C285 /* LuckiestGuy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +863,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9355048256F7E3D00BBE9CE /* Assets.xcassets in Resources */,
+				A901F1062570042000F1C285 /* Lobster-Regular.ttf in Resources */,
+				A901F1022570042000F1C285 /* AbrilFatface-Regular.ttf in Resources */,
+				A901F1042570042000F1C285 /* LuckiestGuy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,11 +951,13 @@
 				A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */,
 				A901F007256F8C1B00F1C285 /* OptionalView.swift in Sources */,
 				A901F02D256F8C1B00F1C285 /* UIBlurEffectStyle+AllCases.swift in Sources */,
+				A901F0F32570028800F1C285 /* ShadowStyleScreen.swift in Sources */,
 				A901F00F256F8C1B00F1C285 /* FullScreenCoverContext.swift in Sources */,
 				A901EF9F256F8C1B00F1C285 /* View+Geometry.swift in Sources */,
 				A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
 				A901EFEB256F8C1B00F1C285 /* CollectionViewLayout+VerticalGrid.swift in Sources */,
 				A901F029256F8C1B00F1C285 /* BlurView.swift in Sources */,
+				A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901EFED256F8C1B00F1C285 /* CollectionViewLayout+Shelves.swift in Sources */,
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901EFB9256F8C1B00F1C285 /* UIView+SwipeGesture.swift in Sources */,
@@ -924,6 +977,7 @@
 				A901F01D256F8C1B00F1C285 /* View+Toast.swift in Sources */,
 				A901EF95256F8C1B00F1C285 /* UrlOpener.swift in Sources */,
 				A901EFAB256F8C1B00F1C285 /* CornerRadiusStyle.swift in Sources */,
+				A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */,
 				A901EFAD256F8C1B00F1C285 /* View+CornerRadius.swift in Sources */,
 				A901EFB7256F8C1B00F1C285 /* SwipeGesture+Coordinator.swift in Sources */,
 				A901EFBD256F8C1B00F1C285 /* SwipeGesture+Actions.swift in Sources */,
@@ -931,6 +985,7 @@
 				A901EF91256F8C1B00F1C285 /* ShareSheet.swift in Sources */,
 				A901EFBB256F8C1B00F1C285 /* SwipeGesture.swift in Sources */,
 				A901EFA7256F8C1B00F1C285 /* FontStyle.swift in Sources */,
+				A901F0FF2570042000F1C285 /* Fonts.swift in Sources */,
 				A901F01F256F8C1B00F1C285 /* SheetProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1014,11 +1069,13 @@
 				A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */,
 				A901F008256F8C1B00F1C285 /* OptionalView.swift in Sources */,
 				A901F02E256F8C1B00F1C285 /* UIBlurEffectStyle+AllCases.swift in Sources */,
+				A901F0F42570028800F1C285 /* ShadowStyleScreen.swift in Sources */,
 				A901F010256F8C1B00F1C285 /* FullScreenCoverContext.swift in Sources */,
 				A901EFA0256F8C1B00F1C285 /* View+Geometry.swift in Sources */,
 				A9355056256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
 				A901EFEC256F8C1B00F1C285 /* CollectionViewLayout+VerticalGrid.swift in Sources */,
 				A901F02A256F8C1B00F1C285 /* BlurView.swift in Sources */,
+				A901F0EA2570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901EFEE256F8C1B00F1C285 /* CollectionViewLayout+Shelves.swift in Sources */,
 				A901F04F256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901EFBA256F8C1B00F1C285 /* UIView+SwipeGesture.swift in Sources */,
@@ -1038,6 +1095,7 @@
 				A901F01E256F8C1B00F1C285 /* View+Toast.swift in Sources */,
 				A901EF96256F8C1B00F1C285 /* UrlOpener.swift in Sources */,
 				A901EFAC256F8C1B00F1C285 /* CornerRadiusStyle.swift in Sources */,
+				A901F0EF2570027F00F1C285 /* FontStyleScreen.swift in Sources */,
 				A901EFAE256F8C1B00F1C285 /* View+CornerRadius.swift in Sources */,
 				A901EFB8256F8C1B00F1C285 /* SwipeGesture+Coordinator.swift in Sources */,
 				A901EFBE256F8C1B00F1C285 /* SwipeGesture+Actions.swift in Sources */,
@@ -1045,6 +1103,7 @@
 				A901EF92256F8C1B00F1C285 /* ShareSheet.swift in Sources */,
 				A901EFBC256F8C1B00F1C285 /* SwipeGesture.swift in Sources */,
 				A901EFA8256F8C1B00F1C285 /* FontStyle.swift in Sources */,
+				A901F1002570042000F1C285 /* Fonts.swift in Sources */,
 				A901F020256F8C1B00F1C285 /* SheetProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,11 +14,13 @@ extension Image {
     static var blur: Image { Image(systemName: "face.dashed") }
     static var camera: Image { Image(systemName: "camera") }
     static var clear: Image { Image(systemName: "xmark.circle") }
+    static var cornerRadius: Image { Image(systemName: "square") }
     static var cover: Image { Image(systemName: "rectangle.inset.fill") }
     static var data: Image { Image(systemName: "cylinder.split.1x2") }
     static var emoji: Image { Image(systemName: "face.smiling") }
     static var extensions: Image { Image(systemName: "puzzlepiece") }
     static var flag: Image { Image(systemName: "flag") }
+    static var font: Image { Image(systemName: "f.cursive") }
     static var gestures: Image { Image(systemName: "hand.draw") }
     static var palette: Image { Image(systemName: "paintpalette") }
     static var pickers: Image { Image(systemName: "list.bullet") }
@@ -26,6 +28,7 @@ extension Image {
     static var photo: Image { Image(systemName: "photo") }
     static var presentation: Image { Image(systemName: "square.stack") }
     static var qrCode: Image { Image(systemName: "qrcode") }
+    static var shadow: Image { Image(systemName: "sun.dust.fill") }
     static var sheet: Image { Image(systemName: "rectangle.bottomthird.inset.fill") }
     static var styles: Image { Image(systemName: "paintbrush.pointed") }
     static var swipeGesture: Image { Image(systemName: "hand.draw") }

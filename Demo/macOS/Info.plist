@@ -22,5 +22,13 @@
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>ATSApplicationFontsPath</key>
+	<string>.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AbrilFatface-Regular.ttf</string>
+		<string>Lobster-Regular.ttf</string>
+		<string>LuckiestGuy-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

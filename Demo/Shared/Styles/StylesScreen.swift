@@ -10,7 +10,11 @@ import SwiftUI
 
 struct StylesScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DemoList("Gestures") {
+            DemoListLink("Corner Radius", .cornerRadius, CornerRadiusStyleScreen())
+            DemoListLink("Fonts", .font, FontStyleScreen())
+            DemoListLink("Shadows", .shadow, ShadowStyleScreen())
+        }
     }
 }
 

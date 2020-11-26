@@ -20,9 +20,9 @@ struct ContentView: View {
                 DemoListLink("Extensions", .extensions, ExtensionsScreen())
                 DemoListLink("Gestures", .gestures, GesturesScreen())
                 DemoListLink("Pickers (not done)", .pickers, PickersScreen())
-                DemoListLink("Presentation (not done)", .presentation, PresentationScreen())
+                DemoListLink("Presentation", .presentation, PresentationScreen())
                 DemoListLink("Sharing (not done)", .sharing, SharingScreen())
-                DemoListLink("Styles (not done)", .styles, StylesScreen())
+                DemoListLink("Styles", .styles, StylesScreen())
                 DemoListLink("Views (not done)", .views, ViewsScreen())
             }
         }
