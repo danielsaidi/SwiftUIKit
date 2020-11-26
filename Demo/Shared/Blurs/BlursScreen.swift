@@ -21,7 +21,7 @@ struct BlursScreen: View {
                     listItem(for: style)
                 }
             }.padding()
-        }.navigationBarTitle("Blurs")
+        }.navigationTitle("Blurs")
     }
 }
 

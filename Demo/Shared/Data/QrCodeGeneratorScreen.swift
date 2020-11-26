@@ -56,7 +56,7 @@ private extension QrCodeGeneratorScreen {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     Spacer()
-                }.navigationBarTitle("Scan, ohoy!")
+                }.navigationTitle("Scan, ohoy!")
             }
         )
     }

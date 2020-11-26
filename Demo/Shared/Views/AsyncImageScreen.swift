@@ -45,7 +45,7 @@ private extension AsyncImageScreen {
                 AsyncImage(url: url, placeholder: { CircularProgressView() })
                     .cornerRadius(10)
                     .padding()
-                    .navigationBarTitle("Image, ohoy!")
+                    .navigationTitle("Image, ohoy!")
             }
         )
     }

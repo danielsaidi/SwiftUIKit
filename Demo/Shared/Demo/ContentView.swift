@@ -23,7 +23,7 @@ struct ContentView: View {
                 DemoListLink("Presentation", .presentation, PresentationScreen())
                 DemoListLink("Sharing (not done)", .sharing, SharingScreen())
                 DemoListLink("Styles", .styles, StylesScreen())
-                DemoListLink("Views (not done)", .views, ViewsScreen())
+                DemoListLink("Views (in progress)", .views, ViewsScreen())
             }
         }
     }

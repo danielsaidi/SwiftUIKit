@@ -22,7 +22,7 @@ struct SwipeGestureScreen: View {
                 right: handleSwipeRight,
                 down: handleSwipeDown)
             .padding()
-            .navigationBarTitle("SwipeGesture")
+            .navigationTitle("SwipeGesture")
     }
 }
 

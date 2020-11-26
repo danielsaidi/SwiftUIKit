@@ -22,10 +22,10 @@ struct CoversScreen: View {
         DemoList("Full Screen Covers") {
             ForEach(DemoPresentable.allCases) { item in
                 DemoListButton(item.listText(for: "full screen cover"), item.listIcon) {
-                    present(item)
+                    presentCover(item)
                 }
             }
-            DemoListButton("Show an emoji sheet (test)", .sheet, showSheet)
+            DemoListButton("Show an emoji sheet (test)", .sheet, presentSheet)
                 .sheet(context: sheetContext)
         }.fullScreenCover(context: context)
     }
@@ -33,19 +33,32 @@ struct CoversScreen: View {
 
 private extension CoversScreen {
     
-    func present(_ presentable: DemoPresentable) {
+    var closeButton: some View {
+        Button("Close", action: { context.dismiss() })
+    }
+    
+    func presentCover(_ presentable: DemoPresentable) {
         context.present(
             NavigationView {
-                presentable
-                    .cover
-                    .navigationBarTitle("", displayMode: .inline)
-                    .navigationBarItems(trailing: Button("Close", action: { context.dismiss() }))
+                view(for: presentable)
+                    .navigationBarItems(trailing: closeButton)
             }
         )
     }
     
-    func showSheet() {
-        sheetContext.present(DemoPresentable.flag)
+    func presentSheet() {
+        sheetContext.present(
+            NavigationView {
+                view(for: .flag)
+            }
+        )
+    }
+    
+    func view(for presentable: DemoPresentable, addClose: Bool = false) -> some View {
+        presentable.cover
+            .navigationTitle("Hello, you!")
+            .navigationBarTitleDisplayMode(.inline)
+            
     }
 }
 

@@ -19,7 +19,7 @@ struct FlippableViewScreen: View {
         )
         .padding()
         .onTapGesture { isFlipped.toggle() }
-        .navigationBarTitle("Flippable View")
+        .navigationTitle("Flippable View")
     }
 }
 
