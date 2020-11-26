@@ -22,5 +22,7 @@ extension Image {
     static var presentation: Image { Image(systemName: "square.stack") }
     static var qrCode: Image { Image(systemName: "qrcode") }
     static var styles: Image { Image(systemName: "paintbrush.pointed") }
+    static var swipeGesture: Image { Image(systemName: "hand.draw") }
+    static var tapGesture: Image { Image(systemName: "hand.tap") }
     static var views: Image { Image(systemName: "square.on.square") }
 }
