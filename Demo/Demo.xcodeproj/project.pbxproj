@@ -221,6 +221,10 @@
 		A901F11C257010DC00F1C285 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */; };
 		A901F1222570633900F1C285 /* AsyncImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F1212570633900F1C285 /* AsyncImageScreen.swift */; };
 		A901F1232570633900F1C285 /* AsyncImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F1212570633900F1C285 /* AsyncImageScreen.swift */; };
+		A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */; };
+		A901F12A25706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */; };
+		A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */; };
+		A901F1312570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */; };
 		A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355031256F7E3C00BBE9CE /* ContentView.swift */; };
@@ -339,6 +343,8 @@
 		A901F10E2570079800F1C285 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableViewScreen.swift; sourceTree = "<group>"; };
 		A901F1212570633900F1C285 /* AsyncImageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageScreen.swift; sourceTree = "<group>"; };
+		A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewShelvesScreen.swift; sourceTree = "<group>"; };
+		A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridScreen.swift; sourceTree = "<group>"; };
 		A9355030256F7E3C00BBE9CE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		A9355031256F7E3C00BBE9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9355032256F7E3D00BBE9CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -662,6 +668,8 @@
 			children = (
 				A901F084256F964600F1C285 /* ViewsScreen.swift */,
 				A901F1212570633900F1C285 /* AsyncImageScreen.swift */,
+				A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */,
+				A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */,
 				A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */,
 			);
 			path = Views;
@@ -859,6 +867,7 @@
 				A901F021256F8C1B00F1C285 /* ToastContext.swift in Sources */,
 				A901EFAF256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
+				A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
 				A901EFDB256F8C1B00F1C285 /* AsyncImageLoader.swift in Sources */,
 				A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
 				A901EFE7256F8C1B00F1C285 /* CollectionViewLayout.swift in Sources */,
@@ -929,6 +938,7 @@
 				A901F00F256F8C1B00F1C285 /* FullScreenCoverContext.swift in Sources */,
 				A901EF9F256F8C1B00F1C285 /* View+Geometry.swift in Sources */,
 				A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
+				A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
 				A901EFEB256F8C1B00F1C285 /* CollectionViewLayout+VerticalGrid.swift in Sources */,
 				A901F11B257010DC00F1C285 /* FlippableViewScreen.swift in Sources */,
 				A901F029256F8C1B00F1C285 /* BlurView.swift in Sources */,
@@ -976,6 +986,7 @@
 				A901F022256F8C1B00F1C285 /* ToastContext.swift in Sources */,
 				A901EFB0256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F045256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
+				A901F1312570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
 				A901EFDC256F8C1B00F1C285 /* AsyncImageLoader.swift in Sources */,
 				A901F0BD256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
 				A901EFE8256F8C1B00F1C285 /* CollectionViewLayout.swift in Sources */,
@@ -1046,6 +1057,7 @@
 				A901F010256F8C1B00F1C285 /* FullScreenCoverContext.swift in Sources */,
 				A901EFA0256F8C1B00F1C285 /* View+Geometry.swift in Sources */,
 				A9355056256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
+				A901F12A25706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
 				A901EFEC256F8C1B00F1C285 /* CollectionViewLayout+VerticalGrid.swift in Sources */,
 				A901F11C257010DC00F1C285 /* FlippableViewScreen.swift in Sources */,
 				A901F02A256F8C1B00F1C285 /* BlurView.swift in Sources */,

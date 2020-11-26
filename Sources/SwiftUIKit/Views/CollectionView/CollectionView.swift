@@ -48,7 +48,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
         layout: CollectionViewLayout,
         scrollOffset: Binding<CGPoint>? = nil,
         @ViewBuilder cell: @escaping (IndexPath, Item) -> Cell,
-        @ViewBuilder supplementaryView: @escaping (String, IndexPath) -> SupplementaryView) {
+        @ViewBuilder supplementaryView: @escaping (IndexPath) -> SupplementaryView) {
         self.init(
             rows: rows,
             sectionLayoutProvider: layout.sectionLayoutProvider,
@@ -65,7 +65,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
         sectionLayoutProvider: @escaping (Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection,
         scrollOffset: Binding<CGPoint>? = nil,
         @ViewBuilder cell: @escaping (IndexPath, Item) -> Cell,
-        @ViewBuilder supplementaryView: @escaping (String, IndexPath) -> SupplementaryView) {
+        @ViewBuilder supplementaryView: @escaping (IndexPath) -> SupplementaryView) {
         self.cell = cell
         self.scrollOffset = scrollOffset
         self.rows = rows
@@ -81,7 +81,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
     private let cell: (IndexPath, Item) -> Cell
     private let scrollOffset: Binding<CGPoint>?
     private let sectionLayoutProvider: (Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection
-    private let supplementaryView: (String, IndexPath) -> SupplementaryView
+    private let supplementaryView: (IndexPath) -> SupplementaryView
     
     private let cellIdentifier = "hostCell"
     private let supplementaryViewIdentifier = "hostSupplementaryView"
@@ -115,6 +115,7 @@ private extension CollectionView {
     func createCollectionView(for context: Context) -> UICollectionView {
         let layout = createLayout(for: context)
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = .clear
         view.delegate = context.coordinator
         view.register(HostCell.self, forCellWithReuseIdentifier: cellIdentifier)
         return view
@@ -142,7 +143,7 @@ private extension CollectionView {
                 coordinator.registeredSupplementaryViewKinds.append(kind)
             }
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: supplementaryViewIdentifier, for: indexPath) as? HostSupplementaryView else { return nil }
-            view.hostedSupplementaryView = supplementaryView(kind, indexPath)
+            view.hostedSupplementaryView = supplementaryView(indexPath)
             return view
         }
     }
