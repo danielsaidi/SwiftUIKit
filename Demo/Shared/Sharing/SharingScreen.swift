@@ -10,7 +10,15 @@ import SwiftUI
 
 struct SharingScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DemoList("Sharing") {
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has utils that can be used to share data in SwiftUI.")
+            }
+            
+            Section(header: Text("Utils")) {
+                DemoListLink("Share Sheet", .sharing, ShareSheetScreen())
+            }
+        }
     }
 }
 

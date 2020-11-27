@@ -24,8 +24,19 @@ import VisionKit
 @available(iOS 13, *)
 public struct DocumentCamera: UIViewControllerRepresentable {
     
+    @available(*, deprecated, message: "Use the action-based init instead")
     public init(delegate: VNDocumentCameraViewControllerDelegate) {
         self.delegateRetainer = delegate
+    }
+    
+    public init(
+        cancelAction: @escaping Delegate.CancelAction = {},
+        failureAction: @escaping Delegate.FailureAction = { _ in },
+        finishAction: @escaping Delegate.FinishAction) {
+        self.delegateRetainer = Delegate(
+            didCancel: cancelAction,
+            didFail: failureAction,
+            didFinish: finishAction)
     }
     
     private let delegateRetainer: VNDocumentCameraViewControllerDelegate
@@ -45,17 +56,21 @@ public extension DocumentCamera {
     class Delegate: NSObject, VNDocumentCameraViewControllerDelegate {
         
         public init(
-            didCancel: @escaping () -> Void,
-            didFail: @escaping (Error) -> Void,
-            didFinish: @escaping (VNDocumentCameraScan) -> Void) {
+            didCancel: @escaping CancelAction,
+            didFail: @escaping FailureAction,
+            didFinish: @escaping FinishAction) {
             self.didCancel = didCancel
             self.didFail = didFail
             self.didFinish = didFinish
         }
         
-        private let didCancel: () -> Void
-        private let didFail: (Error) -> Void
-        private let didFinish: (VNDocumentCameraScan) -> Void
+        public typealias CancelAction = () -> Void
+        public typealias FailureAction = (Error) -> Void
+        public typealias FinishAction = (VNDocumentCameraScan) -> Void
+        
+        private let didCancel: CancelAction
+        private let didFail: FailureAction
+        private let didFinish: FinishAction
         
         public func documentCameraViewControllerDidCancel(
             _ controller: VNDocumentCameraViewController) {

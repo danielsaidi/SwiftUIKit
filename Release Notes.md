@@ -3,7 +3,9 @@
 
 ## 0.9.9
 
-This release wraps more logic within os checks to make it build on `tvOS` and `watchOS`.
+This is the RC for the first major `1.0` release.
+
+This release wraps more logic within os checks to make the code build on `tvOS` and `watchOS`.
 
 The release also adds new views and utils:
 
@@ -22,7 +24,7 @@ The release also adds new views and utils:
 * `SimpleSinglePicker` renders a simple list of buttons that can be used to pick a single option in a list of available options.
 * `WidthVStack` lists views in a vertical stack and provides them with with the largest view width.
 
-The release also adds a highly performant set of collection views, based on the amazing work of @defagos, which can be found [here](https://github.com/defagos/SwiftUICollection):
+The release also adds a highly performant set of collection views, based on the amazing work of  [@defagos](https://twitter.com/defagos), which can be found [here](https://github.com/defagos/SwiftUICollection):
 
 * `CatalogCollectionView` for vertically scrolling collection views with horizontally scrolling rows.
 * `GridCollectionView` for vertically scrolling collection views that layout items in a grid. 
@@ -35,8 +37,9 @@ The release also makes some changes in the various `presentation` contexts:
 
 This release also:
 
+* Improves  `DocumentCamera` and hides the delegate implementation details with a new init. The deprecated init will be removed in `1.0`.
+* Improves  `FlippableView` with a bunch of new features (and breaking changes).
 * Removes  `LazyView` and `LazyNavigationView` since SwiftUI handles this now.
-* Improves  `FlippableView` with a bunch of new features and no breaking changes.
 
 
 ## 0.9.8

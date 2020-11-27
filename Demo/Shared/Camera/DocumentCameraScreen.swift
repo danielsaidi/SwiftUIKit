@@ -42,11 +42,15 @@ struct DocumentCameraScreen: View {
 private extension DocumentCameraScreen{
     
     func createCamera() -> some View {
-        DocumentCamera(delegate: DocumentCamera.Delegate(
-            didCancel: { self.sheetContext.dismiss() },
-            didFail: { _ in self.sheetContext.dismiss() },
-            didFinish: { self.saveScans($0.images) }
-        )).edgesIgnoringSafeArea(.all)
+        DocumentCamera(
+            cancelAction: dismissCamera,
+            failureAction: { _ in self.dismissCamera() },
+            finishAction: { self.saveScans($0.images) }
+        ).edgesIgnoringSafeArea(.all)
+    }
+    
+    func dismissCamera() {
+        sheetContext.dismiss()
     }
     
     func openCamera() {

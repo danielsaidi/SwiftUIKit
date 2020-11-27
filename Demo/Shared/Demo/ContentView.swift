@@ -21,7 +21,7 @@ struct ContentView: View {
                 DemoListLink("Gestures", .gestures, GesturesScreen())
                 DemoListLink("Pickers (TBD)", .pickers, PickersScreen())
                 DemoListLink("Presentation", .presentation, PresentationScreen())
-                DemoListLink("Sharing (TBD)", .sharing, SharingScreen())
+                DemoListLink("Sharing", .sharing, SharingScreen())
                 DemoListLink("Styles", .styles, StylesScreen())
                 DemoListLink("Views", .views, ViewsScreen())
             }

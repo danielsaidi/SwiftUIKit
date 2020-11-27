@@ -253,6 +253,8 @@
 		A9544B4E2571179F00522141 /* UIViewWrapperScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */; };
 		A9544B52257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
 		A9544B53257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
+		A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B562571404E00522141 /* ShareSheetScreen.swift */; };
+		A9544B582571404E00522141 /* ShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B562571404E00522141 /* ShareSheetScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -384,6 +386,7 @@
 		A9544B47257113E800522141 /* OptionalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewScreen.swift; sourceTree = "<group>"; };
 		A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperScreen.swift; sourceTree = "<group>"; };
 		A9544B51257132FA00522141 /* DocumentCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraScreen.swift; sourceTree = "<group>"; };
+		A9544B562571404E00522141 /* ShareSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -690,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				A901F07F256F963E00F1C285 /* SharingScreen.swift */,
+				A9544B562571404E00522141 /* ShareSheetScreen.swift */,
 			);
 			path = Sharing;
 			sourceTree = "<group>";
@@ -937,6 +941,7 @@
 				A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */,
 				A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
 				A901F009256F8C1B00F1C285 /* MultiPageView.swift in Sources */,
+				A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F003256F8C1B00F1C285 /* SizingVStack.swift in Sources */,
 				A901EFC3256F8C1B00F1C285 /* FlippableView.swift in Sources */,
@@ -1066,6 +1071,7 @@
 				A901F086256F964600F1C285 /* ViewsScreen.swift in Sources */,
 				A901F0CC256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
 				A901F00A256F8C1B00F1C285 /* MultiPageView.swift in Sources */,
+				A9544B582571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F004256F8C1B00F1C285 /* SizingVStack.swift in Sources */,
 				A901EFC4256F8C1B00F1C285 /* FlippableView.swift in Sources */,
