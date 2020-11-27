@@ -19,14 +19,13 @@ struct ViewsScreen: View {
     private var list1: some View {
         Group {
             DemoListLink("Async Image", .photo, AsyncImageScreen())
+            DemoListLink("Circular Progress Bar", .circularProgressBar, CircularProgressBarScreen())
+            DemoListLink("Circular Progress View", .circularProgressView, CircularProgressViewScreen())
             DemoListLink("Collection View (grid)", .collectionViewGrid, CollectionViewGridScreen())
             DemoListLink("Collection View (shelves)", .collectionViewShelves, CollectionViewShelvesScreen())
-            
-            //DemoListLink("Circular Progress Bar", .circularProgressBar, CornerRadiusStyleScreen())
-            //DemoListLink("Circular Progress View", .circularProgressView, CornerRadiusStyleScreen())
-            //DemoListLink("Conditional View", .conditional, CornerRadiusStyleScreen())
-            //DemoListLink("Dismissable View", .dismiss, CornerRadiusStyleScreen())
-            //DemoListLink("Detched Data View", .download, CornerRadiusStyleScreen())
+            DemoListLink("Conditional View", .conditional, ConditionalViewScreen())
+            DemoListLink("Dismissable View", .dismiss, DismissableViewScreen())
+            DemoListLink("Fetched Data View", .download, FetchedDataViewScreen())
             //
             //DemoListLink("Min Width Button", .width, CornerRadiusStyleScreen())
         }
