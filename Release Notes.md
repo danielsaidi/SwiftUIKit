@@ -7,6 +7,8 @@ This is the RC for the first major `1.0` release.
 
 This release wraps more logic within `os` checks to make the code build on `macOS`, `tvOS` and `watchOS`.
 
+WIth this release, the demo app has been rebuilt as a universal app that lets you explore SwiftUIKit through interactive demos. As a result, I have removed the separate readmes to avoid having to keep multiple copies of the documentation alive.
+
 The release also adds new views and utils:
 
 * `AsyncImage` is a view that loads an async image from the network.

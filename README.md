@@ -17,27 +17,32 @@
 
 ## About SwiftUIKit
 
-`SwiftUIKit` adds functionality to `SwiftUI`, both things that most probably will be part of the SwiftUI in the next upcoming versions, as well as custom useful functionality.
+`SwiftUIKit` adds extra functionality to `SwiftUI`. It aims to make already existing features easier to use and adds a lot of new functionality to the framework as well. 
 
-You can read more about the different parts of `SwiftUIKit` in separate readmes:
+`SwiftUIKit` is divided into these different areas:
 
-* [Blurs][Blurs]
-* [Camera][Camera]
-* [Data][Data]
-* [Extensions][Extensions]
-* [Gestures][Gestures]
-* [Pickers][Pickers]
-* [Presentation][Presentation]
-* [Sharing][Sharing]
-* [Styles][Styles]
-* [Views][Views]
+* Blurs
+* Cameras
+* Data
+* Extensions
+* Gestures
+* Navigation
+* Pickers
+* Presentation
+* Sharing
+* Styles
+* Views
 
-As things that exist in this library are added to `SwiftUI`, the corresponding functionality in this library will be deprecated and refer to those new features.
+You can explore the various sections in the demo app.
 
 
 ## Demo App
 
-This project contains a demo app that shows all available system blur styles. To run the demo app, just open and run the `SwiftUIKit.xcodeproj` project.
+This project contains a demo app that lets you explore `SwiftUIKit` through interactive demos. 
+
+The demo app aims to provide a more intuitive way to explore the library. Together with the extensive documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
+
+To run the demo app, just open and run the `Demo.xcodeproj` project. `macOS` is currenty not supported. 
 
 
 ## Installation
@@ -54,18 +59,7 @@ https://github.com/danielsaidi/SwiftUIKit.git
 pod DSSwiftUIKit
 ```
 
-Note that you have to import `SwiftUIKit` with `import DSSwiftUIKit` if you add it with CocoaPods. The name `SwiftUIKit` was (not surprising) already taken.
-
-
-## <a name="why"></a>Why a big "Kit"?
-
-Having a big "kit" is a bad idea, since it may become too generic and hard to overview. For instance, if I want a SwiftUI toast, I'm not going to dig around in SwiftUIKit for one, but rather use the best single-purpose toast library.
-
-The GitHub stars confirm this as well. Many years ago, I started putting reusable iOS functionality into a library I call [iExtra](https://github.com/danielsaidi/iExtra). I think it's an amazing library and I use it in most of my apps. To this day, it has 12 stars.
-
-However, each project comes with overhead. If I decided to create a new library for each little thing I make, I'd spend a lot of time setting up each new project. There are funny names to come up with, icons and logos to be made, maintenance etc.
-
-SO instead of honoring every little idea with a new library, I'm going to put most here until they are either too large or too good to be a part of this library. When that happens, they'll break out of their little cage and move into a library of their own.
+Note that you have to use `import DSSwiftUIKit` when you use CocoaPods. The name `SwiftUIKit` was (not surprisingly) already taken.
 
 
 ## Contact me
@@ -87,14 +81,3 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 
 [GitHub]: https://github.com/danielsaidi/SwiftUIKit
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
-
-[Blurs]: Readmes/Blurs.md
-[Camera]: Readmes/Camera.md
-[Data]: Readmes/Data.md
-[Extensions]: Readmes/Extensions.md
-[Gestures]: Readmes/Gestures.md
-[Pickers]: Readmes/Pickers.md
-[Presentation]: Readmes/Presentation.md
-[Sharing]: Readmes/Sharing.md
-[Styles]: Readmes/Styles.md
-[Views]: Readmes/Views.md
