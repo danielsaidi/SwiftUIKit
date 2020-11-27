@@ -17,7 +17,7 @@ struct PickersScreen: View {
             
             Section(header: Text("Utils")) {
                 DemoListLink("File Picker", .file, FilePickerScreen())
-                DemoListLink("* Image Picker", .photo, PhotoPickerScreen())
+                DemoListLink("Image Picker", .photo, ImagePickerScreen())
             }
         }
     }
