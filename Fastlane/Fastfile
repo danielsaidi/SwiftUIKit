@@ -45,8 +45,7 @@ platform :ios do
     end
 
     version = version_bump_podspec(path: "DSSwiftUIKit.podspec", bump_type: bump_type)
-    increment_version_number(version_number: version)
-  
+    
     git_commit(
       path: "*",
       message: "Bump to #{version}"

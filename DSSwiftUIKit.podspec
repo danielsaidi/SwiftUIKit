@@ -22,5 +22,10 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/danielsaidi'
 
   s.swift_version = '5.2'
+  s.ios.deployment_target = '13.0'
+  s.tvos.deployment_target = '13.0'
+  # s.macos.deployment_target = '11.0'  Re-add after upgrading to Big Sur.
+  s.watchos.deployment_target = '6.0'
+  
   s.source_files = 'Sources/**/*.swift'
 end
