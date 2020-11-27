@@ -257,6 +257,8 @@
 		A9544B852571AE6400522141 /* DocumentCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B812571AE6400522141 /* DocumentCamera.swift */; };
 		A9544B932571B34D00522141 /* PhotoCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B922571B34D00522141 /* PhotoCameraScreen.swift */; };
 		A9544B942571B34D00522141 /* PhotoCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B922571B34D00522141 /* PhotoCameraScreen.swift */; };
+		A9544BAE2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
+		A9544BAF2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -390,6 +392,16 @@
 		A9544B802571AE6400522141 /* PhotoCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCamera.swift; sourceTree = "<group>"; };
 		A9544B812571AE6400522141 /* DocumentCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCamera.swift; sourceTree = "<group>"; };
 		A9544B922571B34D00522141 /* PhotoCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCameraScreen.swift; sourceTree = "<group>"; };
+		A9544BA72571BA7B00522141 /* Release Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "Release Notes.md"; path = "../Release Notes.md"; sourceTree = "<group>"; };
+		A9544BA82571BA7B00522141 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = swiftgen.yml; path = ../swiftgen.yml; sourceTree = "<group>"; };
+		A9544BA92571BA7C00522141 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A9544BAA2571BA7C00522141 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A9544BAB2571BA7C00522141 /* DSSwiftUIKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = DSSwiftUIKit.podspec; path = ../DSSwiftUIKit.podspec; sourceTree = "<group>"; };
+		A9544BAC2571BA7C00522141 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		A9544BAD2571BA8300522141 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = ../Fastlane/Fastfile; sourceTree = "<group>"; };
+		A9544BB42571BA9100522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
+		A9544BB52571BA9100522141 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		A9544BB72571BAD800522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -723,6 +735,7 @@
 				A9355039256F7E3D00BBE9CE /* iOS */,
 				A9355040256F7E3D00BBE9CE /* macOS */,
 				A9355038256F7E3D00BBE9CE /* Products */,
+				A9544BA62571BA6200522141 /* Project FIles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -795,6 +808,31 @@
 			path = Cameras;
 			sourceTree = "<group>";
 		};
+		A9544BA62571BA6200522141 /* Project FIles */ = {
+			isa = PBXGroup;
+			children = (
+				A9544BB62571BACB00522141 /* Demo */,
+				A9544BB52571BA9100522141 /* .gitignore */,
+				A9544BB42571BA9100522141 /* .swiftlint.yml */,
+				A9544BAB2571BA7C00522141 /* DSSwiftUIKit.podspec */,
+				A9544BAD2571BA8300522141 /* Fastfile */,
+				A9544BA92571BA7C00522141 /* LICENSE */,
+				A9544BAC2571BA7C00522141 /* Package.swift */,
+				A9544BAA2571BA7C00522141 /* README.md */,
+				A9544BA72571BA7B00522141 /* Release Notes.md */,
+				A9544BA82571BA7B00522141 /* swiftgen.yml */,
+			);
+			name = "Project FIles";
+			sourceTree = "<group>";
+		};
+		A9544BB62571BACB00522141 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A9544BB72571BAD800522141 /* .swiftlint.yml */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -802,6 +840,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A935504B256F7E3D00BBE9CE /* Build configuration list for PBXNativeTarget "Demo (iOS)" */;
 			buildPhases = (
+				A9544B9B2571B8DE00522141 /* [SwiftLint] */,
 				A9355033256F7E3D00BBE9CE /* Sources */,
 				A9355034256F7E3D00BBE9CE /* Frameworks */,
 				A9355035256F7E3D00BBE9CE /* Resources */,
@@ -874,6 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9544BAE2571BA8300522141 /* Fastfile in Resources */,
 				A9355047256F7E3D00BBE9CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -882,11 +922,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9544BAF2571BA8300522141 /* Fastfile in Resources */,
 				A9355048256F7E3D00BBE9CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9544B9B2571B8DE00522141 /* [SwiftLint] */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint]";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9355033256F7E3D00BBE9CE /* Sources */ = {

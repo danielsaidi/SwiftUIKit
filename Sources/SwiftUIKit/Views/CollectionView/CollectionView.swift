@@ -189,9 +189,9 @@ public extension CollectionView {
         
         private let scrollOffset: Binding<CGPoint>?
 
-        var dataSource: DataSource? = nil
+        var dataSource: DataSource?
         var sectionLayoutProvider: ((Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection)?
-        var rowsHash: Int? = nil
+        var rowsHash: Int? 
         var registeredSupplementaryViewKinds: [String] = []
         var isFocusable: Bool = false
         

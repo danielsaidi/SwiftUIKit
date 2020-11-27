@@ -39,7 +39,7 @@ struct DocumentCameraScreen: View {
     }
 }
 
-private extension DocumentCameraScreen{
+private extension DocumentCameraScreen {
     
     func createCamera() -> some View {
         DocumentCamera(

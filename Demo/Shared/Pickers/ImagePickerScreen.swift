@@ -49,7 +49,7 @@ struct ImagePickerScreen: View {
     }
 }
 
-private extension ImagePickerScreen{
+private extension ImagePickerScreen {
     
     func createCamera() -> some View {
         ImagePicker(

@@ -29,7 +29,7 @@ public struct MinWidthButton<Content: View>: View {
     private let content: () -> Content
     
     public var body: some View {
-        Button(action: { action() }) {
+        Button(action: action) {
             content().frame(minWidth: minWidth)
         }
     }

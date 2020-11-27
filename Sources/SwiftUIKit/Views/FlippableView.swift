@@ -38,9 +38,9 @@ public struct FlippableView<Front: View, Back: View>: View {
     }
     
     public var body: some View {
-        VStack{
+        VStack {
             Spacer()
-            ZStack() {
+            ZStack {
                 front.flipRotateY(degrees: yDegrees)
                     .opacity(isFlipped ? 0.0 : 1.0)
                 back.flipRotateY(degrees: -180 + yDegrees)

@@ -73,7 +73,8 @@ private struct DetermineWidth: View {
 struct VerticalSizingList_Previews: PreviewProvider {
     
     static func button(for width: CGFloat) -> some View {
-        Button(action: {}) {
+        let action = {}
+        return Button(action: action) {
             Text("\(Int.random(in: 0...100_000))")
                     .frame(width: width)
         }

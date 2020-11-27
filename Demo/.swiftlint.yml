@@ -8,5 +8,5 @@ disabled_rules:
   - vertical_whitespace
 
 included:
-  - Sources
-  - Tests
+  - ../Sources
+  - ../Tests

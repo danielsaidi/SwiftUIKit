@@ -51,7 +51,8 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
      custom function is provided in `init`.
      */
     public static func standardButtonBuilder(_ value: Value, _ isSelected: Bool, _ action: @escaping (Value) -> Void) -> AnyView {
-        Button(action: { action(value) }) {
+        let action = { action(value) }
+        return Button(action: action) {
             HStack {
                 Text(value.displayName)
                 Spacer()

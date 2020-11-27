@@ -26,7 +26,7 @@ struct FilePickerScreen: View {
     }
 }
 
-private extension FilePickerScreen{
+private extension FilePickerScreen {
     
     var fileType: String { "public.png" }
     
