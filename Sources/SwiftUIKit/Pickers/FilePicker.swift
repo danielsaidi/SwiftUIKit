@@ -57,9 +57,7 @@ public struct FilePicker: UIViewControllerRepresentable {
     private let resultAction: ResultAction
         
     public func makeCoordinator() -> Coordinator {
-        Coordinator(
-            cancelAction: cancelAction,
-            resultAction: resultAction)
+        Coordinator(picker: self)
     }
 
     public func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
@@ -78,22 +76,18 @@ public extension FilePicker {
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIDocumentPickerDelegate {
 
-        public init(
-            cancelAction: @escaping CancelAction,
-            resultAction: @escaping ResultAction) {
-            self.cancelAction = cancelAction
-            self.resultAction = resultAction
+        public init(picker: FilePicker) {
+            self.picker = picker
         }
         
-        private let cancelAction: CancelAction
-        private let resultAction: ResultAction
+        private let picker: FilePicker
         
         public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-            cancelAction()
+            picker.cancelAction()
         }
         
         public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            resultAction(.success(urls))
+            picker.resultAction(.success(urls))
         }
     }
 }

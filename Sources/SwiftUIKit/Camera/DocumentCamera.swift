@@ -48,9 +48,7 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     private let resultAction: ResultAction
         
     public func makeCoordinator() -> Coordinator {
-        Coordinator(
-            cancelAction: cancelAction,
-            resultAction: resultAction)
+        Coordinator(camera: self)
     }
     
     public func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
@@ -67,29 +65,25 @@ public extension DocumentCamera {
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         
-        public init(
-            cancelAction: @escaping CancelAction,
-            resultAction: @escaping ResultAction) {
-            self.cancelAction = cancelAction
-            self.resultAction = resultAction
+        public init(camera: DocumentCamera) {
+            self.camera = camera
         }
         
-        private let cancelAction: CancelAction
-        private let resultAction: ResultAction
+        private let camera: DocumentCamera
         
         public func documentCameraViewControllerDidCancel(
             _ controller: VNDocumentCameraViewController) {
-            cancelAction()
+            camera.cancelAction()
         }
         
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
-            resultAction(.failure(error))
+            camera.resultAction(.failure(error))
         }
         
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-            resultAction(.success(scan))
+            camera.resultAction(.success(scan))
         }
     }
 }
