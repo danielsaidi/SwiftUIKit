@@ -44,7 +44,11 @@ private extension FetchedDataViewScreen {
     var spinner: some View {
         HStack {
             Spacer()
+            #if os(iOS) || os(tvOS) || os(watchOS)
             CircularProgressView()
+            #else
+            Text("...")
+            #endif
             Spacer()
         }
     }

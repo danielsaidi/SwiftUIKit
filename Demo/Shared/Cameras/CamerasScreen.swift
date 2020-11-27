@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 struct CamerasScreen: View {
@@ -31,3 +32,4 @@ struct CamerasScreen_Previews: PreviewProvider {
         }
     }
 }
+#endif

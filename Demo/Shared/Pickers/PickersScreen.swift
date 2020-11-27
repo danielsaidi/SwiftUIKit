@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 struct PickersScreen: View {
@@ -29,3 +30,4 @@ struct PickersScreen_Previews: PreviewProvider {
         PickersScreen()
     }
 }
+#endif

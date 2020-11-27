@@ -22,8 +22,19 @@ struct DemoList<Content: View>: View {
         List {
             content()
         }
-        .listStyle(GroupedListStyle())
         .navigationTitle(title)
+        .withPlatformSpecificListStyle()
+    }
+}
+
+private extension View {
+    
+    func withPlatformSpecificListStyle() -> some View {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        return self.listStyle(GroupedListStyle())
+        #else
+        return self
+        #endif
     }
 }
 

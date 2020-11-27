@@ -27,22 +27,32 @@ struct ViewsScreen: View {
         Group {
             DemoListLink("Async Image", .photo, AsyncImageScreen())
             DemoListLink("Circular Progress Bar", .circularProgressBar, CircularProgressBarScreen())
+            #if os(iOS) || os(tvOS) || os(watchOS)
             DemoListLink("Circular Progress View", .circularProgressView, CircularProgressViewScreen())
+            #endif
+            #if os(iOS) || os(tvOS)
             DemoListLink("Collection View (grid)", .collectionViewGrid, CollectionViewGridScreen())
             DemoListLink("Collection View (shelves)", .collectionViewShelves, CollectionViewShelvesScreen())
+            #endif
             DemoListLink("Conditional View", .conditional, ConditionalViewScreen())
             DemoListLink("Dismissable View", .dismiss, DismissableViewScreen())
             DemoListLink("Fetched Data View", .download, FetchedDataViewScreen())
+            #if os(iOS)
             DemoListLink("Flippable View", .swipeGesture, FlippableViewScreen())
             DemoListLink("Multiline Text Field", .multiline, MultilineTextFieldScreen())
+            #endif
         }
     }
     
     private var list2: some View {
         Group {
             DemoListLink("Optional View", .optional, OptionalViewScreen())
+            #if os(iOS) || os(tvOS) || os(watchOS)
             DemoListLink("Page View", .pageControl, PageViewScreen())
+            #endif
+            #if os(iOS) || os(tvOS)
             DemoListLink("UIView Wrapper", .wrapper, UIViewWrapperScreen())
+            #endif
         }
     }
 }

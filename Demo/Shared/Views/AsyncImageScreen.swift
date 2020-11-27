@@ -38,11 +38,19 @@ private extension AsyncImageScreen {
     
     var url: URL? { URL(string: urlString) }
     
+    var spinner: some View {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        return CircularProgressView()
+        #else
+        return Text("...")
+        #endif
+    }
+    
     func loadImage() {
         guard let url = url else { return }
         sheetContext.present(
             NavigationView {
-                AsyncImage(url: url, placeholder: { CircularProgressView() })
+                AsyncImage(url: url, placeholder: { spinner })
                     .cornerRadius(10)
                     .padding()
                     .navigationTitle("Image, ohoy!")

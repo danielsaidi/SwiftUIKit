@@ -6,8 +6,8 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
-import VisionKit
 
 struct FilePickerScreen: View {
     
@@ -69,3 +69,4 @@ struct FilePickerScreen_Previews: PreviewProvider {
         FilePickerScreen()
     }
 }
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 struct ShareSheetScreen: View {
@@ -50,3 +51,4 @@ struct ShareSheetScreen_Previews: PreviewProvider {
         ShareSheetScreen()
     }
 }
+#endif

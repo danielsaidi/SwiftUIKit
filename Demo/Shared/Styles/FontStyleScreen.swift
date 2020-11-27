@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
 import SwiftUI
 
 struct FontStyleScreen: View {
@@ -66,3 +67,4 @@ struct FontStyleScreen_Previews: PreviewProvider {
         FontStyleScreen()
     }
 }
+#endif

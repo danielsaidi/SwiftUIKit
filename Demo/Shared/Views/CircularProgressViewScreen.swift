@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
 struct CircularProgressViewScreen: View {
@@ -40,3 +41,4 @@ struct CircularProgressViewScreen_Previews: PreviewProvider {
         CircularProgressViewScreen()
     }
 }
+#endif

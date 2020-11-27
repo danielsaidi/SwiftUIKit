@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 1.0.0 (WIP)
+
+Improved platform support:
+
+* The demo app now compiles for macOS and runs on M1 machines.
+* More views are available for tvOS and watchOS.  
+
+
 ## 0.9.9
 
 This is the RC for the first major `1.0` release.

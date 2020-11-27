@@ -6,9 +6,9 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(macOS)
 import SwiftUI
 
-#if os(iOS) || os(tvOS) || os(macOS)
 public class StandardQrCodeGenerator: QrCodeGenerator {
     
     public init(scale: CGFloat) {

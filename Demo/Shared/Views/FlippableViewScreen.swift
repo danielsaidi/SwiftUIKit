@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 struct FlippableViewScreen: View {
@@ -13,7 +14,6 @@ struct FlippableViewScreen: View {
     var body: some View {
         VStack {
             DemoListText("This view has a front and a back face and can be flipped by tapping ot swiping.")
-            
             FlippableView(
                 front: side(.blue, "Flip me!"),
                 back: side(.red, "Flip me back!"),
@@ -39,3 +39,4 @@ struct FlippableViewScreen_Previews: PreviewProvider {
         FlippableViewScreen()
     }
 }
+#endif

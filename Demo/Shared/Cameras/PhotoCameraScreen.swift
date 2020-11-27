@@ -6,8 +6,8 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
-import VisionKit
 
 struct PhotoCameraScreen: View {
     
@@ -74,3 +74,4 @@ struct PhotoCameraScreen_Previews: PreviewProvider {
         PhotoCameraScreen()
     }
 }
+#endif

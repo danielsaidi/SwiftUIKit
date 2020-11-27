@@ -18,7 +18,9 @@ struct StylesScreen: View {
             
             Section(header: Text("Styles")) {
                 DemoListLink("Corner Radius", .cornerRadius, CornerRadiusStyleScreen())
+                #if os(iOS) || os(tvOS)
                 DemoListLink("Fonts", .font, FontStyleScreen())
+                #endif
                 DemoListLink("Shadows", .shadow, ShadowStyleScreen())
             }
         }

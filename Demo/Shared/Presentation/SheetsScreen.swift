@@ -31,10 +31,12 @@ struct SheetsScreen: View {
                     }
                 }
             }
+            #if os(iOS) || os(tvOS) || os(watchOS)
             Section(header: Text("Cover (for testing purpose)")) {
                 DemoListButton("Show an flag cover", .cover, presentCover)
                     .fullScreenCover(context: coverContext)
             }
+            #endif
         }.sheet(context: context)
     }
 }
@@ -46,12 +48,14 @@ private extension SheetsScreen {
     }
     
     func presentCover() {
+        #if os(iOS) || os(tvOS) || os(watchOS)
         coverContext.present(
             NavigationView {
                 view(for: .flag)
                     .navigationBarItems(trailing: closeButton)
             }
         )
+        #endif
     }
     
     func presentSheet(_ presentable: DemoPresentable) {
@@ -65,8 +69,18 @@ private extension SheetsScreen {
     func view(for presentable: DemoPresentable, addClose: Bool = false) -> some View {
         presentable.cover
             .navigationTitle("Hello, you!")
-            .navigationBarTitleDisplayMode(.inline)
-        
+            .withPlatformSpecificNavigationBar()
+    }
+}
+
+private extension View {
+    
+    func withPlatformSpecificNavigationBar() -> some View {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        return self.navigationBarTitleDisplayMode(.inline)
+        #else
+        return self
+        #endif
     }
 }
 

@@ -18,7 +18,9 @@ struct PresentationScreen: View {
             
             Section(header: Text("Features")) {
                 DemoListLink("Alerts", .alert, AlertsScreen())
+                #if os(iOS) || os(tvOS) || os(watchOS)
                 DemoListLink("Full Screen Covers", .cover, CoversScreen())
+                #endif
                 DemoListLink("Sheets", .sheet, SheetsScreen())
                 DemoListLink("Toasts", .toast, ToastsScreen())
             }

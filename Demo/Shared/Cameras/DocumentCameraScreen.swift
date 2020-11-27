@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 import VisionKit
 
@@ -86,3 +87,4 @@ private extension VNDocumentCameraScan {
             .map { Image(uiImage: $0) }
     }
 }
+#endif

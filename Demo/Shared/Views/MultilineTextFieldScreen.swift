@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 struct MultilineTextFieldScreen: View {
@@ -32,3 +33,4 @@ struct MultilineTextFieldScreen_Previews: PreviewProvider {
         MultilineTextFieldScreen()
     }
 }
+#endif

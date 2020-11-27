@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 struct SwipeGestureScreen: View {
@@ -47,3 +48,4 @@ struct SwipeGestureScreen_Previews: PreviewProvider {
         SwipeGestureScreen()
     }
 }
+#endif

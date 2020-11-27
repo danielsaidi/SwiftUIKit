@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
 struct PageViewScreen: View {
@@ -44,3 +45,4 @@ struct PageViewScreen_Previews: PreviewProvider {
         PageViewScreen()
     }
 }
+#endif

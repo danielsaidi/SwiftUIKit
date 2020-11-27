@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
 import SwiftUI
 
 struct CollectionViewShelvesScreen: View {
@@ -57,3 +58,4 @@ struct CollectionViewShelvesScreen_Previews: PreviewProvider {
         CollectionViewShelvesScreen()
     }
 }
+#endif

@@ -9,7 +9,7 @@
 //  https://stackoverflow.com/questions/58388071/how-can-i-implement-pageview-in-swiftui/63159912
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
 /**
@@ -20,7 +20,7 @@ import SwiftUI
  collection or an item list with a `pageBuilder` that builds
  a page view for each item.
  */
-@available(iOS 14.0, *)
+@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public struct PageView: View {
     
     public init<PageType: View>(

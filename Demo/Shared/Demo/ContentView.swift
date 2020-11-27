@@ -15,18 +15,33 @@ struct ContentView: View {
             DemoList("SwiftUIKit") {
                 #if os(iOS)
                 DemoListLink("Blurs", .blur, BlursScreen())
-                #endif
                 DemoListLink("Cameras", .camera, CamerasScreen())
+                #endif
                 DemoListLink("Data", .data, DataScreen())
                 DemoListLink("Extensions", .extensions, ExtensionsScreen())
+                #if os(iOS)
                 DemoListLink("Gestures", .gestures, GesturesScreen())
                 DemoListLink("Pickers", .pickers, PickersScreen())
+                #endif
                 DemoListLink("Presentation", .presentation, PresentationScreen())
+                #if os(iOS)
                 DemoListLink("Sharing", .sharing, SharingScreen())
+                #endif
                 DemoListLink("Styles", .styles, StylesScreen())
                 DemoListLink("Views", .views, ViewsScreen())
             }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }.withPlatformSpecificNavigationStyle()
+    }
+}
+
+private extension View {
+    
+    func withPlatformSpecificNavigationStyle() -> some View {
+        #if os(iOS)
+        return self.navigationViewStyle(StackNavigationViewStyle())
+        #else
+        return self
+        #endif
     }
 }
 
