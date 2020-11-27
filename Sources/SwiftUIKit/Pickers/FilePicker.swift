@@ -11,8 +11,8 @@ import SwiftUI
 import UIKit
 
 /**
- This picker wraps `UIDocumentPickerViewController`, and can
- can be used to pick files of the desired type from Files.
+ This picker wraps `UIDocumentPickerViewController` that can
+ can be used to pick files from Files.
  
  You create a picker instance by providing two action blocks
  that can be used to inspect what happens with the operation.
@@ -44,7 +44,7 @@ public struct FilePicker: UIViewControllerRepresentable {
         self.resultAction = resultAction
     }
     
-    public typealias PickerResult = Result<([URL]), Error>
+    public typealias PickerResult = Result<[URL], Error>
     public typealias CancelAction = () -> Void
     public typealias ResultAction = (PickerResult) -> Void
     
@@ -55,8 +55,6 @@ public struct FilePicker: UIViewControllerRepresentable {
     private let documentTypes: [String]
     private let cancelAction: CancelAction
     private let resultAction: ResultAction
-    
-    public typealias Context = UIViewControllerRepresentableContext<FilePicker>
         
     public func makeCoordinator() -> Coordinator {
         Coordinator(

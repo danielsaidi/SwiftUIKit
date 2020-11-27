@@ -33,28 +33,29 @@ import VisionKit
 @available(iOS 13, *)
 public struct DocumentCamera: UIViewControllerRepresentable {
     
-    @available(*, deprecated, message: "Use the action-based init instead")
-    public init(delegate: VNDocumentCameraViewControllerDelegate) {
-        self.delegateRetainer = delegate
-    }
-    
     public init(
         cancelAction: @escaping CancelAction = {},
         resultAction: @escaping ResultAction) {
-        self.delegateRetainer = Delegate(
-            cancelAction: cancelAction,
-            resultAction: resultAction)
+        self.cancelAction = cancelAction
+        self.resultAction = resultAction
     }
     
     public typealias CameraResult = Result<VNDocumentCameraScan, Error>
     public typealias CancelAction = () -> Void
     public typealias ResultAction = (CameraResult) -> Void
     
-    private let delegateRetainer: VNDocumentCameraViewControllerDelegate
+    private let cancelAction: CancelAction
+    private let resultAction: ResultAction
+        
+    public func makeCoordinator() -> Coordinator {
+        Coordinator(
+            cancelAction: cancelAction,
+            resultAction: resultAction)
+    }
     
     public func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
         let controller = VNDocumentCameraViewController()
-        controller.delegate = delegateRetainer
+        controller.delegate = context.coordinator
         return controller
     }
     
@@ -64,7 +65,7 @@ public struct DocumentCamera: UIViewControllerRepresentable {
 @available(iOS 13, *)
 public extension DocumentCamera {
     
-    class Delegate: NSObject, VNDocumentCameraViewControllerDelegate {
+    class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         
         public init(
             cancelAction: @escaping CancelAction,
