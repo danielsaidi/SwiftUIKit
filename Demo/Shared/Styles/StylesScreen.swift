@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct StylesScreen: View {
+ 
     var body: some View {
         DemoList("Gestures") {
             Section(header: Text("About")) {

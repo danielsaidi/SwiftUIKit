@@ -16,7 +16,8 @@ import UIKit
  used to pick an images from photos, the camera etc.
  
  You create a picker instance by providing two action blocks
- that can be used to inspect what happens with the operation:
+ that can be used to inspect what happens with the operation,
+ as well as the desired source type:
  
  ```swift
  let picker = ImagePicker(

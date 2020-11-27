@@ -19,7 +19,7 @@ struct DocumentCameraScreen: View {
     var body: some View {
         DemoList("DocumentCamera") {
             Section(header: Text("About")) {
-                DemoListText("This camera can scan one or several documents. In this demo, the documents you scan are added to a PageView.")
+                DemoListText("This camera can scan documents. In this demo, the scans are added to a PageView.")
             }
             
             if scans.count > 0 {
@@ -33,7 +33,7 @@ struct DocumentCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                DemoListButton("Open camera", .camera, openCamera)
+                DemoListButton("Open camera", .documentCamera, openCamera)
             }
         }.sheet(context: sheetContext)
     }

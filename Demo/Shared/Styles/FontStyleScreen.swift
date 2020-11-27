@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct FontStyleScreen: View {
+ 
     var body: some View {
         DemoList("FontStyle") {
             Section(header: Text("About")) {

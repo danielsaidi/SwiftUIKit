@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+ 
     var body: some View {
         NavigationView {
             DemoList("SwiftUIKit") {
                 #if os(iOS)
                 DemoListLink("Blurs", .blur, BlursScreen())
                 #endif
-                DemoListLink("Camera", .camera, CameraScreen())
+                DemoListLink("Cameras", .camera, CamerasScreen())
                 DemoListLink("Data", .data, DataScreen())
                 DemoListLink("Extensions", .extensions, ExtensionsScreen())
                 DemoListLink("Gestures", .gestures, GesturesScreen())

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ExtensionsScreen: View {
+ 
     var body: some View {
         DemoList("Extensions") {
             Section(header: Text("About")) {

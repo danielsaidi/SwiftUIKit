@@ -5,12 +5,13 @@
 
 This is the RC for the first major `1.0` release.
 
-This release wraps more logic within os checks to make the code build on `tvOS` and `watchOS`.
+This release wraps more logic within `os` checks to make the code build on `macOS`, `tvOS` and `watchOS`.
 
 The release also adds new views and utils:
 
 * `AsyncImage` is a view that loads an async image from the network.
 * `AsyncImageLoader` is an observable class that loads an async image from the network.
+* `Camera` wraps an `ImagePicker` that is configured for `.camera` source type.
 * `CircularProgressBar` renders a percentual progress in a circle.
 * `CircularProgressView` renders a round spinner.
 * `ConditionalView` returns the provided content view if the provided expression is `true`, else a fallback view (`EmptyView` by default).
@@ -24,10 +25,9 @@ The release also adds new views and utils:
 * `SimpleSinglePicker` renders a simple list of buttons that can be used to pick a single option in a list of available options.
 * `WidthVStack` lists views in a vertical stack and provides them with with the largest view width.
 
-The release also adds a highly performant set of collection views, based on the amazing work of  [@defagos](https://twitter.com/defagos), which can be found [here](https://github.com/defagos/SwiftUICollection):
+The release also adds a highly performant `CollectionView`, based on the amazing work of  [@defagos](https://twitter.com/defagos), which can be found [here](https://github.com/defagos/SwiftUICollection):
 
-* `CatalogCollectionView` for vertically scrolling collection views with horizontally scrolling rows.
-* `GridCollectionView` for vertically scrolling collection views that layout items in a grid. 
+The collection view can be configured with various layouts, like `.shelves` and `.grid`.
 
 The release also makes some changes in the various `presentation` contexts:
 
@@ -35,7 +35,7 @@ The release also makes some changes in the various `presentation` contexts:
 * The code has been refactored to use closures instead, which solves this problem.
 * My eternal gratitude to [@hybridcattt](https://twitter.com/hybridcattt) for realizing that this was what caused problems.  
 
-This release also has some breaking changes:
+Finally, this release also has some breaking changes:
 
 *  `DocumentCamera`, `FilePicker` and `ImagePicker` have been written to behave more like eachother.
 *  `FlippableView` is improved with new features and better result, but breaks previous api:s.

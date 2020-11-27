@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SharingScreen: View {
+ 
     var body: some View {
         DemoList("Sharing") {
             Section(header: Text("About")) {
