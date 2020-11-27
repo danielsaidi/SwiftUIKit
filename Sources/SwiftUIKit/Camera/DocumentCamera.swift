@@ -11,13 +11,22 @@ import SwiftUI
 import VisionKit
 
 /**
- This view creates a `VNDocumentCameraViewController`, which
- can be used to scan documents with the device's camera.
+ This document camera wraps `VNDocumentCameraViewController`
+ and can be used to scan documents with the device's camera.
  
- You can provide any `VNDocumentCameraViewControllerDelegate`
- you want, but the easiest and most convenient way is to use
- a `DocumentCamera.Delegate` instance.
-
+ You create a camera instance by providing two action blocks
+ that can be used to inspect what happens with the operation:
+ 
+ ```swift
+ let camera = DocumentCamera(
+    cancelAction: { print("User did cancel") }  // Optional
+    resultAction: { result in ... }             // Mandatory
+ }
+ ```
+ 
+ The camera result is a `VNDocumentCameraScan` that contains
+ a list of the scanned files, if any.
+ 
  You can use this view with `SheetContext` to easily present
  it as a modal sheet.
  */
@@ -30,14 +39,16 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     }
     
     public init(
-        cancelAction: @escaping Delegate.CancelAction = {},
-        failureAction: @escaping Delegate.FailureAction = { _ in },
-        finishAction: @escaping Delegate.FinishAction) {
+        cancelAction: @escaping CancelAction = {},
+        resultAction: @escaping ResultAction) {
         self.delegateRetainer = Delegate(
-            didCancel: cancelAction,
-            didFail: failureAction,
-            didFinish: finishAction)
+            cancelAction: cancelAction,
+            resultAction: resultAction)
     }
+    
+    public typealias CameraResult = Result<VNDocumentCameraScan, Error>
+    public typealias CancelAction = () -> Void
+    public typealias ResultAction = (CameraResult) -> Void
     
     private let delegateRetainer: VNDocumentCameraViewControllerDelegate
     
@@ -56,35 +67,28 @@ public extension DocumentCamera {
     class Delegate: NSObject, VNDocumentCameraViewControllerDelegate {
         
         public init(
-            didCancel: @escaping CancelAction,
-            didFail: @escaping FailureAction,
-            didFinish: @escaping FinishAction) {
-            self.didCancel = didCancel
-            self.didFail = didFail
-            self.didFinish = didFinish
+            cancelAction: @escaping CancelAction,
+            resultAction: @escaping ResultAction) {
+            self.cancelAction = cancelAction
+            self.resultAction = resultAction
         }
         
-        public typealias CancelAction = () -> Void
-        public typealias FailureAction = (Error) -> Void
-        public typealias FinishAction = (VNDocumentCameraScan) -> Void
-        
-        private let didCancel: CancelAction
-        private let didFail: FailureAction
-        private let didFinish: FinishAction
+        private let cancelAction: CancelAction
+        private let resultAction: ResultAction
         
         public func documentCameraViewControllerDidCancel(
             _ controller: VNDocumentCameraViewController) {
-            didCancel()
+            cancelAction()
         }
         
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
-            didFail(error)
+            resultAction(.failure(error))
         }
         
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-            didFinish(scan)
+            resultAction(.success(scan))
         }
     }
 }

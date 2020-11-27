@@ -11,51 +11,63 @@ import SwiftUI
 import UIKit
 
 /**
- This file picker presents a `UIDocumentPickerViewController`
- with a generic, bindable value and a data handler that will
- be used to convert the picker file data to the desired type.
+ This picker wraps `UIDocumentPickerViewController`, and can
+ can be used to pick files of the desired type from Files.
  
- For instance, if you want the file picker to only let users
- pick `png` files then bind the picked image file to `$image`,
- create it like this:
+ You create a picker instance by providing two action blocks
+ that can be used to inspect what happens with the operation.
+ You must also specify the document types you want to handle
+ (`["public.png"]` if you only want to support `.png` files):
  
  ```swift
- let picker = FilePicker(value: $image, documentTypes: ["public.png"]) {
-    UIImage(data: $0)
+ let picker = FilePicker(
+    documentTypes: ["public.png"],
+    cancelAction: { print("User did cancel") }  // Optional
+    finishAction: { result in ... })            // Mandatory
  }
  ```
+ 
+ The picker result contains a list of file urls that you can
+ handle in any way  you want.
  
  You can use this view with `SheetContext` to easily present
  it as a modal sheet.
  */
-public struct FilePicker<Type>: UIViewControllerRepresentable {
+public struct FilePicker: UIViewControllerRepresentable {
     
     public init(
-        value: Binding<Type?>,
         documentTypes: [String],
-        dataHandler: @escaping DataHandler) {
-        self._value = value
+        cancelAction: @escaping CancelAction = {},
+        resultAction: @escaping ResultAction) {
         self.documentTypes = documentTypes
-        self.dataHandler = dataHandler
+        self.cancelAction = cancelAction
+        self.resultAction = resultAction
     }
     
-    @Environment(\.presentationMode) var presentationMode
+    public typealias PickerResult = Result<([URL]), Error>
+    public typealias CancelAction = () -> Void
+    public typealias ResultAction = (PickerResult) -> Void
     
-    @Binding private(set) var value: Type?
+    public enum PickerError: Error {
+        case noAvailableUrl
+    }
+    
     private let documentTypes: [String]
-    private let dataHandler: DataHandler
+    private let cancelAction: CancelAction
+    private let resultAction: ResultAction
     
     public typealias Context = UIViewControllerRepresentableContext<FilePicker>
-    public typealias DataHandler = (Data) -> Type?
         
     public func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(
+            cancelAction: cancelAction,
+            resultAction: resultAction)
     }
 
     public func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let picker = UIDocumentPickerViewController(documentTypes: documentTypes, in: .import)
-        picker.delegate = context.coordinator
-        return picker
+        let controller = UIDocumentPickerViewController(documentTypes: documentTypes, in: .import)
+        controller.delegate = context.coordinator
+        return controller
     }
 
     public func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {}
@@ -68,27 +80,23 @@ public extension FilePicker {
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIDocumentPickerDelegate {
 
-        init(_ parent: FilePicker) {
-            self.parent = parent
+        public init(
+            cancelAction: @escaping CancelAction,
+            resultAction: @escaping ResultAction) {
+            self.cancelAction = cancelAction
+            self.resultAction = resultAction
         }
         
-        let parent: FilePicker
+        private let cancelAction: CancelAction
+        private let resultAction: ResultAction
+        
+        public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+            cancelAction()
+        }
         
         public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            guard let url = urls.first else { return }
-            guard let data = try? Data(contentsOf: url) else { return }
-            self.parent.value = self.parent.dataHandler(data)
+            resultAction(.success(urls))
         }
-    }
-}
-
-
-// MARK: - Private Functions
-
-private extension FilePicker {
-    
-    func dismiss() {
-        presentationMode.wrappedValue.dismiss()
     }
 }
 #endif

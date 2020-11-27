@@ -255,6 +255,10 @@
 		A9544B53257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
 		A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B562571404E00522141 /* ShareSheetScreen.swift */; };
 		A9544B582571404E00522141 /* ShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B562571404E00522141 /* ShareSheetScreen.swift */; };
+		A9544B5C2571481800522141 /* FilePickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B5B2571481800522141 /* FilePickerScreen.swift */; };
+		A9544B5D2571481800522141 /* FilePickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B5B2571481800522141 /* FilePickerScreen.swift */; };
+		A9544B612571482200522141 /* PhotoPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B602571482200522141 /* PhotoPickerScreen.swift */; };
+		A9544B622571482200522141 /* PhotoPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B602571482200522141 /* PhotoPickerScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -387,6 +391,8 @@
 		A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperScreen.swift; sourceTree = "<group>"; };
 		A9544B51257132FA00522141 /* DocumentCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraScreen.swift; sourceTree = "<group>"; };
 		A9544B562571404E00522141 /* ShareSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetScreen.swift; sourceTree = "<group>"; };
+		A9544B5B2571481800522141 /* FilePickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerScreen.swift; sourceTree = "<group>"; };
+		A9544B602571482200522141 /* PhotoPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -685,6 +691,8 @@
 			isa = PBXGroup;
 			children = (
 				A901F07A256F963400F1C285 /* PickersScreen.swift */,
+				A9544B5B2571481800522141 /* FilePickerScreen.swift */,
+				A9544B602571482200522141 /* PhotoPickerScreen.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -912,6 +920,7 @@
 				A901EFAF256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
 				A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
+				A9544B5C2571481800522141 /* FilePickerScreen.swift in Sources */,
 				A901EFDB256F8C1B00F1C285 /* AsyncImageLoader.swift in Sources */,
 				A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
 				A901EFE7256F8C1B00F1C285 /* CollectionViewLayout.swift in Sources */,
@@ -962,6 +971,7 @@
 				A901EFF5256F8C1B00F1C285 /* MinWidthButton.swift in Sources */,
 				A901F06F256F95A700F1C285 /* UIBlurEffectStyle+Name.swift in Sources */,
 				A901F03F256F8CB100F1C285 /* ExtensionsScreen.swift in Sources */,
+				A9544B612571482200522141 /* PhotoPickerScreen.swift in Sources */,
 				A901EFE3256F8C1B00F1C285 /* MultilineTextField.swift in Sources */,
 				A901EFFF256F8C1B00F1C285 /* DismissableView.swift in Sources */,
 				A901F017256F8C1B00F1C285 /* Toast+Shadow.swift in Sources */,
@@ -1042,6 +1052,7 @@
 				A901EFB0256F8C1B00F1C285 /* View+Font.swift in Sources */,
 				A901F045256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
 				A901F1312570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
+				A9544B5D2571481800522141 /* FilePickerScreen.swift in Sources */,
 				A901EFDC256F8C1B00F1C285 /* AsyncImageLoader.swift in Sources */,
 				A901F0BD256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
 				A901EFE8256F8C1B00F1C285 /* CollectionViewLayout.swift in Sources */,
@@ -1092,6 +1103,7 @@
 				A901EFF6256F8C1B00F1C285 /* MinWidthButton.swift in Sources */,
 				A901F070256F95A700F1C285 /* UIBlurEffectStyle+Name.swift in Sources */,
 				A901F040256F8CB100F1C285 /* ExtensionsScreen.swift in Sources */,
+				A9544B622571482200522141 /* PhotoPickerScreen.swift in Sources */,
 				A901EFE4256F8C1B00F1C285 /* MultilineTextField.swift in Sources */,
 				A901F000256F8C1B00F1C285 /* DismissableView.swift in Sources */,
 				A901F018256F8C1B00F1C285 /* Toast+Shadow.swift in Sources */,

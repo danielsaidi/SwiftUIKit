@@ -10,7 +10,16 @@ import SwiftUI
 
 struct PickersScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DemoList("Pickers") {
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
+            }
+            
+            Section(header: Text("Utils")) {
+                DemoListLink("File Picker", .file, FilePickerScreen())
+                DemoListLink("Image Picker", .photo, PhotoPickerScreen())
+            }
+        }
     }
 }
 

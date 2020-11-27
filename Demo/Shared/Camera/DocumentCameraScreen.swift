@@ -17,17 +17,17 @@ struct DocumentCameraScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("Document Camera") {
+        DemoList("DocumentCamera") {
             Section(header: Text("About")) {
-                DemoListText("This camera can be used to scan documents and take one or multiple photos.")
+                DemoListText("This camera can scan one or several documents. In this demo, the documents you scan are shown in a MultiPageView.")
             }
             
             if scans.count > 0 {
                 Section(header: Text("Photos")) {
                     MultiPageView(pages: scans.map { $0
                         .resizable()
-                        .frame(height: 150)
                         .aspectRatio(contentMode: .fit)
+                        .frame(height: 300)
                     }, currentPageIndex: $index)
                 }
             }
@@ -44,21 +44,28 @@ private extension DocumentCameraScreen{
     func createCamera() -> some View {
         DocumentCamera(
             cancelAction: dismissCamera,
-            failureAction: { _ in self.dismissCamera() },
-            finishAction: { self.saveScans($0.images) }
-        ).edgesIgnoringSafeArea(.all)
+            resultAction: handleResult)
+            .edgesIgnoringSafeArea(.all)
     }
     
     func dismissCamera() {
         sheetContext.dismiss()
     }
     
+    func handleResult(_ result: DocumentCamera.CameraResult) {
+        switch result {
+        case .failure: dismissCamera()
+        case .success(let scans): saveImages(scans.images)
+        }
+    }
+    
     func openCamera() {
         sheetContext.present(createCamera())
     }
     
-    func saveScans(_ scans: [Image]) {
-        self.scans = scans
+    func saveImages(_ images: [Image]) {
+        scans.append(contentsOf: images)
+        dismissCamera()
     }
 }
 

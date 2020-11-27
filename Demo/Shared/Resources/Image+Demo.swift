@@ -27,6 +27,7 @@ extension Image {
     static var download: Image { Image(systemName: "icloud.and.arrow.down") }
     static var emoji: Image { Image(systemName: "face.smiling") }
     static var extensions: Image { Image(systemName: "puzzlepiece") }
+    static var file: Image { Image(systemName: "doc") }
     static var flag: Image { Image(systemName: "flag") }
     static var font: Image { Image(systemName: "f.cursive") }
     static var gestures: Image { Image(systemName: "hand.draw") }
