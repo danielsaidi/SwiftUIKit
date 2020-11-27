@@ -1,5 +1,5 @@
 //
-//  MultiPageView.swift
+//  PageContainer.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-10-11.
@@ -21,7 +21,7 @@ import SwiftUI
  a page view for each item.
  */
 @available(iOS 14.0, *)
-public struct MultiPageView: View {
+public struct PageView: View {
     
     public init<PageType: View>(
         pages: [PageType],

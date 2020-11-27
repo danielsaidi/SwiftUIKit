@@ -35,11 +35,12 @@ The release also makes some changes in the various `presentation` contexts:
 * The code has been refactored to use closures instead, which solves this problem.
 * My eternal gratitude to [@hybridcattt](https://twitter.com/hybridcattt) for realizing that this was what caused problems.  
 
-This release also:
+This release also has some breaking changes:
 
-* Improves  `DocumentCamera` and hides the delegate implementation details with a new init. The deprecated init will be removed in `1.0`.
-* Improves  `FlippableView` with a bunch of new features (and breaking changes).
-* Removes  `LazyView` and `LazyNavigationView` since SwiftUI handles this now.
+*  `DocumentCamera`, `FilePicker` and `ImagePicker` have been written to behave more like eachother.
+*  `FlippableView` is improved with new features and better result, but breaks previous api:s.
+*  `LazyView` and `LazyNavigationView` are removed, since I realized that SwiftUI handles this now.
+* `MultiPageView` has been renamed to `PageView`.
 
 
 ## 0.9.8

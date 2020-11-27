@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -106,3 +107,4 @@ private extension View {
         rotation3DEffect(Angle(degrees: degrees), axis: (x: x, y: y, z: 0.0))
     }
 }
+#endif

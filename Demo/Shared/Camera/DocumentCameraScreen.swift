@@ -24,7 +24,7 @@ struct DocumentCameraScreen: View {
             
             if scans.count > 0 {
                 Section(header: Text("Photos")) {
-                    MultiPageView(pages: scans.map { $0
+                    PageView(pages: scans.map { $0
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 300)

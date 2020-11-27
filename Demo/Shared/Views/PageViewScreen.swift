@@ -1,5 +1,5 @@
 //
-//  MultiPageViewScreen.swift
+//  PageViewScreen.swift
 //  Demo
 //
 //  Created by Daniel Saidi on 2020-11-27.
@@ -8,19 +8,19 @@
 
 import SwiftUI
 
-struct MultiPageViewScreen: View {
+struct PageViewScreen: View {
     
     @State private var colors: [Color] = [.red, .green, .blue]
     @State private var index = 0
     
     var body: some View {
-        DemoList("MultiPageView") {
+        DemoList("PageView") {
             Section(header: Text("About")) {
-                DemoListText("This view can be used to wrap multiple views in a page control.")
+                DemoListText("This view can be used to wrap multiple views in a paged horizontal scroll view.")
             }
             
             Section(header: Text("Example")) {
-                MultiPageView(
+                PageView(
                     items: colors,
                     indexDisplayMode: .automatic,
                     currentPageIndex: $index,
@@ -30,7 +30,7 @@ struct MultiPageViewScreen: View {
     }
 }
 
-private extension MultiPageViewScreen {
+private extension PageViewScreen {
     
     func pageView(for color: Color) -> some View {
         color
@@ -39,8 +39,8 @@ private extension MultiPageViewScreen {
     }
 }
 
-struct MultiPageViewScreen_Previews: PreviewProvider {
+struct PageViewScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MultiPageViewScreen()
+        PageViewScreen()
     }
 }

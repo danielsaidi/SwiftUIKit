@@ -34,14 +34,14 @@ struct ViewsScreen: View {
             DemoListLink("Dismissable View", .dismiss, DismissableViewScreen())
             DemoListLink("Fetched Data View", .download, FetchedDataViewScreen())
             DemoListLink("Flippable View", .swipeGesture, FlippableViewScreen())
-            DemoListLink("Multi Page View", .pageControl, MultiPageViewScreen())
+            DemoListLink("Multiline Text Field", .multiline, MultilineTextFieldScreen())
         }
     }
     
     private var list2: some View {
         Group {
-            DemoListLink("Multiline Text Field", .multiline, MultilineTextFieldScreen())
             DemoListLink("Optional View", .optional, OptionalViewScreen())
+            DemoListLink("Page View", .pageControl, PageViewScreen())
             DemoListLink("UIView Wrapper", .wrapper, UIViewWrapperScreen())
         }
     }

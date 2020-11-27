@@ -121,8 +121,6 @@
 		A901F006256F8C1B00F1C285 /* UIViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7A256F8C1A00F1C285 /* UIViewWrapper.swift */; };
 		A901F007256F8C1B00F1C285 /* OptionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7B256F8C1A00F1C285 /* OptionalView.swift */; };
 		A901F008256F8C1B00F1C285 /* OptionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7B256F8C1A00F1C285 /* OptionalView.swift */; };
-		A901F009256F8C1B00F1C285 /* MultiPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7C256F8C1A00F1C285 /* MultiPageView.swift */; };
-		A901F00A256F8C1B00F1C285 /* MultiPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7C256F8C1A00F1C285 /* MultiPageView.swift */; };
 		A901F00B256F8C1B00F1C285 /* ToastProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7E256F8C1A00F1C285 /* ToastProvider.swift */; };
 		A901F00C256F8C1B00F1C285 /* ToastProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7E256F8C1A00F1C285 /* ToastProvider.swift */; };
 		A901F00D256F8C1B00F1C285 /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901EF7F256F8C1A00F1C285 /* SheetContext.swift */; };
@@ -245,8 +243,8 @@
 		A9355056256F7E6C00BBE9CE /* Image+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355054256F7E6C00BBE9CE /* Image+Demo.swift */; };
 		A9544B3C25710F2200522141 /* MultilineTextFieldScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */; };
 		A9544B3D25710F2200522141 /* MultilineTextFieldScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */; };
-		A9544B412571114400522141 /* MultiPageViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B402571114400522141 /* MultiPageViewScreen.swift */; };
-		A9544B422571114400522141 /* MultiPageViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B402571114400522141 /* MultiPageViewScreen.swift */; };
+		A9544B412571114400522141 /* PageViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B402571114400522141 /* PageViewScreen.swift */; };
+		A9544B422571114400522141 /* PageViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B402571114400522141 /* PageViewScreen.swift */; };
 		A9544B48257113E800522141 /* OptionalViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B47257113E800522141 /* OptionalViewScreen.swift */; };
 		A9544B49257113E800522141 /* OptionalViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B47257113E800522141 /* OptionalViewScreen.swift */; };
 		A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */; };
@@ -259,6 +257,8 @@
 		A9544B5D2571481800522141 /* FilePickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B5B2571481800522141 /* FilePickerScreen.swift */; };
 		A9544B612571482200522141 /* PhotoPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B602571482200522141 /* PhotoPickerScreen.swift */; };
 		A9544B622571482200522141 /* PhotoPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B602571482200522141 /* PhotoPickerScreen.swift */; };
+		A9544B662571A19F00522141 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B652571A19F00522141 /* PageView.swift */; };
+		A9544B672571A19F00522141 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B652571A19F00522141 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,7 +319,6 @@
 		A901EF79256F8C1A00F1C285 /* SizingVStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingVStack.swift; sourceTree = "<group>"; };
 		A901EF7A256F8C1A00F1C285 /* UIViewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewWrapper.swift; sourceTree = "<group>"; };
 		A901EF7B256F8C1A00F1C285 /* OptionalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalView.swift; sourceTree = "<group>"; };
-		A901EF7C256F8C1A00F1C285 /* MultiPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPageView.swift; sourceTree = "<group>"; };
 		A901EF7E256F8C1A00F1C285 /* ToastProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastProvider.swift; sourceTree = "<group>"; };
 		A901EF7F256F8C1A00F1C285 /* SheetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetContext.swift; sourceTree = "<group>"; };
 		A901EF80256F8C1A00F1C285 /* FullScreenCoverContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenCoverContext.swift; sourceTree = "<group>"; };
@@ -386,13 +385,14 @@
 		A9355042256F7E3D00BBE9CE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		A9355054256F7E6C00BBE9CE /* Image+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Demo.swift"; sourceTree = "<group>"; };
 		A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextFieldScreen.swift; sourceTree = "<group>"; };
-		A9544B402571114400522141 /* MultiPageViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageViewScreen.swift; sourceTree = "<group>"; };
+		A9544B402571114400522141 /* PageViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewScreen.swift; sourceTree = "<group>"; };
 		A9544B47257113E800522141 /* OptionalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewScreen.swift; sourceTree = "<group>"; };
 		A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperScreen.swift; sourceTree = "<group>"; };
 		A9544B51257132FA00522141 /* DocumentCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraScreen.swift; sourceTree = "<group>"; };
 		A9544B562571404E00522141 /* ShareSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetScreen.swift; sourceTree = "<group>"; };
 		A9544B5B2571481800522141 /* FilePickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerScreen.swift; sourceTree = "<group>"; };
 		A9544B602571482200522141 /* PhotoPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerScreen.swift; sourceTree = "<group>"; };
+		A9544B652571A19F00522141 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,15 +498,6 @@
 			path = Gestures;
 			sourceTree = "<group>";
 		};
-		A901EF50256F8C1A00F1C285 /* Flippable */ = {
-			isa = PBXGroup;
-			children = (
-				A901EF51256F8C1A00F1C285 /* FlipDirection.swift */,
-				A901EF53256F8C1A00F1C285 /* FlippableView.swift */,
-			);
-			path = Flippable;
-			sourceTree = "<group>";
-		};
 		A901EF54256F8C1A00F1C285 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,7 +538,6 @@
 			isa = PBXGroup;
 			children = (
 				A901EF69256F8C1A00F1C285 /* CollectionView */,
-				A901EF50256F8C1A00F1C285 /* Flippable */,
 				A901EF76256F8C1A00F1C285 /* AsyncImage.swift */,
 				A901EF62256F8C1A00F1C285 /* AsyncImageLoader.swift */,
 				A901EF68256F8C1A00F1C285 /* CircularProgressBar.swift */,
@@ -555,10 +545,12 @@
 				A901EF75256F8C1A00F1C285 /* ConditionalView.swift */,
 				A901EF77256F8C1A00F1C285 /* DismissableView.swift */,
 				A901EF78256F8C1A00F1C285 /* FetchedDataView.swift */,
+				A901EF51256F8C1A00F1C285 /* FlipDirection.swift */,
+				A901EF53256F8C1A00F1C285 /* FlippableView.swift */,
 				A901EF72256F8C1A00F1C285 /* MinWidthButton.swift */,
 				A901EF67256F8C1A00F1C285 /* MultilineTextField.swift */,
-				A901EF7C256F8C1A00F1C285 /* MultiPageView.swift */,
 				A901EF7B256F8C1A00F1C285 /* OptionalView.swift */,
+				A9544B652571A19F00522141 /* PageView.swift */,
 				A901EF79256F8C1A00F1C285 /* SizingVStack.swift */,
 				A901EF7A256F8C1A00F1C285 /* UIViewWrapper.swift */,
 			);
@@ -568,9 +560,9 @@
 		A901EF69256F8C1A00F1C285 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				A901EF6C256F8C1A00F1C285 /* Layouts */,
 				A901EF6A256F8C1A00F1C285 /* CollectionViewLayout.swift */,
 				A901EF6B256F8C1A00F1C285 /* CollectionView.swift */,
-				A901EF6C256F8C1A00F1C285 /* Layouts */,
 				A901EF6F256F8C1A00F1C285 /* CollectionViewRow.swift */,
 				A901EF70256F8C1A00F1C285 /* UIHostingController+SafeArea.swift */,
 			);
@@ -719,9 +711,9 @@
 				A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */,
 				A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */,
 				A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */,
-				A9544B402571114400522141 /* MultiPageViewScreen.swift */,
 				A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */,
 				A9544B47257113E800522141 /* OptionalViewScreen.swift */,
+				A9544B402571114400522141 /* PageViewScreen.swift */,
 				A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */,
 			);
 			path = Views;
@@ -927,7 +919,7 @@
 				A901EFC7256F8C1B00F1C285 /* ImagePickerStandardCompletionHandler.swift in Sources */,
 				A901EF97256F8C1B00F1C285 /* View+Snapshot.swift in Sources */,
 				A901EFDF256F8C1B00F1C285 /* UserDefaultsPersisted.swift in Sources */,
-				A9544B412571114400522141 /* MultiPageViewScreen.swift in Sources */,
+				A9544B412571114400522141 /* PageViewScreen.swift in Sources */,
 				A901EFE9256F8C1B00F1C285 /* CollectionView.swift in Sources */,
 				A901F049256F8CC900F1C285 /* PresentationScreen.swift in Sources */,
 				A901EFCD256F8C1B00F1C285 /* SimpleOptionalPicker.swift in Sources */,
@@ -949,7 +941,6 @@
 				A901F05F256F936700F1C285 /* DemoListItem.swift in Sources */,
 				A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */,
 				A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
-				A901F009256F8C1B00F1C285 /* MultiPageView.swift in Sources */,
 				A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F003256F8C1B00F1C285 /* SizingVStack.swift in Sources */,
@@ -984,6 +975,7 @@
 				A901EFD9256F8C1B00F1C285 /* FilePicker.swift in Sources */,
 				A901EFB3256F8C1B00F1C285 /* View+Shadow.swift in Sources */,
 				A901EFC9256F8C1B00F1C285 /* ImagePickerCompletionHandler.swift in Sources */,
+				A9544B662571A19F00522141 /* PageView.swift in Sources */,
 				A901F019256F8C1B00F1C285 /* View+Sheet.swift in Sources */,
 				A901F01B256F8C1B00F1C285 /* ToastStyle.swift in Sources */,
 				A901EF99256F8C1B00F1C285 /* EdgeInsets+Edge.swift in Sources */,
@@ -1059,7 +1051,7 @@
 				A901EFC8256F8C1B00F1C285 /* ImagePickerStandardCompletionHandler.swift in Sources */,
 				A901EF98256F8C1B00F1C285 /* View+Snapshot.swift in Sources */,
 				A901EFE0256F8C1B00F1C285 /* UserDefaultsPersisted.swift in Sources */,
-				A9544B422571114400522141 /* MultiPageViewScreen.swift in Sources */,
+				A9544B422571114400522141 /* PageViewScreen.swift in Sources */,
 				A901EFEA256F8C1B00F1C285 /* CollectionView.swift in Sources */,
 				A901F04A256F8CC900F1C285 /* PresentationScreen.swift in Sources */,
 				A901EFCE256F8C1B00F1C285 /* SimpleOptionalPicker.swift in Sources */,
@@ -1081,7 +1073,6 @@
 				A901F060256F936700F1C285 /* DemoListItem.swift in Sources */,
 				A901F086256F964600F1C285 /* ViewsScreen.swift in Sources */,
 				A901F0CC256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
-				A901F00A256F8C1B00F1C285 /* MultiPageView.swift in Sources */,
 				A9544B582571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F004256F8C1B00F1C285 /* SizingVStack.swift in Sources */,
@@ -1116,6 +1107,7 @@
 				A901EFDA256F8C1B00F1C285 /* FilePicker.swift in Sources */,
 				A901EFB4256F8C1B00F1C285 /* View+Shadow.swift in Sources */,
 				A901EFCA256F8C1B00F1C285 /* ImagePickerCompletionHandler.swift in Sources */,
+				A9544B672571A19F00522141 /* PageView.swift in Sources */,
 				A901F01A256F8C1B00F1C285 /* View+Sheet.swift in Sources */,
 				A901F01C256F8C1B00F1C285 /* ToastStyle.swift in Sources */,
 				A901EF9A256F8C1B00F1C285 /* EdgeInsets+Edge.swift in Sources */,
