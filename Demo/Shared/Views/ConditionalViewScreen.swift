@@ -14,20 +14,21 @@ struct ConditionalViewScreen: View {
     
     var body: some View {
         DemoList("ConditionalView") {
-            Section {
+            Section(header: Text("About")) {
+                DemoListText("This view can display different views based on a bool expression.")
+            }
+            
+            Section(header: Text("State")) {
                 Toggle("Show view", isOn: $showView)
             }
             
-            ConditionalView(showView) {
-                Section {
-                    Text("This conditional view shows an empty view if the toggle is disabled")
+            Section(header: Text("Result")) {
+                ConditionalView(showView) {
+                    Text("This conditional view shows an empty view (default) if the toggle is disabled")
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(20)
                 }
-            }
-            
-            Section {
                 ConditionalView(
                     if: showView,
                     then: { Text("This conditional view shows another text if the toggle is disabled") },

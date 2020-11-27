@@ -14,11 +14,15 @@ struct CircularProgressViewScreen: View {
     
     var body: some View {
         DemoList("CircularProgressView") {
-            Section {
+            Section(header: Text("About")) {
+                DemoListText("This view displays a circular progress spinner.")
+            }
+            
+            Section(header: Text("State")) {
                 Toggle("Is loading", isOn: $isLoading)
             }
             
-            Section {
+            Section(header: Text("Result")) {
                 ConditionalView(isLoading) {
                     HStack {
                         Spacer()

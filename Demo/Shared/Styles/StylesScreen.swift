@@ -11,9 +11,15 @@ import SwiftUI
 struct StylesScreen: View {
     var body: some View {
         DemoList("Gestures") {
-            DemoListLink("Corner Radius", .cornerRadius, CornerRadiusStyleScreen())
-            DemoListLink("Fonts", .font, FontStyleScreen())
-            DemoListLink("Shadows", .shadow, ShadowStyleScreen())
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has styles that make it easier to define and apply custom styles.")
+            }
+            
+            Section(header: Text("Styles")) {
+                DemoListLink("Corner Radius", .cornerRadius, CornerRadiusStyleScreen())
+                DemoListLink("Fonts", .font, FontStyleScreen())
+                DemoListLink("Shadows", .shadow, ShadowStyleScreen())
+            }
         }
     }
 }

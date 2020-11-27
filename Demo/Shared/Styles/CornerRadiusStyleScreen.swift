@@ -10,10 +10,16 @@ import SwiftUI
 
 struct CornerRadiusStyleScreen: View {
     var body: some View {
-        DemoList("Corner Radius Style") {
-            item(.red, style: .small)
-            item(.green, style: .medium)
-            item(.blue, style: .large)
+        DemoList("CornerRadiusStyle") {
+            Section(header: Text("About")) {
+                DemoListText("This style makes it possible to create named styles that can be applied to any view.")
+            }
+            
+            Section(header: Text("Demo styles")) {
+                item(.red, style: .small)
+                item(.green, style: .medium)
+                item(.blue, style: .large)
+            }
         }
     }
 }
@@ -37,6 +43,8 @@ private enum DemoStyle: String {
         CornerRadiusStyle(radius: radius)
     }
     
+    var name: String { rawValue.capitalized }
+    
     var radius: CGFloat {
         switch self {
         case .small: return 5
@@ -46,7 +54,7 @@ private enum DemoStyle: String {
     }
     
     var text: String {
-        "\(radius) points"
+        "\(name) (\(radius) points)"
     }
 }
 

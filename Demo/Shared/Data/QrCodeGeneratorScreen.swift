@@ -22,15 +22,15 @@ struct QrCodeGeneratorScreen: View {
     
     var body: some View {
         DemoList("QrCodeGenerator") {
-            Section {
+            Section(header: Text("Instructions")) {
                 DemoListText("Enter a url and tap the button to show a code that you can scan with your phone.")
             }
             
-            Section {
+            Section(header: Text("URL")) {
                 TextField("Enter URL", text: $urlString)
             }
             
-            Section {
+            Section(header: Text("Actions")) {
                 DemoListButton("Show QR Code", .qrCode, showCode)
                     .enabled(hasUrl)
             }

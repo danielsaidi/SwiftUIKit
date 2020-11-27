@@ -10,10 +10,16 @@ import SwiftUI
 
 struct ShadowStyleScreen: View {
     var body: some View {
-        DemoList("Corner Radius Style") {
-            item(.red, style: .small)
-            item(.green, style: .medium)
-            item(.blue, style: .large)
+        DemoList("ShadowStyle") {
+            Section(header: Text("About")) {
+                DemoListText("This style makes it possible to create named styles that can be applied to any view.")
+            }
+            
+            Section(header: Text("Demo styles")) {
+                item(.red, style: .small)
+                item(.green, style: .medium)
+                item(.blue, style: .large)
+            }
         }
     }
 }
@@ -37,6 +43,8 @@ private enum DemoStyle: String {
         ShadowStyle(color: .black, radius: radius, x: 1, y: 1)
     }
     
+    var name: String { rawValue.capitalized }
+    
     var radius: CGFloat {
         switch self {
         case .small: return 2
@@ -46,7 +54,7 @@ private enum DemoStyle: String {
     }
     
     var text: String {
-        "\(rawValue.capitalized) shadow"
+        "\(name) (\(radius) radius)"
     }
 }
 

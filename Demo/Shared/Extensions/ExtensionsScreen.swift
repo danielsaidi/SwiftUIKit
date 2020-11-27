@@ -11,7 +11,7 @@ import SwiftUI
 struct ExtensionsScreen: View {
     var body: some View {
         DemoList("Extensions") {
-            Section {
+            Section(header: Text("About")) {
                 DemoListText("""
 SwiftUIKit contains a bunch of extensions that makes using SwiftUI easier.
                     

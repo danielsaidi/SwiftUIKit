@@ -20,13 +20,21 @@ struct SheetsScreen: View {
     
     var body: some View {
         DemoList("Sheets") {
-            ForEach(DemoPresentable.allCases) { item in
-                DemoListButton(item.listText(for: "sheet"), item.listIcon) {
-                    presentSheet(item)
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
+            }
+            
+            Section(header: Text("Alerts")) {
+                ForEach(DemoPresentable.allCases) { item in
+                    DemoListButton(item.listText(for: "sheet"), item.listIcon) {
+                        presentSheet(item)
+                    }
                 }
             }
-            DemoListButton("Show an emoji cover (test)", .cover, presentCover)
-                .fullScreenCover(context: coverContext)
+            Section(header: Text("Cover (for testing purpose)")) {
+                DemoListButton("Show an flag cover", .cover, presentCover)
+                    .fullScreenCover(context: coverContext)
+            }
         }.sheet(context: context)
     }
 }
@@ -58,7 +66,7 @@ private extension SheetsScreen {
         presentable.cover
             .navigationTitle("Hello, you!")
             .navigationBarTitleDisplayMode(.inline)
-            
+        
     }
 }
 

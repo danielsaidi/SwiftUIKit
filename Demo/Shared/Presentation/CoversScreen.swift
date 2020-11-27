@@ -20,13 +20,21 @@ struct CoversScreen: View {
     
     var body: some View {
         DemoList("Full Screen Covers") {
-            ForEach(DemoPresentable.allCases) { item in
-                DemoListButton(item.listText(for: "full screen cover"), item.listIcon) {
-                    presentCover(item)
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has additional utils that make it easier to manage and present covers.")
+            }
+            
+            Section(header: Text("Alerts")) {
+                ForEach(DemoPresentable.allCases) { item in
+                    DemoListButton(item.listText(for: "cover"), item.listIcon) {
+                        presentCover(item)
+                    }
                 }
             }
-            DemoListButton("Show an emoji sheet (test)", .sheet, presentSheet)
-                .sheet(context: sheetContext)
+            Section(header: Text("Sheet (for testing purpose)")) {
+                DemoListButton("Show an flag sheet", .sheet, presentSheet)
+                    .sheet(context: sheetContext)
+            }
         }.fullScreenCover(context: context)
     }
 }
@@ -58,7 +66,7 @@ private extension CoversScreen {
         presentable.cover
             .navigationTitle("Hello, you!")
             .navigationBarTitleDisplayMode(.inline)
-            
+        
     }
 }
 

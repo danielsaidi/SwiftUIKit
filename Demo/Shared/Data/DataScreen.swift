@@ -11,8 +11,14 @@ import SwiftUI
 struct DataScreen: View {
     var body: some View {
         DemoList("Data") {
-            DemoListLink("QrCodeGenerator", .qrCode, QrCodeGeneratorScreen())
-            DemoListLink("UserDefaultsPersisted", .data, UserDefaultsPersistedScreen())
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has some data utils, e.g. to create QR codes and (one) property wrappers.")
+            }
+            
+            Section(header: Text("Utils")) {
+                DemoListLink("QrCodeGenerator", .qrCode, QrCodeGeneratorScreen())
+                DemoListLink("UserDefaultsPersisted", .data, UserDefaultsPersistedScreen())
+            }
         }
     }
 }

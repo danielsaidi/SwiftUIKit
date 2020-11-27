@@ -16,15 +16,15 @@ struct AsyncImageScreen: View {
     
     var body: some View {
         DemoList("AsyncImage") {
-            Section {
-                DemoListText("Enter the url to an image and tap the button to load the new image asynchronously.")
+            Section(header: Text("About")) {
+                DemoListText("This view can fetch images async from urls.")
             }
             
-            Section {
+            Section(header: Text("URL")) {
                 TextField("Enter URL", text: $urlString)
             }
             
-            Section {
+            Section(header: Text("Actions")) {
                 DemoListButton("Load image", .photo, loadImage)
                     .enabled(hasUrl)
             }

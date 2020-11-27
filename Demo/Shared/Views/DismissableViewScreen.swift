@@ -14,7 +14,11 @@ struct DismissableViewScreen: View, DismissableView {
 
     var body: some View {
         DemoList("DismissableView") {
-            Section {
+            Section(header: Text("About")) {
+                DemoListText("This protocol makes it easy to dismiss views.")
+            }
+            
+            Section(header: Text("Actions")) {
                 DemoListButton("Dismiss this screen", .dismiss, dismiss)
             }
         }

@@ -13,15 +13,20 @@ struct FetchedDataViewScreen: View {
     @State private var hasContent = false
     @State private var isLoading = true
     
-    var data: String? { hasContent ? "Here comes data!" : nil }
+    var data: String? { hasContent ? "Received data!" : nil }
     
     var body: some View {
         DemoList("FetchedDataView") {
-            Section {
+            Section(header: Text("About")) {
+                DemoListText("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
+            }
+            
+            Section(header: Text("State")) {
                 Toggle("Is loading", isOn: $isLoading)
                 Toggle("Has content", isOn: $hasContent)
             }
-            Section {
+            
+            Section(header: Text("Result")) {
                 FetchedDataView(
                     data: data,
                     isLoading: isLoading,

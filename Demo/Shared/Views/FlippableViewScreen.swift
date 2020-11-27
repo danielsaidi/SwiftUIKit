@@ -9,16 +9,18 @@
 import SwiftUI
 
 struct FlippableViewScreen: View {
-    
-    @State private var isFlipped: Bool = false
-    
+        
     var body: some View {
-        FlippableView(
-            front: side(.blue, "Flip me!"),
-            back: side(.red, "Flip me back!")
-        )
+        VStack {
+            DemoListText("This view has a front and a back face and can be flipped by tapping ot swiping.")
+            
+            FlippableView(
+                front: side(.blue, "Flip me!"),
+                back: side(.red, "Flip me back!"),
+                isTapEnabled: true,
+                isSwipeEnabled: true)
+        }
         .padding()
-        .onTapGesture { isFlipped.toggle() }
         .navigationTitle("Flippable View")
     }
 }

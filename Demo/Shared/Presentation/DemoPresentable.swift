@@ -16,7 +16,7 @@ enum DemoPresentable: Identifiable, AlertProvider, FullScreenCoverProvider, Shee
     case color(Color), emojis, flag, text(String)
     
     static var allCases: [DemoPresentable] {
-        [.text("Hello, world!"), .color(.blue), .emojis, .flag]
+        [.text("You chose to present plain text. How exciting!"), .color(.blue), .emojis, .flag]
     }
     
     var id: String {

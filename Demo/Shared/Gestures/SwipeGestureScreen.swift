@@ -13,23 +13,27 @@ struct SwipeGestureScreen: View {
     @State private var text = "Swipe me in any direction"
     
     var body: some View {
-        Color.blue
-            .cornerRadius(5)
-            .overlay(Text(text))
-            .onSwipeGesture(
-                up: handleSwipeUp,
-                left: handleSwipeLeft,
-                right: handleSwipeRight,
-                down: handleSwipeDown)
-            .padding()
-            .navigationTitle("SwipeGesture")
+        VStack {
+            DemoListText("This gesture can be applied to any view and lets you specify an action for each direction.")
+            
+            Color.blue
+                .cornerRadius(5)
+                .overlay(Text(text))
+                .onSwipeGesture(
+                    up: handleSwipeUp,
+                    left: handleSwipeLeft,
+                    right: handleSwipeRight,
+                    down: handleSwipeDown)
+        }
+        .padding()
+        .navigationTitle("SwipeGesture")
     }
 }
 
 private extension SwipeGestureScreen {
     
     func handleSwipe(_ direction: String) {
-        text = "You did swipe \(direction)!"
+        text = "You swiped \(direction)!"
     }
     
     func handleSwipeDown() { handleSwipe("down") }

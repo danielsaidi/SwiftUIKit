@@ -14,9 +14,15 @@ struct ToastsScreen: View {
     
     var body: some View {
         DemoList("Toasts") {
-            ForEach(DemoPresentable.allCases) { item in
-                DemoListButton(item.listText(for: "toast"), item.listIcon) {
-                    present(item)
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has utils that make it easier to manage and present toasts.")
+            }
+            
+            Section(header: Text("Toasts")) {
+                ForEach(DemoPresentable.allCases) { item in
+                    DemoListButton(item.listText(for: "toast"), item.listIcon) {
+                        present(item)
+                    }
                 }
             }
         }.toast(context: context, duration: 5, style: .standard)

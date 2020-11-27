@@ -20,15 +20,15 @@ struct UserDefaultsPersistedScreen: View {
         
     var body: some View {
         DemoList("UserDefaultsPersisted") {
-            Section {
+            Section(header: Text("Instructions")) {
                 DemoListText("Any text you type below is automatically persisted in UserDefaults, using the @UserDefaultsPersisted property wrapper.")
             }
             
-            Section {
+            Section(header: Text("Text")) {
                 TextField("Enter a text", text: $context.text)
             }
             
-            Section {
+            Section(header: Text("Actions")) {
                 DemoListButton("Clear text", .clear) { context.text = "" }
             }
         }

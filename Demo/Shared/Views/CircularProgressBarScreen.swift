@@ -14,13 +14,17 @@ struct CircularProgressBarScreen: View {
     
     var body: some View {
         DemoList("CircularProgressBar") {
-            Section {
+            Section(header: Text("About")) {
+                DemoListText("This view can display a percentual progress in a circular bar. It can be styled to great extent.")
+            }
+            
+            Section(header: Text("Progress")) {
                 Slider(value: $progress, in: 0...1, minimumValueLabel: Text("0%"), maximumValueLabel: Text("100%")) {
                     Text("Prgress")
                 }
             }
             
-            Section {
+            Section(header: Text("Result")) {
                 CircularProgressBar(
                     progress: $progress, decimals: 1, startAngle: 0, style: swedishStyle)
                     .frame(height: 300)

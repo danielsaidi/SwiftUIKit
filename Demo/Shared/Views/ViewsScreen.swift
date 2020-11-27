@@ -11,8 +11,14 @@ import SwiftUI
 struct ViewsScreen: View {
     var body: some View {
         DemoList("Views") {
-            list1
-            list2
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit contains a large collection of additional views for SwiftUI.")
+            }
+            
+            Section(header: Text("Views")) {
+                list1
+                list2
+            }
         }
     }
     

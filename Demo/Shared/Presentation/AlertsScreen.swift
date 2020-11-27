@@ -14,9 +14,15 @@ struct AlertsScreen: View {
     
     var body: some View {
         DemoList("Alerts") {
-            ForEach(DemoPresentable.allCases) { item in
-                DemoListButton(item.listText(for: "alert"), item.listIcon) {
-                    present(item)
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
+            }
+            
+            Section(header: Text("Alerts")) {
+                ForEach(DemoPresentable.allCases) { item in
+                    DemoListButton(item.listText(for: "alert"), item.listIcon) {
+                        present(item)
+                    }
                 }
             }
         }.alert(context: context)

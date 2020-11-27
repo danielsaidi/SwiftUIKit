@@ -11,10 +11,16 @@ import SwiftUI
 struct PresentationScreen: View {
     var body: some View {
         DemoList("Presentation") {
-            DemoListLink("Alerts", .alert, AlertsScreen())
-            DemoListLink("Full Screen Covers", .cover, CoversScreen())
-            DemoListLink("Sheets", .sheet, SheetsScreen())
-            DemoListLink("Toasts", .toast, ToastsScreen())
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has utils that make it easier to present certain kind of content in SwiftUI.")
+            }
+            
+            Section(header: Text("Features")) {
+                DemoListLink("Alerts", .alert, AlertsScreen())
+                DemoListLink("Full Screen Covers", .cover, CoversScreen())
+                DemoListLink("Sheets", .sheet, SheetsScreen())
+                DemoListLink("Toasts", .toast, ToastsScreen())
+            }
         }
     }
 }

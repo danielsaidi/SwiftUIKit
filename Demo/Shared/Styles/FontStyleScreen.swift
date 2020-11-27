@@ -10,10 +10,16 @@ import SwiftUI
 
 struct FontStyleScreen: View {
     var body: some View {
-        DemoList("Font Style") {
-            item(.red, .abril)
-            item(.green, .lobster)
-            item(.blue, .luckiestGuy)
+        DemoList("FontStyle") {
+            Section(header: Text("About")) {
+                DemoListText("This style makes it possible to create named styles that can be applied to any view.")
+            }
+            
+            Section(header: Text("Demo styles")) {
+                item(.red, .abril)
+                item(.green, .lobster)
+                item(.blue, .luckiestGuy)
+            }
         }
     }
 }
