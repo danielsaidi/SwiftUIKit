@@ -23,6 +23,7 @@ extension Image {
     static var cover: Image { Image(systemName: "rectangle.inset.fill") }
     static var data: Image { Image(systemName: "cylinder.split.1x2") }
     static var dismiss: Image { Image(systemName: "xmark") }
+    static var documentCamera: Image { Image(systemName: "doc.text.viewfinder") }
     static var download: Image { Image(systemName: "icloud.and.arrow.down") }
     static var emoji: Image { Image(systemName: "face.smiling") }
     static var extensions: Image { Image(systemName: "puzzlepiece") }

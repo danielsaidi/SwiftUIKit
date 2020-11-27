@@ -16,8 +16,8 @@ struct DataScreen: View {
             }
             
             Section(header: Text("Utils")) {
-                DemoListLink("QrCodeGenerator", .qrCode, QrCodeGeneratorScreen())
-                DemoListLink("UserDefaultsPersisted", .data, UserDefaultsPersistedScreen())
+                DemoListLink("Qr Code Generator", .qrCode, QrCodeGeneratorScreen())
+                DemoListLink("UserDefaults Persisted", .data, UserDefaultsPersistedScreen())
             }
         }
     }

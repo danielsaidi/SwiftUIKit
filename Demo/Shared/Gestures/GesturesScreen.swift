@@ -16,7 +16,7 @@ struct GesturesScreen: View {
             }
             
             Section(header: Text("Gestures")) {
-                DemoListLink("SwipeGesture", .swipeGesture, SwipeGestureScreen())
+                DemoListLink("Swipe Gesture", .swipeGesture, SwipeGestureScreen())
             }
         }
     }

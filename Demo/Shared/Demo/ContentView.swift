@@ -15,17 +15,17 @@ struct ContentView: View {
                 #if os(iOS)
                 DemoListLink("Blurs", .blur, BlursScreen())
                 #endif
-                DemoListLink("Camera (not done)", .camera, CameraScreen())
+                DemoListLink("Camera", .camera, CameraScreen())
                 DemoListLink("Data", .data, DataScreen())
                 DemoListLink("Extensions", .extensions, ExtensionsScreen())
                 DemoListLink("Gestures", .gestures, GesturesScreen())
-                DemoListLink("Pickers (not done)", .pickers, PickersScreen())
+                DemoListLink("Pickers (TBD)", .pickers, PickersScreen())
                 DemoListLink("Presentation", .presentation, PresentationScreen())
-                DemoListLink("Sharing (not done)", .sharing, SharingScreen())
+                DemoListLink("Sharing (TBD)", .sharing, SharingScreen())
                 DemoListLink("Styles", .styles, StylesScreen())
-                DemoListLink("Views (in progress)", .views, ViewsScreen())
+                DemoListLink("Views", .views, ViewsScreen())
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

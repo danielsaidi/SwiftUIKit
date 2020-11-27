@@ -251,6 +251,8 @@
 		A9544B49257113E800522141 /* OptionalViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B47257113E800522141 /* OptionalViewScreen.swift */; };
 		A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */; };
 		A9544B4E2571179F00522141 /* UIViewWrapperScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */; };
+		A9544B52257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
+		A9544B53257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -381,6 +383,7 @@
 		A9544B402571114400522141 /* MultiPageViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageViewScreen.swift; sourceTree = "<group>"; };
 		A9544B47257113E800522141 /* OptionalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewScreen.swift; sourceTree = "<group>"; };
 		A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperScreen.swift; sourceTree = "<group>"; };
+		A9544B51257132FA00522141 /* DocumentCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -670,6 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				A901F073256F962600F1C285 /* CameraScreen.swift */,
+				A9544B51257132FA00522141 /* DocumentCameraScreen.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -1016,6 +1020,7 @@
 				A901EFBB256F8C1B00F1C285 /* SwipeGesture.swift in Sources */,
 				A901EFA7256F8C1B00F1C285 /* FontStyle.swift in Sources */,
 				A901F14725707A8F00F1C285 /* ConditionalViewScreen.swift in Sources */,
+				A9544B52257132FA00522141 /* DocumentCameraScreen.swift in Sources */,
 				A901F1102570079800F1C285 /* Fonts.swift in Sources */,
 				A901F01F256F8C1B00F1C285 /* SheetProvider.swift in Sources */,
 			);
@@ -1144,6 +1149,7 @@
 				A901EFBC256F8C1B00F1C285 /* SwipeGesture.swift in Sources */,
 				A901EFA8256F8C1B00F1C285 /* FontStyle.swift in Sources */,
 				A901F14825707A8F00F1C285 /* ConditionalViewScreen.swift in Sources */,
+				A9544B53257132FA00522141 /* DocumentCameraScreen.swift in Sources */,
 				A901F1112570079800F1C285 /* Fonts.swift in Sources */,
 				A901F020256F8C1B00F1C285 /* SheetProvider.swift in Sources */,
 			);

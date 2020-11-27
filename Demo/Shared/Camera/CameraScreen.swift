@@ -10,12 +10,22 @@ import SwiftUI
 
 struct CameraScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DemoList("Camera") {
+            Section(header: Text("About")) {
+                DemoListText("SwiftUIKit has camera views that can be used to take photos and scan documents. For now, only the last is implemented.")
+            }
+            
+            Section(header: Text("Utils")) {
+                DemoListLink("Document Camera", .documentCamera, DocumentCameraScreen())
+            }
+        }
     }
 }
 
 struct CameraScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CameraScreen()
+        NavigationView {
+            CameraScreen()
+        }
     }
 }
