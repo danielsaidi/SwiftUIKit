@@ -24,15 +24,15 @@ struct ConditionalViewScreen: View {
             
             Section(header: Text("Result")) {
                 ConditionalView(showView) {
-                    Text("This conditional view shows an empty view (default) if the toggle is disabled")
+                    Text("This view shows an empty view when the toggle if off (default behavior).")
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(20)
                 }
                 ConditionalView(
                     if: showView,
-                    then: { Text("This conditional view shows another text if the toggle is disabled") },
-                    else: { Text("Flip the toggle again to show the original text") })
+                    then: { Text("This view shows another text when the toggle if off (custom behavior).") },
+                    else: { Text("Flip the toggle again to go back to the previous state.") })
                     .padding()
                     .background(Color.red)
                     .cornerRadius(20)

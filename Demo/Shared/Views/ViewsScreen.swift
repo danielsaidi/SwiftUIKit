@@ -32,19 +32,16 @@ struct ViewsScreen: View {
             DemoListLink("Conditional View", .conditional, ConditionalViewScreen())
             DemoListLink("Dismissable View", .dismiss, DismissableViewScreen())
             DemoListLink("Fetched Data View", .download, FetchedDataViewScreen())
-            //
-            //DemoListLink("Min Width Button", .width, CornerRadiusStyleScreen())
+            DemoListLink("Flippable View", .swipeGesture, FlippableViewScreen())
+            DemoListLink("Multi Page View", .pageControl, MultiPageViewScreen())
         }
     }
     
     private var list2: some View {
         Group {
-            DemoListLink("Flippable View", .swipeGesture, FlippableViewScreen())
-            //DemoListLink("* Multi Line Text Field", .multiline, CornerRadiusStyleScreen())
-            //DemoListLink("* MultiPageView", .pageControl, CornerRadiusStyleScreen())
-            //DemoListLink("* Optional View", .optional, CornerRadiusStyleScreen())
-            //DemoListLink("* UIView Wrapper", .wrapper, CornerRadiusStyleScreen())
-            //DemoListLink("* Width VStack", .widthList, CornerRadiusStyleScreen())
+            DemoListLink("Multiline Text Field", .multiline, MultilineTextFieldScreen())
+            DemoListLink("Optional View", .optional, OptionalViewScreen())
+            DemoListLink("UIView Wrapper", .wrapper, UIViewWrapperScreen())
         }
     }
 }
