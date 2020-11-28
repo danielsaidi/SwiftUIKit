@@ -259,6 +259,8 @@
 		A9544B942571B34D00522141 /* PhotoCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B922571B34D00522141 /* PhotoCameraScreen.swift */; };
 		A9544BAE2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
 		A9544BAF2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
+		A9544D312571D1E600522141 /* Color+ClearInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544D302571D1E600522141 /* Color+ClearInteractable.swift */; };
+		A9544D322571D1E600522141 /* Color+ClearInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544D302571D1E600522141 /* Color+ClearInteractable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -402,6 +404,7 @@
 		A9544BB42571BA9100522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		A9544BB52571BA9100522141 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		A9544BB72571BAD800522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A9544D302571D1E600522141 /* Color+ClearInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ClearInteractable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +463,7 @@
 		A901EF39256F8C1A00F1C285 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A9544D302571D1E600522141 /* Color+ClearInteractable.swift */,
 				A901EF3C256F8C1A00F1C285 /* Color+Random.swift */,
 				A901EF3B256F8C1A00F1C285 /* EdgeInsets+Edge.swift */,
 				A901EF3F256F8C1A00F1C285 /* Text+SingleLine.swift */,
@@ -1061,6 +1065,7 @@
 				A901F0A0256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */,
 				A901F080256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901F01D256F8C1B00F1C285 /* View+Toast.swift in Sources */,
+				A9544D312571D1E600522141 /* Color+ClearInteractable.swift in Sources */,
 				A901EF95256F8C1B00F1C285 /* UrlOpener.swift in Sources */,
 				A901EFAB256F8C1B00F1C285 /* CornerRadiusStyle.swift in Sources */,
 				A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */,
@@ -1192,6 +1197,7 @@
 				A901F0A1256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */,
 				A901F081256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901F01E256F8C1B00F1C285 /* View+Toast.swift in Sources */,
+				A9544D322571D1E600522141 /* Color+ClearInteractable.swift in Sources */,
 				A901EF96256F8C1B00F1C285 /* UrlOpener.swift in Sources */,
 				A901EFAC256F8C1B00F1C285 /* CornerRadiusStyle.swift in Sources */,
 				A901F0EF2570027F00F1C285 /* FontStyleScreen.swift in Sources */,

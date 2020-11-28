@@ -13,22 +13,24 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             DemoList("SwiftUIKit") {
-                #if os(iOS)
-                DemoListLink("Blurs", .blur, BlursScreen())
-                DemoListLink("Cameras", .camera, CamerasScreen())
-                #endif
-                DemoListLink("Data", .data, DataScreen())
-                DemoListLink("Extensions", .extensions, ExtensionsScreen())
-                #if os(iOS)
-                DemoListLink("Gestures", .gestures, GesturesScreen())
-                DemoListLink("Pickers", .pickers, PickersScreen())
-                #endif
-                DemoListLink("Presentation", .presentation, PresentationScreen())
-                #if os(iOS)
-                DemoListLink("Sharing", .sharing, SharingScreen())
-                #endif
-                DemoListLink("Styles", .styles, StylesScreen())
-                DemoListLink("Views", .views, ViewsScreen())
+                Section(header: Text("Sections")) {
+                    #if os(iOS)
+                    DemoListLink("Blurs", .blur, BlursScreen())
+                    DemoListLink("Cameras", .camera, CamerasScreen())
+                    #endif
+                    DemoListLink("Data", .data, DataScreen())
+                    DemoListLink("Extensions", .extensions, ExtensionsScreen())
+                    #if os(iOS)
+                    DemoListLink("Gestures", .gestures, GesturesScreen())
+                    DemoListLink("Pickers", .pickers, PickersScreen())
+                    #endif
+                    DemoListLink("Presentation", .presentation, PresentationScreen())
+                    #if os(iOS)
+                    DemoListLink("Sharing", .sharing, SharingScreen())
+                    #endif
+                    DemoListLink("Styles", .styles, StylesScreen())
+                    DemoListLink("Views", .views, ViewsScreen())
+                }
             }
         }.withPlatformSpecificNavigationStyle()
     }

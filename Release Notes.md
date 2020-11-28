@@ -8,6 +8,10 @@ Improved platform support:
 * The demo app now compiles for macOS and runs on M1 machines.
 * More views are available for tvOS and watchOS.  
 
+New extensions:
+
+* `Color+ClearInteractable` lets you apply a clear but interactable backround color to make the entire area of a button interactable.
+
 
 ## 0.9.9
 

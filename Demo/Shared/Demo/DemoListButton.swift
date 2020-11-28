@@ -15,14 +15,22 @@ struct DemoListButton: View {
     }
     
     init(_ text: String, _ image: Image?, _ action: @escaping () -> Void) {
-        button = Button(action: action) {
-            DemoListItem(text, image)
-        }
+        self.text = text
+        self.image = image
+        self.action = action
     }
     
-    private let button: Button<DemoListItem>
+    private let text: String
+    private let image: Image?
+    private let action: () -> Void
     
-    var body: some View { button
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                DemoListItem(text, image)
+                Spacer()
+            }.background(Color.clearInteractable)
+        }
         .buttonStyle(PlainButtonStyle())
     }
 }
