@@ -20,6 +20,7 @@ struct DemoList<Content: View>: View {
     
     var body: some View {
         List {
+            Section() {}    // Spacer
             content()
         }
         .navigationTitle(title)
@@ -31,7 +32,7 @@ private extension View {
     
     func withPlatformSpecificListStyle() -> some View {
         #if os(iOS) || os(tvOS) || os(watchOS)
-        return self.listStyle(GroupedListStyle())
+        return self.listStyle(InsetGroupedListStyle())
         #else
         return self
         #endif

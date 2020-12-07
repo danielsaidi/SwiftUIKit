@@ -10,6 +10,11 @@ import SwiftUI
 
 @main
 struct DemoApp: App {
+    
+    init() {
+        DemoAppearance.apply()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

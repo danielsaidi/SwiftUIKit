@@ -14,9 +14,9 @@ struct ExtensionsScreen: View {
         DemoList("Extensions") {
             Section(header: Text("About")) {
                 DemoListText("""
-SwiftUIKit contains a bunch of extensions that makes using SwiftUI easier.
+SwiftUIKit contains a bunch of extensions that aim at making it easier to work with SwiftUI.
                     
-Since this namespace will grow, extensions are not demonstrated. Instead, some are used in the demo examples, so checkout the demo source code and the Extensions source code.
+Since this namespace contains a lot will grow over time, extensions are not demonstrated. Instead, checkout the library source code.
 """)
             }
         }

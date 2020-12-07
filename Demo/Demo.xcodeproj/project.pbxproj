@@ -261,6 +261,10 @@
 		A9544BAF2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
 		A9544D312571D1E600522141 /* Color+ClearInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544D302571D1E600522141 /* Color+ClearInteractable.swift */; };
 		A9544D322571D1E600522141 /* Color+ClearInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544D302571D1E600522141 /* Color+ClearInteractable.swift */; };
+		A98278DC257E968A0006D64F /* DemoAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278DB257E968A0006D64F /* DemoAppearance.swift */; };
+		A98278DD257E968A0006D64F /* DemoAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278DB257E968A0006D64F /* DemoAppearance.swift */; };
+		A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
+		A98278E2257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -405,6 +409,8 @@
 		A9544BB52571BA9100522141 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		A9544BB72571BAD800522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A9544D302571D1E600522141 /* Color+ClearInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ClearInteractable.swift"; sourceTree = "<group>"; };
+		A98278DB257E968A0006D64F /* DemoAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppearance.swift; sourceTree = "<group>"; };
+		A98278E0257E969C0006D64F /* Color+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Demo.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,6 +727,7 @@
 				A901F10F2570079800F1C285 /* Fonts */,
 				A901F10E2570079800F1C285 /* Fonts.swift */,
 				A9355054256F7E6C00BBE9CE /* Image+Demo.swift */,
+				A98278E0257E969C0006D64F /* Color+Demo.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -799,6 +806,7 @@
 				A901F05E256F936700F1C285 /* DemoListItem.swift */,
 				A901F059256F932C00F1C285 /* DemoListLink.swift */,
 				A901F0A9256FB53700F1C285 /* DemoListText.swift */,
+				A98278DB257E968A0006D64F /* DemoAppearance.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -1005,8 +1013,10 @@
 				A901EFD5256F8C1B00F1C285 /* SimpleMultiPicker.swift in Sources */,
 				A901F074256F962600F1C285 /* CamerasScreen.swift in Sources */,
 				A901F0DA256FE65200F1C285 /* ToastsScreen.swift in Sources */,
+				A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
 				A901F02B256F8C1B00F1C285 /* View+Blur.swift in Sources */,
+				A98278DC257E968A0006D64F /* DemoAppearance.swift in Sources */,
 				A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
 				A901F07B256F963400F1C285 /* PickersScreen.swift in Sources */,
 				A901EFF1256F8C1B00F1C285 /* UIHostingController+SafeArea.swift in Sources */,
@@ -1137,8 +1147,10 @@
 				A901EFD6256F8C1B00F1C285 /* SimpleMultiPicker.swift in Sources */,
 				A901F075256F962600F1C285 /* CamerasScreen.swift in Sources */,
 				A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */,
+				A98278E2257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15625707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
 				A901F02C256F8C1B00F1C285 /* View+Blur.swift in Sources */,
+				A98278DD257E968A0006D64F /* DemoAppearance.swift in Sources */,
 				A9544B4E2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
 				A901F07C256F963400F1C285 /* PickersScreen.swift in Sources */,
 				A901EFF2256F8C1B00F1C285 /* UIHostingController+SafeArea.swift in Sources */,
