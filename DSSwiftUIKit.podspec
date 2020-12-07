@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
   s.name             = 'DSSwiftUIKit'
   s.version          = '0.9.9'
-  s.swift_versions   = ['5.2']
+  s.swift_versions   = ['5.3']
   s.summary          = 'SwiftUIKit contains extra functionality for SwiftUI.'
 
   s.description      = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/danielsaidi/SwiftUIKit.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/danielsaidi'
 
-  s.swift_version = '5.2'
+  s.swift_version = '5.3'
   s.ios.deployment_target = '13.0'
   s.tvos.deployment_target = '13.0'
   s.macos.deployment_target = '11.0'
