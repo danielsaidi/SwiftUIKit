@@ -6,7 +6,13 @@
 Improved platform support:
 
 * The demo app now compiles for macOS and runs on M1 machines.
-* More views are available for tvOS and watchOS.  
+* More views are available for tvOS and watchOS.
+
+New views:
+
+* `FullHeightView` takes up all available horizontal space and puts its content in the center.
+* `FullWidthView` takes up all available vertical space and puts its content in the center.
+* `FullSizeView` takes up all available space and puts its content in the center.
 
 New extensions:
 
