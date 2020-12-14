@@ -10,8 +10,8 @@ Improved platform support:
 
 Improvements:
 
-* The `SimplePicker` views have been made more flexible to be easier to customize across platforms. All changes are breaking. 
-
+* The `SimplePicker` views have been rewritten to great extent and can now be customized across platforms.
+* The `SimplePickerScreen` preview shows how the picker can transform for various platforms.
 
 New views:
 
@@ -22,6 +22,10 @@ New views:
 New extensions:
 
 * `Color+ClearInteractable` lets you apply a clear but interactable backround color to make the entire area of a button interactable.
+
+Breaking changes:
+
+* The `SimplePicker` changes are breaking.
 
 
 ## 0.9.9

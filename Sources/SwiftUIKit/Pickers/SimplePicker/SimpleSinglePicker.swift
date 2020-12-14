@@ -73,7 +73,6 @@ struct SimpleSinglePicker_Previews: PreviewProvider {
             SimpleSinglePicker<DemoSimplePickerValue>(
                 selection: $context.selection,
                 options: DemoSimplePickerValue.allCases)
-                .frame(width: 300)
         }
     }
 }
