@@ -13,7 +13,7 @@ import SwiftUI
  to pick multiple options in a list of available options.
  
  This list is a basic alternative that can be used where the
- native pickers aren't supported or desired, e.g. in tvOS.
+ native pickers aren't supported or applicable, e.g. in tvOS.
  
  You can provide a `buttonBuilder` to generate custom button
  views for the available option. If you don't, the init will

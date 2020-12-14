@@ -8,6 +8,12 @@ Improved platform support:
 * The demo app now compiles for macOS and runs on M1 machines.
 * More views are available for tvOS and watchOS.
 
+Improvements:
+
+* The `Simple` pickers now have a `buttonModifier` in addition to the `buttonBuilder`. This makes it easy to modify any button in your own apps.
+* The `SimplePickerScreen` now has an additional `header` and `footer`. The `title` is still around, since it has a semantic use case. 
+
+
 New views:
 
 * `FullHeightView` takes up all available horizontal space and puts its content in the center.

@@ -12,8 +12,9 @@ import SwiftUI
  This view can be used to present a picker with a main title
  and an OK button that just dismisses the screen.
  
- `TODO` Make it possible to customize this further depending
- on the current platform.
+ This screen is mostly meant to be used on tvOS, but you can
+ use it on any platform, although on iOS you should probably
+ just wrap a picker in a native screen.
  */
 public struct SimplePickerScreen<Picker: View, Title: View>: DismissableView {
     

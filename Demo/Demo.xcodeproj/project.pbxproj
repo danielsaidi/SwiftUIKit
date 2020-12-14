@@ -559,6 +559,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A908CD0925875D4200C15E41 /* SimplePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A982791B257ED06F0006D64F /* SimpleMultiPicker.swift */,
+				A9827917257ED06F0006D64F /* SimpleOptionalPicker.swift */,
+				A9827916257ED06F0006D64F /* SimplePicker.swift */,
+				A9827919257ED06F0006D64F /* SimplePickerScreen.swift */,
+				A9827918257ED06F0006D64F /* SimplePickerValue.swift */,
+				A982791C257ED06F0006D64F /* SimpleSinglePicker.swift */,
+			);
+			path = SimplePicker;
+			sourceTree = "<group>";
+		};
 		A935502A256F7E3C00BBE9CE = {
 			isa = PBXGroup;
 			children = (
@@ -668,17 +681,17 @@
 		A98278F3257ED06E0006D64F /* SwiftUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A98278F4257ED06E0006D64F /* Sharing */,
-				A98278F6257ED06E0006D64F /* Navigation */,
-				A98278F8257ED06E0006D64F /* Cameras */,
-				A98278FB257ED06E0006D64F /* Extensions */,
-				A9827906257ED06F0006D64F /* Styles */,
-				A982790E257ED06F0006D64F /* Gestures */,
-				A9827914257ED06F0006D64F /* Pickers */,
-				A982791E257ED06F0006D64F /* Data */,
-				A9827922257ED06F0006D64F /* Views */,
-				A982793A257ED06F0006D64F /* Presentation */,
 				A982794A257ED06F0006D64F /* Blurs */,
+				A98278F8257ED06E0006D64F /* Cameras */,
+				A982791E257ED06F0006D64F /* Data */,
+				A98278FB257ED06E0006D64F /* Extensions */,
+				A982790E257ED06F0006D64F /* Gestures */,
+				A98278F6257ED06E0006D64F /* Navigation */,
+				A9827914257ED06F0006D64F /* Pickers */,
+				A982793A257ED06F0006D64F /* Presentation */,
+				A98278F4257ED06E0006D64F /* Sharing */,
+				A9827906257ED06F0006D64F /* Styles */,
+				A9827922257ED06F0006D64F /* Views */,
 			);
 			path = SwiftUIKit;
 			sourceTree = "<group>";
@@ -754,14 +767,9 @@
 		A9827914257ED06F0006D64F /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				A908CD0925875D4200C15E41 /* SimplePicker */,
 				A9827915257ED06F0006D64F /* CompletionHandlers */,
-				A9827916257ED06F0006D64F /* SimplePicker.swift */,
-				A9827917257ED06F0006D64F /* SimpleOptionalPicker.swift */,
-				A9827918257ED06F0006D64F /* SimplePickerValue.swift */,
-				A9827919257ED06F0006D64F /* SimplePickerScreen.swift */,
 				A982791A257ED06F0006D64F /* ImagePicker.swift */,
-				A982791B257ED06F0006D64F /* SimpleMultiPicker.swift */,
-				A982791C257ED06F0006D64F /* SimpleSinglePicker.swift */,
 				A982791D257ED06F0006D64F /* FilePicker.swift */,
 			);
 			path = Pickers;
