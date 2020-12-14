@@ -12,6 +12,7 @@ Improvements:
 
 * The `SimplePicker` views have been rewritten to great extent and can now be customized across platforms.
 * The `SimplePickerScreen` preview shows how the picker can transform for various platforms.
+* There is a new `SimplePickerTvScreen` that sets up a simple picker for being used on tvOS. 
 
 New views:
 
