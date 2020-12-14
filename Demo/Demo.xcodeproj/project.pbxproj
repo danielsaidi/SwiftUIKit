@@ -564,10 +564,10 @@
 			children = (
 				A982791B257ED06F0006D64F /* SimpleMultiPicker.swift */,
 				A9827917257ED06F0006D64F /* SimpleOptionalPicker.swift */,
+				A982791C257ED06F0006D64F /* SimpleSinglePicker.swift */,
 				A9827916257ED06F0006D64F /* SimplePicker.swift */,
 				A9827919257ED06F0006D64F /* SimplePickerScreen.swift */,
 				A9827918257ED06F0006D64F /* SimplePickerValue.swift */,
-				A982791C257ED06F0006D64F /* SimpleSinglePicker.swift */,
 			);
 			path = SimplePicker;
 			sourceTree = "<group>";

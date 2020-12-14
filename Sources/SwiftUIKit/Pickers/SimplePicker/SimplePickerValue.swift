@@ -16,3 +16,11 @@ public protocol SimplePickerValue: Identifiable {
     
     var displayName: String { get }
 }
+
+enum DemoSimplePickerValue: String, CaseIterable, SimplePickerValue {
+    
+    case first, second, third
+    
+    var id: String { rawValue }
+    var displayName: String { rawValue }
+}

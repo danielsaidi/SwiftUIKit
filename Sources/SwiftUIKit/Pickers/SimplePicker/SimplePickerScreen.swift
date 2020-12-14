@@ -9,8 +9,8 @@
 import SwiftUI
 
 /**
- This view can be used to present a picker with a main title
- and an OK button that just dismisses the screen.
+ This screen can be used to easily show a picker with a main
+ title view and an OK button that just dismisses the screen.
  
  This screen is mostly meant to be used on tvOS, but you can
  use it on any platform, although on iOS you should probably
@@ -46,7 +46,6 @@ public struct SimplePickerScreen<Picker: View, Title: View>: DismissableView {
     }
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SimplePickerScreen_Previews: PreviewProvider {
     
     enum Option: String, CaseIterable, SimplePickerValue {
@@ -56,7 +55,7 @@ struct SimplePickerScreen_Previews: PreviewProvider {
     }
     
     class Context: ObservableObject {
-        @Published var selection: Option? = .one
+        @Published var selection: Option = .one
     }
     
     @ObservedObject static var context = Context()
@@ -65,7 +64,7 @@ struct SimplePickerScreen_Previews: PreviewProvider {
         SimplePickerScreen(
             title: Text("Välj grejer").font(.title),
             okButtonText: "Donediddely") {
-            SimpleOptionalPicker<Option>(
+            SimpleSinglePicker<Option>(
                 selection: $context.selection,
                 options: Option.allCases)
                 .frame(width: 300)

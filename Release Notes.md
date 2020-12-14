@@ -10,8 +10,7 @@ Improved platform support:
 
 Improvements:
 
-* The `Simple` pickers now have a `buttonModifier` in addition to the `buttonBuilder`. This makes it easy to modify any button in your own apps.
-* The `SimplePickerScreen` now has an additional `header` and `footer`. The `title` is still around, since it has a semantic use case. 
+* The `SimplePicker` views have been made more flexible to be easier to customize across platforms. All changes are breaking. 
 
 
 New views:

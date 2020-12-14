@@ -9,17 +9,18 @@
 import SwiftUI
 
 /**
- This view renders a simple list of buttons that can be used
- to pick a single nonoptional in a list of available options.
+ This view renders a `ForEach` with buttons that can be used
+ to pick a single option in a list of available options.
  
- This list is a basic alternative that can be used where the
- native pickers aren't supported or applicable, e.g. in tvOS.
+ Note that you have to wrap the `ForEach` in a suitable view
+ to serve your needs. For instance, you can use a `List` for
+ iOS or a `LazyVStack` in a `ScrollView` for tvOS, where the
+ `List` component may not always work as expected.
  
  You can provide a `buttonBuilder` to generate custom button
  views for the available option. If you don't, the init will
  use `SimpleSinglePicker.standardButtonBuilder` by default.
  */
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
     
     public init(
@@ -36,33 +37,17 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
     public let options: [Value]
     public let buttonBuilder: ButtonBuilder
     
-    public typealias ButtonBuilder = (Value, _ isSelected: Bool, _ action: @escaping (Value) -> Void) -> AnyView
+    public typealias ButtonBuilder = (Value, _ isSelected: Bool) -> AnyView
     
     public var body: some View {
-        LazyVStack {
-            ForEach(options, id: \.id) { value in
-                buttonBuilder(value, isSelected(value), { select($0) })
-            }
+        ForEach(options, id: \.id) { value in
+            Button(action: { select(value) }, label: {
+                buttonBuilder(value, isSelected(value))
+            })
         }
-    }
-    
-    /**
-     This button builder function is used by default when no
-     custom function is provided in `init`.
-     */
-    public static func standardButtonBuilder(_ value: Value, _ isSelected: Bool, _ action: @escaping (Value) -> Void) -> AnyView {
-        let action = { action(value) }
-        return Button(action: action) {
-            HStack {
-                Text(value.displayName)
-                Spacer()
-                if isSelected { Image(systemName: "checkmark") }
-            }
-        }.any()
     }
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 private extension SimpleSinglePicker {
 
     func isSelected(_ value: Value) -> Bool {
@@ -75,25 +60,20 @@ private extension SimpleSinglePicker {
     }
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SimpleSinglePicker_Previews: PreviewProvider {
     
-    enum Option: String, CaseIterable, SimplePickerValue {
-        case first, second, third
-        var id: String { rawValue }
-        var displayName: String { rawValue }
-    }
-    
     class Context: ObservableObject {
-        @Published var selection: Option = .first
+        @Published var selection: DemoSimplePickerValue = .first
     }
     
     @ObservedObject static var context = Context()
     
     static var previews: some View {
-        SimpleSinglePicker<Option>(
-            selection: $context.selection,
-            options: Option.allCases)
-            .frame(width: 300)
+        List {
+            SimpleSinglePicker<DemoSimplePickerValue>(
+                selection: $context.selection,
+                options: DemoSimplePickerValue.allCases)
+                .frame(width: 300)
+        }
     }
 }
