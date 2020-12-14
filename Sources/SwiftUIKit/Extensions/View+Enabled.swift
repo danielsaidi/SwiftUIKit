@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     
     /**
      Adds a condition that controls whether or not users can
