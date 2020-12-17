@@ -19,10 +19,13 @@ New views:
 * `FullHeightView` takes up all available horizontal space and puts its content in the center.
 * `FullWidthView` takes up all available vertical space and puts its content in the center.
 * `FullSizeView` takes up all available space and puts its content in the center.
+* `TextFieldClearButton` is a modifier that adds a trailing clear btton within a text view.
 
 New extensions:
 
 * `Color+ClearInteractable` lets you apply a clear but interactable backround color to make the entire area of a button interactable.
+* `TextField+ClearButton` applies a `TextFieldClearButton` to the textfield.
+* `View+Keyboard` lets any view dismiss the keyboard.
 
 Breaking changes:
 
