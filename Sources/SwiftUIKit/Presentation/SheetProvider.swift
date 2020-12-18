@@ -8,9 +8,6 @@
 
 import SwiftUI
 
-@available(*, deprecated, renamed: "SheetProvider")
-public typealias SheetPresentable = SheetProvider
-
 /**
  This protocol can be implemented by anything (e.g. a struct,
  enum or class) that can provide a `sheet` view, that can be
