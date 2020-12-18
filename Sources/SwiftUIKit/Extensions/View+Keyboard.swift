@@ -6,7 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-#if canImport(UIKit)
+#if os(iOS)
 import UIKit
 import SwiftUI
 

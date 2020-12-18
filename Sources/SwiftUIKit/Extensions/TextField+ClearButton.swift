@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 public extension TextField {
@@ -14,3 +15,4 @@ public extension TextField {
         self.modifier(TextFieldClearButton(text: text))
     }
 }
+#endif

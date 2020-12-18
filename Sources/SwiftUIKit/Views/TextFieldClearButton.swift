@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 public struct TextFieldClearButton: ViewModifier {
@@ -32,3 +33,4 @@ struct TextFieldClearButton_Previews: PreviewProvider {
         TextField("Enter text", text: .constant("Text")).modifier(TextFieldClearButton(text: .constant("Text")))
     }
 }
+#endif

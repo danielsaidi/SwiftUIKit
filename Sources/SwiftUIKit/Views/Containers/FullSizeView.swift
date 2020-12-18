@@ -32,7 +32,7 @@ public struct FullSizeView<Content: View>: View {
 struct FullSizeView_Previews: PreviewProvider {
     static var previews: some View {
         FullSizeView {
-            CircularProgressView()
+            Text("Hello, World!")
         }.background(Color.red)
     }
 }
