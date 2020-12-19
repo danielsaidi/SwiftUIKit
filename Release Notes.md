@@ -1,7 +1,14 @@
 # Release notes
 
 
-## 1.0.0 (WIP)
+## 1.1.0
+
+New views:
+
+* `SearchBar` - an iOS specific view that replicates a search bar.
+
+
+## 1.0.0
 
 Improved platform support:
 
