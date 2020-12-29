@@ -18,22 +18,34 @@ public struct SearchBar: View {
     public init(
         title: String = "Search...",
         text: Binding<String>,
-        cancelText: String = "Cancel") {
+        cancelText: String = "Cancel",
+        searchFieldBackgroundColor: Color = Color.primary.opacity(0.1),
+        searchFieldCornerRadius: CGFloat = 10,
+        searchFieldPadding: CGFloat = 5,
+        searchFieldMargin: CGFloat = 8) {
         self.title = title
         self.text = text
         self.cancelText = cancelText
+        self.searchFieldBackgroundColor = searchFieldBackgroundColor
+        self.searchFieldCornerRadius = searchFieldCornerRadius
+        self.searchFieldPadding = searchFieldPadding
+        self.searchFieldMargin = searchFieldMargin
     }
     
     private let title: String
     private let text: Binding<String>
     private let cancelText: String
+    private let searchFieldBackgroundColor: Color
+    private let searchFieldCornerRadius: CGFloat
+    private let searchFieldPadding: CGFloat
+    private let searchFieldMargin: CGFloat
     
     public var body: some View {
         VStack(spacing: 0) {
             HStack {
                 searchField
                 cancelButton
-            }
+            }.padding(searchFieldMargin)
             Divider()
         }
     }
@@ -52,9 +64,8 @@ public extension SearchBar {
 
 private extension SearchBar {
 
-    @ViewBuilder
     var cancelButton: some View {
-        if hasText {
+        ConditionalView(hasText) {
             Button(action: cancel) {
                 Text(cancelText)
             }
@@ -66,9 +77,13 @@ private extension SearchBar {
             Image(systemName: "magnifyingglass")
             TextField(title, text: text).withClearButton(for: text)
         }
-        .padding(5)
-        .background(RoundedRectangle(cornerRadius: 10).foregroundColor(Color.primary.opacity(0.1)))
-        .padding(8)
+        .padding(searchFieldPadding)
+        .background(searchFieldBackground)
+    }
+    
+    var searchFieldBackground: some View {
+        RoundedRectangle(cornerRadius: searchFieldCornerRadius)
+            .foregroundColor(searchFieldBackgroundColor)
     }
 }
 

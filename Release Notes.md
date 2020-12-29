@@ -1,10 +1,11 @@
 # Release notes
 
 
-## 1.1.1
+## 1.1.0
 
 ### New views:
 
+* `SearchBar` - an iOS specific view that replicates a search bar.
 * `WebView` is a iOS-specific view that wraps an `SFSafariViewController` with a custom url.
 
 ### Bug fixes:
@@ -14,15 +15,6 @@
 ### Breaking changes:
 
 * `FlipDirection` has been moved into `FlippableView`.
-
-
-
-## 1.1.0
-
-### New views:
-
-* `SearchBar` - an iOS specific view that replicates a search bar.
-
 
 
 ## 1.0.0
