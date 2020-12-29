@@ -17,6 +17,11 @@ public extension View {
      You can use `style` to apply a style to the toast view.
      It's `.none` by default, which means that no style will
      be applied to the toast view.
+     
+     `BUG` The async deactivation makes any subsequent toast
+     dismiss too early if you present it as a previous toast
+     is still active. The new toast will replace the old one
+     and is deactivated by the first async operation.
      */
     func toast<Content: View>(
         isPresented: Binding<Bool>,
@@ -25,7 +30,7 @@ public extension View {
         style: ToastStyle = .none) -> some View {
         if isPresented.wrappedValue { deactivate(isPresented, afterDuration: seconds) }
         let opacity = isPresented.wrappedValue ? 1.0 : 0.0
-        return overlay(content()
+        return self.overlay(content()
             .toastStyle(style)
             .opacity(opacity))
     }

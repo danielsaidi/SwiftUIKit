@@ -839,21 +839,11 @@
 		A982793A257ED06F0006D64F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				A982793B257ED06F0006D64F /* ToastProvider.swift */,
-				A982793C257ED06F0006D64F /* SheetContext.swift */,
-				A982793D257ED06F0006D64F /* FullScreenCoverContext.swift */,
+				A9D346592590929500A2C8B9 /* Alert */,
+				A9D3465A259092A000A2C8B9 /* FullScreenCover */,
+				A9D3465F259092AE00A2C8B9 /* Sheet */,
+				A9D34660259092B700A2C8B9 /* Toast */,
 				A982793E257ED06F0006D64F /* PresentationContext.swift */,
-				A982793F257ED06F0006D64F /* View+FullScreenCover.swift */,
-				A9827940257ED06F0006D64F /* View+Alert.swift */,
-				A9827941257ED06F0006D64F /* Toast+Shadow.swift */,
-				A9827942257ED06F0006D64F /* View+Sheet.swift */,
-				A9827943257ED06F0006D64F /* ToastStyle.swift */,
-				A9827944257ED06F0006D64F /* View+Toast.swift */,
-				A9827945257ED06F0006D64F /* SheetProvider.swift */,
-				A9827946257ED06F0006D64F /* ToastContext.swift */,
-				A9827947257ED06F0006D64F /* AlertProvider.swift */,
-				A9827948257ED06F0006D64F /* AlertContext.swift */,
-				A9827949257ED06F0006D64F /* FullScreenCoverProvider.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -867,6 +857,48 @@
 				A982794E257ED06F0006D64F /* UIBlurEffectStyle+AllCases.swift */,
 			);
 			path = Blurs;
+			sourceTree = "<group>";
+		};
+		A9D346592590929500A2C8B9 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A9827948257ED06F0006D64F /* AlertContext.swift */,
+				A9827947257ED06F0006D64F /* AlertProvider.swift */,
+				A9827940257ED06F0006D64F /* View+Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		A9D3465A259092A000A2C8B9 /* FullScreenCover */ = {
+			isa = PBXGroup;
+			children = (
+				A982793D257ED06F0006D64F /* FullScreenCoverContext.swift */,
+				A9827949257ED06F0006D64F /* FullScreenCoverProvider.swift */,
+				A982793F257ED06F0006D64F /* View+FullScreenCover.swift */,
+			);
+			path = FullScreenCover;
+			sourceTree = "<group>";
+		};
+		A9D3465F259092AE00A2C8B9 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				A982793C257ED06F0006D64F /* SheetContext.swift */,
+				A9827945257ED06F0006D64F /* SheetProvider.swift */,
+				A9827942257ED06F0006D64F /* View+Sheet.swift */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
+		A9D34660259092B700A2C8B9 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A9827941257ED06F0006D64F /* Toast+Shadow.swift */,
+				A9827946257ED06F0006D64F /* ToastContext.swift */,
+				A982793B257ED06F0006D64F /* ToastProvider.swift */,
+				A9827943257ED06F0006D64F /* ToastStyle.swift */,
+				A9827944257ED06F0006D64F /* View+Toast.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
