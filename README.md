@@ -38,9 +38,9 @@ You can explore the various sections in the demo app.
 
 This project contains a demo app that lets you explore `SwiftUIKit` through interactive demos. 
 
-The demo app aims to provide a more intuitive way to explore the library. Together with the extensive documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
+The demo app provides an intuitive way to explore the library. Together with the extensive documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
 
-To run the demo app, just open and run the `Demo.xcodeproj` project. `macOS` is currenty not supported. 
+To run the demo app, just open and run the `Demo/Demo.xcodeproj` project. `macOS` is currenty not supported. 
 
 
 ## Installation
