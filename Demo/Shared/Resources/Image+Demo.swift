@@ -48,6 +48,7 @@ extension Image {
     static var text: Image { Image(systemName: "abc") }
     static var toast: Image { Image(systemName: "rectangle.inset.topright.fill") }
     static var views: Image { Image(systemName: "square.on.square") }
+    static var web: Image { Image(systemName: "safari") }
     static var width: Image { Image(systemName: "arrow.left.and.right.square") }
     static var widthList: Image { Image(systemName: "rectangle.lefthalf.inset.fill.arrow.left") }
     static var wrapper: Image { Image(systemName: "app.gift") }

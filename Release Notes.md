@@ -1,42 +1,57 @@
 # Release notes
 
 
+## 1.1.1
+
+### New views:
+
+* `WebView` is a iOS-specific view that wraps an `SFSafariViewController` with a custom url.
+
+### Bug fixes:
+
+* `FlippableView` - I have added a missing public initializer.
+
+### Breaking changes:
+
+* `FlipDirection` has been moved into `FlippableView`.
+
+
+
 ## 1.1.0
 
-New views:
+### New views:
 
 * `SearchBar` - an iOS specific view that replicates a search bar.
 
 
+
 ## 1.0.0
 
-Improved platform support:
+### Improvements:
 
 * The demo app now compiles for macOS and runs on M1 machines.
 * More views are available for tvOS and watchOS.
-
-Improvements:
-
 * The `SimplePicker` views have been rewritten to great extent and can now be customized across platforms.
 * The `SimplePickerScreen` preview shows how the picker can transform for various platforms.
 * There is a new `SimplePickerTvScreen` that sets up a simple picker for being used on tvOS. 
 
-New views:
+### New views:
 
 * `FullHeightView` takes up all available horizontal space and puts its content in the center.
 * `FullWidthView` takes up all available vertical space and puts its content in the center.
 * `FullSizeView` takes up all available space and puts its content in the center.
 * `TextFieldClearButton` is a modifier that adds a trailing clear btton within a text view.
 
-New extensions:
+### New extensions:
 
 * `Color+ClearInteractable` lets you apply a clear but interactable backround color to make the entire area of a button interactable.
 * `TextField+ClearButton` applies a `TextFieldClearButton` to the textfield.
 * `View+Keyboard` lets any view dismiss the keyboard.
 
-Breaking changes:
+### Breaking changes:
 
 * The `SimplePicker` changes are breaking.
+
 
 
 ## 0.9.9
@@ -83,9 +98,11 @@ Finally, this release also has some breaking changes:
 * `MultiPageView` has been renamed to `PageView`.
 
 
+
 ## 0.9.8
 
 This release contains a new `LazyView` and `LazyNavigationView`, which can be used to improve performance, since they resolve views upon presentation. 
+
 
 
 ## 0.9.7
@@ -93,11 +110,13 @@ This release contains a new `LazyView` and `LazyNavigationView`, which can be us
 This release contains a new `MultiPageView`, which can be used to present multiple views in a horizontal page control. 
 
 
+
 ## 0.9.6
 
 After comments, the `View+Screenshot` `takeScreenshot` function has been renamed to `snapshot`. The `origin` parameter has `.zero` as default value.
 
 The `View+Keyboard` keyboard avoiding logic has been removed, since SwiftUI now supports it natively.
+
 
 
 ## 0.9.4 - 0.9.5
@@ -109,9 +128,11 @@ These versions add a `UrlOpener`, as well as new extensions:
 * `View+Visible` has conditional extensions to hide or show a view.
 
 
+
 ## 0.9.3
 
 This version adds a `DocumentCamera` view, which can be used to scan documents with the device camera.
+
 
 
 ## 0.9.2
@@ -125,11 +146,13 @@ This means that these contexts get access to this function:
 * `ToastContext`
 
 
+
 ## 0.9.1
 
 This version adds improved support for watchOS, tvOS and macOS.
 
 The bump version process has been improved to also add linting and a unit test confirmation.
+
 
 
 ## 0.9.0
@@ -147,14 +170,17 @@ This version contains more breaking changes for the toast components.
 You can now use any views with the toast context and modifier, so it should make the toast easier to understand and to use.
 
 
+
 ## 0.8.2
 
 This release renames the alert and sheet `Presentable` protocols to `Provider`. The old presentables are still around, but marked as deprecated.
 
 
+
 ## 0.8.1
 
 This release fixes invalid iOS platform version build problems and adds a `Color+Random` extension.
+
 
 
 ## 0.8.0
@@ -166,6 +192,7 @@ This release:
 * adds a new `UIViewWrapper` that simplifies wrapping `UIKit` views.
 
 
+
 ## 0.7.0
 
 This release adds:
@@ -173,6 +200,7 @@ This release adds:
 * A `DismissableView` view protocol that simplifies dismissing views programatically.
 * A `KeyboardAvoiding` modifier and view extension.
 * A `MultilineTextView`  that wraps a `UITextView`.
+
 
 
 ## 0.6.0
@@ -184,6 +212,7 @@ This release adds:
 * A `QrCodeGenerator` and a `StandardQrCodeGenerator` implementation.
 
 
+
 ## 0.5.0
 
 This release adds:
@@ -192,6 +221,7 @@ This release adds:
 * An `FilePicker` that can be used to present a `UIDocumentPickerViewController`.
 * An `ShareSheet` that can be used to present a `UIActivityViewController`.
 * An `UserDefaultsPersisted` property wrapper that lets you persist data to `UserDefaults`.
+
 
 
 ## 0.4.2
@@ -209,9 +239,11 @@ You can use them like this:
 UIColor.red.bindGeometry(to: $height) { $0.size.height }
 ```
 
+
 ## 0.4.1
 
 This release makes the podspec is updated to require Swift 5.2.
+
 
 
 ## 0.4.0
@@ -221,6 +253,7 @@ This release adds a new geometry `View` extension:
 * `bindGeometry(to: ...)` lets you bind any `CGFloat` geometry value for a view.
 
 The extension injects a `GeometryReader` and provides values to the provided binding.
+
 
 
 ## 0.3.0
@@ -238,11 +271,13 @@ This release makes some small api changes:
 * The text-based `Toast` extension automatically centers the text.    
 
 
+
 ## 0.2.1
 
 This release adds a new `FontIdentifier`. 
 
 It can be implemented by any font provider, e.g. `SwiftGen`s `FontConvertible`. 
+
 
 
 ## 0.2.0
@@ -264,6 +299,7 @@ The release also adds new view extensions:
 
 * `blur(...)` simplifies using the system blur styles that are specified in this library.
 * `border(content:,width:,cornerRadius:)` can be used to apply borders with a certain content (e.g. Color.red), width and corner radius.
+
 
 
 ## 0.1.0

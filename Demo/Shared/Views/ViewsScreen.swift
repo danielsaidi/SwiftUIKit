@@ -53,6 +53,9 @@ struct ViewsScreen: View {
             #if os(iOS) || os(tvOS)
             DemoListLink("UIView Wrapper", .wrapper, UIViewWrapperScreen())
             #endif
+            #if os(iOS)
+            DemoListLink("Web View", .web, WebViewScreen())
+            #endif
         }
     }
 }

@@ -20,10 +20,21 @@ import SwiftUI
  */
 public struct FlippableView<Front: View, Back: View>: View {
     
-    var front: Front
-    var back: Back
-    var isTapEnabled: Bool = true
-    var isSwipeEnabled: Bool = true
+    public init(
+        front: Front,
+        back: Back,
+        isTapEnabled: Bool = true,
+        isSwipeEnabled: Bool = true) {
+        self.front = front
+        self.back = back
+        self.isTapEnabled = isTapEnabled
+        self.isSwipeEnabled = isSwipeEnabled
+    }
+    
+    private let front: Front
+    private let back: Back
+    private let isTapEnabled: Bool
+    private let isSwipeEnabled: Bool
     
     private let flipDegrees = 180.0
     
@@ -32,11 +43,10 @@ public struct FlippableView<Front: View, Back: View>: View {
     @State private var yDegrees: Double = 0
     @State private var xDegrees: Double = 0
     
-    public enum Direction {
-        case forward, backward
-        var multiplier: CGFloat { self == .forward ? 1 : -1 }
+    public enum FlipDirection {
+        case left, right, up, down
     }
-    
+
     public var body: some View {
         VStack {
             Spacer()
