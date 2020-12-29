@@ -4,7 +4,7 @@
 
 <p align="center">
     <a href="https://github.com/danielsaidi/SwiftUIKit">
-        <img src="https://badge.fury.io/gh/danielsaidi%2FSwiftUIKit.svg?style=flat" alt="Version" />
+        <img src="https://badge.fury.io/gh/danielsaidi/SwiftUIKit.svg?style=flat" alt="Version" />
     </a>
     <img src="https://img.shields.io/badge/platform-SwiftUI-red.svg" alt="Swift UI" />
     <img src="https://img.shields.io/badge/Swift-5.3-orange.svg" alt="Swift 5.3" />
