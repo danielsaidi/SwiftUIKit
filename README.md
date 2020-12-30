@@ -15,9 +15,9 @@
 
 ## About SwiftUIKit
 
-`SwiftUIKit` adds extra functionality to `SwiftUI`. It aims to make already existing features easier to use and adds a lot of new functionality to the framework as well. 
+`SwiftUIKit` adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilites, services etc. 
 
-`SwiftUIKit` is divided into these different areas:
+`SwiftUIKit` is divided into these areas:
 
 * Blurs
 * Cameras
