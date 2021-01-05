@@ -1,12 +1,19 @@
 # Release notes
 
 
+## 1.2.0
+
+### New views:
+
+* `CustomRoundedRectangle` is a multi platform shape that lets you specify a custom corner radius for each corner.
+
+
 ## 1.1.0
 
 ### New views:
 
-* `SearchBar` - an iOS specific view that replicates a search bar.
-* `WebView` is a iOS-specific view that wraps an `SFSafariViewController` with a custom url.
+* `SearchBar` is an iOS specific view that replicates a search bar.
+* `WebView` is an iOS-specific view that wraps an `SFSafariViewController` with a custom url.
 
 ### Bug fixes:
 
@@ -32,7 +39,7 @@
 * `FullHeightView` takes up all available horizontal space and puts its content in the center.
 * `FullWidthView` takes up all available vertical space and puts its content in the center.
 * `FullSizeView` takes up all available space and puts its content in the center.
-* `TextFieldClearButton` is a modifier that adds a trailing clear btton within a text view.
+* `TextFieldClearButton` is a modifier that adds a trailing clear button within a text view.
 
 ### New extensions:
 
