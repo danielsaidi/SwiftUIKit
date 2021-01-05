@@ -7,6 +7,11 @@
 
 * `CustomRoundedRectangle` is a multi platform shape that lets you specify a custom corner radius for each corner.
 
+### New extensions:
+
+* `View+frame` has a new `CGSize`-based frame modifier.
+
+
 
 ## 1.1.0
 
