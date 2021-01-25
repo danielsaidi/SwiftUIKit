@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 1.1.2
+
+`TextReplacement` now supports multiline texts.
+
+
 ## 1.1.1
 
 ### New views:
@@ -11,7 +16,6 @@
 ### New extensions:
 
 * `View+frame` has a new `CGSize`-based frame modifier.
-
 
 
 ## 1.1.0
