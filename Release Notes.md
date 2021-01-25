@@ -6,6 +6,7 @@
 ### New views:
 
 * `CustomRoundedRectangle` is a multi platform shape that lets you specify a custom corner radius for each corner.
+* `TextReplacement` can create a composite text view, where a certain substring gets a different text view.   
 
 ### New extensions:
 
