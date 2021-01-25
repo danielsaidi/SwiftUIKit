@@ -14,7 +14,7 @@ import SwiftUI
  */
 public struct TextReplacement: View {
     
-    init(_ text: String, replace: String, with replacement: (String) -> Text) {
+    public init(_ text: String, replace: String, with replacement: (String) -> Text) {
         let components = text.components(separatedBy: replace)
         let joined = Array(components.flatMap { [Text($0), replacement(replace)] }.dropLast())
         self.content = joined.reduce(Text(""), { $0 + $1 })
