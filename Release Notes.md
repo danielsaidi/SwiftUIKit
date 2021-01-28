@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 1.1.3
+
+This release adds a bunch of `UIImage` extensions.
+
+
 ## 1.1.2
 
 `TextReplacement` now supports multiline texts.
