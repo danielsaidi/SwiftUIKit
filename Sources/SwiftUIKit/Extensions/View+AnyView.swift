@@ -1,5 +1,5 @@
 //
-//  BlurViewTests.swift
+//  View+AnyView.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-03-05.
@@ -11,10 +11,8 @@ import SwiftUI
 public extension View {
     
     /**
-     Wrap the view in an `AnyView`.
-     
-     This extension makes it easier to chain on an `AnyView`
-     instead of wrapping, which is sometimes nicer.
+     Wrap the view in an `AnyView`. This lets you chain on a
+     modifier than to wrap it, which makes the code cleaner.
      */
     func any() -> AnyView {
         AnyView(self)

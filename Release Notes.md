@@ -5,6 +5,8 @@
 
 This release adds a bunch of `UIImage` extensions.
 
+It also adds a `ForEachEnumerated` view that lets you iterate over non-identifiable collections.
+
 
 ## 1.1.2
 
