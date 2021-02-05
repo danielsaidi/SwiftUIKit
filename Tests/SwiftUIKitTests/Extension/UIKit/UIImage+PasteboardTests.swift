@@ -27,7 +27,7 @@ class UIImage_PasteboardTests: QuickSpec {
             
             it("ignores image without png data") {
                 let result = UIImage().copyToPasteboard(pasteboard)
-                let invokes = pasteboard.invokations(of: pasteboard.setDataRef)
+                let invokes = pasteboard.calls(to: pasteboard.setDataRef)
                 expect(result).to(beFalse())
                 expect(invokes.count).to(equal(0))
             }
@@ -35,7 +35,7 @@ class UIImage_PasteboardTests: QuickSpec {
             it("sets correctly formatted data") {
                 let image = UIImage().resized(to: CGSize(width: 1, height: 1))!
                 let result = image.copyToPasteboard(pasteboard)
-                let invokes = pasteboard.invokations(of: pasteboard.setDataRef)
+                let invokes = pasteboard.calls(to: pasteboard.setDataRef)
                 expect(result).to(beTrue())
                 expect(invokes.count).to(equal(1))
                 expect(invokes[0].arguments.0).toNot(beNil())
