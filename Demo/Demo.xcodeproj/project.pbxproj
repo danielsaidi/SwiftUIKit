@@ -79,6 +79,9 @@
 		A901F14F25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */; };
 		A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */; };
 		A901F15625707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */; };
+		A92115FF25D5B691003510D9 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FC25D5B690003510D9 /* LuckiestGuy-Regular.ttf */; };
+		A921160025D5B691003510D9 /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FD25D5B690003510D9 /* AbrilFatface-Regular.ttf */; };
+		A921160125D5B691003510D9 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FE25D5B691003510D9 /* Lobster-Regular.ttf */; };
 		A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355044256F7E3D00BBE9CE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355030256F7E3C00BBE9CE /* DemoApp.swift */; };
 		A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355031256F7E3C00BBE9CE /* ContentView.swift */; };
@@ -306,6 +309,9 @@
 		A901F14625707A8F00F1C285 /* ConditionalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalViewScreen.swift; sourceTree = "<group>"; };
 		A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableViewScreen.swift; sourceTree = "<group>"; };
 		A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedDataViewScreen.swift; sourceTree = "<group>"; };
+		A92115FC25D5B690003510D9 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		A92115FD25D5B690003510D9 /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		A92115FE25D5B691003510D9 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		A9355030256F7E3C00BBE9CE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		A9355031256F7E3C00BBE9CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9355032256F7E3D00BBE9CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -559,6 +565,9 @@
 		A901F10F2570079800F1C285 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				A92115FD25D5B690003510D9 /* AbrilFatface-Regular.ttf */,
+				A92115FE25D5B691003510D9 /* Lobster-Regular.ttf */,
+				A92115FC25D5B690003510D9 /* LuckiestGuy-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -985,8 +994,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A921160125D5B691003510D9 /* Lobster-Regular.ttf in Resources */,
 				A9544BAE2571BA8300522141 /* Fastfile in Resources */,
 				A9355047256F7E3D00BBE9CE /* Assets.xcassets in Resources */,
+				A92115FF25D5B691003510D9 /* LuckiestGuy-Regular.ttf in Resources */,
+				A921160025D5B691003510D9 /* AbrilFatface-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
