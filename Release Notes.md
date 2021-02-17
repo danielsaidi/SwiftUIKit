@@ -1,11 +1,17 @@
 # Release notes
 
 
-## 1.1.3
+## 1.2.0
 
-This release adds a bunch of `UIImage` extensions.
+### New features
 
-It also adds a `ForEachEnumerated` view that lets you iterate over non-identifiable collections.
+* `Extensions/UIKit` has a bunch of new `UIImage` extensions.
+* `ForEachEnumerated` is a new view that lets you iterate over non-identifiable collections.
+* `View+SwipeGesture` is rewritten to work on all platforms.
+
+### Deprecated
+
+* `SwipeGesture` is no longer needed and has been deprecated.
 
 
 ## 1.1.2

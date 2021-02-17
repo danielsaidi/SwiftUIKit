@@ -6,7 +6,6 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 
 public extension View {
@@ -14,14 +13,43 @@ public extension View {
     /**
      This extension can be used to add a `SwipeGesture` to a
      `View` in a more declarative way.
+     
+     - Parameter maximumTime: The max time the gesture can be active before cancelling itself.
+     - Parameter minimumDistance: The minimum distance in points the gesture must be dragged before it triggers.
+     - Parameter maximumDistance: The maximum distance in points the gesture can be dragged before it cancels.
+     - Parameter up: The action to trigger when the user swipes up.
+     - Parameter left: The action to trigger when the user swipes left.
+     - Parameter right: The action to trigger when the user swipes right.
+     - Parameter down: The action to trigger when the user swipes down.
      */
     func onSwipeGesture(
-        up: @escaping SwipeGesture.Action = {},
-        left: @escaping SwipeGesture.Action = {},
-        right: @escaping SwipeGesture.Action = {},
-        down: @escaping SwipeGesture.Action = {}) -> some View {
-        let gesture = SwipeGesture(up: up, left: left, right: right, down: down)
-        return overlay(gesture)
+        maximumTime: TimeInterval = 1,
+        minimumDistance: CGFloat = 10,
+        maximumDistance: CGFloat = 100_000,
+        gestureTimer: GestureTimer = GestureTimer(),
+        up: @escaping () -> Void = {},
+        left: @escaping () -> Void = {},
+        right: @escaping () -> Void = {},
+        down: @escaping () -> Void = {}) -> some View {
+        self.gesture(
+            DragGesture(minimumDistance: minimumDistance)
+                .onChanged { _ in gestureTimer.start() }
+                .onEnded { gesture in
+                    guard gestureTimer.elapsedTime < maximumTime else { return }
+                    let translation = gesture.translation
+                    let absHeight = abs(translation.height)
+                    let absWidth = abs(translation.width)
+                    let isVertical = absHeight > absWidth
+                    let points = isVertical ? absHeight : absWidth
+                    if points > maximumDistance { return }
+                    if isVertical {
+                        let isUp = translation.height < 0
+                        isUp ? up() : down()
+                    } else {
+                        let isLeft = translation.width < 0
+                        isLeft ? left() : right()
+                    }
+                }
+        )
     }
 }
-#endif

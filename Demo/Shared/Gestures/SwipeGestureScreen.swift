@@ -6,7 +6,6 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 
 struct SwipeGestureScreen: View {
@@ -20,6 +19,7 @@ struct SwipeGestureScreen: View {
             Color.blue
                 .cornerRadius(5)
                 .overlay(Text(text))
+                .onTapGesture(perform: handleTap)
                 .onSwipeGesture(
                     up: handleSwipeUp,
                     left: handleSwipeLeft,
@@ -41,6 +41,7 @@ private extension SwipeGestureScreen {
     func handleSwipeLeft() { handleSwipe("left") }
     func handleSwipeRight() { handleSwipe("right") }
     func handleSwipeUp() { handleSwipe("up") }
+    func handleTap() { text = "You tapped!" }
 }
 
 struct SwipeGestureScreen_Previews: PreviewProvider {
@@ -48,4 +49,3 @@ struct SwipeGestureScreen_Previews: PreviewProvider {
         SwipeGestureScreen()
     }
 }
-#endif

@@ -20,8 +20,8 @@ struct ContentView: View {
                     #endif
                     DemoListLink("Data", .data, DataScreen())
                     DemoListLink("Extensions", .extensions, ExtensionsScreen())
-                    #if os(iOS)
                     DemoListLink("Gestures", .gestures, GesturesScreen())
+                    #if os(iOS)
                     DemoListLink("Pickers", .pickers, PickersScreen())
                     #endif
                     DemoListLink("Presentation", .presentation, PresentationScreen())
