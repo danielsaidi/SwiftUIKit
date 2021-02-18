@@ -12,26 +12,26 @@ struct ContentView: View {
  
     var body: some View {
         NavigationView {
-            DemoList("SwiftUIKit") {
-                Section(header: Text("Sections")) {
+            MenuList("SwiftUIKit") {
+                Section {
                     #if os(iOS)
-                    DemoListLink("Blurs", .blur, BlursScreen())
-                    DemoListLink("Cameras", .camera, CamerasScreen())
+                    MenuListLink("Blurs", .blur, destination: BlursScreen())
+                    MenuListLink("Cameras", .camera, destination: CamerasScreen())
                     #endif
-                    DemoListLink("Data", .data, DataScreen())
-                    DemoListLink("Extensions", .extensions, ExtensionsScreen())
-                    DemoListLink("Gestures", .gestures, GesturesScreen())
+                    MenuListLink("Data", .data, destination: DataScreen())
+                    MenuListLink("Extensions", .extensions, destination: ExtensionsScreen())
+                    MenuListLink("Gestures", .gestures, destination: GesturesScreen())
                     #if os(iOS)
-                    DemoListLink("Pickers", .pickers, PickersScreen())
+                    MenuListLink("Pickers", .pickers, destination: PickersScreen())
                     #endif
-                    DemoListLink("Presentation", .presentation, PresentationScreen())
+                    MenuListLink("Presentation", .presentation, destination: PresentationScreen())
                     #if os(iOS)
-                    DemoListLink("Sharing", .sharing, SharingScreen())
+                    MenuListLink("Sharing", .sharing, destination: SharingScreen())
                     #endif
-                    DemoListLink("Styles", .styles, StylesScreen())
-                    DemoListLink("Views", .views, ViewsScreen())
+                    MenuListLink("Styles", .styles, destination: StylesScreen())
+                    MenuListLink("Views", .views, destination: ViewsScreen())
                 }
-            }
+            }.navigationBarTitleDisplayMode(.inline)
         }.withPlatformSpecificNavigationStyle()
     }
 }
@@ -40,7 +40,8 @@ private extension View {
     
     func withPlatformSpecificNavigationStyle() -> some View {
         #if os(iOS)
-        return self.navigationViewStyle(StackNavigationViewStyle())
+        return self
+            .navigationViewStyle(StackNavigationViewStyle())
         #else
         return self
         #endif

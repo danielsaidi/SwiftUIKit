@@ -19,21 +19,21 @@ struct SheetsScreen: View {
     @StateObject private var coverContext = FullScreenCoverContext()
     
     var body: some View {
-        DemoList("Sheets") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
+        MenuList("Sheets") {
+            Section {
+                MenuListText("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
             }
             
-            Section(header: Text("Alerts")) {
+            Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    DemoListButton(item.listText(for: "sheet"), item.listIcon) {
+                    MenuListButton(item.listText(for: "sheet"), item.listIcon) {
                         presentSheet(item)
                     }
                 }
             }
             #if os(iOS) || os(tvOS) || os(watchOS)
             Section(header: Text("Cover (for testing purpose)")) {
-                DemoListButton("Show an flag cover", .cover, presentCover)
+                MenuListButton("Show an flag cover", .cover, action: presentCover)
                     .fullScreenCover(context: coverContext)
             }
             #endif

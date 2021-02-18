@@ -14,6 +14,10 @@ public struct MenuListText: View {
         self.text = text
     }
     
+    public init(text: String) {
+        self.init(text)
+    }
+    
     private let text: String
     
     public var body: some View {

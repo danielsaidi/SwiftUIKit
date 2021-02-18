@@ -13,9 +13,9 @@ struct CircularProgressBarScreen: View {
     @State private var progress = 0.1
     
     var body: some View {
-        DemoList("CircularProgressBar") {
-            Section(header: Text("About")) {
-                DemoListText("This view can display a percentual progress in a circular bar and can be styled to great extent.")
+        MenuList("CircularProgressBar") {
+            Section {
+                MenuListText("This view can display a percentual progress in a circular bar and can be styled to great extent.")
             }
             
             Section(header: Text("Progress")) {

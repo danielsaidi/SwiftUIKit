@@ -11,12 +11,12 @@ import SwiftUI
 struct CornerRadiusStyleScreen: View {
  
     var body: some View {
-        DemoList("CornerRadiusStyle") {
-            Section(header: Text("About")) {
-                DemoListText("This style makes it possible to create named styles that can be applied to any view.")
+        MenuList("CornerRadiusStyle") {
+            Section {
+                MenuListText("This style makes it possible to create named styles that can be applied to any view.")
             }
             
-            Section(header: Text("Demo styles")) {
+            Section(header: Text("Examples")) {
                 item(.red, style: .small)
                 item(.green, style: .medium)
                 item(.blue, style: .large)

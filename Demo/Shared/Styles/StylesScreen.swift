@@ -11,17 +11,17 @@ import SwiftUI
 struct StylesScreen: View {
  
     var body: some View {
-        DemoList("Gestures") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has styles that make it easier to define and apply custom styles.")
+        MenuList("Gestures") {
+            Section {
+                MenuListText("SwiftUIKit has styles that make it easier to define and apply custom styles.")
             }
             
             Section(header: Text("Styles")) {
-                DemoListLink("Corner Radius", .cornerRadius, CornerRadiusStyleScreen())
+                MenuListLink("Corner Radius", .cornerRadius, destination: CornerRadiusStyleScreen())
                 #if os(iOS) || os(tvOS)
-                DemoListLink("Fonts", .font, FontStyleScreen())
+                MenuListLink("Fonts", .font, destination: FontStyleScreen())
                 #endif
-                DemoListLink("Shadows", .shadow, ShadowStyleScreen())
+                MenuListLink("Shadows", .shadow, destination: ShadowStyleScreen())
             }
         }
     }

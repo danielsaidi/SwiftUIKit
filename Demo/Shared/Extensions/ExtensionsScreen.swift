@@ -11,9 +11,9 @@ import SwiftUI
 struct ExtensionsScreen: View {
  
     var body: some View {
-        DemoList("Extensions") {
-            Section(header: Text("About")) {
-                DemoListText("""
+        MenuList("Extensions") {
+            Section {
+                MenuListText("""
 SwiftUIKit contains a bunch of extensions that aim at making it easier to work with SwiftUI.
                     
 Since this namespace contains a lot will grow over time, extensions are not demonstrated. Instead, checkout the library source code.

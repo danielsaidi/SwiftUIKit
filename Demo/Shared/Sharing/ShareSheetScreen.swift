@@ -16,9 +16,9 @@ struct ShareSheetScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("ShareSheet") {
-            Section(header: Text("About")) {
-                DemoListText("This sheet can be used to share urls, objects etc. In this demo, you can share a custom url.")
+        MenuList("ShareSheet") {
+            Section {
+                MenuListText("This sheet can be used to share urls, objects etc. In this demo, you can share a custom url.")
             }
             
             Section(header: Text("URL")) {
@@ -26,7 +26,7 @@ struct ShareSheetScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                DemoListButton("Share the url", .sharing, shareUrl)
+                MenuListButton("Share the url", .sharing, action: shareUrl)
                     .enabled(hasUrl)
             }
         }.sheet(context: sheetContext)

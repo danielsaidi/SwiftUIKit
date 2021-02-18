@@ -12,14 +12,14 @@ import SwiftUI
 struct PickersScreen: View {
  
     var body: some View {
-        DemoList("Pickers") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
+        MenuList("Pickers") {
+            Section {
+                MenuListText("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
             }
             
-            Section(header: Text("Utils")) {
-                DemoListLink("File Picker", .file, FilePickerScreen())
-                DemoListLink("Image Picker", .photo, ImagePickerScreen())
+            Section(header: Text("Pickers")) {
+                MenuListLink("File Picker", .file, destination: FilePickerScreen())
+                MenuListLink("Image Picker", .photo, destination: ImagePickerScreen())
             }
         }
     }

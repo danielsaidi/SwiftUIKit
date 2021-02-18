@@ -13,14 +13,14 @@ struct AlertsScreen: View {
     @StateObject private var context = AlertContext()
     
     var body: some View {
-        DemoList("Alerts") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
+        MenuList("Alerts") {
+            Section {
+                MenuListText("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
             }
             
-            Section(header: Text("Alerts")) {
+            Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    DemoListButton(item.listText(for: "alert"), item.listIcon) {
+                    MenuListButton(item.listText(for: "alert"), item.listIcon) {
                         present(item)
                     }
                 }

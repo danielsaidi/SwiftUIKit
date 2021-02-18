@@ -15,9 +15,9 @@ struct OptionalViewScreen: View {
     var string: String? { hasValue ? "This view is shown because the toggle sets an optional string." : nil }
     
     var body: some View {
-        DemoList("OptionalView") {
-            Section(header: Text("About")) {
-                DemoListText("This view can display different views based on if an optional value is set or not.")
+        MenuList("OptionalView") {
+            Section {
+                MenuListText("This view can display different views based on if an optional value is set or not.")
             }
             
             Section(header: Text("State")) {

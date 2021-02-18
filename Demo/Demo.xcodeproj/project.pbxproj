@@ -19,12 +19,6 @@
 		A901F04A256F8CC900F1C285 /* PresentationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F048256F8CC900F1C285 /* PresentationScreen.swift */; };
 		A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F04D256F8CFE00F1C285 /* StylesScreen.swift */; };
 		A901F04F256F8CFE00F1C285 /* StylesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F04D256F8CFE00F1C285 /* StylesScreen.swift */; };
-		A901F05A256F932C00F1C285 /* DemoListLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F059256F932C00F1C285 /* DemoListLink.swift */; };
-		A901F05B256F932C00F1C285 /* DemoListLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F059256F932C00F1C285 /* DemoListLink.swift */; };
-		A901F05F256F936700F1C285 /* DemoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F05E256F936700F1C285 /* DemoListItem.swift */; };
-		A901F060256F936700F1C285 /* DemoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F05E256F936700F1C285 /* DemoListItem.swift */; };
-		A901F066256F94C600F1C285 /* DemoListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F065256F94C600F1C285 /* DemoListButton.swift */; };
-		A901F067256F94C600F1C285 /* DemoListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F065256F94C600F1C285 /* DemoListButton.swift */; };
 		A901F074256F962600F1C285 /* CamerasScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F073256F962600F1C285 /* CamerasScreen.swift */; };
 		A901F075256F962600F1C285 /* CamerasScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F073256F962600F1C285 /* CamerasScreen.swift */; };
 		A901F07B256F963400F1C285 /* PickersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F07A256F963400F1C285 /* PickersScreen.swift */; };
@@ -37,10 +31,6 @@
 		A901F09A256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */; };
 		A901F0A0256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */; };
 		A901F0A1256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */; };
-		A901F0AA256FB53700F1C285 /* DemoListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A9256FB53700F1C285 /* DemoListText.swift */; };
-		A901F0AB256FB53700F1C285 /* DemoListText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0A9256FB53700F1C285 /* DemoListText.swift */; };
-		A901F0B1256FBCCC00F1C285 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0B0256FBCCC00F1C285 /* DemoList.swift */; };
-		A901F0B2256FBCCC00F1C285 /* DemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0B0256FBCCC00F1C285 /* DemoList.swift */; };
 		A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */; };
 		A901F0BD256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */; };
 		A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */; };
@@ -309,17 +299,12 @@
 		A901F043256F8CBC00F1C285 /* GesturesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesScreen.swift; sourceTree = "<group>"; };
 		A901F048256F8CC900F1C285 /* PresentationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationScreen.swift; sourceTree = "<group>"; };
 		A901F04D256F8CFE00F1C285 /* StylesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesScreen.swift; sourceTree = "<group>"; };
-		A901F059256F932C00F1C285 /* DemoListLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListLink.swift; sourceTree = "<group>"; };
-		A901F05E256F936700F1C285 /* DemoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListItem.swift; sourceTree = "<group>"; };
-		A901F065256F94C600F1C285 /* DemoListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListButton.swift; sourceTree = "<group>"; };
 		A901F073256F962600F1C285 /* CamerasScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasScreen.swift; sourceTree = "<group>"; };
 		A901F07A256F963400F1C285 /* PickersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersScreen.swift; sourceTree = "<group>"; };
 		A901F07F256F963E00F1C285 /* SharingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingScreen.swift; sourceTree = "<group>"; };
 		A901F084256F964600F1C285 /* ViewsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsScreen.swift; sourceTree = "<group>"; };
 		A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeGeneratorScreen.swift; sourceTree = "<group>"; };
 		A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistedScreen.swift; sourceTree = "<group>"; };
-		A901F0A9256FB53700F1C285 /* DemoListText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListText.swift; sourceTree = "<group>"; };
-		A901F0B0256FBCCC00F1C285 /* DemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoList.swift; sourceTree = "<group>"; };
 		A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
 		A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
 		A901F0CF256FE63A00F1C285 /* CoversScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoversScreen.swift; sourceTree = "<group>"; };
@@ -703,11 +688,6 @@
 			children = (
 				A9355031256F7E3C00BBE9CE /* ContentView.swift */,
 				A9355030256F7E3C00BBE9CE /* DemoApp.swift */,
-				A901F0B0256FBCCC00F1C285 /* DemoList.swift */,
-				A901F065256F94C600F1C285 /* DemoListButton.swift */,
-				A901F05E256F936700F1C285 /* DemoListItem.swift */,
-				A901F059256F932C00F1C285 /* DemoListLink.swift */,
-				A901F0A9256FB53700F1C285 /* DemoListText.swift */,
 				A98278DB257E968A0006D64F /* DemoAppearance.swift */,
 			);
 			path = Demo;
@@ -1138,13 +1118,11 @@
 				A98279BF257ED06F0006D64F /* OptionalView.swift in Sources */,
 				A989133725DE8452007F4DFE /* TextFieldClearButton.swift in Sources */,
 				A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */,
-				A901F05A256F932C00F1C285 /* DemoListLink.swift in Sources */,
 				A98279CF257ED06F0006D64F /* Toast+Shadow.swift in Sources */,
 				A98279E1257ED06F0006D64F /* UIBlurEffectStyle+Name.swift in Sources */,
 				A98279DF257ED06F0006D64F /* FullScreenCoverProvider.swift in Sources */,
 				A989134925DE8470007F4DFE /* MenuListLink.swift in Sources */,
 				A901F1372570771600F1C285 /* CircularProgressBarScreen.swift in Sources */,
-				A901F05F256F936700F1C285 /* DemoListItem.swift in Sources */,
 				A9F85328259B4B6F00C98870 /* WebView.swift in Sources */,
 				A982799D257ED06F0006D64F /* CollectionViewLayout.swift in Sources */,
 				A92B0B7725DD6DB50061F049 /* GestureTimer.swift in Sources */,
@@ -1162,7 +1140,6 @@
 				A989133B25DE8452007F4DFE /* CustomRoundedRectangle.swift in Sources */,
 				A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A92B0B8F25DD70960061F049 /* View+Keyboard.swift in Sources */,
-				A901F0AA256FB53700F1C285 /* DemoListText.swift in Sources */,
 				A92B0B8B25DD70960061F049 /* UIImage+Photos.swift in Sources */,
 				A989132225DE81B8007F4DFE /* MenuListStyle.swift in Sources */,
 				A92B0B8D25DD70960061F049 /* TextField+ClearButton.swift in Sources */,
@@ -1190,7 +1167,6 @@
 				A98279C7257ED06F0006D64F /* FullScreenCoverContext.swift in Sources */,
 				A982795B257ED06F0006D64F /* EdgeInsets+Edge.swift in Sources */,
 				A989131E25DE81B8007F4DFE /* MenuListButton.swift in Sources */,
-				A901F066256F94C600F1C285 /* DemoListButton.swift in Sources */,
 				A9827951257ED06F0006D64F /* UrlOpener.swift in Sources */,
 				A989134025DE845A007F4DFE /* ForEachEnumerated.swift in Sources */,
 				A901F0D5256FE64500F1C285 /* SheetsScreen.swift in Sources */,
@@ -1216,7 +1192,6 @@
 				A982796B257ED06F0006D64F /* FontStyle.swift in Sources */,
 				A9827961257ED06F0006D64F /* View+Enabled.swift in Sources */,
 				A982796D257ED06F0006D64F /* ShadowStyle.swift in Sources */,
-				A901F0B1256FBCCC00F1C285 /* DemoList.swift in Sources */,
 				A9827975257ED06F0006D64F /* FontIdentifier.swift in Sources */,
 				A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,
 				A98279C5257ED06F0006D64F /* SheetContext.swift in Sources */,
@@ -1285,13 +1260,11 @@
 				A901F13F2570797E00F1C285 /* CircularProgressViewScreen.swift in Sources */,
 				A98279C0257ED06F0006D64F /* OptionalView.swift in Sources */,
 				A9355046256F7E3D00BBE9CE /* ContentView.swift in Sources */,
-				A901F05B256F932C00F1C285 /* DemoListLink.swift in Sources */,
 				A989133825DE8452007F4DFE /* TextFieldClearButton.swift in Sources */,
 				A98279D0257ED06F0006D64F /* Toast+Shadow.swift in Sources */,
 				A98279E2257ED06F0006D64F /* UIBlurEffectStyle+Name.swift in Sources */,
 				A98279E0257ED06F0006D64F /* FullScreenCoverProvider.swift in Sources */,
 				A901F1382570771600F1C285 /* CircularProgressBarScreen.swift in Sources */,
-				A901F060256F936700F1C285 /* DemoListItem.swift in Sources */,
 				A989134A25DE8470007F4DFE /* MenuListLink.swift in Sources */,
 				A9F85329259B4B6F00C98870 /* WebView.swift in Sources */,
 				A982799E257ED06F0006D64F /* CollectionViewLayout.swift in Sources */,
@@ -1311,7 +1284,6 @@
 				A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A989133C25DE8452007F4DFE /* CustomRoundedRectangle.swift in Sources */,
 				A92B0B9025DD70960061F049 /* View+Keyboard.swift in Sources */,
-				A901F0AB256FB53700F1C285 /* DemoListText.swift in Sources */,
 				A92B0B8C25DD70960061F049 /* UIImage+Photos.swift in Sources */,
 				A92B0B8E25DD70960061F049 /* TextField+ClearButton.swift in Sources */,
 				A901F075256F962600F1C285 /* CamerasScreen.swift in Sources */,
@@ -1337,7 +1309,6 @@
 				A982798A257ED06F0006D64F /* SimplePickerScreen.swift in Sources */,
 				A98279C8257ED06F0006D64F /* FullScreenCoverContext.swift in Sources */,
 				A982795C257ED06F0006D64F /* EdgeInsets+Edge.swift in Sources */,
-				A901F067256F94C600F1C285 /* DemoListButton.swift in Sources */,
 				A9827952257ED06F0006D64F /* UrlOpener.swift in Sources */,
 				A901F0D6256FE64500F1C285 /* SheetsScreen.swift in Sources */,
 				A98279C4257ED06F0006D64F /* ToastProvider.swift in Sources */,
@@ -1364,7 +1335,6 @@
 				A9827962257ED06F0006D64F /* View+Enabled.swift in Sources */,
 				A989132825DE81E2007F4DFE /* MenuListStyle.swift in Sources */,
 				A982796E257ED06F0006D64F /* ShadowStyle.swift in Sources */,
-				A901F0B2256FBCCC00F1C285 /* DemoList.swift in Sources */,
 				A989132B25DE81E2007F4DFE /* Image+MenuList.swift in Sources */,
 				A9827976257ED06F0006D64F /* FontIdentifier.swift in Sources */,
 				A901F14F25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,

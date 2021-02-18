@@ -14,13 +14,13 @@ struct FilePickerScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("FilePicker") {
-            Section(header: Text("About")) {
-                DemoListText("This picker can be used to pick a file from Files. In this demo, the files you picked can be shared with a ShareSheet.")
+        MenuList("FilePicker") {
+            Section {
+                MenuListText("This picker can be used to pick a file from Files. In this demo, the files you picked can be shared with a ShareSheet.")
             }
             
             Section(header: Text("Actions")) {
-                DemoListButton("Open picker", .file, openPicker)
+                MenuListButton("Open picker", .file, action: openPicker)
             }
         }.sheet(context: sheetContext)
     }

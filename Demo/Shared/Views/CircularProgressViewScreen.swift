@@ -14,9 +14,9 @@ struct CircularProgressViewScreen: View {
     @State private var isLoading = true
     
     var body: some View {
-        DemoList("CircularProgressView") {
-            Section(header: Text("About")) {
-                DemoListText("This view displays a circular progress spinner.")
+        MenuList("CircularProgressView") {
+            Section {
+                MenuListText("This view displays a circular progress spinner.")
             }
             
             Section(header: Text("State")) {

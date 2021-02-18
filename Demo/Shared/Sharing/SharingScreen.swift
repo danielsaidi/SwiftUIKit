@@ -12,13 +12,13 @@ import SwiftUI
 struct SharingScreen: View {
  
     var body: some View {
-        DemoList("Sharing") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has utils that can be used to share data in SwiftUI.")
+        MenuList("Sharing") {
+            Section {
+                MenuListText("SwiftUIKit has utils that can be used to share data in SwiftUI.")
             }
             
             Section(header: Text("Utils")) {
-                DemoListLink("Share Sheet", .sharing, ShareSheetScreen())
+                MenuListLink("Share Sheet", .sharing, destination: ShareSheetScreen())
             }
         }
     }

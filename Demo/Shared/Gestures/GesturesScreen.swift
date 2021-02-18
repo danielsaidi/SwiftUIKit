@@ -11,13 +11,13 @@ import SwiftUI
 struct GesturesScreen: View {
  
     var body: some View {
-        DemoList("Gestures") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has additional gestures for SwiftUI.")
+        MenuList("Gestures") {
+            Section {
+                MenuListText("SwiftUIKit has additional gestures for SwiftUI.")
             }
             
             Section(header: Text("Gestures")) {
-                DemoListLink("Swipe Gesture", .swipeGesture, SwipeGestureScreen())
+                MenuListLink("Swipe Gesture", .swipeGesture, destination: SwipeGestureScreen())
             }
         }
     }

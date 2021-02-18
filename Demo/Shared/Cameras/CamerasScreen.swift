@@ -12,14 +12,14 @@ import SwiftUI
 struct CamerasScreen: View {
  
     var body: some View {
-        DemoList("Cameras") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has cameras that can be used to take photos and scan documents.")
+        MenuList("Cameras") {
+            Section {
+                MenuListText("SwiftUIKit has cameras that can be used to take photos and scan documents.")
             }
             
-            Section(header: Text("Utils")) {
-                DemoListLink("Document Camera", .documentCamera, DocumentCameraScreen())
-                DemoListLink("Photo Camera", .camera, PhotoCameraScreen())
+            Section(header: Text("Cameras")) {
+                MenuListLink("Document Camera", .documentCamera, destination: DocumentCameraScreen())
+                MenuListLink("Photo Camera", .camera, destination: PhotoCameraScreen())
             }
         }
     }

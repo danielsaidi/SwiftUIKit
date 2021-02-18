@@ -13,13 +13,13 @@ struct DismissableViewScreen: View, DismissableView {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        DemoList("DismissableView") {
-            Section(header: Text("About")) {
-                DemoListText("This protocol makes it easy to dismiss views.")
+        MenuList("DismissableView") {
+            Section {
+                MenuListText("This protocol makes it easy to dismiss views.")
             }
             
-            Section(header: Text("Actions")) {
-                DemoListButton("Dismiss this screen", .dismiss, dismiss)
+            Section {
+                MenuListButton("Dismiss this screen", .dismiss, action: dismiss)
             }
         }
     }

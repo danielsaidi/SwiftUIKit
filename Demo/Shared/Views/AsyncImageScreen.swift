@@ -15,9 +15,9 @@ struct AsyncImageScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("AsyncImage") {
-            Section(header: Text("About")) {
-                DemoListText("This view can fetch images async from urls.")
+        MenuList("AsyncImage") {
+            Section {
+                MenuListText("This view can fetch images async from urls.")
             }
             
             Section(header: Text("URL")) {
@@ -25,7 +25,7 @@ struct AsyncImageScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                DemoListButton("Load image", .photo, loadImage)
+                MenuListButton("Load image", .photo, action: loadImage)
                     .enabled(hasUrl)
             }
         }.sheet(context: sheetContext)

@@ -33,11 +33,17 @@ public struct MenuListButton: View {
     }
     
     public init(
+        _ text: String,
+        _ rightImage: Image? = nil,
+        action: @escaping () -> Void) {
+        self.init(nil, text, rightImage, action: action)
+    }
+    
+    public init(
         _ image: Image? = nil,
         _ text: String,
         navigationAction: @escaping () -> Void) {
-        self.item = MenuListItem(image, text, .menuListNavigationArrow, isNavigation: true)
-        self.action = navigationAction
+        self.init(image, text, .menuListNavigationArrow, action: navigationAction)
     }
     
     private let item: MenuListItem

@@ -21,9 +21,9 @@ struct QrCodeGeneratorScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("QrCodeGenerator") {
-            Section(header: Text("Instructions")) {
-                DemoListText("Enter a url and tap the button to show a code that you can scan with your phone.")
+        MenuList("QrCodeGenerator") {
+            Section {
+                MenuListText("Enter a url and tap the button to show a code that you can scan with your phone.")
             }
             
             Section(header: Text("URL")) {
@@ -31,7 +31,7 @@ struct QrCodeGeneratorScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                DemoListButton("Show QR Code", .qrCode, showCode)
+                MenuListButton("Show QR Code", .qrCode, action: showCode)
                     .enabled(hasUrl)
             }
         }

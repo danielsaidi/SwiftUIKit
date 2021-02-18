@@ -11,9 +11,9 @@ import SwiftUI
 struct ViewsScreen: View {
     
     var body: some View {
-        DemoList("Views") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit contains a large collection of additional views for SwiftUI.")
+        MenuList("Views") {
+            Section {
+                MenuListText("SwiftUIKit contains a large collection of additional views for SwiftUI.")
             }
             
             Section(header: Text("Views")) {
@@ -25,36 +25,36 @@ struct ViewsScreen: View {
     
     private var list1: some View {
         Group {
-            DemoListLink("Async Image", .photo, AsyncImageScreen())
-            DemoListLink("Circular Progress Bar", .circularProgressBar, CircularProgressBarScreen())
+            MenuListLink("Async Image", .photo, destination: AsyncImageScreen())
+            MenuListLink("Circular Progress Bar", .circularProgressBar, destination: CircularProgressBarScreen())
             #if os(iOS) || os(tvOS) || os(watchOS)
-            DemoListLink("Circular Progress View", .circularProgressView, CircularProgressViewScreen())
+            MenuListLink("Circular Progress View", .circularProgressView, destination: CircularProgressViewScreen())
             #endif
             #if os(iOS) || os(tvOS)
-            DemoListLink("Collection View (grid)", .collectionViewGrid, CollectionViewGridScreen())
-            DemoListLink("Collection View (shelves)", .collectionViewShelves, CollectionViewShelvesScreen())
+            MenuListLink("Collection View (grid)", .collectionViewGrid, destination: CollectionViewGridScreen())
+            MenuListLink("Collection View (shelves)", .collectionViewShelves, destination: CollectionViewShelvesScreen())
             #endif
-            DemoListLink("Conditional View", .conditional, ConditionalViewScreen())
-            DemoListLink("Dismissable View", .dismiss, DismissableViewScreen())
-            DemoListLink("Fetched Data View", .download, FetchedDataViewScreen())
+            MenuListLink("Conditional View", .conditional, destination: ConditionalViewScreen())
+            MenuListLink("Dismissable View", .dismiss, destination: DismissableViewScreen())
+            MenuListLink("Fetched Data View", .download, destination: FetchedDataViewScreen())
             #if os(iOS)
-            DemoListLink("Flippable View", .swipeGesture, FlippableViewScreen())
-            DemoListLink("Multiline Text Field", .multiline, MultilineTextFieldScreen())
+            MenuListLink("Flippable View", .swipeGesture, destination: FlippableViewScreen())
+            MenuListLink("Multiline Text Field", .multiline, destination: MultilineTextFieldScreen())
             #endif
         }
     }
     
     private var list2: some View {
         Group {
-            DemoListLink("Optional View", .optional, OptionalViewScreen())
+            MenuListLink("Optional View", .optional, destination: OptionalViewScreen())
             #if os(iOS) || os(tvOS) || os(watchOS)
-            DemoListLink("Page View", .pageControl, PageViewScreen())
+            MenuListLink("Page View", .pageControl, destination: PageViewScreen())
             #endif
             #if os(iOS) || os(tvOS)
-            DemoListLink("UIView Wrapper", .wrapper, UIViewWrapperScreen())
+            MenuListLink("UIView Wrapper", .wrapper, destination: UIViewWrapperScreen())
             #endif
             #if os(iOS)
-            DemoListLink("Web View", .web, WebViewScreen())
+            MenuListLink("Web View", .web, destination: WebViewScreen())
             #endif
         }
     }

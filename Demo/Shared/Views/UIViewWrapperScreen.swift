@@ -12,9 +12,9 @@ import SwiftUI
 struct UIViewWrapperScreen: View {
  
     var body: some View {
-        DemoList("UIViewWrapper") {
-            Section(header: Text("About")) {
-                DemoListText("This view can be used to wrap any UIKit view.")
+        MenuList("UIViewWrapper") {
+            Section {
+                MenuListText("This view can be used to wrap any UIKit view.")
             }
             Section(header: Text("Examples")) {
                 UIViewWrapper(view: {

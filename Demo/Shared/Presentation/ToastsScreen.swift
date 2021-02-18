@@ -13,14 +13,14 @@ struct ToastsScreen: View {
     @StateObject private var context = ToastContext()
     
     var body: some View {
-        DemoList("Toasts") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has utils that make it easier to manage and present toasts.")
+        MenuList("Toasts") {
+            Section {
+                MenuListText("SwiftUIKit has utils that make it easier to manage and present toasts.")
             }
             
-            Section(header: Text("Toasts")) {
+            Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    DemoListButton(item.listText(for: "toast"), item.listIcon) {
+                    MenuListButton(item.listText(for: "toast"), item.listIcon) {
                         present(item)
                     }
                 }

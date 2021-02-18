@@ -16,9 +16,9 @@ struct FetchedDataViewScreen: View {
     var data: String? { hasContent ? "Received data!" : nil }
     
     var body: some View {
-        DemoList("FetchedDataView") {
-            Section(header: Text("About")) {
-                DemoListText("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
+        MenuList("FetchedDataView") {
+            Section {
+                MenuListText("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
             }
             
             Section(header: Text("State")) {

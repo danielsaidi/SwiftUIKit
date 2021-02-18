@@ -20,20 +20,20 @@ struct CoversScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("Full Screen Covers") {
-            Section(header: Text("About")) {
-                DemoListText("SwiftUIKit has additional utils that make it easier to manage and present covers.")
+        MenuList("Full Screen Covers") {
+            Section {
+                MenuListText("SwiftUIKit has additional utils that make it easier to manage and present covers.")
             }
             
-            Section(header: Text("Alerts")) {
+            Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    DemoListButton(item.listText(for: "cover"), item.listIcon) {
+                    MenuListButton(item.listText(for: "cover"), item.listIcon) {
                         presentCover(item)
                     }
                 }
             }
             Section(header: Text("Sheet (for testing purpose)")) {
-                DemoListButton("Show an flag sheet", .sheet, presentSheet)
+                MenuListButton("Show an flag sheet", .sheet, action: presentSheet)
                     .sheet(context: sheetContext)
             }
         }.fullScreenCover(context: context)

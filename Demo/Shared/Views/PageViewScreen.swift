@@ -15,9 +15,9 @@ struct PageViewScreen: View {
     @State private var index = 0
     
     var body: some View {
-        DemoList("PageView") {
-            Section(header: Text("About")) {
-                DemoListText("This view can be used to wrap multiple views in a paged horizontal scroll view.")
+        MenuList("PageView") {
+            Section {
+                MenuListText("This view can be used to wrap multiple views in a paged horizontal scroll view.")
             }
             
             Section(header: Text("Example")) {

@@ -17,9 +17,9 @@ struct PhotoCameraScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        DemoList("PhotoCamera") {
-            Section(header: Text("About")) {
-                DemoListText("This camera can take photos. In this demo, the photos you take are added to a PageView.")
+        MenuList("PhotoCamera") {
+            Section {
+                MenuListText("This camera can take photos. In this demo, the photos you take are added to a PageView.")
             }
             
             if photos.count > 0 {
@@ -33,7 +33,7 @@ struct PhotoCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                DemoListButton("Open camera", .camera, openCamera)
+                MenuListButton("Open camera", .camera, action: openCamera)
             }
         }.sheet(context: sheetContext)
     }

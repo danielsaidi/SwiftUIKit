@@ -20,6 +20,13 @@ import SwiftUI
 public struct MenuListLink<Destination: View>: View {
     
     public init(
+        _ text: String,
+        _ rightImage: Image? = nil,
+        destination: Destination) {
+        self.init(nil, text, rightImage, destination: destination)
+    }
+    
+    public init(
         _ image: Image? = nil,
         _ text: String,
         _ rightImage: Image? = nil,

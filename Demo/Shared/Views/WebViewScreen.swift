@@ -14,13 +14,13 @@ struct WebViewScreen: View {
     @StateObject private var sheetContext = SheetContext()
  
     var body: some View {
-        DemoList("WebView") {
-            Section(header: Text("About")) {
-                DemoListText("This view can be used to present a URL in an embedded Safari browser.")
+        MenuList("WebView") {
+            Section {
+                MenuListText("This view can be used to present a URL in an embedded Safari browser.")
             }
-            Section(header: Text("Actions")) {
-                DemoListButton("Visit my website", .web, visitMyWebsite)
-                DemoListButton("Visit apple.com", .web, visitApple)
+            Section {
+                MenuListButton("Visit my website", .web, action: visitMyWebsite)
+                MenuListButton("Visit apple.com", .web, action: visitApple)
             }
         }.sheet(context: sheetContext)
     }

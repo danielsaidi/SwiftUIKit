@@ -13,9 +13,9 @@ struct ConditionalViewScreen: View {
     @State private var showView = true
     
     var body: some View {
-        DemoList("ConditionalView") {
-            Section(header: Text("About")) {
-                DemoListText("This view can display different views based on a bool expression.")
+        MenuList("ConditionalView") {
+            Section {
+                MenuListText("This view can display different views based on a bool expression.")
             }
             
             Section(header: Text("State")) {
