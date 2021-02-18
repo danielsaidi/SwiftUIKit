@@ -46,4 +46,40 @@ public extension ShadowStyle {
     static var none: ShadowStyle {
         ShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
     }
+    
+    /**
+     This style represents a badge or "sticker" and is meant
+     to make the view look as if it's attached to the parent
+     view, but be in a separate layer.
+     */
+    static var badge: ShadowStyle {
+        ShadowStyle(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 2)
+    }
+    
+    /**
+     This style represents a shadow that is cast from a view
+     that elevates above the parent view.
+     */
+    static var elevated: ShadowStyle {
+        ShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
+    }
+}
+
+struct ShadowStyle_Previews: PreviewProvider {
+    
+    static func item() -> some View {
+        RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(.white)
+            .frame(width: 100, height: 100)
+    }
+    
+    static var previews: some View {
+        VStack(spacing: 20) {
+            item().shadow(.none)
+            item().shadow(.badge)
+            item().shadow(.elevated)
+        }
+        .padding()
+        .background(Color.gray.opacity(0.4))
+    }
 }

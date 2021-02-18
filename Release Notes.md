@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 1.2.2
+
+This release adds two new `badge` and `elevated` `ShadowStyle`s.
+
+
+## 1.2.1
+
+This release makes the `MenuList` title optional.
+
+
 ## 1.2.0
 
 ### New features

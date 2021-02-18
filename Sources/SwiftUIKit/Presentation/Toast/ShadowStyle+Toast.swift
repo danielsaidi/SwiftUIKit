@@ -1,5 +1,5 @@
 //
-//  Toast+Shadow.swift
+//  ShadowStyle+Toast.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-03-05.
