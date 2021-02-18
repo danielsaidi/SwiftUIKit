@@ -7,6 +7,7 @@
 
 * `Extensions/UIKit` has a bunch of new `UIImage` extensions.
 * `ForEachEnumerated` is a new view that lets you iterate over non-identifiable collections.
+* `Lists` is a new folder with views that simplifies building menu lists.
 * `View+SwipeGesture` is rewritten to work on all platforms.
 
 ### Deprecated
