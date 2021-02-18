@@ -20,7 +20,7 @@ import SwiftUI
 public struct MenuList<Content: View>: View {
     
     public init(
-        _ title: String,
+        _ title: String = "",
         style: MenuListStyle = MenuListStyle.defaultStyle,
         @ViewBuilder content: @escaping () -> Content) {
         self.title = title
