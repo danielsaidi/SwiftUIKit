@@ -31,7 +31,7 @@ struct ContentView: View {
                     MenuListLink("Styles", .styles, destination: StylesScreen())
                     MenuListLink("Views", .views, destination: ViewsScreen())
                 }
-            }.navigationBarTitleDisplayMode(.inline)
+            }.withPlatformSpecificNavigationMode()
         }.withPlatformSpecificNavigationStyle()
     }
 }
@@ -42,6 +42,15 @@ private extension View {
         #if os(iOS)
         return self
             .navigationViewStyle(StackNavigationViewStyle())
+        #else
+        return self
+        #endif
+    }
+    
+    func withPlatformSpecificNavigationMode() -> some View {
+        #if os(iOS)
+        return self
+            .navigationBarTitleDisplayMode(.inline)
         #else
         return self
         #endif

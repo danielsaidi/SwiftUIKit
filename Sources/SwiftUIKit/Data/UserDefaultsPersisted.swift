@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ This property wrapper automatically persists any new values
+ to user defaults and sets the initial property value to the
+ last persisted value or a fallback value.
+ */
 @propertyWrapper
 public struct UserDefaultsPersisted<T: Codable> {
     
