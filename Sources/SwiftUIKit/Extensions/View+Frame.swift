@@ -17,4 +17,18 @@ public extension View {
     func frame(_ size: CGSize) -> some View {
         self.frame(width: size.width, height: size.height)
     }
+    
+    /**
+     This is a shorthand to `frame(height:)`
+     */
+    func height(_ height: CGFloat) -> some View {
+        self.frame(height: height)
+    }
+    
+    /**
+     This is a shorthand to `frame(width:)`
+     */
+    func width(_ width: CGFloat) -> some View {
+        self.frame(width: width)
+    }
 }

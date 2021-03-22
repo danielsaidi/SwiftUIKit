@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 1.2.3
+
+This release adds new `View` extensions: `.interactable()`, `.height(_)` and `.width(_)`.
+
+
 ## 1.2.2
 
 This release adds two new `badge` and `elevated` `ShadowStyle`s.
