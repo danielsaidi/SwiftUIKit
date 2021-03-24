@@ -47,15 +47,11 @@ private extension View {
     
     @ViewBuilder
     func title(_ title: String) -> some View {
-        if #available(iOS 14.0, *) {
-            self.navigationTitle(title)
-        } else {
-            #if os(iOS) || os(watchOS) || os(tvOS)
-            self.navigationBarTitle(title)
-            #else
-            self
-            #endif
-        }
+        #if os(iOS) || os(watchOS) || os(tvOS)
+        self.navigationBarTitle(title)
+        #else
+        self
+        #endif
     }
 }
 

@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 1.2.4
+
+This release fixes compiler errors for menu list on other platforms than iOS.
+
+
 ## 1.2.3
 
 This release adds new `View` extensions: `.interactable()`, `.height(_)` and `.width(_)`.
