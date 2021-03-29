@@ -1,6 +1,11 @@
 # Release notes
 
 
+## 1.2.5
+
+This release tweaks the flippable view's behavior and allows for flipping in all directions.
+
+
 ## 1.2.4
 
 This release fixes compiler errors for menu list on other platforms than iOS.
