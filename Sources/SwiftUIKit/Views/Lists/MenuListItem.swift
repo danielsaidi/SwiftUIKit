@@ -94,7 +94,7 @@ public extension MenuListItem {
     func navigationButton(action: @escaping () -> Void) -> some View {
         Button(action: action) {
             MenuListItem(icon: icon, title: title, trailingIcon: trailingIcon, isNavigationButton: true)
-        }
+        }.buttonStyle(PlainButtonStyle())
     }
     
     /**
@@ -122,6 +122,7 @@ private extension MenuListItem {
     }
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 11.0, watchOS 7.0, *)
 struct MenuListItem_Previews: PreviewProvider {
     
     static var icon: Image { Image(systemName: "checkmark.circle.fill") }

@@ -20,6 +20,7 @@ public protocol TabViewItem: Hashable {
     var selectedTitle: String { get }
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 11.0, watchOS 7.0, *)
 public extension View {
     
     /**
