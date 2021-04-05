@@ -20,7 +20,7 @@ public protocol TabViewItem: Hashable {
     var selectedTitle: String { get }
 }
 
-extension View {
+public extension View {
     
     /**
      Use this function to bind any view in a `TabView` to an
