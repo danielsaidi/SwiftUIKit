@@ -1,6 +1,17 @@
 # Release notes
 
 
+## 1.3.0
+
+This version cleans up the `MenuList` types a bit:
+
+* `MenuListItem` now requires named parameters. 
+* `MenuListButton` and `MenuListLink` are removed. 
+* Instead, you can use the new `button`, `navigationButton` and `navigationLink` modifiers.
+* `Image+menuListNavigationArrow` has been converted to a new `NavigationLinkArrow` view.
+
+
+
 ## 1.2.5
 
 This release tweaks the behavior of `FlippableView` to support flipping in all directions.
@@ -8,14 +19,11 @@ This release tweaks the behavior of `FlippableView` to support flipping in all d
 It also adds a new `TabViewItem` as well as an `Image+TabViewItem` extension.
 
 
-## 1.2.5
-
-This release tweaks the flippable view's behavior and allows for flipping in all directions.
-
 
 ## 1.2.4
 
 This release fixes compiler errors for menu list on other platforms than iOS.
+
 
 
 ## 1.2.3
@@ -23,14 +31,17 @@ This release fixes compiler errors for menu list on other platforms than iOS.
 This release adds new `View` extensions: `.interactable()`, `.height(_)` and `.width(_)`.
 
 
+
 ## 1.2.2
 
 This release adds two new `badge` and `elevated` `ShadowStyle`s.
 
 
+
 ## 1.2.1
 
 This release makes the `MenuList` title optional.
+
 
 
 ## 1.2.0
@@ -47,9 +58,11 @@ This release makes the `MenuList` title optional.
 * `SwipeGesture` is no longer needed and has been deprecated.
 
 
+
 ## 1.1.2
 
 `TextReplacement` now supports multiline texts.
+
 
 
 ## 1.1.1
@@ -62,6 +75,7 @@ This release makes the `MenuList` title optional.
 ### New extensions:
 
 * `View+frame` has a new `CGSize`-based frame modifier.
+
 
 
 ## 1.1.0
@@ -78,6 +92,7 @@ This release makes the `MenuList` title optional.
 ### Breaking changes:
 
 * `FlipDirection` has been moved into `FlippableView`.
+
 
 
 ## 1.0.0

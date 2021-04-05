@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ This list item can be used to display several lines of text.
+ */
 public struct MenuListText: View {
     
     public init(_ text: String) {
