@@ -3,6 +3,13 @@
 
 ## 1.2.5
 
+This release tweaks the behavior of `FlippableView` to support flipping in all directions.
+
+It also adds a new `TabViewItem` as well as an `Image+TabViewItem` extension.
+
+
+## 1.2.5
+
 This release tweaks the flippable view's behavior and allows for flipping in all directions.
 
 
