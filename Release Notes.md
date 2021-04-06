@@ -1,6 +1,12 @@
 # Release notes
 
 
+## 1.3.1
+
+This version adds a plain button style to regular `MenuLinkItem` buttons.
+
+
+
 ## 1.3.0
 
 This version cleans up the `MenuList` types a bit:

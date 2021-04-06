@@ -83,6 +83,7 @@ public extension MenuListItem {
      */
     func button(action: @escaping () -> Void) -> some View {
         Button(action: action) { self }
+            .buttonStyle(PlainButtonStyle())
     }
 
     /**
