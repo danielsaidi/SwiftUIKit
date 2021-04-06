@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct ContentView: View {
  
@@ -15,21 +16,21 @@ struct ContentView: View {
             MenuList("SwiftUIKit") {
                 Section {
                     #if os(iOS)
-                    MenuListLink("Blurs", .blur, destination: BlursScreen())
-                    MenuListLink("Cameras", .camera, destination: CamerasScreen())
+                    MenuListItem(icon: .blur, title: "Blurs").navigationLink(to: BlursScreen())
+                    MenuListItem(icon: .camera, title: "Cameras").navigationLink(to: CamerasScreen())
                     #endif
-                    MenuListLink("Data", .data, destination: DataScreen())
-                    MenuListLink("Extensions", .extensions, destination: ExtensionsScreen())
-                    MenuListLink("Gestures", .gestures, destination: GesturesScreen())
+                    MenuListItem(icon: .data, title: "Data").navigationLink(to: DataScreen())
+                    MenuListItem(icon: .extensions, title: "Extensions").navigationLink(to: ExtensionsScreen())
+                    MenuListItem(icon: .gestures, title: "Gestures").navigationLink(to: GesturesScreen())
                     #if os(iOS)
-                    MenuListLink("Pickers", .pickers, destination: PickersScreen())
+                    MenuListItem(icon: .pickers, title: "Pickers").navigationLink(to: PickersScreen())
                     #endif
-                    MenuListLink("Presentation", .presentation, destination: PresentationScreen())
+                    MenuListItem(icon: .presentation, title: "Presentation").navigationLink(to: PresentationScreen())
                     #if os(iOS)
-                    MenuListLink("Sharing", .sharing, destination: SharingScreen())
+                    MenuListItem(icon: .sharing, title: "Sharing").navigationLink(to: SharingScreen())
                     #endif
-                    MenuListLink("Styles", .styles, destination: StylesScreen())
-                    MenuListLink("Views", .views, destination: ViewsScreen())
+                    MenuListItem(icon: .styles, title: "Styles").navigationLink(to: StylesScreen())
+                    MenuListItem(icon: .views, title: "Views").navigationLink(to: ViewsScreen())
                 }
             }.withPlatformSpecificNavigationMode()
         }.withPlatformSpecificNavigationStyle()

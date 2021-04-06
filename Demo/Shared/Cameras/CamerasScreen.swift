@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct CamerasScreen: View {
  
@@ -18,8 +19,10 @@ struct CamerasScreen: View {
             }
             
             Section(header: Text("Cameras")) {
-                MenuListLink("Document Camera", .documentCamera, destination: DocumentCameraScreen())
-                MenuListLink("Photo Camera", .camera, destination: PhotoCameraScreen())
+                MenuListItem(icon: .documentCamera, title: "Document Camera")
+                    .navigationLink(to: DocumentCameraScreen())
+                MenuListItem(icon: .camera, title: "Photo Camera")
+                    .navigationLink(to: PhotoCameraScreen())
             }
         }
     }

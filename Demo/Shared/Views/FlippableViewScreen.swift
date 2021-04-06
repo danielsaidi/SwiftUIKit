@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct FlippableViewScreen: View {
         
@@ -17,8 +18,8 @@ struct FlippableViewScreen: View {
             FlippableView(
                 front: side(.blue, "Flip me!"),
                 back: side(.red, "Flip me back!"),
-                isTapEnabled: true,
-                isSwipeEnabled: true)
+                tapDirection: .right,
+                swipeDirections: [.up, .down, .left, .right])
         }
         .padding()
         .navigationTitle("Flippable View")

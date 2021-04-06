@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct DismissableViewScreen: View, DismissableView {
     
@@ -19,7 +20,8 @@ struct DismissableViewScreen: View, DismissableView {
             }
             
             Section {
-                MenuListButton("Dismiss this screen", .dismiss, action: dismiss)
+                MenuListItem(icon: .dismiss, title: "Dismiss this screen")
+                    .button(action: dismiss)
             }
         }
     }

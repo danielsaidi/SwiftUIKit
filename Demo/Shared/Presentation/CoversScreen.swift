@@ -8,6 +8,7 @@
 
 #if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
+import SwiftUIKit
 
 /**
  This screen has an additional context that helps verify the
@@ -27,13 +28,13 @@ struct CoversScreen: View {
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListButton(item.listText(for: "cover"), item.listIcon) {
-                        presentCover(item)
-                    }
+                    MenuListItem(icon: item.listIcon, title: item.listText(for: "cover"))
+                        .button(action: { presentCover(item) })
                 }
             }
             Section(header: Text("Sheet (for testing purpose)")) {
-                MenuListButton("Show an flag sheet", .sheet, action: presentSheet)
+                MenuListItem(icon: .sheet, title: "Show an flag sheet")
+                    .button(action: presentSheet)
                     .sheet(context: sheetContext)
             }
         }.fullScreenCover(context: context)

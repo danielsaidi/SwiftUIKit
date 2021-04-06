@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct MultilineTextFieldScreen: View {
     

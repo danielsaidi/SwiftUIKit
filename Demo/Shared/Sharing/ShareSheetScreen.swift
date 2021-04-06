@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct ShareSheetScreen: View {
     
@@ -26,7 +27,8 @@ struct ShareSheetScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Share the url", .sharing, action: shareUrl)
+                MenuListItem(icon: .sharing, title: "Share the url")
+                    .button(action: shareUrl)
                     .enabled(hasUrl)
             }
         }.sheet(context: sheetContext)

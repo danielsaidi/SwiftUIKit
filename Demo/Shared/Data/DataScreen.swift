@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct DataScreen: View {
  
@@ -17,8 +18,10 @@ struct DataScreen: View {
             }
             
             Section(header: Text("Utils")) {
-                MenuListLink("Qr Code Generator", .qrCode, destination: QrCodeGeneratorScreen())
-                MenuListLink("UserDefaults Persisted", .data, destination: UserDefaultsPersistedScreen())
+                MenuListItem(icon: .qrCode, title: "Qr Code Generator")
+                    .navigationLink(to: QrCodeGeneratorScreen())
+                MenuListItem(icon: .data, title: "UserDefaults Persisted")
+                    .navigationLink(to: UserDefaultsPersistedScreen())
             }
         }
     }

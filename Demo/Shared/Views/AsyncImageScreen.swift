@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct AsyncImageScreen: View {
     
@@ -25,7 +26,8 @@ struct AsyncImageScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Load image", .photo, action: loadImage)
+                MenuListItem(icon: .photo, title: "Load image")
+                    .button(action: loadImage)
                     .enabled(hasUrl)
             }
         }.sheet(context: sheetContext)

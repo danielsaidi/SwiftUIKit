@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct PhotoCameraScreen: View {
     
@@ -33,7 +34,8 @@ struct PhotoCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Open camera", .camera, action: openCamera)
+                MenuListItem(icon: .camera, title: "Open camera")
+                    .button(action: openCamera)
             }
         }.sheet(context: sheetContext)
     }

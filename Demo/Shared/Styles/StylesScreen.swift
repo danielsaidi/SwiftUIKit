@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct StylesScreen: View {
  
@@ -17,11 +18,11 @@ struct StylesScreen: View {
             }
             
             Section(header: Text("Styles")) {
-                MenuListLink("Corner Radius", .cornerRadius, destination: CornerRadiusStyleScreen())
+                MenuListItem(icon: .cornerRadius, title: "Corner Radius").navigationLink(to: CornerRadiusStyleScreen())
                 #if os(iOS) || os(tvOS)
-                MenuListLink("Fonts", .font, destination: FontStyleScreen())
+                MenuListItem(icon: .font, title: "Fonts").navigationLink(to: FontStyleScreen())
                 #endif
-                MenuListLink("Shadows", .shadow, destination: ShadowStyleScreen())
+                MenuListItem(icon: .shadow, title: "Shadows").navigationLink(to: ShadowStyleScreen())
             }
         }
     }

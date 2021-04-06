@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct PickersScreen: View {
  
@@ -18,8 +19,10 @@ struct PickersScreen: View {
             }
             
             Section(header: Text("Pickers")) {
-                MenuListLink("File Picker", .file, destination: FilePickerScreen())
-                MenuListLink("Image Picker", .photo, destination: ImagePickerScreen())
+                MenuListItem(icon: .file, title: "File Picker")
+                    .navigationLink(to: FilePickerScreen())
+                MenuListItem(icon: .photo, title: "Image Picker")
+                    .navigationLink(to: ImagePickerScreen())
             }
         }
     }

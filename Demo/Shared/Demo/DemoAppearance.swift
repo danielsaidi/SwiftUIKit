@@ -10,6 +10,7 @@ import Foundation
 #if os(iOS)
 import UIKit
 #endif
+import SwiftUIKit
 
 final class DemoAppearance {
     

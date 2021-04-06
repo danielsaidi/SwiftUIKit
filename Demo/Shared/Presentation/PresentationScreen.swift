@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct PresentationScreen: View {
  
@@ -17,12 +18,12 @@ struct PresentationScreen: View {
             }
             
             Section(header: Text("Presentation Types")) {
-                MenuListLink("Alerts", .alert, destination: AlertsScreen())
+                MenuListItem(icon: .alert, title: "Alerts").navigationLink(to: AlertsScreen())
                 #if os(iOS) || os(tvOS) || os(watchOS)
-                MenuListLink("Full Screen Covers", .cover, destination: CoversScreen())
+                MenuListItem(icon: .cover, title: "Full Screen Covers").navigationLink(to: CoversScreen())
                 #endif
-                MenuListLink("Sheets", .sheet, destination: SheetsScreen())
-                MenuListLink("Toasts", .toast, destination: ToastsScreen())
+                MenuListItem(icon: .sheet, title: "Sheets").navigationLink(to: SheetsScreen())
+                MenuListItem(icon: .toast, title: "Toasts").navigationLink(to: ToastsScreen())
             }
         }
     }

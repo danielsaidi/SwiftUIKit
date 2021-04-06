@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct ViewsScreen: View {
     
@@ -25,36 +26,36 @@ struct ViewsScreen: View {
     
     private var list1: some View {
         Group {
-            MenuListLink("Async Image", .photo, destination: AsyncImageScreen())
-            MenuListLink("Circular Progress Bar", .circularProgressBar, destination: CircularProgressBarScreen())
+            MenuListItem(icon: .photo, title: "Async Image").navigationLink(to: AsyncImageScreen())
+            MenuListItem(icon: .circularProgressBar, title: "Circular Progress Bar").navigationLink(to: CircularProgressBarScreen())
             #if os(iOS) || os(tvOS) || os(watchOS)
-            MenuListLink("Circular Progress View", .circularProgressView, destination: CircularProgressViewScreen())
+            MenuListItem(icon: .circularProgressView, title: "Circular Progress View").navigationLink(to: CircularProgressViewScreen())
             #endif
             #if os(iOS) || os(tvOS)
-            MenuListLink("Collection View (grid)", .collectionViewGrid, destination: CollectionViewGridScreen())
-            MenuListLink("Collection View (shelves)", .collectionViewShelves, destination: CollectionViewShelvesScreen())
+            MenuListItem(icon: .collectionViewGrid, title: "Collection View (grid)").navigationLink(to: CollectionViewGridScreen())
+            MenuListItem(icon: .collectionViewShelves, title: "Collection View (shelves)").navigationLink(to: CollectionViewShelvesScreen())
             #endif
-            MenuListLink("Conditional View", .conditional, destination: ConditionalViewScreen())
-            MenuListLink("Dismissable View", .dismiss, destination: DismissableViewScreen())
-            MenuListLink("Fetched Data View", .download, destination: FetchedDataViewScreen())
+            MenuListItem(icon: .conditional, title: "Conditional View").navigationLink(to: ConditionalViewScreen())
+            MenuListItem(icon: .dismiss, title: "Dismissable View").navigationLink(to: DismissableViewScreen())
+            MenuListItem(icon: .download, title: "Fetched Data View").navigationLink(to: FetchedDataViewScreen())
             #if os(iOS)
-            MenuListLink("Flippable View", .swipeGesture, destination: FlippableViewScreen())
-            MenuListLink("Multiline Text Field", .multiline, destination: MultilineTextFieldScreen())
+            MenuListItem(icon: .swipeGesture, title: "Flippable View").navigationLink(to: FlippableViewScreen())
+            MenuListItem(icon: .multiline, title: "Multiline Text Field").navigationLink(to: MultilineTextFieldScreen())
             #endif
         }
     }
     
     private var list2: some View {
         Group {
-            MenuListLink("Optional View", .optional, destination: OptionalViewScreen())
+            MenuListItem(icon: .optional, title: "Optional View").navigationLink(to: OptionalViewScreen())
             #if os(iOS) || os(tvOS) || os(watchOS)
-            MenuListLink("Page View", .pageControl, destination: PageViewScreen())
+            MenuListItem(icon: .pageControl, title: "Page View").navigationLink(to: PageViewScreen())
             #endif
             #if os(iOS) || os(tvOS)
-            MenuListLink("UIView Wrapper", .wrapper, destination: UIViewWrapperScreen())
+            MenuListItem(icon: .wrapper, title: "UIView Wrapper").navigationLink(to: UIViewWrapperScreen())
             #endif
             #if os(iOS)
-            MenuListLink("Web View", .web, destination: WebViewScreen())
+            MenuListItem(icon: .web, title: "Web View").navigationLink(to: WebViewScreen())
             #endif
         }
     }

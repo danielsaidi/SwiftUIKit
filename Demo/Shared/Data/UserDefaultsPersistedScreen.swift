@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct UserDefaultsPersistedScreen: View {
     
@@ -29,7 +30,8 @@ struct UserDefaultsPersistedScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Clear text", .clear) { context.text = "" }
+                MenuListItem(icon: .clear, title: "Clear text")
+                    .button(action: { context.text = "" })
             }
         }
     }
@@ -53,5 +55,6 @@ private class PersistentContext: ObservableObject {
         didSet { persistedText = text }
     }
 
-    @UserDefaultsPersisted(key: "com.danielsaidi.swiftuikit.demo.text", defaultValue: "") private var persistedText: String
+    @UserDefaultsPersisted(key: "com.danielsaidi.swiftuikit.demo.text", defaultValue: "")
+    private var persistedText: String
 }

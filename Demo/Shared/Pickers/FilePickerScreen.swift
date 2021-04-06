@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct FilePickerScreen: View {
     
@@ -20,7 +21,8 @@ struct FilePickerScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Open picker", .file, action: openPicker)
+                MenuListItem(icon: .file, title: "Open picker")
+                    .button(action: openPicker)
             }
         }.sheet(context: sheetContext)
     }

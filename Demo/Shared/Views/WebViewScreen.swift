@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct WebViewScreen: View {
     
@@ -19,8 +20,10 @@ struct WebViewScreen: View {
                 MenuListText("This view can be used to present a URL in an embedded Safari browser.")
             }
             Section {
-                MenuListButton("Visit my website", .web, action: visitMyWebsite)
-                MenuListButton("Visit apple.com", .web, action: visitApple)
+                MenuListItem(icon: .web, title: "Visit my website")
+                    .button(action: visitMyWebsite)
+                MenuListItem(icon: .web, title: "Visit apple.com")
+                    .button(action: visitApple)
             }
         }.sheet(context: sheetContext)
     }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct QrCodeGeneratorScreen: View {
     
@@ -31,7 +32,8 @@ struct QrCodeGeneratorScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Show QR Code", .qrCode, action: showCode)
+                MenuListItem(icon: .qrCode, title: "Show QR Code")
+                    .button(action: showCode)
                     .enabled(hasUrl)
             }
         }
@@ -51,12 +53,15 @@ private extension QrCodeGeneratorScreen {
         sheetContext.present(
             NavigationView {
                 VStack {
+                    Spacer()
                     Text("Scan this code with a mobile device to open the embedded url.")
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     Spacer()
-                }.navigationTitle("Scan, ohoy!")
+                }
+                
+                .navigationTitle("Scan, ohoy!")
             }
         )
     }

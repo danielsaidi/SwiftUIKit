@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct AlertsScreen: View {
     
@@ -20,9 +21,8 @@ struct AlertsScreen: View {
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListButton(item.listText(for: "alert"), item.listIcon) {
-                        present(item)
-                    }
+                    MenuListItem(icon: item.listIcon, title: item.listText(for: "alert"))
+                        .button(action: { present(item) })
                 }
             }
         }.alert(context: context)

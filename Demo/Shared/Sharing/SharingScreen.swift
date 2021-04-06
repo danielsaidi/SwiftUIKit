@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct SharingScreen: View {
  
@@ -18,7 +19,8 @@ struct SharingScreen: View {
             }
             
             Section(header: Text("Utils")) {
-                MenuListLink("Share Sheet", .sharing, destination: ShareSheetScreen())
+                MenuListItem(icon: .sharing, title: "Share Sheet")
+                    .navigationLink(to: ShareSheetScreen())
             }
         }
     }

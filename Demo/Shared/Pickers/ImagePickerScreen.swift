@@ -8,6 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
+import SwiftUIKit
 
 struct ImagePickerScreen: View {
     
@@ -43,7 +44,8 @@ struct ImagePickerScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListButton("Pick image", .photo, action: openCamera)
+                MenuListItem(icon: .photo, title: "Pick image")
+                    .button(action: openCamera)
             }
         }.sheet(context: sheetContext)
     }

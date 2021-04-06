@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct ToastsScreen: View {
     
@@ -20,9 +21,8 @@ struct ToastsScreen: View {
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListButton(item.listText(for: "toast"), item.listIcon) {
-                        present(item)
-                    }
+                    MenuListItem(icon: item.listIcon, title: item.listText(for: "toast"))
+                        .button(action: { present(item) })
                 }
             }
         }.toast(context: context, duration: 5, style: .standard)

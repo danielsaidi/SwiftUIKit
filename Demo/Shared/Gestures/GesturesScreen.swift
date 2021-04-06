@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct GesturesScreen: View {
  
@@ -17,7 +18,8 @@ struct GesturesScreen: View {
             }
             
             Section(header: Text("Gestures")) {
-                MenuListLink("Swipe Gesture", .swipeGesture, destination: SwipeGestureScreen())
+                MenuListItem(icon: .swipeGesture, title: "Swipe Gesture")
+                    .navigationLink(to: SwipeGestureScreen())
             }
         }
     }

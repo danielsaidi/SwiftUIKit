@@ -17,7 +17,7 @@ struct BlursScreen: View {
     var body: some View {
         ScrollView(.vertical) {
             LazyVGrid(columns: [gridItem, gridItem]) {
-                ForEach(blurStyles, id: \.name) { style in
+                ForEach(blurStyles, id: \.displayName) { style in
                     listItem(for: style)
                 }
             }.padding()
@@ -34,10 +34,44 @@ private extension BlursScreen {
                 .aspectRatio(contentMode: .fit)
                 .blur(style)
                 .cornerRadius(5)
-            Text(style.name)
+            Text(style.displayName)
                 .forceSingleLine()
                 .font(.footnote)
         }.padding(.bottom, 20)
+    }
+}
+
+private extension UIBlurEffect.Style {
+    
+    var displayName: String {
+        switch self {
+        case .extraLight: return ".extraLight"
+        case .light: return ".light"
+        case .dark: return ".dark"
+        case .regular: return ".regular"
+            
+        case .prominent: return ".prominent"
+            
+        case .systemUltraThinMaterial: return ".systemUltraThinMaterial"
+        case .systemThinMaterial: return ".systemThinMaterial"
+        case .systemMaterial: return ".systemMaterial"
+        case .systemThickMaterial: return ".systemThickMaterial"
+        case .systemChromeMaterial: return ".systemChromeMaterial"
+            
+        case .systemUltraThinMaterialLight: return ".systemUltraThinMaterialLight"
+        case .systemThinMaterialLight: return ".systemThinMaterialLight"
+        case .systemMaterialLight: return ".systemMaterialLight"
+        case .systemThickMaterialLight: return ".systemThickMaterialLight"
+        case .systemChromeMaterialLight: return ".systemChromeMaterialLight"
+            
+        case .systemUltraThinMaterialDark: return ".systemUltraThinMaterialDark"
+        case .systemThinMaterialDark: return ".systemThinMaterialDark"
+        case .systemMaterialDark: return ".systemMaterialDark"
+        case .systemThickMaterialDark: return ".systemThickMaterialDark"
+        case .systemChromeMaterialDark: return ".systemChromeMaterialDark"
+            
+        @unknown default: return "Unknown"
+        }
     }
 }
 
