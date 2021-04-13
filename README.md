@@ -85,6 +85,7 @@ SwiftUIKit is available under the MIT license. See [LICENSE][License] file for m
 [Email]: mailto:daniel.saidi@gmail.com
 [Twitter]: http://www.twitter.com/danielsaidi
 [Website]: http://www.danielsaidi.com
+[Sponsors]: https://github.com/sponsors/danielsaidi
 
 [GitHub]: https://github.com/danielsaidi/SwiftUIKit
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
