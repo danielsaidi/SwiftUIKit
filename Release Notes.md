@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 1.3.2
+
+This version adds new extensions:
+
+* `ProcessInfo` has a new `isSwiftUIPreview` that can be used to tell if code is running within a preview or not. 
+
+
+
 ## 1.3.1
 
 This version adds a plain button style to regular `MenuLinkItem` buttons.
