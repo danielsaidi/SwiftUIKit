@@ -1,6 +1,6 @@
 fonts:
   inputs:
-    - SwiftUIKitDemo/Resources/Fonts
+    - Demo/Shared/Resources/Fonts
   outputs:
     - templateName: swift4
-      output: SwiftUIKitDemo/Resources/Fonts.swift
+      output: Demo/Shared/Resources/Fonts.swift
