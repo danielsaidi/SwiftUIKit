@@ -23,6 +23,7 @@
 * Cameras
 * Data
 * Extensions
+* Files
 * Gestures
 * Navigation
 * Pickers

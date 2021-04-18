@@ -3,9 +3,11 @@
 
 ## 1.3.2
 
-This version adds new extensions:
+### ✨ New features
 
-* `ProcessInfo` has a new `isSwiftUIPreview` that can be used to tell if code is running within a preview or not. 
+* `FolderMonitor` can be used to monitor changes to a folder on the file system.
+* `FolderObservable` can be used to observe changes to a folder on the file system.
+* `ProcessInfo` has a new `isSwiftUIPreview` extension that can be used to tell if code is running within a preview or not. 
 
 
 
