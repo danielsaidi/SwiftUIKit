@@ -8,7 +8,7 @@
 * `FolderMonitor` can be used to monitor changes to a folder on the file system.
 * `FolderObservable` can be used to observe changes to a folder on the file system.
 * `ProcessInfo` has a new `isSwiftUIPreview` extension that can be used to tell if code is running within a preview or not. 
-
+* `TagTextField` is a text field that automatically slugifies text as you type.
 
 
 ## 1.3.1
