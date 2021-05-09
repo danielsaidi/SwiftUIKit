@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 1.4.1
+
+### ✨ New features
+
+* `ColorBadge` is a new view that renders any color as a circular badge.
+
+
+
 ## 1.4.0
 
 ### ✨ New features
