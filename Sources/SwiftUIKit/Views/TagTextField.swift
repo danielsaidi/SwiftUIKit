@@ -46,7 +46,7 @@ private extension View {
     
     @ViewBuilder
     func lowercased() -> some View {
-        if #available(iOS 14.0, tvOS 14.0, *) {
+        if #available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *) {
             self.textCase(.lowercase)
         } else {
             self

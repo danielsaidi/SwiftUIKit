@@ -12,6 +12,7 @@
 * `TagTextField` is a text field that automatically slugifies text as you type.
 
 
+
 ## 1.3.1
 
 This version adds a plain button style to regular `MenuLinkItem` buttons.
