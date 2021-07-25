@@ -1,6 +1,18 @@
 # Release notes
 
 
+## 1.5.0
+
+This version adds image utils that help writing multiplatform apps.
+
+### ✨ New features
+
+* `ImageResource` is a new typealias for e.g. `NSImage` and `UIImage`.
+* `Image` has a new `imageResource`-based initializer.
+* `NSImage` has some new extensions, like `cgImage` and `jpegData`.
+
+
+
 ## 1.4.1
 
 ### ✨ New features
