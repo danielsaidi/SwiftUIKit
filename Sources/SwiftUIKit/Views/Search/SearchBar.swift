@@ -13,6 +13,7 @@ import SwiftUI
  This view wraps a text field in a rounded rectangle, with a
  wrapped clear button and a trailing cancel button.
  */
+@available(iOSApplicationExtension, unavailable)
 public struct SearchBar: View {
     
     public init(
@@ -40,6 +41,10 @@ public struct SearchBar: View {
     private let searchFieldPadding: CGFloat
     private let searchFieldMargin: CGFloat
     
+    public var hasText: Bool {
+        !text.wrappedValue.isEmpty
+    }
+    
     public var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -52,16 +57,9 @@ public struct SearchBar: View {
 }
 
 
-// MARK: - Properties
+// MARK: - Private Functionality
 
-public extension SearchBar {
-    
-    var hasText: Bool { !text.wrappedValue.isEmpty }
-}
-
-
-// MARK: - Views
-
+@available(iOSApplicationExtension, unavailable)
 private extension SearchBar {
 
     var cancelButton: some View {
@@ -85,12 +83,6 @@ private extension SearchBar {
         RoundedRectangle(cornerRadius: searchFieldCornerRadius)
             .foregroundColor(searchFieldBackgroundColor)
     }
-}
-
-
-// MARK: - Functions
-
-private extension SearchBar {
     
     func cancel() {
         withAnimation(.linear(duration: 0.1)) {
@@ -100,6 +92,7 @@ private extension SearchBar {
     }
 }
 
+@available(iOSApplicationExtension, unavailable)
 struct SearchBar_Previews: PreviewProvider {
     
     @State static var text = ""

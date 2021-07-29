@@ -1,6 +1,20 @@
 # Release notes
 
 
+## 1.5.1
+
+This version makes the library build under Xcode beta 4, by marking some features as unavailable for iOS application extensions.
+
+This affects the following files:
+
+* View+Keyboard
+* SearchBar
+* UrlOpener
+
+These parts of the library will no longer be available in app extensions.
+
+
+
 ## 1.5.0
 
 This version adds image utils that help writing multiplatform apps.

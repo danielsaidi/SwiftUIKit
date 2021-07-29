@@ -12,8 +12,11 @@ import SwiftUI
 
 public extension View {
     
+    @available(iOSApplicationExtension, unavailable)
     func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        let app = UIApplication.shared
+        let sel = #selector(UIResponder.resignFirstResponder)
+        app.sendAction(sel, to: nil, from: nil, for: nil)
     }
 }
 #endif
