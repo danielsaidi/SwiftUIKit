@@ -1,6 +1,22 @@
 # Release notes
 
 
+## 1.6.0
+
+### ✨ New features
+
+* `FlipView` has a new `flipDuration` property.
+
+### 🐛 Bug fixes
+
+* `FlipView`  handles flipping and view transitions better than before.
+
+### 🗑 Deprecations
+
+* `FlippableView` has been renamed to `FlipView`. 
+
+
+
 ## 1.5.1
 
 This version makes the library build under Xcode beta 4, by marking some features as unavailable for iOS application extensions.
