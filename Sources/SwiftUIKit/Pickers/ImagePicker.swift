@@ -44,7 +44,7 @@ public struct ImagePicker: UIViewControllerRepresentable {
         self.resultAction = resultAction
     }
     
-    public typealias PickerResult = Result<Image, Error>
+    public typealias PickerResult = Result<ImageResource, Error>
     public typealias CancelAction = () -> Void
     public typealias ResultAction = (PickerResult) -> Void
     
@@ -89,9 +89,11 @@ public extension ImagePicker {
         }
         
         public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let rawImage = info[.originalImage] as? UIImage {
-                let image = Image(uiImage: rawImage)
-                return self.picker.resultAction(.success(image))
+            if let image = info[.originalImage] as? UIImage {
+                self.picker.resultAction(.success(image))
+            } else {
+                let error = PickerError.missingPickedImage
+                self.picker.resultAction(.failure(error))
             }
         }
     }

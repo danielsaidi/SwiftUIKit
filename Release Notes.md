@@ -11,10 +11,15 @@
 ### 🐛 Bug fixes
 
 * `FlipView`  handles flipping and view transitions better than before.
+* `ImagePicker` now completes with failure if original image is missing.
 
 ### 🗑 Deprecations
 
 * `FlippableView` has been renamed to `FlipView`. 
+
+### 💥 Breaking Changes
+
+* `ImagePicker`'s result now uses a raw `UIImage` instead of an `Image`. 
 
 
 
