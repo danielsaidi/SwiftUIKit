@@ -6,6 +6,7 @@
 ### ✨ New features
 
 * `FlipView` has a new `flipDuration` property.
+* There is a new `MenuListItemIcon` view.
 
 ### 🐛 Bug fixes
 

@@ -66,7 +66,7 @@ public struct MenuListItem<Title: View>: View {
     public var body: some View {
         HStack {
             if let icon = icon {
-                icon.frame(width: 20).padding(.trailing, 10)
+                MenuListItemIcon(icon)
             }
             title
             Spacer()

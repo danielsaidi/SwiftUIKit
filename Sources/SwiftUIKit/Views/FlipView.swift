@@ -74,11 +74,11 @@ private extension FlipView {
     }
 
     var cardAnimation: Animation {
-        Animation.linear(duration: flipDuration)
+        .linear(duration: flipDuration)
     }
     
     var contentAnimation: Animation {
-        Animation.linear(duration: 0.001).delay(flipDuration/2)
+        .linear(duration: 0.001).delay(flipDuration/2)
     }
     
     func flip(_ direction: FlipDirection) {
