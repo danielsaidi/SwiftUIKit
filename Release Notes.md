@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 1.7.0
+
+### ✨ New features
+
+* `FormText` is a new view to present text in `List` forms.
+* `FormTextField` is a new view to present text fields in `List` forms.
+* `ActionButton` is a new button that resembles the action button in e.g. Contacts.
+* `ActionButtonStyle` is a new button style that can be used for action buttons.
+
+
 ## 1.6.0
 
 ### ✨ New features
