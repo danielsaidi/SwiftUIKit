@@ -1,5 +1,5 @@
 //
-//  FlippableView.swift
+//  FlipView.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-01-05.
