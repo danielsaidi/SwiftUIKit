@@ -16,6 +16,9 @@ import SwiftUI
  view both horizontally and vertically can mess it up and is
  not good from a usability point of view, since the view can
  become upside down.
+ 
+ `TODO` For now, this view only supports swiping the view in
+ the same (horizontal/vertical) direction as the tap gesture.
  */
 public struct FlipView<FrontView: View, BackView: View>: View {
     
@@ -37,7 +40,7 @@ public struct FlipView<FrontView: View, BackView: View>: View {
         back: BackView,
         flipDuration: Double = 0.3,
         tapDirection: FlipDirection = .right,
-        swipeDirections: [FlipDirection] = [.left, .right, .up, .down]) {
+        swipeDirections: [FlipDirection] = [.left, .right]) {
         self.front = front
         self.back = back
         self.flipDuration = flipDuration
@@ -55,6 +58,7 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     @State private var cardRotation = 0.0
     @State private var contentRotation = 0.0
     @State private var isFlipped = false
+    @State private var lastDirection = FlipDirection.right
     
     public var body: some View {
         content
@@ -174,7 +178,7 @@ struct FlippableView_Previews: PreviewProvider {
             back: back,
             flipDuration: 0.5,
             tapDirection: .right,
-            swipeDirections: [.left, .right])
+            swipeDirections: [.left, .right, .up, .down])
         #endif
     }
 }

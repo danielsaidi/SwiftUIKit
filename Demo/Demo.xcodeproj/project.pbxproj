@@ -51,8 +51,8 @@
 		A901F0F42570028800F1C285 /* ShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */; };
 		A901F1102570079800F1C285 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F10E2570079800F1C285 /* Fonts.swift */; };
 		A901F1112570079800F1C285 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F10E2570079800F1C285 /* Fonts.swift */; };
-		A901F11B257010DC00F1C285 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */; };
-		A901F11C257010DC00F1C285 /* FlippableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */; };
+		A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlipViewScreen.swift */; };
+		A901F11C257010DC00F1C285 /* FlipViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlipViewScreen.swift */; };
 		A901F1222570633900F1C285 /* AsyncImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F1212570633900F1C285 /* AsyncImageScreen.swift */; };
 		A901F1232570633900F1C285 /* AsyncImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F1212570633900F1C285 /* AsyncImageScreen.swift */; };
 		A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */; };
@@ -133,7 +133,7 @@
 		A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
 		A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyleScreen.swift; sourceTree = "<group>"; };
 		A901F10E2570079800F1C285 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableViewScreen.swift; sourceTree = "<group>"; };
+		A901F11A257010DB00F1C285 /* FlipViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewScreen.swift; sourceTree = "<group>"; };
 		A901F1212570633900F1C285 /* AsyncImageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageScreen.swift; sourceTree = "<group>"; };
 		A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewShelvesScreen.swift; sourceTree = "<group>"; };
 		A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridScreen.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 				A901F14625707A8F00F1C285 /* ConditionalViewScreen.swift */,
 				A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */,
 				A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */,
-				A901F11A257010DB00F1C285 /* FlippableViewScreen.swift */,
+				A901F11A257010DB00F1C285 /* FlipViewScreen.swift */,
 				A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */,
 				A9544B47257113E800522141 /* OptionalViewScreen.swift */,
 				A9544B402571114400522141 /* PageViewScreen.swift */,
@@ -594,7 +594,7 @@
 				A901F0F32570028800F1C285 /* ShadowStyleScreen.swift in Sources */,
 				A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
 				A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
-				A901F11B257010DC00F1C285 /* FlippableViewScreen.swift in Sources */,
+				A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */,
 				A9544B48257113E800522141 /* OptionalViewScreen.swift in Sources */,
 				A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
@@ -647,7 +647,7 @@
 				A901F0F42570028800F1C285 /* ShadowStyleScreen.swift in Sources */,
 				A9355056256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
 				A901F12A25706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
-				A901F11C257010DC00F1C285 /* FlippableViewScreen.swift in Sources */,
+				A901F11C257010DC00F1C285 /* FlipViewScreen.swift in Sources */,
 				A9544B49257113E800522141 /* OptionalViewScreen.swift in Sources */,
 				A901F0EA2570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04F256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
@@ -910,7 +910,7 @@
 			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
+				minimumVersion = 1.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

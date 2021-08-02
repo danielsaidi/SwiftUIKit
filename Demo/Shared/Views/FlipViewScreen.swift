@@ -1,5 +1,5 @@
 //
-//  FlippableViewScreen.swift
+//  FlipViewScreen.swift
 //  Demo
 //
 //  Created by Daniel Saidi on 2020-11-26.
@@ -10,23 +10,23 @@
 import SwiftUI
 import SwiftUIKit
 
-struct FlippableViewScreen: View {
+struct FlipViewScreen: View {
         
     var body: some View {
         VStack {
             MenuListText("This view has a front and a back face and can be flipped by tapping ot swiping.")
-            FlippableView(
+            FlipView(
                 front: side(.blue, "Flip me!"),
                 back: side(.red, "Flip me back!"),
                 tapDirection: .right,
                 swipeDirections: [.up, .down, .left, .right])
         }
         .padding()
-        .navigationTitle("Flippable View")
+        .navigationTitle("Flip View")
     }
 }
 
-private extension FlippableViewScreen {
+private extension FlipViewScreen {
     
     func side(_ color: Color, _ text: String) -> some View {
         color
@@ -35,9 +35,9 @@ private extension FlippableViewScreen {
     }
 }
 
-struct FlippableViewScreen_Previews: PreviewProvider {
+struct FlipScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FlippableViewScreen()
+        FlipViewScreen()
     }
 }
 #endif

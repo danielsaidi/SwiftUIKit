@@ -39,7 +39,7 @@ struct ViewsScreen: View {
             MenuListItem(icon: .dismiss, title: "Dismissable View").navigationLink(to: DismissableViewScreen())
             MenuListItem(icon: .download, title: "Fetched Data View").navigationLink(to: FetchedDataViewScreen())
             #if os(iOS)
-            MenuListItem(icon: .swipeGesture, title: "Flippable View").navigationLink(to: FlippableViewScreen())
+            MenuListItem(icon: .swipeGesture, title: "Flip View").navigationLink(to: FlipViewScreen())
             MenuListItem(icon: .multiline, title: "Multiline Text Field").navigationLink(to: MultilineTextFieldScreen())
             #endif
         }
