@@ -11,7 +11,7 @@ import SwiftUI
 public extension Image {
     
     init(imageResource: ImageResource) {
-        #if os(iOS)
+        #if os(iOS) || os(watchOS) || os(tvOS)
         self.init(uiImage: imageResource)
         #elseif os(macOS)
         self.init(nsImage: imageResource)

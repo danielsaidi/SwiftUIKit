@@ -6,7 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 
 /**

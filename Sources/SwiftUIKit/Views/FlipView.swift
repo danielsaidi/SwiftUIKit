@@ -6,7 +6,6 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 
 /**
@@ -20,6 +19,19 @@ import SwiftUI
  */
 public struct FlipView<FrontView: View, BackView: View>: View {
     
+    #if os(tvOS)
+    public init(
+        front: FrontView,
+        back: BackView,
+        flipDuration: Double = 0.3,
+        tapDirection: FlipDirection = .right) {
+        self.front = front
+        self.back = back
+        self.flipDuration = flipDuration
+        self.tapDirection = tapDirection
+        self.swipeDirections = []
+    }
+    #else
     public init(
         front: FrontView,
         back: BackView,
@@ -32,6 +44,7 @@ public struct FlipView<FrontView: View, BackView: View>: View {
         self.tapDirection = tapDirection
         self.swipeDirections = swipeDirections
     }
+    #endif
     
     private let front: FrontView
     private let back: BackView
@@ -45,12 +58,8 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     
     public var body: some View {
         content
-            .onTapGesture { flip(tapDirection) }
-            .onSwipeGesture(
-                up: { swipe(.up) },
-                left: { swipe(.left) },
-                right: { swipe(.right) },
-                down: { swipe(.down) })
+            .withTapGesture { flip(tapDirection) }
+            .withSwipeGesture(action: swipe)
             .rotationEffect(.degrees(contentRotation), direction: tapDirection)
             .rotationEffect(.degrees(cardRotation), direction: tapDirection)
     }
@@ -59,6 +68,31 @@ public struct FlipView<FrontView: View, BackView: View>: View {
 public enum FlipDirection {
     
     case left, right, up, down
+}
+
+private extension View {
+    
+    typealias FlipAction = (FlipDirection) -> Void
+    
+    func withTapGesture(action: @escaping () -> Void) -> some View {
+        #if os(tvOS)
+        Button(action: action) { self }
+        #else
+        self.onTapGesture(perform: action)
+        #endif
+    }
+    
+    func withSwipeGesture(action: @escaping FlipAction) -> some View {
+        #if os(tvOS)
+        self
+        #else
+        self.onSwipeGesture(
+            up: { action(.up) },
+            left: { action(.left) },
+            right: { action(.right) },
+            down: { action(.down) })
+        #endif
+    }
 }
 
 private extension FlipView {
@@ -128,12 +162,19 @@ struct FlippableView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
+        #if os(tvOS)
+        FlipView(
+            front: front,
+            back: back,
+            flipDuration: 0.5,
+            tapDirection: .right)
+        #else
         FlipView(
             front: front,
             back: back,
             flipDuration: 0.5,
             tapDirection: .right,
             swipeDirections: [.left, .right])
+        #endif
     }
 }
-#endif

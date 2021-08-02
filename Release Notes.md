@@ -6,7 +6,9 @@
 ### ✨ New features
 
 * `FlipView` has a new `flipDuration` property.
-* There is a new `MenuListItemIcon` view.
+* `FlipView` is now supported by all platforms.
+* `ImageResource` is now supported by `watchOS` and `tvOS` as well.
+* `MenuListItemIcon` is a new view for menu list items. 
 
 ### 🐛 Bug fixes
 
