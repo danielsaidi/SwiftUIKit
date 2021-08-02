@@ -14,12 +14,17 @@ struct FlipViewScreen: View {
         
     var body: some View {
         VStack {
-            MenuListText("This view has a front and a back face and can be flipped by tapping ot swiping.")
+            MenuListText("These views have a front and a back face and can be flipped by tapping ot swiping.")
             FlipView(
-                front: side(.blue, "Flip me!"),
+                front: side(.blue, "Flip me horizontally!"),
                 back: side(.red, "Flip me back!"),
                 tapDirection: .right,
-                swipeDirections: [.up, .down, .left, .right])
+                swipeDirections: [.left, .right])
+            FlipView(
+                front: side(.blue, "Flip me vertically!"),
+                back: side(.red, "Flip me back!"),
+                tapDirection: .up,
+                swipeDirections: [.up, .down])
         }
         .padding()
         .navigationTitle("Flip View")
