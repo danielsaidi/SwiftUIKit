@@ -12,6 +12,7 @@ import SwiftUI
  This protocol can be implemented by classes that can create
  QR code images.
  */
+@available(*, deprecated, message: "Use ScanCodeGenerator instead")
 public protocol QrCodeGenerator {
 
     func generateQRCode(from string: String) -> Image?

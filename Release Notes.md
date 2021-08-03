@@ -10,6 +10,14 @@
 * `FormTextField` is a new view to present text fields in `List` forms.
 * `ActionButton` is a new button that resembles the action button in e.g. Contacts.
 * `ActionButtonStyle` is a new button style that can be used for action buttons.
+* `ScanCodeGenerator` is a new protocol for types that can generate scan codes.
+* `StandardScanCodeGenerator` is a new, standard implementation of `ScanCodeGenerator`.
+
+### 🗑 Deprecations
+
+* `QrCodeGenerator` has been deprecated due to the new `QrCodeGenerator`.
+* `StandardQrCodeGenerator` has been deprecated due to the new `StandardQrCodeGenerator`.
+
 
 
 ## 1.6.0
