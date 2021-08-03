@@ -38,10 +38,9 @@ public struct FormText: View {
             stack
         }
     }
-}
 
-@available(iOS 14, *)
-extension FormText {
+    
+    // MARK: - Convert to extension after bumping to iOS 14.
     
     var hasEmptyText: Bool {
         text.trimmingCharacters(in: .whitespaces).isEmpty
@@ -66,6 +65,9 @@ struct FormText_Previews: PreviewProvider {
             FormText(
                 title: "Title 1",
                 text: "Text value")
+            FormText(
+                title: "Title 1",
+                text: "Long\nmultuline\ntext that could have been entered in a text editor.")
             FormText(
                 title: "Title 2",
                 text: "")
