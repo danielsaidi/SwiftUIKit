@@ -28,7 +28,7 @@ public struct FormText: View {
     }
     
     private let title: String
-    private let text: String
+    public let text: String
     private let hideIfEmpty: Bool
     
     public var body: some View {
