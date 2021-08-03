@@ -36,6 +36,8 @@ public struct FormTextEditor: View {
                 .foregroundColor(.secondary)
             TextEditor(text: $text)
                 .frame(height: editorHeight)
+                .padding(.vertical, -6)
+                .padding(.horizontal, -4)
         }.padding(.vertical, 3)
     }
 }
@@ -45,11 +47,24 @@ struct FormTextEditor_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var text = "Text"
+        @State private var text = """
+When I look into your eyes
+I can see a love restrained
+But darlin' when I hold you
+Don't you know I feel the same?
+
+Nothin' lasts forever
+And we both know hearts can change
+And it's hard to hold a candle
+In the cold November rain
+"""
         
         var body: some View {
+            FormText(
+                title: "View",
+                text: text)
             FormTextEditor(
-                title: "Title",
+                title: "Edit",
                 text: $text)
         }
     }
