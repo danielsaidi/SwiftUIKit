@@ -25,7 +25,7 @@ public struct ActionButtonStyle: ButtonStyle {
             .foregroundColor(.primary)
             .cornerRadius(10.0)
             .shadow(color: .black.opacity(0.2), radius: 5)
-            .opacity(isEnabled ? 1 : 0.5)
+            .opacity(isEnabled ? 1 : 0.3)
             .opacity(configuration.isPressed ? 0.85 : 1)
     }
 }
