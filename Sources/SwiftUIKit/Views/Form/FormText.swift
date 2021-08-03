@@ -21,7 +21,7 @@ public struct FormText: View {
     public init(
         title: String,
         text: String,
-        hideIfEmpty: Bool = true) {
+        hideIfEmpty: Bool = false) {
         self.title = title
         self.text = text
         self.hideIfEmpty = hideIfEmpty
@@ -42,7 +42,7 @@ public struct FormText: View {
     
     // MARK: - Convert to extension after bumping to iOS 14.
     
-    var hasEmptyText: Bool {
+    public var hasEmptyText: Bool {
         text.trimmingCharacters(in: .whitespaces).isEmpty
     }
     
@@ -70,7 +70,8 @@ struct FormText_Previews: PreviewProvider {
                 text: "Long\nmultuline\ntext that could have been entered in a text editor.")
             FormText(
                 title: "Title 2",
-                text: "")
+                text: "",
+                hideIfEmpty: true)
             FormText(
                 title: "Title 3",
                 text: "",
