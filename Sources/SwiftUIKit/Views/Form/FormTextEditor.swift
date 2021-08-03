@@ -37,8 +37,8 @@ public struct FormTextEditor: View {
             TextEditor(text: $text)
                 .frame(height: editorHeight)
                 .padding(.vertical, -6)
-                .padding(.horizontal, -4)
-        }.padding(.vertical, 3)
+                .padding(.leading, -5)
+        }.padding(.vertical, 1)
     }
 }
 
@@ -61,17 +61,24 @@ In the cold November rain
         
         var body: some View {
             FormText(
-                title: "View",
+                title: "Viewer",
                 text: text)
             FormTextEditor(
-                title: "Edit",
-                text: $text)
+                title: "Editor",
+                text: $text,
+                editorHeight: 150)
         }
     }
     
     static var previews: some View {
-        List {
-            Preview()
+        ZStack(alignment: .leading) {
+            List {
+                Preview()
+            }
+            Color.red
+                .frame(width: 10)
+                .offset(x: 22)
+                .opacity(0)
         }
     }
 }
