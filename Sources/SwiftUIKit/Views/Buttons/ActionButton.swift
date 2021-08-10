@@ -91,7 +91,6 @@ struct ActionButton_Previews: PreviewProvider {
         .padding()
         .preferredColorScheme(scheme)
         .previewLayout(.sizeThatFits)
-        //.environment(\.sizeCategory, .extraLarge)
     }
     
     static var previews: some View {
