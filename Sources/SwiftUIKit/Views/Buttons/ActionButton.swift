@@ -11,6 +11,10 @@ import SwiftUI
 /**
  This view replicates the horizontal action buttons that are
  used in e.g. the Contacts app.
+ 
+ `TODO` The private parts are not in extensions, since using
+ available annotations on extensions mess up previews. Check
+ bck on this when bumping the library to iOS 14 or later.
  */
 @available(iOS 14, *)
 public struct ActionButton: View {
@@ -36,31 +40,29 @@ public struct ActionButton: View {
             }
         }.buttonStyle(ActionButtonStyle())
     }
-}
-
-@available(iOS 14, *)
-public extension ActionButton {
+    
+    
+    // MARK: - Public Functions
     
     /**
      A dimmed action button looks disabled, but can still be
      tapped, which is a nice way to be able to inform a user
      why the button doesn't work.
      */
-    func dimmed(_ val: Bool) -> some View {
+    public func dimmed(_ val: Bool) -> some View {
         self.opacity(val ? 0.5 : 1)
     }
-}
-
-@available(iOS 14, *)
-private extension ActionButton {
     
-    var image: some View {
+    
+    // MARK: - Private Views
+    
+    private var image: some View {
         icon.resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: 18)
     }
     
-    var text: some View {
+    private var text: some View {
         Text(title)
             .fixedSize()
             .font(.caption2)
