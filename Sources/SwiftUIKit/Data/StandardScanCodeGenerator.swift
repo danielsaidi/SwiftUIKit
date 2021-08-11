@@ -52,3 +52,12 @@ private extension StandardScanCodeGenerator {
     }
 }
 #endif
+
+#if os(macOS)
+private extension ImageResource {
+    
+    convenience init(cgImage: CGImage) {
+        self.init(cgImage: cgImage, size: .zero)
+    }
+}
+#endif

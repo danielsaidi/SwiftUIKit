@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -51,3 +52,4 @@ struct FormTextField_Previews: PreviewProvider {
         }
     }
 }
+#endif

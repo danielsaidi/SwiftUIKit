@@ -3,7 +3,13 @@
 
 ## 1.7.1
 
+### 💡 Behavior changes
+
 This release renames `ActionButton` and `ActionButtonStyle`  to `FormActionButton` and `FormActionButtonStyle`, since the name "action button" is too general.
+
+### 🐛 Bug fixes
+
+* This release fixes build errors on tvOS and macOS.
 
 ### 🗑 Deprecations
 

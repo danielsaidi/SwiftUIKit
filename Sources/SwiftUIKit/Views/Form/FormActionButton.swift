@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -113,3 +114,4 @@ private extension Image {
         Image(systemName: name)
     }
 }
+#endif
