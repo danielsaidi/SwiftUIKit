@@ -1,5 +1,5 @@
 //
-//  ActionButtonStyle.swift
+//  FormActionButtonStyle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
@@ -12,7 +12,7 @@ import SwiftUI
  This style makes a button look like an `ActionButton`, with
  a solud, rounded background badge.
  */
-public struct ActionButtonStyle: ButtonStyle {
+public struct FormActionButtonStyle: ButtonStyle {
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -30,7 +30,7 @@ public struct ActionButtonStyle: ButtonStyle {
     }
 }
 
-private extension ActionButtonStyle {
+private extension FormActionButtonStyle {
     
     var isDark: Bool { colorScheme == .dark }
     

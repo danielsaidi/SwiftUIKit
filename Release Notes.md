@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 1.7.1
+
+This release renames `ActionButton` and `ActionButtonStyle`  to `FormActionButton` and `FormActionButtonStyle`, since the name "action button" is too general.
+
+### 🗑 Deprecations
+
+* `ActionButton` and `ActionButtonStyle` has been deprecated.
+
+
+
 ## 1.7.0
 
 ### ✨ New features

@@ -1,5 +1,5 @@
 //
-//  ActionButton.swift
+//  FormActionButton.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
@@ -9,15 +9,15 @@
 import SwiftUI
 
 /**
- This view replicates the horizontal action buttons that are
- used in e.g. the Contacts app.
+ This button replicates the horizontally aligned form action
+ buttons that are used in e.g. the Contacts app.
  
  `TODO` The private parts are not in extensions, since using
  available annotations on extensions mess up previews. Check
  bck on this when bumping the library to iOS 14 or later.
  */
 @available(iOS 14, *)
-public struct ActionButton: View {
+public struct FormActionButton: View {
     
     public init(
         icon: Image,
@@ -38,7 +38,7 @@ public struct ActionButton: View {
                 image
                 text
             }
-        }.buttonStyle(ActionButtonStyle())
+        }.buttonStyle(FormActionButtonStyle())
     }
     
     
@@ -71,12 +71,12 @@ public struct ActionButton: View {
 }
 
 @available(iOS 14, *)
-struct ActionButton_Previews: PreviewProvider {
+struct FormActionButton_Previews: PreviewProvider {
     
     static func button(
         _ image: Image,
-        _ title: String) -> ActionButton {
-        ActionButton(icon: image, title: title, action: {})
+        _ title: String) -> FormActionButton {
+        FormActionButton(icon: image, title: title, action: {})
     }
     
     static func preview(_ scheme: ColorScheme) -> some View {
