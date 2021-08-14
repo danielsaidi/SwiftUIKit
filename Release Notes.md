@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 1.7.2
+
+### ✨ New features
+
+This release adds an `isFlipped` binding to the `FlipView`, so that the flipped state can be modified from the outside as well.
+
+
+
 ## 1.7.1
 
 ### 💡 Behavior changes

@@ -26,10 +26,12 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     public init(
         front: FrontView,
         back: BackView,
+        isFlipped: Binding<Bool>,
         flipDuration: Double = 0.3,
         tapDirection: FlipDirection = .right) {
         self.front = front
         self.back = back
+        self._isFlipped = isFlipped
         self.flipDuration = flipDuration
         self.tapDirection = tapDirection
         self.swipeDirections = []
@@ -38,16 +40,20 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     public init(
         front: FrontView,
         back: BackView,
+        isFlipped: Binding<Bool>,
         flipDuration: Double = 0.3,
         tapDirection: FlipDirection = .right,
         swipeDirections: [FlipDirection] = [.left, .right]) {
         self.front = front
         self.back = back
+        self._isFlipped = isFlipped
         self.flipDuration = flipDuration
         self.tapDirection = tapDirection
         self.swipeDirections = swipeDirections
     }
     #endif
+    
+    @Binding private var isFlipped: Bool
     
     private let front: FrontView
     private let back: BackView
@@ -57,7 +63,6 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     
     @State private var cardRotation = 0.0
     @State private var contentRotation = 0.0
-    @State private var isFlipped = false
     @State private var lastDirection = FlipDirection.right
     
     public var body: some View {
@@ -157,28 +162,31 @@ private extension View {
 
 struct FlippableView_Previews: PreviewProvider {
     
-    static var front: some View {
-        Color.green
-    }
-    
-    static var back: some View {
-        Color.red
+    struct Preview: View {
+        
+        @State private var isFlipped = false
+        
+        var body: some View {
+            #if os(tvOS)
+            FlipView(
+                front: Color.green,
+                back: Color.red,
+                isFlipped: $isFlipped,
+                flipDuration: 0.5,
+                tapDirection: .right)
+            #else
+            FlipView(
+                front: Color.green,
+                back: Color.red,
+                isFlipped: $isFlipped,
+                flipDuration: 0.5,
+                tapDirection: .right,
+                swipeDirections: [.left, .right, .up, .down])
+            #endif
+        }
     }
     
     static var previews: some View {
-        #if os(tvOS)
-        FlipView(
-            front: front,
-            back: back,
-            flipDuration: 0.5,
-            tapDirection: .right)
-        #else
-        FlipView(
-            front: front,
-            back: back,
-            flipDuration: 0.5,
-            tapDirection: .right,
-            swipeDirections: [.left, .right, .up, .down])
-        #endif
+        Preview()
     }
 }
