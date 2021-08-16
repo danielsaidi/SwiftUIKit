@@ -5,7 +5,9 @@
 
 ### ✨ New features
 
-This release adds an `isFlipped` binding to the `FlipView`, so that the flipped state can be modified from the outside as well.
+* `FlipView` has a new `isFlipped` binding, so that it can be read from outside as well.
+* `FormText` now supports iOS 13.
+* `FormText` has a new `trailingView` property. 
 
 
 
