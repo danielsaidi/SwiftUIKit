@@ -71,7 +71,7 @@ public extension FormText where TrailingView == EmptyView {
 private extension FormText {
     
     var stack: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 5) {
                 Text(title.lowercased())
                     .font(.footnote)
@@ -89,6 +89,8 @@ private extension FormText {
 
 struct FormText_Previews: PreviewProvider {
     
+    static var action: (() -> Void) = {}
+    
     static var previews: some View {
         List {
             FormText(
@@ -97,9 +99,7 @@ struct FormText_Previews: PreviewProvider {
             FormText(
                 title: "Title 2",
                 text: "A looong text value with a trailing view.") {
-                Button(action: {}) {
-                    Image(systemName: "doc.on.doc")
-                }
+                Button(action: {}, label: { Image(systemName: "doc.on.doc") })
             }
             FormText(
                 title: "Title 3",
