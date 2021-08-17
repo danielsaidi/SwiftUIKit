@@ -27,8 +27,8 @@
 		A901F081256F963E00F1C285 /* SharingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F07F256F963E00F1C285 /* SharingScreen.swift */; };
 		A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F084256F964600F1C285 /* ViewsScreen.swift */; };
 		A901F086256F964600F1C285 /* ViewsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F084256F964600F1C285 /* ViewsScreen.swift */; };
-		A901F099256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */; };
-		A901F09A256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */; };
+		A901F099256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */; };
+		A901F09A256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */; };
 		A901F0A0256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */; };
 		A901F0A1256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */; };
 		A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */; };
@@ -121,7 +121,7 @@
 		A901F07A256F963400F1C285 /* PickersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersScreen.swift; sourceTree = "<group>"; };
 		A901F07F256F963E00F1C285 /* SharingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingScreen.swift; sourceTree = "<group>"; };
 		A901F084256F964600F1C285 /* ViewsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsScreen.swift; sourceTree = "<group>"; };
-		A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeGeneratorScreen.swift; sourceTree = "<group>"; };
+		A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeGeneratorScreen.swift; sourceTree = "<group>"; };
 		A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistedScreen.swift; sourceTree = "<group>"; };
 		A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
 		A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				A901F039256F8CA600F1C285 /* DataScreen.swift */,
-				A901F098256FAF0100F1C285 /* QrCodeGeneratorScreen.swift */,
+				A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */,
 				A901F09F256FAF9A00F1C285 /* UserDefaultsPersistedScreen.swift */,
 			);
 			path = Data;
@@ -563,7 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A901F099256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */,
+				A901F099256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */,
 				A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */,
 				A9F85336259B4D9200C98870 /* WebViewScreen.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
@@ -616,7 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A901F09A256FAF0100F1C285 /* QrCodeGeneratorScreen.swift in Sources */,
+				A901F09A256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */,
 				A901F0E0256FE65E00F1C285 /* DemoPresentable.swift in Sources */,
 				A9F85337259B4D9200C98870 /* WebViewScreen.swift in Sources */,
 				A901F045256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
@@ -909,8 +909,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

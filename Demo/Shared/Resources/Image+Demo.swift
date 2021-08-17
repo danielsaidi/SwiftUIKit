@@ -11,6 +11,7 @@ import SwiftUI
 extension Image {
     
     static var alert: Image { Image(systemName: "rectangle.center.inset.fill") }
+    static var barcode: Image { Image(systemName: "barcode") }
     static var blur: Image { Image(systemName: "face.dashed") }
     static var camera: Image { Image(systemName: "camera") }
     static var circularProgressBar: Image { Image(systemName: "timer") }

@@ -11,6 +11,9 @@ import SwiftUI
 import SwiftUIKit
 
 struct FlipViewScreen: View {
+    
+    @State private var isFlippedHorizontally = false
+    @State private var isFlippedVertically = false
         
     var body: some View {
         VStack {
@@ -18,11 +21,13 @@ struct FlipViewScreen: View {
             FlipView(
                 front: side(.blue, "Flip me horizontally!"),
                 back: side(.red, "Flip me back!"),
+                isFlipped: $isFlippedHorizontally,
                 tapDirection: .right,
                 swipeDirections: [.left, .right])
             FlipView(
                 front: side(.blue, "Flip me vertically!"),
                 back: side(.red, "Flip me back!"),
+                isFlipped: $isFlippedVertically,
                 tapDirection: .up,
                 swipeDirections: [.up, .down])
         }
