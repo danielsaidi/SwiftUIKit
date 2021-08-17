@@ -10,6 +10,10 @@
 * `FormText` has a new `trailingView` property. 
 * There is a new `UIImage+Rotated` extension.
 
+### 💥 Breaking Changes
+
+* `ScanCodeGenerator` functions `of` parameter name is not omitted. 
+
 
 
 ## 1.7.1

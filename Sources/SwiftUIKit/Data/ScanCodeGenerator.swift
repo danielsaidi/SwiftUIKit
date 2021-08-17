@@ -14,6 +14,6 @@ import SwiftUI
  */
 public protocol ScanCodeGenerator {
 
-    func generateCode(of type: ScanCodeType, from string: String) -> ImageResource?
-    func generateCodeView(of type: ScanCodeType, from string: String) -> Image?
+    func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource?
+    func generateCodeView(_ type: ScanCodeType, from string: String) -> Image?
 }

@@ -13,7 +13,7 @@ import SwiftUI
 public class StandardQrCodeGenerator: StandardScanCodeGenerator, QrCodeGenerator {
     
     public func generateQRCode(from string: String) -> Image? {
-        generateCodeView(of: .qr, from: string)
+        generateCodeView(.qr, from: string)
     }
 }
 #endif

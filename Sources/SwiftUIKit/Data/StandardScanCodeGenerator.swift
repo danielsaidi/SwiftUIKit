@@ -21,13 +21,13 @@ public class StandardScanCodeGenerator: ScanCodeGenerator {
     
     public let transform: CGAffineTransform
     
-    public func generateCode(of type: ScanCodeType, from string: String) -> ImageResource? {
+    public func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource? {
         guard let image = generateCoreImage(of: type, from: string) else { return nil }
         return ImageResource(cgImage: image)
     }
     
-    public func generateCodeView(of type: ScanCodeType, from string: String) -> Image? {
-        guard let image = generateCode(of: type, from: string) else { return nil }
+    public func generateCodeView(_ type: ScanCodeType, from string: String) -> Image? {
+        guard let image = generateCode(type, from: string) else { return nil }
         return Image(imageResource: image)
     }
 }
