@@ -71,6 +71,7 @@ public struct FlipView<FrontView: View, BackView: View>: View {
             .withSwipeGesture(action: swipe)
             .rotationEffect(.degrees(contentRotation), direction: tapDirection)
             .rotationEffect(.degrees(cardRotation), direction: tapDirection)
+            .accessibility(addTraits: .isButton)
     }
 }
 
