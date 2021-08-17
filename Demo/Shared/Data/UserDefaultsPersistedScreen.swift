@@ -11,12 +11,6 @@ import SwiftUIKit
 
 struct UserDefaultsPersistedScreen: View {
     
-    init(generator: QrCodeGenerator = StandardQrCodeGenerator(scale: 100)) {
-        self.generator = generator
-    }
-    
-    private let generator: QrCodeGenerator
-    
     @StateObject private var context = PersistentContext()
         
     var body: some View {
