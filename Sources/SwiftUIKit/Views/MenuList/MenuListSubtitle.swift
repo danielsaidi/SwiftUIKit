@@ -26,8 +26,8 @@ public struct MenuListSubtitle: View {
     
     public var body: some View {
         Text(text)
-            .lineSpacing(8)
-            .padding(.vertical, 13)
+            .font(.footnote)
+            .foregroundColor(.secondary)
     }
 }
 

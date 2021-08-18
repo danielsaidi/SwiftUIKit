@@ -8,86 +8,137 @@
 
 import SwiftUI
 
-public extension MenuListItem where Title == Text {
-    
-    /**
-     This convenience initializer creates a list that uses a
-     `Text` view for the `title` string.
-     */
-    init(
-        icon: Image? = nil,
-        title: String,
-        trailingIcon: Image? = nil) {
-        self.init(
-            icon: icon,
-            title: Text(title),
-            trailingIcon: trailingIcon)
-    }
-}
-
 /**
  A list item can have a left icon, a centered title view and
  an optional trailing icon.
  */
-public struct MenuListItem<Title: View>: View {
+public struct MenuListItem<Content: View>: View {
     
+    /**
+     This can be used to create a list item with any content.
+     */
     public init(
-        icon: Image? = nil,
-        title: Title,
-        trailingIcon: Image? = nil) {
-        self.init(
-            icon: icon,
-            title: title,
-            trailingIcon: trailingIcon,
-            isNavigationButton: false)
-    }
-    
-    public init(
-        icon: Image? = nil,
-        trailingIcon: Image? = nil,
-        @ViewBuilder title: @escaping TitleBuilder) {
-        self.init(
-            icon: icon,
-            title: title(),
-            trailingIcon: trailingIcon,
-            isNavigationButton: false)
+        @ViewBuilder content: @escaping ContentBuilder) {
+        self.isNavigationButton = false
+        self.content = content
     }
 
     /**
      This internal init is used to define whether or not the
-     item is a navigation item. This is only used by buttons
-     that navigate.
+     item is a navigation button item.
      */
     init(
-        icon: Image?,
-        title: Title,
-        trailingIcon: Image?,
-        isNavigationButton: Bool = false) {
-        self.icon = icon
-        self.title = title
-        self.trailingIcon = trailingIcon
+        isNavigationButton: Bool,
+        @ViewBuilder content: @escaping ContentBuilder) {
         self.isNavigationButton = isNavigationButton
+        self.content = content
     }
     
-    private let title: Title
-    private let icon: Image?
-    private let trailingIcon: Image?
+    private let content: ContentBuilder
     private let isNavigationButton: Bool
     
-    public typealias TitleBuilder = () -> Title
+    public typealias ContentBuilder = () -> Content
     
     public var body: some View {
-        HStack {
-            if let icon = icon {
-                MenuListIcon(icon)
-            }
-            title
-            Spacer()
-            OptionalView(trailingIcon) { $0 }
-            trailingView(for: trailingIcon)
+        HStack(spacing: 20) {
+            content()
+            trailingView
         }.background(Color.white.opacity(0.0001))
     }
 }
+
+
+// MARK: - Convenience Initializers
+
+public extension MenuListItem where Content == AnyView {
+    
+    /**
+     This can be used to create a list item with fixed views.
+     
+     The other convenience initializers just call this using
+     various view combinations.
+     */
+    init<Icon: View, Content: View, TrailingContent: View, TrailingIcon: View>(
+        icon: Icon,
+        title: Content,
+        trailingContent: TrailingContent,
+        trailingIcon: TrailingIcon) {
+        self.init {
+            Group {
+                OptionalView(icon) { MenuListIcon($0) }
+                title
+                Spacer()
+                trailingContent
+                OptionalView(trailingIcon) { MenuListIcon($0) }
+            }.any()
+        }
+    }
+    
+    init(
+        icon: Image? = nil,
+        title: String,
+        subtitle: String? = nil,
+        trailingIcon: Image? = nil) {
+        self.init(
+            icon: OptionalView(icon) { MenuListIcon($0) },
+            title: MenuListText(title),
+            trailingContent: OptionalView(subtitle) { MenuListSubtitle($0) },
+            trailingIcon: OptionalView(trailingIcon) { MenuListIcon($0) }
+        )
+    }
+    
+    init<Icon: View>(
+        icon: Icon,
+        title: String,
+        subtitle: String? = nil) {
+        self.init(
+            icon: icon,
+            title: MenuListText(title),
+            trailingContent: OptionalView(subtitle) { MenuListSubtitle($0) },
+            trailingIcon: EmptyView()
+        )
+    }
+    
+    init<Icon: View, TrailingIcon: View>(
+        icon: Icon,
+        title: String,
+        subtitle: String? = nil,
+        trailingIcon: TrailingIcon) {
+        self.init(
+            icon: icon,
+            title: MenuListText(title),
+            trailingContent: OptionalView(subtitle) { MenuListSubtitle($0) },
+            trailingIcon: trailingIcon
+        )
+    }
+    
+    init<Icon: View, Content: View, TrailingContent: View>(
+        icon: Icon,
+        title: Content,
+        trailingContent: TrailingContent) {
+        self.init(
+            icon: icon,
+            title: title,
+            trailingContent: trailingContent,
+            trailingIcon: EmptyView()
+        )
+    }
+    
+    init<Icon: View, Content: View, TrailingIcon: View>(
+        icon: Icon,
+        title: Content,
+        trailingIcon: TrailingIcon) {
+        self.init(
+            icon: icon,
+            title: title,
+            trailingContent: EmptyView(),
+            trailingIcon: trailingIcon
+        )
+    }
+}
+
+
+// MARK: - Public Extensions
 
 public extension MenuListItem {
     
@@ -95,8 +146,9 @@ public extension MenuListItem {
      Convert this item to a `Button` that performs an action.
      */
     func button(action: @escaping () -> Void) -> some View {
-        Button(action: action) { self }
-            .buttonStyle(PlainButtonStyle())
+        Button(action: action) {
+            self
+        }.buttonStyle(PlainButtonStyle())
     }
 
     /**
@@ -107,7 +159,7 @@ public extension MenuListItem {
      */
     func navigationButton(action: @escaping () -> Void) -> some View {
         Button(action: action) {
-            MenuListItem(icon: icon, title: title, trailingIcon: trailingIcon, isNavigationButton: true)
+            MenuListItem(isNavigationButton: true, content: content)
         }.buttonStyle(PlainButtonStyle())
     }
     
@@ -119,7 +171,7 @@ public extension MenuListItem {
      */
     func navigationLink<Destination: View>(to destination: Destination) -> some View {
         NavigationLink(destination: destination) {
-            MenuListItem(icon: icon, title: title, trailingIcon: trailingIcon)
+            body
         }
     }
 }
@@ -127,7 +179,7 @@ public extension MenuListItem {
 private extension MenuListItem {
     
     @ViewBuilder
-    func trailingView(for image: Image?) -> some View {
+    var trailingView: some View {
         if isNavigationButton {
             NavigationLinkArrow()
         } else {
@@ -140,7 +192,7 @@ struct MenuListItem_Previews: PreviewProvider {
     
     static var icon: Image { Image(systemName: "checkmark.circle.fill") }
     
-    static func item(_ text: String) -> MenuListItem<Text> {
+    static func item(_ text: String) -> MenuListItem<AnyView> {
         MenuListItem(icon: icon, title: text, trailingIcon: icon)
     }
     

@@ -5,7 +5,8 @@
 
 ### ✨ New features
 
-* `MenuListItem` now lets you inject any horizontal content.
+* `MenuListIcon` has a new emoji-based initializer.
+* `MenuListItem` now lets you use any custom content builder.
 * `MenuListSubtitle` is a new view for menu list subtitles.
 * `UserDefaultsPersisted` now lets you inject a custom store.
 
