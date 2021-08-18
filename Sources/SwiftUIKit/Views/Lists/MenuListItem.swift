@@ -26,8 +26,8 @@ public extension MenuListItem where Title == Text {
 }
 
 /**
- A list item can have a left image, a centered title as well
- as an optional right image.
+ A list item can have a left icon, a centered title view and
+ an optional trailing icon.
  */
 public struct MenuListItem<Title: View>: View {
     
@@ -38,6 +38,17 @@ public struct MenuListItem<Title: View>: View {
         self.init(
             icon: icon,
             title: title,
+            trailingIcon: trailingIcon,
+            isNavigationButton: false)
+    }
+    
+    public init(
+        icon: Image? = nil,
+        trailingIcon: Image? = nil,
+        @ViewBuilder title: @escaping TitleBuilder) {
+        self.init(
+            icon: icon,
+            title: title(),
             trailingIcon: trailingIcon,
             isNavigationButton: false)
     }
@@ -62,6 +73,8 @@ public struct MenuListItem<Title: View>: View {
     private let icon: Image?
     private let trailingIcon: Image?
     private let isNavigationButton: Bool
+    
+    public typealias TitleBuilder = () -> Title
     
     public var body: some View {
         HStack {
@@ -123,7 +136,6 @@ private extension MenuListItem {
     }
 }
 
-@available(iOS 13.0, tvOS 13.0, macOS 11.0, watchOS 7.0, *)
 struct MenuListItem_Previews: PreviewProvider {
     
     static var icon: Image { Image(systemName: "checkmark.circle.fill") }
