@@ -5,9 +5,13 @@
 
 ### ✨ New features
 
-* `MenuListItem` now lets you define a title view in a block.
+* `MenuListItem` now lets you inject any horizontal content.
 * `MenuListSubtitle` is a new view for menu list subtitles.
 * `UserDefaultsPersisted` now lets you inject a custom store.
+
+### 🗑 Deprecations
+
+* `MenuListItemIcon` has been renamed to `MenuListIcon`.
  
 
 

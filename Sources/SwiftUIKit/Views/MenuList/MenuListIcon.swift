@@ -11,7 +11,7 @@ import SwiftUI
 /**
  This view is used by `MenuListItem` as the leading icon.
  */
-public struct MenuListItemIcon<Icon: View>: View {
+public struct MenuListIcon<Icon: View>: View {
     
     public init(_ icon: Icon) {
         self.icon = icon
@@ -28,6 +28,6 @@ public struct MenuListItemIcon<Icon: View>: View {
 struct MenuListItemIcon_Previews: PreviewProvider {
     
     static var previews: some View {
-        MenuListItemIcon(Image(systemName: "plus"))
+        MenuListIcon(Image(systemName: "plus"))
     }
 }

@@ -79,7 +79,7 @@ public struct MenuListItem<Title: View>: View {
     public var body: some View {
         HStack {
             if let icon = icon {
-                MenuListItemIcon(icon)
+                MenuListIcon(icon)
             }
             title
             Spacer()
