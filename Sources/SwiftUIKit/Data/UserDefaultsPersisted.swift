@@ -16,25 +16,28 @@ import Foundation
 @propertyWrapper
 public struct UserDefaultsPersisted<T: Codable> {
     
-    public init(key: String, defaultValue: T) {
+    public init(
+        key: String,
+        store: UserDefaults = .standard,
+        defaultValue: T) {
         self.key = key
+        self.store = store
         self.defaultValue = defaultValue
     }
     
     private let key: String
+    private let store: UserDefaults
     private let defaultValue: T
-
-    private var defaults: UserDefaults { .standard }
 
     public var wrappedValue: T {
         get {
-            guard let data = defaults.object(forKey: key) as? Data else { return defaultValue }
+            guard let data = store.object(forKey: key) as? Data else { return defaultValue }
             let value = try? JSONDecoder().decode(T.self, from: data)
             return value ?? defaultValue
         }
         set {
             let data = try? JSONEncoder().encode(newValue)
-            defaults.set(data, forKey: key)
+            store.set(data, forKey: key)
         }
     }
 }

@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 1.7.3
+
+### ✨ New features
+
+* `UserDefaultsPersisted` now lets you inject a custom store.
+ 
+
+
 ## 1.7.2
 
 ### ✨ New features
