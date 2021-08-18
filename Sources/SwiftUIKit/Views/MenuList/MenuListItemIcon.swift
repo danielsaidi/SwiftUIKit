@@ -26,6 +26,7 @@ public struct MenuListItemIcon: View {
 }
 
 struct MenuListItemIcon_Previews: PreviewProvider {
+    
     static var previews: some View {
         MenuListItemIcon(Image(systemName: "plus"))
     }

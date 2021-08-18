@@ -6,6 +6,7 @@
 ### ✨ New features
 
 * `MenuListItem` now lets you define a title view in a block.
+* `MenuListSubtitle` is a new view for menu list subtitles.
 * `UserDefaultsPersisted` now lets you inject a custom store.
  
 
