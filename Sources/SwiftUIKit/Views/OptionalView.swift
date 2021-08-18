@@ -89,7 +89,11 @@ public struct OptionalView<Value, Content: View, Fallback: View>: View {
 public extension OptionalView where Fallback == EmptyView {
     
     init(_ value: Value?, @ViewBuilder content: @escaping ContentBuilder) {
-        self.init(if: value, then: content, else: { EmptyView() })
+        self.init(
+            if: value,
+            then: content,
+            else: { EmptyView() }
+        )
     }
 }
 

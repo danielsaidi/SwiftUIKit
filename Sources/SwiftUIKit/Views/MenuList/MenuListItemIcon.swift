@@ -11,13 +11,13 @@ import SwiftUI
 /**
  This view is used by `MenuListItem` as the leading icon.
  */
-public struct MenuListItemIcon: View {
+public struct MenuListItemIcon<Icon: View>: View {
     
-    public init(_ icon: Image) {
+    public init(_ icon: Icon) {
         self.icon = icon
     }
     
-    private let icon: Image
+    private let icon: Icon
     
     public var body: some View {
         icon.frame(width: 20)
