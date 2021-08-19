@@ -13,6 +13,7 @@
 ### 🗑 Deprecations
 
 * `MenuListItemIcon` has been renamed to `MenuListIcon`.
+* `UserDefaultsPersisted` has been renamed to `Persisted`.
  
 
 

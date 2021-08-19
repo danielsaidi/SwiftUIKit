@@ -1,5 +1,5 @@
 //
-//  UserDefaultsPersisted.swift
+//  Persisted.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-04-05.
@@ -14,7 +14,7 @@ import Foundation
  last persisted value or a fallback value.
  */
 @propertyWrapper
-public struct UserDefaultsPersisted<T: Codable> {
+public struct Persisted<T: Codable> {
     
     public init(
         key: String,
