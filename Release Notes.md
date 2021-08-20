@@ -5,6 +5,7 @@
 
 ### ✨ New features
 
+* `EnvironmentValues+SafeAreaInsets` lets you read the safe are insets of the key window.  
 * `MenuListIcon` has a new emoji-based initializer.
 * `MenuListItem` now lets you use any custom content builder.
 * `MenuListSubtitle` is a new view for menu list subtitles.
