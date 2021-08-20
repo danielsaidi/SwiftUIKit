@@ -13,8 +13,8 @@ import SwiftUI
  and binds the selection to an external value.
  
  The picker accepts any `Equatable & Identifiable` item type
- and uses the provided `itemBuilder` to creates an item view
- for each item in the provided `items`.
+ and uses the provided `listItem` builder to build list item
+ views for each item in the provided `items` collection.
  
  If `dismissAfterPick` is `true` the picker dismisses itself
  automatically when an item is picked.
@@ -26,19 +26,19 @@ public struct Picker<Item: Equatable & Identifiable, ItemView: View>: View, Dism
         items: [Item],
         selection: Binding<Item>,
         dismissAfterPick: Bool = true,
-        itemBuilder: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder) {
         self.title = title
         self.items = items
         self.selection = selection
         self.dismissAfterPick = dismissAfterPick
-        self.itemBuilder = itemBuilder
+        self.listItem = listItem
     }
     
     private let title: String
     private let items: [Item]
     private let selection: Binding<Item>
     private let dismissAfterPick: Bool
-    private let itemBuilder: ItemViewBuilder
+    private let listItem: ItemViewBuilder
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
     
@@ -47,7 +47,7 @@ public struct Picker<Item: Equatable & Identifiable, ItemView: View>: View, Dism
     public var body: some View {
         MenuList(title) {
             ForEach(items) {
-                pickerItem(for: $0)
+                listItemView(for: $0)
             }
         }.withTitle(title)
     }
@@ -67,9 +67,9 @@ private extension View {
 
 private extension Picker {
     
-    func pickerItem(for item: Item) -> some View {
+    func listItemView(for item: Item) -> some View {
         Button(action: { select(item) }) {
-            itemBuilder(item, isSelected(item))
+            listItem(item, isSelected(item))
         }
     }
 }

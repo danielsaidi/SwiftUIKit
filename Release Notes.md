@@ -9,7 +9,8 @@
 * `MenuListIcon` has a new emoji-based initializer.
 * `MenuListItem` now lets you use any custom content builder.
 * `MenuListSubtitle` is a new view for menu list subtitles.
-* `Picker` is a new view that can be used to create generic pickers. It will probably replace `SimplePicker` in due time.
+* `MultiPicker` is a new, generic multi item picker. It will probably replace `SimpleMultiPicker` in due time.
+* `Picker` is a new, generic single item picker. It will probably replace `SimplePicker` in due time.
 * `PickerListItem` is a new protocol that can be used in `Picker` lists. 
 * `Persisted` now lets you inject a custom store.
 
