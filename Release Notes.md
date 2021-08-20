@@ -1,7 +1,7 @@
 # Release notes
 
 
-## 1.7.3
+## 1.8
 
 ### ✨ New features
 
@@ -9,7 +9,9 @@
 * `MenuListIcon` has a new emoji-based initializer.
 * `MenuListItem` now lets you use any custom content builder.
 * `MenuListSubtitle` is a new view for menu list subtitles.
-* `UserDefaultsPersisted` now lets you inject a custom store.
+* `Picker` is a new view that can be used to create generic pickers. It will probably replace `SimplePicker` in due time.
+* `PickerListItem` is a new protocol that can be used in `Picker` lists. 
+* `Persisted` now lets you inject a custom store.
 
 ### 🗑 Deprecations
 
