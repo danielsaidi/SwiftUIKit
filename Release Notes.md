@@ -13,9 +13,10 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `MenuListItem` now lets you use any custom content builder.
 * `MenuListSubtitle` is a new view for menu list subtitles.
 * `MultiPicker` is a new, generic multi item picker. It will probably replace `SimpleMultiPicker` in due time.
+* `Persisted` now lets you inject a custom store.
 * `Picker` is a new, generic single item picker. It will probably replace `SimplePicker` in due time.
 * `PickerListItem` is a new protocol that can be used in `Picker` lists. 
-* `Persisted` now lets you inject a custom store.
+* `PickerSection` is a new, generic struct that can be used to divide a `Picker` and `MultiPicker` into sections.
 * `SystemColor` has a bunch of new colors.
 * `SystemColor` is now `Codable` and `Equatable`.
 
