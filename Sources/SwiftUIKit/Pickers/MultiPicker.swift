@@ -23,13 +23,24 @@ public struct MultiPicker<Item: Identifiable, ItemView: View>: View, Dismissable
         selection: Binding<[Item]>,
         listItem: @escaping ItemViewBuilder) {
         self.title = title
-        self.items = items
+        self.sections = [PickerSection(title: "", items: items)]
+        self.selection = selection
+        self.listItem = listItem
+    }
+    
+    public init(
+        title: String,
+        sections: [PickerSection<Item>],
+        selection: Binding<[Item]>,
+        listItem: @escaping ItemViewBuilder) {
+        self.title = title
+        self.sections = sections
         self.selection = selection
         self.listItem = listItem
     }
     
     private let title: String
-    private let items: [Item]
+    private let sections: [PickerSection<Item>]
     private let selection: Binding<[Item]>
     private let listItem: ItemViewBuilder
     
@@ -39,8 +50,12 @@ public struct MultiPicker<Item: Identifiable, ItemView: View>: View, Dismissable
     
     public var body: some View {
         MenuList(title) {
-            ForEach(items) {
-                listItemView(for: $0)
+            ForEach(sections) { section in
+                Section(header: section.pickerHeader) {
+                    ForEach(section.items) {
+                        listItemView(for: $0)
+                    }
+                }
             }
         }.withTitle(title)
     }
@@ -96,10 +111,17 @@ struct MultiPicker_Previews: PreviewProvider {
         
         @State private var selection = [PreviewItem.all[0]]
         
+        func section(_ title: String) -> PickerSection<PreviewItem> {
+            PickerSection(title: title, items: PreviewItem.all)
+        }
+        
         var body: some View {
             MultiPicker(
                 title: "Pick something",
-                items: PreviewItem.all,
+                sections: [
+                    section(""),
+                    section("Another section")
+                ],
                 selection: $selection) { item, isSelected in
                     PreviewPickerItem(item: item, isSelected: isSelected)
                 }
