@@ -66,8 +66,7 @@ public extension SystemColor {
     
     var id: String { rawValue }
     
-    var displayName: String { rawValue }
-    
+    var name: String { rawValue }
     
     var color: Color {
         switch self {
@@ -160,6 +159,6 @@ public extension SystemColor {
 private extension SystemColor {
     
     func error(for color: SystemColor) -> String {
-        "\(color.displayName) is not supported on this platform."
+        "\(color.name) is not supported on this platform."
     }
 }

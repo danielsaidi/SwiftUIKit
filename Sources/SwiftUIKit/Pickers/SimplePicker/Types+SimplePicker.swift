@@ -11,4 +11,7 @@ import Foundation
 /**
  This makes `SystemColor` implement `SimplePickerValue`.
  */
-extension SystemColor: SimplePickerValue {}
+extension SystemColor: SimplePickerValue {
+    
+    public var displayName: String { name }
+}
