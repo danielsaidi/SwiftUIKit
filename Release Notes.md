@@ -15,6 +15,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `Picker` is a new, generic single item picker. It will probably replace `SimplePicker` in due time.
 * `PickerListItem` is a new protocol that can be used in `Picker` lists. 
 * `Persisted` now lets you inject a custom store.
+* `SystemColor` has a bunch of new colors.
 
 ### 💥 Breaking Changes
 

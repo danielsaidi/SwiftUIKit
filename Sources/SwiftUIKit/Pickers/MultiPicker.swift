@@ -97,14 +97,12 @@ struct MultiPicker_Previews: PreviewProvider {
         @State private var selection = [PreviewItem.all[0]]
         
         var body: some View {
-            NavigationView {
-                MultiPicker(
-                    title: "Pick something",
-                    items: PreviewItem.all,
-                    selection: $selection) { item, isSelected in
-                        PreviewPickerItem(item: item, isSelected: isSelected)
-                    }
-            }
+            MultiPicker(
+                title: "Pick something",
+                items: PreviewItem.all,
+                selection: $selection) { item, isSelected in
+                    PreviewPickerItem(item: item, isSelected: isSelected)
+                }
         }
     }
     

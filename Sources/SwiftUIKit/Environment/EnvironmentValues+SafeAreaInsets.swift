@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-#if canImport(UIKit)
+#if os(iOS) || os(tvOS)
 import UIKit
 #endif
 
@@ -27,7 +27,7 @@ public extension EnvironmentValues {
 private struct SafeAreaInsetsKey: EnvironmentKey {
     
     static var defaultValue: EdgeInsets {
-        #if canImport(UIKit)
+        #if os(iOS) || os(tvOS)
         let windows = UIApplication.shared.windows
         let keyWindow = windows.first { $0.isKeyWindow }
         return keyWindow?.safeAreaInsets.insets ?? EdgeInsets()

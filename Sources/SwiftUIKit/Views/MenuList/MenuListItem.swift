@@ -197,20 +197,18 @@ struct MenuListItem_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        NavigationView {
-            List {
-                item("Item")
-                item("Button").button(action: {})
-                item("Navigation Button").navigationButton(action: {})
-                item("Navigation Link").navigationLink(to: Text("HEJ"))
-                
-                MenuListItem(title: "Text only")
-                
-                MenuListItem(icon: icon, title: VStack(alignment: .leading) {
-                    Text("Hello").font(.title)
-                    Text("World")
-                }, trailingIcon: icon)
-            }
+        List {
+            item("Item")
+            item("Button").button(action: {})
+            item("Navigation Button").navigationButton(action: {})
+            item("Navigation Link").navigationLink(to: Text("HEJ"))
+            
+            MenuListItem(title: "Text only")
+            
+            MenuListItem(icon: icon, title: VStack(alignment: .leading) {
+                Text("Hello").font(.title)
+                Text("World")
+            }, trailingIcon: icon)
         }
     }
 }

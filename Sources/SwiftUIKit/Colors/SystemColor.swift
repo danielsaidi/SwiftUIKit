@@ -44,6 +44,22 @@ public enum SystemColor: String, CaseIterable {
     case teal
     case white
     case yellow
+    
+    #if os(iOS) || os(tvOS)
+    case darkGray
+    case lightGray
+    case magenta
+    
+    case label
+    case secondaryLabel
+    case tertiaryLabel
+    case quaternaryLabel
+    
+    case systemFill
+    case secondarySystemFill
+    case tertiarySystemFill
+    case quaternarySystemFill
+    #endif
 }
 
 public extension SystemColor {
@@ -74,6 +90,22 @@ public extension SystemColor {
         case .teal: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return .teal } else { fatalError(error(for: .teal)) }
         case .white: return .white
         case .yellow: return .yellow
+            
+        #if os(iOS) || os(tvOS)
+        case .darkGray: return Color(UIColor.darkGray)
+        case .lightGray: return Color(UIColor.lightGray)
+        case .magenta: return Color(UIColor.magenta)
+            
+        case .label: return Color(UIColor.label)
+        case .secondaryLabel: return Color(UIColor.secondaryLabel)
+        case .tertiaryLabel: return Color(UIColor.tertiaryLabel)
+        case .quaternaryLabel: return Color(UIColor.quaternaryLabel)
+            
+        case .systemFill: return Color(UIColor.systemFill)
+        case .secondarySystemFill: return Color(UIColor.secondarySystemFill)
+        case .tertiarySystemFill: return Color(UIColor.tertiarySystemFill)
+        case .quaternarySystemFill: return Color(UIColor.quaternarySystemFill)
+        #endif
         }
     }
     
@@ -101,6 +133,22 @@ public extension SystemColor {
         case .teal: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
         case .white: return true
         case .yellow: return true
+                
+        #if os(iOS) || os(tvOS)
+        case .darkGray: return true
+        case .lightGray: return true
+        case .magenta: return true
+            
+        case .label: return true
+        case .secondaryLabel: return true
+        case .tertiaryLabel: return true
+        case .quaternaryLabel: return true
+            
+        case .systemFill: return true
+        case .secondarySystemFill: return true
+        case .tertiarySystemFill: return true
+        case .quaternarySystemFill: return true
+        #endif
         }
     }
     
