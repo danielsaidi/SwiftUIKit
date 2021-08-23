@@ -16,8 +16,9 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `PickerListItem` is a new protocol that can be used in `Picker` lists. 
 * `Persisted` now lets you inject a custom store.
 
-### 🗑 Deprecations
+### 💥 Breaking Changes
 
+* All deprecated parts of the library have been removed. 
 * `MenuListItemIcon` has been renamed to `MenuListIcon`.
 * `UserDefaultsPersisted` has been renamed to `Persisted`.
  
