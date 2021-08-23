@@ -24,6 +24,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 
 * All deprecated parts of the library have been removed. 
 * `MenuListItemIcon` has been renamed to `MenuListIcon`.
+* `SystemColor` no longer auto-implements `SimplePickerValue`.
 * `UserDefaultsPersisted` has been renamed to `Persisted`.
  
 
