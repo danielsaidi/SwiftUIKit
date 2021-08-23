@@ -27,14 +27,27 @@ public struct Picker<Item: Identifiable, ItemView: View>: View, DismissableView 
         dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
         self.title = title
-        self.items = items
+        self.sections = [PickerSection(title: "", items: items)]
+        self.selection = selection
+        self.dismissAfterPick = dismissAfterPick
+        self.listItem = listItem
+    }
+    
+    public init(
+        title: String,
+        sections: [PickerSection<Item>],
+        selection: Binding<Item>,
+        dismissAfterPick: Bool = true,
+        listItem: @escaping ItemViewBuilder) {
+        self.title = title
+        self.sections = sections
         self.selection = selection
         self.dismissAfterPick = dismissAfterPick
         self.listItem = listItem
     }
     
     private let title: String
-    private let items: [Item]
+    private let sections: [PickerSection<Item>]
     private let selection: Binding<Item>
     private let dismissAfterPick: Bool
     private let listItem: ItemViewBuilder
@@ -45,8 +58,12 @@ public struct Picker<Item: Identifiable, ItemView: View>: View, DismissableView 
     
     public var body: some View {
         MenuList(title) {
-            ForEach(items) {
-                listItemView(for: $0)
+            ForEach(sections) { section in
+                Section(header: section.pickerHeader) {
+                    ForEach(section.items) {
+                        listItemView(for: $0)
+                    }
+                }
             }
         }.withTitle(title)
     }
@@ -101,11 +118,18 @@ struct Picker_Previews: PreviewProvider {
         
         @State private var selection = PreviewItem.all[0]
         
+        func section(_ title: String) -> PickerSection<PreviewItem> {
+            PickerSection(title: title, items: PreviewItem.all)
+        }
+        
         var body: some View {
             NavigationView {
                 Picker(
                     title: "Pick something",
-                    items: PreviewItem.all,
+                    sections: [
+                        section(""),
+                        section("Another section")
+                    ],
                     selection: $selection) { item, isSelected in
                         PreviewPickerItem(item: item, isSelected: isSelected)
                     }
