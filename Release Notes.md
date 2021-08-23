@@ -1,7 +1,9 @@
 # Release notes
 
 
-## 1.8
+## 2.0
+
+This version requires Xcode 13 and later, since it refers to the latest api:s. 
 
 ### ✨ New features
 
