@@ -9,14 +9,13 @@
 import SwiftUI
 
 /**
- This picker view lists a collection of items in a `MenuList`
- and binds the selection to an external value.
+ This picker view lists an `Identifiable` item collection in
+ a `MenuList` and binds its `selection` to an external value.
  
- The picker accepts any `Equatable & Identifiable` item type
- and uses the provided `listItem` builder to build list item
- views for each item in the provided `items` collection.
+ The picker uses the provided `listItem` builder to build an
+ item view for each item in the provided `items` collection.
  */
-public struct MultiPicker<Item: Equatable & Identifiable, ItemView: View>: View, DismissableView {
+public struct MultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
     public init(
         title: String,
@@ -80,7 +79,7 @@ private extension MultiPicker {
     
     func toggleSelection(for item: Item) {
         if isSelected(item) {
-            selection.wrappedValue = selection.wrappedValue.filter { $0 != item }
+            selection.wrappedValue = selection.wrappedValue.filter { $0.id != item.id }
         } else {
             selection.wrappedValue.append(item)
         }

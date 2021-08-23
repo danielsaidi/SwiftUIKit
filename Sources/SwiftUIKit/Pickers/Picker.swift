@@ -9,17 +9,16 @@
 import SwiftUI
 
 /**
- This picker view lists a collection of items in a `MenuList`
- and binds the selection to an external value.
+ This picker view lists an `Identifiable` item collection in
+ a `MenuList` and binds its `selection` to an external value.
  
- The picker accepts any `Equatable & Identifiable` item type
- and uses the provided `listItem` builder to build list item
- views for each item in the provided `items` collection.
+ The picker uses the provided `listItem` builder to build an
+ item view for each item in the provided `items` collection.
  
  If `dismissAfterPick` is `true` the picker dismisses itself
  automatically when an item is picked.
  */
-public struct Picker<Item: Equatable & Identifiable, ItemView: View>: View, DismissableView {
+public struct Picker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
     public init(
         title: String,
