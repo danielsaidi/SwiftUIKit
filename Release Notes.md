@@ -16,6 +16,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `PickerListItem` is a new protocol that can be used in `Picker` lists. 
 * `Persisted` now lets you inject a custom store.
 * `SystemColor` has a bunch of new colors.
+* `SystemColor` is now `Codable` and `Equatable`.
 
 ### 💥 Breaking Changes
 
