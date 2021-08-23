@@ -7,6 +7,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 
 ### ✨ New features
 
+* `Color+Codable` is a new extension that makes Color codable.
 * `EnvironmentValues+SafeAreaInsets` lets you read the safe are insets of the key window.  
 * `MenuListIcon` has a new emoji-based initializer.
 * `MenuListItem` now lets you use any custom content builder.
