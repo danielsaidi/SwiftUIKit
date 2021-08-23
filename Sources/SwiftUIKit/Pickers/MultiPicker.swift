@@ -70,8 +70,12 @@ private extension MultiPicker {
 
 private extension MultiPicker {
     
+    var seletedIds: [Item.ID] {
+        selection.wrappedValue.map { $0.id }
+    }
+    
     func isSelected(_ item: Item) -> Bool {
-        selection.wrappedValue.contains(item)
+        seletedIds.contains(item.id)
     }
     
     func toggleSelection(for item: Item) {
@@ -84,6 +88,10 @@ private extension MultiPicker {
 }
 
 struct MultiPicker_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        Preview()
+    }
     
     struct Preview: View {
         
@@ -101,36 +109,33 @@ struct MultiPicker_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
+    struct PreviewItem: Identifiable, Equatable {
+        
+        let name: String
+        
+        var id: String { name }
+        
+        static let all = [
+            PreviewItem(name: "Item #1"),
+            PreviewItem(name: "Item #2"),
+            PreviewItem(name: "Item #3"),
+            PreviewItem(name: "Item #4"),
+            PreviewItem(name: "Item #5")
+        ]
     }
-}
 
-private struct PreviewItem: Identifiable, Equatable {
-    
-    let name: String
-    
-    var id: String { name }
-    
-    static let all = [
-        PreviewItem(name: "Item #1"),
-        PreviewItem(name: "Item #2"),
-        PreviewItem(name: "Item #3"),
-        PreviewItem(name: "Item #4"),
-        PreviewItem(name: "Item #5")
-    ]
-}
-
-private struct PreviewPickerItem: View, PickerListItem {
-    
-    let item: PreviewItem
-    let isSelected: Bool
-    
-    var body: some View {
-        HStack {
-            Text(item.name)
-            Spacer()
-            checkmark
+    struct PreviewPickerItem: View, PickerListItem {
+        
+        let item: PreviewItem
+        let isSelected: Bool
+        
+        var body: some View {
+            HStack {
+                Text(item.name)
+                Spacer()
+                checkmark
+            }
         }
     }
+
 }

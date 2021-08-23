@@ -76,8 +76,12 @@ private extension Picker {
 
 private extension Picker {
     
+    var seletedId: Item.ID {
+        selection.wrappedValue.id
+    }
+    
     func isSelected(_ item: Item) -> Bool {
-        selection.wrappedValue == item
+        seletedId == item.id
     }
     
     func select(_ item: Item) {
@@ -89,6 +93,10 @@ private extension Picker {
 }
 
 struct Picker_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        Preview()
+    }
     
     struct Preview: View {
         
@@ -106,36 +114,32 @@ struct Picker_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
+    struct PreviewItem: Identifiable, Equatable {
+        
+        let name: String
+        
+        var id: String { name }
+        
+        static let all = [
+            PreviewItem(name: "Item #1"),
+            PreviewItem(name: "Item #2"),
+            PreviewItem(name: "Item #3"),
+            PreviewItem(name: "Item #4"),
+            PreviewItem(name: "Item #5")
+        ]
     }
-}
 
-private struct PreviewItem: Identifiable, Equatable {
-    
-    let name: String
-    
-    var id: String { name }
-    
-    static let all = [
-        PreviewItem(name: "Item #1"),
-        PreviewItem(name: "Item #2"),
-        PreviewItem(name: "Item #3"),
-        PreviewItem(name: "Item #4"),
-        PreviewItem(name: "Item #5")
-    ]
-}
-
-private struct PreviewPickerItem: View, PickerListItem {
-    
-    let item: PreviewItem
-    let isSelected: Bool
-    
-    var body: some View {
-        HStack {
-            Text(item.name)
-            Spacer()
-            checkmark
+    struct PreviewPickerItem: View, PickerListItem {
+        
+        let item: PreviewItem
+        let isSelected: Bool
+        
+        var body: some View {
+            HStack {
+                Text(item.name)
+                Spacer()
+                checkmark
+            }
         }
     }
 }
