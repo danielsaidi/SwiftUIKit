@@ -28,6 +28,7 @@ public struct MenuListSubtitle: View {
         Text(text)
             .font(.footnote)
             .foregroundColor(.secondary)
+            .lineLimit(1)
     }
 }
 
