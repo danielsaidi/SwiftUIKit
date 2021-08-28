@@ -25,6 +25,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 
 ### 💡 Behavior changes
 
+* `FormActionButtonStyle` no longer applies a primary text color.
 * `FormActionButtonStyle` no longer applies a shadow by default. You can define one with the static `shadowStyle` property.
 
 

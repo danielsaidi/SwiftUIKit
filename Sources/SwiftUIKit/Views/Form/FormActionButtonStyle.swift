@@ -24,7 +24,6 @@ public struct FormActionButtonStyle: ButtonStyle {
             .padding(8)
             .frame(maxWidth: .infinity)
             .background(backgroundColor)
-            .foregroundColor(.primary)
             .cornerRadius(10.0)
             .shadow(Self.shadowStyle)
             .opacity(isEnabled ? 1 : 0.3)
