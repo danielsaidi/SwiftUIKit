@@ -23,14 +23,17 @@ public struct FormActionButton: View {
     public init(
         icon: Image,
         title: String,
+        style: FormActionButtonStyle = .standard,
         action: @escaping () -> Void) {
         self.icon = icon
         self.title = title
+        self.style = style
         self.action = action
     }
     
     private let icon: Image
     private let title: String
+    private let style: FormActionButtonStyle
     private let action: () -> Void
     
     public var body: some View {
@@ -39,7 +42,7 @@ public struct FormActionButton: View {
                 image
                 text
             }
-        }.buttonStyle(FormActionButtonStyle())
+        }.buttonStyle(style)
     }
     
     

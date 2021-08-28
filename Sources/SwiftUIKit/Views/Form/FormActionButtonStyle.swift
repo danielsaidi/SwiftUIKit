@@ -14,21 +14,54 @@ import SwiftUI
  */
 public struct FormActionButtonStyle: ButtonStyle {
     
+    public init(
+        horizontalPadding: Double = 8,
+        verticalPadding: Double = 8,
+        backgroundColor: Color? = nil,
+        foregroundColor: Color = .primary,
+        cornerRadius: Double = 10,
+        disabledOpacity: Double = 0.3,
+        pressedOpacity: Double = 0.7,
+        shadowStyle: ShadowStyle = .none) {
+        self.horizontalPadding = horizontalPadding
+        self.verticalPadding = verticalPadding
+        self.backgroundColor = backgroundColor
+        self.foregroundColor = foregroundColor
+        self.cornerRadius = cornerRadius
+        self.disabledOpacity = disabledOpacity
+        self.pressedOpacity = pressedOpacity
+        self.shadowStyle = shadowStyle
+    }
+    
+    public let backgroundColor: Color?
+    public let cornerRadius: Double
+    public let disabledOpacity: Double
+    public let foregroundColor: Color?
+    public let horizontalPadding: Double
+    public let pressedOpacity: Double
+    public let shadowStyle: ShadowStyle
+    public let verticalPadding: Double
+    
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     @Environment(\.isEnabled) private var isEnabled: Bool
-    
-    static var shadowStyle = ShadowStyle.none
-    
+        
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(8)
+            .padding(.horizontal, horizontalPadding)
+            .padding(.vertical, verticalPadding)
             .frame(maxWidth: .infinity)
-            .background(backgroundColor)
-            .cornerRadius(10.0)
-            .shadow(Self.shadowStyle)
-            .opacity(isEnabled ? 1 : 0.3)
-            .opacity(configuration.isPressed ? 0.85 : 1)
+            .background(backgroundColor ?? standardBackgroundColor)
+            .foregroundColor(foregroundColor)
+            .cornerRadius(cornerRadius)
+            .shadow(shadowStyle)
+            .opacity(isEnabled ? 1 : disabledOpacity)
+            .opacity(configuration.isPressed ? pressedOpacity : 1)
     }
+}
+
+public extension FormActionButtonStyle {
+    
+    static let standard = FormActionButtonStyle()
 }
 
 public extension ShadowStyle {
@@ -45,7 +78,7 @@ private extension FormActionButtonStyle {
     
     var isDark: Bool { colorScheme == .dark }
     
-    var backgroundColor: Color {
+    var standardBackgroundColor: Color {
         isDark ? .white.opacity(0.1) : .white
     }
 }
