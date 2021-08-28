@@ -17,6 +17,8 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `Picker` is a new, generic single item picker. It will probably replace `SimplePicker` in due time.
 * `PickerListItem` is a new protocol that can be used in `Picker` lists. 
 * `PickerSection` is a new, generic struct that can be used to divide a `Picker` and `MultiPicker` into sections.
+* `ShadowStyle` has a new `formActionButton` type.
+* `ShadowStyle` has zero defaults for `x` and `y`.
 * `SystemColor` has a bunch of new colors.
 * `SystemColor` is now `Codable` and `Equatable`.
 

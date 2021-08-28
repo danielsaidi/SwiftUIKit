@@ -23,8 +23,8 @@ public struct ShadowStyle {
     public init(
         color: Color = .black,
         radius: CGFloat,
-        x: CGFloat,
-        y: CGFloat) {
+        x: CGFloat = 0,
+        y: CGFloat = 0) {
         self.color = color
         self.radius = radius
         self.x = x

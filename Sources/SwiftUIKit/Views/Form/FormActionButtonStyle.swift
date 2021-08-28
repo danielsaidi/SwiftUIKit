@@ -32,6 +32,16 @@ public struct FormActionButtonStyle: ButtonStyle {
     }
 }
 
+public extension ShadowStyle {
+    
+    /**
+     This shadow style is intended for `FormActionButton`s.
+     */
+    static var formActionButton: ShadowStyle {
+        ShadowStyle(color: Color.black.opacity(0.15), radius: 5)
+    }
+}
+
 private extension FormActionButtonStyle {
     
     var isDark: Bool { colorScheme == .dark }
