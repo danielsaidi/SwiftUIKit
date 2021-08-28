@@ -20,6 +20,12 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `SystemColor` has a bunch of new colors.
 * `SystemColor` is now `Codable` and `Equatable`.
 
+
+### 💡 Behavior changes
+
+* `FormActionButtonStyle` no longer applies a shadow by default. You can define one with the static `shadowStyle` property.
+
+
 ### 💥 Breaking Changes
 
 * All deprecated parts of the library have been removed. 

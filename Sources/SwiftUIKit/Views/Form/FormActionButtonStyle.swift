@@ -17,6 +17,8 @@ public struct FormActionButtonStyle: ButtonStyle {
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     @Environment(\.isEnabled) private var isEnabled: Bool
     
+    static var shadowStyle = ShadowStyle.none
+    
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(8)
@@ -24,7 +26,7 @@ public struct FormActionButtonStyle: ButtonStyle {
             .background(backgroundColor)
             .foregroundColor(.primary)
             .cornerRadius(10.0)
-            .shadow(color: .black.opacity(0.2), radius: 5)
+            .shadow(Self.shadowStyle)
             .opacity(isEnabled ? 1 : 0.3)
             .opacity(configuration.isPressed ? 0.85 : 1)
     }
