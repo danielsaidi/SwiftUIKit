@@ -15,6 +15,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `MenuListItem` now lets you use any custom content builder.
 * `MenuListItemStack` is a new view that lets you reuse the spacing and tap behavior.
 * `MenuListSubtitle` is a new view for menu list subtitles.
+* `MenuListToggle` is a new view for menu list toggles.
 * `MultiPicker` is a new, generic multi item picker. It will probably replace `SimpleMultiPicker` in due time.
 * `Persisted` now lets you inject a custom store.
 * `Picker` is a new, generic single item picker. It will probably replace `SimplePicker` in due time.
