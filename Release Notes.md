@@ -13,6 +13,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `FormActionButtonStyle` can now be configured with a custom style.  
 * `MenuListIcon` has a new emoji-based initializer.
 * `MenuListItem` now lets you use any custom content builder.
+* `MenuListItemStack` is a new view that lets you reuse the spacing and tap behavior.
 * `MenuListSubtitle` is a new view for menu list subtitles.
 * `MultiPicker` is a new, generic multi item picker. It will probably replace `SimpleMultiPicker` in due time.
 * `Persisted` now lets you inject a custom store.

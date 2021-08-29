@@ -40,10 +40,10 @@ public struct MenuListItem<Content: View>: View {
     public typealias ContentBuilder = () -> Content
     
     public var body: some View {
-        HStack(spacing: 20) {
+        MenuListItemStack {
             content()
             trailingView
-        }.background(Color.white.opacity(0.0001))
+        }
     }
 }
 
