@@ -70,7 +70,7 @@ private struct DetermineWidth: View {
     }
 }
 
-struct VerticalSizingList_Previews: PreviewProvider {
+struct SizingVStack_Previews: PreviewProvider {
     
     static func button(for width: CGFloat) -> some View {
         let action = {}

@@ -30,8 +30,23 @@ public extension View {
     func tabItem<Type: TabViewItem>(_ item: Type, selection: Type) -> some View {
         self.tag(item)
             .tabItem {
-                item == selection ? item.selectedIcon : item.icon
-                Text(item == selection ? item.selectedTitle : item.title)
+                tabItemIcon(item, selection: selection)
+                tabItemText(item, selection: selection)
             }
+    }
+    
+    @ViewBuilder
+    func tabItemIcon<Type: TabViewItem>(_ item: Type, selection: Type) -> some View {
+        let isSelected = item == selection
+        let view = isSelected ? item.selectedIcon : item.icon
+        if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) {
+            view.symbolVariant(isSelected ? .none : .fill)
+        } else {
+            view
+        }
+    }
+    
+    func tabItemText<Type: TabViewItem>(_ item: Type, selection: Type) -> some View {
+        Text(item == selection ? item.selectedTitle : item.title)
     }
 }
