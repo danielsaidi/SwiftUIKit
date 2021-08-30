@@ -35,15 +35,8 @@ public extension View {
             }
     }
     
-    @ViewBuilder
     func tabItemIcon<Type: TabViewItem>(_ item: Type, selection: Type) -> some View {
-        let isSelected = item == selection
-        let view = isSelected ? item.selectedIcon : item.icon
-        if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) {
-            view.symbolVariant(isSelected ? .none : .fill)
-        } else {
-            view
-        }
+        item == selection ? item.selectedIcon : item.icon
     }
     
     func tabItemText<Type: TabViewItem>(_ item: Type, selection: Type) -> some View {
