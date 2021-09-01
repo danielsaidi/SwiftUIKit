@@ -26,6 +26,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `SystemColor` has a bunch of new colors.
 * `SystemColor` is now `Codable` and `Equatable`.
 * `UrlSharing` is a new protocol that any view can implement to easily be able to share urls.
+* `View+Autosave` is a new view extension that provides a customizable autosave view modifier.
 
 
 ### 💡 Behavior changes
