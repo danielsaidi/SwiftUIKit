@@ -25,6 +25,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `ShadowStyle` has zero defaults for `x` and `y`.
 * `SystemColor` has a bunch of new colors.
 * `SystemColor` is now `Codable` and `Equatable`.
+* `Text+Markdown` is a new view extension that provides a new `Text(markdown:)` initializer.
 * `UrlSharing` is a new protocol that any view can implement to easily be able to share urls.
 * `View+Autosave` is a new view extension that provides a customizable autosave view modifier.
 
