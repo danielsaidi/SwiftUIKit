@@ -15,6 +15,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 * `MenuListItem` now lets you use any custom content builder.
 * `MenuListItemStack` is a new view that lets you reuse the spacing and tap behavior.
 * `MenuListSection` is a new view for menu list sections.
+* `MenuListSlider` is a new view for menu list sliders.
 * `MenuListSubtitle` is a new view for menu list subtitles.
 * `MenuListToggle` is a new view for menu list toggles.
 * `MultilineText` is a new text view that can be used when a multiline text is cut off with ...
