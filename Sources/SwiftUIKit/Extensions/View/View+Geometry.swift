@@ -38,7 +38,10 @@ private extension View {
     }
     
     func safeAreaBindingView(for binding: Binding<EdgeInsets>, geo: GeometryProxy) -> some View {
-        changeStateAsync { binding.wrappedValue = geo.safeAreaInsets }
+        changeStateAsync {
+            if binding.wrappedValue == geo.safeAreaInsets { return }
+            binding.wrappedValue = geo.safeAreaInsets
+        }
         return Color.clear
     }
     
@@ -49,7 +52,10 @@ private extension View {
     }
     
     func sizeBindingView(for binding: Binding<CGSize>, geo: GeometryProxy) -> some View {
-        changeStateAsync { binding.wrappedValue = geo.size }
+        changeStateAsync {
+            if binding.wrappedValue == geo.size { return }
+            binding.wrappedValue = geo.size
+        }
         return Color.clear
     }
 }
