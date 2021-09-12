@@ -25,17 +25,16 @@ public extension View {
     
     @ViewBuilder
     func listStyle(_ style: MenuListStyle) -> some View {
-        if style == .default {
-            self
-        } else if style == .plain {
-            self.listStyle(PlainListStyle())
-        } else if style == .grouped {
+        switch style {
+        case .`default`: self
+        case .plain: self.listStyle(PlainListStyle())
+        case .grouped:
             #if os(iOS) || os(tvOS)
             self.listStyle(GroupedListStyle())
             #else
             self
             #endif
-        } else if style == .groupedWithInsets {
+        case .groupedWithInsets:
             #if os(iOS)
             if #available(iOS 14.0, *) {
                 self.listStyle(InsetGroupedListStyle())
@@ -45,8 +44,6 @@ public extension View {
             #else
             self
             #endif
-        } else {
-            self
         }
     }
 }
