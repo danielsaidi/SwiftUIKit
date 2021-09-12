@@ -23,7 +23,7 @@ import AppKit
 extension Color: Codable {
     
     enum CodingKeys: String, CodingKey {
-        case red, green, blue
+        case red, green, blue, alpha
     }
     
     public init(from decoder: Decoder) throws {
@@ -31,7 +31,8 @@ extension Color: Codable {
         let r = try container.decode(Double.self, forKey: .red)
         let g = try container.decode(Double.self, forKey: .green)
         let b = try container.decode(Double.self, forKey: .blue)
-        self.init(red: r, green: g, blue: b)
+        let a = try container.decode(Double.self, forKey: .alpha)
+        self.init(red: r, green: g, blue: b, opacity: a)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -40,6 +41,7 @@ extension Color: Codable {
         try container.encode(colorComponents.red, forKey: .red)
         try container.encode(colorComponents.green, forKey: .green)
         try container.encode(colorComponents.blue, forKey: .blue)
+        try container.encode(colorComponents.alpha, forKey: .alpha)
     }
 }
 
