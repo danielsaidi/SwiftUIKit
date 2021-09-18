@@ -64,8 +64,8 @@ public extension UrlOpener {
         return canOpen(url)
     }
     
-    func canOpen(urlString: String) -> Bool {
-        canOpen(URL(string: urlString))
+    func canOpen(urlString: String?) -> Bool {
+        canOpen(URL(string: urlString ?? ""))
     }
     
     func tryOpen(_ url: URL) {
@@ -77,7 +77,7 @@ public extension UrlOpener {
         tryOpen(url, completion: completion)
     }
     
-    func tryOpen(urlString: String, completion: OpenUrlCompletion = { _ in }) {
-        tryOpen(URL(string: urlString), completion: completion)
+    func tryOpen(urlString: String?, completion: OpenUrlCompletion = { _ in }) {
+        tryOpen(URL(string: urlString ?? ""), completion: completion)
     }
 }
