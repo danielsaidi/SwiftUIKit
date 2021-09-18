@@ -24,8 +24,18 @@ public struct MultilineText: View {
     private let text: String
     
     public var body: some View {
-        Text(text)
-            .fixedSize(horizontal: false, vertical: true)
+        content.fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+private extension MultilineText {
+    
+    var content: Text {
+        if #available(iOS 15, *) {
+            return Text(markdown: text)
+        } else {
+            return Text(text)
+        }
     }
 }
 
