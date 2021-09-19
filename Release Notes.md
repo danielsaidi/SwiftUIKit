@@ -8,6 +8,7 @@ This version requires Xcode 13 and later, since it refers to the latest api:s.
 ### ✨ New features
 
 * `Color+Codable` is a new extension that makes Color codable.
+* `Color+Random` now lets you randomize the color opacity as well.
 * `EnvironmentValues+SafeAreaInsets` lets you read the safe are insets of the key window.
 * `FormActionButton` can now be provided with a custom style.  
 * `FormActionButtonStyle` can now be configured with a custom style.  
