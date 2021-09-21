@@ -18,9 +18,9 @@ public extension View {
      */
     func autosave<T>(
         _ obj: Published<T>.Publisher,
-        throttleInterval: RunLoop.SchedulerTimeType.Stride = 2,
+        debounceInterval: RunLoop.SchedulerTimeType.Stride = 2,
         action: @escaping () -> Void) -> some View {
-            self.onReceive(obj.throttle(for: throttleInterval, scheduler: RunLoop.main, latest: true)) { _ in
+            self.onReceive(obj.debounce(for: debounceInterval, scheduler: RunLoop.main)) { _ in
                 action()
             }
         }
