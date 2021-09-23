@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 public protocol UrlSharing: View {
@@ -19,3 +20,4 @@ public extension UrlSharing {
         sheet.present(ShareSheet(activityItems: [url]))
     }
 }
+#endif

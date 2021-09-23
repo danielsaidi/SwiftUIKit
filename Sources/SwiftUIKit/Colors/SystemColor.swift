@@ -54,7 +54,9 @@ public enum SystemColor: String, CaseIterable, Codable, Equatable {
     case secondaryLabel
     case tertiaryLabel
     case quaternaryLabel
+    #endif
     
+    #if os(iOS)
     case systemFill
     case secondarySystemFill
     case tertiarySystemFill
@@ -99,7 +101,9 @@ public extension SystemColor {
         case .secondaryLabel: return Color(UIColor.secondaryLabel)
         case .tertiaryLabel: return Color(UIColor.tertiaryLabel)
         case .quaternaryLabel: return Color(UIColor.quaternaryLabel)
+        #endif
             
+        #if os(iOS)
         case .systemFill: return Color(UIColor.systemFill)
         case .secondarySystemFill: return Color(UIColor.secondarySystemFill)
         case .tertiarySystemFill: return Color(UIColor.tertiarySystemFill)
@@ -142,7 +146,9 @@ public extension SystemColor {
         case .secondaryLabel: return true
         case .tertiaryLabel: return true
         case .quaternaryLabel: return true
-            
+        #endif
+        
+        #if os(iOS)
         case .systemFill: return true
         case .secondarySystemFill: return true
         case .tertiarySystemFill: return true

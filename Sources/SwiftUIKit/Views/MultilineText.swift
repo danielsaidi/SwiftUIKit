@@ -31,7 +31,7 @@ public struct MultilineText: View {
 private extension MultilineText {
     
     var content: Text {
-        if #available(iOS 15, *) {
+        if #available(iOS 15, macOS 12, tvOS 15, watchOS 8, *) {
             return Text(markdown: text)
         } else {
             return Text(text)
