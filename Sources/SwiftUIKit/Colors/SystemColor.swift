@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
 /**
@@ -77,18 +78,18 @@ public extension SystemColor {
             
         case .black: return .black
         case .blue: return .blue
-        case .brown: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return .brown } else { fatalError(error(for: .brown)) }
+        case .brown: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return .brown } else { fatalError(error(for: .brown)) }
         case .clear: return .clear
-        case .cyan: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return .cyan } else { fatalError(error(for: .cyan)) }
+        case .cyan: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return .cyan } else { fatalError(error(for: .cyan)) }
         case .gray: return .gray
         case .green: return .green
-        case .indigo: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return .indigo } else { fatalError(error(for: .indigo)) }
-        case .mint: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return .mint } else { fatalError(error(for: .mint)) }
+        case .indigo: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return .indigo } else { fatalError(error(for: .indigo)) }
+        case .mint: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return .mint } else { fatalError(error(for: .mint)) }
         case .orange: return .orange
         case .pink: return .pink
         case .purple: return .purple
         case .red: return .red
-        case .teal: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return .teal } else { fatalError(error(for: .teal)) }
+        case .teal: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return .teal } else { fatalError(error(for: .teal)) }
         case .white: return .white
         case .yellow: return .yellow
             
@@ -122,18 +123,18 @@ public extension SystemColor {
             
         case .black: return true
         case .blue: return true
-        case .brown: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
+        case .brown: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
         case .clear: return true
-        case .cyan: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
+        case .cyan: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
         case .gray: return true
         case .green: return true
-        case .indigo: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
-        case .mint: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
+        case .indigo: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
+        case .mint: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
         case .orange: return true
         case .pink: return true
         case .purple: return true
         case .red: return true
-        case .teal: if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
+        case .teal: if #available(iOS 15.0, tvOS 15.0, watchOS 8.0, *) { return true } else { return false }
         case .white: return true
         case .yellow: return true
                 
@@ -168,3 +169,4 @@ private extension SystemColor {
         "\(color.name) is not supported on this platform."
     }
 }
+#endif

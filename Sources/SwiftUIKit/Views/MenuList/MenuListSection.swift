@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
 /**
@@ -65,3 +66,4 @@ struct MenuListSection_Previews: PreviewProvider {
         }
     }
 }
+#endif

@@ -5,9 +5,10 @@
 //  Created by Daniel Saidi on 2021-09-05.
 //
 
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
-@available(iOS 15, macOS 12, tvOS 15, watchOS 8, *)
+@available(iOS 15, tvOS 15, watchOS 8, *)
 public extension Text {
     
     /**
@@ -20,10 +21,12 @@ public extension Text {
     }
 }
 
-@available(iOS 15, macOS 12, tvOS 15, watchOS 8, *)
+@available(iOS 15, tvOS 15, watchOS 8, *)
 struct Text_Markdown_Previews: PreviewProvider {
+    
     static var previews: some View {
         Text(markdown: "Hello, **world**!\n\nThis is *markdown*!")
             .multilineTextAlignment(.center)
     }
 }
+#endif
