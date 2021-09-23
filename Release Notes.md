@@ -3,7 +3,9 @@
 
 ## 2.0
 
-This version requires Xcode 13 and later, since it refers to the latest api:s. 
+This version requires Xcode 13 and later, since it refers to the latest api:s.
+
+Parts of the library that have native corresponding parts in newer versions of SwiftUI, like `SearchBar`. They will be around until the library targets the versions of SwiftUI where they were introduced.   
 
 ### ✨ New features
 
