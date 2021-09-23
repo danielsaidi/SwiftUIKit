@@ -76,9 +76,9 @@ private extension View {
 private extension MultiPicker {
     
     func listItemView(for item: Item) -> some View {
-        Button(action: { toggleSelection(for: item) }) {
+        Button(action: { toggleSelection(for: item) }, label: {
             listItem(item, isSelected(item))
-        }
+        })
     }
 }
 

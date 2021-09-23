@@ -84,9 +84,9 @@ private extension View {
 private extension Picker {
     
     func listItemView(for item: Item) -> some View {
-        Button(action: { select(item) }) {
+        Button(action: { select(item) }, label: {
             listItem(item, isSelected(item))
-        }
+        })
     }
 }
 
