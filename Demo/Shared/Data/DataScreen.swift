@@ -20,8 +20,8 @@ struct DataScreen: View {
             Section(header: Text("Utils")) {
                 MenuListItem(icon: .qrCode, title: "Scan Code Generator")
                     .navigationLink(to: ScanCodeGeneratorScreen())
-                MenuListItem(icon: .data, title: "UserDefaults Persisted")
-                    .navigationLink(to: UserDefaultsPersistedScreen())
+                MenuListItem(icon: .data, title: "Persisted")
+                    .navigationLink(to: PersistedScreen())
             }
         }
     }

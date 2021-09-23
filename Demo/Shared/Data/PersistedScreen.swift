@@ -1,5 +1,5 @@
 //
-//  UserDefaultsPersistedScreen.swift
+//  PersistedScreen.swift
 //  Demo
 //
 //  Created by Daniel Saidi on 2020-11-26.
@@ -9,14 +9,14 @@
 import SwiftUI
 import SwiftUIKit
 
-struct UserDefaultsPersistedScreen: View {
+struct PersistedScreen: View {
     
     @StateObject private var context = PersistentContext()
         
     var body: some View {
-        MenuList("UserDefaultsPersisted") {
+        MenuList("Persisted") {
             Section {
-                MenuListText("Any text you type below is automatically persisted in UserDefaults, using the @UserDefaultsPersisted property wrapper.")
+                MenuListText("Any text you type below is automatically persisted, using the @Persisted property wrapper. This also supports codable types.")
             }
             
             Section(header: Text("Text")) {
@@ -31,10 +31,11 @@ struct UserDefaultsPersistedScreen: View {
     }
 }
 
-struct UserDefaultsPersistedScreen_Previews: PreviewProvider {
+struct PersistedScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
-            UserDefaultsPersistedScreen()
+            PersistedScreen()
         }
     }
 }
@@ -49,6 +50,6 @@ private class PersistentContext: ObservableObject {
         didSet { persistedText = text }
     }
 
-    @UserDefaultsPersisted(key: "com.danielsaidi.swiftuikit.demo.text", defaultValue: "")
+    @Persisted(key: "com.danielsaidi.swiftuikit.demo.text", defaultValue: "")
     private var persistedText: String
 }
