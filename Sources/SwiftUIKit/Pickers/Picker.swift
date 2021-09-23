@@ -108,6 +108,7 @@ private extension Picker {
     }
 }
 
+#if os(iOS) || os(tvOS)
 struct Picker_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -166,3 +167,4 @@ struct Picker_Previews: PreviewProvider {
         }
     }
 }
+#endif
