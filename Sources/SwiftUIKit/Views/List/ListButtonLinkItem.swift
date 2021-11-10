@@ -27,13 +27,11 @@ public struct ListButtonLinkItem<Content: View>: View {
     @ViewBuilder private let content: () -> Content
     
     public var body: some View {
-        Button(action: action) {
-            ListItem {
-                HStack {
-                    content()
-                    Spacer()
-                    ListDisclosureIndicator()
-                }
+        ListButtonItem(action: action) {
+            HStack {
+                content()
+                Spacer()
+                ListDisclosureIndicator()
             }
         }.buttonStyle(.plain)
     }

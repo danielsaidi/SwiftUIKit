@@ -1,7 +1,9 @@
 # Release notes
 
 
-## 2.0.1
+## 2.1
+
+This release adds a brand new "list item" concept that replaces the previous "menu list" one.
 
 ### ✨ New features
 
@@ -10,6 +12,17 @@
 * `Label` has a new `init(String, Image)` initializer.
 * `View+Frame` has a new `frame(square:)` view extension.
 * `View+DynamicType` has a new `disableDynamicType()` view extension.
+
+* `ListItem` is a new view that can be used to make all items in a list get the same overall style.
+* `ListButtonItem` is a new view that wraps its content in a `ListItem` and applies a tap action.
+* `ListButtonLinkItem` is a new view that wraps its content in a `ListButtonItem` and appends a `ListDisclosureIndicator`.
+* `ListDisclosureIndicator` is a new view that imitates and iOS navigation link arrow.
+* `ListSelectItem` is a new view that wraps its content in a `ListItem` and applies a checkmark if the item is selected.
+* `ListToggleItem` is a new view that wraps its content in a `ListItem` and applies a toggle binding and a `Toggle`.
+
+### 🗑 Deprecations
+
+* The `MenuList` namespace is deprecated and replaced with the new `List` namespace.
 
 
 
