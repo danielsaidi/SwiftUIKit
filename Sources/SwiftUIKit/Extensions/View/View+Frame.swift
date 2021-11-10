@@ -1,5 +1,5 @@
 //
-//  View+Enabled.swift
+//  View+Frame.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-01-05.
@@ -16,6 +16,13 @@ public extension View {
      */
     func frame(_ size: CGSize) -> some View {
         self.frame(width: size.width, height: size.height)
+    }
+    
+    /**
+     Apply the same size to all sides of the view.
+     */
+    func frame(square size: CGFloat) -> some View {
+        self.frame(width: size, height: size)
     }
     
     /**
