@@ -70,13 +70,9 @@ Feel free to reach out if you have questions or if you want to contribute in any
 * Web site: [danielsaidi.com][Website]
 
 
-## Sponsors and Clients
+## Support
 
-This project is proudly sponsored by the following individuals:
-
-* [@booch](https://github.com/booch)
-
-You can support my work by sponsoring the project on [GitHub Sponsors][Sponsors] or hiring me for consultation. I'd be happy to help you out in any way that I can.
+You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for paid support.
 
 
 ## License

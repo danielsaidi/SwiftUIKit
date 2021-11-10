@@ -1,6 +1,18 @@
 # Release notes
 
 
+## 2.0.1
+
+### ✨ New features
+
+* `EdgeInsets` has a new `init(all:)` initializer.
+* `EdgeInsets` has a new `init(horizontal:,vertical:)` initializer.
+* `Label` has a new `init(String, Image)` initializer.
+* `View+Frame` has a new `frame(square:)` view extension.
+* `View+DynamicType` has a new `disableDynamicType()` view extension.
+
+
+
 ## 2.0
 
 This version requires Xcode 13 and later, since it refers to the latest api:s.
@@ -44,7 +56,8 @@ Parts of the library that have native corresponding parts in newer versions of S
 
 ### 💥 Breaking Changes
 
-* All deprecated parts of the library have been removed. 
+* All deprecated parts of the library have been removed.
+* `CGFloat` `standardKeyboardRowHeight` now only supports idiom and orientation.
 * `MenuListItemIcon` has been renamed to `MenuListIcon`.
 * `SystemColor` no longer auto-implements `SimplePickerValue`.
 * `UserDefaultsPersisted` has been renamed to `Persisted`.
