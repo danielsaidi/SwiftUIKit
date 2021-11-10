@@ -12,6 +12,7 @@ import SwiftUI
  This view can be used to display trailing subtitle texts in
  menu list items.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListSubtitle: View {
     
     public init(_ text: String) {
@@ -32,6 +33,7 @@ public struct MenuListSubtitle: View {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuListSubtitle_Previews: PreviewProvider {
     
     static var previews: some View {

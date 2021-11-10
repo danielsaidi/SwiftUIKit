@@ -12,6 +12,7 @@ import SwiftUI
  This view can be used to display several lines of text in a
  menu list item.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListText: View {
     
     public init(_ text: String) {
@@ -31,6 +32,7 @@ public struct MenuListText: View {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuListText_Previews: PreviewProvider {
     
     static var previews: some View {

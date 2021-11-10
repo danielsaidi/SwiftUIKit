@@ -17,6 +17,7 @@ import SwiftUI
  by setting `MenuListStyle.defaultStyle` to a value. You can
  also provide a specific style in `init`.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuList<Content: View>: View {
     
     public init(
@@ -43,6 +44,7 @@ public struct MenuList<Content: View>: View {
 
 // MARK: - Private Stuff
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 private extension View {
     
     @ViewBuilder
@@ -55,6 +57,7 @@ private extension View {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuList_Previews: PreviewProvider {
     
     static var previews: some View {

@@ -12,6 +12,7 @@ import SwiftUI
  A menu list toggle is a specialized toggle that takes up as
  much vertical space as a menu list text view.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListToggle<Icon: View>: View {
     
     public init(
@@ -38,6 +39,7 @@ public struct MenuListToggle<Icon: View>: View {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 extension MenuListToggle where Icon == Image {
     
     public init(
@@ -58,6 +60,7 @@ extension MenuListToggle where Icon == Image {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuListToggle_Previews: PreviewProvider {
     
     static let icon = Image(systemName: "trash")

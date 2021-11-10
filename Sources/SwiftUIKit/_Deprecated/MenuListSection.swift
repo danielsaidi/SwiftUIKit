@@ -15,6 +15,7 @@ import SwiftUI
  
  The view only supports text content.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListSection<Content: View>: View {
     
     public init(
@@ -39,6 +40,7 @@ public struct MenuListSection<Content: View>: View {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 private extension MenuListSection {
     
     @ViewBuilder
@@ -51,6 +53,7 @@ private extension MenuListSection {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuListSection_Previews: PreviewProvider {
     static var previews: some View {
         List {

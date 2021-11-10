@@ -49,15 +49,15 @@ public struct MultiPicker<Item: Identifiable, ItemView: View>: View, Dismissable
     @Environment(\.presentationMode) public var presentationMode
     
     public var body: some View {
-        MenuList(title) {
+        List {
             ForEach(sections) { section in
                 Section(header: section.pickerHeader) {
                     ForEach(section.items) {
                         listItemView(for: $0)
                     }
                 }
-            }
-        }.withTitle(title)
+            }.withTitle(title)
+        }
     }
 }
 

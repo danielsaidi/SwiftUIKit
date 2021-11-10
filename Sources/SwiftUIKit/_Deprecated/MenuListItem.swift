@@ -12,6 +12,7 @@ import SwiftUI
  A list item can have a left icon, a centered title view and
  an optional trailing icon.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListItem<Content: View>: View {
     
     /**
@@ -47,9 +48,7 @@ public struct MenuListItem<Content: View>: View {
     }
 }
 
-
-// MARK: - Convenience Initializers
-
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public extension MenuListItem where Content == AnyView {
     
     /**
@@ -137,9 +136,7 @@ public extension MenuListItem where Content == AnyView {
     }
 }
 
-
-// MARK: - Public Extensions
-
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public extension MenuListItem {
     
     /**
@@ -176,6 +173,7 @@ public extension MenuListItem {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 private extension MenuListItem {
     
     @ViewBuilder
@@ -188,6 +186,7 @@ private extension MenuListItem {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuListItem_Previews: PreviewProvider {
     
     static var icon: Image { Image(systemName: "checkmark.circle.fill") }

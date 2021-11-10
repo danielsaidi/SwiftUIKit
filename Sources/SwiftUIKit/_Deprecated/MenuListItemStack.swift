@@ -13,6 +13,7 @@ import SwiftUI
  spacing. You can use it to make a stack space out its items
  just like a menu list item.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListItemStack<Content: View>: View {
     
     public init(

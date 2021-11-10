@@ -12,6 +12,7 @@ import SwiftUI
  This view is used by `MenuListItem` as the leading icon. It
  presses the icon down to a certain size.
  */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public struct MenuListIcon<Icon: View>: View {
     
     /**
@@ -28,6 +29,7 @@ public struct MenuListIcon<Icon: View>: View {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public extension MenuListIcon where Icon == Text {
     
     /**
@@ -38,6 +40,7 @@ public extension MenuListIcon where Icon == Text {
     }
 }
 
+@available(*, deprecated, message: "Use the new ListItem views instead")
 struct MenuListItemIcon_Previews: PreviewProvider {
     
     static var previews: some View {
