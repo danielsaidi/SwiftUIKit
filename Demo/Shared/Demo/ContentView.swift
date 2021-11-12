@@ -10,30 +10,58 @@ import SwiftUI
 import SwiftUIKit
 
 struct ContentView: View {
- 
+    
     var body: some View {
         NavigationView {
-            MenuList("SwiftUIKit") {
+            List {
                 Section {
                     #if os(iOS)
-                    MenuListItem(icon: .blur, title: "Blurs").navigationLink(to: BlursScreen())
-                    MenuListItem(icon: .camera, title: "Cameras").navigationLink(to: CamerasScreen())
+                    ListNavigationLinkItem(destination: BlursScreen()) {
+                        Label("Blurs", image: .blur)
+                    }
+                    ListNavigationLinkItem(destination: CamerasScreen()) {
+                        Label("Cameras", image: .camera)
+                    }
                     #endif
-                    MenuListItem(icon: .data, title: "Data").navigationLink(to: DataScreen())
-                    MenuListItem(icon: .extensions, title: "Extensions").navigationLink(to: ExtensionsScreen())
-                    MenuListItem(icon: .gestures, title: "Gestures").navigationLink(to: GesturesScreen())
+                    
+                    ListNavigationLinkItem(destination: DataScreen()) {
+                        Label("Data", image: .data)
+                    }
+                    ListNavigationLinkItem(destination: ExtensionsScreen()) {
+                        Label("Extensions", image: .extensions)
+                    }
+                    ListNavigationLinkItem(destination: GesturesScreen()) {
+                        Label("Gestures", image: .gestures)
+                    }
+                    
                     #if os(iOS)
-                    MenuListItem(icon: .pickers, title: "Pickers").navigationLink(to: PickersScreen())
+                    ListNavigationLinkItem(destination: PickersScreen()) {
+                        Label("Pickers", image: .pickers)
+                    }
                     #endif
-                    MenuListItem(icon: .presentation, title: "Presentation").navigationLink(to: PresentationScreen())
+                    
+                    ListNavigationLinkItem(destination: PresentationScreen()) {
+                        Label("Presentation", image: .presentation)
+                    }
+                    
                     #if os(iOS)
-                    MenuListItem(icon: .sharing, title: "Sharing").navigationLink(to: SharingScreen())
+                    ListNavigationLinkItem(destination: SharingScreen()) {
+                        Label("Sharing", image: .sharing)
+                    }
                     #endif
-                    MenuListItem(icon: .styles, title: "Styles").navigationLink(to: StylesScreen())
-                    MenuListItem(icon: .views, title: "Views").navigationLink(to: ViewsScreen())
+                    
+                    ListNavigationLinkItem(destination: StylesScreen()) {
+                        Label("Styles", image: .styles)
+                    }
+                    ListNavigationLinkItem(destination: ViewsScreen()) {
+                        Label("Views", image: .views)
+                    }
                 }
-            }.withPlatformSpecificNavigationMode()
-        }.withPlatformSpecificNavigationStyle()
+            }
+            .navigationBarTitle(("SwiftUIKit"))
+            .withPlatformSpecificNavigationMode()
+        }
+        .withPlatformSpecificNavigationStyle()
     }
 }
 
@@ -59,6 +87,7 @@ private extension View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
     }

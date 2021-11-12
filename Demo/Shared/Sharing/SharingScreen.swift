@@ -13,20 +13,22 @@ import SwiftUIKit
 struct SharingScreen: View {
  
     var body: some View {
-        MenuList("Sharing") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has utils that can be used to share data in SwiftUI.")
+                ListTextItem("SwiftUIKit has utils that can be used to share data in SwiftUI.")
             }
             
             Section(header: Text("Utils")) {
-                MenuListItem(icon: .sharing, title: "Share Sheet")
-                    .navigationLink(to: ShareSheetScreen())
+                ListNavigationLinkItem(destination: ShareSheetScreen()) {
+                    Label("Share Sheet", image: .sharing)
+                }
             }
-        }
+        }.navigationBarTitle("Sharing")
     }
 }
 
 struct SharingScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         SharingScreen()
     }

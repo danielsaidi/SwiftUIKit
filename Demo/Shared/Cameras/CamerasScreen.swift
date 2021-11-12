@@ -13,22 +13,27 @@ import SwiftUIKit
 struct CamerasScreen: View {
  
     var body: some View {
-        MenuList("Cameras") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has cameras that can be used to take photos and scan documents.")
+                ListTextItem("SwiftUIKit has cameras that can be used to take photos and scan documents.")
             }
             
             Section(header: Text("Cameras")) {
-                MenuListItem(icon: .documentCamera, title: "Document Camera")
-                    .navigationLink(to: DocumentCameraScreen())
-                MenuListItem(icon: .camera, title: "Photo Camera")
-                    .navigationLink(to: PhotoCameraScreen())
+                ListNavigationLinkItem(destination: DocumentCameraScreen()) {
+                    Label("Document Camera", image: .documentCamera)
+                }
+                
+                ListNavigationLinkItem(destination: PhotoCameraScreen()) {
+                    Label("Photo Camera", image: .camera)
+                }
+                
             }
-        }
+        }.navigationBarTitle("Cameras")
     }
 }
 
 struct CamerasScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             CamerasScreen()

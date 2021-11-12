@@ -16,9 +16,9 @@ struct AsyncImageScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("AsyncImage") {
+        List {
             Section {
-                MenuListText("This view can fetch images async from urls.")
+                ListTextItem("This view can fetch images async from urls.")
             }
             
             Section(header: Text("URL")) {
@@ -26,11 +26,13 @@ struct AsyncImageScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .photo, title: "Load image")
-                    .button(action: loadImage)
-                    .enabled(hasUrl)
+                ListButtonItem(action: loadImage) {
+                    Label("Load image", image: .photo)
+                }.enabled(hasUrl)
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("AsyncImage")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -62,6 +64,7 @@ private extension AsyncImageScreen {
 }
 
 struct AsyncImageScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             AsyncImageScreen()

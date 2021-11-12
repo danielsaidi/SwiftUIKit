@@ -14,18 +14,21 @@ struct ToastsScreen: View {
     @StateObject private var context = ToastContext()
     
     var body: some View {
-        MenuList("Toasts") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has utils that make it easier to manage and present toasts.")
+                ListTextItem("SwiftUIKit has utils that make it easier to manage and present toasts.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListItem(icon: item.listIcon, title: item.listText(for: "toast"))
-                        .button(action: { present(item) })
+                    ListButtonItem(action: { present(item) }) {
+                        Label(item.listText(for: "toast"), image: item.listIcon)
+                    }
                 }
             }
-        }.toast(context: context, duration: 5, style: .standard)
+        }
+        .navigationBarTitle("Toasts")
+        .toast(context: context, duration: 5, style: .standard)
     }
 }
 
@@ -37,6 +40,7 @@ private extension ToastsScreen {
 }
 
 struct ToastsScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         ToastsScreen()
     }

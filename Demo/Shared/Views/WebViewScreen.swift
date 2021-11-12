@@ -15,17 +15,22 @@ struct WebViewScreen: View {
     @StateObject private var sheetContext = SheetContext()
  
     var body: some View {
-        MenuList("WebView") {
+        List {
             Section {
-                MenuListText("This view can be used to present a URL in an embedded Safari browser.")
+                ListTextItem("This view can be used to present a URL in an embedded Safari browser.")
             }
+            
             Section {
-                MenuListItem(icon: .web, title: "Visit my website")
-                    .button(action: visitMyWebsite)
-                MenuListItem(icon: .web, title: "Visit apple.com")
-                    .button(action: visitApple)
+                ListButtonItem(action: visitMyWebsite) {
+                    Label("Visit my website", image: .web)
+                }
+                ListButtonItem(action: visitApple) {
+                    Label("Visit apple.com", image: .web)
+                }
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("WebView")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -46,6 +51,7 @@ private extension WebViewScreen {
 }
 
 struct WebViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         WebViewScreen()
     }

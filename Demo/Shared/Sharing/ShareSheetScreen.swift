@@ -17,9 +17,9 @@ struct ShareSheetScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("ShareSheet") {
+        List {
             Section {
-                MenuListText("This sheet can be used to share urls, objects etc. In this demo, you can share a custom url.")
+                ListTextItem("This sheet can be used to share urls, objects etc. In this demo, you can share a custom url.")
             }
             
             Section(header: Text("URL")) {
@@ -27,11 +27,13 @@ struct ShareSheetScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .sharing, title: "Share the url")
-                    .button(action: shareUrl)
-                    .enabled(hasUrl)
+                ListButtonItem(action: shareUrl) {
+                    Label("Share the url", image: .sharing)
+                }.enabled(hasUrl)
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("ShareSheet")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -49,6 +51,7 @@ private extension ShareSheetScreen {
 }
 
 struct ShareSheetScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         ShareSheetScreen()
     }

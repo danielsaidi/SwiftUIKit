@@ -15,9 +15,9 @@ struct CircularProgressViewScreen: View {
     @State private var isLoading = true
     
     var body: some View {
-        MenuList("CircularProgressView") {
+        List {
             Section {
-                MenuListText("This view displays a circular progress spinner.")
+                ListTextItem("This view displays a circular progress spinner.")
             }
             
             Section(header: Text("State")) {
@@ -33,11 +33,12 @@ struct CircularProgressViewScreen: View {
                     }
                 }
             }
-        }
+        }.navigationBarTitle("CircularProgressView")
     }
 }
 
 struct CircularProgressViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         CircularProgressViewScreen()
     }

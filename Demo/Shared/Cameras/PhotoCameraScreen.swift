@@ -18,9 +18,9 @@ struct PhotoCameraScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("PhotoCamera") {
+        List {
             Section {
-                MenuListText("This camera can take photos. In this demo, the photos you take are added to a PageView.")
+                ListTextItem("This camera can take photos. In this demo, the photos you take are added to a PageView.")
             }
             
             if photos.count > 0 {
@@ -34,10 +34,13 @@ struct PhotoCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .camera, title: "Open camera")
-                    .button(action: openCamera)
+                ListButtonItem(action: openCamera) {
+                    Label("Open camera", image: .camera)
+                }
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("PhotoCamera")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -73,6 +76,7 @@ private extension PhotoCameraScreen {
 }
 
 struct PhotoCameraScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         PhotoCameraScreen()
     }

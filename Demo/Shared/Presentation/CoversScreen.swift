@@ -21,23 +21,27 @@ struct CoversScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("Full Screen Covers") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has additional utils that make it easier to manage and present covers.")
+                ListTextItem("SwiftUIKit has additional utils that make it easier to manage and present covers.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListItem(icon: item.listIcon, title: item.listText(for: "cover"))
-                        .button(action: { presentCover(item) })
+                    ListButtonItem(action: { presentCover(item) }) {
+                        Label(item.listText(for: "cover"), image: item.listIcon)
+                    }
+                        
                 }
             }
             Section(header: Text("Sheet (for testing purpose)")) {
-                MenuListItem(icon: .sheet, title: "Show an flag sheet")
-                    .button(action: presentSheet)
-                    .sheet(context: sheetContext)
+                ListButtonItem(action: presentSheet) {
+                    Label("Show an flag sheet", image: .sheet)
+                }.sheet(context: sheetContext)
             }
-        }.fullScreenCover(context: context)
+        }
+        .navigationBarTitle("Full Screen Covers")
+        .fullScreenCover(context: context)
     }
 }
 
@@ -73,6 +77,7 @@ private extension CoversScreen {
 }
 
 struct CoversScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         CoversScreen()
     }

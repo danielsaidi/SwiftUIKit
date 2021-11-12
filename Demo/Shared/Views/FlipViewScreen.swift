@@ -17,7 +17,7 @@ struct FlipViewScreen: View {
         
     var body: some View {
         VStack {
-            MenuListText("These views have a front and a back face and can be flipped by tapping ot swiping.")
+            ListTextItem("These views have a front and a back face and can be flipped by tapping ot swiping.")
             FlipView(
                 front: side(.blue, "Flip me horizontally!"),
                 back: side(.red, "Flip me back!"),
@@ -46,6 +46,7 @@ private extension FlipViewScreen {
 }
 
 struct FlipScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         FlipViewScreen()
     }

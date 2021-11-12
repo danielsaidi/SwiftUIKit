@@ -23,9 +23,9 @@ struct ScanCodeGeneratorScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("ScanCodeGenerator") {
+        List {
             Section {
-                MenuListText("Enter a number and a url and tap the bottom buttons to generate scan codes.")
+                ListTextItem("Enter a number and a url and tap the bottom buttons to generate scan codes.")
             }
             
             Section(header: Text("Number")) {
@@ -37,14 +37,16 @@ struct ScanCodeGeneratorScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .barcode, title: "Show barcode for number")
-                    .button(action: showBarode)
-                    .enabled(hasNumber)
-                MenuListItem(icon: .qrCode, title: "Show QR Code for url")
-                    .button(action: showQrCode)
-                    .enabled(hasUrl)
+                ListButtonItem(action: showBarode) {
+                    Label("Show barcode for number", image: .barcode)
+                }.enabled(hasNumber)
+                 
+                ListButtonItem(action: showQrCode) {
+                    Label("Show QR Code for url", image: .qrCode)
+                }.enabled(hasUrl)
             }
         }
+        .navigationBarTitle("ScanCodeGenerator")
         .sheet(context: sheetContext)
     }
 }
@@ -96,6 +98,7 @@ private extension ScanCodeGeneratorScreen {
 }
 
 struct ScanCodeGeneratorScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             ScanCodeGeneratorScreen()

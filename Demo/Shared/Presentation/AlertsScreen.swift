@@ -14,18 +14,21 @@ struct AlertsScreen: View {
     @StateObject private var context = AlertContext()
     
     var body: some View {
-        MenuList("Alerts") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
+                ListTextItem("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListItem(icon: item.listIcon, title: item.listText(for: "alert"))
-                        .button(action: { present(item) })
+                    ListButtonItem(action: { present(item) }) {
+                        Label(item.listText(for: "alert"), image: item.listIcon)
+                    }
                 }
             }
-        }.alert(context: context)
+        }
+        .navigationBarTitle("Alerts")
+        .alert(context: context)
     }
 }
 
@@ -37,6 +40,7 @@ private extension AlertsScreen {
 }
 
 struct AlertsScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         AlertsScreen()
     }

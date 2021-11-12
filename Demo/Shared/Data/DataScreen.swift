@@ -12,22 +12,26 @@ import SwiftUIKit
 struct DataScreen: View {
  
     var body: some View {
-        MenuList("Data") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has some data utils, e.g. to create QR codes and (one) property wrappers.")
+                ListTextItem("SwiftUIKit has some data utils, e.g. to create QR codes and (one) property wrappers.")
             }
             
             Section(header: Text("Utils")) {
-                MenuListItem(icon: .qrCode, title: "Scan Code Generator")
-                    .navigationLink(to: ScanCodeGeneratorScreen())
-                MenuListItem(icon: .data, title: "Persisted")
-                    .navigationLink(to: PersistedScreen())
+                ListNavigationLinkItem(destination: ScanCodeGeneratorScreen()) {
+                    Label("Scan Code Generator", image: .qrCode)
+                }
+                
+                ListNavigationLinkItem(destination: PersistedScreen()) {
+                    Label("Persisted", image: .data)
+                }
             }
-        }
+        }.navigationBarTitle("Data")
     }
 }
 
 struct DataScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             DataScreen()

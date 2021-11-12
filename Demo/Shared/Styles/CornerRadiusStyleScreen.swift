@@ -12,9 +12,9 @@ import SwiftUIKit
 struct CornerRadiusStyleScreen: View {
  
     var body: some View {
-        MenuList("CornerRadiusStyle") {
+        List {
             Section {
-                MenuListText("This style makes it possible to create named styles that can be applied to any view.")
+                ListTextItem("This style makes it possible to create named styles that can be applied to any view.")
             }
             
             Section(header: Text("Examples")) {
@@ -22,7 +22,7 @@ struct CornerRadiusStyleScreen: View {
                 item(.green, style: .medium)
                 item(.blue, style: .large)
             }
-        }
+        }.navigationBarTitle("CornerRadiusStyle")
     }
 }
 
@@ -61,6 +61,7 @@ private enum DemoStyle: String {
 }
 
 struct CornerRadiusStyleScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         CornerRadiusStyleScreen()
     }

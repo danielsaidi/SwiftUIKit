@@ -13,9 +13,9 @@ import SwiftUIKit
 struct FontStyleScreen: View {
  
     var body: some View {
-        MenuList("FontStyle") {
+        List {
             Section {
-                MenuListText("This style makes it possible to create named styles that can be applied to any view.")
+                ListTextItem("This style makes it possible to create named styles that can be applied to any view.")
             }
             
             Section(header: Text("Examples")) {
@@ -23,7 +23,7 @@ struct FontStyleScreen: View {
                 item(.green, .lobster)
                 item(.blue, .luckiestGuy)
             }
-        }
+        }.navigationBarTitle("FontStyle")
     }
 }
 
@@ -64,6 +64,7 @@ private enum DemoStyle: String {
 }
 
 struct FontStyleScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         FontStyleScreen()
     }

@@ -12,9 +12,9 @@ import SwiftUIKit
 struct ShadowStyleScreen: View {
  
     var body: some View {
-        MenuList("ShadowStyle") {
+        List {
             Section {
-                MenuListText("This style makes it possible to create named styles that can be applied to any view.")
+                ListTextItem("This style makes it possible to create named styles that can be applied to any view.")
             }
             
             Section(header: Text("Examples")) {
@@ -22,7 +22,7 @@ struct ShadowStyleScreen: View {
                 item(.green, style: .medium)
                 item(.blue, style: .large)
             }
-        }
+        }.navigationBarTitle("ShadowStyle")
     }
 }
 
@@ -61,6 +61,7 @@ private enum DemoStyle: String {
 }
 
 struct ShadowStyleScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         ShadowStyleScreen()
     }

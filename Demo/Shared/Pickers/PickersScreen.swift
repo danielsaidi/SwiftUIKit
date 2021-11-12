@@ -13,22 +13,25 @@ import SwiftUIKit
 struct PickersScreen: View {
  
     var body: some View {
-        MenuList("Pickers") {
+        List {
             Section {
-                MenuListText("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
+                ListTextItem("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
             }
             
             Section(header: Text("Pickers")) {
-                MenuListItem(icon: .file, title: "File Picker")
-                    .navigationLink(to: FilePickerScreen())
-                MenuListItem(icon: .photo, title: "Image Picker")
-                    .navigationLink(to: ImagePickerScreen())
+                ListNavigationLinkItem(destination: FilePickerScreen()) {
+                    Label("File Picker", image: .file)
+                }
+                ListNavigationLinkItem(destination: ImagePickerScreen()) {
+                    Label("Image Picker", image: .photo)
+                }
             }
-        }
+        }.navigationBarTitle("Pickers")
     }
 }
 
 struct PickersScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         PickersScreen()
     }

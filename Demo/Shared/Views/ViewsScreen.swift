@@ -12,56 +12,92 @@ import SwiftUIKit
 struct ViewsScreen: View {
     
     var body: some View {
-        MenuList("Views") {
+        List {
             Section {
-                MenuListText("SwiftUIKit contains a large collection of additional views for SwiftUI.")
+                ListTextItem("SwiftUIKit contains a large collection of additional views for SwiftUI.")
             }
             
             Section(header: Text("Views")) {
                 list1
                 list2
             }
-        }
+        }.navigationBarTitle("Views")
     }
     
     private var list1: some View {
         Group {
-            MenuListItem(icon: .photo, title: "Async Image").navigationLink(to: AsyncImageScreen())
-            MenuListItem(icon: .circularProgressBar, title: "Circular Progress Bar").navigationLink(to: CircularProgressBarScreen())
+            ListNavigationLinkItem(destination: AsyncImageScreen()) {
+                Label("Async Image", image: .photo)
+            }
+            ListNavigationLinkItem(destination: CircularProgressBarScreen()) {
+                Label("Circular Progress Bar", image: .circularProgressBar)
+            }
+            
             #if os(iOS) || os(tvOS) || os(watchOS)
-            MenuListItem(icon: .circularProgressView, title: "Circular Progress View").navigationLink(to: CircularProgressViewScreen())
+            ListNavigationLinkItem(destination: CircularProgressViewScreen()) {
+                Label("Circular Progress View", image: .circularProgressView)
+            }
             #endif
+            
             #if os(iOS) || os(tvOS)
-            MenuListItem(icon: .collectionViewGrid, title: "Collection View (grid)").navigationLink(to: CollectionViewGridScreen())
-            MenuListItem(icon: .collectionViewShelves, title: "Collection View (shelves)").navigationLink(to: CollectionViewShelvesScreen())
+            ListNavigationLinkItem(destination: CollectionViewGridScreen()) {
+                Label("Collection View (grid)", image: .collectionViewGrid)
+            }
+            ListNavigationLinkItem(destination: CollectionViewShelvesScreen()) {
+                Label("Collection View (shelves)", image: .collectionViewShelves)
+            }
             #endif
-            MenuListItem(icon: .conditional, title: "Conditional View").navigationLink(to: ConditionalViewScreen())
-            MenuListItem(icon: .dismiss, title: "Dismissable View").navigationLink(to: DismissableViewScreen())
-            MenuListItem(icon: .download, title: "Fetched Data View").navigationLink(to: FetchedDataViewScreen())
+            
+            ListNavigationLinkItem(destination: ConditionalViewScreen()) {
+                Label("Conditional View", image: .conditional)
+            }
+            ListNavigationLinkItem(destination: DismissableViewScreen()) {
+                Label("Dismissable View", image: .dismiss)
+            }
+            ListNavigationLinkItem(destination: FetchedDataViewScreen()) {
+                Label("Fetched Data View", image: .download)
+            }
+            
             #if os(iOS)
-            MenuListItem(icon: .swipeGesture, title: "Flip View").navigationLink(to: FlipViewScreen())
-            MenuListItem(icon: .multiline, title: "Multiline Text Field").navigationLink(to: MultilineTextFieldScreen())
+            ListNavigationLinkItem(destination: FlipViewScreen()) {
+                Label("Flip View", image: .swipeGesture)
+            }
+            ListNavigationLinkItem(destination: MultilineTextFieldScreen()) {
+                Label("Multiline Text Field", image: .multiline)
+            }
             #endif
         }
     }
     
     private var list2: some View {
         Group {
-            MenuListItem(icon: .optional, title: "Optional View").navigationLink(to: OptionalViewScreen())
+            ListNavigationLinkItem(destination: OptionalViewScreen()) {
+                Label("Optional View", image: .optional)
+            }
+            
             #if os(iOS) || os(tvOS) || os(watchOS)
-            MenuListItem(icon: .pageControl, title: "Page View").navigationLink(to: PageViewScreen())
+            ListNavigationLinkItem(destination: PageViewScreen()) {
+                Label("Page View", image: .pageControl)
+            }
             #endif
+            
             #if os(iOS) || os(tvOS)
-            MenuListItem(icon: .wrapper, title: "UIView Wrapper").navigationLink(to: UIViewWrapperScreen())
+            ListNavigationLinkItem(destination: UIViewWrapperScreen()) {
+                Label("UIView Wrapper", image: .wrapper)
+            }
             #endif
+    
             #if os(iOS)
-            MenuListItem(icon: .web, title: "Web View").navigationLink(to: WebViewScreen())
+            ListNavigationLinkItem(destination: WebViewScreen()) {
+                Label("Web View", image: .web)
+            }
             #endif
         }
     }
 }
 
 struct ViewsScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             ViewsScreen()

@@ -21,10 +21,11 @@ struct ImagePickerScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("ImagePicker") {
+        List {
             Section {
-                MenuListText("This picker can pick image from the camera, photo library and saved photos. In this demo, the images you pick are added to a PageView.")
+                ListTextItem("This picker can pick image from the camera, photo library and saved photos. In this demo, the images you pick are added to a PageView.")
             }
+            
             Section(header: Text("Source type")) {
                 Picker("Source Type", selection: $sourceType) {
                     Text("Camera").tag(UIImagePickerController.SourceType.camera)
@@ -44,10 +45,13 @@ struct ImagePickerScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .photo, title: "Pick image")
-                    .button(action: openCamera)
+                ListButtonItem(action: openCamera) {
+                    Label("Pick image", image: .photo)
+                }
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("ImagePicker")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -84,6 +88,7 @@ private extension ImagePickerScreen {
 }
 
 struct ImagePickerScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         ImagePickerScreen()
     }

@@ -8,7 +8,7 @@ This release adds a few convenience list items for commonly used types.
 ### ✨ New features
 
 * `ListNavigationLinkItem`.
-* `ListTextItem`.
+* `ListTextItem(`.
 
 
 ## 2.1

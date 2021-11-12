@@ -14,20 +14,22 @@ struct DismissableViewScreen: View, DismissableView {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        MenuList("DismissableView") {
+        List {
             Section {
-                MenuListText("This protocol makes it easy to dismiss views.")
+                ListTextItem("This protocol makes it easy to dismiss views.")
             }
             
             Section {
-                MenuListItem(icon: .dismiss, title: "Dismiss this screen")
-                    .button(action: dismiss)
+                ListButtonItem(action: dismiss) {
+                    Label("Dismiss this screen", image: .dismiss)
+                }
             }
-        }
+        }.navigationBarTitle("DismissableView")
     }
 }
 
 struct DismissableViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         DismissableViewScreen()
     }

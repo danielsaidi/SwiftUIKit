@@ -20,25 +20,28 @@ struct SheetsScreen: View {
     @StateObject private var coverContext = FullScreenCoverContext()
     
     var body: some View {
-        MenuList("Sheets") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
+                ListTextItem("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    MenuListItem(icon: item.listIcon, title: item.listText(for: "sheet"))
-                        .button(action: { presentSheet(item) })
+                    ListButtonItem(action: { presentSheet(item) }) {
+                        Label(item.listText(for: "sheet"), image: item.listIcon)
+                    }
                 }
             }
             #if os(iOS) || os(tvOS) || os(watchOS)
             Section(header: Text("Cover (for testing purpose)")) {
-                MenuListItem(icon: .cover, title: "Show an flag cover")
-                    .button(action: presentCover)
-                    .fullScreenCover(context: coverContext)
+                ListButtonItem(action: presentCover) {
+                    Label("Show an flag cover", image: .cover)
+                }.fullScreenCover(context: coverContext)
             }
             #endif
-        }.sheet(context: context)
+        }
+        .navigationBarTitle("Sheets")
+        .sheet(context: context)
     }
 }
 
@@ -86,6 +89,7 @@ private extension View {
 }
 
 struct SheetsScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         SheetsScreen()
     }

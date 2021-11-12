@@ -14,9 +14,9 @@ struct PersistedScreen: View {
     @StateObject private var context = PersistentContext()
         
     var body: some View {
-        MenuList("Persisted") {
+        List {
             Section {
-                MenuListText("Any text you type below is automatically persisted, using the @Persisted property wrapper. This also supports codable types.")
+                ListTextItem("Any text you type below is automatically persisted, using the @Persisted property wrapper. This also supports codable types.")
             }
             
             Section(header: Text("Text")) {
@@ -24,10 +24,18 @@ struct PersistedScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .clear, title: "Clear text")
-                    .button(action: { context.text = "" })
+                ListButtonItem(action: reset) {
+                    Label("Clear text", image: .clear)
+                }
             }
-        }
+        }.navigationBarTitle("Persisted")
+    }
+}
+
+private extension PersistedScreen {
+    
+    func reset() {
+        context.text = ""
     }
 }
 

@@ -16,9 +16,9 @@ struct OptionalViewScreen: View {
     var string: String? { hasValue ? "This view is shown because the toggle sets an optional string." : nil }
     
     var body: some View {
-        MenuList("OptionalView") {
+        List {
             Section {
-                MenuListText("This view can display different views based on if an optional value is set or not.")
+                ListTextItem("This view can display different views based on if an optional value is set or not.")
             }
             
             Section(header: Text("State")) {
@@ -40,11 +40,12 @@ struct OptionalViewScreen: View {
                     .background(Color.red)
                     .cornerRadius(20)
             }
-        }
+        }.navigationBarTitle("OptionalView")
     }
 }
 
 struct OptionalViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         OptionalViewScreen()
     }

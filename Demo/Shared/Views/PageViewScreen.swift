@@ -16,9 +16,9 @@ struct PageViewScreen: View {
     @State private var index = 0
     
     var body: some View {
-        MenuList("PageView") {
+        List {
             Section {
-                MenuListText("This view can be used to wrap multiple views in a paged horizontal scroll view.")
+                ListTextItem("This view can be used to wrap multiple views in a paged horizontal scroll view.")
             }
             
             Section(header: Text("Example")) {
@@ -28,7 +28,7 @@ struct PageViewScreen: View {
                     currentPageIndex: $index,
                     pageBuilder: pageView)
             }
-        }
+        }.navigationBarTitle("PageView")
     }
 }
 
@@ -42,6 +42,7 @@ private extension PageViewScreen {
 }
 
 struct PageViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         PageViewScreen()
     }

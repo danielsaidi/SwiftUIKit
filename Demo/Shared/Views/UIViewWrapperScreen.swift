@@ -13,9 +13,9 @@ import SwiftUIKit
 struct UIViewWrapperScreen: View {
  
     var body: some View {
-        MenuList("UIViewWrapper") {
+        List {
             Section {
-                MenuListText("This view can be used to wrap any UIKit view.")
+                ListTextItem("This view can be used to wrap any UIKit view.")
             }
             Section(header: Text("Examples")) {
                 UIViewWrapper(view: {
@@ -27,11 +27,12 @@ struct UIViewWrapperScreen: View {
                 UIViewWrapper(view: UISwitch())
                 UIViewWrapper(view: UIImageView(image: UIImage(named: "BlurImage")))
             }
-        }
+        }.navigationBarTitle("UIViewWrapper")
     }
 }
 
 struct UIViewWrapperScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         UIViewWrapperScreen()
     }

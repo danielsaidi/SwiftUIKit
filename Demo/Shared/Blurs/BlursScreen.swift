@@ -76,6 +76,7 @@ private extension UIBlurEffect.Style {
 }
 
 struct BlursScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             BlursScreen()

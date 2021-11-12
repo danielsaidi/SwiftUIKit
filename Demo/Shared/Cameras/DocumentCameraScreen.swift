@@ -19,9 +19,9 @@ struct DocumentCameraScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("DocumentCamera") {
+        List {
             Section {
-                MenuListText("This camera can scan documents. In this demo, the scans are added to a PageView.")
+                ListTextItem("This camera can scan documents. In this demo, the scans are added to a PageView.")
             }
             
             if scans.count > 0 {
@@ -35,10 +35,13 @@ struct DocumentCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .documentCamera, title: "Open camera")
-                    .button(action: openCamera)
+                ListButtonItem(action: openCamera) {
+                    Label("Open camera", image: .documentCamera)
+                }
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("DocumentCamera")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -72,12 +75,6 @@ private extension DocumentCameraScreen {
     }
 }
 
-struct DocumentCameraScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        DocumentCameraScreen()
-    }
-}
-
 private extension VNDocumentCameraScan {
     
     /**
@@ -87,6 +84,13 @@ private extension VNDocumentCameraScan {
         (0..<pageCount)
             .compactMap { imageOfPage(at: $0) }
             .map { Image(uiImage: $0) }
+    }
+}
+
+struct DocumentCameraScreen_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        DocumentCameraScreen()
     }
 }
 #endif

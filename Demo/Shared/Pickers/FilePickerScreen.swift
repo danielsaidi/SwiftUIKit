@@ -15,16 +15,19 @@ struct FilePickerScreen: View {
     @StateObject private var sheetContext = SheetContext()
     
     var body: some View {
-        MenuList("FilePicker") {
+        List {
             Section {
-                MenuListText("This picker can be used to pick a file from Files. In this demo, the files you picked can be shared with a ShareSheet.")
+                ListTextItem("This picker can be used to pick a file from Files. In this demo, the files you picked can be shared with a ShareSheet.")
             }
             
             Section(header: Text("Actions")) {
-                MenuListItem(icon: .file, title: "Open picker")
-                    .button(action: openPicker)
+                ListButtonItem(action: openPicker) {
+                    Label("Open picker", image: .file)
+                }
             }
-        }.sheet(context: sheetContext)
+        }
+        .navigationBarTitle("FilePicker")
+        .sheet(context: sheetContext)
     }
 }
 
@@ -67,6 +70,7 @@ private extension FilePickerScreen {
 }
 
 struct FilePickerScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         FilePickerScreen()
     }

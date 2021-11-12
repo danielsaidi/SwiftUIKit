@@ -17,9 +17,9 @@ struct FetchedDataViewScreen: View {
     var data: String? { hasContent ? "Received data!" : nil }
     
     var body: some View {
-        MenuList("FetchedDataView") {
+        List {
             Section {
-                MenuListText("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
+                ListTextItem("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
             }
             
             Section(header: Text("State")) {
@@ -36,7 +36,7 @@ struct FetchedDataViewScreen: View {
                     Text(data)
                 }
             }
-        }
+        }.navigationBarTitle("FetchedDataView")
     }
 }
 
@@ -56,6 +56,7 @@ private extension FetchedDataViewScreen {
 }
 
 struct FetchedDataViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         FetchedDataViewScreen()
     }

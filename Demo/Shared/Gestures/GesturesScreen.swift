@@ -12,20 +12,22 @@ import SwiftUIKit
 struct GesturesScreen: View {
  
     var body: some View {
-        MenuList("Gestures") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has additional gestures for SwiftUI.")
+                ListTextItem("SwiftUIKit has additional gestures for SwiftUI.")
             }
             
             Section(header: Text("Gestures")) {
-                MenuListItem(icon: .swipeGesture, title: "Swipe Gesture")
-                    .navigationLink(to: SwipeGestureScreen())
+                ListNavigationLinkItem(destination: SwipeGestureScreen()) {
+                    Label("Swipe Gesture", image: .swipeGesture)
+                }
             }
-        }
+        }.navigationBarTitle("Gestures")
     }
 }
 
 struct GesturesScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         GesturesScreen()
     }

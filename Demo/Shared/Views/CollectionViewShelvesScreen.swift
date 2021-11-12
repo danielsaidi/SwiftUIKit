@@ -55,6 +55,7 @@ private struct ListItem: Identifiable {
 }
 
 struct CollectionViewShelvesScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         CollectionViewShelvesScreen()
     }

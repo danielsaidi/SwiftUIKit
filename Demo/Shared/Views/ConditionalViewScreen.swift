@@ -14,9 +14,9 @@ struct ConditionalViewScreen: View {
     @State private var showView = true
     
     var body: some View {
-        MenuList("ConditionalView") {
+        List {
             Section {
-                MenuListText("This view can display different views based on a bool expression.")
+                ListTextItem("This view can display different views based on a bool expression.")
             }
             
             Section(header: Text("State")) {
@@ -38,11 +38,12 @@ struct ConditionalViewScreen: View {
                     .background(Color.red)
                     .cornerRadius(20)
             }
-        }
+        }.navigationBarTitle("ConditionalView")
     }
 }
 
 struct ConditionalViewScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         ConditionalViewScreen()
     }

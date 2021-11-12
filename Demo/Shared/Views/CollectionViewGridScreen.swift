@@ -47,6 +47,7 @@ private struct ListItem: Identifiable {
 }
 
 struct CollectionViewGridScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         CollectionViewGridScreen()
     }

@@ -10,25 +10,32 @@ import SwiftUI
 import SwiftUIKit
 
 struct StylesScreen: View {
- 
+    
     var body: some View {
-        MenuList("Gestures") {
+        List {
             Section {
-                MenuListText("SwiftUIKit has styles that make it easier to define and apply custom styles.")
+                ListTextItem("SwiftUIKit has styles that make it easier to define and apply custom styles.")
             }
             
             Section(header: Text("Styles")) {
-                MenuListItem(icon: .cornerRadius, title: "Corner Radius").navigationLink(to: CornerRadiusStyleScreen())
+                ListNavigationLinkItem(destination: CornerRadiusStyleScreen()) {
+                    Label("Corner Radius", image: .cornerRadius)
+                }
                 #if os(iOS) || os(tvOS)
-                MenuListItem(icon: .font, title: "Fonts").navigationLink(to: FontStyleScreen())
+                ListNavigationLinkItem(destination: FontStyleScreen()) {
+                    Label("Fonts", image: .font)
+                }
                 #endif
-                MenuListItem(icon: .shadow, title: "Shadows").navigationLink(to: ShadowStyleScreen())
+                ListNavigationLinkItem(destination: ShadowStyleScreen()) {
+                    Label("Shadows", image: .shadow)
+                }
             }
-        }
+        }.navigationBarTitle("Gestures")
     }
 }
 
 struct StylesScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         StylesScreen()
     }
