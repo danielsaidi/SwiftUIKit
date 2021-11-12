@@ -3,7 +3,7 @@
 
 ## 2.1.1
 
-This release is made for CocoaPods, to publish a revision that shortens the names of the list types introduced in 2.1.
+This release is made to avoid dependency cache problems for the revised 2.1 release.
 
 
 
@@ -11,7 +11,7 @@ This release is made for CocoaPods, to publish a revision that shortens the name
 
 This release adds a brand new "list item" concept that replaces the previous "menu list" one.
 
-`NOTE` This release was revised, with some list view names shortened and a few more list view items added. This is the official 2.1 for SPM (you may have to clean your SPM cache to get it working) and as 2.1.1 for CocoaPods.
+`NOTE` This release was revised, with some list view names shortened and a few more list view items added. This is the official 2.1, but it is also released as a 2.1.1 to avoid dependency cache problems.
 
 ### ✨ New features
 
