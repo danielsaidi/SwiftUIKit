@@ -15,14 +15,14 @@ struct PickersScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
+                ListText("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
             }
             
             Section(header: Text("Pickers")) {
-                ListNavigationLinkItem(destination: FilePickerScreen()) {
+                ListNavigationLink(destination: FilePickerScreen()) {
                     Label("File Picker", image: .file)
                 }
-                ListNavigationLinkItem(destination: ImagePickerScreen()) {
+                ListNavigationLink(destination: ImagePickerScreen()) {
                     Label("Image Picker", image: .photo)
                 }
             }

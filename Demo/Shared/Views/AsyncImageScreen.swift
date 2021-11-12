@@ -18,7 +18,7 @@ struct AsyncImageScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view can fetch images async from urls.")
+                ListText("This view can fetch images async from urls.")
             }
             
             Section(header: Text("URL")) {
@@ -26,7 +26,7 @@ struct AsyncImageScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                ListButtonItem(action: loadImage) {
+                ListButton(action: loadImage) {
                     Label("Load image", image: .photo)
                 }.enabled(hasUrl)
             }

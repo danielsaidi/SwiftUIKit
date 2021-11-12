@@ -14,19 +14,19 @@ struct StylesScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has styles that make it easier to define and apply custom styles.")
+                ListText("SwiftUIKit has styles that make it easier to define and apply custom styles.")
             }
             
             Section(header: Text("Styles")) {
-                ListNavigationLinkItem(destination: CornerRadiusStyleScreen()) {
+                ListNavigationLink(destination: CornerRadiusStyleScreen()) {
                     Label("Corner Radius", image: .cornerRadius)
                 }
                 #if os(iOS) || os(tvOS)
-                ListNavigationLinkItem(destination: FontStyleScreen()) {
+                ListNavigationLink(destination: FontStyleScreen()) {
                     Label("Fonts", image: .font)
                 }
                 #endif
-                ListNavigationLinkItem(destination: ShadowStyleScreen()) {
+                ListNavigationLink(destination: ShadowStyleScreen()) {
                     Label("Shadows", image: .shadow)
                 }
             }

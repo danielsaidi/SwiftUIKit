@@ -17,7 +17,7 @@ struct CircularProgressViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view displays a circular progress spinner.")
+                ListText("This view displays a circular progress spinner.")
             }
             
             Section(header: Text("State")) {

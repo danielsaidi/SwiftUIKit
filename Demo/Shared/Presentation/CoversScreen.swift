@@ -23,19 +23,19 @@ struct CoversScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has additional utils that make it easier to manage and present covers.")
+                ListText("SwiftUIKit has additional utils that make it easier to manage and present covers.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListButtonItem(action: { presentCover(item) }) {
+                    ListButtonLink(action: { presentCover(item) }) {
                         Label(item.listText(for: "cover"), image: item.listIcon)
                     }
                         
                 }
             }
             Section(header: Text("Sheet (for testing purpose)")) {
-                ListButtonItem(action: presentSheet) {
+                ListButtonLink(action: presentSheet) {
                     Label("Show an flag sheet", image: .sheet)
                 }.sheet(context: sheetContext)
             }

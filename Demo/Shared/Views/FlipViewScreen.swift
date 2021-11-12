@@ -17,7 +17,7 @@ struct FlipViewScreen: View {
         
     var body: some View {
         VStack {
-            ListTextItem("These views have a front and a back face and can be flipped by tapping ot swiping.")
+            ListText("These views have a front and a back face and can be flipped by tapping ot swiping.")
             FlipView(
                 front: side(.blue, "Flip me horizontally!"),
                 back: side(.red, "Flip me back!"),

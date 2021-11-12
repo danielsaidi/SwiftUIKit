@@ -15,7 +15,7 @@ struct UIViewWrapperScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view can be used to wrap any UIKit view.")
+                ListText("This view can be used to wrap any UIKit view.")
             }
             Section(header: Text("Examples")) {
                 UIViewWrapper(view: {

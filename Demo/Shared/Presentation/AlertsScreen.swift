@@ -16,12 +16,12 @@ struct AlertsScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
+                ListText("SwiftUIKit has additional utils that make it easier to manage and present alerts.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListButtonItem(action: { present(item) }) {
+                    ListButtonLink(action: { present(item) }) {
                         Label(item.listText(for: "alert"), image: item.listIcon)
                     }
                 }

@@ -15,15 +15,15 @@ struct CamerasScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has cameras that can be used to take photos and scan documents.")
+                ListText("SwiftUIKit has cameras that can be used to take photos and scan documents.")
             }
             
             Section(header: Text("Cameras")) {
-                ListNavigationLinkItem(destination: DocumentCameraScreen()) {
+                ListNavigationLink(destination: DocumentCameraScreen()) {
                     Label("Document Camera", image: .documentCamera)
                 }
                 
-                ListNavigationLinkItem(destination: PhotoCameraScreen()) {
+                ListNavigationLink(destination: PhotoCameraScreen()) {
                     Label("Photo Camera", image: .camera)
                 }
                 

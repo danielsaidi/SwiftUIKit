@@ -17,11 +17,11 @@ struct FilePickerScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This picker can be used to pick a file from Files. In this demo, the files you picked can be shared with a ShareSheet.")
+                ListText("This picker can be used to pick a file from Files. In this demo, the files you picked can be shared with a ShareSheet.")
             }
             
             Section(header: Text("Actions")) {
-                ListButtonItem(action: openPicker) {
+                ListButton(action: openPicker) {
                     Label("Open picker", image: .file)
                 }
             }

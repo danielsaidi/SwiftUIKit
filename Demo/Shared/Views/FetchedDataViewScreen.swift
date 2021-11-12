@@ -19,7 +19,7 @@ struct FetchedDataViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
+                ListText("This view presents a certain view when data is being loaded, another view when the optional data is set and a failure view when data isn't being loaded, but no data exists.")
             }
             
             Section(header: Text("State")) {

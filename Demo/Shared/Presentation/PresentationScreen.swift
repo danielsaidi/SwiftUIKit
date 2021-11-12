@@ -14,22 +14,22 @@ struct PresentationScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has utils that make it easier to present certain kind of content in SwiftUI.")
+                ListText("SwiftUIKit has utils that make it easier to present certain kind of content in SwiftUI.")
             }
             
             Section(header: Text("Presentation Types")) {
-                ListNavigationLinkItem(destination: AlertsScreen()) {
+                ListNavigationLink(destination: AlertsScreen()) {
                     Label("Alerts", image: .alert)
                 }
                 #if os(iOS) || os(tvOS) || os(watchOS)
-                ListNavigationLinkItem(destination: CoversScreen()) {
+                ListNavigationLink(destination: CoversScreen()) {
                     Label("Full covers", image: .cover)
                 }
                 #endif
-                ListNavigationLinkItem(destination: SheetsScreen()) {
+                ListNavigationLink(destination: SheetsScreen()) {
                     Label("Sheets", image: .sheet)
                 }
-                ListNavigationLinkItem(destination: ToastsScreen()) {
+                ListNavigationLink(destination: ToastsScreen()) {
                     Label("Toasts", image: .toast)
                 }
             }

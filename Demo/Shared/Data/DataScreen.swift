@@ -14,15 +14,15 @@ struct DataScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has some data utils, e.g. to create QR codes and (one) property wrappers.")
+                ListText("SwiftUIKit has some data utils, e.g. to create QR codes and (one) property wrappers.")
             }
             
             Section(header: Text("Utils")) {
-                ListNavigationLinkItem(destination: ScanCodeGeneratorScreen()) {
+                ListNavigationLink(destination: ScanCodeGeneratorScreen()) {
                     Label("Scan Code Generator", image: .qrCode)
                 }
                 
-                ListNavigationLinkItem(destination: PersistedScreen()) {
+                ListNavigationLink(destination: PersistedScreen()) {
                     Label("Persisted", image: .data)
                 }
             }

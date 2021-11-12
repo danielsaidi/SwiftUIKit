@@ -16,7 +16,7 @@ struct ConditionalViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view can display different views based on a bool expression.")
+                ListText("This view can display different views based on a bool expression.")
             }
             
             Section(header: Text("State")) {

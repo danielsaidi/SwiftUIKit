@@ -14,7 +14,7 @@ struct ShadowStyleScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This style makes it possible to create named styles that can be applied to any view.")
+                ListText("This style makes it possible to create named styles that can be applied to any view.")
             }
             
             Section(header: Text("Examples")) {

@@ -42,10 +42,14 @@ struct ListButton_Previews: PreviewProvider {
                 ListItem {
                     Text("Is toggled: \(isToggled ? 1 : 0)")
                 }
-                ListButton(action: { isToggled.toggle() }) {
+                ListButton(action: toggle) {
                     Text("Toggle")
                 }
             }
+        }
+        
+        func toggle() {
+            isToggled.toggle()
         }
     }
     

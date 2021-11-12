@@ -16,11 +16,11 @@ struct DismissableViewScreen: View, DismissableView {
     var body: some View {
         List {
             Section {
-                ListTextItem("This protocol makes it easy to dismiss views.")
+                ListText("This protocol makes it easy to dismiss views.")
             }
             
             Section {
-                ListButtonItem(action: dismiss) {
+                ListButton(action: dismiss) {
                     Label("Dismiss this screen", image: .dismiss)
                 }
             }

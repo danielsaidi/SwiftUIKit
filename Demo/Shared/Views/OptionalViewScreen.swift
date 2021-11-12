@@ -18,7 +18,7 @@ struct OptionalViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view can display different views based on if an optional value is set or not.")
+                ListText("This view can display different views based on if an optional value is set or not.")
             }
             
             Section(header: Text("State")) {

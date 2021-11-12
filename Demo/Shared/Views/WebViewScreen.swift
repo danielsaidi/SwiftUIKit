@@ -17,14 +17,14 @@ struct WebViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view can be used to present a URL in an embedded Safari browser.")
+                ListText("This view can be used to present a URL in an embedded Safari browser.")
             }
             
             Section {
-                ListButtonItem(action: visitMyWebsite) {
+                ListButton(action: visitMyWebsite) {
                     Label("Visit my website", image: .web)
                 }
-                ListButtonItem(action: visitApple) {
+                ListButton(action: visitApple) {
                     Label("Visit apple.com", image: .web)
                 }
             }

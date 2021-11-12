@@ -25,7 +25,7 @@ struct ScanCodeGeneratorScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("Enter a number and a url and tap the bottom buttons to generate scan codes.")
+                ListText("Enter a number and a url and tap the bottom buttons to generate scan codes.")
             }
             
             Section(header: Text("Number")) {
@@ -37,11 +37,11 @@ struct ScanCodeGeneratorScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                ListButtonItem(action: showBarode) {
+                ListButton(action: showBarode) {
                     Label("Show barcode for number", image: .barcode)
                 }.enabled(hasNumber)
                  
-                ListButtonItem(action: showQrCode) {
+                ListButton(action: showQrCode) {
                     Label("Show QR Code for url", image: .qrCode)
                 }.enabled(hasUrl)
             }

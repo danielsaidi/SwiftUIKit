@@ -16,12 +16,12 @@ struct ToastsScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has utils that make it easier to manage and present toasts.")
+                ListText("SwiftUIKit has utils that make it easier to manage and present toasts.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListButtonItem(action: { present(item) }) {
+                    ListButtonLink(action: { present(item) }) {
                         Label(item.listText(for: "toast"), image: item.listIcon)
                     }
                 }

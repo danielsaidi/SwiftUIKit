@@ -16,44 +16,44 @@ struct ContentView: View {
             List {
                 Section {
                     #if os(iOS)
-                    ListNavigationLinkItem(destination: BlursScreen()) {
+                    ListNavigationLink(destination: BlursScreen()) {
                         Label("Blurs", image: .blur)
                     }
-                    ListNavigationLinkItem(destination: CamerasScreen()) {
+                    ListNavigationLink(destination: CamerasScreen()) {
                         Label("Cameras", image: .camera)
                     }
                     #endif
                     
-                    ListNavigationLinkItem(destination: DataScreen()) {
+                    ListNavigationLink(destination: DataScreen()) {
                         Label("Data", image: .data)
                     }
-                    ListNavigationLinkItem(destination: ExtensionsScreen()) {
+                    ListNavigationLink(destination: ExtensionsScreen()) {
                         Label("Extensions", image: .extensions)
                     }
-                    ListNavigationLinkItem(destination: GesturesScreen()) {
+                    ListNavigationLink(destination: GesturesScreen()) {
                         Label("Gestures", image: .gestures)
                     }
                     
                     #if os(iOS)
-                    ListNavigationLinkItem(destination: PickersScreen()) {
+                    ListNavigationLink(destination: PickersScreen()) {
                         Label("Pickers", image: .pickers)
                     }
                     #endif
                     
-                    ListNavigationLinkItem(destination: PresentationScreen()) {
+                    ListNavigationLink(destination: PresentationScreen()) {
                         Label("Presentation", image: .presentation)
                     }
                     
                     #if os(iOS)
-                    ListNavigationLinkItem(destination: SharingScreen()) {
+                    ListNavigationLink(destination: SharingScreen()) {
                         Label("Sharing", image: .sharing)
                     }
                     #endif
                     
-                    ListNavigationLinkItem(destination: StylesScreen()) {
+                    ListNavigationLink(destination: StylesScreen()) {
                         Label("Styles", image: .styles)
                     }
-                    ListNavigationLinkItem(destination: ViewsScreen()) {
+                    ListNavigationLink(destination: ViewsScreen()) {
                         Label("Views", image: .views)
                     }
                 }

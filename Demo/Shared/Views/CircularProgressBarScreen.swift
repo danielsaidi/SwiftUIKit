@@ -16,7 +16,7 @@ struct CircularProgressBarScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("This view can display a percentual progress in a circular bar and can be styled to great extent.")
+                ListText("This view can display a percentual progress in a circular bar and can be styled to great extent.")
             }
             
             Section(header: Text("Progress")) {

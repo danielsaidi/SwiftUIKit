@@ -14,7 +14,7 @@ struct ViewsScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit contains a large collection of additional views for SwiftUI.")
+                ListText("SwiftUIKit contains a large collection of additional views for SwiftUI.")
             }
             
             Section(header: Text("Views")) {
@@ -26,43 +26,43 @@ struct ViewsScreen: View {
     
     private var list1: some View {
         Group {
-            ListNavigationLinkItem(destination: AsyncImageScreen()) {
+            ListNavigationLink(destination: AsyncImageScreen()) {
                 Label("Async Image", image: .photo)
             }
-            ListNavigationLinkItem(destination: CircularProgressBarScreen()) {
+            ListNavigationLink(destination: CircularProgressBarScreen()) {
                 Label("Circular Progress Bar", image: .circularProgressBar)
             }
             
             #if os(iOS) || os(tvOS) || os(watchOS)
-            ListNavigationLinkItem(destination: CircularProgressViewScreen()) {
+            ListNavigationLink(destination: CircularProgressViewScreen()) {
                 Label("Circular Progress View", image: .circularProgressView)
             }
             #endif
             
             #if os(iOS) || os(tvOS)
-            ListNavigationLinkItem(destination: CollectionViewGridScreen()) {
+            ListNavigationLink(destination: CollectionViewGridScreen()) {
                 Label("Collection View (grid)", image: .collectionViewGrid)
             }
-            ListNavigationLinkItem(destination: CollectionViewShelvesScreen()) {
+            ListNavigationLink(destination: CollectionViewShelvesScreen()) {
                 Label("Collection View (shelves)", image: .collectionViewShelves)
             }
             #endif
             
-            ListNavigationLinkItem(destination: ConditionalViewScreen()) {
+            ListNavigationLink(destination: ConditionalViewScreen()) {
                 Label("Conditional View", image: .conditional)
             }
-            ListNavigationLinkItem(destination: DismissableViewScreen()) {
+            ListNavigationLink(destination: DismissableViewScreen()) {
                 Label("Dismissable View", image: .dismiss)
             }
-            ListNavigationLinkItem(destination: FetchedDataViewScreen()) {
+            ListNavigationLink(destination: FetchedDataViewScreen()) {
                 Label("Fetched Data View", image: .download)
             }
             
             #if os(iOS)
-            ListNavigationLinkItem(destination: FlipViewScreen()) {
+            ListNavigationLink(destination: FlipViewScreen()) {
                 Label("Flip View", image: .swipeGesture)
             }
-            ListNavigationLinkItem(destination: MultilineTextFieldScreen()) {
+            ListNavigationLink(destination: MultilineTextFieldScreen()) {
                 Label("Multiline Text Field", image: .multiline)
             }
             #endif
@@ -71,24 +71,24 @@ struct ViewsScreen: View {
     
     private var list2: some View {
         Group {
-            ListNavigationLinkItem(destination: OptionalViewScreen()) {
+            ListNavigationLink(destination: OptionalViewScreen()) {
                 Label("Optional View", image: .optional)
             }
             
             #if os(iOS) || os(tvOS) || os(watchOS)
-            ListNavigationLinkItem(destination: PageViewScreen()) {
+            ListNavigationLink(destination: PageViewScreen()) {
                 Label("Page View", image: .pageControl)
             }
             #endif
             
             #if os(iOS) || os(tvOS)
-            ListNavigationLinkItem(destination: UIViewWrapperScreen()) {
+            ListNavigationLink(destination: UIViewWrapperScreen()) {
                 Label("UIView Wrapper", image: .wrapper)
             }
             #endif
     
             #if os(iOS)
-            ListNavigationLinkItem(destination: WebViewScreen()) {
+            ListNavigationLink(destination: WebViewScreen()) {
                 Label("Web View", image: .web)
             }
             #endif

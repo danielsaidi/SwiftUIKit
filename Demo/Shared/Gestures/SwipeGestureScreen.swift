@@ -15,7 +15,7 @@ struct SwipeGestureScreen: View {
     
     var body: some View {
         VStack {
-            ListTextItem("This gesture can be applied to any view and lets you specify an action for each direction.")
+            ListText("This gesture can be applied to any view and lets you specify an action for each direction.")
             
             Color.blue
                 .cornerRadius(5)

@@ -15,11 +15,11 @@ struct SharingScreen: View {
     var body: some View {
         List {
             Section {
-                ListTextItem("SwiftUIKit has utils that can be used to share data in SwiftUI.")
+                ListText("SwiftUIKit has utils that can be used to share data in SwiftUI.")
             }
             
             Section(header: Text("Utils")) {
-                ListNavigationLinkItem(destination: ShareSheetScreen()) {
+                ListNavigationLink(destination: ShareSheetScreen()) {
                     Label("Share Sheet", image: .sharing)
                 }
             }
