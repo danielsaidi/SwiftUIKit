@@ -16,7 +16,6 @@ import SwiftUI
  you call it in `iOS`. It currently has no implementation on
  the other platforms.
  */
-@available(iOSApplicationExtension, unavailable)
 public protocol UrlOpener {
     
     typealias OpenUrlCompletion = (Bool) -> Void
@@ -28,7 +27,6 @@ public protocol UrlOpener {
 
 // MARK: - Default Implementations
 
-@available(iOSApplicationExtension, unavailable)
 public extension UrlOpener {
     
     func canOpen(_ url: URL) -> Bool {
@@ -52,7 +50,6 @@ public extension UrlOpener {
 
 // MARK: - Convenience Functions
 
-@available(iOSApplicationExtension, unavailable)
 public extension UrlOpener {
     
     #if os(iOS)
