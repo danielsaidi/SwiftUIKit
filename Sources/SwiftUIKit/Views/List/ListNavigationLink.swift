@@ -1,5 +1,5 @@
 //
-//  ListNavigationLinkItem.swift
+//  ListNavigationLink.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-11-03.
@@ -12,7 +12,7 @@ import SwiftUI
  This view wraps the provided content in a ``ListItem`` then
  wraps the item within a `NavigationLink`.
  */
-public struct ListNavigationLinkItem<Content: View, Destination: View>: View {
+public struct ListNavigationLink<Content: View, Destination: View>: View {
     
     public init(
         destination: Destination,
@@ -44,13 +44,13 @@ struct ListNavigationLinkItem_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                ListNavigationLinkItem(destination: Text("Page 1")) {
+                ListNavigationLink(destination: Text("Page 1")) {
                     Text("Page 1")
                 }
-                ListNavigationLinkItem(destination: Text("Page 2")) {
+                ListNavigationLink(destination: Text("Page 2")) {
                     Label("Page 2", systemImage: "checkmark")
                 }
-                ListNavigationLinkItem(destination: Text("Page 3")) {
+                ListNavigationLink(destination: Text("Page 3")) {
                     Label("A long link to page 3", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
             }

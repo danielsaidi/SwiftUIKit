@@ -11,7 +11,7 @@ This release is made for CocoaPods, to publish a revision that shortens the name
 
 This release adds a brand new "list item" concept that replaces the previous "menu list" one.
 
-`NOTE` This release was revised, with the list view names shortened and a few items added. This is released as 2.1 for SPM and as 2.1.1 for CocoaPods.
+`NOTE` This release was revised, with some list view names shortened and a few more list view items added. This is the official 2.1 for SPM (you may have to clean your SPM cache to get it working) and as 2.1.1 for CocoaPods.
 
 ### ✨ New features
 
@@ -23,13 +23,13 @@ This release adds a brand new "list item" concept that replaces the previous "me
 
 * `ListItem` is a new view that can be used to make items in a list get the same style and behavior.
 
-* `ListButtonItem` is a new view that wraps its content in a `ListItem` that is embedded in a `Button`.
-* `ListButtonLinkItem` is a new view that wraps its content in a `ListButtonItem` and appends a trailing `ListDisclosureIndicator`.
+* `ListButton` is a new view that wraps its content in a `ListItem` that is embedded in a `Button`.
+* `ListButtonLink` is a new view that wraps its content in a `ListButton` and appends a trailing `ListDisclosureIndicator`.
 * `ListDisclosureIndicator` is a new view that imitates and iOS navigation link arrow.
-* `ListNavigationLinkItem` is a new view that wraps its content in a `ListItem` that is embedded in a `NavigationLink`.
+* `ListNavigationLink` is a new view that wraps its content in a `ListItem` that is embedded in a `NavigationLink`.
 * `ListSelectItem` is a new view that wraps its content in a `ListItem` and applies a checkmark if the item is selected.
-* `ListTextItem` is a new view that wraps a `Text` view in a `ListItem`.
-* `ListToggleItem` is a new view that wraps its content in a `ListItem` and appends a trailing `Toggle`.
+* `ListText` is a new view that wraps a `Text` view in a `ListItem`.
+* `ListToggle` is a new view that wraps its content in a `ListItem` and appends a trailing `Toggle`.
 
 ### 🗑 Deprecations
 

@@ -1,5 +1,5 @@
 //
-//  ListButtonLinkItem.swift
+//  ListButtonLink.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-11-03.
@@ -10,11 +10,11 @@
 import SwiftUI
 
 /**
- This view wraps the provided content in a ``ListButtonItem``
- and then appends a ``ListDisclosureIndicator``, which makes
- the button look like a navigation link.
+ This view wraps its content in a ``ListButton`` and appends
+ a trailing ``ListDisclosureIndicator``, which makes it look
+ like a navigation link.
  */
-public struct ListButtonLinkItem<Content: View>: View {
+public struct ListButtonLink<Content: View>: View {
     
     public init(
         action: @escaping () -> Void,
@@ -27,7 +27,7 @@ public struct ListButtonLinkItem<Content: View>: View {
     @ViewBuilder private let content: () -> Content
     
     public var body: some View {
-        ListButtonItem(action: action) {
+        ListButton(action: action) {
             HStack {
                 content()
                 Spacer()
@@ -52,7 +52,7 @@ struct ListButtonLinkItem_Previews: PreviewProvider {
                     ListItem {
                         NavigationLink("Navigation link", destination: Text("HEJ"))
                     }
-                    ListButtonLinkItem(action: { isToggled.toggle() }, content: {
+                    ListButtonLink(action: { isToggled.toggle() }, content: {
                         Text("Toggle")
                     })
                 }

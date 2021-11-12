@@ -1,5 +1,5 @@
 //
-//  ListTextItem.swift
+//  ListText.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-10-28.
@@ -12,7 +12,7 @@ import SwiftUI
  This view wraps the provided string in a ``Text`` view then
  wraps that text in a ``ListItem``.
  */
-public struct ListTextItem: View {
+public struct ListText: View {
     
     public init(_ text: String) {
         self.text = text
@@ -31,9 +31,9 @@ struct ListTextItem_Previews: PreviewProvider {
     
     static var previews: some View {
         List {
-            ListTextItem("Text 1")
-            ListTextItem("Text 2")
-            ListTextItem("A long text 3")
+            ListText("Text 1")
+            ListText("Text 2")
+            ListText("A long text 3")
         }
     }
 }

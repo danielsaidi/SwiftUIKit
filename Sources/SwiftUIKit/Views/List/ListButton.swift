@@ -1,5 +1,5 @@
 //
-//  ListButtonItem.swift
+//  ListButton.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-10-28.
@@ -12,7 +12,7 @@ import SwiftUI
  This view wraps the provided content in a ``ListItem`` that
  is wrapped in a `Button` that triggers the provided action.
  */
-public struct ListButtonItem<Content: View>: View {
+public struct ListButton<Content: View>: View {
     
     public init(
         action: @escaping () -> Void,
@@ -31,7 +31,7 @@ public struct ListButtonItem<Content: View>: View {
     }
 }
 
-struct ListButtonItem_Previews: PreviewProvider {
+struct ListButton_Previews: PreviewProvider {
     
     struct Preview: View {
         
@@ -42,9 +42,9 @@ struct ListButtonItem_Previews: PreviewProvider {
                 ListItem {
                     Text("Is toggled: \(isToggled ? 1 : 0)")
                 }
-                ListButtonItem(action: { isToggled.toggle() }, content: {
+                ListButton(action: { isToggled.toggle() }) {
                     Text("Toggle")
-                })
+                }
             }
         }
     }

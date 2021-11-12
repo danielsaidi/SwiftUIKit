@@ -1,5 +1,5 @@
 //
-//  ListToggleItem.swift
+//  ListToggle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-10-28.
@@ -12,7 +12,7 @@ import SwiftUI
  This view can be used to append a trailing toggle after the
  list item, that toggles the provided binding.
  */
-public struct ListToggleItem<Content: View>: View {
+public struct ListToggle<Content: View>: View {
     
     public init(
         isOn: Binding<Bool>,
@@ -45,10 +45,10 @@ struct ListToggleItem_Previews: PreviewProvider {
         
         var body: some View {
             List {
-                ListToggleItem(isOn: $isOn1) {
+                ListToggle(isOn: $isOn1) {
                     Text("Toggle 1")
                 }
-                ListToggleItem(isOn: $isOn2) {
+                ListToggle(isOn: $isOn2) {
                     Label("Toggle 2", systemImage: "plus")
                 }
             }
