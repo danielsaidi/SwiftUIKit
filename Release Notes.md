@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 2.1.1
+
+This release adds a few convenience list items for commonly used types.
+
+### ✨ New features
+
+* `ListNavigationLinkItem`.
+* `ListTextItem`.
+
+
 ## 2.1
 
 This release adds a brand new "list item" concept that replaces the previous "menu list" one.
