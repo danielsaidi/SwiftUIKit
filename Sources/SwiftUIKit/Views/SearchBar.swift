@@ -13,7 +13,6 @@ import SwiftUI
  This view wraps a text field in a rounded rectangle, with a
  wrapped clear button and a trailing cancel button.
  */
-@available(iOSApplicationExtension, unavailable)
 public struct SearchBar: View {
     
     public init(
@@ -59,7 +58,6 @@ public struct SearchBar: View {
 
 // MARK: - Private Functionality
 
-@available(iOSApplicationExtension, unavailable)
 private extension SearchBar {
 
     var cancelButton: some View {
@@ -92,7 +90,6 @@ private extension SearchBar {
     }
 }
 
-@available(iOSApplicationExtension, unavailable)
 struct SearchBar_Previews: PreviewProvider {
     
     @State static var text = ""

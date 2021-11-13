@@ -13,6 +13,7 @@
 </p>
 
 
+
 ## About SwiftUIKit
 
 `SwiftUIKit` adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilites, services etc. 
@@ -21,8 +22,10 @@
 
 * Blurs
 * Cameras
+* Colors
 * Data
 * Extensions
+* Environment
 * Files
 * Gestures
 * Navigation
@@ -32,16 +35,8 @@
 * Styles
 * Views
 
-You can explore the various sections in the demo app.
+You can explore the sections in the documentation or in the demo app.
 
-
-## Demo App
-
-This project contains a demo app that lets you explore `SwiftUIKit` through interactive demos. 
-
-The demo app provides an intuitive way to explore the library. Together with the extensive documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
-
-To run the demo app, just open and run the `Demo/Demo.xcodeproj` project. It's a universal app project, but the `macOS` app is currenty not working that well. 
 
 
 ## Installation
@@ -58,10 +53,27 @@ https://github.com/danielsaidi/SwiftUIKit.git
 pod DSSwiftUIKit
 ```
 
-Note that you have to use `import DSSwiftUIKit` when you use CocoaPods. The name `SwiftUIKit` was (not surprisingly) already taken.
 
 
-## Contact me
+## Documentation
+
+The [KeyboardKit documentation][Documentation] contains curated and structured information that makes it easy to overview the various parts of the library, see how the various parts connect to each other etc.
+
+Just download the documentation, extract the zip file and double-tap the `KeyboardKit.doccarchive` file to view the documentation directly in Xcode.
+
+
+
+## Demo Application
+
+This project contains a demo app that lets you explore `SwiftUIKit` through interactive demos. 
+
+The demo app provides an intuitive way to explore the library. Together with the extensive documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
+
+To run the demo app, just open and run the `Demo/Demo.xcodeproj` project. It's a universal app project, but the `macOS` app is currenty not working that well. 
+
+
+
+## Contact
 
 Feel free to reach out if you have questions or if you want to contribute in any way:
 
@@ -70,19 +82,22 @@ Feel free to reach out if you have questions or if you want to contribute in any
 * Web site: [danielsaidi.com][Website]
 
 
+
 ## Support
 
 You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for paid support.
 
 
+
 ## License
 
-SwiftUIKit is available under the MIT license. See [LICENSE][License] file for more info.
+SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
 
 [Email]: mailto:daniel.saidi@gmail.com
 [Twitter]: http://www.twitter.com/danielsaidi
 [Website]: http://www.danielsaidi.com
 [Sponsors]: https://github.com/sponsors/danielsaidi
 
-[GitHub]: https://github.com/danielsaidi/SwiftUIKit
+[Documentation]: https://github.com/SwiftUIKit/SwiftUIKit/raw/master/Docs/SwiftUIKit.doccarchive.zip
+
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE

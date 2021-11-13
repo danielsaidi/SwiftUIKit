@@ -10,7 +10,7 @@ import SwiftUI
 
 /**
  This picker view lists an `Identifiable` item collection in
- a `MenuList` and binds its `selection` to an external value.
+ a `List` and binds its `selection` to an external value.
  
  The picker uses the provided `listItem` builder to build an
  item view for each item in the provided `items` collection.
