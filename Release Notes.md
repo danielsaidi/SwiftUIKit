@@ -1,9 +1,9 @@
 # Release notes
 
 
-## 2.1.1
+## 2.2
 
-This release is made to avoid dependency cache problems for the revised 2.1 release.
+This release adds DocC documentation and bumps the package Swift version to 5.5.
 
 
 

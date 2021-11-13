@@ -57,9 +57,9 @@ pod DSSwiftUIKit
 
 ## Documentation
 
-The [KeyboardKit documentation][Documentation] contains curated and structured information that makes it easy to overview the various parts of the library, see how the various parts connect to each other etc.
+The [SwiftUIKit documentation][Documentation] contains curated and structured information that makes it easy to overview the various parts of the library, see how the various parts connect to each other etc.
 
-Just download the documentation, extract the zip file and double-tap the `KeyboardKit.doccarchive` file to view the documentation directly in Xcode.
+Just download the documentation, extract the zip file and double-tap the `SwiftUIKit.doccarchive` file to view the documentation directly in Xcode.
 
 
 
@@ -98,6 +98,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 [Website]: http://www.danielsaidi.com
 [Sponsors]: https://github.com/sponsors/danielsaidi
 
-[Documentation]: https://github.com/SwiftUIKit/SwiftUIKit/raw/master/Docs/SwiftUIKit.doccarchive.zip
+[Documentation]: https://github.com/danielsaidi/SwiftUIKit/raw/master/Docs/SwiftUIKit.doccarchive.zip
 
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
