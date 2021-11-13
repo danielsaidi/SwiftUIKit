@@ -11,10 +11,7 @@ import SwiftUI
 
 /**
  This view can be used to force text to display properly for
- multiline texts, for when the text is cut off with ellipsis.
- 
- The only thing this view does, is to force a fixed vertical
- size onto the text view.
+ multiline texts. This view also accepts markdown content.
  */
 public struct MultilineText: View {
     
@@ -25,7 +22,7 @@ public struct MultilineText: View {
     private let text: String
     
     public var body: some View {
-        content.fixedSize(horizontal: false, vertical: true)
+        content.forceMultiline()
     }
 }
 

@@ -5,6 +5,12 @@
 
 This release adds DocC documentation and bumps the package Swift version to 5.5.
 
+This release also removes some iOSApplicationExtension unavailability, that was enforced by the early Xcode 13 betas.
+
+### 🗑 Deprecations
+
+* `SizingVStack` has been deprecated.
+
 
 
 ## 2.1

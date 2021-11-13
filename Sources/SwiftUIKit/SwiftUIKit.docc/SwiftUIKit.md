@@ -115,7 +115,6 @@ Contains extensions that aren't included in this documentation.
 - ``FlipView``
 - ``FlipDirection``
 - ``ForEachEnumerated``
-- ``MinWidthButton``
 - ``MultilineText``
 - ``MultilineTextField``
 - ``NavigationLinkArrow``
@@ -178,5 +177,6 @@ Contains extensions that aren't included in this documentation.
 - ``MenuListSubtitle``
 - ``MenuListText``
 - ``MenuListToggle``
+- ``MinWidthButton``
 - ``QrCodeGenerator``
 - ``StandardQrCodeGenerator``

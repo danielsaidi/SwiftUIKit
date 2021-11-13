@@ -12,7 +12,9 @@ import SwiftUI
 
 public extension View {
     
-    @available(iOSApplicationExtension, unavailable)
+    /**
+     Hide the system keyboard.
+     */
     func hideKeyboard() {
         let app = UIApplication.shared
         let sel = #selector(UIResponder.resignFirstResponder)

@@ -17,7 +17,7 @@ import SwiftUI
  
  You can add a `presentationMode` property to a view as such:
  
- ```
+ ```swift
  @Environment(\.presentationMode) var presentationMode
  ```
  */

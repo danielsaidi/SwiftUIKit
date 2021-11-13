@@ -9,8 +9,8 @@
 import UIKit
 
 /**
- This struct can be used to provide `CollectionView`s with a
- certain layout instead of injecting a provider block.
+ This struct can be used to provide ``CollectionView``s with
+ a certain layout instead of injecting a provider block.
  */
 public struct CollectionViewLayout {
     

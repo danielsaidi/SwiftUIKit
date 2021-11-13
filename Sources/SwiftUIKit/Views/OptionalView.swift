@@ -16,7 +16,7 @@ import SwiftUI
  For instance, if you want to show a text with the age of an
  optional `user`, you can use this view like this:
  
- ```
+ ```swift
  OptionalView(user?.age) { age in
      Text("You are \(age) years old")
  }
@@ -24,7 +24,7 @@ import SwiftUI
  
  The same goes if `user` isn't optional, but `age` is:
  
- ```
+ ```swift
  OptionalView(user?.age) { age in
      Text("You are \(age) years old")
  }
@@ -33,7 +33,7 @@ import SwiftUI
  You can specify a fallback view as a second, optional param
  using the more expressive initializer:
  
- ```
+ ```swift
  OptionalView(
      if: user?.age,
      then: { Text("You are \($0) years old") },
@@ -44,7 +44,7 @@ import SwiftUI
  You can also create functions for your builders to get more
  readable code:
  
- ```
+ ```swift
  func ageView(age: Int) -> some View {
      Text("You are \(age) years old")
  }

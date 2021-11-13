@@ -22,6 +22,7 @@ import SwiftUI
  Bound preference MaximumWidthPreferenceKey tried to update multiple times per frame.
  ```
  */
+@available(*, deprecated, message: "Use .frame(maxWidth: .infinity instead")
 public struct SizingVStack<Content: View>: View {
     
     public init(
@@ -66,25 +67,6 @@ private struct DetermineWidth: View {
                 .anchorPreference(key: Key.self, value: .bounds) {
                     proxy[$0].size.width
                 }
-        }
-    }
-}
-
-struct SizingVStack_Previews: PreviewProvider {
-    
-    static func button(for width: CGFloat) -> some View {
-        let action = {}
-        return Button(action: action) {
-            Text("\(Int.random(in: 0...100_000))")
-                    .frame(width: width)
-        }
-    }
-    
-    static var previews: some View {
-        SizingVStack { width in
-            button(for: width)
-            button(for: width)
-            button(for: width)
         }
     }
 }

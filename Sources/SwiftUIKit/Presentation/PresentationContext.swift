@@ -11,29 +11,27 @@ import SwiftUI
 
 /**
  This class is shared by many presentation-specific contexts,
- like `AlertContext`, `SheetContext` and `ToastContext`. The
- context can be used to manage a generic view as well as its
- presentation state.
+ like ``AlertContext``, ``SheetContext`` and ``ToastContext``.
+ 
+ The context can be used to manage a generic view as well as
+ its presentation state.
  
  To use the context, first create an observed instance, then
  bind it to a presentation-specific view modifier that takes
- an `isPresented` binding and a `content` vuew builder, then
+ an `isPresented` binding and a `content` view builder, then
  call any of the context's `present` functions.
  
- For instance, using the `AlertContext` involves these steps:
+ For instance, using a ``SheetContext`` involves these steps:
  
  ```swift
- @StateObject var context = AlertContext()
+ @StateObject var context = SheetContext()
  
- view.alert(context: context)
+ view.sheet(context: context)
  
- context.present(Alert(title: "Hello, world!"))
+ context.present(Text("Hello, world!"))
  ```
  
  Have a look at more specific contexts for more information.
- 
- `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
- of `@StateObject`, but this can cause presentation glitches.
  */
 public class PresentationContext<Content>: ObservableObject {
     

@@ -16,7 +16,18 @@ import SwiftUI
  modifier or use the `shadow(_ style:)` `View` extension.
  
  You can specify your own standard styles by creating static,
- calculated `ShadowStyle` extension properties.
+ calculated extension properties, for instance:
+ 
+ ```swift
+ extension CornerRadiusStyle {
+ 
+     static let badge = ShadowStyle(
+         color: Color.black.opacity(0.1),
+         radius: 3,
+         x: 0,
+         y: 2)
+ }
+ ```
  */
 public struct ShadowStyle {
     
@@ -42,27 +53,30 @@ public extension ShadowStyle {
     /**
      This style does not apply anything and can be used when
      a style is required, but none is desired.
+     
+     You can set this style to another style value to change
+     its default look.
      */
-    static var none: ShadowStyle {
-        ShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
-    }
+    static var none = ShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
     
     /**
      This style represents a badge or "sticker" and is meant
      to make the view look as if it's attached to the parent
      view, but be in a separate layer.
+     
+     You can set this style to another style value to change
+     its default look.
      */
-    static var badge: ShadowStyle {
-        ShadowStyle(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 2)
-    }
+    static var badge = ShadowStyle(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 2)
     
     /**
      This style represents a shadow that is cast from a view
      that elevates above the parent view.
+     
+     You can set this style to another style value to change
+     its default look.
      */
-    static var elevated: ShadowStyle {
-        ShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
-    }
+    static var elevated = ShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
 }
 
 struct ShadowStyle_Previews: PreviewProvider {

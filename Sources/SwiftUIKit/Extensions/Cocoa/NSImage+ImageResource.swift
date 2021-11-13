@@ -11,7 +11,7 @@ import Cocoa
 
 /**
  This typealias makes it easy to use NSImage and other image
- types interchangeably, where `ImageResource` is supported.
+ types interchangeably, using ``ImageResource``.
  */
 public typealias ImageResource = NSImage
 #endif

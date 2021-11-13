@@ -10,6 +10,9 @@ import SwiftUI
 
 public extension Image {
     
+    /**
+     Create an image from a certain ``ImageResource``.
+     */
     init(imageResource: ImageResource) {
         #if os(iOS) || os(watchOS) || os(tvOS)
         self.init(uiImage: imageResource)

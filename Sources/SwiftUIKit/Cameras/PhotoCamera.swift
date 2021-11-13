@@ -28,8 +28,8 @@ import UIKit
  The camera result contains the picked image, which you then
  can use in any way you want.
  
- You can use this view with `SheetContext` to easily present
- it as a modal sheet.
+ You can use a ``SheetContext`` to easily present the camera
+ as a modal sheet.
  */
 public struct PhotoCamera: View {
     

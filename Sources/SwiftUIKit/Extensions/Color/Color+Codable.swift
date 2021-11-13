@@ -6,6 +6,8 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+//  This extension makes `Color` implement `Codable`.
+//
 //  Original implementation:
 //  https://brunowernimont.me/howtos/make-swiftui-color-codable
 
@@ -47,6 +49,7 @@ extension Color: Codable {
 
 @available(iOS 14, tvOS 14, watchOS 7, *)
 private extension Color {
+    
     #if os(macOS)
     typealias PlatformColor = NSColor
     #else

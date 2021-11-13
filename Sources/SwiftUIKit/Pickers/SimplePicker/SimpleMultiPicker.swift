@@ -17,9 +17,9 @@ import SwiftUI
  iOS or a `LazyVStack` in a `ScrollView` for tvOS, where the
  `List` component may not always work as expected.
  
- You can provide a `buttonBuilder` to generate custom button
- views for the available option. If you don't, the init will
- use `SimpleMultiPicker.standardButtonBuilder` by default.
+ You can provide a custom `buttonBuilder` to generate custom
+ picker buttons for the available options. If you don't, the
+ initalizer will use ``SimplePicker/standardButtonBuilder``.
  */
 public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
     
@@ -37,6 +37,9 @@ public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
     public let options: [Value]
     public let buttonBuilder: ButtonBuilder
     
+    /**
+     This typealias represents the button builder signature.
+     */
     public typealias ButtonBuilder = (Value, _ isSelected: Bool) -> AnyView
     
     public var body: some View {

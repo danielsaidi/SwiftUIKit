@@ -10,8 +10,7 @@ import SwiftUI
 
 /**
  This protocol can be implemented by anything (e.g. a struct,
- enum etc.) that can provide a `full screen cover` view that
- can be presented as a full screen cover.
+ enum etc.) that can provide a full screen cover view.
  */
 @available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public protocol FullScreenCoverProvider {

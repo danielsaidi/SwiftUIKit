@@ -11,6 +11,13 @@ import SwiftUI
 
 public extension TextField {
     
+    /**
+     Append a trailing clear button to the text field, which
+     can be used to clear the text field content.
+     
+     This applies a ``TextFieldClearButton`` modifier to the
+     view.
+     */
     func withClearButton(for text: Binding<String>) -> some View {
         self.modifier(TextFieldClearButton(text: text))
     }

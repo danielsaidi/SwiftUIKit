@@ -42,7 +42,7 @@ public extension View {
     }
     
     /**
-     Apply a custom font of a certain `style`.
+     Apply a ``FontStyle`` to the view.
      */
     func font(_ style: FontStyle) -> some View {
         font(style.font)

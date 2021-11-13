@@ -15,8 +15,8 @@ import Foundation
  This class can be used to observe file system changes for a
  certain folder.
  
- When you use this class, you can observe its `files` to get
- information on whenever the folder content changes.
+ The uses an internal ``FolderMonitor`` instance to keep the
+ ``FolderObservable/files`` property in sync.
  */
 public class FolderObservable: ObservableObject {
     
@@ -33,6 +33,9 @@ public class FolderObservable: ObservableObject {
         self.handleChanges()
     }
     
+    /**
+     The latest fetch files in the folder.
+     */
     @Published public var files: [URL] = []
     
     private let folderUrl: URL

@@ -30,8 +30,8 @@ import UIKit
  The picker result contains a list of file urls that you can
  handle in any way  you want.
  
- You can use this view with `SheetContext` to easily present
- it as a modal sheet.
+ You can use a ``SheetContext`` to easily present the picker
+ as a modal sheet.
  */
 public struct FilePicker: UIViewControllerRepresentable {
     

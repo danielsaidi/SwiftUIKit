@@ -13,6 +13,7 @@ import SwiftUI
  simplifies working with buttons on platforms that applies a
  solid background below the button content, e.g. tvOS.
  */
+@available(*, deprecated, message: "Use a Group with the frame set instead.")
 public struct MinWidthButton<Content: View>: View {
     
     public init(

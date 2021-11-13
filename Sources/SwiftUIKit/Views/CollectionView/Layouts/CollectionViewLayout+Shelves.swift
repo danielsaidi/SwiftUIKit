@@ -11,13 +11,11 @@ import UIKit
 public extension CollectionViewLayout {
     
     /**
-     This layout makes a `CollectionView` render itself as a
-     vertical list with horizontally scrolling row "shelves".
+     This layout makes a ``CollectionView`` render itself as
+     a vertical list with horizontally scrolling shelve rows.
      
      You can apply this layout using `layout: .shelves()` in
-     the `CollectionView` init. The default parameters below
-     create a list with square item cells where each row can
-     scroll horizontally when its items don't fit the screen.
+     the ``CollectionView`` init.
      */
     static func shelves(
         itemSize: CGSize = CGSize(width: 200, height: 200),

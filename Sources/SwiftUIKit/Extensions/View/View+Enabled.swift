@@ -12,8 +12,7 @@ public extension View {
     
     /**
      Adds a condition that controls whether or not users can
-     interact with this view. It's the inverse of `disabled`
-     and may be easier to read for some conditions.
+     interact with this view.
      */
     func enabled(_ condition: Bool) -> some View {
         disabled(!condition)

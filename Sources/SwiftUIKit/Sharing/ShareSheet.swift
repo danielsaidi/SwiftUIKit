@@ -13,8 +13,8 @@ import SwiftUI
  This sheet can be used to present `UIActivityViewController`
  modals for any kind of shareable content.
  
- You can use this view with `SheetContext` to easily present
- it as a modal sheet.
+ You can use a ``SheetContext`` to easily present this sheet
+ as a modal sheet.
  */
 public struct ShareSheet: UIViewControllerRepresentable {
     

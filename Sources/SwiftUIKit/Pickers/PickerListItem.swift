@@ -11,10 +11,10 @@ import SwiftUI
 /**
  This protocol can be implemented by `PickerItem` list items.
  
- The `checkmark` property returns a checkmark if the item is
- selected, or an empty image if it's not. You should use the
- checkmark as a trailing icon to show if an item is selected
- or not, unless you do this in some other way.
+ The ``PickerListItem/checkmark`` returns a checkmark if the
+ item is selected, or an empty image if it's not. You should
+ use the checkmark as a trailing icon to show if the item is
+ selected or not.
  */
 public protocol PickerListItem: View {
     

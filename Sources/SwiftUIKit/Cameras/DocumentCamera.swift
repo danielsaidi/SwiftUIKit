@@ -27,8 +27,8 @@ import VisionKit
  The camera result is a `VNDocumentCameraScan` that contains
  a list of the scanned files, if any.
  
- You can use this view with `SheetContext` to easily present
- it as a modal sheet.
+ You can use a ``SheetContext`` to easily present the camera
+ as a modal sheet.
  */
 @available(iOS 13, *)
 public struct DocumentCamera: UIViewControllerRepresentable {

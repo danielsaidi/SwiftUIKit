@@ -10,8 +10,7 @@ import SwiftUI
 
 /**
  This protocol can be implemented by anything (e.g. a struct,
- enum or class) that can provide a `sheet` view, that can be
- presented as a modal sheet.
+ enum etc.) that can provide a sheet view.
  */
 public protocol SheetProvider {
     

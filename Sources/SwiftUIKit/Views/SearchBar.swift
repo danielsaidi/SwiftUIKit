@@ -10,8 +10,8 @@
 import SwiftUI
 
 /**
- This view wraps a text field in a rounded rectangle, with a
- wrapped clear button and a trailing cancel button.
+ This view wraps a text field within a rounded rectangle and
+ appends a clear button and a trailing cancel button.
  */
 public struct SearchBar: View {
     

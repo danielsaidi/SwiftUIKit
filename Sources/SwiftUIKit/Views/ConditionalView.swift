@@ -13,7 +13,7 @@ import SwiftUI
  view when the expression is `true` else another view (which
  is `EmptyView` by default), for instance:
  
- ```
+ ```swift
  ConditionalView(isLoading) {
      CircularProgressView()
  }
@@ -22,7 +22,7 @@ import SwiftUI
  You can specify a fallback view as a second, optional param
  using the more expressive initializer:
  
- ```
+ ```swift
  ConditionalView(
      if: isLoading,
      then: { CircularProgressView() },
@@ -33,7 +33,7 @@ import SwiftUI
  You can also create functions for your builders to get more
  readable code:
  
- ```
+ ```swift
  func spinner() -> some View {
      CircularProgressView()
  }

@@ -10,8 +10,11 @@ import Foundation
 
 /**
  This timer can be used to calculate the elapsed time of any
- gesture. Just call `start` when the gesture starts then use
- `elapsedTime` to see how long time that has elapsed.
+ gesture.
+ 
+ Call ``GestureTimer/start()`` when the gesture starts, then
+ check ``GestureTimer/elapsedTime`` to see how long time the
+ gesture has been active.
  */
 public class GestureTimer {
     

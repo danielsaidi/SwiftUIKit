@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+/**
+ This protocol can be implemented by a view that can be used
+ as a simple picker.
+ */
 public protocol SimplePicker: View {}
 
 public extension SimplePicker {

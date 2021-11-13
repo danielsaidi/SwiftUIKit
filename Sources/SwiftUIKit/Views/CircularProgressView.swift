@@ -11,7 +11,7 @@ import SwiftUI
 
 /**
  This view is just a convenience for a `ProgressView` with a
- `CircularProgressViewStyle()` applied.
+ ``CircularProgressViewStyle`` applied.
  */
 public struct CircularProgressView: View {
     

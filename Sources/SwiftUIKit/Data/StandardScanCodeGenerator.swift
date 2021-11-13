@@ -10,8 +10,8 @@
 import SwiftUI
 
 /**
- This is a standard implementation of the `ScanCodeGenerator`
- protocol, that used `CoreImage` to generate scan codes.
+ This standard ``ScanCodeGenerator`` protocol implementation
+ uses `CoreImage` to generate scan codes.
  */
 public class StandardScanCodeGenerator: ScanCodeGenerator {
     

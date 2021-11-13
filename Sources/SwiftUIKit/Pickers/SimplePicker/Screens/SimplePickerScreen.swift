@@ -18,11 +18,8 @@ import SwiftUI
  e.g. by wrapping a picker in a `List` on iOS, in a vertical
  `ScrollView` on tvOS etc.
  
- You can find screen templates in `Templates`. The templates
- can be used to quickly setup pickers, e.g. for tvOS and iOS.
- Note that they are just suggestions that intend to make the
- setup quick. You can always use this view to get a complete
- control over how the picker looks and behaves.
+ You can find templates in this folders. These templates can
+ be used to quickly setup pickers, e.g. for tvOS and iOS.
  */
 public struct SimplePickerScreen<Header: View, Picker: View, Footer: View>: DismissableView {
     

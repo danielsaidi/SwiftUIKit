@@ -13,8 +13,12 @@
 import SwiftUI
 
 /**
- This view represents a `UIKit` page control and can be used
- to present multiple views in a horizontal paged scroll view.
+ This view wraps the provided `pages` within a `TabView` and
+ applies a `page` style to the tab view.
+ 
+ This view is a declarative choice, since I personally think
+ that a "page view" is conceptually a different thing than a
+ tab view.
  
  You can either create this view by providing it with a view
  collection or an item list with a `pageBuilder` that builds
@@ -52,7 +56,7 @@ public struct PageView: View {
                 $0.element.tag($0.offset)
             }
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: indexDisplayMode))
+        .tabViewStyle(.page(indexDisplayMode: indexDisplayMode))
     }
 }
 #endif

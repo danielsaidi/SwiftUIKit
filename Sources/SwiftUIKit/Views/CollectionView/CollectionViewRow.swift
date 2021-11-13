@@ -8,7 +8,7 @@
 
 #if os(iOS) || os(tvOS)
 /**
- This struct represents a row in a `CollectionView`.
+ This struct represents a row in a ``CollectionView``.
  
  Credits to `@defagos`, who created this as part of his work
  to bring amazing, performant collection views to `SwiftUI`:

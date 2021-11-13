@@ -16,9 +16,6 @@ import SwiftUI
  view both horizontally and vertically can mess it up and is
  not good from a usability point of view, since the view can
  become upside down.
- 
- `TODO` For now, this view only supports swiping the view in
- the same (horizontal/vertical) direction as the tap gesture.
  */
 public struct FlipView<FrontView: View, BackView: View>: View {
     

@@ -11,14 +11,17 @@ import Foundation
 public extension ProcessInfo {
     
     /**
-     Whether or not the process is running a SwiftUI preview.
+     Whether or not the current process is a SwiftUI preview
+     process.
      
-     You can check this in your SwiftUI previews, using this
-     piece of code:
+     You can check this in your Swift code, as such:
      
-     ```
+     ```swift
      if ProcessInfo.processInfo.isSwiftUIPreview { ... }
      ```
+     
+     This can be used to customize some logic based on if it
+     is used in a preview or not.
      */
     var isSwiftUIPreview: Bool {
         environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"

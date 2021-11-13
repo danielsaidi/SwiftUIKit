@@ -9,6 +9,10 @@
 #if os(iOS)
 import SwiftUI
 
+/**
+ This protocol can be implemented by any view that can share
+ a url, using a certain ``UrlSharing/sheet``.
+ */
 public protocol UrlSharing: View {
     
     var sheet: SheetContext { get }
@@ -16,6 +20,9 @@ public protocol UrlSharing: View {
 
 public extension UrlSharing {
     
+    /**
+     Share the provided url using a ``ShareSheet``.
+     */
     func share(_ url: URL) {
         sheet.present(ShareSheet(activityItems: [url]))
     }

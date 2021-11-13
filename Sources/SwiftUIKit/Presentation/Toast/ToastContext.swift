@@ -11,13 +11,16 @@ import SwiftUI
 /**
  This context can be used to present any `SwiftUI` view as a
  toast overlay. You can present plain views or anything that
- implements the `ToastProvider` protocol (e.g. a custom enum
- where each case returns a specific toast).
+ implements ``ToastProvider``.
+ 
+ For instance, you can create an enum where all cases return
+ a view and have it implement ``ToastProvider``.
  
  To use this class, create a `@StateObject` instance in your
  presenting view, then bind the context to the view with the
- context-specific modifier. You can now use `present` on the
- context to present toasts:
+ context-specific modifier.
+ 
+ You can now use the `present` functions to present a toast:
  
  ```swift
  @StateObject var context = ToastContext()

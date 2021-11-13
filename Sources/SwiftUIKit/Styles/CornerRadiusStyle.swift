@@ -16,7 +16,14 @@ import SwiftUI
  or use the `cornerRadius(_ style:)` `View` extension.
  
  You can specify your own standard styles by creating static,
- calculated `CornerRadiusStyle` extension properties.
+ calculated extension properties, for instance:
+ 
+ ```swift
+ extension CornerRadiusStyle {
+ 
+     static let card = CornerRadiusStyle(radius: 5)
+ }
+ ```
  */
 public struct CornerRadiusStyle {
     

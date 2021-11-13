@@ -62,6 +62,7 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
 }
 
 struct FetchedDataView_Previews: PreviewProvider {
+    
     static var previews: some View {
         let nilData: String? = nil
         let content: (String) -> AnyView = { Text($0).any() }

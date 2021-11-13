@@ -11,7 +11,7 @@ import UIKit
 
 /**
  This typealias makes it easy to use UIImage and other image
- types interchangeably, where `ImageResource` is supported.
+ types interchangeably, using ``ImageResource``.
  */
 public typealias ImageResource = UIImage
 #endif

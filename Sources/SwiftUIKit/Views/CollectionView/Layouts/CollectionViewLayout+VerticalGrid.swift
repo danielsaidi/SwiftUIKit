@@ -11,13 +11,11 @@ import UIKit
 public extension CollectionViewLayout {
     
     /**
-     This layout makes a `CollectionView` render itself as a
-     vertical grid with `itemsPerRow` items per grid row.
+     This layout makes a ``CollectionView`` render itself as
+     a vertical grid with `itemsPerRow` items per grid row.
      
      You can apply this layout with `layout: .verticalGrid()`
-     in the `CollectionView` init. The default params create
-     a grid where each item is 200 points tall and have a 20
-     point margin.
+     in the ``CollectionView``.
      */
     static func verticalGrid(
         itemsPerRow: Int,

@@ -11,10 +11,7 @@ import SwiftUI
 public extension View {
     
     /**
-     Applies a `CornerRadiusStyle` to the view.
-     
-     The result is identical to when using the standard view
-     modifier directly.
+     Apply a ``CornerRadiusStyle`` to the view.
      */
     func cornerRadius(_ style: CornerRadiusStyle) -> some View {
         cornerRadius(style.radius)

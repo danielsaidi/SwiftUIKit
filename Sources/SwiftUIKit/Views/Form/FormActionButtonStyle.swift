@@ -9,8 +9,8 @@
 import SwiftUI
 
 /**
- This style makes a button look like an `ActionButton`, with
- a solud, rounded background badge.
+ This style makes a SwiftUI `Button` look like an iOS action
+ button, with a solid, rounded background badge.
  */
 public struct FormActionButtonStyle: ButtonStyle {
     

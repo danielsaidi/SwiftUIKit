@@ -9,6 +9,10 @@
 #if os(iOS)
 import SwiftUI
 
+/**
+ This view mimics a text field clear button that is trailing
+ in a text field.
+ */
 public struct TextFieldClearButton: ViewModifier {
     @Binding var text: String
 
@@ -29,6 +33,7 @@ public struct TextFieldClearButton: ViewModifier {
 }
 
 struct TextFieldClearButton_Previews: PreviewProvider {
+    
     static var previews: some View {
         TextField("Enter text", text: .constant("Text")).modifier(TextFieldClearButton(text: .constant("Text")))
     }

@@ -9,7 +9,7 @@ import Foundation
 
 /**
  This enum defines the scan code types that can be used with
- a `ScanCodeGenerator`.
+ a ``ScanCodeGenerator``.
  */
 public enum ScanCodeType {
     

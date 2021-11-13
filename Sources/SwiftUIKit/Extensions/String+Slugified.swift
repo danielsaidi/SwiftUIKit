@@ -9,9 +9,8 @@
 import Foundation
 
 /**
- This extension is internally used by `TagTextView` and will
- not be public in order to not collide with the extension in
- `SwiftKit`. If you want to use the logic, import `SwiftKit`.
+ This extension is internally used by ``TagTextView`` and is
+ not public in order to not collide with `SwiftKit`.
  */
 extension String {
     
