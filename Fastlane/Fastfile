@@ -27,6 +27,14 @@ platform :ios do
         UI.user_error!("You must run all unit tests before releasing a new version!")
     end
   end
+
+
+  # Docs =======================
+  
+  desc "Build documentation"
+  lane :documentation do
+    sh('cd .. && fastlane/build-documentation.sh')
+  end
   
   
   # Version ================
@@ -38,6 +46,7 @@ platform :ios do
     
     lint
     test
+    documentation
     
     bump_type = options[:type]
     if bump_type == nil or bump_type.empty?
