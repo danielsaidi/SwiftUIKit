@@ -7,6 +7,11 @@ This release adds DocC documentation and bumps the package Swift version to 5.5.
 
 This release also removes some iOSApplicationExtension unavailability, that was enforced by the early Xcode 13 betas.
 
+### ✨ New features
+
+* `DocumentPresenter` is a new protocol that simplifies dismissing in a `DocumentGroup`.
+
+
 ### 🗑 Deprecations
 
 * `SizingVStack` has been deprecated.

@@ -34,6 +34,10 @@ You can explore the sections in this documentation or in the demo app.
 - ``ScanCodeType``
 - ``StandardScanCodeGenerator``
 
+### Documents
+
+- ``DocumentPresenter``
+
 ### Environment
 
 Contains extensions that aren't included in this documentation.

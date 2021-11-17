@@ -37,7 +37,7 @@ private extension FilePickerScreen {
     
     func createPicker() -> some View {
         FilePicker(
-            documentTypes: ["public.png"],
+            documentTypes: [fileType],
             cancelAction: dismissPicker,
             resultAction: handleResult)
             .edgesIgnoringSafeArea(.all)

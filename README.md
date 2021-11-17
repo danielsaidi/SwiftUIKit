@@ -24,6 +24,7 @@
 * Cameras
 * Colors
 * Data
+* Documents
 * Extensions
 * Environment
 * Files
