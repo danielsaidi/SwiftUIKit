@@ -27,7 +27,7 @@ public struct ListButton<Content: View>: View {
     public var body: some View {
         Button(action: action) {
             ListItem(content: content)
-        }.buttonStyle(.plain)
+        }
     }
 }
 
