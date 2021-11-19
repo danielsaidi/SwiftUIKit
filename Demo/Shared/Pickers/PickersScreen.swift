@@ -15,7 +15,7 @@ struct PickersScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("SwiftUIKit hasadditional pickers for picking files and images. It also has a simple picker collection that is not yet in this demo.")
+                ListText("SwiftUIKit has additional pickers for picking files and images. It also has a ListPicker collection that is not yet in this demo.")
             }
             
             Section(header: Text("Pickers")) {
