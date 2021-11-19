@@ -65,10 +65,10 @@ Contains extensions that aren't included in this documentation.
 
 - ``FilePicker``
 - ``ImagePicker``
-- ``MultiPicker``
-- ``Picker``
-- ``PickerListItem``
-- ``PickerSection``
+- ``ListPicker``
+- ``ListMultiPicker``
+- ``ListPickerItem``
+- ``ListPickerSection``
 
 ### SimplePicker
 

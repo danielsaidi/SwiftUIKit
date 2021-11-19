@@ -11,12 +11,12 @@ import SwiftUI
 /**
  This protocol can be implemented by `PickerItem` list items.
  
- The ``PickerListItem/checkmark`` returns a checkmark if the
+ The ``ListPickerItem/checkmark`` returns a checkmark if the
  item is selected, or an empty image if it's not. You should
  use the checkmark as a trailing icon to show if the item is
  selected or not.
  */
-public protocol PickerListItem: View {
+public protocol ListPickerItem: View {
     
     associatedtype Item: Equatable
     
@@ -24,7 +24,7 @@ public protocol PickerListItem: View {
     var isSelected: Bool { get }
 }
 
-public extension PickerListItem {
+public extension ListPickerItem {
     
     /**
      This property returns a checkmark image when an item is

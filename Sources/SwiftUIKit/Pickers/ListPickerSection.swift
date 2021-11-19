@@ -1,5 +1,5 @@
 //
-//  Picker.swift
+//  ListPickerSection.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-23.
@@ -9,9 +9,9 @@
 import SwiftUI
 
 /**
- This type can be used to create pickers with item sections.
+ This type can be used to defina a section in a list picker.
  */
-public struct PickerSection<Item: Identifiable>: Identifiable {
+public struct ListPickerSection<Item: Identifiable>: Identifiable {
     
     public init(title: String, items: [Item]) {
         self.id = UUID()
@@ -24,7 +24,7 @@ public struct PickerSection<Item: Identifiable>: Identifiable {
     public let items: [Item]
     
     @ViewBuilder
-    var pickerHeader: some View {
+    var header: some View {
         if title.trimmingCharacters(in: .whitespaces).isEmpty {
             EmptyView()
         } else {

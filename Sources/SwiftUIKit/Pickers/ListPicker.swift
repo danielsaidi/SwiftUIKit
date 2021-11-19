@@ -1,5 +1,5 @@
 //
-//  MultiPicker.swift
+//  Picker.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-20.
@@ -9,39 +9,55 @@
 import SwiftUI
 
 /**
- This picker view lists an `Identifiable` item collection in
- a `MenuList` and binds its `selection` to an external value.
+ This generic picker lists `Identifiable` items in a SwiftUI
+ `List` and binds its `selection` to an external value.
  
- The picker uses the provided `listItem` builder to build an
- item view for each item in the provided `items` collection.
+ You can use this view instead of the native SwiftUI `Picker`
+ to get more control over the list item views. The view uses
+ the `listItem` function to build an item view for each item
+ in the provided `items` or `sections`.
+ 
+ If `dismissAfterPick` is `true` the picker dismisses itself
+ automatically when an item is picked.
  */
-public struct MultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
+public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
+    /**
+     Create a picker with a single section.
+     */
     public init(
         title: String,
         items: [Item],
-        selection: Binding<[Item]>,
+        selection: Binding<Item>,
+        dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
         self.title = title
-        self.sections = [PickerSection(title: "", items: items)]
+        self.sections = [ListPickerSection(title: "", items: items)]
         self.selection = selection
+        self.dismissAfterPick = dismissAfterPick
         self.listItem = listItem
     }
     
+    /**
+     Create a picker with multiple sections.
+     */
     public init(
         title: String,
-        sections: [PickerSection<Item>],
-        selection: Binding<[Item]>,
+        sections: [ListPickerSection<Item>],
+        selection: Binding<Item>,
+        dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
         self.title = title
         self.sections = sections
         self.selection = selection
+        self.dismissAfterPick = dismissAfterPick
         self.listItem = listItem
     }
     
     private let title: String
-    private let sections: [PickerSection<Item>]
-    private let selection: Binding<[Item]>
+    private let sections: [ListPickerSection<Item>]
+    private let selection: Binding<Item>
+    private let dismissAfterPick: Bool
     private let listItem: ItemViewBuilder
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
@@ -51,7 +67,7 @@ public struct MultiPicker<Item: Identifiable, ItemView: View>: View, Dismissable
     public var body: some View {
         List {
             ForEach(sections) { section in
-                Section(header: section.pickerHeader) {
+                Section(header: section.header) {
                     ForEach(section.items) {
                         listItemView(for: $0)
                     }
@@ -73,35 +89,35 @@ private extension View {
     }
 }
 
-private extension MultiPicker {
+private extension ListPicker {
     
     func listItemView(for item: Item) -> some View {
-        Button(action: { toggleSelection(for: item) }, label: {
+        Button(action: { select(item) }, label: {
             listItem(item, isSelected(item))
         })
     }
 }
 
-private extension MultiPicker {
+private extension ListPicker {
     
-    var seletedIds: [Item.ID] {
-        selection.wrappedValue.map { $0.id }
+    var seletedId: Item.ID {
+        selection.wrappedValue.id
     }
     
     func isSelected(_ item: Item) -> Bool {
-        seletedIds.contains(item.id)
+        seletedId == item.id
     }
     
-    func toggleSelection(for item: Item) {
-        if isSelected(item) {
-            selection.wrappedValue = selection.wrappedValue.filter { $0.id != item.id }
-        } else {
-            selection.wrappedValue.append(item)
+    func select(_ item: Item) {
+        selection.wrappedValue = item
+        if dismissAfterPick {
+            dismiss()
         }
     }
 }
 
-struct MultiPicker_Previews: PreviewProvider {
+#if os(iOS) || os(tvOS)
+struct ListPicker_Previews: PreviewProvider {
     
     static var previews: some View {
         Preview()
@@ -109,22 +125,24 @@ struct MultiPicker_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var selection = [PreviewItem.all[0]]
+        @State private var selection = PreviewItem.all[0]
         
-        func section(_ title: String) -> PickerSection<PreviewItem> {
-            PickerSection(title: title, items: PreviewItem.all)
+        func section(_ title: String) -> ListPickerSection<PreviewItem> {
+            ListPickerSection(title: title, items: PreviewItem.all)
         }
         
         var body: some View {
-            MultiPicker(
-                title: "Pick something",
-                sections: [
-                    section(""),
-                    section("Another section")
-                ],
-                selection: $selection) { item, isSelected in
-                    PreviewPickerItem(item: item, isSelected: isSelected)
-                }
+            NavigationView {
+                ListPicker(
+                    title: "Pick something",
+                    sections: [
+                        section(""),
+                        section("Another section")
+                    ],
+                    selection: $selection) { item, isSelected in
+                        PreviewPickerItem(item: item, isSelected: isSelected)
+                    }
+            }
         }
     }
     
@@ -143,7 +161,7 @@ struct MultiPicker_Previews: PreviewProvider {
         ]
     }
 
-    struct PreviewPickerItem: View, PickerListItem {
+    struct PreviewPickerItem: View, ListPickerItem {
         
         let item: PreviewItem
         let isSelected: Bool
@@ -156,5 +174,5 @@ struct MultiPicker_Previews: PreviewProvider {
             }
         }
     }
-
 }
+#endif

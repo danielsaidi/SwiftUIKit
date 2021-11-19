@@ -15,7 +15,11 @@ This release also removes some iOSApplicationExtension unavailability, that was 
 ### 🗑 Deprecations
 
 * `SizingVStack` has been deprecated.
-
+* `Picker` has been renamed to `ListPicker`.
+* `MultiPicker` has been renamed to `ListMultiPicker`.
+* `PickerListItem` has been renamed to `ListPickerItem`.
+* `PickerSection` has been renamed to `ListPickerSection`.
+* `PickerSection` `pickerHeader` has been renamed to `header`.
 
 
 ## 2.1
