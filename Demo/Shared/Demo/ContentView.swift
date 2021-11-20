@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
+                Section(header: Text("Sections")) {
                     #if os(iOS)
                     ListNavigationLink(destination: BlursScreen()) {
                         Label("Blurs", image: .blur)
@@ -59,7 +59,6 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(("SwiftUIKit"))
-            .withPlatformSpecificNavigationMode()
         }
         .withPlatformSpecificNavigationStyle()
     }
@@ -71,15 +70,6 @@ private extension View {
         #if os(iOS)
         return self
             .navigationViewStyle(StackNavigationViewStyle())
-        #else
-        return self
-        #endif
-    }
-    
-    func withPlatformSpecificNavigationMode() -> some View {
-        #if os(iOS)
-        return self
-            .navigationBarTitleDisplayMode(.inline)
         #else
         return self
         #endif

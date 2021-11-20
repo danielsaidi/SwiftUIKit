@@ -102,8 +102,6 @@
 		A9544B942571B34D00522141 /* PhotoCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B922571B34D00522141 /* PhotoCameraScreen.swift */; };
 		A9544BAE2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
 		A9544BAF2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
-		A98278DC257E968A0006D64F /* DemoAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278DB257E968A0006D64F /* DemoAppearance.swift */; };
-		A98278DD257E968A0006D64F /* DemoAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278DB257E968A0006D64F /* DemoAppearance.swift */; };
 		A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
 		A98278E2257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
 		A9F85336259B4D9200C98870 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F85335259B4D9200C98870 /* WebViewScreen.swift */; };
@@ -173,7 +171,6 @@
 		A9544BB42571BA9100522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		A9544BB52571BA9100522141 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		A9544BB72571BAD800522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		A98278DB257E968A0006D64F /* DemoAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppearance.swift; sourceTree = "<group>"; };
 		A98278E0257E969C0006D64F /* Color+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Demo.swift"; sourceTree = "<group>"; };
 		A9F85335259B4D9200C98870 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -399,7 +396,6 @@
 			children = (
 				A9355031256F7E3C00BBE9CE /* ContentView.swift */,
 				A9355030256F7E3C00BBE9CE /* DemoApp.swift */,
-				A98278DB257E968A0006D64F /* DemoAppearance.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -583,7 +579,6 @@
 				A901F0DA256FE65200F1C285 /* ToastsScreen.swift in Sources */,
 				A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
-				A98278DC257E968A0006D64F /* DemoAppearance.swift in Sources */,
 				A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
 				A901F07B256F963400F1C285 /* PickersScreen.swift in Sources */,
 				A901F03A256F8CA600F1C285 /* DataScreen.swift in Sources */,
@@ -636,7 +631,6 @@
 				A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */,
 				A98278E2257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15625707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
-				A98278DD257E968A0006D64F /* DemoAppearance.swift in Sources */,
 				A9544B4E2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
 				A901F07C256F963400F1C285 /* PickersScreen.swift in Sources */,
 				A901F03B256F8CA600F1C285 /* DataScreen.swift in Sources */,
