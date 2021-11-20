@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(macOS)
 import SwiftUI
 
 /**
@@ -42,3 +43,4 @@ public extension View {
         Text(item == selection ? item.selectedTitle : item.title)
     }
 }
+#endif

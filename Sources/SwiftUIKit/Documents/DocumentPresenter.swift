@@ -6,6 +6,7 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS)
 import SwiftUI
 
 /**
@@ -26,9 +27,7 @@ public extension DocumentPresenter {
      not the `dismiss` environment.
      */
     func dismissDocument() {
-        #if os(iOS)
         keyWindow?.rootViewController?.dismiss(animated: true)
-        #endif
     }
 }
 
@@ -47,3 +46,4 @@ private extension DocumentPresenter {
             .first(where: \.isKeyWindow)
     }
 }
+#endif

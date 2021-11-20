@@ -911,8 +911,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
