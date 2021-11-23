@@ -22,7 +22,6 @@ public enum MenuListStyle {
     public static var defaultStyle: MenuListStyle = .default
 }
 
-@available(*, deprecated, message: "Use the new ListItem views instead")
 public extension View {
     
     @ViewBuilder
