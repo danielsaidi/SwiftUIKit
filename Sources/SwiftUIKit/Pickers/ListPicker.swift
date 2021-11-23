@@ -72,8 +72,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
                         listItemView(for: $0)
                     }
                 }
-            }.withTitle(title)
-        }
+            }
+        }.withTitle(title)
     }
 }
 
@@ -140,7 +140,9 @@ struct ListPicker_Previews: PreviewProvider {
                         section("Another section")
                     ],
                     selection: $selection) { item, isSelected in
-                        PreviewPickerItem(item: item, isSelected: isSelected)
+                        ListSelectItem(isSelected: isSelected) {
+                            Text(item.name)
+                        }
                     }
             }
         }

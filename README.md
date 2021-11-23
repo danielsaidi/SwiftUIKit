@@ -56,6 +56,14 @@ pod DSSwiftUIKit
 
 
 
+## Supported Platforms
+
+SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
+
+Many parts of the library only supports a few or a certain platform. Also, while some views compile on a certain platform, they may not render correctly. Please help improve this library by submitting PRs that improve the rendering on e.g. macOS.  
+
+
+
 ## Documentation
 
 The [SwiftUIKit documentation][Documentation] contains curated and structured information that makes it easy to overview the various parts of the library, see how the various parts connect to each other etc.

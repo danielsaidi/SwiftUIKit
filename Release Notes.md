@@ -3,6 +3,15 @@
 
 ## 2.2
 
+This release adds new pickers.
+
+### ✨ New features
+
+* `FontListPicker` is a new list picker for picking fonts.
+
+
+## 2.2
+
 This release adds DocC documentation and bumps the package Swift version to 5.5.
 
 This release also removes some iOSApplicationExtension unavailability, that was enforced by the early Xcode 13 betas.
