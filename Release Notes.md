@@ -1,13 +1,14 @@
 # Release notes
 
 
-## 2.2
+## 2.3
 
 This release adds new pickers.
 
 ### ✨ New features
 
 * `FontListPicker` is a new list picker for picking fonts.
+* `ListPicker` has a new `animatedSelection` configuration.
 
 
 ## 2.2

@@ -27,10 +27,11 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
         items: [Item],
         selection: Binding<[Item]>,
         listItem: @escaping ItemViewBuilder) {
-        self.title = title
-        self.sections = [ListPickerSection(title: "", items: items)]
-        self.selection = selection
-        self.listItem = listItem
+        self.init(
+            title: title,
+            sections: [ListPickerSection(title: "", items: items)],
+            selection: selection,
+            listItem: listItem)
     }
     
     /**

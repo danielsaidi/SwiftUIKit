@@ -29,13 +29,16 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
         title: String,
         items: [Item],
         selection: Binding<Item>,
+        animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
-        self.title = title
-        self.sections = [ListPickerSection(title: "", items: items)]
-        self.selection = selection
-        self.dismissAfterPick = dismissAfterPick
-        self.listItem = listItem
+        self.init(
+            title: title,
+            sections: [ListPickerSection(title: "", items: items)],
+            selection: selection,
+            animatedSelection: animatedSelection,
+            dismissAfterPick: dismissAfterPick,
+            listItem: listItem)
     }
     
     /**
@@ -45,11 +48,13 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
         title: String,
         sections: [ListPickerSection<Item>],
         selection: Binding<Item>,
+        animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
         self.title = title
         self.sections = sections
         self.selection = selection
+        self.animatedSelection = animatedSelection
         self.dismissAfterPick = dismissAfterPick
         self.listItem = listItem
     }
@@ -57,6 +62,7 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
     private let title: String
     private let sections: [ListPickerSection<Item>]
     private let selection: Binding<Item>
+    private let animatedSelection: Bool
     private let dismissAfterPick: Bool
     private let listItem: ItemViewBuilder
     
@@ -109,6 +115,20 @@ private extension ListPicker {
     }
     
     func select(_ item: Item) {
+        if animatedSelection {
+            selectWithAnimation(item)
+        } else {
+            selectWithoutAnimation(item)
+        }
+    }
+    
+    func selectWithAnimation(_ item: Item) {
+        withAnimation {
+            selectWithoutAnimation(item)
+        }
+    }
+    
+    func selectWithoutAnimation(_ item: Item) {
         selection.wrappedValue = item
         if dismissAfterPick {
             dismiss()

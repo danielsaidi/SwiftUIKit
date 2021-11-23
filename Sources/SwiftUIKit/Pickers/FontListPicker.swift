@@ -30,7 +30,16 @@ public struct FontListPicker: View {
     
     struct PickerFont: Identifiable {
         
+        init(fontName: String) {
+            let isSystem = fontName
+                .trimmingCharacters(in: .whitespaces)
+                .isEmpty
+            self.fontName = fontName
+            self.displayName = isSystem ? "Standard" : fontName
+        }
+
         let fontName: String
+        let displayName: String
         
         var id: String { fontName }
     }
@@ -40,6 +49,11 @@ public struct FontListPicker: View {
     @Binding
     private var fontName: String
     
+    private var fonts: [PickerFont] {
+        FontRepresentable.allFonts(
+            topmost: fontName)
+    }
+    
     public var body: some View {
         let font = Binding(
             get: { PickerFont(fontName: fontName) },
@@ -48,11 +62,12 @@ public struct FontListPicker: View {
         
         return ListPicker(
             title: title,
-            items: FontListPickerFont.allFonts,
+            items: fonts,
             selection: font,
+            animatedSelection: true,
             dismissAfterPick: true) { font, isSelected in
                 ListSelectItem(isSelected: isSelected) {
-                    Text(font.fontName).font(.custom(font.fontName, size: 20))
+                    Text(font.displayName).font(.custom(font.fontName, size: 20))
                 }
             }
     }
@@ -90,9 +105,9 @@ private extension NSFont {
     /**
      This `UIFont` typealias is to be used with ``FontListPicker``.
      */
-    typealias FontListPickerFont = UIFont
+    typealias FontRepresentable = UIFont
     
-    static var allFonts: [FontListPicker.PickerFont] {
+    static var allFontFamilies: [FontListPicker.PickerFont] {
         NSFontManager.shared
             .availableFontFamilies
             .sorted()
@@ -112,11 +127,11 @@ import UIKit
 /**
  This `UIFont` typealias is to be used with ``FontListPicker``.
  */
-typealias FontListPickerFont = UIFont
+typealias FontRepresentable = UIFont
 
 private extension UIFont {
     
-    static var allFonts: [FontListPicker.PickerFont] {
+    static var allFontFamilies: [FontListPicker.PickerFont] {
         UIFont.familyNames
             .sorted()
             .map {
@@ -125,3 +140,27 @@ private extension UIFont {
     }
 }
 #endif
+
+
+// MARK: - All Fonts
+
+extension FontRepresentable {
+    
+    static var allFonts: [FontListPicker.PickerFont] {
+        var all = allFontFamilies
+        let systemFont = FontListPicker.PickerFont(fontName: "")
+        all.insert(systemFont, at: 0)
+        return all
+    }
+    
+    static func allFonts(topmost: String) -> [FontListPicker.PickerFont] {
+        let all = allFonts
+        let topmost = topmost.trimmingCharacters(in: .whitespaces)
+        let exists = all.contains { $0.fontName == topmost }
+        guard exists else { return all }
+        var filtered = all.filter { $0.fontName != topmost }
+        let new = FontListPicker.PickerFont(fontName: topmost)
+        filtered.insert(new, at: 0)
+        return filtered
+    }
+}

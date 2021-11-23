@@ -14,7 +14,6 @@ import SwiftUI
  If a style is not available for a certain platform, it will
  fallback to the default style for the platform.
  */
-@available(*, deprecated, message: "Use the new ListItem views instead")
 public enum MenuListStyle {
     
     case `default`, plain, grouped, groupedWithInsets
