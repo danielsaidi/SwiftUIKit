@@ -179,7 +179,17 @@ struct ListPicker_Previews: PreviewProvider {
             PreviewItem(name: "Item #2"),
             PreviewItem(name: "Item #3"),
             PreviewItem(name: "Item #4"),
-            PreviewItem(name: "Item #5")
+            PreviewItem(name: "Item #5"),
+            PreviewItem(name: "Item #6"),
+            PreviewItem(name: "Item #7"),
+            PreviewItem(name: "Item #8"),
+            PreviewItem(name: "Item #9"),
+            PreviewItem(name: "Item #10"),
+            PreviewItem(name: "Item #11"),
+            PreviewItem(name: "Item #12"),
+            PreviewItem(name: "Item #13"),
+            PreviewItem(name: "Item #14"),
+            PreviewItem(name: "Item #15")
         ]
     }
 

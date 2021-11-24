@@ -21,7 +21,6 @@ This release also removes some iOSApplicationExtension unavailability, that was 
 
 * `DocumentPresenter` is a new protocol that simplifies dismissing in a `DocumentGroup`.
 
-
 ### 🗑 Deprecations
 
 * `SizingVStack` has been deprecated.

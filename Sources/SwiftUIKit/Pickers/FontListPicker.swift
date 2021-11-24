@@ -36,27 +36,25 @@ public struct FontListPicker: View {
         selectedFontName: Binding<String>) {
         self.title = title
         self._selectedFontName = selectedFontName
-        self.fonts = allFonts(topmost: selectedFontName.wrappedValue)
+        self.fonts = Self.allFonts(topmost: selectedFontName.wrappedValue)
     }
     
     /**
      This struct is used to avoid having to make the `String`
      type implement `Identifiable`.
      */
-    struct PickerFont: Identifiable {
+    public struct PickerFont: Identifiable {
         
         init(fontName: String) {
-            let isSystem = fontName
-                .trimmingCharacters(in: .whitespaces)
-                .isEmpty
+            let fontName = fontName.capitalized
             self.fontName = fontName
-            self.displayName = isSystem ? systemFontDisplayName : fontName
+            self.fontDisplayName = displayName(for: fontName)
         }
 
         let fontName: String
-        let displayName: String
+        let fontDisplayName: String
         
-        var id: String { fontName }
+        public var id: String { fontName.lowercased() }
     }
     
     /**
@@ -73,15 +71,13 @@ public struct FontListPicker: View {
     /**
      The fonts to present in the picker.
      */
-    @State
-    private var fonts: [PickerFont] = []
+    private let fonts: [PickerFont]
     
     /**
      The display name for the standard system font, which is
      used if the font name is empty.
      */
-    public static var systemFontDisplayName = "Standard"
-    
+    public static var systemFontDisplayName = "San Francisco"
     
     
     public var body: some View {
@@ -96,38 +92,56 @@ public struct FontListPicker: View {
             selection: font,
             dismissAfterPick: true) { font, isSelected in
                 ListSelectItem(isSelected: isSelected) {
-                    Text(font.displayName).font(.custom(font.fontName, size: 20))
+                    Text(font.fontDisplayName)
+                        .font(.custom(font.fontName, size: 20))
                 }
-            }.onAppear {
-                fonts = allFonts(topmost: selectedFontName)
             }
     }
 }
 
-private extension FontListPicker {
+public extension FontListPicker {
     
     /**
      The available fonts.
      */
-    var allFonts: [PickerFont] {
+    static var allFonts: [PickerFont] {
         var all = FontRepresentable.allFonts
-        let systemFont = FontListPicker.PickerFont(fontName: "")
+        let systemFont = PickerFont(fontName: "")
         all.insert(systemFont, at: 0)
-        return all
+        return all.sorted { $0.fontDisplayName < $1.fontDisplayName }
     }
     
     /**
      The available fonts.
      */
-    func allFonts(topmost: String) -> [FontListPicker.PickerFont] {
+    static func allFonts(topmost: String) -> [PickerFont] {
         let all = allFonts
         let topmost = topmost.trimmingCharacters(in: .whitespaces)
-        let exists = all.contains { $0.fontName == topmost }
+        let exists = all.contains { $0.fontName.lowercased() == topmost.lowercased() }
         guard exists else { return all }
-        var filtered = all.filter { $0.fontName != topmost }
-        let new = FontListPicker.PickerFont(fontName: topmost)
+        var filtered = all.filter { $0.fontName.lowercased() != topmost.lowercased() }
+        let new = PickerFont(fontName: topmost)
         filtered.insert(new, at: 0)
         return filtered
+    }
+    
+    /**
+     Check whether or not a certain font name represents the
+     standard system font name (San Francisco).
+     */
+    static func displayName(for fontName: String) -> String {
+        let isSystem = isSystemFontName(fontName.uppercased())
+        return isSystem ? systemFontDisplayName : fontName
+    }
+    
+    /**
+     Check whether or not a certain font name represents the
+     standard system font name (San Francisco).
+     */
+    static func isSystemFontName(_ name: String) -> Bool {
+        let name = name.trimmingCharacters(in: .whitespaces)
+        if name.isEmpty { return true }
+        return name.hasPrefix(".SFUI")
     }
 }
 
@@ -135,7 +149,7 @@ struct FontListPicker_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var font = "Arial"
+        @State private var font = ""
         
         var body: some View {
             NavigationView {
@@ -168,7 +182,6 @@ private extension NSFont {
     static var allFonts: [FontListPicker.PickerFont] {
         NSFontManager.shared
             .availableFontFamilies
-            .sorted()
             .map {
                 FontListPicker.PickerFont(fontName: $0)
             }
@@ -192,7 +205,6 @@ private extension UIFont {
      */
     static var allFonts: [FontListPicker.PickerFont] {
         UIFont.familyNames
-            .sorted()
             .map {
                 FontListPicker.PickerFont(fontName: $0)
             }
