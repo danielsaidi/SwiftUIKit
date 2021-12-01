@@ -1,5 +1,5 @@
 //
-//  DocumentPresenter.swift
+//  DocumentGroupPresenter.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-11-17.
@@ -14,12 +14,11 @@ import SwiftUI
  used to present and dismiss documents from a `DocumentGroup`.
  
  This protocol adds functionality that's currently broken or
- missing in the `DocumentGroup` setup, such as dismissing an
- opened document.
+ missing in `DocumentGroup`, such as dismissing documents.
  */
-public protocol DocumentPresenter: View {}
+public protocol DocumentGroupPresenter: View {}
 
-public extension DocumentPresenter {
+public extension DocumentGroupPresenter {
     
     /**
      This function will dismiss the document in an old dirty
@@ -31,7 +30,7 @@ public extension DocumentPresenter {
     }
 }
 
-private extension DocumentPresenter {
+private extension DocumentGroupPresenter {
     
     var keyWindow: UIWindow? {
         UIApplication.shared.activeKeyWindows.first

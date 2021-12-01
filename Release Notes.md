@@ -3,7 +3,7 @@
 
 ## 2.3
 
-This release adds new pickers.
+This release adds new pickers and document group utils.
 
 ### ✨ New features
 
@@ -12,6 +12,11 @@ This release adds new pickers.
 * `UIApplication` has a new `activeWindows` property.
 * `UIApplication` has a new `activeWindowScenes` property.
 * `UIApplication` has a new `activeKeyWindows` property.
+
+### 🗑 Deprecations
+
+* `DocumentPresenter` has been renamed to `DocumentGroupPresenter`.
+
 
 
 ## 2.2
@@ -32,6 +37,7 @@ This release also removes some iOSApplicationExtension unavailability, that was 
 * `PickerListItem` has been renamed to `ListPickerItem`.
 * `PickerSection` has been renamed to `ListPickerSection`.
 * `PickerSection` `pickerHeader` has been renamed to `header`.
+
 
 
 ## 2.1
