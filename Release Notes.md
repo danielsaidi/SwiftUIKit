@@ -9,6 +9,9 @@ This release adds new pickers.
 
 * `FontListPicker` is a new list picker for picking fonts.
 * `ListPicker` has a new `animatedSelection` configuration.
+* `UIApplication` has a new `activeWindows` property.
+* `UIApplication` has a new `activeWindowScenes` property.
+* `UIApplication` has a new `activeKeyWindows` property.
 
 
 ## 2.2

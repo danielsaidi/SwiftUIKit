@@ -11,7 +11,7 @@ import SwiftUI
 
 /**
  This protocol can be implemented by any type that should be
- used to present a document from a `DocumentGroup`.
+ used to present and dismiss documents from a `DocumentGroup`.
  
  This protocol adds functionality that's currently broken or
  missing in the `DocumentGroup` setup, such as dismissing an
@@ -34,16 +34,7 @@ public extension DocumentPresenter {
 private extension DocumentPresenter {
     
     var keyWindow: UIWindow? {
-        // Get connected scenes
-        UIApplication.shared.connectedScenes
-        // Keep only active scenes, onscreen and visible to the user
-            .filter { $0.activationState == .foregroundActive }
-        // Keep only the first `UIWindowScene`
-            .first(where: { $0 is UIWindowScene })
-        // Get its associated windows
-            .flatMap({ $0 as? UIWindowScene })?.windows
-        // Finally, keep only the key window
-            .first(where: \.isKeyWindow)
+        UIApplication.shared.activeKeyWindows.first
     }
 }
 #endif
