@@ -33,7 +33,7 @@ public extension UIApplication {
      */
     var activeKeyWindows: [UIWindow] {
         activeWindows
-            .first { $0.isKeyWindow }
+            .filter { $0.isKeyWindow }
     }
 }
 #endif
