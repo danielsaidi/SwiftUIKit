@@ -7,6 +7,7 @@ This release adds new pickers and document group utils.
 
 ### ✨ New features
 
+* `DocumentGroupOnboardingScreen` is a new view that lets you present an onboarding from a `DocumentGroup`-based app.
 * `FontListPicker` is a new list picker for picking fonts.
 * `ListPicker` has a new `animatedSelection` configuration.
 * `UIApplication` has a new `activeWindows` property.
