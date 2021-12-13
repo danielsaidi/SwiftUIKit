@@ -30,7 +30,6 @@ public struct ListItem<Content: View>: View {
         HStack {
             content().padding(.vertical, 5)
         }
-        .buttonStyle(.plain)
         .frame(minHeight: 45)
         .frame(maxWidth: .infinity, alignment: .leading)
         .contentShape(Rectangle())

@@ -14,6 +14,10 @@ This release adds new pickers and document group utils.
 * `UIApplication` has a new `activeWindowScenes` property.
 * `UIApplication` has a new `activeKeyWindows` property.
 
+### 💡 Behavior changes
+
+* `ListItem` no longer applies a plain button style.
+
 ### 🗑 Deprecations
 
 * `DocumentPresenter` has been renamed to `DocumentGroupPresenter`.
