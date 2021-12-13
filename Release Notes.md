@@ -7,6 +7,7 @@ This release adds new pickers and document group utils.
 
 ### ✨ New features
 
+* `DocumentPresenter` is a new protocol that can be used by types that present a document in a `DocumentGroup`.
 * `DocumentGroupOnboardingScreen` is a new view that lets you present an onboarding from a `DocumentGroup`-based app.
 * `FontListPicker` is a new list picker for picking fonts.
 * `ListPicker` has a new `animatedSelection` configuration.
