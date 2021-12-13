@@ -19,7 +19,7 @@ This release adds new pickers and document group utils.
 
 * `ListItem` no longer applies a plain button style.
 
-### 🗑 Deprecations
+### 💥 Breaking Changes
 
 * `DocumentPresenter` has been renamed to `DocumentGroupPresenter`.
 
