@@ -17,7 +17,7 @@ This release adds new pickers and document group utils.
 
 ### 💡 Behavior changes
 
-* `ListItem` no longer applies a plain button style.
+* `ListItem` no longer applies a plain button style. Make sure to account for this change.
 
 ### 💥 Breaking Changes
 
