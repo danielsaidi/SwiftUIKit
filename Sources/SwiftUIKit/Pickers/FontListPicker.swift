@@ -145,6 +145,8 @@ public extension FontListPicker {
     }
 }
 
+
+#if os(iOS) || os(tvOS)
 struct FontListPicker_Previews: PreviewProvider {
     
     struct Preview: View {
@@ -164,7 +166,7 @@ struct FontListPicker_Previews: PreviewProvider {
         Preview()
     }
 }
-
+#endif
 
 
 // MARK: - AppKit
