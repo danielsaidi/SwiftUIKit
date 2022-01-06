@@ -23,9 +23,9 @@ public class GestureTimer {
     private var date: Date?
     
     /**
-     The time that has elapsed since `start` was called.
+     The time that has elapsed since ``start()`` was called.
      */
-    var elapsedTime: TimeInterval {
+    public var elapsedTime: TimeInterval {
         guard let date = date else { return 0 }
         return Date().timeIntervalSince(date)
     }
@@ -33,7 +33,7 @@ public class GestureTimer {
     /**
      Start the timer.
      */
-    func start() {
+    public func start() {
         if date != nil { return }
         date = Date()
     }

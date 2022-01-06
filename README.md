@@ -25,8 +25,8 @@
 * Colors
 * Data
 * Documents
-* Extensions
 * Environment
+* Extensions
 * Files
 * Gestures
 * Navigation
@@ -36,7 +36,7 @@
 * Styles
 * Views
 
-You can explore the sections in the documentation or in the demo app.
+You can explore the sections in the [documentation][Documentation] or in the demo app.
 
 
 
@@ -60,25 +60,27 @@ pod DSSwiftUIKit
 
 SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 
-Many parts of the library only supports a few or a certain platform. Also, while some views compile on a certain platform, they may not render correctly. Please help improve this library by submitting PRs that improve the rendering on e.g. macOS.  
+Many parts of the library only supports a few or a certain platform, where they make sense.
+
+Also, while some views compile on a certain platform, they may not render correctly. Please help improve this library by submitting PRs that improve the rendering on e.g. macOS.  
 
 
 
 ## Documentation
 
-The [SwiftUIKit documentation][Documentation] contains curated and structured information that makes it easy to overview the various parts of the library, see how the various parts connect to each other etc.
+The SwiftUIKit documentation contains extensive information, code examples etc. and makes it easy to overview the various parts of the library.
 
-Just download the documentation, extract the zip file and double-tap the `SwiftUIKit.doccarchive` file to view the documentation directly in Xcode.
+You can either [download][Documentation] the documentation or build it directly in Xcode, using `Product/Build Documentation`.
 
 
 
 ## Demo Application
 
-This project contains a demo app that lets you explore `SwiftUIKit` through interactive demos. 
+This project contains a demo app that lets you explore many of SwiftUIKit's features through interactive demos. 
 
-The demo app provides an intuitive way to explore the library. Together with the extensive documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
+Together with the documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
 
-To run the demo app, just open and run the `Demo/Demo.xcodeproj` project. It's a universal app project, but the `macOS` app is currenty not working that well. 
+To run the demo app, just open and run the `Demo/Demo.xcodeproj` project. It's a universal app project, but the `macOS` app is currenty not functional. 
 
 
 
@@ -102,10 +104,12 @@ You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for 
 
 SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
 
+
+
 [Email]: mailto:daniel.saidi@gmail.com
 [Twitter]: http://www.twitter.com/danielsaidi
 [Website]: http://www.danielsaidi.com
 [Sponsors]: https://github.com/sponsors/danielsaidi
 
-[Documentation]: https://github.com/danielsaidi/SwiftUIKit/raw/master/Docs/SwiftUIKit.doccarchive.zip
+[Documentation]: https://github.com/danielsaidi/Documentation/blob/main/Docs/SwiftUIKit.doccarchive.zip?raw=true
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE

@@ -18,8 +18,8 @@ import SwiftUI
  `List` component may not always work as expected.
  
  You can provide a custom `buttonBuilder` to generate custom
- picker buttons for the available options. If you don't, the
- initalizer will use ``SimplePicker/standardButtonBuilder``.
+ buttons for the available options. Otherwise, the init will
+ use the ``SimpleSinglePicker/standardButtonBuilder(_:_:)``.
  */
 public struct SimpleMultiPicker<Value: SimplePickerValue>: SimplePicker {
     

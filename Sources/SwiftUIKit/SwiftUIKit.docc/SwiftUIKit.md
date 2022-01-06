@@ -37,6 +37,10 @@ You can explore the sections in this documentation or in the demo app.
 ### Documents
 
 - ``DocumentPresenter``
+- ``DocumentGroupPresenter``
+- ``DocumentGroupOnboardingScreen``
+- ``DocumentGroupOnboardingError``
+- ``DocumentRenameError``
 
 ### Environment
 
@@ -64,6 +68,7 @@ Contains extensions that aren't included in this documentation.
 ### Pickers
 
 - ``FilePicker``
+- ``FontListPicker``
 - ``ImagePicker``
 - ``ListPicker``
 - ``ListMultiPicker``
@@ -125,7 +130,6 @@ Contains extensions that aren't included in this documentation.
 - ``OptionalView``
 - ``PageView``
 - ``SearchBar``
-- ``SizingVStack``
 - ``TabViewItem``
 - ``TagTextField``
 - ``TextFieldClearButton``
@@ -133,19 +137,19 @@ Contains extensions that aren't included in this documentation.
 - ``UIViewWrapper``
 - ``WebView``
 
-### Views/CollectionView
+### Views - CollectionView
 
 - ``CollectionView``
 - ``CollectionViewLayout``
 - ``CollectionViewRow``
 
-### Views/Containers
+### Views - Containers
 
 - ``FullHeightView``
 - ``FullSizeView``
 - ``FullWidthView``
 
-### Views/Form
+### Views - Form
 
 - ``FormActionButton``
 - ``FormActionButtonStyle``
@@ -153,7 +157,7 @@ Contains extensions that aren't included in this documentation.
 - ``FormTextEditor``
 - ``FormTextField``
 
-### Views/List
+### Views - List
 
 - ``ListItem``
 - ``ListButton``
@@ -182,5 +186,9 @@ Contains extensions that aren't included in this documentation.
 - ``MenuListText``
 - ``MenuListToggle``
 - ``MinWidthButton``
+- ``MultiPicker``
+- ``Picker``
+- ``PickerSection``
 - ``QrCodeGenerator``
+- ``SizingVStack``
 - ``StandardQrCodeGenerator``

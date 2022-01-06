@@ -9,8 +9,8 @@
 import SwiftUI
 
 /**
- This view wraps the provided string in a ``Text`` view then
- wraps that text in a ``ListItem``.
+ This view wraps the provided text in a `Text` and wraps the
+ text view in a `ListItem`.
  */
 public struct ListText: View {
     
