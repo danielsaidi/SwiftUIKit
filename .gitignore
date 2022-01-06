@@ -4,6 +4,9 @@
 /Packages
 .swiftpm/
 
+# Documentation
+Docs
+
 # Fastlane
 Fastlane/report.xml
 Fastlane/Preview.html
