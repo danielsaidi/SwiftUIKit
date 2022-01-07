@@ -30,6 +30,7 @@ public struct ListToggle<Content: View>: View {
                 content()
                 Spacer()
                 Toggle("", isOn: isOn)
+                    .labelsHidden()
             }
         }
     }

@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 2.3.1
+
+This release adjust the `ListToggle`.
+
+### 💡 Behavior changes
+
+* `ListToggle` now applies `.labelsHidden()` to the toggle, to make it take up less space.
+
+
+
 ## 2.3
 
 This release adds new pickers and document group utils.
