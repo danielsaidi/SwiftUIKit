@@ -3,13 +3,32 @@
 SwiftUIKit adds extra functionality to the SwiftUI framework, like extensions to native types, new views, pickers, utilites etc.
 
 
+
 ## Overview
 
 ![SwiftUIKit logo](Logo.png)
 
 SwiftUIKit is divided into the sections found in the Topics section below.
 
-You can explore the sections in this documentation or in the demo app.
+
+
+## Installation
+
+The best way to add SwiftUIKit to your app is to use the Swift Package Manager.
+
+```
+https://github.com/danielsaidi/SwiftUIKit.git
+```
+
+You can add SwiftUIKit to any target that needs it.
+
+
+
+## Supported Platforms
+
+SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
+
+
 
 
 ## Topics
