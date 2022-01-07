@@ -1,12 +1,11 @@
 //
-//  ListButtonLink.swift
+//  ListNavigationButton.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-11-03.
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 
 /**
@@ -14,7 +13,7 @@ import SwiftUI
  a trailing ``ListDisclosureIndicator``, which makes it look
  like a navigation link.
  */
-public struct ListButtonLink<Content: View>: View {
+public struct ListNavigationButton<Content: View>: View {
     
     public init(
         action: @escaping () -> Void,
@@ -37,7 +36,7 @@ public struct ListButtonLink<Content: View>: View {
     }
 }
 
-struct ListButtonLinkItem_Previews: PreviewProvider {
+struct ListNavigationButtonItem_Previews: PreviewProvider {
     
     struct Preview: View {
         
@@ -52,7 +51,7 @@ struct ListButtonLinkItem_Previews: PreviewProvider {
                     ListItem {
                         NavigationLink("Navigation link", destination: Text("HEJ"))
                     }
-                    ListButtonLink(action: { isToggled.toggle() }, content: {
+                    ListNavigationButton(action: { isToggled.toggle() }, content: {
                         Text("Toggle")
                     })
                 }
@@ -64,4 +63,3 @@ struct ListButtonLinkItem_Previews: PreviewProvider {
         Preview()
     }
 }
-#endif

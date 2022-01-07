@@ -16,8 +16,7 @@ import SwiftUI
  the custom font to the list item.
  
  This picker has support for both AppKit and UIKit, with the
- ``FontListPickerFont`` typealias being used to bridge these
- two platforms with the picker.
+ ``FontListPicker/PickerFont`` used to bridge both platforms.
  
  To change the display name of the system font, just set the
  picker's static ``systemFontDisplayName`` property.

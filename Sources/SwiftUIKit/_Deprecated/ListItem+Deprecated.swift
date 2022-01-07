@@ -3,6 +3,9 @@ import SwiftUI
 @available(*, deprecated, renamed: "ListButton")
 public typealias ListButtonItem = ListButton
 
+@available(*, deprecated, renamed: "ListNavigationButton")
+public typealias ListButtonLink = ListNavigationButton
+
 #if os(iOS)
 @available(*, deprecated, renamed: "ListButtonLink")
 public typealias ListButtonLinkItem = ListButtonLink

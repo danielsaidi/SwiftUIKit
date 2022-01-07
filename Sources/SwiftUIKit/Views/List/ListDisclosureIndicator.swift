@@ -6,7 +6,6 @@
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
 import SwiftUI
 
 /**
@@ -14,6 +13,9 @@ import SwiftUI
  the the forward arrow that is used by list navigation links.
  
  You can use this view when a button should imitate a link.
+ 
+ TODO: The indicator should be styled differently on various
+ platforms, but for now it just has a single style.
  */
 public struct ListDisclosureIndicator: View {
     
@@ -33,4 +35,3 @@ struct ListDisclosureIndicator_Previews: PreviewProvider {
         ListDisclosureIndicator()
     }
 }
-#endif

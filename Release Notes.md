@@ -1,6 +1,19 @@
 # Release notes
 
 
+## 2.3.2
+
+### 💡 Behavior changes
+
+* `ListNavigationButton` is now available on all platforms.
+* `ListDisclosureIndicator` is now available on all platforms.
+
+### 🗑 Deprecations
+
+* `ListButtonLink` has been renamed to `ListNavigationButton`.
+
+
+
 ## 2.3.1
 
 This release adjust the `ListToggle`.
