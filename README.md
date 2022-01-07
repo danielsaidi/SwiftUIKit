@@ -36,7 +36,7 @@
 * Styles
 * Views
 
-You can explore the sections in the [documentation][Documentation] or in the demo app.
+You can explore the sections in the [documentation][Documentation] and the demo app.
 
 
 
@@ -76,7 +76,7 @@ You can either [download][Documentation] the documentation or build it directly 
 
 ## Demo Application
 
-This project contains a demo app that lets you explore many of SwiftUIKit's features through interactive demos. 
+This project contains a demo app that lets you explore many of SwiftUIKit's features through interactive demos.
 
 Together with the documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
 
