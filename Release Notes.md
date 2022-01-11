@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 2.3.3
+
+### ✨ New features
+
+* `DocumentPresenter` has a new `canRenameDocument` function.
+
+
+
 ## 2.3.2
 
 ### 💡 Behavior changes

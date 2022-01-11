@@ -35,10 +35,27 @@ public extension DocumentPresenter {
     }
     
     /**
+     Whether or not the presented can rename the document.
+     
+     For document renaming to work, documents must be stored
+     within the applications document directory.
+     */
+    func canRenameDocument(
+        with fileManager: FileManager = .default) -> Bool {
+        guard let url = documentUrl else { return false }
+        guard let docsUrl = fileManager.documentDirectoryUrl else { return false }
+        let docUrl = docsUrl.appendingPathComponent(url.lastPathComponent)
+        return fileManager.fileExists(atPath: docUrl.path)
+    }
+    
+    /**
      Rename the currently presented document.
      
      If no `newExtension` is provided, the file will use the
      same file extension as before.
+     
+     For document renaming to work, documents must be stored
+     within the applications document directory.
      */
     func renameDocument(
         to newFileName: String,
@@ -52,5 +69,16 @@ public extension DocumentPresenter {
             .appendingPathComponent(newFileName)
             .appendingPathExtension(newExtension ?? oldExtension)
         try fileManager.moveItem(atPath: oldPath, toPath: newUrl.path)
+    }
+}
+
+private extension FileManager {
+    
+    var documentDirectoryUrl: URL? {
+        try? url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true)
     }
 }
