@@ -1,12 +1,19 @@
 # Release notes
 
 
+## 2.1
+
+### 🗑 Deprecations
+
+* `Presentation/Toast` has been deprecated. Use the new [SystemNotification](https://github.com/danielsaidi/SystemNotification) library instead.
+
+
+
 ## 2.3.3
 
 ### ✨ New features
 
 * `DocumentPresenter` has a new `canRenameDocument` function.
-
 
 
 ## 2.3.2
@@ -21,7 +28,6 @@
 * `ListButtonLink` has been renamed to `ListNavigationButton`.
 
 
-
 ## 2.3.1
 
 This release adjust the `ListToggle`.
@@ -29,7 +35,6 @@ This release adjust the `ListToggle`.
 ### 💡 Behavior changes
 
 * `ListToggle` now applies `.labelsHidden()` to the toggle, to make it take up less space.
-
 
 
 ## 2.3

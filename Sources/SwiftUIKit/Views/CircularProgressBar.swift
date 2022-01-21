@@ -130,7 +130,7 @@ struct CircularProgressBar_Previews: PreviewProvider {
         swedishStyle.strokeWidth = 5
         swedishStyle.progressColor = .yellow
         swedishStyle.progressWidth = 15
-        swedishStyle.progressModifier = { $0.shadow(.standardToast).any() }
+        swedishStyle.progressModifier = { $0.shadow(.elevated).any() }
         
         return VStack(spacing: 30) {
             CircularProgressBar(

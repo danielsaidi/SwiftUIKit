@@ -12,6 +12,7 @@ import SwiftUI
  This style can be used when presenting a toast over a view,
  to apply a custom style to the toast.
  */
+@available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
 public struct ToastStyle {
     
     public init<Background: View>(

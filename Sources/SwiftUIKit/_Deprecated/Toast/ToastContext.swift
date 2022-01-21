@@ -34,10 +34,8 @@ import SwiftUI
  
  The `toast` modifier also lets you specify a `duration` and
  a toast `style`, which determines what the toast looks like.
- 
- `NOTE` In SwiftUI 1, you must use `@ObservedObject` instead
- of `@StateObject`, but this can cause presentation glitches.
  */
+@available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
 public class ToastContext: PresentationContext<AnyView> {
     
     public func present<Toast: View>(_ toast: @autoclosure @escaping () -> Toast) {

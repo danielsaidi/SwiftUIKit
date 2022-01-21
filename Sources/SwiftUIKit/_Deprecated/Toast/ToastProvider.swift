@@ -12,6 +12,7 @@ import SwiftUI
  This protocol can be implemented by anything (e.g. a struct,
  enum etc.) that can provide a toast view.
  */
+@available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
 public protocol ToastProvider {
     
     var toast: AnyView { get }

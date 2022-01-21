@@ -23,6 +23,7 @@ public extension View {
      is still active. The new toast will replace the old one
      and is deactivated by the first async operation.
      */
+    @available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
     func toast<Content: View>(
         isPresented: Binding<Bool>,
         content: () -> Content,
@@ -43,6 +44,7 @@ public extension View {
      It's `.none` by default, which means that no style will
      be applied to the toast view.     
      */
+    @available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
     func toast(
         context: ToastContext,
         duration seconds: TimeInterval = 2,
@@ -56,6 +58,7 @@ public extension View {
     /**
      Apply a certain toast style to the view.
      */
+    @available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
     func toastStyle(_ style: ToastStyle) -> some View {
         self.padding(style.backgroundPadding)
             .background(style.background)
