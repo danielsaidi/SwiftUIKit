@@ -1,7 +1,11 @@
 # Release notes
 
 
-## 2.1
+## 2.4
+
+### ✨ New features
+
+* `View+NavigationTitleView` is a new extension that lets you set any view as the navigation title.
 
 ### 🗑 Deprecations
 

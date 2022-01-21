@@ -32,6 +32,7 @@ public struct ToastStyle {
     public let shadowStyle: ShadowStyle
 }
 
+@available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
 public extension ToastStyle {
     
     /**
