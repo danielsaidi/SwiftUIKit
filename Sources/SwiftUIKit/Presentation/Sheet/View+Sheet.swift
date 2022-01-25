@@ -14,7 +14,9 @@ public extension View {
      Present a sheet from a certain sheet context. The sheet
      will be presented when the context is active.
      */
-    func sheet(context: SheetContext) -> some View {
-        sheet(isPresented: context.isActiveBinding, content: context.content ?? EmptyView().any)
+    func sheet(_ context: SheetContext) -> some View {
+        sheet(
+            isPresented: context.isActiveBinding,
+            content: context.content ?? EmptyView().any)
     }
 }

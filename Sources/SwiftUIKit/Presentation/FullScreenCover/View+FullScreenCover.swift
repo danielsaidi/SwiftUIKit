@@ -16,8 +16,10 @@ public extension View {
      Present a cover from a certain context. The cover will be
      will be presented when the context is active.
      */
-    func fullScreenCover(context: FullScreenCoverContext) -> some View {
-        fullScreenCover(isPresented: context.isActiveBinding, content: context.content ?? EmptyView().any)
+    func fullScreenCover(_ context: FullScreenCoverContext) -> some View {
+        fullScreenCover(
+            isPresented: context.isActiveBinding,
+            content: context.content ?? EmptyView().any)
     }
 }
 #endif
