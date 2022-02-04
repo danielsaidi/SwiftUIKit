@@ -5,6 +5,9 @@
 
 ### ✨ New features
 
+* `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
+* `ListText` has a new icon and subtitle parameter.
+* `ListTextContent` is a new view that just renders the content of a `ListText`.
 * `View+NavigationTitleView` is a new extension that lets you set any view as the navigation title.
 
 ### 🗑 Deprecations

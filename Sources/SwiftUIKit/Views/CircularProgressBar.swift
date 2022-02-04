@@ -21,7 +21,6 @@ import SwiftUI
  The standard colors are not adaptive and will not adjust to
  e.g. dark mode.
  */
-@available(iOS 13, watchOS 6.0, macOS 10.15, tvOS 13, *)
 public struct CircularProgressBar: View {
     
     public init(
@@ -45,7 +44,9 @@ public struct CircularProgressBar: View {
         ZStack {
             baseCircle
             progressCircle
-            progressText
+            if style.showTitle {
+                progressText
+            }
         }
     }
     
@@ -83,7 +84,6 @@ public struct CircularProgressBar: View {
     }
 }
 
-@available(iOS 13, watchOS 6.0, macOS 10.15, tvOS 13, *)
 public struct CircularProgressBarStyle {
     
     public init(
@@ -93,6 +93,7 @@ public struct CircularProgressBarStyle {
         progressColor: Color = .white,
         progressWidth: CGFloat = 8,
         progressModifier: @escaping ViewModifier = { $0 },
+        showTitle: Bool = true,
         titleColor: Color = .white,
         titleFont: Font = Font.body.bold()) {
         self.backgroundColor = backgroundColor
@@ -101,6 +102,7 @@ public struct CircularProgressBarStyle {
         self.progressColor = progressColor
         self.progressWidth = progressWidth
         self.progressModifier = progressModifier
+        self.showTitle = showTitle
         self.titleColor = titleColor
         self.titleFont = titleFont
     }
@@ -113,13 +115,13 @@ public struct CircularProgressBarStyle {
     public var progressColor: Color
     public var progressWidth: CGFloat
     public var progressModifier: ViewModifier
+    public var showTitle: Bool
     public var titleColor: Color
     public var titleFont: Font
     
     public static var standard = CircularProgressBarStyle()
 }
 
-@available(iOS 13, watchOS 6.0, macOS 10.15, tvOS 13, *)
 struct CircularProgressBar_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -132,6 +134,12 @@ struct CircularProgressBar_Previews: PreviewProvider {
         swedishStyle.progressWidth = 15
         swedishStyle.progressModifier = { $0.shadow(.elevated).any() }
         
+        var noTextStyle = CircularProgressBarStyle.standard
+        noTextStyle.backgroundColor = .white
+        noTextStyle.strokeColor = .clear
+        noTextStyle.progressColor = .black
+        noTextStyle.showTitle = false
+        
         return VStack(spacing: 30) {
             CircularProgressBar(
                 progress: .constant(0.1),
@@ -142,6 +150,10 @@ struct CircularProgressBar_Previews: PreviewProvider {
                 decimals: 0,
                 startAngle: 20,
                 style: swedishStyle)
+            
+            CircularProgressBar(
+                progress: .constant(0.8),
+                style: noTextStyle)
         }
         .background(Color.green.edgesIgnoringSafeArea(.all))
     }

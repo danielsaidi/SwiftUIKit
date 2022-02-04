@@ -42,7 +42,7 @@ struct ListItem_Previews: PreviewProvider {
     static var previews: some View {
         List {
             ListItem {
-                Text("Test")
+                Text("Plain text")
             }
             ListItem {
                 Label("Selected", systemImage: "checkmark")

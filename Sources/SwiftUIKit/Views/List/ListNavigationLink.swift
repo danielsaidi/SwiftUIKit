@@ -53,6 +53,12 @@ struct ListNavigationLinkItem_Previews: PreviewProvider {
                 ListNavigationLink(destination: Text("Page 3")) {
                     Label("A long link to page 3", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
+                ListNavigationLink(destination: Text("Page 4")) {
+                    ListText("Text with icon and subtitle",
+                             icon: Image(systemName: "lightbulb"),
+                             subtitle: "Subtitle")
+                }
+                
             }
         }
     }
