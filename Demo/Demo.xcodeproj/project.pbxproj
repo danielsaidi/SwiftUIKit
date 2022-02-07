@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A901F033256F8C9A00F1C285 /* BlursScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F032256F8C9A00F1C285 /* BlursScreen.swift */; };
-		A901F034256F8C9A00F1C285 /* BlursScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F032256F8C9A00F1C285 /* BlursScreen.swift */; };
 		A901F03A256F8CA600F1C285 /* DataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F039256F8CA600F1C285 /* DataScreen.swift */; };
 		A901F03B256F8CA600F1C285 /* DataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F039256F8CA600F1C285 /* DataScreen.swift */; };
 		A901F03F256F8CB100F1C285 /* ExtensionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F03E256F8CB100F1C285 /* ExtensionsScreen.swift */; };
@@ -109,7 +107,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A901F032256F8C9A00F1C285 /* BlursScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlursScreen.swift; sourceTree = "<group>"; };
 		A901F039256F8CA600F1C285 /* DataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScreen.swift; sourceTree = "<group>"; };
 		A901F03E256F8CB100F1C285 /* ExtensionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsScreen.swift; sourceTree = "<group>"; };
 		A901F043256F8CBC00F1C285 /* GesturesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesScreen.swift; sourceTree = "<group>"; };
@@ -195,14 +192,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A901F031256F8C8F00F1C285 /* Blurs */ = {
-			isa = PBXGroup;
-			children = (
-				A901F032256F8C9A00F1C285 /* BlursScreen.swift */,
-			);
-			path = Blurs;
-			sourceTree = "<group>";
-		};
 		A901F052256F8D0E00F1C285 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +338,6 @@
 		A935502F256F7E3C00BBE9CE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A901F031256F8C8F00F1C285 /* Blurs */,
 				A901F089256F964C00F1C285 /* Cameras */,
 				A901F053256F8D1700F1C285 /* Data */,
 				A9355053256F7E5D00BBE9CE /* Demo */,
@@ -594,7 +582,6 @@
 				A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,
-				A901F033256F8C9A00F1C285 /* BlursScreen.swift in Sources */,
 				A901F0A0256FAF9A00F1C285 /* PersistedScreen.swift in Sources */,
 				A901F080256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */,
@@ -646,7 +633,6 @@
 				A901F0EA2570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04F256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901F14F25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,
-				A901F034256F8C9A00F1C285 /* BlursScreen.swift in Sources */,
 				A901F0A1256FAF9A00F1C285 /* PersistedScreen.swift in Sources */,
 				A901F081256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901F0EF2570027F00F1C285 /* FontStyleScreen.swift in Sources */,

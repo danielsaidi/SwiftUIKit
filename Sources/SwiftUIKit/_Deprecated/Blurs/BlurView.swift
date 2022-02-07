@@ -15,6 +15,7 @@ import SwiftUI
  You can easily add a blur view to a `SwiftUI` `View`, using
  the `blur(style:)` extension.
  */
+@available(*, deprecated, message: "Use the native material approach instead")
 public struct BlurView: UIViewRepresentable {
     
     public init(style: UIBlurEffect.Style) {
@@ -30,9 +31,7 @@ public struct BlurView: UIViewRepresentable {
     public func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
-
-// MARK: - Test Extensions
-
+@available(*, deprecated, message: "Use the native material approach instead")
 extension BlurView {
     
     func createView() -> UIView {
@@ -43,9 +42,7 @@ extension BlurView {
     }
 }
 
-
-// MARK: - Private Extensions
-
+@available(*, deprecated, message: "Use the native material approach instead")
 private extension BlurView {
     
     func add(_ blurView: UIVisualEffectView, to view: UIView) {

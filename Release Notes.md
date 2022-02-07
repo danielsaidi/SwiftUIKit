@@ -12,6 +12,7 @@
 
 ### 🗑 Deprecations
 
+* `BlurView` and `View+Blur` is deprecated. Use the native material approach instead.
 * `Presentation/Toast` has been deprecated. Use the new [SystemNotification](https://github.com/danielsaidi/SystemNotification) library instead.
 * `View+Alert` `alert(context:)` has been renamed to `alert(_ :)`.
 * `View+FullScreenCover` `fullScreenCover(context:)` has been renamed to `fullScreenCover(_ :)`.

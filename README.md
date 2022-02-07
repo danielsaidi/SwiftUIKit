@@ -20,7 +20,6 @@
 
 `SwiftUIKit` is divided into these areas:
 
-* Blurs
 * Cameras
 * Colors
 * Data

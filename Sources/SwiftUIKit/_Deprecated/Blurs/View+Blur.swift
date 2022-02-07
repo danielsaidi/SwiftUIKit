@@ -18,6 +18,7 @@ public extension View {
      This applies a blur by adding a ``BlurView`` overlay to
      the view.
      */
+    @available(*, deprecated, message: "Use the native material approach instead")
     func blur(_ style: UIBlurEffect.Style) -> some View {
         overlay(BlurView(style: style))
     }

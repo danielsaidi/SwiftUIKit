@@ -1,21 +1,22 @@
 //
-//  UIBlurEffectStyle+AllCasesTests.swift
-//  SwiftUIKitTests
+//  UIBlurEffectStyle+AllCases.swift
+//  SwiftUIKit
 //
-//  Created by Daniel Saidi on 2019-08-30.
+//  Created by Daniel Saidi on 2019-09-12.
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
-import XCTest
-import SwiftUIKit
 import UIKit
 
-final class UIBlurEffectStyle_AllCasesTests: XCTestCase {
+public extension UIBlurEffect.Style {
     
-    func testAllCasesAreCorrectlySetup() {
-        let result = UIBlurEffect.Style.allCases
-        let expected: [UIBlurEffect.Style] = [
+    /**
+     This list contains all available `UIBlurEffect` styles.
+     */
+    @available(*, deprecated, message: "Use the native material approach instead")
+    static var allCases: [UIBlurEffect.Style] {
+        [
             .regular,
             .prominent,
             
@@ -41,7 +42,6 @@ final class UIBlurEffectStyle_AllCasesTests: XCTestCase {
             .light,
             .dark
         ]
-        XCTAssertEqual(result, expected)
     }
 }
 #endif

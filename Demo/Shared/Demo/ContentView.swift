@@ -16,9 +16,6 @@ struct ContentView: View {
             List {
                 Section(header: Text("Sections")) {
                     #if os(iOS)
-                    ListNavigationLink(destination: BlursScreen()) {
-                        Label("Blurs", image: .blur)
-                    }
                     ListNavigationLink(destination: CamerasScreen()) {
                         Label("Cameras", image: .camera)
                     }
