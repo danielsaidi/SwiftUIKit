@@ -11,6 +11,10 @@ import SwiftUI
 /**
  This style makes a SwiftUI `Button` look like an iOS action
  button, with a solid, rounded background badge.
+ 
+ Note that there is a bug in iOS 14 that may cause the color
+ scheme to have an invalid value. If this happens, you could
+ define a custom style and provide an explicit color.
  */
 public struct FormActionButtonStyle: ButtonStyle {
     
@@ -33,14 +37,14 @@ public struct FormActionButtonStyle: ButtonStyle {
         self.shadowStyle = shadowStyle
     }
     
-    public let backgroundColor: Color?
-    public let cornerRadius: Double
-    public let disabledOpacity: Double
-    public let foregroundColor: Color?
-    public let horizontalPadding: Double
-    public let pressedOpacity: Double
-    public let shadowStyle: ShadowStyle
-    public let verticalPadding: Double
+    public var backgroundColor: Color?
+    public var cornerRadius: Double
+    public var disabledOpacity: Double
+    public var foregroundColor: Color?
+    public var horizontalPadding: Double
+    public var pressedOpacity: Double
+    public var shadowStyle: ShadowStyle
+    public var verticalPadding: Double
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -62,6 +66,14 @@ public struct FormActionButtonStyle: ButtonStyle {
 public extension FormActionButtonStyle {
     
     static let standard = FormActionButtonStyle()
+    
+    static var standardDarkColorSchemeBakground: Color {
+        .white.opacity(0.1)
+    }
+    
+    static var standardLightColorSchemeBakground: Color {
+        .white
+    }
 }
 
 public extension ShadowStyle {
@@ -79,6 +91,6 @@ private extension FormActionButtonStyle {
     var isDark: Bool { colorScheme == .dark }
     
     var standardBackgroundColor: Color {
-        isDark ? .white.opacity(0.1) : .white
+        isDark ? Self.standardDarkColorSchemeBakground : Self.standardLightColorSchemeBakground
     }
 }
