@@ -58,9 +58,7 @@ public extension DetailPanelPresenter {
      Toggle the detail panel.
      */
     func toggleDetailPanel() {
-        withAnimation {
-            detailPanelContext.isOpen.toggle()
-        }
+        detailPanelContext.isOpen.toggle()
     }
 }
 #endif
