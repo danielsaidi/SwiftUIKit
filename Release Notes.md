@@ -3,13 +3,15 @@
 
 ## 2.4
 
+This view adds new features and ways to work with sidebars and detail panels in macOS.
+
 ### ✨ New features
 
 * `FormActionButtonStyle` now has mutable properties.
 * `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
-* `View+NavigationTitleView` is a new extension that lets you set any view as the navigation title.
+* `SidebarPresenter` is a new macOS protocol that can be used to add more sidebar functionality to the implementing type.
 
 ### 🗑 Deprecations
 
