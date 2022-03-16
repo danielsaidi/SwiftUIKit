@@ -37,7 +37,6 @@ public struct DetailPanelContainer<Content: View, Panel: View>: View {
        - isDetailPanelOpen: Whether or not the panel is open.
        - contentMinWidth: The minimum width of the main content.
        - panelMinWidth: The minimum width of the detail panel.
-       - panelMaxWidth: The maximum width of the detail panel.
        - content: The main content view.
        - panel: The panel content view.
      */
@@ -45,13 +44,11 @@ public struct DetailPanelContainer<Content: View, Panel: View>: View {
         isDetailPanelOpen: Bool,
         contentMinWidth: CGFloat = 500,
         panelMinWidth: CGFloat = 200,
-        panelMaxWidth: CGFloat = .infinity,
         @ViewBuilder content: @escaping () -> Content,
         @ViewBuilder panel: @escaping () -> Panel) {
         self.isDetailPanelOpen = isDetailPanelOpen
         self.contentMinWidth = contentMinWidth
         self.panelMinWidth = panelMinWidth
-        self.panelMaxWidth = panelMaxWidth
         self.content = content
         self.panel = panel
     }
@@ -61,7 +58,6 @@ public struct DetailPanelContainer<Content: View, Panel: View>: View {
     private let contentMinWidth: CGFloat
     private let panel: () -> Panel
     private let panelMinWidth: CGFloat
-    private let panelMaxWidth: CGFloat
     
     public var body: some View {
         HSplitView {
@@ -72,7 +68,7 @@ public struct DetailPanelContainer<Content: View, Panel: View>: View {
             
             panel()
                 .frame(minWidth: isDetailPanelOpen ? panelMinWidth : 0)
-                .frame(maxWidth: isDetailPanelOpen ? panelMaxWidth : 0)
+                .frame(maxWidth: isDetailPanelOpen ? .infinity : 0)
                 .animation(.none, value: isDetailPanelOpen)
         }
     }
