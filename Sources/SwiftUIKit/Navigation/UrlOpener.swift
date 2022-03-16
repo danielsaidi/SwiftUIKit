@@ -14,14 +14,11 @@ import SwiftUI
  
  The default implementation uses the shared application when
  you call it in `iOS`. It currently has no implementation on
- the other platforms.
+ other platforms and just prints an assertion warning.
  */
 public protocol UrlOpener {
     
     typealias OpenUrlCompletion = (Bool) -> Void
-    
-    func canOpen(_ url: URL) -> Bool
-    func tryOpen(_ url: URL, completion: OpenUrlCompletion)
 }
 
 

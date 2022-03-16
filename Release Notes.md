@@ -11,7 +11,11 @@ This view adds new features and ways to work with sidebars and detail panels in 
 * `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
-* `SidebarPresenter` is a new macOS protocol that can be used to add more sidebar functionality to the implementing type.
+* `DetailPanel` is a new macOS view that mimics a trailing detail panel.
+* `DetailPanelContainer` is a new macOS view with a main content view and a trailing detail panel.
+* `DetailPanelContext` is a new macOS class that can be used with the new `DetailPanelPresenter`.
+* `DetailPanelPresenter` is a new macOS protocol that can be implemented to add detail panel functionality to the implementing type.
+* `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
 
 ### 🗑 Deprecations
 
@@ -21,12 +25,18 @@ This view adds new features and ways to work with sidebars and detail panels in 
 * `View+FullScreenCover` `fullScreenCover(context:)` has been renamed to `fullScreenCover(_ :)`.
 * `View+Sheet` `sheet(context:)` has been renamed to `sheet(_ :)`.
 
+### 💥 Breaking Changes
+
+* The `UrlOpener` functions are no longer part of the protocol definition.
+
+
 
 ## 2.3.3
 
 ### ✨ New features
 
 * `DocumentPresenter` has a new `canRenameDocument` function.
+
 
 
 ## 2.3.2
@@ -41,6 +51,7 @@ This view adds new features and ways to work with sidebars and detail panels in 
 * `ListButtonLink` has been renamed to `ListNavigationButton`.
 
 
+
 ## 2.3.1
 
 This release adjust the `ListToggle`.
@@ -48,6 +59,7 @@ This release adjust the `ListToggle`.
 ### 💡 Behavior changes
 
 * `ListToggle` now applies `.labelsHidden()` to the toggle, to make it take up less space.
+
 
 
 ## 2.3
