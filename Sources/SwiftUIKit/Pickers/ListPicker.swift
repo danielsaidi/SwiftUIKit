@@ -98,7 +98,6 @@ private extension View {
     }
 }
 
-#if os(iOS) || os(tvOS)
 struct ListPicker_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -155,4 +154,3 @@ struct ListPicker_Previews: PreviewProvider {
         ]
     }
 }
-#endif

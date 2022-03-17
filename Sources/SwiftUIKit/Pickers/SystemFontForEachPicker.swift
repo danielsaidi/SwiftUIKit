@@ -1,5 +1,5 @@
 //
-//  SystemFontPicker.swift
+//  SystemFontForEachPicker.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-03-17.
@@ -15,7 +15,7 @@ import SwiftUI
  The reason why this is not just a regular `Picker`, is that
  regular pickers don't show custom fonts.
  */
-public struct SystemFontPicker: View {
+public struct SystemFontForEachPicker: View {
     
     /**
      Create a font list picker.
@@ -67,9 +67,7 @@ public struct SystemFontPicker: View {
     }
 }
 
-
-#if os(iOS) || os(tvOS)
-struct SystemFontPicker_Previews: PreviewProvider {
+struct SystemFontForEachPicker_Previews: PreviewProvider {
     
     struct Preview: View {
         
@@ -77,8 +75,10 @@ struct SystemFontPicker_Previews: PreviewProvider {
         
         var body: some View {
             NavigationView {
-                SystemFontPicker(
-                    selectedFontName: $font)
+                List {
+                    SystemFontForEachPicker(
+                        selectedFontName: $font)
+                }
             }
         }
     }
@@ -87,4 +87,3 @@ struct SystemFontPicker_Previews: PreviewProvider {
         Preview()
     }
 }
-#endif

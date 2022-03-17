@@ -15,8 +15,8 @@ import SwiftUI
  The reason why this is not just a regular `Picker`, is that
  regular pickers don't show custom fonts.
  
- If you don't want a `List`, use the plain `SystemFontPicker`
- instead, which just renders a `ForEach` with a.
+ If you don't want a `List`, use a `SystemFontForEachPicker`
+ instead, which just renders font items within a `ForEach`.
  */
 public struct SystemFontListPicker: View {
     
@@ -76,7 +76,6 @@ public struct SystemFontListPicker: View {
 }
 
 
-#if os(iOS) || os(tvOS)
 struct SystemFontListPicker_Previews: PreviewProvider {
     
     struct Preview: View {
@@ -96,4 +95,3 @@ struct SystemFontListPicker_Previews: PreviewProvider {
         Preview()
     }
 }
-#endif

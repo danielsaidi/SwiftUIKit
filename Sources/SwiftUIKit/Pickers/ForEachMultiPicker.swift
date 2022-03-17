@@ -67,6 +67,18 @@ private extension ForEachMultiPicker {
     }
 }
 
+private extension View {
+    
+    @ViewBuilder
+    func withTitle(_ title: String) -> some View {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        self.navigationBarTitle(title)
+        #else
+        self
+        #endif
+    }
+}
+
 struct ForEachMultiPicker_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -87,7 +99,7 @@ struct ForEachMultiPicker_Previews: PreviewProvider {
                                 Text(item.name)
                             }
                         }
-                }.navigationBarTitle("Pick multiple items")
+                }.withTitle("Pick multiple items")
             }
         }
     }
