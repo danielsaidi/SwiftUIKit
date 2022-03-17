@@ -3,7 +3,7 @@
 
 ## 2.4
 
-This view adds new features and ways to work with sidebars and detail panels in macOS.
+This view adds new features and ways to work with sidebars, detail panels and urls in macOS.
 
 ### ✨ New features
 
@@ -16,6 +16,7 @@ This view adds new features and ways to work with sidebars and detail panels in 
 * `DetailPanelContext` is a new macOS class that can be used with the new `DetailPanelPresenter`.
 * `DetailPanelPresenter` is a new macOS protocol that can be implemented to add detail panel functionality to the implementing type.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
+* `UrlOpener` now supports macOS as well.
 
 ### 🗑 Deprecations
 

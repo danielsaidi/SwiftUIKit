@@ -18,60 +18,85 @@ import SwiftUI
  */
 public protocol UrlOpener {
     
-    typealias OpenUrlCompletion = (Bool) -> Void
+    typealias OpenUrlCompletion = (_ success: Bool) -> Void
 }
 
 
-// MARK: - Default Implementations
+// MARK: - Public Functionality
 
 public extension UrlOpener {
     
+    /**
+     Whether or not the opener can open the provided `url`.
+     */
     func canOpen(_ url: URL) -> Bool {
         #if os(iOS)
         return app.canOpenURL(url)
+        #elseif os(macOS)
+        return true
         #else
-        assertionFailure("Not yet implemented")
-        return false
+        return failForUnsupportedPlatform()
         #endif
     }
     
-    func tryOpen(_ url: URL, completion: OpenUrlCompletion) {
-        #if os(iOS)
-        app.open(url, options: [:], completionHandler: nil)
-        #else
-        assertionFailure("Not yet implemented")
-        #endif
-    }
-}
-
-
-// MARK: - Convenience Functions
-
-public extension UrlOpener {
-    
-    #if os(iOS)
-    var app: UIApplication { .shared }
-    #endif
-    
+    /**
+     Whether or not the opener can open the provided `url`.
+     */
     func canOpen(_ url: URL?) -> Bool {
         guard let url = url else { return false }
         return canOpen(url)
     }
     
+    /**
+     Whether or not the opener can open the provided url.
+     */
     func canOpen(urlString: String?) -> Bool {
         canOpen(URL(string: urlString ?? ""))
     }
     
-    func tryOpen(_ url: URL) {
-        tryOpen(url) { _ in }
+    /**
+     Try opening the provided `url`.
+     */
+    func tryOpen(_ url: URL, completion: @escaping OpenUrlCompletion = { _ in }) {
+        #if os(iOS)
+        app.open(url, options: [:], completionHandler: completion)
+        #elseif os(macOS)
+        completion(workspace.open(url))
+        #else
+        return failForUnsupportedPlatform()
+        #endif
     }
     
-    func tryOpen(_ url: URL?, completion: OpenUrlCompletion = { _ in }) {
+    /**
+     Try opening the provided `url`.
+     */
+    func tryOpen(_ url: URL?, completion: @escaping OpenUrlCompletion = { _ in }) {
         guard let url = url else { return completion(false) }
         tryOpen(url, completion: completion)
     }
     
-    func tryOpen(urlString: String?, completion: OpenUrlCompletion = { _ in }) {
+    /**
+     Try opening the provided url.
+     */
+    func tryOpen(urlString: String?, completion: @escaping OpenUrlCompletion = { _ in }) {
         tryOpen(URL(string: urlString ?? ""), completion: completion)
+    }
+}
+
+
+// MARK: - Private Functionality
+
+private extension UrlOpener {
+        
+    #if os(iOS)
+    var app: UIApplication { .shared }
+    #elseif os(macOS)
+    var workspace: NSWorkspace { .shared }
+    #endif
+        
+    @discardableResult
+    func failForUnsupportedPlatform() -> Bool {
+        assertionFailure("UrlOpener: Unsupported platform")
+        return false
     }
 }
