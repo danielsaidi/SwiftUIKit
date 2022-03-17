@@ -1,5 +1,5 @@
 //
-//  MultiPicker.swift
+//  ListMultiPicker.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-20.
@@ -14,8 +14,7 @@ import SwiftUI
  
  You can use this view instead of the native SwiftUI `Picker`
  to get more control over the list item views. The view uses
- the `listItem` function to build an item view for each item
- in the provided `items` or `sections`.
+ the provided `listItem` to build an item view for each item.
  */
 public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     

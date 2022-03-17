@@ -74,9 +74,12 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
         List {
             ForEach(sections) { section in
                 Section(header: section.header) {
-                    ForEach(section.items) {
-                        listItemView(for: $0)
-                    }
+                    ForEachPicker(
+                        items: section.items,
+                        selection: selection,
+                        animatedSelection: animatedSelection,
+                        dismissAfterPick: dismissAfterPick,
+                        listItem: listItem)
                 }
             }
         }.withTitle(title)
@@ -92,47 +95,6 @@ private extension View {
         #else
         self
         #endif
-    }
-}
-
-private extension ListPicker {
-    
-    func listItemView(for item: Item) -> some View {
-        Button(action: { select(item) }, label: {
-            listItem(item, isSelected(item))
-        }).buttonStyle(.plain)
-    }
-}
-
-private extension ListPicker {
-    
-    var seletedId: Item.ID {
-        selection.wrappedValue.id
-    }
-    
-    func isSelected(_ item: Item) -> Bool {
-        seletedId == item.id
-    }
-    
-    func select(_ item: Item) {
-        if animatedSelection {
-            selectWithAnimation(item)
-        } else {
-            selectWithoutAnimation(item)
-        }
-    }
-    
-    func selectWithAnimation(_ item: Item) {
-        withAnimation {
-            selectWithoutAnimation(item)
-        }
-    }
-    
-    func selectWithoutAnimation(_ item: Item) {
-        selection.wrappedValue = item
-        if dismissAfterPick {
-            dismiss()
-        }
     }
 }
 

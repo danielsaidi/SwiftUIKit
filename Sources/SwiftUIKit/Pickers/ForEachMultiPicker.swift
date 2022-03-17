@@ -1,47 +1,38 @@
 //
-//  ForEachPicker.swift
+//  ForEachMultiPicker.swift
 //  SwiftUIKit
 //
-//  Created by Daniel Saidi on 2022-03-17.
-//  Copyright © 2022 Daniel Saidi. All rights reserved.
+//  Created by Daniel Saidi on 2021-08-20.
+//  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
 /**
  This generic picker lists `Identifiable` items in a SwiftUI
- `ForEach` and binds its `selection` to an external value.
+ `List` and binds its `selection` to an external value.
  
  You can use this view instead of the native SwiftUI `Picker`
  to get more control over the list item views. The view uses
- the provided `listItem` to build an item view for each item.
- 
- If `dismissAfterPick` is `true` the picker dismisses itself
- automatically when an item is picked. This is nice when the
- picker is used in e.g. a sheet.
+ the `listItem` function to build an item view for each item
+ in the provided `items` or `sections`.
  */
-public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
+public struct ForEachMultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
     /**
      Create a picker with a single section.
      */
     public init(
         items: [Item],
-        selection: Binding<Item>,
-        animatedSelection: Bool = false,
-        dismissAfterPick: Bool = true,
+        selection: Binding<[Item]>,
         listItem: @escaping ItemViewBuilder) {
         self.items = items
         self.selection = selection
-        self.animatedSelection = animatedSelection
-        self.dismissAfterPick = dismissAfterPick
         self.listItem = listItem
     }
     
     private let items: [Item]
-    private let selection: Binding<Item>
-    private let animatedSelection: Bool
-    private let dismissAfterPick: Bool
+    private let selection: Binding<[Item]>
     private let listItem: ItemViewBuilder
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
@@ -50,47 +41,33 @@ public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, Dismissab
     
     public var body: some View {
         ForEach(items) { item in
-            Button(action: { select(item) }, label: {
+            Button(action: { toggleSelection(for: item) }, label: {
                 listItem(item, isSelected(item))
             }).buttonStyle(.plain)
         }
     }
 }
 
-private extension ForEachPicker {
+private extension ForEachMultiPicker {
     
-    var seletedId: Item.ID {
-        selection.wrappedValue.id
+    var seletedIds: [Item.ID] {
+        selection.wrappedValue.map { $0.id }
     }
     
     func isSelected(_ item: Item) -> Bool {
-        seletedId == item.id
+        seletedIds.contains(item.id)
     }
     
-    func select(_ item: Item) {
-        if animatedSelection {
-            selectWithAnimation(item)
+    func toggleSelection(for item: Item) {
+        if isSelected(item) {
+            selection.wrappedValue = selection.wrappedValue.filter { $0.id != item.id }
         } else {
-            selectWithoutAnimation(item)
-        }
-    }
-    
-    func selectWithAnimation(_ item: Item) {
-        withAnimation {
-            selectWithoutAnimation(item)
-        }
-    }
-    
-    func selectWithoutAnimation(_ item: Item) {
-        selection.wrappedValue = item
-        if dismissAfterPick {
-            dismiss()
+            selection.wrappedValue.append(item)
         }
     }
 }
 
-#if os(iOS) || os(tvOS)
-struct ForEachPicker_Previews: PreviewProvider {
+struct ForEachMultiPicker_Previews: PreviewProvider {
     
     static var previews: some View {
         Preview()
@@ -98,19 +75,19 @@ struct ForEachPicker_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var selection = PreviewItem.all[0]
+        @State private var selection = [PreviewItem.all[0]]
         
         var body: some View {
             NavigationView {
                 List {
-                    ForEachPicker(
+                    ForEachMultiPicker(
                         items: PreviewItem.all,
                         selection: $selection) { item, isSelected in
                             ListSelectItem(isSelected: isSelected) {
                                 Text(item.name)
                             }
                         }
-                }.navigationBarTitle("Pick an item")
+                }.navigationBarTitle("Pick multiple items")
             }
         }
     }
@@ -140,4 +117,3 @@ struct ForEachPicker_Previews: PreviewProvider {
         ]
     }
 }
-#endif

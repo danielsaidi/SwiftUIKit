@@ -3,7 +3,7 @@
 
 ## 2.4
 
-This view adds new features and ways to work with sidebars, detail panels and urls in macOS.
+This view adds a bunch of new views and features as well as ways to work with sidebars, detail panels and urls in macOS.
 
 ### ✨ New features
 
@@ -15,6 +15,7 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 * `DetailPanelHeader` is a new macOS view that can adjust the provided text to look like a native detail panel header. 
 * `DetailPanelPresenter` is a new macOS protocol that can be implemented to add detail panel functionality to the implementing type.
 * `ForEachPicker` is a new view that works like the `ListPicker`, but doesn't wrap the content in a `List`.
+* `ForEachMultiPicker` is a new view that works like the `MultiListPicker`, but doesn't wrap the content in a `List`.
 * `Form` has a new `detailPanelForm` modifier.
 * `FormActionButtonStyle` now has mutable properties.
 * `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
@@ -32,6 +33,7 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 ### 💡 Behavior changes
 
 * `ListItem` now only applies a min height on iOS.
+* `ListPicker` now uses a `ForEach` picker for each section.
 
 ### 🗑 Deprecations
 
@@ -44,7 +46,7 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 
 ### 💥 Breaking Changes
 
-* The old `Picker` has been removed.
+* The old `Picker` has been removed, since it caused conflicts with SwiftUI.
 * The `UrlOpener` functions are no longer part of the protocol definition.
 
 
