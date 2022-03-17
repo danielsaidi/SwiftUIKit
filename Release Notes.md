@@ -33,7 +33,8 @@ This view adds a bunch of new views and features as well as ways to work with si
 ### 💡 Behavior changes
 
 * `ListItem` now only applies a min height on iOS.
-* `ListPicker` now uses a `ForEach` picker for each section.
+* `ListPicker` now uses a `ForEachPicker` for each section.
+* `ListMultiPicker` now uses a `ForEachMultiPicker` for each section.
 
 ### 🗑 Deprecations
 

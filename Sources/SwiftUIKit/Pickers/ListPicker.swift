@@ -116,7 +116,7 @@ struct ListPicker_Previews: PreviewProvider {
         var body: some View {
             NavigationView {
                 ListPicker(
-                    title: "Pick something",
+                    title: "Pick an item",
                     sections: [
                         section(""),
                         section("Another section")
@@ -153,20 +153,6 @@ struct ListPicker_Previews: PreviewProvider {
             PreviewItem(name: "Item #14"),
             PreviewItem(name: "Item #15")
         ]
-    }
-
-    struct PreviewPickerItem: View, ListPickerItem {
-        
-        let item: PreviewItem
-        let isSelected: Bool
-        
-        var body: some View {
-            HStack {
-                Text(item.name)
-                Spacer()
-                checkmark
-            }
-        }
     }
 }
 #endif

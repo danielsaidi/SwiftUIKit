@@ -60,9 +60,10 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
         List {
             ForEach(sections) { section in
                 Section(header: section.header) {
-                    ForEach(section.items) {
-                        listItemView(for: $0)
-                    }
+                    ForEachMultiPicker(
+                        items: section.items,
+                        selection: selection,
+                        listItem: listItem)
                 }
             }.withTitle(title)
         }
@@ -78,34 +79,6 @@ private extension View {
         #else
         self
         #endif
-    }
-}
-
-private extension ListMultiPicker {
-    
-    func listItemView(for item: Item) -> some View {
-        Button(action: { toggleSelection(for: item) }, label: {
-            listItem(item, isSelected(item))
-        })
-    }
-}
-
-private extension ListMultiPicker {
-    
-    var seletedIds: [Item.ID] {
-        selection.wrappedValue.map { $0.id }
-    }
-    
-    func isSelected(_ item: Item) -> Bool {
-        seletedIds.contains(item.id)
-    }
-    
-    func toggleSelection(for item: Item) {
-        if isSelected(item) {
-            selection.wrappedValue = selection.wrappedValue.filter { $0.id != item.id }
-        } else {
-            selection.wrappedValue.append(item)
-        }
     }
 }
 
@@ -126,15 +99,19 @@ struct ListMultiPicker_Previews: PreviewProvider {
         }
         
         var body: some View {
-            ListMultiPicker(
-                title: "Pick something",
-                sections: [
-                    section(""),
-                    section("Another section")
-                ],
-                selection: $selection) { item, isSelected in
-                    PreviewPickerItem(item: item, isSelected: isSelected)
-                }
+            NavigationView {
+                ListMultiPicker(
+                    title: "Pick multiple items",
+                    sections: [
+                        section(""),
+                        section("Another section")
+                    ],
+                    selection: $selection) { item, isSelected in
+                        ListSelectItem(isSelected: isSelected) {
+                            Text(item.name)
+                        }
+                    }
+            }
         }
     }
     
@@ -149,31 +126,7 @@ struct ListMultiPicker_Previews: PreviewProvider {
             PreviewItem(name: "Item #2"),
             PreviewItem(name: "Item #3"),
             PreviewItem(name: "Item #4"),
-            PreviewItem(name: "Item #5"),
-            PreviewItem(name: "Item #6"),
-            PreviewItem(name: "Item #7"),
-            PreviewItem(name: "Item #8"),
-            PreviewItem(name: "Item #9"),
-            PreviewItem(name: "Item #10"),
-            PreviewItem(name: "Item #11"),
-            PreviewItem(name: "Item #12"),
-            PreviewItem(name: "Item #13"),
-            PreviewItem(name: "Item #14"),
-            PreviewItem(name: "Item #15")
+            PreviewItem(name: "Item #5")
         ]
-    }
-
-    struct PreviewPickerItem: View, ListPickerItem {
-        
-        let item: PreviewItem
-        let isSelected: Bool
-        
-        var body: some View {
-            HStack {
-                Text(item.name)
-                Spacer()
-                checkmark
-            }
-        }
     }
 }
