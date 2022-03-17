@@ -1,52 +1,51 @@
 //
-//  SystemFontForEachPicker.swift
+//  SystemFontListPicker.swift
 //  SwiftUIKit
 //
-//  Created by Daniel Saidi on 2022-03-17.
-//  Copyright © 2022 Daniel Saidi. All rights reserved.
+//  Created by Daniel Saidi on 2021-11-23.
+//  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
 /**
- This system font picker renders a plain `ForEach` view that
- lists a collection of fonts, of which one can be selected.
+ This system font picker renders a `List` that iterates over
+ a collection of fonts, of which one can be selected.
  
  The reason why this is not just a regular `Picker`, is that
- regular pickers don't show custom fonts.
+ regular pickers don't show custom fonts on some platforms.
+ 
+ If you don't want a `List`, use a `SystemFontForEachPicker`
+ instead, which just renders font items within a `ForEach`.
  */
-public struct SystemFontForEachPicker: View {
+public struct SystemFontListPicker: View {
     
     /**
      Create a font list picker.
      
      - Parameters:
        - selectedFontName: The selected font name.
-       - fonts: The fonts to display in the list, by default `all`.
+       - fonts: The fonts to display in the list, by default `all` with the selected font topmost.
        - itemFontSize: The font size to use in the list items.
-       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `false`.
+       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `true`.
      */
     public init(
         selectedFontName: Binding<String>,
-        fonts: [SystemFontPickerFont] = .all,
+        fonts: [SystemFontPickerFont]? = nil,
         itemFontSize: CGFloat = 20,
-        dismissAfterPick: Bool = false) {
+        dismissAfterPick: Bool = true) {
         self._selectedFontName = selectedFontName
-        self.fonts = fonts
+        self.fonts = fonts ?? .all.moveTopmost(selectedFontName.wrappedValue)
         self.itemFontSize = itemFontSize
         self.dismissAfterPick = dismissAfterPick
     }
     
+    private let fonts: [SystemFontPickerFont]
     private let itemFontSize: CGFloat
     private let dismissAfterPick: Bool
     
     @Binding
     private var selectedFontName: String
-    
-    /**
-     The fonts to present in the picker.
-     */
-    private let fonts: [SystemFontPickerFont]
     
     public var body: some View {
         let font = Binding(
@@ -54,7 +53,7 @@ public struct SystemFontForEachPicker: View {
             set: { selectedFontName = $0.fontName }
         )
         
-        ForEachPicker(
+        ListPicker(
             items: fonts,
             selection: font,
             dismissAfterPick: dismissAfterPick) { font, isSelected in
@@ -66,7 +65,19 @@ public struct SystemFontForEachPicker: View {
     }
 }
 
-struct SystemFontForEachPicker_Previews: PreviewProvider {
+private extension View {
+    
+    @ViewBuilder
+    func withTitle(_ title: String) -> some View {
+        #if os(iOS) || os(tvOS) || os(watchOS)
+        self.navigationBarTitle(title)
+        #else
+        self
+        #endif
+    }
+}
+
+struct SystemFontListPicker_Previews: PreviewProvider {
     
     struct Preview: View {
         
@@ -74,10 +85,9 @@ struct SystemFontForEachPicker_Previews: PreviewProvider {
         
         var body: some View {
             NavigationView {
-                List {
-                    SystemFontForEachPicker(
-                        selectedFontName: $font)
-                }
+                SystemFontListPicker(
+                    selectedFontName: $font)
+                .withTitle("Pick a font")
             }
         }
     }

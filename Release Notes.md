@@ -22,6 +22,7 @@ This view adds a bunch of new views and features as well as ways to work with si
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
+* `SystemFontPicker` is a new view that uses a `Picker`.
 * `SystemFontForEachPicker` is a new view that uses a `ForEach` picker instead of a `List`.
 * `SystemFontListPicker` now has a `fonts` init parameter.
 * `SystemFontListPicker` now has an `itemFontSize` init parameter.
