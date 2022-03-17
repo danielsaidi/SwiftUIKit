@@ -23,17 +23,22 @@ import SwiftUI
 public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
     /**
-     Create a picker with a single section.
+     Create a list picker with a single section.
+     
+     - Parameters:
+       - items: The items to display in the picker.
+       - selection: The picker selection.
+       - animatedSelection: Whether or not to animate selection changes.
+       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `false`.
+       - listItem: A view builder for each picker item.
      */
     public init(
-        title: String,
         items: [Item],
         selection: Binding<Item>,
         animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
         self.init(
-            title: title,
             sections: [ListPickerSection(title: "", items: items)],
             selection: selection,
             animatedSelection: animatedSelection,
@@ -42,16 +47,21 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
     }
     
     /**
-     Create a picker with multiple sections.
+     Create a list picker with multiple sections.
+     
+     - Parameters:
+       - sections: The item sections to display in the picker.
+       - selection: The picker selection.
+       - animatedSelection: Whether or not to animate selection changes.
+       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `false`.
+       - listItem: A view builder for each picker item.
      */
     public init(
-        title: String,
         sections: [ListPickerSection<Item>],
         selection: Binding<Item>,
         animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
-        self.title = title
         self.sections = sections
         self.selection = selection
         self.animatedSelection = animatedSelection
@@ -59,7 +69,6 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
         self.listItem = listItem
     }
     
-    private let title: String
     private let sections: [ListPickerSection<Item>]
     private let selection: Binding<Item>
     private let animatedSelection: Bool
@@ -82,7 +91,7 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
                         listItem: listItem)
                 }
             }
-        }.withTitle(title)
+        }
     }
 }
 
@@ -115,7 +124,6 @@ struct ListPicker_Previews: PreviewProvider {
         var body: some View {
             NavigationView {
                 ListPicker(
-                    title: "Pick an item",
                     sections: [
                         section(""),
                         section("Another section")
@@ -124,7 +132,7 @@ struct ListPicker_Previews: PreviewProvider {
                         ListSelectItem(isSelected: isSelected) {
                             Text(item.name)
                         }
-                    }
+                    }.withTitle("Pick an item")
             }
         }
     }

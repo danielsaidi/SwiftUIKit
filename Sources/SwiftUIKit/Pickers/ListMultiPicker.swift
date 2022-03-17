@@ -22,12 +22,10 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
      Create a picker with a single section.
      */
     public init(
-        title: String,
         items: [Item],
         selection: Binding<[Item]>,
         listItem: @escaping ItemViewBuilder) {
         self.init(
-            title: title,
             sections: [ListPickerSection(title: "", items: items)],
             selection: selection,
             listItem: listItem)
@@ -37,17 +35,14 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
      Create a picker with multiple sections.
      */
     public init(
-        title: String,
         sections: [ListPickerSection<Item>],
         selection: Binding<[Item]>,
         listItem: @escaping ItemViewBuilder) {
-        self.title = title
         self.sections = sections
         self.selection = selection
         self.listItem = listItem
     }
     
-    private let title: String
     private let sections: [ListPickerSection<Item>]
     private let selection: Binding<[Item]>
     private let listItem: ItemViewBuilder
@@ -65,7 +60,7 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
                         selection: selection,
                         listItem: listItem)
                 }
-            }.withTitle(title)
+            }
         }
     }
 }
@@ -101,7 +96,6 @@ struct ListMultiPicker_Previews: PreviewProvider {
         var body: some View {
             NavigationView {
                 ListMultiPicker(
-                    title: "Pick multiple items",
                     sections: [
                         section("First section"),
                         section("Another section")
@@ -110,7 +104,7 @@ struct ListMultiPicker_Previews: PreviewProvider {
                         ListSelectItem(isSelected: isSelected) {
                             Text(item.name)
                         }
-                    }
+                    }.withTitle("Pick multiple items")
             }
         }
     }

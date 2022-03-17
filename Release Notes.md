@@ -41,6 +41,9 @@ This view adds a bunch of new views and features as well as ways to work with si
 
 * `BlurView` and `View+Blur` is deprecated. Use the native material approach instead.
 * `FontListPicker` has been renamed to `SystemFontListPicker`.
+* `ListPicker` no longer has a `title`.
+* `ListMultiPicker` no longer has a `title`.
+* `SystemFontListPicker` no longer has a `title`.
 * `Presentation/Toast` has been deprecated. Use the new [SystemNotification](https://github.com/danielsaidi/SystemNotification) library instead.
 * `View+Alert` `alert(context:)` has been renamed to `alert(_ :)`.
 * `View+FullScreenCover` `fullScreenCover(context:)` has been renamed to `fullScreenCover(_ :)`.

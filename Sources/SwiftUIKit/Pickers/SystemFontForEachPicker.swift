@@ -24,13 +24,13 @@ public struct SystemFontForEachPicker: View {
        - selectedFontName: The selected font name.
        - fonts: The fonts to display in the list, by default `all`.
        - itemFontSize: The font size to use in the list items.
-       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `true`.
+       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `false`.
      */
     public init(
         selectedFontName: Binding<String>,
         fonts: [SystemFontPickerFont] = .all,
         itemFontSize: CGFloat = 20,
-        dismissAfterPick: Bool = true) {
+        dismissAfterPick: Bool = false) {
         self._selectedFontName = selectedFontName
         self.fonts = fonts
         self.itemFontSize = itemFontSize
@@ -47,7 +47,6 @@ public struct SystemFontForEachPicker: View {
      The fonts to present in the picker.
      */
     private let fonts: [SystemFontPickerFont]
-    
     
     public var body: some View {
         let font = Binding(
