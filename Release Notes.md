@@ -26,6 +26,7 @@ This view adds a bunch of new views and features as well as ways to work with si
 * `SystemFontListPicker` now has a `fonts` init parameter.
 * `SystemFontListPicker` now has an `itemFontSize` init parameter.
 * `SystemFontListPicker` now has a `dismissAfterPick` init parameter.
+* `SystemFontPickerFont`s initializer and properties are now public.
 * `SystemFontPickerFont` is a new public struct that is used by the various font pickers.
 * `SystemFontPickerItem` is a new view that can be used to display a picked system font.
 * `Text` has a new `detailPanelHeader` modifier.

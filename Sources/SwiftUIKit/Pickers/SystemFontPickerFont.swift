@@ -17,14 +17,14 @@ import Foundation
  */
 public struct SystemFontPickerFont: Identifiable {
     
-    init(fontName: String) {
+    public init(fontName: String) {
         let fontName = fontName.capitalized
         self.fontName = fontName
         self.fontDisplayName = Self.displayName(for: fontName)
     }
 
-    let fontName: String
-    let fontDisplayName: String
+    public let fontName: String
+    public let fontDisplayName: String
     
     public var id: String { fontName.lowercased() }
     
