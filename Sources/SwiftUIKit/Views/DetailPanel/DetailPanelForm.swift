@@ -30,7 +30,17 @@ public struct DetailPanelForm<Content: View>: View {
     public var body: some View {
         Form {
             content()
-        }.padding(.trailing, 10)
+        }.detailPanelForm()
+    }
+}
+
+public extension Form {
+    
+    /**
+     Apply a detail panel form style to the form.
+     */
+    func detailPanelForm() -> some View {
+        self.padding(.trailing, 10)
     }
 }
 

@@ -11,12 +11,15 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 * `DetailPanelContainer` is a new macOS view with a main content view and a trailing detail panel.
 * `DetailPanelContext` is a new macOS class that can be used with the new `DetailPanelPresenter`.
 * `DetailPanelForm` is a new macOS view that can be used to wrap form content within a `SideBar`.
+* `DetailPanelHeader` is a new macOS view that can adjust the provided text to look like a native detail panel header. 
 * `DetailPanelPresenter` is a new macOS protocol that can be implemented to add detail panel functionality to the implementing type.
+* `Form` has a new `detailPanelForm` modifier.
 * `FormActionButtonStyle` now has mutable properties.
 * `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
+* `Text` has a new `detailPanelHeader` modifier.
 * `UrlOpener` now supports macOS as well.
 
 ### 🗑 Deprecations
