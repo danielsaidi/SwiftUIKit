@@ -48,15 +48,13 @@ public extension Collection where Element == SystemFontPickerFont {
     }
     
     /**
-     Get all available system fonts with a certain one moved
-     topmost. This is useful in certain situations e.g. when
-     screen estate is small.
+     Move a certain font topmost in the list.
      */
-    static func all(topmost: String) -> [SystemFontPickerFont] {
+    func moveTopmost(_ topmost: String) -> [SystemFontPickerFont] {
         let topmost = topmost.trimmingCharacters(in: .whitespaces)
-        let exists = all.contains { $0.fontName.lowercased() == topmost.lowercased() }
-        guard exists else { return all }
-        var filtered = all.filter { $0.fontName.lowercased() != topmost.lowercased() }
+        let exists = contains { $0.fontName.lowercased() == topmost.lowercased() }
+        guard exists else { return Array(self) }
+        var filtered = filter { $0.fontName.lowercased() != topmost.lowercased() }
         let new = SystemFontPickerFont(fontName: topmost)
         filtered.insert(new, at: 0)
         return filtered

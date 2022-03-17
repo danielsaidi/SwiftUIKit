@@ -29,7 +29,7 @@ public struct SystemFontListPicker: View {
         selectedFontName: Binding<String>) {
         self.title = title
         self._selectedFontName = selectedFontName
-        self.fonts = .all(topmost: selectedFontName.wrappedValue)
+        self.fonts = .all.moveTopmost(selectedFontName.wrappedValue)
     }
     
     /**
