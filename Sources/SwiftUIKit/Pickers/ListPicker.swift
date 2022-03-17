@@ -19,6 +19,9 @@ import SwiftUI
  
  If `dismissAfterPick` is `true` the picker dismisses itself
  automatically when an item is picked.
+ 
+ Note that the view is only tested on iOS and may look weird
+ on other platforms.
  */
 public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
@@ -100,7 +103,7 @@ private extension ListPicker {
     func listItemView(for item: Item) -> some View {
         Button(action: { select(item) }, label: {
             listItem(item, isSelected(item))
-        })
+        }).buttonStyle(.plain)
     }
 }
 

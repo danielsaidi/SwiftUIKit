@@ -20,12 +20,14 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
+* `SystemFontPickerFont` is a new public struct that is used by the various font pickers.
 * `Text` has a new `detailPanelHeader` modifier.
 * `UrlOpener` now supports macOS as well.
 
 ### 🗑 Deprecations
 
 * `BlurView` and `View+Blur` is deprecated. Use the native material approach instead.
+* `FontListPicker` has been renamed to `SystemFontListPicker`.
 * `Presentation/Toast` has been deprecated. Use the new [SystemNotification](https://github.com/danielsaidi/SystemNotification) library instead.
 * `View+Alert` `alert(context:)` has been renamed to `alert(_ :)`.
 * `View+FullScreenCover` `fullScreenCover(context:)` has been renamed to `fullScreenCover(_ :)`.
