@@ -30,9 +30,20 @@ public struct ListItem<Content: View>: View {
         HStack {
             content().padding(.vertical, 5)
         }
-        .frame(minHeight: 45)
+        .frame(minHeight: minHeight)
         .frame(maxWidth: .infinity, alignment: .leading)
         .contentShape(Rectangle())
+    }
+}
+
+private extension ListItem {
+    
+    var minHeight: CGFloat? {
+        #if os(iOS)
+        return 45
+        #else
+        return nil
+        #endif
     }
 }
 

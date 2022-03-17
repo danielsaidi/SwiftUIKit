@@ -14,15 +14,24 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 * `DetailPanelForm` is a new macOS view that can be used to wrap form content within a `SideBar`.
 * `DetailPanelHeader` is a new macOS view that can adjust the provided text to look like a native detail panel header. 
 * `DetailPanelPresenter` is a new macOS protocol that can be implemented to add detail panel functionality to the implementing type.
+* `ForEachPicker` is a new view that works like the `ListPicker`, but doesn't wrap the content in a `List`.
 * `Form` has a new `detailPanelForm` modifier.
 * `FormActionButtonStyle` now has mutable properties.
 * `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
+* `SystemFontListPicker` now has a `fonts` init parameter.
+* `SystemFontListPicker` now has an `itemFontSize` init parameter.
+* `SystemFontListPicker` now has a `dismissAfterPick` init parameter.
 * `SystemFontPickerFont` is a new public struct that is used by the various font pickers.
+* `SystemFontPickerItem` is a new view that can be used to display a picked system font.
 * `Text` has a new `detailPanelHeader` modifier.
 * `UrlOpener` now supports macOS as well.
+
+### 💡 Behavior changes
+
+* `ListItem` now only applies a min height on iOS.
 
 ### 🗑 Deprecations
 
@@ -35,6 +44,7 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 
 ### 💥 Breaking Changes
 
+* The old `Picker` has been removed.
 * The `UrlOpener` functions are no longer part of the protocol definition.
 
 

@@ -1,16 +1,16 @@
 //
-//  ListPicker.swift
+//  ForEachPicker.swift
 //  SwiftUIKit
 //
-//  Created by Daniel Saidi on 2021-08-20.
-//  Copyright © 2021 Daniel Saidi. All rights reserved.
+//  Created by Daniel Saidi on 2022-03-17.
+//  Copyright © 2022 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
 /**
  This generic picker lists `Identifiable` items in a SwiftUI
- `List` and binds its `selection` to an external value.
+ `ForEach` and binds its `selection` to an external value.
  
  You can use this view instead of the native SwiftUI `Picker`
  to get more control over the list item views. The view uses
@@ -20,47 +20,25 @@ import SwiftUI
  automatically when an item is picked. This is nice when the
  picker is used in e.g. a sheet.
  */
-public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
+public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
     /**
      Create a picker with a single section.
      */
     public init(
-        title: String,
         items: [Item],
         selection: Binding<Item>,
         animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
         listItem: @escaping ItemViewBuilder) {
-        self.init(
-            title: title,
-            sections: [ListPickerSection(title: "", items: items)],
-            selection: selection,
-            animatedSelection: animatedSelection,
-            dismissAfterPick: dismissAfterPick,
-            listItem: listItem)
-    }
-    
-    /**
-     Create a picker with multiple sections.
-     */
-    public init(
-        title: String,
-        sections: [ListPickerSection<Item>],
-        selection: Binding<Item>,
-        animatedSelection: Bool = false,
-        dismissAfterPick: Bool = true,
-        listItem: @escaping ItemViewBuilder) {
-        self.title = title
-        self.sections = sections
+        self.items = items
         self.selection = selection
         self.animatedSelection = animatedSelection
         self.dismissAfterPick = dismissAfterPick
         self.listItem = listItem
     }
     
-    private let title: String
-    private let sections: [ListPickerSection<Item>]
+    private let items: [Item]
     private let selection: Binding<Item>
     private let animatedSelection: Bool
     private let dismissAfterPick: Bool
@@ -71,40 +49,15 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
     @Environment(\.presentationMode) public var presentationMode
     
     public var body: some View {
-        List {
-            ForEach(sections) { section in
-                Section(header: section.header) {
-                    ForEach(section.items) {
-                        listItemView(for: $0)
-                    }
-                }
-            }
-        }.withTitle(title)
+        ForEach(items) { item in
+            Button(action: { select(item) }, label: {
+                listItem(item, isSelected(item))
+            }).buttonStyle(.plain)
+        }
     }
 }
 
-private extension View {
-    
-    @ViewBuilder
-    func withTitle(_ title: String) -> some View {
-        #if os(iOS) || os(tvOS) || os(watchOS)
-        self.navigationBarTitle(title)
-        #else
-        self
-        #endif
-    }
-}
-
-private extension ListPicker {
-    
-    func listItemView(for item: Item) -> some View {
-        Button(action: { select(item) }, label: {
-            listItem(item, isSelected(item))
-        }).buttonStyle(.plain)
-    }
-}
-
-private extension ListPicker {
+private extension ForEachPicker {
     
     var seletedId: Item.ID {
         selection.wrappedValue.id
@@ -137,7 +90,7 @@ private extension ListPicker {
 }
 
 #if os(iOS) || os(tvOS)
-struct ListPicker_Previews: PreviewProvider {
+struct ForEachPicker_Previews: PreviewProvider {
     
     static var previews: some View {
         Preview()
@@ -153,12 +106,8 @@ struct ListPicker_Previews: PreviewProvider {
         
         var body: some View {
             NavigationView {
-                ListPicker(
-                    title: "Pick something",
-                    sections: [
-                        section(""),
-                        section("Another section")
-                    ],
+                ForEachPicker(
+                    items: PreviewItem.all,
                     selection: $selection) { item, isSelected in
                         ListSelectItem(isSelected: isSelected) {
                             Text(item.name)
