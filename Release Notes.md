@@ -8,6 +8,7 @@ This view adds new features and ways to work with sidebars, detail panels and ur
 ### ✨ New features
 
 * `DetailPanel` is a new macOS view that mimics a trailing detail panel.
+* `DetailPanelButtonGroup` is a new macOS view that can be used to mimic a native, segmented button group. 
 * `DetailPanelContainer` is a new macOS view with a main content view and a trailing detail panel.
 * `DetailPanelContext` is a new macOS class that can be used with the new `DetailPanelPresenter`.
 * `DetailPanelForm` is a new macOS view that can be used to wrap form content within a `SideBar`.
