@@ -33,6 +33,12 @@ public struct SystemFontPickerFont: Identifiable {
      used if the font name is empty.
      */
     public static var systemFontDisplayName = "San Francisco"
+    
+    /**
+     The display name for the standard system font, which is
+     used if the font name is empty.
+     */
+    public static var systemFontNamePrefix = ".SFUI"
 }
 
 public extension Collection where Element == SystemFontPickerFont {
@@ -79,7 +85,7 @@ public extension SystemFontPickerFont {
     static func isSystemFontName(_ name: String) -> Bool {
         let name = name.trimmingCharacters(in: .whitespaces)
         if name.isEmpty { return true }
-        return name.uppercased().hasPrefix(".SFUI")
+        return name.uppercased().hasPrefix(systemFontNamePrefix)
     }
 }
 
