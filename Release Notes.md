@@ -5,6 +5,8 @@
 
 This view adds a bunch of new views and features as well as ways to work with sidebars, detail panels and urls in macOS.
 
+An important change is that `WebView` now wraps a `WKWebView` instead of a `SFSafariViewController`. If you want the old behavior, use the new `SafariWebView`.
+
 ### ✨ New features
 
 * `DetailPanel` is a new macOS view that mimics a trailing detail panel.
@@ -21,6 +23,7 @@ This view adds a bunch of new views and features as well as ways to work with si
 * `ListItemSubtitle` is a new view that copies its behavior from the deprecated `MenuListSubtitle`.
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
+* `SafariWebView` is a new name for the previous version of `WebView`.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
 * `SystemFontPicker` is a new view that uses a `Picker`.
 * `SystemFontForEachPicker` is a new view that uses a `ForEach` picker instead of a `List`.
@@ -38,6 +41,7 @@ This view adds a bunch of new views and features as well as ways to work with si
 * `ListItem` now only applies a min height on iOS.
 * `ListPicker` now uses a `ForEachPicker` for each section.
 * `ListMultiPicker` now uses a `ForEachMultiPicker` for each section.
+* `WebView` now wraps a `WKWebView` instead of a `SFSafariViewController`.
 
 ### 🗑 Deprecations
 
