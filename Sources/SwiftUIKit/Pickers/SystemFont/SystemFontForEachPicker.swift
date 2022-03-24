@@ -62,6 +62,7 @@ public struct SystemFontForEachPicker: View {
     }
 }
 
+#if os(iOS)
 struct SystemFontForEachPicker_Previews: PreviewProvider {
     
     struct Preview: View {
@@ -82,3 +83,4 @@ struct SystemFontForEachPicker_Previews: PreviewProvider {
         Preview()
     }
 }
+#endif

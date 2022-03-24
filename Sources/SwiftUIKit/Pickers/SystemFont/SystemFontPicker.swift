@@ -78,10 +78,14 @@ private extension View {
     
     @ViewBuilder
     func withStyle() -> some View {
+        #if os(iOS) || os(macOS)
         if #available(iOS 14.0, macOS 12.0, *) {
             self.pickerStyle(.menu)
         } else {
             self
         }
+        #else
+        self
+        #endif
     }
 }

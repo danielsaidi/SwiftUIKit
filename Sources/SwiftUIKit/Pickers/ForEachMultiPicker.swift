@@ -79,6 +79,7 @@ private extension View {
     }
 }
 
+#if os(iOS)
 struct ForEachMultiPicker_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -129,3 +130,4 @@ struct ForEachMultiPicker_Previews: PreviewProvider {
         ]
     }
 }
+#endif

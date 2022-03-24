@@ -77,6 +77,7 @@ private extension View {
     }
 }
 
+#if os(iOS)
 struct SystemFontListPicker_Previews: PreviewProvider {
     
     struct Preview: View {
@@ -96,3 +97,4 @@ struct SystemFontListPicker_Previews: PreviewProvider {
         Preview()
     }
 }
+#endif

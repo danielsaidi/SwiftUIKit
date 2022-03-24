@@ -63,7 +63,7 @@ public extension UrlOpener {
         #elseif os(macOS)
         completion(workspace.open(url))
         #else
-        return failForUnsupportedPlatform()
+        failForUnsupportedPlatform()
         #endif
     }
     
