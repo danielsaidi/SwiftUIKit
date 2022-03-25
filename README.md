@@ -20,6 +20,7 @@
 
 `SwiftUIKit` is divided into these areas:
 
+* Bridging
 * Cameras
 * Colors
 * Data
@@ -35,7 +36,7 @@
 * Styles
 * Views
 
-You can explore the sections in the [documentation][Documentation] and the demo app.
+You can explore these sections in the [documentation][Documentation] and the demo app.
 
 
 
