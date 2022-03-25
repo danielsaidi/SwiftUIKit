@@ -27,6 +27,29 @@ platform :ios do
   lane :documentation do
     sh('cd .. && fastlane/build-documentation.sh')
   end
+    
+  desc "Build documentation for GitHub pages"
+  lane :documentation_web do
+    sh('cd .. && mkdir -p Docs')
+    sh('cd .. && swift package --allow-writing-to-directory Docs \
+        generate-documentation \
+        --target SwiftUIKit \
+        --disable-indexing \
+        --transform-for-static-hosting \
+        --hosting-base-path SwiftUIKit \
+        --output-path Docs/Web')
+  end
+    
+  desc "Preview documentation for GitHub pages"
+  lane :documentation_web_preview do
+    sh('cd .. && mkdir -p Docs')
+    sh('cd .. && swift package --allow-writing-to-directory Docs \
+        preview-documentation \
+        --target SwiftUIKit \
+        --transform-for-static-hosting \
+        --hosting-base-path SwiftUIKit \
+        --output-path Docs/Web')
+  end
   
   
   # Version ================
