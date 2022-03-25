@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-/**
- This view takes up all available horizontal space then puts
- the view content in the center.
- */
+@available(*, deprecated, message: "Use frames and alignments instead.")
 public struct FullWidthView<Content: View>: View {
     
     public init(@ViewBuilder view: @escaping () -> Content) {
@@ -26,13 +23,5 @@ public struct FullWidthView<Content: View>: View {
             view()
             Spacer()
         }
-    }
-}
-
-struct FullWidthView_Previews: PreviewProvider {
-    static var previews: some View {
-        FullWidthView {
-            Text("Hello, World!")
-        }.background(Color.red)
     }
 }

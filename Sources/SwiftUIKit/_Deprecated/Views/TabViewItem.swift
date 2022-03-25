@@ -9,10 +9,7 @@
 #if os(iOS) || os(tvOS) || os(macOS)
 import SwiftUI
 
-/**
- This protocol can be implemented by types that contain info
- regarding how they are to be displayed in a `TabView`.
- */
+@available(*, deprecated, message: "Use the native SwiftUI apis instead.")
 public protocol TabViewItem: Hashable {
     
     var icon: Image { get}
@@ -21,6 +18,7 @@ public protocol TabViewItem: Hashable {
     var selectedTitle: String { get }
 }
 
+@available(*, deprecated, message: "Use the native SwiftUI apis instead.")
 public extension View {
     
     /**

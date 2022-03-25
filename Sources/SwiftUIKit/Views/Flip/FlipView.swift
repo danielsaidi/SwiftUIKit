@@ -72,11 +72,6 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     }
 }
 
-public enum FlipDirection {
-    
-    case left, right, up, down
-}
-
 private extension View {
     
     typealias FlipAction = (FlipDirection) -> Void

@@ -10,9 +10,6 @@ import SwiftUI
 
 public extension Color {
  
-    /**
-     This color can be applied as a background color to make
-     the entire area of a button interactable.
-     */
+    @available(*, deprecated, message: "Use contentShape or something else instead, to make an entire view tappable.")
     static var clearInteractable = Color.white.opacity(0.001)
 }

@@ -12,7 +12,9 @@ import UIKit
   
 /**
  This struct can be used to wrap `UIKit` views to be used in
- SwiftUI-based apps. It doesn't update the provided view, so
+ SwiftUI-based apps.
+ 
+ Note that this view doesn't update the provided `UIView` so
  only use it when the view is managed outside of the wrapper.
  */
 public struct UIViewWrapper: UIViewRepresentable {

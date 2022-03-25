@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-/**
- This view renders a color as a circular badge.
- */
+@available(*, deprecated, message: "Just render a Circle or a color with a clip shape.")
 public struct ColorBadge: View {
     
     public init(color: Color, size: CGFloat = 20) {
@@ -26,11 +24,5 @@ public struct ColorBadge: View {
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
             .frame(height: size)
-    }
-}
-
-struct ColorBadge_Previews: PreviewProvider {
-    static var previews: some View {
-        ColorBadge(color: .red)
     }
 }

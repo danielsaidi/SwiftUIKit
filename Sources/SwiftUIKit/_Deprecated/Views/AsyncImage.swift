@@ -9,15 +9,7 @@
 import Foundation
 import SwiftUI
 
-/**
- This view can be used to show an image that is fetched from
- an url using an async network request. A `placeholder` will
- be displayed when an image is being fetched as well as when
- the fetch operation fails.
- 
- This is a very basic implementation, so you may want to use
- a library like Kingfisher for more complex operations.
- */
+@available(*, deprecated, message: "Use SwiftUI AsyncImage instead.")
 @available(iOS 14, macOS 11.0, tvOS 14, watchOS 7.0, *)
 public struct AsyncImage<PlaceholderView: View>: View {
     
@@ -54,16 +46,4 @@ public struct AsyncImage<PlaceholderView: View>: View {
     }
     
     private func loadImage() { loader.load() }
-}
-
-@available(iOS 14, macOS 11.0, tvOS 14, watchOS 7.0, *)
-struct AsyncImage_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let urlString = "https://hips.hearstapps.com/digitalspyuk.cdnds.net/17/38/1505731747-pennywise-teeth-it-movie.jpg?crop=1xw:0.8888888888888888xh;center,top&resize=1200:*"
-        let url = URL(string: urlString)
-        return AsyncImage(url: url!) {
-            Color.gray
-        }.aspectRatio(contentMode: .fit)
-    }
 }

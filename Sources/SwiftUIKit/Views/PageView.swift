@@ -17,16 +17,17 @@ import SwiftUI
  applies a `page` style to the tab view.
  
  This view is a declarative choice, since I personally think
- that a "page view" is conceptually a different thing than a
- tab view.
+ that a page view is conceptually different from a tab view.
  
- You can either create this view by providing it with a view
- collection or an item list with a `pageBuilder` that builds
- a page view for each item.
+ You can either create a page view with a fixed set of views
+ or a collection of items and a page builder.
  */
 @available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public struct PageView: View {
     
+    /**
+     Create a page view with a set of pre-built pages.
+     */
     public init<PageType: View>(
         pages: [PageType],
         indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
@@ -35,7 +36,11 @@ public struct PageView: View {
         self.indexDisplayMode = indexDisplayMode
         self.currentPageIndex = currentPageIndex
     }
-    
+
+    /**
+     Create a page view that takes a collection of items and
+     applies a page builder to each item.
+     */
     public init<Model, ViewType: View>(
         items: [Model],
         indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,

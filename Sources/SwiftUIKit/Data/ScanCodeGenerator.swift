@@ -10,12 +10,12 @@ import SwiftUI
 
 /**
  This protocol can be implemented any type that can generate
- a ``ScanCodeType`` image from a string.
+ ``ScanCodeType`` images of various types from a string.
  */
 public protocol ScanCodeGenerator {
 
     /**
-     Generate a scan code for the provided type and string.
+     Generate a scan code image for the provided `string`.
      */
     func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource?
 }

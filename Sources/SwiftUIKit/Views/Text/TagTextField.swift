@@ -56,9 +56,22 @@ private extension View {
 
 struct TagTextField_Previews: PreviewProvider {
     
-    @State static var text = "Testar lite!"
+    struct Preview: View {
+    
+        @State var text = "Testar lite!"
+        
+        var body: some View {
+            VStack {
+                Text(text)
+                TagTextField(text: $text)
+                    .textFieldStyle(.roundedBorder)
+            }.padding()
+        }
+    }
+    
+    
     
     static var previews: some View {
-        TagTextField(text: $text)
+        Preview()
     }
 }

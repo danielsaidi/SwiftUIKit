@@ -15,10 +15,7 @@ import UIKit
 import Cocoa
 #endif
 
-/**
- This class can be used to fetch an image from an url, using
- an async network request.
- */
+@available(*, deprecated, message: "Use SwiftUI AsyncImage instead.")
 public class AsyncImageLoader: ObservableObject {
     
     public init(
@@ -51,6 +48,7 @@ public class AsyncImageLoader: ObservableObject {
     }
 }
 
+@available(*, deprecated, message: "Use SwiftUI AsyncImage instead.")
 private extension AsyncImageLoader {
     
     func getImage(from data: Data?) -> Image? {

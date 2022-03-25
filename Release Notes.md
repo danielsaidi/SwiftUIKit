@@ -3,9 +3,11 @@
 
 ## 2.4
 
-This view adds a bunch of new views and features as well as ways to work with sidebars, detail panels and urls in macOS.
+This release adds a bunch of new views and features as well as new macOS utils.
 
-An important change is that `WebView` now wraps a `WKWebView` instead of a `SFSafariViewController`. If you want the old behavior, use the new `SafariWebView`.
+This release also deprecates a bunch of stuff to make the library more focused.
+
+Note that `WebView` now wraps a `WKWebView` instead of a `SFSafariViewController`. If you want the old behavior, use the new `SafariWebView`.
 
 ### ✨ New features
 
@@ -51,8 +53,14 @@ An important change is that `WebView` now wraps a `WKWebView` instead of a `SFSa
 
 ### 🗑 Deprecations
 
+* `AsyncImage` has been deprecated. Use SwiftUI AsyncImage instead.
+* `AsyncImageLoader` has been deprecated. Use SwiftUI AsyncImage instead.
 * `BlurView` and `View+Blur` is deprecated. Use the native material approach instead.
+* `ColorBadge` has been deprecated.
 * `FontListPicker` has been renamed to `SystemFontListPicker`.
+* `FullHeightView` has been deprecated.
+* `FullSizeView` has been deprecated.
+* `FullWidthView` has been deprecated.
 * `ListPicker` no longer has a `title`.
 * `ListMultiPicker` no longer has a `title`.
 * `SystemFontListPicker` no longer has a `title`.
@@ -63,8 +71,10 @@ An important change is that `WebView` now wraps a `WKWebView` instead of a `SFSa
 
 ### 💥 Breaking Changes
 
-* The old `Picker` has been removed, since it caused conflicts with SwiftUI.
-* The `UrlOpener` functions are no longer part of the protocol definition.
+* `Color.clearInteractable` has been deprecated and should not be used anymore.
+* `Picker` has been removed, since it caused conflicts with SwiftUI.
+* `UrlOpener` default functions are no longer part of the protocol definition.
+* `View.clearInteractable` has been deprecated and should not be used anymore. 
 
 
 

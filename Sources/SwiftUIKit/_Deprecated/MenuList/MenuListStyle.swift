@@ -8,12 +8,7 @@
 
 import SwiftUI
 
-/**
- This enum has various styles that can be used on menu lists.
- 
- If a style is not available for a certain platform, it will
- fallback to the default style for the platform.
- */
+@available(*, deprecated, message: "Use the new ListItem views instead")
 public enum MenuListStyle {
     
     case `default`, plain, grouped, groupedWithInsets
@@ -23,6 +18,7 @@ public enum MenuListStyle {
 
 public extension View {
     
+   @available(*, deprecated, message: "Use the new ListItem views instead")
     @ViewBuilder
     func listStyle(_ style: MenuListStyle) -> some View {
         switch style {

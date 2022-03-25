@@ -11,6 +11,11 @@ public extension View {
     func sheet(context: SheetContext) -> some View {
         sheet(context)
     }
+    
+    @available(*, deprecated, message: "Use contentShape or something else instead, to make an entire view tappable.")
+    func interactable() -> some View {
+        self.background(Color.clearInteractable)
+    }
 }
 
 #if os(iOS) || os(tvOS) || os(watchOS)
