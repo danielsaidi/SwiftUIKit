@@ -68,9 +68,9 @@ Also, while some views compile on a certain platform, they may not render correc
 
 ## Documentation
 
-The SwiftUIKit documentation contains extensive information, code examples etc. and makes it easy to overview the various parts of the library.
+The [online documentation][Documentation] contains extensive information, code examples etc. and makes it easy to overview the various parts of the library.
 
-You can either [download][Documentation] the documentation or build it directly in Xcode, using `Product/Build Documentation`.
+You can also [download][Documentation] the documentation or build it directly in Xcode, using `Product/Build Documentation`.
 
 
 
@@ -111,5 +111,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 [Website]: http://www.danielsaidi.com
 [Sponsors]: https://github.com/sponsors/danielsaidi
 
-[Documentation]: https://github.com/danielsaidi/Documentation/blob/main/Docs/SwiftUIKit.doccarchive.zip?raw=true
+[Documentation]: https://danielsaidi.github.io/SwiftUIKit/documentation/swiftuikit/
+[DocumentationZip]: https://github.com/danielsaidi/Documentation/blob/main/Docs/SwiftUIKit.doccarchive.zip?raw=true
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
