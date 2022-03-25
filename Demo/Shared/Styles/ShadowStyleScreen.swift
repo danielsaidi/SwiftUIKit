@@ -22,7 +22,7 @@ struct ShadowStyleScreen: View {
                 item(.green, style: .medium)
                 item(.blue, style: .large)
             }
-        }.navigationBarTitle("ShadowStyle")
+        }.navigationTitle("ShadowStyle")
     }
 }
 

@@ -22,7 +22,7 @@ struct GesturesScreen: View {
                     Label("Swipe Gesture", image: .swipeGesture)
                 }
             }
-        }.navigationBarTitle("Gestures")
+        }.navigationTitle("Gestures")
     }
 }
 

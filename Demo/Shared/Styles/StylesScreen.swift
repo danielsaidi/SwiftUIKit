@@ -30,7 +30,7 @@ struct StylesScreen: View {
                     Label("Shadows", image: .shadow)
                 }
             }
-        }.navigationBarTitle("Gestures")
+        }.navigationTitle("Gestures")
     }
 }
 

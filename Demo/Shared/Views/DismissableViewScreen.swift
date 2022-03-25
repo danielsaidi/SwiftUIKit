@@ -24,7 +24,7 @@ struct DismissableViewScreen: View, DismissableView {
                     Label("Dismiss this screen", image: .dismiss)
                 }
             }
-        }.navigationBarTitle("DismissableView")
+        }.navigationTitle("DismissableView")
     }
 }
 

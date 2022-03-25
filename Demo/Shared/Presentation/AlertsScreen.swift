@@ -28,7 +28,7 @@ struct AlertsScreen: View {
             }
         }
         .alert(context)
-        .navigationBarTitle("Alerts")
+        .navigationTitle("Alerts")
     }
 }
 

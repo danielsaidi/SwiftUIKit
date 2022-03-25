@@ -20,7 +20,7 @@ SwiftUIKit contains a bunch of extensions that aim at making it easier to work w
 Since this namespace contains a lot will grow over time, extensions are not demonstrated. Instead, checkout the library source code.
 """)
             }
-        }.navigationBarTitle("Extensions")
+        }.navigationTitle("Extensions")
     }
 }
 

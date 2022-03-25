@@ -36,7 +36,7 @@ struct FetchedDataViewScreen: View {
                     Text(data)
                 }
             }
-        }.navigationBarTitle("FetchedDataView")
+        }.navigationTitle("FetchedDataView")
     }
 }
 

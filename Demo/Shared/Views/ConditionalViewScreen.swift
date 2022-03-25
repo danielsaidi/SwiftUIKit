@@ -38,7 +38,7 @@ struct ConditionalViewScreen: View {
                     .background(Color.red)
                     .cornerRadius(20)
             }
-        }.navigationBarTitle("ConditionalView")
+        }.navigationTitle("ConditionalView")
     }
 }
 

@@ -55,7 +55,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle(("SwiftUIKit"))
+            .navigationTitle(("SwiftUIKit"))
         }
         .withPlatformSpecificNavigationStyle()
     }

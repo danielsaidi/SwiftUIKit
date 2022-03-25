@@ -28,7 +28,7 @@ struct PersistedScreen: View {
                     Label("Clear text", image: .clear)
                 }
             }
-        }.navigationBarTitle("Persisted")
+        }.navigationTitle("Persisted")
     }
 }
 

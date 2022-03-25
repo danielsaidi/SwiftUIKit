@@ -26,7 +26,7 @@ struct DataScreen: View {
                     Label("Persisted", image: .data)
                 }
             }
-        }.navigationBarTitle("Data")
+        }.navigationTitle("Data")
     }
 }
 

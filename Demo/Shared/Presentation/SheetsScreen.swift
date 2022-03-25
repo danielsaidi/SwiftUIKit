@@ -40,7 +40,7 @@ struct SheetsScreen: View {
             }
             #endif
         }
-        .navigationBarTitle("Sheets")
+        .navigationTitle("Sheets")
         .sheet(context)
     }
 }

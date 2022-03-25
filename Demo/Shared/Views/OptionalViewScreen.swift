@@ -40,7 +40,7 @@ struct OptionalViewScreen: View {
                     .background(Color.red)
                     .cornerRadius(20)
             }
-        }.navigationBarTitle("OptionalView")
+        }.navigationTitle("OptionalView")
     }
 }
 

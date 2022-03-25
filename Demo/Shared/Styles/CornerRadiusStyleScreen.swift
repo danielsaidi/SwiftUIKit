@@ -22,7 +22,7 @@ struct CornerRadiusStyleScreen: View {
                 item(.green, style: .medium)
                 item(.blue, style: .large)
             }
-        }.navigationBarTitle("CornerRadiusStyle")
+        }.navigationTitle("CornerRadiusStyle")
     }
 }
 

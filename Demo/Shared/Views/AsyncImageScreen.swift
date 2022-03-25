@@ -31,7 +31,7 @@ struct AsyncImageScreen: View {
                 }.enabled(hasUrl)
             }
         }
-        .navigationBarTitle("AsyncImage")
+        .navigationTitle("AsyncImage")
         .sheet(sheetContext)
     }
 }

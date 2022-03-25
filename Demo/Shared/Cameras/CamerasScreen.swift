@@ -28,7 +28,7 @@ struct CamerasScreen: View {
                 }
                 
             }
-        }.navigationBarTitle("Cameras")
+        }.navigationTitle("Cameras")
     }
 }
 

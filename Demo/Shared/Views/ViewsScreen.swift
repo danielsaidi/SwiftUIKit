@@ -21,7 +21,7 @@ struct ViewsScreen: View {
                 list1
                 list2
             }
-        }.navigationBarTitle("Views")
+        }.navigationTitle("Views")
     }
     
     private var list1: some View {

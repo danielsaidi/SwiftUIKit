@@ -30,7 +30,7 @@ struct PresentationScreen: View {
                     Label("Sheets", image: .sheet)
                 }
             }
-        }.navigationBarTitle("Presentation")
+        }.navigationTitle("Presentation")
     }
 }
 

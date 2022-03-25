@@ -31,7 +31,7 @@ struct CircularProgressBarScreen: View {
                     .frame(height: 300)
                     .padding()
             }
-        }.navigationBarTitle("CircularProgressBar")
+        }.navigationTitle("CircularProgressBar")
     }
 }
 
