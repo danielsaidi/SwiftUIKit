@@ -10,6 +10,8 @@ SwiftUIKit adds extra functionality to the SwiftUI framework, like extensions to
 
 SwiftUIKit is divided into the sections found in the Topics section below.
 
+For now, the online documentation only contains types that are supported by macOS.
+
 
 
 ## Installation
@@ -134,11 +136,6 @@ SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 - ``SearchBar``
 - ``TextReplacement``
 - ``UIViewWrapper``
-
-### Views/Async
-
-- ``AsyncImage``
-- ``AsyncImageLoader``
 
 ### Views/CollectionView
 
