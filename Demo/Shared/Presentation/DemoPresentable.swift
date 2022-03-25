@@ -12,7 +12,7 @@ import SwiftUIKit
 /**
  This presentable can be used in all presentation demos.
  */
-enum DemoPresentable: Identifiable, AlertProvider, FullScreenCoverProvider, SheetProvider, ToastProvider {
+enum DemoPresentable: Identifiable, AlertProvider, FullScreenCoverProvider, SheetProvider {
     
     case color(Color), emojis, flag, text(String)
     

@@ -21,14 +21,14 @@ struct AlertsScreen: View {
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListButtonLink(action: { present(item) }) {
+                    ListNavigationButton(action: { present(item) }) {
                         Label(item.listText(for: "alert"), image: item.listIcon)
                     }
                 }
             }
         }
+        .alert(context)
         .navigationBarTitle("Alerts")
-        .alert(context: context)
     }
 }
 

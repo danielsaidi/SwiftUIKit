@@ -40,7 +40,7 @@ struct PhotoCameraScreen: View {
             }
         }
         .navigationBarTitle("PhotoCamera")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

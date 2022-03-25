@@ -7,8 +7,8 @@ public typealias ListButtonItem = ListButton
 public typealias ListButtonLink = ListNavigationButton
 
 #if os(iOS)
-@available(*, deprecated, renamed: "ListButtonLink")
-public typealias ListButtonLinkItem = ListButtonLink
+@available(*, deprecated, renamed: "ListNavigationButton")
+public typealias ListNavigationButtonItem = ListNavigationButton
 #endif
 
 @available(*, deprecated, renamed: "ListNavigationLink")

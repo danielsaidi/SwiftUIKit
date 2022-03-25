@@ -44,7 +44,7 @@ private extension CircularProgressBarScreen {
         style.strokeWidth = 6
         style.progressColor = .yellow
         style.progressWidth = 15
-        style.progressModifier = { $0.shadow(.standardToast).any() }
+        style.progressModifier = { $0.shadow(.elevated).any() }
         return style
     }
 }

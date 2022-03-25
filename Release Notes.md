@@ -95,7 +95,7 @@ Note that `WebView` now wraps a `WKWebView` instead of a `SFSafariViewController
 
 ### 🗑 Deprecations
 
-* `ListButtonLink` has been renamed to `ListNavigationButton`.
+* `ListNavigationButton` has been renamed to `ListNavigationButton`.
 
 
 
@@ -171,7 +171,7 @@ This release adds a brand new "list item" concept that replaces the previous "me
 * `ListItem` is a new view that can be used to make items in a list get the same style and behavior.
 
 * `ListButton` is a new view that wraps its content in a `ListItem` that is embedded in a `Button`.
-* `ListButtonLink` is a new view that wraps its content in a `ListButton` and appends a trailing `ListDisclosureIndicator`.
+* `ListNavigationButton` is a new view that wraps its content in a `ListButton` and appends a trailing `ListDisclosureIndicator`.
 * `ListDisclosureIndicator` is a new view that imitates and iOS navigation link arrow.
 * `ListNavigationLink` is a new view that wraps its content in a `ListItem` that is embedded in a `NavigationLink`.
 * `ListSelectItem` is a new view that wraps its content in a `ListItem` and applies a checkmark if the item is selected.

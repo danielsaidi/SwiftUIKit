@@ -30,7 +30,7 @@ struct WebViewScreen: View {
             }
         }
         .navigationBarTitle("WebView")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

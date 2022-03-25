@@ -25,7 +25,7 @@ import SwiftUI
  ```swift
  @StateObject var context = FullScreenCoverContext()
  
- view.fullScreenCover(context: context)
+ view.fullScreenCover(context)
  
  context.present(Text("Hello, world!"))
  // ...or if an `AppCover` enum implements `FullScreenCoverProvider`:

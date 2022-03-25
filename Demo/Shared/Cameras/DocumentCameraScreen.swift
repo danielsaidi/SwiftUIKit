@@ -41,7 +41,7 @@ struct DocumentCameraScreen: View {
             }
         }
         .navigationBarTitle("DocumentCamera")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

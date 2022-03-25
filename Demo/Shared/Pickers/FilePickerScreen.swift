@@ -27,7 +27,7 @@ struct FilePickerScreen: View {
             }
         }
         .navigationBarTitle("FilePicker")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

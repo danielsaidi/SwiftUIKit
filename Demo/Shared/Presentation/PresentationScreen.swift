@@ -29,9 +29,6 @@ struct PresentationScreen: View {
                 ListNavigationLink(destination: SheetsScreen()) {
                     Label("Sheets", image: .sheet)
                 }
-                ListNavigationLink(destination: ToastsScreen()) {
-                    Label("Toasts", image: .toast)
-                }
             }
         }.navigationBarTitle("Presentation")
     }

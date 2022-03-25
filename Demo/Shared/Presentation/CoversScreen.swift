@@ -28,20 +28,20 @@ struct CoversScreen: View {
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListButtonLink(action: { presentCover(item) }) {
+                    ListNavigationButton(action: { presentCover(item) }) {
                         Label(item.listText(for: "cover"), image: item.listIcon)
                     }
                         
                 }
             }
             Section(header: Text("Sheet (for testing purpose)")) {
-                ListButtonLink(action: presentSheet) {
+                ListNavigationButton(action: presentSheet) {
                     Label("Show an flag sheet", image: .sheet)
-                }.sheet(context: sheetContext)
+                }.sheet(sheetContext)
             }
         }
         .navigationBarTitle("Full Screen Covers")
-        .fullScreenCover(context: context)
+        .fullScreenCover(context)
     }
 }
 

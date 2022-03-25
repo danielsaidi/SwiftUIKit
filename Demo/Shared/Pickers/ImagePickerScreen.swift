@@ -51,7 +51,7 @@ struct ImagePickerScreen: View {
             }
         }
         .navigationBarTitle("ImagePicker")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

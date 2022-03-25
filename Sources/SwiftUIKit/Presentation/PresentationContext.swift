@@ -26,7 +26,7 @@ import SwiftUI
  ```swift
  @StateObject var context = SheetContext()
  
- view.sheet(context: context)
+ view.sheet(context)
  
  context.present(Text("Hello, world!"))
  ```

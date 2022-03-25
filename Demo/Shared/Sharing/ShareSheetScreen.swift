@@ -33,7 +33,7 @@ struct ShareSheetScreen: View {
             }
         }
         .navigationBarTitle("ShareSheet")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

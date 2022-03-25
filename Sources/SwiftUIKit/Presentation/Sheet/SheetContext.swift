@@ -25,7 +25,7 @@ import SwiftUI
  ```swift
  @StateObject var context = SheetContext()
  
- view.sheet(context: context)
+ view.sheet(context)
  
  context.present(Text("Hello, world!"))
  // ...or if an `AppSheet` enum implements `SheetProvider`:

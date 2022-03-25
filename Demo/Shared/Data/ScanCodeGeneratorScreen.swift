@@ -47,7 +47,7 @@ struct ScanCodeGeneratorScreen: View {
             }
         }
         .navigationBarTitle("ScanCodeGenerator")
-        .sheet(context: sheetContext)
+        .sheet(sheetContext)
     }
 }
 

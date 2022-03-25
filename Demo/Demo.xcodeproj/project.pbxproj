@@ -37,8 +37,6 @@
 		A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CF256FE63A00F1C285 /* CoversScreen.swift */; };
 		A901F0D5256FE64500F1C285 /* SheetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D4256FE64500F1C285 /* SheetsScreen.swift */; };
 		A901F0D6256FE64500F1C285 /* SheetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D4256FE64500F1C285 /* SheetsScreen.swift */; };
-		A901F0DA256FE65200F1C285 /* ToastsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D9256FE65200F1C285 /* ToastsScreen.swift */; };
-		A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0D9256FE65200F1C285 /* ToastsScreen.swift */; };
 		A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
 		A901F0E0256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
 		A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */; };
@@ -67,8 +65,6 @@
 		A901F14F25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */; };
 		A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */; };
 		A901F15625707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */; };
-		A917E2FA261C37F500745DB2 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A917E2F9261C37F500745DB2 /* SwiftUIKit */; };
-		A917E2FF261C37FC00745DB2 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A917E2FE261C37FC00745DB2 /* SwiftUIKit */; };
 		A92115FF25D5B691003510D9 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FC25D5B690003510D9 /* LuckiestGuy-Regular.ttf */; };
 		A921160025D5B691003510D9 /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FD25D5B690003510D9 /* AbrilFatface-Regular.ttf */; };
 		A921160125D5B691003510D9 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FE25D5B691003510D9 /* Lobster-Regular.ttf */; };
@@ -102,6 +98,8 @@
 		A9544BAF2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
 		A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
 		A98278E2257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
+		A988840127EDAF5B00994F92 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A988840027EDAF5B00994F92 /* SwiftUIKit */; };
+		A988840327EDAF5E00994F92 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A988840227EDAF5E00994F92 /* SwiftUIKit */; };
 		A9F85336259B4D9200C98870 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F85335259B4D9200C98870 /* WebViewScreen.swift */; };
 		A9F85337259B4D9200C98870 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F85335259B4D9200C98870 /* WebViewScreen.swift */; };
 /* End PBXBuildFile section */
@@ -122,7 +120,6 @@
 		A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
 		A901F0CF256FE63A00F1C285 /* CoversScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoversScreen.swift; sourceTree = "<group>"; };
 		A901F0D4256FE64500F1C285 /* SheetsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsScreen.swift; sourceTree = "<group>"; };
-		A901F0D9256FE65200F1C285 /* ToastsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsScreen.swift; sourceTree = "<group>"; };
 		A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPresentable.swift; sourceTree = "<group>"; };
 		A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
 		A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
@@ -169,6 +166,7 @@
 		A9544BB52571BA9100522141 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		A9544BB72571BAD800522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A98278E0257E969C0006D64F /* Color+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Demo.swift"; sourceTree = "<group>"; };
+		A98883FF27EDAF2D00994F92 /* swiftuikit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = swiftuikit; path = ..; sourceTree = "<group>"; };
 		A9F85335259B4D9200C98870 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,7 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A917E2FA261C37F500745DB2 /* SwiftUIKit in Frameworks */,
+				A988840127EDAF5B00994F92 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A917E2FF261C37FC00745DB2 /* SwiftUIKit in Frameworks */,
+				A988840327EDAF5E00994F92 /* SwiftUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +225,6 @@
 				A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */,
 				A901F0CF256FE63A00F1C285 /* CoversScreen.swift */,
 				A901F0D4256FE64500F1C285 /* SheetsScreen.swift */,
-				A901F0D9256FE65200F1C285 /* ToastsScreen.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -326,6 +323,7 @@
 		A935502A256F7E3C00BBE9CE = {
 			isa = PBXGroup;
 			children = (
+				A98883FE27EDAF2D00994F92 /* Packages */,
 				A9355039256F7E3D00BBE9CE /* iOS */,
 				A9355040256F7E3D00BBE9CE /* macOS */,
 				A935502F256F7E3C00BBE9CE /* Shared */,
@@ -413,6 +411,14 @@
 			name = Demo;
 			sourceTree = "<group>";
 		};
+		A98883FE27EDAF2D00994F92 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A98883FF27EDAF2D00994F92 /* swiftuikit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,7 +437,7 @@
 			);
 			name = "Demo (iOS)";
 			packageProductDependencies = (
-				A917E2F9261C37F500745DB2 /* SwiftUIKit */,
+				A988840027EDAF5B00994F92 /* SwiftUIKit */,
 			);
 			productName = "Demo (iOS)";
 			productReference = A9355037256F7E3D00BBE9CE /* Demo.app */;
@@ -451,7 +457,7 @@
 			);
 			name = "Demo (macOS)";
 			packageProductDependencies = (
-				A917E2FE261C37FC00745DB2 /* SwiftUIKit */,
+				A988840227EDAF5E00994F92 /* SwiftUIKit */,
 			);
 			productName = "Demo (macOS)";
 			productReference = A935503F256F7E3D00BBE9CE /* Demo.app */;
@@ -485,7 +491,6 @@
 			);
 			mainGroup = A935502A256F7E3C00BBE9CE;
 			packageReferences = (
-				A917E2F8261C37F500745DB2 /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
 			);
 			productRefGroup = A9355038256F7E3D00BBE9CE /* Products */;
 			projectDirPath = "";
@@ -564,7 +569,6 @@
 				A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F074256F962600F1C285 /* CamerasScreen.swift in Sources */,
-				A901F0DA256FE65200F1C285 /* ToastsScreen.swift in Sources */,
 				A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
 				A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
@@ -615,7 +619,6 @@
 				A9544B582571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D1256FE63A00F1C285 /* CoversScreen.swift in Sources */,
 				A901F075256F962600F1C285 /* CamerasScreen.swift in Sources */,
-				A901F0DB256FE65200F1C285 /* ToastsScreen.swift in Sources */,
 				A98278E2257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15625707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
 				A9544B4E2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
@@ -886,26 +889,13 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		A917E2F8261C37F500745DB2 /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielsaidi/SwiftUIKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		A917E2F9261C37F500745DB2 /* SwiftUIKit */ = {
+		A988840027EDAF5B00994F92 /* SwiftUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A917E2F8261C37F500745DB2 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
 			productName = SwiftUIKit;
 		};
-		A917E2FE261C37FC00745DB2 /* SwiftUIKit */ = {
+		A988840227EDAF5E00994F92 /* SwiftUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A917E2F8261C37F500745DB2 /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
 			productName = SwiftUIKit;
 		};
 /* End XCSwiftPackageProductDependency section */

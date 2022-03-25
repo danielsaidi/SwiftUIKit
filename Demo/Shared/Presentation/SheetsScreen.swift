@@ -27,21 +27,21 @@ struct SheetsScreen: View {
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListButtonLink(action: { presentSheet(item) }) {
+                    ListNavigationButton(action: { presentSheet(item) }) {
                         Label(item.listText(for: "sheet"), image: item.listIcon)
                     }
                 }
             }
             #if os(iOS) || os(tvOS) || os(watchOS)
             Section(header: Text("Cover (for testing purpose)")) {
-                ListButtonLink(action: presentCover) {
+                ListNavigationButton(action: presentCover) {
                     Label("Show an flag cover", image: .cover)
-                }.fullScreenCover(context: coverContext)
+                }.fullScreenCover(coverContext)
             }
             #endif
         }
         .navigationBarTitle("Sheets")
-        .sheet(context: context)
+        .sheet(context)
     }
 }
 
