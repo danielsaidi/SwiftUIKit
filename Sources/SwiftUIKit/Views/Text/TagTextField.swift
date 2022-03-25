@@ -64,7 +64,8 @@ struct TagTextField_Previews: PreviewProvider {
             VStack {
                 Text(text)
                 TagTextField(text: $text)
-                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                    .background(Color.primary.opacity(0.1))
             }.padding()
         }
     }

@@ -64,6 +64,7 @@ private extension ImageResource {
 }
 #endif
 
+#if os(iOS) || os(tvOS) || os(macOS)
 struct Previews_StandardScanCodeGenerator_Previews: PreviewProvider {
     
     static let generator = StandardScanCodeGenerator(scale: 2)
@@ -77,3 +78,4 @@ struct Previews_StandardScanCodeGenerator_Previews: PreviewProvider {
         }
     }
 }
+#endif
