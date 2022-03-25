@@ -14,7 +14,7 @@ struct ViewsScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("SwiftUIKit contains a large collection of additional views for SwiftUI.")
+                ListText("SwiftUIKit contains a large collection of additional views for SwiftUI, for instance:")
             }
             
             Section(header: Text("Views")) {
@@ -26,9 +26,6 @@ struct ViewsScreen: View {
     
     private var list1: some View {
         Group {
-            ListNavigationLink(destination: AsyncImageScreen()) {
-                Label("Async Image", image: .photo)
-            }
             ListNavigationLink(destination: CircularProgressBarScreen()) {
                 Label("Circular Progress Bar", image: .circularProgressBar)
             }
