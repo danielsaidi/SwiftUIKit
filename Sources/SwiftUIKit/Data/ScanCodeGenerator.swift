@@ -9,11 +9,25 @@
 import SwiftUI
 
 /**
- This protocol can be implemented by classes that can create
- scan code images and image views.
+ This protocol can be implemented any type that can generate
+ a ``ScanCodeType`` image from a string.
  */
 public protocol ScanCodeGenerator {
 
+    /**
+     Generate a scan code for the provided type and string.
+     */
     func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource?
-    func generateCodeView(_ type: ScanCodeType, from string: String) -> Image?
+}
+
+public extension ScanCodeGenerator {
+    
+    /**
+     Generate a scan code `Image` view for the provided type
+     and string.
+     */
+    func generateCodeView(_ type: ScanCodeType, from string: String) -> Image? {
+        guard let image = generateCode(type, from: string) else { return nil }
+        return Image(imageResource: image)
+    }
 }

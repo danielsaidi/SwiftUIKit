@@ -15,32 +15,35 @@ import SwiftUI
  */
 public class StandardScanCodeGenerator: ScanCodeGenerator {
     
+    /**
+     Create a new generator instance.
+     
+     `scale` is a scaling factor that will be applied to the
+     generated scan code image. Pick a value that results in
+     the best size for your use case.
+     
+     - Parameters:
+       - scale: The scale factor to apply to the generated image.
+     */
     public init(scale: CGFloat) {
         self.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
     
+    /**
+     The transform to apply to the generated scan code image.
+     */
     public let transform: CGAffineTransform
     
+    /**
+     Generate a scan code for the provided type and string.
+     */
     public func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource? {
         guard let image = generateCoreImage(of: type, from: string) else { return nil }
         return ImageResource(cgImage: image)
     }
-    
-    public func generateCodeView(_ type: ScanCodeType, from string: String) -> Image? {
-        guard let image = generateCode(type, from: string) else { return nil }
-        return Image(imageResource: image)
-    }
 }
 
 private extension StandardScanCodeGenerator {
-    
-    var imageScale: CGFloat {
-        #if canImport(UIKit)
-        UIScreen.main.scale
-        #else
-        2
-        #endif
-    }
     
     func generateCoreImage(of type: ScanCodeType, from string: String) -> CGImage? {
         let ciContext = CIContext()
@@ -61,3 +64,17 @@ private extension ImageResource {
     }
 }
 #endif
+
+struct Previews_StandardScanCodeGenerator_Previews: PreviewProvider {
+    
+    static let generator = StandardScanCodeGenerator(scale: 2)
+    
+    static var previews: some View {
+        VStack {
+            generator.generateCodeView(.aztek, from: "123456789")
+            generator.generateCodeView(.code128, from: "123456789")
+            generator.generateCodeView(.pdf417, from: "123456789")
+            generator.generateCodeView(.qr, from: "123456789")
+        }
+    }
+}

@@ -24,6 +24,9 @@ An important change is that `WebView` now wraps a `WKWebView` instead of a `SFSa
 * `ListText` has a new icon and subtitle parameter.
 * `ListTextContent` is a new view that just renders the content of a `ListText`.
 * `SafariWebView` is a new name for the previous version of `WebView`.
+* `ScanCodeGenerator` `generateCodeView` is now a protocol implementation.
+* `ScanCodeType` now supports `aztek` and `pdf417` as well.
+* `ScanCodeType` has a new `code128` case that replaces `barcode`.
 * `SidebarPresenter` is a new macOS protocol that can be implemented to add sidebar functionality to the implementing type.
 * `SystemFontPicker` is a new view that uses a `Picker`.
 * `SystemFontForEachPicker` is a new view that uses a `ForEach` picker instead of a `List`.
@@ -41,6 +44,8 @@ An important change is that `WebView` now wraps a `WKWebView` instead of a `SFSa
 * `ListItem` now only applies a min height on iOS.
 * `ListPicker` now uses a `ForEachPicker` for each section.
 * `ListMultiPicker` now uses a `ForEachMultiPicker` for each section.
+* `ScanCodeType.barcode` changes its name from `Barcode` to `Code-128`.
+* `ScanCodeType.barcode` is now an alias for `ScanCodeType.code128`. 
 * `WebView` now wraps a `WKWebView` instead of a `SFSafariViewController`.
 
 ### 🗑 Deprecations
