@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 2.5
+
+### 🗑 Deprecations
+
+* `PageView` moves the `currentPageIndex` init parameter above `indexDisplayMode`.
+
+
+
 ## 2.4
 
 This release adds a bunch of new views and features as well as new macOS utils.

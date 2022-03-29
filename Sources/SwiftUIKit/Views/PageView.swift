@@ -5,9 +5,6 @@
 //  Created by Daniel Saidi on 2020-10-11.
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
-//  Credits to @pawello2222
-//  https://stackoverflow.com/questions/58388071/how-can-i-implement-pageview-in-swiftui/63159912
-//
 
 #if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
@@ -16,22 +13,28 @@ import SwiftUI
  This view wraps the provided `pages` within a `TabView` and
  applies a `page` style to the tab view.
  
- This view is a declarative choice, since I personally think
- that a page view is conceptually different from a tab view.
- 
  You can either create a page view with a fixed set of views
  or a collection of items and a page builder.
+ 
+ I have added this to the library as a semantic alias, since
+ I think that a "page view" is conceptually different from a
+ "tab view", and don't like how SwiftUI has implemented this.
  */
 @available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public struct PageView: View {
     
     /**
      Create a page view with a set of pre-built pages.
+     
+     - Parameters:
+       - pages: The pages to present in the page view.
+       - currentPageIndex: The currently presented page index.
+       - indexDisplayMode: The page index display mode to use, by default `.automatic`.
      */
     public init<PageType: View>(
         pages: [PageType],
-        indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
-        currentPageIndex: Binding<Int>) {
+        currentPageIndex: Binding<Int>,
+        indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic) {
         self.pages = pages.map { $0.any() }
         self.indexDisplayMode = indexDisplayMode
         self.currentPageIndex = currentPageIndex
@@ -40,11 +43,17 @@ public struct PageView: View {
     /**
      Create a page view that takes a collection of items and
      applies a page builder to each item.
+     
+     - Parameters:
+       - items: The items to present in the page view.
+       - currentPageIndex: The currently presented page index.
+       - indexDisplayMode: The page index display mode to use, by default `.automatic`.
+       - pageBuilder: A function that builds a page for each item in the items collection.
      */
     public init<Model, ViewType: View>(
         items: [Model],
-        indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
         currentPageIndex: Binding<Int>,
+        indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
         pageBuilder: (Model) -> ViewType) {
         self.pages = items.map { pageBuilder($0).any() }
         self.indexDisplayMode = indexDisplayMode
@@ -60,8 +69,7 @@ public struct PageView: View {
             ForEach(Array(pages.enumerated()), id: \.offset) {
                 $0.element.tag($0.offset)
             }
-        }
-        .tabViewStyle(.page(indexDisplayMode: indexDisplayMode))
+        }.tabViewStyle(.page(indexDisplayMode: indexDisplayMode))
     }
 }
 #endif
