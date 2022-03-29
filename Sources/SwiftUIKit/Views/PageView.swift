@@ -72,4 +72,55 @@ public struct PageView: View {
         }.tabViewStyle(.page(indexDisplayMode: indexDisplayMode))
     }
 }
+
+@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
+struct PageView_Previews: PreviewProvider {
+    
+    struct StaticPreview: View {
+        
+        @State private var index = 0
+        
+        var body: some View {
+            PageView(
+                pages: [
+                    Color.red,
+                    Color.green,
+                    Color.blue
+                ],
+                currentPageIndex: $index)
+        }
+    }
+    
+    struct DynamicPreview: View {
+        
+        enum PageType: CaseIterable {
+            case red, green, blue
+            
+            var color: Color {
+                switch self {
+                case .red: return .red
+                case .green: return .green
+                case .blue: return .blue
+                }
+            }
+        }
+        
+        @State private var index = 0
+        
+        var body: some View {
+            PageView(
+                items: PageType.allCases,
+                currentPageIndex: $index) { page in
+                    page.color
+                }
+        }
+    }
+    
+    static var previews: some View {
+        VStack {
+            StaticPreview()
+            DynamicPreview()
+        }
+    }
+}
 #endif

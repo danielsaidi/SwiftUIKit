@@ -10,11 +10,12 @@ public extension PageView {
     @available(*, deprecated, message: "currentPageIndex now comes before indexDisplayMode.")
     init<PageType: View>(
         pages: [PageType],
-        indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
+        indexDisplayMode: PageTabViewStyle.IndexDisplayMode,
         currentPageIndex: Binding<Int>) {
-        self.pages = pages.map { $0.any() }
-        self.indexDisplayMode = indexDisplayMode
-        self.currentPageIndex = currentPageIndex
+        self.init(
+            pages: pages,
+            currentPageIndex: currentPageIndex,
+            indexDisplayMode: indexDisplayMode)
     }
 
     /**
@@ -24,12 +25,14 @@ public extension PageView {
     @available(*, deprecated, message: "currentPageIndex now comes before indexDisplayMode.")
     init<Model, ViewType: View>(
         items: [Model],
-        indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
+        indexDisplayMode: PageTabViewStyle.IndexDisplayMode,
         currentPageIndex: Binding<Int>,
-        pageBuilder: (Model) -> ViewType) {
-        self.pages = items.map { pageBuilder($0).any() }
-        self.indexDisplayMode = indexDisplayMode
-        self.currentPageIndex = currentPageIndex
+        pageBuilder: @escaping (Model) -> ViewType) {
+        self.init(
+            items: items,
+            currentPageIndex: currentPageIndex,
+            indexDisplayMode: indexDisplayMode,
+            pageBuilder: pageBuilder)
     }
 }
 #endif
