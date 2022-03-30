@@ -18,15 +18,15 @@ struct PageViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("This view can be used to wrap multiple views in a paged horizontal scroll view.")
+                ListText("This view can be used to wrap multiple views in a paged horizontal scroll view.\n\nThe view supports iOS, macOS, tvOS and watchOS.")
             }
             
             Section(header: Text("Example")) {
                 PageView(
                     items: colors,
-                    indexDisplayMode: .automatic,
                     currentPageIndex: $index,
                     pageBuilder: pageView)
+                .frame(height: 400)
             }
         }.navigationBarTitle("PageView")
     }
@@ -36,7 +36,7 @@ private extension PageViewScreen {
     
     func pageView(for color: Color) -> some View {
         color
-            .frame(height: 150)
+            .frame(height: 400)
             .cornerRadius(20)
     }
 }
