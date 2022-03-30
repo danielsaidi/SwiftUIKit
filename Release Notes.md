@@ -6,11 +6,18 @@
 ### ✨ New features
 
 * `PageIndicator` is a new view that mimics the page dots in a page view.
+* `PageIndicatorDisplayMode` is a new enum that can be used to control indicator views.
+* `PageIndicatorStyle` is a new enum that can be used to style indicator views.
+* `PageView` is now available for macOS as well.
 
+### 💡 Behavior changes
 
-### 🗑 Deprecations
+* `PageView` is now generic and no longer generates `AnyView` views.
 
-* `PageView` moves the `currentPageIndex` init parameter above `indexDisplayMode`.
+### 💥 Breaking Changes
+
+* `PageView` for iOS is now generic with new initializer signatures.
+* `PageView` `indexDisplayMode` is now called `pageIndicatorDisplayMode`.
 
 
 
