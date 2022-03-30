@@ -1,5 +1,5 @@
 //
-//  PageContainer.swift
+//  PageView.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-10-11.

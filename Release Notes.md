@@ -3,6 +3,11 @@
 
 ## 2.5
 
+### ✨ New features
+
+* `PageIndicator` is a new view that mimics the page dots in a page view.
+
+
 ### 🗑 Deprecations
 
 * `PageView` moves the `currentPageIndex` init parameter above `indexDisplayMode`.
