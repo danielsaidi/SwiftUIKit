@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 2.6
+
+### ✨ New features
+
+* `AlertContextFocusedValueKey` is a new type that can be used to bind and access an focused alert.
+* `FullScreenModalContextFocusedValueKey` is a new type that can be used to bind and access a focused full.
+* `SheetContextFocusedValueKey` is a new type that can be used to bind and access a focused sheet.
+
+
+
 ## 2.5
 
 ### ✨ New features
