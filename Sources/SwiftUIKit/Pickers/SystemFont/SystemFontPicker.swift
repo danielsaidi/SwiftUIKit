@@ -33,10 +33,12 @@ public struct SystemFontPicker: View {
         self._selectedFontName = selectedFontName
         self.fonts = fonts
         self.itemFontSize = itemFontSize
+        self.selectedFont = fonts.last { $0.matches(selectedFontName.wrappedValue) }
     }
     
     private let fonts: [SystemFontPickerFont]
     private let itemFontSize: CGFloat
+    private let selectedFont: SystemFontPickerFont?
     
     @Binding
     private var selectedFontName: String
@@ -48,11 +50,39 @@ public struct SystemFontPicker: View {
                     font: font,
                     fontSize: itemFontSize,
                     isSelected: false)
-                    .tag(font.fontName)
+                .tag(font.tag(for: selectedFont, selectedName: selectedFontName))
             }
         } label: {
             EmptyView()
         }
+    }
+}
+
+private extension SystemFontPickerFont {
+    
+    /**
+     A system font has a font name that may be resolved to a
+     different font name when it's picked. We must therefore
+     do our best to pattern match the available fonts to the
+     currently selected font name.
+     */
+    func matches(_ selectedFontName: String) -> Bool {
+        let system = SystemFontPickerFont.systemFontNamePrefix.lowercased()
+        let selected = selectedFontName.lowercased()
+        let fontName = self.fontName.lowercased()
+        if fontName.isEmpty { return system == selected }
+        if fontName == selected { return true }
+        if selected.hasPrefix(fontName.replacingOccurrences(of: " ", with: "")) { return true }
+        if selected.hasPrefix(fontName.replacingOccurrences(of: " ", with: "-")) { return true }
+        return false
+    }
+    
+    /**
+     Use the selected font name as tag for the selected font.
+     */
+    func tag(for selectedFont: SystemFontPickerFont?, selectedName: String) -> String {
+        let isSelected = fontName == selectedFont?.fontName
+        return isSelected ? selectedName : fontName
     }
 }
 
