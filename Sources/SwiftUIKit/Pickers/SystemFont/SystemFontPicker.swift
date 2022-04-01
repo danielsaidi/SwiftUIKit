@@ -43,7 +43,7 @@ public struct SystemFontPicker: View {
     
     public var body: some View {
         Picker(selection: $selectedFontName) {
-            ForEach([SystemFontPickerFont].all) { font in
+            ForEach(fonts) { font in
                 SystemFontPickerItem(
                     font: font,
                     fontSize: itemFontSize,

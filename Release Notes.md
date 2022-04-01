@@ -9,6 +9,10 @@
 * `FullScreenModalContextFocusedValueKey` is a new type that can be used to bind and access a focused full.
 * `SheetContextFocusedValueKey` is a new type that can be used to bind and access a focused sheet.
 
+### 🐛 Bug fixes
+
+* `SystemFontPicker` now uses the provided fonts instead of all.
+
 
 
 ## 2.5

@@ -1,5 +1,5 @@
 <p align="center">
-    <img src ="Resources/Logo.png" width=500 />
+    <img src ="Resources/Logo.png" alt="SwiftUIKit" title="SwiftUIKit Logo" width=500 />
 </p>
 
 <p align="center">
