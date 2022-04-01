@@ -32,13 +32,25 @@ public struct SystemFontPickerFont: Identifiable {
      The display name for the standard system font, which is
      used if the font name is empty.
      */
-    public static var systemFontDisplayName = "San Francisco"
+    public static var systemFontDisplayName: String {
+        #if os(macOS)
+        return "Standard"
+        #else
+        return "San Francisco"
+        #endif
+    }
     
     /**
-     The display name for the standard system font, which is
-     used if the font name is empty.
+     The font name prefix for the standard system font. This
+     is used if the font name is empty.
      */
-    public static var systemFontNamePrefix = ".SFUI"
+    public static var systemFontNamePrefix: String {
+        #if os(macOS)
+        return ".AppleSystemUIFont"
+        #else
+        return ".SFUI"
+        #endif
+    }
 }
 
 public extension Collection where Element == SystemFontPickerFont {
@@ -47,10 +59,11 @@ public extension Collection where Element == SystemFontPickerFont {
      Get all available system fonts.
      */
     static var all: [SystemFontPickerFont] {
-        var all = FontRepresentable.allFonts
+        let all = FontRepresentable.allFonts
         let systemFont = SystemFontPickerFont(fontName: "")
-        all.insert(systemFont, at: 0)
-        return all.sorted { $0.fontDisplayName < $1.fontDisplayName }
+        var sorted = all.sorted { $0.fontDisplayName < $1.fontDisplayName }
+        sorted.insert(systemFont, at: 0)
+        return sorted
     }
     
     /**
