@@ -30,20 +30,20 @@
       },
       {
         "package": "Nimble",
-        "repositoryURL": "https://github.com/Quick/Nimble.git",
+        "repositoryURL": "https://github.com/danielsaidi/Nimble.git",
         "state": {
-          "branch": null,
-          "revision": "c93f16c25af5770f0d3e6af27c9634640946b068",
-          "version": "9.2.1"
+          "branch": "main",
+          "revision": "1ca9fa3ae260e696e76ca68938bf9428c3ec02c6",
+          "version": null
         }
       },
       {
         "package": "Quick",
-        "repositoryURL": "https://github.com/Quick/Quick.git",
+        "repositoryURL": "https://github.com/danielsaidi/Quick.git",
         "state": {
-          "branch": null,
-          "revision": "8cce6acd38f965f5baa3167b939f86500314022b",
-          "version": "3.1.2"
+          "branch": "main",
+          "revision": "1efe9551db0ad6a6e979f33366969750123d14d9",
+          "version": null
         }
       },
       {

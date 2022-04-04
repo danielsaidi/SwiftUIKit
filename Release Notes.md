@@ -7,7 +7,11 @@
 
 * `AlertContextFocusedValueKey` is a new type that can be used to bind and access an focused alert.
 * `FullScreenModalContextFocusedValueKey` is a new type that can be used to bind and access a focused full.
+* `ItemPrinter` is a new protocol that can be implemented by types that can print printable items.
+* `ItemPrintingView` is a view protocol that adds item printing functionality to any view. 
+* `PrintableItem` defines a list of printable items, currently only pdf documents.
 * `SheetContextFocusedValueKey` is a new type that can be used to bind and access a focused sheet.
+* `StandardItemPrinter` is an multi-platform `ItemPrinter` implementation that prints using `UIPrintInteractionController`.
 
 ### 💡 Behavior changes
 
