@@ -14,6 +14,7 @@ import SafariServices
  This view wraps a `SFSafariViewController` that can request
  any url you provide it with.
  */
+@available(*, deprecated, message: "This type has been moved to WebViewKit - https://github.com/danielsaidi/WebViewKit")
 public struct SafariWebView: UIViewControllerRepresentable {
     
     /**
@@ -33,12 +34,5 @@ public struct SafariWebView: UIViewControllerRepresentable {
     }
 
     public func updateUIViewController(_ safariViewController: SFSafariViewController, context: Context) {}
-}
-
-struct SafariWebView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        SafariWebView(url: URL(string: "https://danielsaidi.com")!)
-    }
 }
 #endif

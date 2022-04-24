@@ -3,6 +3,10 @@
 
 ## 2.6
 
+This version adds focus and printing utils, makes the system font picker work better on multiple platforms and deprecates web views.
+
+Web views can be found in the new [WebViewKit](https://github.com/danielsaidi/WebViewKit) from now on. 
+
 ### ✨ New features
 
 * `AlertContextFocusedValueKey` is a new type that can be used to bind and access an focused alert.
@@ -18,11 +22,14 @@
 * `SystemFontPicker` has been adjusted to work better on various platforms.
 * `SystemFontPickerFont` has been adjusted to work better on various platforms.
 
-
 ### 🐛 Bug fixes
 
 * `SystemFontPicker` now uses the provided fonts instead of all.
 
+### 🗑 Deprecations
+
+* `SafariWebView` has been deprecated - use WebViewKit instead.
+* `WebView` has been deprecated - use WebViewKit instead.
 
 
 ## 2.5

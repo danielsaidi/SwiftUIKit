@@ -20,6 +20,7 @@ import WebKit
  This view wraps a `WKViewView` that can request any url you
  provide it with and be configured in any way that you like.
  */
+@available(*, deprecated, message: "This type has been moved to WebViewKit - https://github.com/danielsaidi/WebViewKit")
 public struct WebView: WebViewRepresentable {
     
     /**
@@ -57,11 +58,8 @@ public struct WebView: WebViewRepresentable {
     
     public func updateNSView(_ view: WKWebView, context: Context) {}
     #endif
-}
-
-private extension WebView {
     
-    func makeView() -> WKWebView {
+    private func makeView() -> WKWebView {
         let view = WKWebView()
         configuration(view)
         if let url = url {
