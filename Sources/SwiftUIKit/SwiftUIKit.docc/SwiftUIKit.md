@@ -32,6 +32,15 @@ SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 
 
 
+## About this documentation
+
+While the documentation can be built for both iOS and macOS, the online version is currently built for macOS. This means that it's macOS-specific and lacks e.g. iOS-specific parts.
+
+To create an iOS-specific documentation, open the package in Xcode, select an iOS Simulator then generate documentation from the `Product` menu.
+
+Any help in making the documentation multi-platform would be greatly appreciated.
+
+
 
 ## Topics
 
