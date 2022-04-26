@@ -12,15 +12,3 @@ echo "Copying documentation archive..."
 find ~/Library/Developer/Xcode/DerivedData \
     -name "SwiftUIKit.doccarchive" \
     -exec cp -R {} Docs \;
-
-cd Docs
-
-echo "Compressing documentation archive..."
-
-zip -r \
-    SwiftUIKit.doccarchive.zip \
-    SwiftUIKit.doccarchive
-
-rm -rf SwiftUIKit.doccarchive
-
-cd ..
