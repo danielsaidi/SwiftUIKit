@@ -1,5 +1,11 @@
 # Release notes
 
+Moving to 3.0, larger and more conceptual parts will be moved from this library to separate, smaller libraries.
+
+Some examples are functionality that consists of many types (like the list and picker utils) and views that have great value in themselves.
+
+This will make the things in this library easier to understand and document, since they will require less context and coupling.
+
 
 ## 2.6
 
