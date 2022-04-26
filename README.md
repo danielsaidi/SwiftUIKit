@@ -13,7 +13,6 @@
 </p>
 
 
-
 ## About SwiftUIKit
 
 `SwiftUIKit` adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilites, services etc. 
@@ -32,17 +31,16 @@
 * Navigation
 * Pickers
 * Presentation
+* Printing
 * Sharing
 * Styles
 * Views
 
 You can explore these sections in the [documentation][Documentation] and the demo app.
 
-
 ### Important about 3.0
 
 Moving to 3.0, larger and more conceptual parts will be moved from this library to separate, smaller libraries. Some examples are functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document, since they will require less context and coupling.
-
 
 
 ## Installation
@@ -60,7 +58,6 @@ pod DSSwiftUIKit
 ```
 
 
-
 ## Supported Platforms
 
 SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
@@ -70,23 +67,23 @@ Many parts of the library only supports a few or a certain platform, where they 
 Also, while some views compile on a certain platform, they may not render correctly. Please help improve this library by submitting PRs that improve the rendering on e.g. macOS.  
 
 
-
 ## Documentation
 
-The [online documentation][Documentation] contains extensive information, code examples etc. and makes it easy to overview the various parts of the library.
+The [online documentation][Documentation] contains more information, code examples etc. and makes it easy to overview the various parts of the library.
 
-You can also [download][Documentation] the documentation or build it directly in Xcode, using `Product/Build Documentation`.
+Note that the online documentation is currently built for macOS. To generate documentation for another platform, open the package in Xcode, select the correct simulator then generate documentation from the `Product` menu.
 
+Any help in making the documentation multi-platform would be greatly appreciated.
 
 
 ## Demo Application
 
-This project contains a demo app that lets you explore many of SwiftUIKit's features through interactive demos.
+This project contains a demo app that lets you explore WebViewKit on iOS and macOS. To run it, just open and run `Demo/Demo.xcodeproj`.
 
-Together with the documentation and SwiftUI previews, I hope you'll find it easy to understand how the various parts of the library works.
 
-To run the demo app, just open and run the `Demo/Demo.xcodeproj` project. It's a universal app project, but the `macOS` app is currenty not functional. 
+## Support
 
+You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for paid support.
 
 
 ## Contact
@@ -96,13 +93,6 @@ Feel free to reach out if you have questions or if you want to contribute in any
 * E-mail: [daniel.saidi@gmail.com][Email]
 * Twitter: [@danielsaidi][Twitter]
 * Web site: [danielsaidi.com][Website]
-
-
-
-## Support
-
-You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for paid support.
-
 
 
 ## License

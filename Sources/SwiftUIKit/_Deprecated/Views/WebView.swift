@@ -7,8 +7,10 @@
 //
 
 #if os(iOS)
+@available(*, deprecated, message: "This type has been moved to WebViewKit - https://github.com/danielsaidi/WebViewKit")
 public typealias WebViewRepresentable = UIViewRepresentable
 #elseif os(macOS)
+@available(*, deprecated, message: "This type has been moved to WebViewKit - https://github.com/danielsaidi/WebViewKit")
 public typealias WebViewRepresentable = NSViewRepresentable
 #endif
 

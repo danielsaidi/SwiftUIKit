@@ -101,7 +101,7 @@ Any help in making the documentation multi-platform would be greatly appreciated
 - ``SystemFontPickerFont``
 - ``SystemFontPickerItem``
 
-### SimplePicker
+### Pickers/SimplePicker
 
 - ``SimplePicker``
 - ``SimpleMultiPicker``
@@ -114,11 +114,21 @@ Any help in making the documentation multi-platform would be greatly appreciated
 
 - ``PresentationContext``
 - ``AlertContext``
+- ``AlertContextFocusedValueKey``
 - ``AlertProvider``
 - ``FullScreenCoverContext``
+- ``FullScreenCoverContextFocusedValueKey``
 - ``FullScreenCoverProvider``
 - ``SheetContext``
+- ``SheetContextFocusedValueKey``
 - ``SheetProvider``
+
+### Printing
+
+- ``ItemPrinter``
+- ``ItemPrintingView``
+- ``PrintableItem``
+- ``StandardItemPrinter``
 
 ### Sharing
 
@@ -141,6 +151,9 @@ Any help in making the documentation multi-platform would be greatly appreciated
 - ``ForEachEnumerated``
 - ``NavigationLinkArrow``
 - ``OptionalView``
+- ``PageIndicator``
+- ``PageIndicatorDisplayMode``
+- ``PageIndicatorStyle``
 - ``PageView``
 - ``SearchBar``
 - ``TextReplacement``
@@ -200,8 +213,3 @@ Any help in making the documentation multi-platform would be greatly appreciated
 - ``MultilineTextField``
 - ``TagTextField``
 - ``TextFieldClearButton``
-
-### Views/Web
-
-- ``SafariWebView``
-- ``WebView``
