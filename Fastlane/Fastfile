@@ -84,7 +84,7 @@ platform :ios do
   end
     
   desc "Build static documentation websites for all platforms"
-  lane :docc_web
+  lane :docc_web do
     docc
     docc_web_platform(name: 'ios')
     docc_web_platform(name: 'osx')
@@ -108,8 +108,8 @@ platform :ios do
         generate-documentation \
         --disable-indexing \
         --transform-for-static-hosting \
-        --hosting-base-path WebViewKit \
-        --output-path Docs/Web')
+        --hosting-base-path SwiftUIKit \
+        --output-path Docs/web')
   end
     
   desc "Build and preview static documentation website (macOS only)"
@@ -119,8 +119,8 @@ platform :ios do
         --disable-sandbox \
         preview-documentation \
         --transform-for-static-hosting \
-        --hosting-base-path WebViewKit \
-        --output-path Docs/Web')
+        --hosting-base-path SwiftUIKit \
+        --output-path Docs/web')
   end
   
 end
