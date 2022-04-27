@@ -10,8 +10,6 @@ SwiftUIKit adds extra functionality to the SwiftUI framework, like extensions to
 
 SwiftUIKit is divided into the sections found in the Topics section below.
 
-For now, the online documentation only contains types that are supported by macOS.
-
 
 
 ## Installation
@@ -22,7 +20,13 @@ The best way to add SwiftUIKit to your app is to use the Swift Package Manager.
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-You can add SwiftUIKit to any target that needs it.
+SwiftUIKit also supports CocoaPods:
+
+```
+pod DSSwiftUIKit
+```
+
+You can also clone the repository and build the library locally.
 
 
 
@@ -34,11 +38,15 @@ SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 
 ## About this documentation
 
-While the documentation can be built for both iOS and macOS, the online version is currently built for macOS. This means that it's macOS-specific and lacks e.g. iOS-specific parts.
-
-To create an iOS-specific documentation, open the package in Xcode, select an iOS Simulator then generate documentation from the `Product` menu.
+The online documentation is currently iOS only. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
 
 Any help in making the documentation multi-platform would be greatly appreciated.
+
+
+
+## License
+
+SwiftUIKit is available under the MIT license.
 
 
 

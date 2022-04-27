@@ -40,38 +40,42 @@ You can explore these sections in the [documentation][Documentation] and the dem
 
 ### Important about 3.0
 
-Moving to 3.0, larger and more conceptual parts will be moved from this library to separate, smaller libraries. Some examples are functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document, since they will require less context and coupling.
+Moving to 3.0, many parts will be moved from this library to separate libraries, for instance functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document, since they will require less context and coupling.
+
 
 
 ## Installation
 
-### Swift Package Manager
+The best way to add SwiftUIKit to your app is to use the Swift Package Manager.
 
 ```
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-### CocoaPods
+SwiftUIKit also supports CocoaPods:
 
 ```
 pod DSSwiftUIKit
 ```
 
+You can also clone the repository and build the library locally.
+
+
 
 ## Supported Platforms
 
-SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
+SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.  
 
-Many parts of the library only supports a few or a certain platform, where they make sense. Also, while some views compile on a certain platform, they may still render incorrectly. Please help improve this library by submitting PRs that improve the rendering on e.g. macOS.  
 
 
 ## Documentation
 
 The [online documentation][Documentation] contains more information, code examples etc. and makes it easy to overview the various parts of the library.
 
-Note that the online documentation is currently built for macOS. To generate documentation for another platform, open the package in Xcode, select the correct simulator then generate documentation from the `Product` menu.
+The online documentation is currently iOS only. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
 
 Any help in making the documentation multi-platform would be greatly appreciated.
+
 
 
 ## Demo Application
@@ -79,9 +83,11 @@ Any help in making the documentation multi-platform would be greatly appreciated
 This project contains a demo app that lets you explore WebViewKit on iOS and macOS. To run it, just open and run `Demo/Demo.xcodeproj`.
 
 
+
 ## Support
 
 You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for paid support.
+
 
 
 ## Contact
@@ -91,6 +97,7 @@ Feel free to reach out if you have questions or if you want to contribute in any
 * E-mail: [daniel.saidi@gmail.com][Email]
 * Twitter: [@danielsaidi][Twitter]
 * Web site: [danielsaidi.com][Website]
+
 
 
 ## License
