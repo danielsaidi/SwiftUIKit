@@ -49,7 +49,7 @@ platform :ios do
   
   desc "Build documentation for all platforms"
   lane :docc do
-    docc_delete
+    sh('cd .. && rm -rf Docs')
     docc_platform(destination: 'iOS', name: 'ios')
     docc_platform(destination: 'OS X', name: 'osx')
     docc_platform(destination: 'tvOS', name: 'tvos')
@@ -69,11 +69,6 @@ platform :ios do
       -exec cp -R {} Docs \;')
     sh('cd .. && \
       mv Docs/SwiftUIKit.doccarchive Docs/SwiftUIKit_' + values[:name] + '.doccarchive')
-  end
-    
-  desc "Delete documentation"
-  lane :docc_delete do
-    sh('cd .. && rm -rf Docs')
   end
   
   desc "Delete documentation derived data (may be historic duplicates)"
