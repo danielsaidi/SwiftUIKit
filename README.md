@@ -15,32 +15,17 @@
 
 ## About SwiftUIKit
 
-`SwiftUIKit` adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilites, services etc. 
+SwiftUIKit adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilites, services etc.
 
-`SwiftUIKit` is divided into these areas:
+You can explore the various sections in the [documentation][Documentation] and the demo app.
 
-* Bridging
-* Cameras
-* Colors
-* Data
-* Documents
-* Environment
-* Extensions
-* Files
-* Gestures
-* Navigation
-* Pickers
-* Presentation
-* Printing
-* Sharing
-* Styles
-* Views
+`IMPORTANT` Moving to 3.0, many parts will be moved from this library to separate libraries, for instance functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document, since they will require less context and coupling.
 
-You can explore these sections in the [documentation][Documentation] and the demo app.
 
-### Important about 3.0
 
-Moving to 3.0, many parts will be moved from this library to separate libraries, for instance functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document, since they will require less context and coupling.
+## Supported Platforms
+
+SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.  
 
 
 
@@ -62,25 +47,17 @@ You can also clone the repository and build the library locally.
 
 
 
-## Supported Platforms
-
-SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.  
-
-
-
 ## Documentation
 
 The [online documentation][Documentation] contains more information, code examples etc. and makes it easy to overview the various parts of the library.
 
 The online documentation is currently iOS only. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
 
-Any help in making the documentation multi-platform would be greatly appreciated.
-
 
 
 ## Demo Application
 
-This project contains a demo app that lets you explore WebViewKit on iOS and macOS. To run it, just open and run `Demo/Demo.xcodeproj`.
+This project contains a demo app that lets you explore SwiftUIKit on iOS and macOS. To run it, just open and run `Demo/Demo.xcodeproj`.
 
 
 
@@ -112,5 +89,4 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 [Sponsors]: https://github.com/sponsors/danielsaidi
 
 [Documentation]: https://danielsaidi.github.io/SwiftUIKit/documentation/swiftuikit/
-[DocumentationZip]: https://github.com/danielsaidi/Documentation/blob/main/Docs/SwiftUIKit.doccarchive.zip?raw=true
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE

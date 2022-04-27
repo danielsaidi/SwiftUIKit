@@ -12,6 +12,12 @@ SwiftUIKit is divided into the sections found in the Topics section below.
 
 
 
+## Supported Platforms
+
+SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
+
+
+
 ## Installation
 
 The best way to add SwiftUIKit to your app is to use the Swift Package Manager.
@@ -30,17 +36,9 @@ You can also clone the repository and build the library locally.
 
 
 
-## Supported Platforms
-
-SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
-
-
-
 ## About this documentation
 
 The online documentation is currently iOS only. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
-
-Any help in making the documentation multi-platform would be greatly appreciated.
 
 
 
