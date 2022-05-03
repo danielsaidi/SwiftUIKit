@@ -7,6 +7,20 @@ Some examples are functionality that consists of many types (like the list and p
 This will make the things in this library easier to understand and document, since they will require less context and coupling.
 
 
+## 2.7
+
+### ✨ New features
+
+* `ErrorAlerter` is a new protocol that can be implemented by any type that can alert errors using an `AlertContext`.
+* `ErrorAlertConvertible` is a new protocol that can be implemented by any error that can describe itself as an error `Alert`.
+
+
+### 💡 Behavior changes
+
+* `PresentationContext` is now `open` instead of `public`.
+
+
+
 ## 2.6
 
 This version adds focus and printing utils, makes the system font picker work better on multiple platforms and deprecates web views.

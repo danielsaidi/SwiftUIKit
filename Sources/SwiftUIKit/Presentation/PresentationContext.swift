@@ -33,13 +33,15 @@ import SwiftUI
  
  Have a look at more specific contexts for more information.
  */
-public class PresentationContext<Content>: ObservableObject {
+open class PresentationContext<Content>: ObservableObject {
     
     public init() {}
     
-    @Published public var isActive = false
+    @Published
+    public var isActive = false
     
-    @Published public internal(set) var content: (() -> Content)? {
+    @Published
+    public internal(set) var content: (() -> Content)? {
         didSet { isActive = content != nil }
     }
     
