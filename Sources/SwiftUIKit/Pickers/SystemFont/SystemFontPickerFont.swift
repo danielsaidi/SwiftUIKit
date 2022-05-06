@@ -108,8 +108,6 @@ public extension SystemFontPickerFont {
 #if os(macOS)
 import AppKit
 
-typealias FontRepresentable = NSFont
-
 private extension NSFont {
     
     /**
@@ -131,8 +129,6 @@ private extension NSFont {
 
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
-
-typealias FontRepresentable = UIFont
 
 private extension UIFont {
     

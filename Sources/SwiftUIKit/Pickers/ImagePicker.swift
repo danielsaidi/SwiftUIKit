@@ -44,7 +44,7 @@ public struct ImagePicker: UIViewControllerRepresentable {
         self.resultAction = resultAction
     }
     
-    public typealias PickerResult = Result<ImageResource, Error>
+    public typealias PickerResult = Result<ImageRepresentable, Error>
     public typealias CancelAction = () -> Void
     public typealias ResultAction = (PickerResult) -> Void
     

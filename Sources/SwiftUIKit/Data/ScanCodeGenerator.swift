@@ -17,7 +17,7 @@ public protocol ScanCodeGenerator {
     /**
      Generate a scan code image for the provided `string`.
      */
-    func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource?
+    func generateCode(_ type: ScanCodeType, from string: String) -> ImageRepresentable?
 }
 
 public extension ScanCodeGenerator {
@@ -28,6 +28,6 @@ public extension ScanCodeGenerator {
      */
     func generateCodeView(_ type: ScanCodeType, from string: String) -> Image? {
         guard let image = generateCode(type, from: string) else { return nil }
-        return Image(imageResource: image)
+        return Image(image: image)
     }
 }

@@ -36,9 +36,9 @@ public class StandardScanCodeGenerator: ScanCodeGenerator {
     /**
      Generate a scan code for the provided type and string.
      */
-    public func generateCode(_ type: ScanCodeType, from string: String) -> ImageResource? {
+    public func generateCode(_ type: ScanCodeType, from string: String) -> ImageRepresentable? {
         guard let image = generateCoreImage(of: type, from: string) else { return nil }
-        return ImageResource(cgImage: image)
+        return ImageRepresentable(cgImage: image)
     }
 }
 
@@ -56,7 +56,7 @@ private extension StandardScanCodeGenerator {
 #endif
 
 #if os(macOS)
-private extension ImageResource {
+private extension ImageRepresentable {
     
     convenience init(cgImage: CGImage) {
         self.init(cgImage: cgImage, size: .zero)

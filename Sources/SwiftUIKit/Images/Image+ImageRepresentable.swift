@@ -1,5 +1,5 @@
 //
-//  Image+ImageResource.swift
+//  Image+ImageRepresentable.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-07-25.
@@ -11,13 +11,13 @@ import SwiftUI
 public extension Image {
     
     /**
-     Create an image from a certain ``ImageResource``.
+     Create an image from a certain ``ImageRepresentable``.
      */
-    init(imageResource: ImageResource) {
+    init(image: ImageRepresentable) {
         #if os(iOS) || os(watchOS) || os(tvOS)
-        self.init(uiImage: imageResource)
+        self.init(uiImage: image)
         #elseif os(macOS)
-        self.init(nsImage: imageResource)
+        self.init(nsImage: image)
         #endif
     }
 }
