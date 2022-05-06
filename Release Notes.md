@@ -11,7 +11,9 @@ This will make the things in this library easier to understand and document, sin
 
 ### ✨ New features
 
+* `Color` has new hex string- and int-based initializers.
 * `ColorRepresentable` is a new typealias that bridges NSColor and UIColor.
+* `ColorRepresentable` has new hex string- and int-based initializers.
 * `ErrorAlerter` is a new protocol that can be implemented by any type that can alert errors using an `AlertContext`.
 * `ErrorAlertConvertible` is a new protocol that can be implemented by any error that can describe itself as an error `Alert`.
 * `FontRepresentable` is a new typealias that bridges NSFont and UIFont.
