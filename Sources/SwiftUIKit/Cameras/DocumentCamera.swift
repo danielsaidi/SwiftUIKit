@@ -11,11 +11,10 @@ import SwiftUI
 import VisionKit
 
 /**
- This document camera wraps `VNDocumentCameraViewController`
- and can be used to scan documents with the device's camera.
+ This view wraps a `VNDocumentCameraViewController` that can
+ be used to scan documents with the device's camera.
  
- You create a camera instance by providing two action blocks
- that can be used to inspect what happens with the operation:
+ You create a document camera by providing two action blocks:
  
  ```swift
  let camera = DocumentCamera(
@@ -23,12 +22,12 @@ import VisionKit
     resultAction: { result in ... }             // Mandatory
  }
  ```
+
+ You can then present the document camera with a sheet, full
+ screen cover etc.
  
  The camera result is a `VNDocumentCameraScan` that contains
- a list of the scanned files, if any.
- 
- You can use a ``SheetContext`` to easily present the camera
- as a modal sheet.
+ a list of scanned files, if any.
  */
 @available(iOS 13, *)
 public struct DocumentCamera: UIViewControllerRepresentable {
@@ -48,7 +47,9 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     private let resultAction: ResultAction
         
     public func makeCoordinator() -> Coordinator {
-        Coordinator(camera: self)
+        Coordinator(
+            cancelAction: cancelAction,
+            resultAction: resultAction)
     }
     
     public func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
@@ -57,7 +58,9 @@ public struct DocumentCamera: UIViewControllerRepresentable {
         return controller
     }
     
-    public func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) {}
+    public func updateUIViewController(
+        _ uiViewController: VNDocumentCameraViewController,
+        context: Context) {}
 }
 
 @available(iOS 13, *)
@@ -65,25 +68,31 @@ public extension DocumentCamera {
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         
-        public init(camera: DocumentCamera) {
-            self.camera = camera
+        public init(
+            cancelAction: @escaping DocumentCamera.CancelAction,
+            resultAction: @escaping DocumentCamera.ResultAction) {
+            self.cancelAction = cancelAction
+            self.resultAction = resultAction
         }
         
-        private let camera: DocumentCamera
-        
+        private let cancelAction: DocumentCamera.CancelAction
+        private let resultAction: DocumentCamera.ResultAction
+
         public func documentCameraViewControllerDidCancel(
             _ controller: VNDocumentCameraViewController) {
-            camera.cancelAction()
+            cancelAction()
         }
         
         public func documentCameraViewController(
-            _ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
-            camera.resultAction(.failure(error))
+            _ controller: VNDocumentCameraViewController,
+            didFailWithError error: Error) {
+            resultAction(.failure(error))
         }
         
         public func documentCameraViewController(
-            _ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-            camera.resultAction(.success(scan))
+            _ controller: VNDocumentCameraViewController,
+            didFinishWith scan: VNDocumentCameraScan) {
+            resultAction(.success(scan))
         }
     }
 }

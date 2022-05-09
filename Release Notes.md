@@ -21,6 +21,7 @@ This will make the things in this library easier to understand and document, sin
 ### 💡 Behavior changes
 
 * `PresentationContext` is now `open` instead of `public`.
+* `DocumentCamera` now passes on its actions instead of itself. 
 
 ### 🗑 Deprecations
 
