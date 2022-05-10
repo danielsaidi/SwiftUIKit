@@ -19,7 +19,7 @@ public extension Color {
 
      - Parameters:
        - hex: The hex value to apply.
-       - alpha: The color alpha, from 0 to 1.
+       - alpha: The alpha value to apply, from 0 to 1.
      */
     init(hex: UInt64, alpha: CGFloat = 1) {
         let color = ColorRepresentable(hex: hex, alpha: alpha)
@@ -34,7 +34,7 @@ public extension Color {
 
      - Parameters:
        - hex: The hex string to parse.
-       - alpha: The color alpha, from 0 to 1.
+       - alpha: The alpha value to apply, from 0 to 1.
      */
     init?(hex: String, alpha: CGFloat = 1) {
         guard let color = ColorRepresentable(hex: hex, alpha: alpha) else { return nil }

@@ -7,7 +7,7 @@
 //
 
 #if os(macOS)
-import AppKit.NSImage
+import class AppKit.NSImage
 
 /**
  This typealias helps bridging UIKit and AppKit when working
@@ -17,7 +17,7 @@ public typealias ImageRepresentable = NSImage
 #endif
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit.UIImage
+import class UIKit.UIImage
 
 /**
  This typealias helps bridging UIKit and AppKit when working

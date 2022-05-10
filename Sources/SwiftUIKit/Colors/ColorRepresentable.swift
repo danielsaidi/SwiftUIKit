@@ -7,7 +7,7 @@
 //
 
 #if os(macOS)
-import AppKit.NSColor
+import class AppKit.NSColor
 
 /**
  This typealias helps bridging UIKit and AppKit when working
@@ -17,7 +17,7 @@ public typealias ColorRepresentable = NSColor
 #endif
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit.UIColor
+import class UIKit.UIColor
 
 /**
  This typealias helps bridging UIKit and AppKit when working

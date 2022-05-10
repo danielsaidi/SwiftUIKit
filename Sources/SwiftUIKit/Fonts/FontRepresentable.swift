@@ -7,7 +7,7 @@
 //
 
 #if os(macOS)
-import AppKit.NSFont
+import class AppKit.NSFont
 
 /**
  This typealias helps bridging UIKit and AppKit when working
@@ -17,7 +17,7 @@ public typealias FontRepresentable = NSFont
 #endif
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit.UIFont
+import class UIKit.UIFont
 
 /**
  This typealias helps bridging UIKit and AppKit when working

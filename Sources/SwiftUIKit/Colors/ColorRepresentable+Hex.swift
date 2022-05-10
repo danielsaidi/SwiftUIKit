@@ -20,7 +20,7 @@ public extension ColorRepresentable {
 
      - Parameters:
        - hex: The hex value to apply.
-       - alpha: The color alpha, from 0 to 1.
+       - alpha: The alpha value to apply, from 0 to 1.
      */
     convenience init(hex: UInt64, alpha: CGFloat = 1) {
         let r = CGFloat((hex >> 16) & 0xff) / 255
@@ -37,7 +37,7 @@ public extension ColorRepresentable {
 
      - Parameters:
        - hex: The hex string to parse.
-       - alpha: The color alpha, from 0 to 1.
+       - alpha: The alpha value to apply, from 0 to 1.
      */
     convenience init?(hex: String, alpha: CGFloat = 1) {
         let hex = hex.cleanedForHex()
