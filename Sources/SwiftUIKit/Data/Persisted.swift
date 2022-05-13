@@ -6,38 +6,54 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 /**
  This property wrapper automatically persists any new values
  to user defaults and sets the initial property value to the
- last persisted value or a fallback value.
+ last persisted value or a default value.
+
+ This property wrapper will properly update any SwiftUI view
+ that you use it with.
  */
 @propertyWrapper
-public struct Persisted<T: Codable> {
-    
+public struct Persisted<Value: Codable>: DynamicProperty {
+
     public init(
         key: String,
         store: UserDefaults = .standard,
-        defaultValue: T) {
+        defaultValue: Value) {
         self.key = key
         self.store = store
-        self.defaultValue = defaultValue
+        let initialValue: Value? = Self.initialValue(for: key, in: store)
+        self._value = State(initialValue: initialValue ?? defaultValue)
     }
-    
+
+    @State
+    private var value: Value
+
     private let key: String
     private let store: UserDefaults
-    private let defaultValue: T
 
-    public var wrappedValue: T {
+    public var wrappedValue: Value {
         get {
-            guard let data = store.object(forKey: key) as? Data else { return defaultValue }
-            let value = try? JSONDecoder().decode(T.self, from: data)
-            return value ?? defaultValue
+            value
         }
-        set {
+        nonmutating set {
             let data = try? JSONEncoder().encode(newValue)
             store.set(data, forKey: key)
+            value = newValue
         }
+    }
+}
+
+private extension Persisted {
+
+    static func initialValue<Value: Codable>(
+        for key: String,
+        in store: UserDefaults
+    ) -> Value? {
+        guard let data = store.object(forKey: key) as? Data else { return nil }
+        return try? JSONDecoder().decode(Value.self, from: data)
     }
 }

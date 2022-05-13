@@ -17,6 +17,7 @@ This will make the things in this library easier to understand and document, sin
 * `ErrorAlerter` is a new protocol that can be implemented by any type that can alert errors using an `AlertContext`.
 * `ErrorAlertConvertible` is a new protocol that can be implemented by any error that can describe itself as an error `Alert`.
 * `FontRepresentable` is a new typealias that bridges NSFont and UIFont.
+* `Persisted` can now be used with SwiftUI views and will properly update them. 
 
 ### 💡 Behavior changes
 
