@@ -76,8 +76,8 @@ SwiftUIKit is available under the MIT license.
 
 - ``DocumentPresenter``
 - ``DocumentGroupPresenter``
-- ``DocumentGroupOnboardingScreen``
-- ``DocumentGroupOnboardingError``
+- ``DocumentGroupSheet``
+- ``DocumentGroupSheetError``
 - ``DocumentRenameError``
 
 ### Files

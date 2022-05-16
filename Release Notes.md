@@ -17,7 +17,7 @@ This will make the things in this library easier to understand and document, sin
 * `ErrorAlerter` is a new protocol that can be implemented by any type that can alert errors using an `AlertContext`.
 * `ErrorAlertConvertible` is a new protocol that can be implemented by any error that can describe itself as an error `Alert`.
 * `FontRepresentable` is a new typealias that bridges NSFont and UIFont.
-* `Persisted` can now be used with SwiftUI views and will properly update them. 
+* `Persisted` can now be used with SwiftUI and will properly update observing views. 
 
 ### 💡 Behavior changes
 
@@ -27,6 +27,9 @@ This will make the things in this library easier to understand and document, sin
 ### 🗑 Deprecations
 
 * `ImageResource` has been renamed to `ImageRepresentable`.
+* `DocumentGroupOnboardingScreen` has been renamed to `DocumentGroupSheet`.
+* `DocumentGroupOnboardingScreenError` has been renamed to `DocumentGroupSheetError`.
+* `DocumentGroupOnboardingScreen` `presentAsOnboarding` has been renamed to `presentFromDocumentGroup`.
 
 
 
