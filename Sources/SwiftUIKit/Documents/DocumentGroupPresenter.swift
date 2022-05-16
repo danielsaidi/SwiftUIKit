@@ -10,13 +10,13 @@
 import SwiftUI
 
 /**
- This protocol can be implemented by any type that should be
- used to present and dismiss documents from a `DocumentGroup`.
+ This protocol can be implemented by any SwiftUI `View` that
+ should be able to handle documents in a `DocumentGroup`.
  
  This protocol adds functionality that's currently broken or
  missing in `DocumentGroup`, such as dismissing documents.
  */
-public protocol DocumentGroupPresenter: View {}
+public protocol DocumentGroupPresenter: DocumentGroupInspector {}
 
 public extension DocumentGroupPresenter {
     
@@ -26,18 +26,7 @@ public extension DocumentGroupPresenter {
      not the `dismiss` environment.
      */
     func dismissDocument() {
-        keyWindow?.rootViewController?.dismiss(animated: true)
-    }
-}
-
-private extension DocumentGroupPresenter {
-    
-    var keyWindow: UIWindow? {
-        UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
-            .first(where: { $0 is UIWindowScene })
-            .flatMap({ $0 as? UIWindowScene })?.windows
-            .first(where: \.isKeyWindow)
+        rootViewController?.dismiss(animated: true)
     }
 }
 #endif

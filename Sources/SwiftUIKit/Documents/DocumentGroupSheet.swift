@@ -16,14 +16,18 @@ import SwiftUI
  To use this protocol, just have any view implement it, then
  present is using ``presentFromDocumentGroup()``.
  */
-public protocol DocumentGroupSheet: View {}
+public protocol DocumentGroupSheet: DocumentGroupInspector {}
 
 public extension DocumentGroupSheet {
-    
+
+    /**
+     Try to present the view from the current document group.
+
+     This function will throw an error if the view is not in
+     a document group hierarchy.
+     */
     func presentFromDocumentGroup() throws {
-        let window = UIApplication.shared.activeKeyWindows.first
-        let parent = window?.rootViewController
-        guard let parent = parent else { throw DocumentGroupSheetError.noParentWindow }
+        guard let parent = rootViewController else { throw DocumentGroupSheetError.noParentWindow }
         let sheet = UIHostingController(rootView: body)
         parent.present(sheet, animated: true, completion: nil)
     }
