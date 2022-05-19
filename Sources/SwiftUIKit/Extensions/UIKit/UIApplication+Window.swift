@@ -15,7 +15,7 @@ public extension UIApplication {
      Get all currently active window scenes.
      */
     var activeWindowScenes: [UIWindowScene] {
-        UIApplication.shared.connectedScenes
+        connectedScenes
             .filter { $0.activationState == .foregroundActive }
             .compactMap { $0 as? UIWindowScene }
     }
@@ -27,9 +27,9 @@ public extension UIApplication {
         activeWindowScenes
             .flatMap { $0.windows }
     }
-    
+
     /**
-     Get all currently active windows.
+     Get all currently active key windows.
      */
     var activeKeyWindows: [UIWindow] {
         activeWindows

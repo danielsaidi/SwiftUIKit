@@ -7,14 +7,14 @@
 //
 
 import SwiftUI
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
 public extension EnvironmentValues {
     
     /**
-     Get the safe area insets of the key window, if any.
+     Get the safe area insets of the current scene, if any.
 
      For now, this only works on UIKit supported devices. It
      returns a blank `EdgeInsets` value on all other devices.
@@ -28,19 +28,36 @@ private struct SafeAreaInsetsKey: EnvironmentKey {
     
     static var defaultValue: EdgeInsets {
         #if os(iOS) || os(tvOS)
-        let windows = UIApplication.shared.windows
-        let keyWindow = windows.first { $0.isKeyWindow }
-        return keyWindow?.safeAreaInsets.insets ?? EdgeInsets()
+        keyWindow?.safeAreaInsets.edgeInsets ?? EdgeInsets()
         #else
         EdgeInsets()
         #endif
     }
 }
 
-#if canImport(UIKit)
+#if os(iOS) || os(tvOS)
+private extension SafeAreaInsetsKey {
+
+    static var keyWindow: UIWindow? {
+        UIApplication.shared.keyWindow
+    }
+}
+
+private extension UIApplication {
+
+    var keyWindow: UIWindow? {
+        connectedScenes
+            .filter { $0.activationState == .foregroundActive }
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .filter { $0.isKeyWindow }
+            .first
+    }
+}
+
 private extension UIEdgeInsets {
     
-    var insets: EdgeInsets {
+    var edgeInsets: EdgeInsets {
         EdgeInsets(top: top, leading: left, bottom: bottom, trailing: right)
     }
 }
