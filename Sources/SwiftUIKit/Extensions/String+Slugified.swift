@@ -10,11 +10,9 @@ import Foundation
 
 /**
  This extension is internally used by ``TagTextView`` and is
- not public in order to not collide with `SwiftKit`.
+ internal in order to not collide with `SwiftKit`.
  */
 extension String {
-    
-    private static let allowedCharacters = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-")
     
     /**
      Convert the string to a slugified version that works to
@@ -22,11 +20,18 @@ extension String {
      
      For instance, `I'd love an AppleCar!` will be converted
      to "i-d-love-an-apple-car".
+
+     - Parameters:
+       - separator: The separator to use in the slugified string, by default `-`.
+       - allowedCharacters: The characters to allow in the slugified string, by default alphanumerical characters and `-`.
      */
-    func slugified() -> String {
+    func slugified(
+        separator: String = "-",
+        allowedCharacters: NSCharacterSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-")
+    ) -> String {
         self.lowercased()
-            .components(separatedBy: String.allowedCharacters.inverted)
-            .filter { $0 != "" }
-            .joined(separator: "-")
+            .components(separatedBy: allowedCharacters.inverted)
+            .filter { !$0.isEmpty }
+            .joined(separator: separator)
     }
 }

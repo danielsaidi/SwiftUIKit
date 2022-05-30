@@ -9,7 +9,7 @@
 import SwiftUI
 
 public extension Color {
-    
+
     /**
      Generate a random color.
      */

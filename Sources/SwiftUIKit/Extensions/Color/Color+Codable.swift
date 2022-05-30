@@ -51,9 +51,9 @@ extension Color: Codable {
 private extension Color {
     
     #if os(macOS)
-    typealias PlatformColor = NSColor
+    typealias SystemColor = NSColor
     #else
-    typealias PlatformColor = UIColor
+    typealias SystemColor = UIColor
     #endif
     
     var colorComponents: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)? {
@@ -63,10 +63,10 @@ private extension Color {
         var a: CGFloat = 0
         
         #if os(macOS)
-        PlatformColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
+        SystemColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
         // Note that non RGB color will raise an exception, that I don't now how to catch because it is an Objc exception.
         #else
-        guard PlatformColor(self).getRed(&r, green: &g, blue: &b, alpha: &a) else {
+        guard SystemColor(self).getRed(&r, green: &g, blue: &b, alpha: &a) else {
             // Pay attention that the color should be convertible into RGB format
             // Colors using hue, saturation and brightness won't work
             return nil
