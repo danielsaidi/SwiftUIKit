@@ -15,11 +15,11 @@
 
 ## About SwiftUIKit
 
-SwiftUIKit adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilites, services etc.
+SwiftUIKit adds extra functionality to `SwiftUI`, like extensions to existing types and completely new views, pickers, utilities, services, etc.
 
 You can explore the various sections in the [documentation][Documentation] and the demo app.
 
-`IMPORTANT` Moving to 3.0, many parts will be moved from this library to separate libraries, for instance functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document, since they will require less context and coupling.
+`IMPORTANT` Moving to 3.0, many parts will be moved from this library to separate libraries, for instance, functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document since they will require less context and coupling.
 
 
 
@@ -49,7 +49,7 @@ You can also clone the repository and build the library locally.
 
 ## Documentation
 
-The [online documentation][Documentation] contains more information, code examples etc. and makes it easy to overview the various parts of the library.
+The [online documentation][Documentation] contains more information, code examples, etc., and makes it easy to overview the various parts of the library.
 
 The online documentation is currently iOS only. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
 
