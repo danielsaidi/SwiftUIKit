@@ -41,13 +41,19 @@ public class FolderObservable: ObservableObject {
     private let folderUrl: URL
     private let fileManager: FileManager
     
-    private lazy var folderMonitor = FolderMonitor(folderUrl: folderUrl, onChange: handleChanges)
+    private lazy var folderMonitor = FolderMonitor(
+        folderUrl: folderUrl,
+        onChange: handleChanges)
 }
 
 private extension FolderObservable {
 
     func handleChanges() {
-        let files = try? fileManager.contentsOfDirectory(at: folderUrl, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+        let files = try? fileManager.contentsOfDirectory(
+            at: folderUrl,
+            includingPropertiesForKeys: nil,
+            options: .producesRelativePathURLs)
+        
         DispatchQueue.main.async {
             self.files = files ?? []
         }

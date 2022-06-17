@@ -1,6 +1,6 @@
 //
-//  PickerListItem.swift
-//  KeyboardKit
+//  ListPickerItem.swift
+//  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-20.
 //  Copyright © 2021 Daniel Saidi. All rights reserved.
