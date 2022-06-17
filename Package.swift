@@ -19,7 +19,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
         .package(url: "https://github.com/danielsaidi/Quick.git", .branch("main")),
         .package(url: "https://github.com/danielsaidi/Nimble.git", .branch("main")),
-        .package(url: "https://github.com/danielsaidi/MockingKit.git", .upToNextMajor(from: "0.9.0"))
+        .package(url: "https://github.com/danielsaidi/MockingKit.git", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
         .target(
