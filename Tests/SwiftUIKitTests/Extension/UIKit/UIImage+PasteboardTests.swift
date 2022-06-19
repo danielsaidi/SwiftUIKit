@@ -7,41 +7,32 @@
 //
 
 #if os(iOS)
-import Quick
-import Nimble
 import MockingKit
 import SwiftUIKit
 import UIKit
+import XCTest
 
-class UIImage_PasteboardTests: QuickSpec {
-    
-    override func spec() {
-        
-        var pasteboard: MockPasteboard!
-        
-        beforeEach {
-            pasteboard = MockPasteboard()
-        }
-        
-        describe("copying pasteboard") {
-            
-            it("ignores image without png data") {
-                let result = UIImage().copyToPasteboard(pasteboard)
-                let invokes = pasteboard.calls(to: pasteboard.setDataRef)
-                expect(result).to(beFalse())
-                expect(invokes.count).to(equal(0))
-            }
-            
-            it("sets correctly formatted data") {
-                let image = UIImage().resized(to: CGSize(width: 1, height: 1))!
-                let result = image.copyToPasteboard(pasteboard)
-                let invokes = pasteboard.calls(to: pasteboard.setDataRef)
-                expect(result).to(beTrue())
-                expect(invokes.count).to(equal(1))
-                expect(invokes[0].arguments.0).toNot(beNil())
-                expect(invokes[0].arguments.1).to(equal("public.png"))
-            }
-        }
+final class UIImage_PasteboardTests: XCTestCase {
+
+    func testIgnoresCopyingToPasteboardWhenImageHasNoPngData() {
+        let pasteboard = MockPasteboard()
+        let result = UIImage().copyToPasteboard(pasteboard)
+
+        XCTAssertFalse(result)
+        XCTAssertFalse(pasteboard.hasCalled(pasteboard.setDataRef))
+    }
+
+    func testCopiesToPasteboardWhenImageHasPngData() {
+        let pasteboard = MockPasteboard()
+
+        let image = UIImage().resized(to: CGSize(width: 1, height: 1))!
+        let result = image.copyToPasteboard(pasteboard)
+        let invokes = pasteboard.calls(to: pasteboard.setDataRef)
+
+        XCTAssertTrue(result)
+        XCTAssertTrue(pasteboard.hasCalled(pasteboard.setDataRef))
+        XCTAssertNotNil(invokes[0].arguments.0)
+        XCTAssertEqual(invokes[0].arguments.1, "public.png")
     }
 }
 #endif

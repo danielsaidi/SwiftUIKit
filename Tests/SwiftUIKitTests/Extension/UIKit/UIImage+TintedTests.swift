@@ -7,23 +7,16 @@
 //
 
 #if os(iOS)
-import Quick
-import Nimble
 import SwiftUIKit
 import UIKit
+import XCTest
 
-class UIImage_TintedTests: QuickSpec {
-    
-    override func spec() {
-        
-        describe("tinting with color and blend mode") {
-            
-            it("returns tinted image") {
-                let image = UIImage().resized(to: CGSize(width: 100, height: 100))!
-                let tinted = image.tinted(with: .red, blendMode: .clear)
-                expect(tinted).toNot(beNil())
-            }
-        }
+final class UIImage_TintedTests: XCTestCase {
+
+    func testCanGenerateTintedImage() {
+        let image = UIImage().resized(to: CGSize(width: 100, height: 100))!
+        let tinted = image.tinted(with: .red, blendMode: .clear)
+        XCTAssertNotNil(tinted)
     }
 }
 #endif

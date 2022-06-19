@@ -6,9 +6,9 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import XCTest
 import SwiftUI
 import SwiftUIKit
+import XCTest
 
 final class EdgeInsets_EdgeTests: XCTestCase {
     
