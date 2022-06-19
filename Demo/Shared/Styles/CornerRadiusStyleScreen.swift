@@ -13,10 +13,11 @@ struct CornerRadiusStyleScreen: View {
  
     var body: some View {
         List {
-            Section {
-                ListText("This style makes it possible to create named styles that can be applied to any view.")
-            }
-            
+            ListHeader("""
+This style makes it possible to create named styles that can be applied to any view.
+
+The styles used in this example are defined in the demo project.
+""")        
             Section(header: Text("Examples")) {
                 item(.red, style: .small)
                 item(.green, style: .medium)

@@ -13,7 +13,7 @@ import SwiftUIKit
 final class View_ShadowStyleTests: XCTestCase {
     
     func testExtensionExists() {
-        let style = ShadowStyle(color: .red, radius: 5, x: 7, y: 9)
+        let style = ViewShadowStyle(color: .red, radius: 5, x: 7, y: 9)
         let view = Text("Text content")
         let result = view.shadow(style)
         XCTAssertNotNil(result)

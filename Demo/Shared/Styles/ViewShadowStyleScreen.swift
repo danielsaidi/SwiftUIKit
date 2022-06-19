@@ -1,5 +1,5 @@
 //
-//  ShadowStyleScreen.swift
+//  ViewShadowStyleScreen.swift
 //  Demo
 //
 //  Created by Daniel Saidi on 2020-11-26.
@@ -9,24 +9,26 @@
 import SwiftUI
 import SwiftUIKit
 
-struct ShadowStyleScreen: View {
+struct ViewShadowStyleScreen: View {
  
     var body: some View {
         List {
-            Section {
-                ListText("This style makes it possible to create named styles that can be applied to any view.")
-            }
+            ListHeader("""
+This style makes it possible to create styles that can be applied to any view.
+
+The styles used in this example are defined in the demo project.
+""")
             
             Section(header: Text("Examples")) {
                 item(.red, style: .small)
                 item(.green, style: .medium)
                 item(.blue, style: .large)
             }
-        }.navigationTitle("ShadowStyle")
+        }.navigationTitle("ViewShadowStyle")
     }
 }
 
-private extension ShadowStyleScreen {
+private extension ViewShadowStyleScreen {
     
     func item(_ color: Color, style: DemoStyle) -> some View {
         color
@@ -45,7 +47,7 @@ private enum DemoStyle: String {
         ViewShadowStyle(color: .black, radius: radius, x: 1, y: 1)
     }
     
-    var name: String { rawValue.capitalized }
+    var name: String { ".\(rawValue)" }
     
     var radius: CGFloat {
         switch self {
@@ -63,6 +65,6 @@ private enum DemoStyle: String {
 struct ShadowStyleScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ShadowStyleScreen()
+        ViewShadowStyleScreen()
     }
 }

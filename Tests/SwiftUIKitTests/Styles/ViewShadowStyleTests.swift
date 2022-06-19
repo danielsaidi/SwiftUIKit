@@ -1,5 +1,5 @@
 //
-//  ShadowStyleTests.swift
+//  ViewShadowStyleTests.swift
 //  SwiftUIKitTests
 //
 //  Created by Daniel Saidi on 2020-03-05.
@@ -10,10 +10,10 @@ import XCTest
 import SwiftUI
 import SwiftUIKit
 
-final class ShadowStyleTests: XCTestCase {
+final class ViewShadowStyleTests: XCTestCase {
     
     func testSetup() {
-        let style = ShadowStyle(color: .red, radius: 5, x: 7, y: 9)
+        let style = ViewShadowStyle(color: .red, radius: 5, x: 7, y: 9)
         XCTAssertEqual(style.color, .red)
         XCTAssertEqual(style.radius, 5)
         XCTAssertEqual(style.x, 7)
@@ -21,7 +21,7 @@ final class ShadowStyleTests: XCTestCase {
     }
     
     func testNoStyle() {
-        let style = ShadowStyle.none
+        let style = ViewShadowStyle.none
         XCTAssertEqual(style.color, .clear)
         XCTAssertEqual(style.radius, 0)
         XCTAssertEqual(style.x, 0)

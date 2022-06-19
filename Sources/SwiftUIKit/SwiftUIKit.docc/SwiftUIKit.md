@@ -148,7 +148,7 @@ SwiftUIKit is available under the MIT license.
 - ``CornerRadiusStyle``
 - ``FontIdentifier``
 - ``FontStyle``
-- ``ShadowStyle``
+- ``ViewShadowStyle``
 
 ### Views
 

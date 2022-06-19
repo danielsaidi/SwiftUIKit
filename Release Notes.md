@@ -32,6 +32,8 @@ This will make the things in this library easier to understand and document, sin
 * `ImageResource` has been renamed to `ImageRepresentable`.
 * `ShadowStyle` has been renamed to `ViewShadowStyle` to not conflict with the new SwiftUI 4 ShadowStyle that comes in Xcode 14.
 
+
+
 ## 2.6
 
 This version adds focus and printing utils, makes the system font picker work better on multiple platforms and deprecates web views.
@@ -61,6 +63,7 @@ Web views can be found in the new [WebViewKit](https://github.com/danielsaidi/We
 
 * `SafariWebView` has been deprecated - use WebViewKit instead.
 * `WebView` has been deprecated - use WebViewKit instead.
+
 
 
 ## 2.5

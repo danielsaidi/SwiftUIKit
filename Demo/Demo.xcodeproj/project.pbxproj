@@ -25,7 +25,6 @@
 		A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */; };
 		A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */; };
 		A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */; };
-		A901F0F32570028800F1C285 /* ShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */; };
 		A901F1102570079800F1C285 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F10E2570079800F1C285 /* Fonts.swift */; };
 		A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlipViewScreen.swift */; };
 		A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */; };
@@ -56,6 +55,7 @@
 		A988840127EDAF5B00994F92 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A988840027EDAF5B00994F92 /* SwiftUIKit */; };
 		A9ADC339285F0B3C00864B58 /* ImagesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */; };
 		A9ADC33A285F0B3C00864B58 /* ImageRendererScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */; };
+		A9ADC33C285F1C4F00864B58 /* ViewShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC33B285F1C4F00864B58 /* ViewShadowStyleScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +77,6 @@
 		A901F0DE256FE65E00F1C285 /* DemoPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPresentable.swift; sourceTree = "<group>"; };
 		A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyleScreen.swift; sourceTree = "<group>"; };
 		A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
-		A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyleScreen.swift; sourceTree = "<group>"; };
 		A901F10E2570079800F1C285 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A901F11A257010DB00F1C285 /* FlipViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewScreen.swift; sourceTree = "<group>"; };
 		A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewShelvesScreen.swift; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		A98883FF27EDAF2D00994F92 /* swiftuikit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = swiftuikit; path = ..; sourceTree = "<group>"; };
 		A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesScreen.swift; sourceTree = "<group>"; };
 		A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRendererScreen.swift; sourceTree = "<group>"; };
+		A9ADC33B285F1C4F00864B58 /* ViewShadowStyleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewShadowStyleScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +180,7 @@
 				A901F04D256F8CFE00F1C285 /* StylesScreen.swift */,
 				A901F0E82570027400F1C285 /* CornerRadiusStyleScreen.swift */,
 				A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */,
-				A901F0F22570028800F1C285 /* ShadowStyleScreen.swift */,
+				A9ADC33B285F1C4F00864B58 /* ViewShadowStyleScreen.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -495,10 +495,10 @@
 				A901F07B256F963400F1C285 /* PickersScreen.swift in Sources */,
 				A901F03A256F8CA600F1C285 /* DataScreen.swift in Sources */,
 				A901F03F256F8CB100F1C285 /* ExtensionsScreen.swift in Sources */,
+				A9ADC33C285F1C4F00864B58 /* ViewShadowStyleScreen.swift in Sources */,
 				A9544B612571482200522141 /* ImagePickerScreen.swift in Sources */,
 				A901F0D5256FE64500F1C285 /* SheetsScreen.swift in Sources */,
 				A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */,
-				A901F0F32570028800F1C285 /* ShadowStyleScreen.swift in Sources */,
 				A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
 				A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
 				A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */,

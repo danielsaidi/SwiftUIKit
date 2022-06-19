@@ -13,9 +13,9 @@ struct StylesScreen: View {
     
     var body: some View {
         List {
-            Section {
-                ListText("SwiftUIKit has styles that make it easier to define and apply custom styles.")
-            }
+            ListHeader("""
+SwiftUIKit has styles that make it easier to define and apply custom styles.
+""")
             
             Section(header: Text("Styles")) {
                 ListNavigationLink(destination: CornerRadiusStyleScreen()) {
@@ -26,7 +26,7 @@ struct StylesScreen: View {
                     Label("Fonts", image: .font)
                 }
                 #endif
-                ListNavigationLink(destination: ShadowStyleScreen()) {
+                ListNavigationLink(destination: ViewShadowStyleScreen()) {
                     Label("Shadows", image: .shadow)
                 }
             }
