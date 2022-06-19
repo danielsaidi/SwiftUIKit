@@ -83,12 +83,6 @@ struct ViewsScreen: View {
                 Label("UIView Wrapper", image: .wrapper)
             }
             #endif
-    
-            #if os(iOS)
-            ListNavigationLink(destination: WebViewScreen()) {
-                Label("Web View", image: .web)
-            }
-            #endif
         }
     }
 }

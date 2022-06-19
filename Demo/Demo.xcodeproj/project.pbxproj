@@ -56,7 +56,6 @@
 		A988840127EDAF5B00994F92 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A988840027EDAF5B00994F92 /* SwiftUIKit */; };
 		A9ADC339285F0B3C00864B58 /* ImagesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */; };
 		A9ADC33A285F0B3C00864B58 /* ImageRendererScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */; };
-		A9F85336259B4D9200C98870 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F85335259B4D9200C98870 /* WebViewScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,7 +121,6 @@
 		A98883FF27EDAF2D00994F92 /* swiftuikit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = swiftuikit; path = ..; sourceTree = "<group>"; };
 		A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesScreen.swift; sourceTree = "<group>"; };
 		A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRendererScreen.swift; sourceTree = "<group>"; };
-		A9F85335259B4D9200C98870 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +230,6 @@
 				A9544B402571114400522141 /* PageViewScreen.swift */,
 				A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */,
 				A901F084256F964600F1C285 /* ViewsScreen.swift */,
-				A9F85335259B4D9200C98870 /* WebViewScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,7 +474,6 @@
 			files = (
 				A901F099256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */,
 				A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */,
-				A9F85336259B4D9200C98870 /* WebViewScreen.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
 				A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
 				A9544B5C2571481800522141 /* FilePickerScreen.swift in Sources */,
