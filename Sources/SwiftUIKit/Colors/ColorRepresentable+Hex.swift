@@ -62,7 +62,7 @@ private extension String {
     }
 
     func conforms(to pattern: String) -> Bool {
-        let pattern = NSPredicate(format:"SELF MATCHES %@", pattern)
+        let pattern = NSPredicate(format: "SELF MATCHES %@", pattern)
         return pattern.evaluate(with: self)
     }
 }
