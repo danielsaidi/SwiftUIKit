@@ -4,7 +4,7 @@ Moving to 3.0, larger and more conceptual parts will be moved from this library 
 
 Some examples are functionality that consists of many types (like the list and picker utils) and views that have great value in themselves.
 
-This will make the things in this library easier to understand and document, since they will require less context and coupling.
+This will make the things in this library easier to understand and document, since they will require less context and coupling.  
 
 
 ## 2.7
@@ -22,7 +22,8 @@ This will make the things in this library easier to understand and document, sin
 ### 💡 Behavior changes
 
 * `PresentationContext` is now `open` instead of `public`.
-* `DocumentCamera` now passes on its actions instead of itself. 
+* `DocumentCamera` now passes on its actions instead of itself.
+* Unit tests no longer use Quick and Nimble. 
 
 ### 🗑 Deprecations
 
