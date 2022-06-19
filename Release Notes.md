@@ -7,6 +7,24 @@ Some examples are functionality that consists of many types (like the list and p
 This will make the things in this library easier to understand and document, since they will require less context and coupling.  
 
 
+## 2.8
+
+This version adds a backported version of `ImageRenderer`, that replaces the old `View+Snapshot` extension. 
+
+The backported `ImageRenderer` is only available in iOS 15 and before. In iOS 16 and later, you'll get the SwiftUI 4 native `ImageRenderer`.
+
+### ✨ New features
+
+* `ImageRenderer` is a new type that replaces the old `View+Snapshot` extension and serves as a bridge between iOs 16 and earlier versions.
+* `ImageRenderer+Image` extends the SwiftUI 4 renderer with a platform-agnostic image property.
+* `ImageRenderer+Scale` extends the SwiftUI 4 renderer with new scale initializers.
+
+### 🗑 Deprecations
+
+* `Image+Snapshot` has been replaced by the new `ImageRenderer`.
+
+
+
 ## 2.7
 
 ### ✨ New features
