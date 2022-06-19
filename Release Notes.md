@@ -26,12 +26,11 @@ This will make the things in this library easier to understand and document, sin
 
 ### 🗑 Deprecations
 
-* `ImageResource` has been renamed to `ImageRepresentable`.
 * `DocumentGroupOnboardingScreen` has been renamed to `DocumentGroupSheet`.
 * `DocumentGroupOnboardingScreenError` has been renamed to `DocumentGroupSheetError`.
 * `DocumentGroupOnboardingScreen` `presentAsOnboarding` has been renamed to `presentFromDocumentGroup`.
-
-
+* `ImageResource` has been renamed to `ImageRepresentable`.
+* `ShadowStyle` has been renamed to `ViewShadowStyle` to not conflict with the new SwiftUI 4 ShadowStyle that comes in Xcode 14.
 
 ## 2.6
 

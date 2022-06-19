@@ -80,8 +80,8 @@ private extension ImagePickerScreen {
         sheetContext.present(createCamera())
     }
     
-    func saveImage(_ image: ImageResource) {
-        let image = Image(imageResource: image)
+    func saveImage(_ image: ImageRepresentable) {
+        let image = Image(image: image)
         images.append(image)
         dismissCamera()
     }

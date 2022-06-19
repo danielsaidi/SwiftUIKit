@@ -41,8 +41,8 @@ private enum DemoStyle: String {
     
     case small, medium, large
     
-    var style: ShadowStyle {
-        ShadowStyle(color: .black, radius: radius, x: 1, y: 1)
+    var style: ViewShadowStyle {
+        ViewShadowStyle(color: .black, radius: radius, x: 1, y: 1)
     }
     
     var name: String { rawValue.capitalized }

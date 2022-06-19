@@ -8,11 +8,11 @@
 
 import SwiftUI
 
-public extension ShadowStyle {
+public extension ViewShadowStyle {
     
     @available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")
-    static var standardToast: ShadowStyle {
-        ShadowStyle(
+    static var standardToast: ViewShadowStyle {
+        ViewShadowStyle(
             color: Color.black.opacity(0.3),
             radius: 5,
             x: 0,

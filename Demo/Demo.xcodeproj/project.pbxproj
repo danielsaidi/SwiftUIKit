@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,6 +54,8 @@
 		A9544BAE2571BA8300522141 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = A9544BAD2571BA8300522141 /* Fastfile */; };
 		A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98278E0257E969C0006D64F /* Color+Demo.swift */; };
 		A988840127EDAF5B00994F92 /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = A988840027EDAF5B00994F92 /* SwiftUIKit */; };
+		A9ADC339285F0B3C00864B58 /* ImagesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */; };
+		A9ADC33A285F0B3C00864B58 /* ImageRendererScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */; };
 		A9F85336259B4D9200C98870 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F85335259B4D9200C98870 /* WebViewScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		A9544BB72571BAD800522141 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A98278E0257E969C0006D64F /* Color+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Demo.swift"; sourceTree = "<group>"; };
 		A98883FF27EDAF2D00994F92 /* swiftuikit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = swiftuikit; path = ..; sourceTree = "<group>"; };
+		A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesScreen.swift; sourceTree = "<group>"; };
+		A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRendererScreen.swift; sourceTree = "<group>"; };
 		A9F85335259B4D9200C98870 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,6 +287,7 @@
 				A9355053256F7E5D00BBE9CE /* Demo */,
 				A901F052256F8D0E00F1C285 /* Extensions */,
 				A901F054256F8D1D00F1C285 /* Gestures */,
+				A9ADC336285F0B1400864B58 /* Images */,
 				A901F08A256F965300F1C285 /* Pickers */,
 				A901F055256F8D2400F1C285 /* Presentation */,
 				A901F0F92570041100F1C285 /* Resources */,
@@ -358,6 +363,15 @@
 				A98883FF27EDAF2D00994F92 /* swiftuikit */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		A9ADC336285F0B1400864B58 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */,
+				A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +451,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A9544B9B2571B8DE00522141 /* [SwiftLint] */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -466,6 +481,7 @@
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
 				A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
 				A9544B5C2571481800522141 /* FilePickerScreen.swift in Sources */,
+				A9ADC33A285F0B3C00864B58 /* ImageRendererScreen.swift in Sources */,
 				A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
 				A9544B412571114400522141 /* PageViewScreen.swift in Sources */,
 				A901F049256F8CC900F1C285 /* PresentationScreen.swift in Sources */,
@@ -494,6 +510,7 @@
 				A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,
+				A9ADC339285F0B3C00864B58 /* ImagesScreen.swift in Sources */,
 				A901F0A0256FAF9A00F1C285 /* PersistedScreen.swift in Sources */,
 				A901F080256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */,

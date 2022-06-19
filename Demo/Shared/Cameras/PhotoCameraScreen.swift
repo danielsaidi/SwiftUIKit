@@ -68,8 +68,8 @@ private extension PhotoCameraScreen {
         sheetContext.present(createCamera())
     }
     
-    func savePhoto(_ photo: ImageResource) {
-        let image = Image(imageResource: photo)
+    func savePhoto(_ photo: ImageRepresentable) {
+        let image = Image(image: photo)
         photos.append(image)
         dismissCamera()
     }

@@ -24,26 +24,26 @@
         "repositoryURL": "https://github.com/danielsaidi/MockingKit.git",
         "state": {
           "branch": null,
-          "revision": "ebb888c98bd1de2f2409c7b06f2386a55120d910",
-          "version": "0.9.4"
+          "revision": "3e51adb1a3922cdccbe84a3088b7fa4d67ae236d",
+          "version": "1.1.0"
         }
       },
       {
         "package": "Nimble",
-        "repositoryURL": "https://github.com/Quick/Nimble.git",
+        "repositoryURL": "https://github.com/danielsaidi/Nimble.git",
         "state": {
-          "branch": null,
-          "revision": "c93f16c25af5770f0d3e6af27c9634640946b068",
-          "version": "9.2.1"
+          "branch": "main",
+          "revision": "f76b83c051fb3e6c120a33ebac200efba883065a",
+          "version": null
         }
       },
       {
         "package": "Quick",
-        "repositoryURL": "https://github.com/Quick/Quick.git",
+        "repositoryURL": "https://github.com/danielsaidi/Quick.git",
         "state": {
-          "branch": null,
-          "revision": "8cce6acd38f965f5baa3167b939f86500314022b",
-          "version": "3.1.2"
+          "branch": "main",
+          "revision": "1efe9551db0ad6a6e979f33366969750123d14d9",
+          "version": null
         }
       },
       {

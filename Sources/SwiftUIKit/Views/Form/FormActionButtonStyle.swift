@@ -26,7 +26,7 @@ public struct FormActionButtonStyle: ButtonStyle {
         cornerRadius: Double = 10,
         disabledOpacity: Double = 0.3,
         pressedOpacity: Double = 0.7,
-        shadowStyle: ShadowStyle = .none) {
+        shadowStyle: ViewShadowStyle = .none) {
         self.horizontalPadding = horizontalPadding
         self.verticalPadding = verticalPadding
         self.backgroundColor = backgroundColor
@@ -43,7 +43,7 @@ public struct FormActionButtonStyle: ButtonStyle {
     public var foregroundColor: Color?
     public var horizontalPadding: Double
     public var pressedOpacity: Double
-    public var shadowStyle: ShadowStyle
+    public var shadowStyle: ViewShadowStyle
     public var verticalPadding: Double
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
@@ -76,13 +76,13 @@ public extension FormActionButtonStyle {
     }
 }
 
-public extension ShadowStyle {
+public extension ViewShadowStyle {
     
     /**
      This shadow style is intended for `FormActionButton`s.
      */
-    static var formActionButton: ShadowStyle {
-        ShadowStyle(color: Color.black.opacity(0.15), radius: 5)
+    static var formActionButton: ViewShadowStyle {
+        ViewShadowStyle(color: Color.black.opacity(0.15), radius: 5)
     }
 }
 

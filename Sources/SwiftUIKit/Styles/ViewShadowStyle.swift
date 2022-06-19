@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+@available(*, deprecated, message: "ShadowStyle has been renamed to ViewShadowStyle to not conflict with the new SwiftUI 4 ShadowStyle.")
+public typealias X = ViewShadowStyle
+
 /**
  This struct represents a style with properties that matches
  the `SwiftUI`s `shadow` modifier.
@@ -29,7 +32,7 @@ import SwiftUI
  }
  ```
  */
-public struct ShadowStyle {
+public struct ViewShadowStyle {
     
     public init(
         color: Color = .black,
@@ -48,7 +51,7 @@ public struct ShadowStyle {
     public let y: CGFloat
 }
 
-public extension ShadowStyle {
+public extension ViewShadowStyle {
     
     /**
      This style does not apply anything and can be used when
@@ -57,7 +60,7 @@ public extension ShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var none = ShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
+    static var none = ViewShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
     
     /**
      This style represents a badge or "sticker" and is meant
@@ -67,7 +70,7 @@ public extension ShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var badge = ShadowStyle(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 2)
+    static var badge = ViewShadowStyle(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 2)
     
     /**
      This style represents a shadow that is cast from a view
@@ -76,7 +79,7 @@ public extension ShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var elevated = ShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
+    static var elevated = ViewShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
 }
 
 struct ShadowStyle_Previews: PreviewProvider {

@@ -19,7 +19,7 @@ public struct ToastStyle {
         background: Background,
         backgroundPadding: CGFloat,
         cornerRadius: CGFloat,
-        shadowStyle: ShadowStyle) {
+        shadowStyle: ViewShadowStyle) {
         self.background = background.any()
         self.backgroundPadding = backgroundPadding
         self.cornerRadius = cornerRadius
@@ -29,7 +29,7 @@ public struct ToastStyle {
     public let background: AnyView
     public let backgroundPadding: CGFloat
     public let cornerRadius: CGFloat
-    public let shadowStyle: ShadowStyle
+    public let shadowStyle: ViewShadowStyle
 }
 
 @available(*, deprecated, message: "Toast is deprecated. Use the new https://github.com/danielsaidi/SystemNotification library instead.")

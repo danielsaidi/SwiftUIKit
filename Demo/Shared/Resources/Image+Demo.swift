@@ -32,6 +32,7 @@ extension Image {
     static var flag: Image { Image(systemName: "flag") }
     static var font: Image { Image(systemName: "f.cursive") }
     static var gestures: Image { Image(systemName: "hand.draw") }
+    static var images: Image { Image(systemName: "photo.on.rectangle") }
     static var multiline: Image { Image(systemName: "text.justifyleft") }
     static var optional: Image { Image(systemName: "questionmark.square.dashed") }
     static var palette: Image { Image(systemName: "paintpalette") }
