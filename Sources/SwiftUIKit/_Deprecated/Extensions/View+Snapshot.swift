@@ -10,12 +10,8 @@
 import SwiftUI
 
 public extension View {
-    
-    /**
-     Take a snapshot of the view.
-     
-     `TODO` Add support for macOS, watchOS and tvOS.
-     */
+
+    @available(*, deprecated, message: "Use the new ImageRenderer instead")
     func snapshot(origin: CGPoint = .zero, size: CGSize) -> UIImage {
         let window = UIWindow(frame: CGRect(origin: origin, size: size))
         let hosting = UIHostingController(rootView: self)
