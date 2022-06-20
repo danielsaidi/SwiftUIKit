@@ -20,6 +20,8 @@ import SwiftUI
  these views look when you don't provide a `style` in `init`.
  The standard colors are not adaptive and will not adjust to
  e.g. dark mode.
+
+ `TODO:` Make ``CircularProgressBarStyle`` not use `AnyView`.
  */
 public struct CircularProgressBar: View {
     
