@@ -7,6 +7,16 @@ Some examples are functionality that consists of many types (like the list and p
 This will make the things in this library easier to understand and document, since they will require less context and coupling.  
 
 
+## 2.9
+
+This version adds a the possibility to present custom sized, undimming sheets in SwiftUI.
+
+### ✨ New features
+
+* `View+PresentationDetents` adds new `presentationDetents(undimmed:)` view modifiers.
+  
+
+
 ## 2.8
 
 This version adds a backported version of `ImageRenderer`, that replaces the old `View+Snapshot` extension. 
