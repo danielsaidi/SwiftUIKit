@@ -7,27 +7,19 @@ Some examples are functionality that consists of many types (like the list and p
 This will make the things in this library easier to understand and document, since they will require less context and coupling.  
 
 
-## 2.9
-
-This version adds a the possibility to present custom sized, undimming sheets in SwiftUI.
-
-### ✨ New features
-
-* `View+PresentationDetents` adds new `presentationDetents(undimmed:)` view modifiers.
-  
-
-
 ## 2.8
 
-This version adds a backported version of `ImageRenderer`, that replaces the old `View+Snapshot` extension. 
+This version adds a the possibility to present custom sized, undimmed sheets in SwiftUI. 
 
-The backported `ImageRenderer` is only available in iOS 15 and before. In iOS 16 and later, you'll get the SwiftUI 4 native `ImageRenderer`.
+This version also adds a backported version of the native SwiftUI 4 `ImageRenderer`. The backported version is only available in iOS 15 and before. In iOS 16 and later, you'll get the native one.
 
 ### ✨ New features
 
+* `ImageRepresentable+Size` adds resizing to macOS, tvOS and watchOS as well.
 * `ImageRenderer` is a new type that replaces the old `View+Snapshot` extension and serves as a bridge between iOs 16 and earlier versions.
 * `ImageRenderer+Image` extends the SwiftUI 4 renderer with a platform-agnostic image property.
 * `ImageRenderer+Scale` extends the SwiftUI 4 renderer with new scale initializers.
+* `View+PresentationDetents` adds new `presentationDetents(undimmed:)` view modifiers.
 
 ### 🗑 Deprecations
 

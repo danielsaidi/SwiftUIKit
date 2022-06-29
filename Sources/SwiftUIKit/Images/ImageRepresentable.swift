@@ -6,7 +6,7 @@
 //  Copyright © 2022 Daniel Saidi. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(AppKit)
 import class AppKit.NSImage
 
 /**
@@ -16,7 +16,7 @@ import class AppKit.NSImage
 public typealias ImageRepresentable = NSImage
 #endif
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if canImport(UIKit)
 import class UIKit.UIImage
 
 /**
