@@ -15,6 +15,7 @@ This version also adds a backported version of the native SwiftUI 4 `ImageRender
 
 ### ✨ New features
 
+* `Font+FontRepresentable` adds new ways to create SwiftUI fonts with platform-agnostic ones.
 * `ImageRepresentable+Size` adds resizing to macOS, tvOS and watchOS as well.
 * `ImageRenderer` is a new type that replaces the old `View+Snapshot` extension and serves as a bridge between iOs 16 and earlier versions.
 * `ImageRenderer+Image` extends the SwiftUI 4 renderer with a platform-agnostic image property.
