@@ -10,7 +10,7 @@
 import SwiftUI
 
 @available(iOS 16.0, *)
-extension View {
+public extension View {
 
     /**
      Define a set of presentation detents that don't dim any
