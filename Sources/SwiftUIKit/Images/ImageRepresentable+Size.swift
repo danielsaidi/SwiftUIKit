@@ -19,8 +19,8 @@ public extension NSImage {
     func resized(to newSize: CGSize) -> NSImage? {
         let newImage = NSImage(size: newSize)
         newImage.lockFocus()
-        let sourceRect = NSMakeRect(0, 0, size.width, size.height)
-        let destRect = NSMakeRect(0, 0, newSize.width, newSize.height)
+        let sourceRect = NSRect(x: 0, y: 0, width: size.width, height: size.height)
+        let destRect = NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
         draw(in: destRect, from: sourceRect, operation: .sourceOver, fraction: CGFloat(1))
         newImage.unlockFocus()
         return newImage
