@@ -7,6 +7,15 @@ Some examples are functionality that consists of many types (like the list and p
 This will make the things in this library easier to understand and document, since they will require less context and coupling.  
 
 
+
+## 2.9
+
+### ✨ New features
+
+* `View+PersistentSystemOverlays` adds a view extension for only hiding persistent system overlays if the feature is available. 
+
+
+
 ## 2.8
 
 This version adds a the possibility to present custom sized, undimmed sheets in SwiftUI. 
