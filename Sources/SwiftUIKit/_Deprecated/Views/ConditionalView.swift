@@ -48,6 +48,7 @@ import SwiftUI
      else: fallback)
  ```
  */
+@available(*, deprecated, message: "This view has been deprecated, since conditional views shouldn't be encouraged.")
 public struct ConditionalView<Content: View, Fallback: View>: View {
     
     public init(
@@ -75,6 +76,7 @@ public struct ConditionalView<Content: View, Fallback: View>: View {
     }
 }
 
+@available(*, deprecated, message: "This view has been deprecated, since conditional views shouldn't be encouraged.")
 public extension ConditionalView where Fallback == EmptyView {
     
     init(_ condition: Bool, @ViewBuilder content: @escaping ContentBuilder) {
@@ -82,6 +84,7 @@ public extension ConditionalView where Fallback == EmptyView {
     }
 }
 
+@available(*, deprecated, message: "This view has been deprecated, since conditional views shouldn't be encouraged.")
 struct ConditionalView_Previews: PreviewProvider {
     
     static var previews: some View {

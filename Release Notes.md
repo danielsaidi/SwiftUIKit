@@ -15,6 +15,10 @@ This will make the things in this library easier to understand and document, sin
 * `View+PersistentSystemOverlays` adds a view extension for only hiding persistent system overlays if the feature is available.
 * `View+Searchable` adds a conditional searchable view extension. 
 
+### 🗑 Deprecations
+
+* `ConditionalView` has been deprecated, since conditional views shouldn't be encouraged.
+
 
 
 ## 2.8

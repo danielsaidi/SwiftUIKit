@@ -60,11 +60,14 @@ public struct SearchBar: View {
 
 private extension SearchBar {
 
+    @ViewBuilder
     var cancelButton: some View {
-        ConditionalView(hasText) {
+        if hasText {
             Button(action: cancel) {
                 Text(cancelText)
             }
+        } else {
+            EmptyView()
         }
     }
     
