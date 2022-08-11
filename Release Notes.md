@@ -10,14 +10,23 @@ This will make the things in this library easier to understand and document, sin
 
 ## 2.9
 
+This version adds some minor features and deprecates more functionality.
+
+I've also adjusted the indentation of multiline function signature end parenthesis, to avoid auto-indentation issues in later versions of Xcode. 
+
 ### ✨ New features
 
+* `Collection+EnumeratedArray` adds `enumeratedArray()` as a shorthand for `Array(self.enumerated())`. 
+* `DotAnimation` is a re-added, previously removed view, that animates a series of dots.
+* `DotAnimationText` is a re-added, previously removed view, that renders a text followed by a dot animation.
 * `View+PersistentSystemOverlays` adds a view extension for only hiding persistent system overlays if the feature is available.
 * `View+Searchable` adds a conditional searchable view extension. 
 
 ### 🗑 Deprecations
 
 * `ConditionalView` has been deprecated, since conditional views shouldn't be encouraged.
+* `ForEachEnumerated` has been deprecated. Use `Collection+EnumeratedArray` instead.
+* `OptionalView` has been deprecated, since conditional views shouldn't be encouraged.
 
 
 
