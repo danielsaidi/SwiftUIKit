@@ -18,7 +18,8 @@ public struct FormTextEditor: View {
     public init(
         title: String,
         text: Binding<String>,
-        editorHeight: CGFloat = 100) {
+        editorHeight: CGFloat = 100
+    ) {
         self.title = title
         self._text = text
         self.editorHeight = editorHeight
@@ -27,7 +28,8 @@ public struct FormTextEditor: View {
     private let title: String
     private let editorHeight: CGFloat
     
-    @Binding private var text: String
+    @Binding
+    private var text: String
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 4) {

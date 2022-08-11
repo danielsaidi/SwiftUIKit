@@ -22,7 +22,8 @@ public struct ShareSheet: UIViewControllerRepresentable {
         activityItems: [Any],
         applicationActivities: [UIActivity]? = nil,
         excludedActivityTypes: [UIActivity.ActivityType]? = nil,
-        callback: Callback? = nil) {
+        callback: Callback? = nil
+    ) {
         self.activityItems = activityItems
         self.applicationActivities = applicationActivities
         self.excludedActivityTypes = excludedActivityTypes

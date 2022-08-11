@@ -30,7 +30,8 @@ public struct SystemFontForEachPicker: View {
         selectedFontName: Binding<String>,
         fonts: [SystemFontPickerFont] = .all,
         itemFontSize: CGFloat = 20,
-        dismissAfterPick: Bool = false) {
+        dismissAfterPick: Bool = false
+    ) {
         self._selectedFontName = selectedFontName
         self.fonts = fonts
         self.itemFontSize = itemFontSize
@@ -53,12 +54,13 @@ public struct SystemFontForEachPicker: View {
         ForEachPicker(
             items: fonts,
             selection: font,
-            dismissAfterPick: dismissAfterPick) { font, isSelected in
-                SystemFontPickerItem(
-                    font: font,
-                    fontSize: itemFontSize,
-                    isSelected: isSelected)
-            }
+            dismissAfterPick: dismissAfterPick
+        ) { font, isSelected in
+            SystemFontPickerItem(
+                font: font,
+                fontSize: itemFontSize,
+                isSelected: isSelected)
+        }
     }
 }
 

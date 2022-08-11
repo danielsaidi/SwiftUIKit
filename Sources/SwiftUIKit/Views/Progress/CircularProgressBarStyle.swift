@@ -23,7 +23,8 @@ public struct CircularProgressBarStyle {
         progressModifier: @escaping ViewModifier = { $0 },
         showTitle: Bool = true,
         titleColor: Color = .white,
-        titleFont: Font = Font.body.bold()) {
+        titleFont: Font = Font.body.bold()
+    ) {
         self.backgroundColor = backgroundColor
         self.strokeColor = strokeColor
         self.strokeWidth = strokeWidth

@@ -22,7 +22,8 @@ public struct SimplePickerTvScreen<Header: View, Picker: View>: View {
     public init(
         header: @escaping HeaderBuilder,
         okButtonText: String,
-        @ViewBuilder picker: @escaping PickerBuilder) {
+        @ViewBuilder picker: @escaping PickerBuilder
+    ) {
         self.header = header
         self.okButtonText = okButtonText
         self.picker = picker

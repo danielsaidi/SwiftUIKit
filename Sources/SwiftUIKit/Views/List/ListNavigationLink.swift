@@ -16,20 +16,22 @@ public struct ListNavigationLink<Content: View, Destination: View>: View {
     
     public init(
         destination: Destination,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         self.destination = { destination }
         self.content = content
     }
     
     public init(
         @ViewBuilder destination: @escaping () -> Destination,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         self.destination = destination
         self.content = content
     }
-    
-    @ViewBuilder private let destination: () -> Destination
-    @ViewBuilder private let content: () -> Content
+
+    private let destination: () -> Destination
+    private let content: () -> Content
     
     public var body: some View {
         NavigationLink(destination: destination) {

@@ -26,7 +26,9 @@ public extension DocumentPresenter {
     /**
      Get the document name from the ``documentUrl``, if any.
      */
-    func documentName(withExtension: Bool = false) -> String? {
+    func documentName(
+        withExtension: Bool = false
+    ) -> String? {
         if withExtension {
             return documentUrl?.lastPathComponent
         } else {
@@ -41,7 +43,8 @@ public extension DocumentPresenter {
      within the applications document directory.
      */
     func canRenameDocument(
-        with fileManager: FileManager = .default) -> Bool {
+        with fileManager: FileManager = .default
+    ) -> Bool {
         guard let url = documentUrl else { return false }
         guard let docsUrl = fileManager.documentDirectoryUrl else { return false }
         let docUrl = docsUrl.appendingPathComponent(url.lastPathComponent)
@@ -60,7 +63,8 @@ public extension DocumentPresenter {
     func renameDocument(
         to newFileName: String,
         newExtension: String? = nil,
-        with fileManager: FileManager = .default) throws {
+        with fileManager: FileManager = .default
+    ) throws {
         guard let oldUrl = documentUrl else { throw DocumentRenameError.noDocumentUrl }
         let oldPath = oldUrl.path
         let oldExtension = oldUrl.pathExtension

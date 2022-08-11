@@ -22,7 +22,8 @@ public struct ListText<Icon: View>: View {
     public init(
         _ text: String,
         icon: Icon,
-        subtitle: String? = nil) {
+        subtitle: String? = nil
+    ) {
         self.text = text
         self.icon = icon
         self.subtitle = subtitle
@@ -44,7 +45,8 @@ public extension ListText where Icon == EmptyView {
     
     init(
         _ text: String,
-        subtitle: String? = nil) {
+        subtitle: String? = nil
+    ) {
         self.text = text
         self.icon = nil
         self.subtitle = subtitle
@@ -57,7 +59,8 @@ public extension ListText where Icon == Image {
     init(
         _ text: String,
         icon: Image,
-        subtitle: String? = nil) {
+        subtitle: String? = nil
+    ) {
         self.text = text
         self.icon = icon
         self.subtitle = subtitle

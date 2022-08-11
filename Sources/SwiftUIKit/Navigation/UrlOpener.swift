@@ -15,6 +15,9 @@ import SwiftUI
  The default implementation uses the shared application when
  you call it in `iOS`. It currently has no implementation on
  other platforms and just prints an assertion warning.
+
+ Note that you can use the new `Link` view instead, for apps
+ that use SwiftUI 3 and later.
  */
 public protocol UrlOpener {
     

@@ -15,13 +15,14 @@ public extension View {
      This extension can be used to add a `SwipeGesture` to a
      `View` in a more declarative way.
      
-     - Parameter maximumTime: The max time the gesture can be active before cancelling itself.
-     - Parameter minimumDistance: The minimum distance in points the gesture must be dragged before it triggers.
-     - Parameter maximumDistance: The maximum distance in points the gesture can be dragged before it cancels.
-     - Parameter up: The action to trigger when the user swipes up.
-     - Parameter left: The action to trigger when the user swipes left.
-     - Parameter right: The action to trigger when the user swipes right.
-     - Parameter down: The action to trigger when the user swipes down.
+     - Parameters:
+       - maximumTime: The max time the gesture can be active before cancelling itself.
+       - minimumDistance: The minimum distance in points the gesture must be dragged before it triggers.
+       - maximumDistance: The maximum distance in points the gesture can be dragged before it cancels.
+       - up: The action to trigger when the user swipes up.
+       - left: The action to trigger when the user swipes left.
+       - right: The action to trigger when the user swipes right.
+       - down: The action to trigger when the user swipes down.
      */
     func onSwipeGesture(
         maximumTime: TimeInterval = 1,
@@ -31,7 +32,8 @@ public extension View {
         up: @escaping () -> Void = {},
         left: @escaping () -> Void = {},
         right: @escaping () -> Void = {},
-        down: @escaping () -> Void = {}) -> some View {
+        down: @escaping () -> Void = {}
+    ) -> some View {
         self.gesture(
             DragGesture(minimumDistance: minimumDistance)
                 .onChanged { _ in gestureTimer.start() }

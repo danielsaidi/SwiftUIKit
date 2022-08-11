@@ -29,7 +29,6 @@ import VisionKit
  The camera result is a `VNDocumentCameraScan` that contains
  a list of scanned files, if any.
  */
-@available(iOS 13, *)
 public struct DocumentCamera: UIViewControllerRepresentable {
     
     public init(
@@ -63,14 +62,14 @@ public struct DocumentCamera: UIViewControllerRepresentable {
         context: Context) {}
 }
 
-@available(iOS 13, *)
 public extension DocumentCamera {
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         
         public init(
             cancelAction: @escaping DocumentCamera.CancelAction,
-            resultAction: @escaping DocumentCamera.ResultAction) {
+            resultAction: @escaping DocumentCamera.ResultAction
+        ) {
             self.cancelAction = cancelAction
             self.resultAction = resultAction
         }
@@ -79,19 +78,22 @@ public extension DocumentCamera {
         private let resultAction: DocumentCamera.ResultAction
 
         public func documentCameraViewControllerDidCancel(
-            _ controller: VNDocumentCameraViewController) {
+            _ controller: VNDocumentCameraViewController
+        ) {
             cancelAction()
         }
         
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController,
-            didFailWithError error: Error) {
+            didFailWithError error: Error
+        ) {
             resultAction(.failure(error))
         }
         
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController,
-            didFinishWith scan: VNDocumentCameraScan) {
+            didFinishWith scan: VNDocumentCameraScan
+        ) {
             resultAction(.success(scan))
         }
     }

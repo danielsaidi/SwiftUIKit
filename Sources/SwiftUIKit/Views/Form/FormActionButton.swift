@@ -24,7 +24,8 @@ public struct FormActionButton: View {
         icon: Image,
         title: String,
         style: FormActionButtonStyle = .standard,
-        action: @escaping () -> Void) {
+        action: @escaping () -> Void
+    ) {
         self.icon = icon
         self.title = title
         self.style = style
@@ -79,7 +80,8 @@ struct FormActionButton_Previews: PreviewProvider {
     
     static func button(
         _ image: Image,
-        _ title: String) -> FormActionButton {
+        _ title: String
+    ) -> FormActionButton {
         FormActionButton(icon: image, title: title, action: {})
     }
     

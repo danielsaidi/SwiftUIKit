@@ -19,7 +19,9 @@ import SwiftUI
  */
 public struct DetailPanelForm<Content: View>: View {
     
-    public init(@ViewBuilder content: @escaping ContentBuilder) {
+    public init(
+        @ViewBuilder content: @escaping ContentBuilder
+    ) {
         self.content = content
     }
     

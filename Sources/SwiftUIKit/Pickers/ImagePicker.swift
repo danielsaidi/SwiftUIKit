@@ -38,7 +38,8 @@ public struct ImagePicker: UIViewControllerRepresentable {
     public init(
         sourceType: UIImagePickerController.SourceType,
         cancelAction: @escaping CancelAction = {},
-        resultAction: @escaping ResultAction) {
+        resultAction: @escaping ResultAction
+    ) {
         self.sourceType = sourceType
         self.cancelAction = cancelAction
         self.resultAction = resultAction

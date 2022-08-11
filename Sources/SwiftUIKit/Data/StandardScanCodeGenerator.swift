@@ -36,7 +36,10 @@ public class StandardScanCodeGenerator: ScanCodeGenerator {
     /**
      Generate a scan code for the provided type and string.
      */
-    public func generateCode(_ type: ScanCodeType, from string: String) -> ImageRepresentable? {
+    public func generateCode(
+        _ type: ScanCodeType,
+        from string: String
+    ) -> ImageRepresentable? {
         guard let image = generateCoreImage(of: type, from: string) else { return nil }
         return ImageRepresentable(cgImage: image)
     }
@@ -44,7 +47,10 @@ public class StandardScanCodeGenerator: ScanCodeGenerator {
 
 private extension StandardScanCodeGenerator {
     
-    func generateCoreImage(of type: ScanCodeType, from string: String) -> CGImage? {
+    func generateCoreImage(
+        of type: ScanCodeType,
+        from string: String
+    ) -> CGImage? {
         let ciContext = CIContext()
         let data = string.data(using: String.Encoding.utf8)
         guard let filter = CIFilter(name: type.ciFilterName) else { return nil }

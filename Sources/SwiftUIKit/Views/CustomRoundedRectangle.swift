@@ -20,7 +20,8 @@ public struct CustomRoundedRectangle: Shape {
         topLeft: CGFloat = 0.0,
         topRight: CGFloat = 0.0,
         bottomLeft: CGFloat = 0.0,
-        bottomRight: CGFloat = 0.0) {
+        bottomRight: CGFloat = 0.0
+    ) {
         self.topLeft = topLeft
         self.topRight = topRight
         self.bottomLeft = bottomLeft

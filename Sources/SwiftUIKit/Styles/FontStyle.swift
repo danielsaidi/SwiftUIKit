@@ -25,7 +25,8 @@ public struct FontStyle {
     public init(
         name: String,
         style: UIFont.TextStyle,
-        weight: Font.Weight = .regular) {
+        weight: Font.Weight = .regular
+    ) {
         self.name = name
         self.style = style
         self.weight = weight
@@ -34,7 +35,8 @@ public struct FontStyle {
     public init(
         identifier: FontIdentifier,
         style: UIFont.TextStyle,
-        weight: Font.Weight = .regular) {
+        weight: Font.Weight = .regular
+    ) {
         self.name = identifier.fontName
         self.style = style
         self.weight = weight

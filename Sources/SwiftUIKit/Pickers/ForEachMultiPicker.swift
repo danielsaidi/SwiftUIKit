@@ -25,7 +25,8 @@ public struct ForEachMultiPicker<Item: Identifiable, ItemView: View>: View, Dism
     public init(
         items: [Item],
         selection: Binding<[Item]>,
-        listItem: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder
+    ) {
         self.items = items
         self.selection = selection
         self.listItem = listItem

@@ -30,7 +30,8 @@ public struct PageIndicatorStyle: Equatable {
         dotSpacing: CGFloat? = nil,
         currentDotColor: Color = .white,
         currentDotSize: CGFloat = 7,
-        isAnimated: Bool = true) {
+        isAnimated: Bool = true
+    ) {
         self.dotColor = dotColor
         self.dotSize = dotSize
         self.dotSpacing = dotSpacing

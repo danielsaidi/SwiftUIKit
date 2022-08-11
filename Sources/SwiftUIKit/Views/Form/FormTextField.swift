@@ -18,7 +18,8 @@ public struct FormTextField: View {
     public init(
         title: String,
         placeholder: String,
-        text: Binding<String>) {
+        text: Binding<String>
+    ) {
         self.title = title
         self.placeholder = placeholder
         self._text = text
@@ -27,7 +28,8 @@ public struct FormTextField: View {
     private let title: String
     private let placeholder: String
     
-    @Binding private var text: String
+    @Binding
+    private var text: String
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 4) {

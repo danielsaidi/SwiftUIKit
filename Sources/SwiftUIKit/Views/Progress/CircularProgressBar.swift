@@ -29,7 +29,8 @@ public struct CircularProgressBar: View {
         progress: Binding<Double>,
         decimals: Int = 0,
         startAngle: Double = 0,
-        style: CircularProgressBarStyle = .standard) {
+        style: CircularProgressBarStyle = .standard
+    ) {
         _progress = progress
         self.decimals = decimals
         self.startAngle = startAngle
@@ -40,7 +41,8 @@ public struct CircularProgressBar: View {
     private let startAngle: Double
     private let style: CircularProgressBarStyle
     
-    @Binding private var progress: Double
+    @Binding
+    private var progress: Double
     
     public var body: some View {
         ZStack {

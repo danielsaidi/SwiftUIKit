@@ -14,11 +14,13 @@ import SwiftUI
  in a text field.
  */
 public struct TextFieldClearButton: ViewModifier {
-    @Binding var text: String
 
     public init(text: Binding<String>) {
         self._text = text
     }
+
+    @Binding
+    var text: String
 
     public func body(content: Content) -> some View {
         HStack {
@@ -35,7 +37,8 @@ public struct TextFieldClearButton: ViewModifier {
 struct TextFieldClearButton_Previews: PreviewProvider {
     
     static var previews: some View {
-        TextField("Enter text", text: .constant("Text")).modifier(TextFieldClearButton(text: .constant("Text")))
+        TextField("Enter text", text: .constant("Text"))
+            .modifier(TextFieldClearButton(text: .constant("Text")))
     }
 }
 #endif

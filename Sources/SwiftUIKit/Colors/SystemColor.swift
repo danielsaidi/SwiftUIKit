@@ -10,14 +10,14 @@
 import SwiftUI
 
 /**
- This enum contains all SwiftUI system colors and makes them
- iterable and named.
+ This enum contains all SwiftUI colors, and makes them named
+ and iterable, which makes it easy to use them in pickers.
  
- This makes it easy to use them in simple pickers, serialize
- a reference to their color etc. For instance, when a `Color`
- instance is encoded, it takes the current color value. This
- value will not be adaptive to dark and light mode, even for
- colors that originally are adaptive.
+ These color references can also be serialized and persisted
+ without losing any information. For instance, when a `Color`
+ instance is encoded, it only includes the current color and
+ throws away adaptive color information. This means that the
+ color will no longer be adaptive when you restore it.
  
  `IMPORTANT` Trying to access a `SystemColor`s `color` value
  will trigger a fatal error if the value isn't available for

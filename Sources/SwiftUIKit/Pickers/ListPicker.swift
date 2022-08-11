@@ -37,7 +37,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
         selection: Binding<Item>,
         animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
-        listItem: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder
+    ) {
         self.init(
             sections: [ListPickerSection(title: "", items: items)],
             selection: selection,
@@ -61,7 +62,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
         selection: Binding<Item>,
         animatedSelection: Bool = false,
         dismissAfterPick: Bool = true,
-        listItem: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder
+    ) {
         self.sections = sections
         self.selection = selection
         self.animatedSelection = animatedSelection

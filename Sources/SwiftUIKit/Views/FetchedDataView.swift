@@ -33,7 +33,8 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
         isLoading: Bool,
         loadingView: LoadingView,
         noDataView: NoDataView,
-        @ViewBuilder content: @escaping ContentBuilder) {
+        @ViewBuilder content: @escaping ContentBuilder
+    ) {
         self.data = data
         self.isLoading = isLoading
         self.content = content
@@ -49,7 +50,6 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
     
     public typealias ContentBuilder = (Model) -> Content
     
-    @ViewBuilder
     public var body: some View {
         if let data = data {
             content(data)

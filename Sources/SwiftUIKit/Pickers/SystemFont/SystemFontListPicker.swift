@@ -33,7 +33,8 @@ public struct SystemFontListPicker: View {
         selectedFontName: Binding<String>,
         fonts: [SystemFontPickerFont]? = nil,
         itemFontSize: CGFloat = 20,
-        dismissAfterPick: Bool = true) {
+        dismissAfterPick: Bool = true
+    ) {
         self._selectedFontName = selectedFontName
         self.fonts = fonts ?? .all.moveTopmost(selectedFontName.wrappedValue)
         self.itemFontSize = itemFontSize

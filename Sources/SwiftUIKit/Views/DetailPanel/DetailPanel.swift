@@ -40,7 +40,8 @@ public struct DetailPanel<Background: View, Content: View>: View {
     public init(
         isOpen: Bool,
         background: Background,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         self.isOpen = isOpen
         self.background = background
         self.content = content
@@ -75,7 +76,8 @@ public extension DetailPanel where Background == Color {
      */
     init(
         isOpen: Bool,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         self.init(
             isOpen: isOpen,
             background: Color.clear,
@@ -97,7 +99,8 @@ public extension DetailPanel where Background == AnyView {
     init(
         isOpen: Bool,
         backgroundMaterial material: Material,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         let bg = Color.clear.background(material)
         self.init(
             isOpen: isOpen,

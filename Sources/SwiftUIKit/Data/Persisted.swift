@@ -22,7 +22,8 @@ public struct Persisted<Value: Codable>: DynamicProperty {
     public init(
         key: String,
         store: UserDefaults = .standard,
-        defaultValue: Value) {
+        defaultValue: Value
+    ) {
         self.key = key
         self.store = store
         let initialValue: Value? = Self.initialValue(for: key, in: store)

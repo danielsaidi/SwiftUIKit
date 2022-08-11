@@ -21,7 +21,8 @@ public extension CollectionViewLayout {
         itemSize: CGSize = CGSize(width: 200, height: 200),
         headerHeight: CGFloat = 44,
         sectionInsets: NSDirectionalEdgeInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0),
-        itemSpacing: CGFloat = 60) -> CollectionViewLayout {
+        itemSpacing: CGFloat = 60
+    ) -> CollectionViewLayout {
         CollectionViewLayout { _, _ in
             let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let layoutItem = NSCollectionLayoutItem(layoutSize: layoutSize)

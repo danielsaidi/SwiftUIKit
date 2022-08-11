@@ -45,7 +45,8 @@ public struct DetailPanelContainer<Content: View, Panel: View>: View {
         contentMinWidth: CGFloat = 500,
         panelMinWidth: CGFloat = 200,
         @ViewBuilder content: @escaping () -> Content,
-        @ViewBuilder panel: @escaping () -> Panel) {
+        @ViewBuilder panel: @escaping () -> Panel
+    ) {
         self.isDetailPanelOpen = isDetailPanelOpen
         self.contentMinWidth = contentMinWidth
         self.panelMinWidth = panelMinWidth

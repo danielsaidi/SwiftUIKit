@@ -28,7 +28,8 @@ public struct PageIndicator: View {
     public init(
         numberOfPages: Int,
         currentPageIndex: Binding<Int>,
-        style: PageIndicatorStyle = .standard) {
+        style: PageIndicatorStyle = .standard
+    ) {
         self.numberOfPages = numberOfPages
         self.currentPageIndex = currentPageIndex
         self.style = style

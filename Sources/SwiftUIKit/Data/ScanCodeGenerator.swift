@@ -17,7 +17,10 @@ public protocol ScanCodeGenerator {
     /**
      Generate a scan code image for the provided `string`.
      */
-    func generateCode(_ type: ScanCodeType, from string: String) -> ImageRepresentable?
+    func generateCode(
+        _ type: ScanCodeType,
+        from string: String
+    ) -> ImageRepresentable?
 }
 
 public extension ScanCodeGenerator {

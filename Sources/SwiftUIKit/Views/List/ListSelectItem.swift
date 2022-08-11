@@ -16,13 +16,14 @@ public struct ListSelectItem<Content: View>: View {
     
     public init(
         isSelected: Bool,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         self.isSelected = isSelected
         self.content = content
     }
     
     private let isSelected: Bool
-    @ViewBuilder private let content: () -> Content
+    private let content: () -> Content
     
     public var body: some View {
         ListItem {

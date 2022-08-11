@@ -25,7 +25,8 @@ public struct FlipView<FrontView: View, BackView: View>: View {
         back: BackView,
         isFlipped: Binding<Bool>,
         flipDuration: Double = 0.3,
-        tapDirection: FlipDirection = .right) {
+        tapDirection: FlipDirection = .right
+    ) {
         self.front = front
         self.back = back
         self._isFlipped = isFlipped
@@ -40,7 +41,8 @@ public struct FlipView<FrontView: View, BackView: View>: View {
         isFlipped: Binding<Bool>,
         flipDuration: Double = 0.3,
         tapDirection: FlipDirection = .right,
-        swipeDirections: [FlipDirection] = [.left, .right]) {
+        swipeDirections: [FlipDirection] = [.left, .right]
+    ) {
         self.front = front
         self.back = back
         self._isFlipped = isFlipped
@@ -58,9 +60,14 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     private let swipeDirections: [FlipDirection]
     private let tapDirection: FlipDirection
     
-    @State private var cardRotation = 0.0
-    @State private var contentRotation = 0.0
-    @State private var lastDirection = FlipDirection.right
+    @State
+    private var cardRotation = 0.0
+
+    @State
+    private var contentRotation = 0.0
+
+    @State
+    private var lastDirection = FlipDirection.right
     
     public var body: some View {
         content

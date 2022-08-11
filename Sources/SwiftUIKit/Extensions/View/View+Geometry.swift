@@ -18,7 +18,12 @@ public extension View {
     }
     
     /**
-    Bind the view's size to a binding.
+     Bind the view's size to a binding.
+
+     Do not overuse this modifier. Since the size binding is
+     calculated as the view is being rendered, it will start
+     with an incorrect initial binding value, which may give
+     you glitches depending on how you use the size value.
     */
     func bindSize(to binding: Binding<CGSize>) -> some View {
         background(sizeBindingView(for: binding))

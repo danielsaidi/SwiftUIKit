@@ -24,7 +24,9 @@ import SwiftUI
  */
 public struct DetailPanelButtonGroup<Content: View>: View {
     
-    public init(@ViewBuilder content: @escaping ContentBuilder) {
+    public init(
+        @ViewBuilder content: @escaping ContentBuilder
+    ) {
         self.content = content
     }
     

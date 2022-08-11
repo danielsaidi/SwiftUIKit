@@ -30,7 +30,8 @@ public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, Dismissab
         selection: Binding<Item>,
         animatedSelection: Bool = false,
         dismissAfterPick: Bool = false,
-        listItem: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder
+    ) {
         self.items = items
         self.selection = selection
         self.animatedSelection = animatedSelection

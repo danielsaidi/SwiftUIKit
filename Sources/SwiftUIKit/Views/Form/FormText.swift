@@ -24,7 +24,8 @@ public struct FormText<TrailingView: View>: View {
         title: String,
         text: String,
         hideIfEmpty: Bool = false,
-        trailingView: @escaping TrailingViewBuilder) {
+        trailingView: @escaping TrailingViewBuilder
+    ) {
         self.title = title
         self.text = text
         self.hideIfEmpty = hideIfEmpty
@@ -60,7 +61,8 @@ public extension FormText where TrailingView == EmptyView {
     init(
         title: String,
         text: String,
-        hideIfEmpty: Bool = false) {
+        hideIfEmpty: Bool = false
+    ) {
         self.title = title
         self.text = text
         self.hideIfEmpty = hideIfEmpty

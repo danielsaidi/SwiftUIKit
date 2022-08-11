@@ -26,7 +26,8 @@ public struct FormActionButtonStyle: ButtonStyle {
         cornerRadius: Double = 10,
         disabledOpacity: Double = 0.3,
         pressedOpacity: Double = 0.7,
-        shadowStyle: ViewShadowStyle = .none) {
+        shadowStyle: ViewShadowStyle = .none
+    ) {
         self.horizontalPadding = horizontalPadding
         self.verticalPadding = verticalPadding
         self.backgroundColor = backgroundColor

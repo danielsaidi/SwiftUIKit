@@ -29,7 +29,8 @@ public struct SimplePickerScreen<Header: View, Picker: View, Footer: View>: Dism
     public init(
         header: HeaderBuilder?,
         footer: FooterBuilder?,
-        @ViewBuilder picker: @escaping PickerBuilder) {
+        @ViewBuilder picker: @escaping PickerBuilder
+    ) {
         self.header = header
         self.picker = picker()
         self.footer = footer
@@ -62,7 +63,8 @@ public extension SimplePickerScreen where Header == EmptyView {
      */
     init(
         footer: @escaping FooterBuilder,
-        @ViewBuilder picker: @escaping PickerBuilder) {
+        @ViewBuilder picker: @escaping PickerBuilder
+    ) {
         self.init(header: nil, footer: footer, picker: picker)
     }
 }
@@ -74,7 +76,8 @@ public extension SimplePickerScreen where Footer == EmptyView {
      */
     init(
         header: @escaping HeaderBuilder,
-        @ViewBuilder picker: @escaping PickerBuilder) {
+        @ViewBuilder picker: @escaping PickerBuilder
+    ) {
         self.init(header: header, footer: nil, picker: picker)
     }
 }

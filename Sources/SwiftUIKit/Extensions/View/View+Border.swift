@@ -17,7 +17,8 @@ public extension View {
     func border<Content: ShapeStyle>(
         _ content: Content,
         width: CGFloat = 1,
-        cornerRadius: CGFloat = 0) -> some View {
+        cornerRadius: CGFloat = 0
+    ) -> some View {
         overlay(RoundedRectangle(cornerRadius: cornerRadius)
             .strokeBorder(content, lineWidth: width)
         )

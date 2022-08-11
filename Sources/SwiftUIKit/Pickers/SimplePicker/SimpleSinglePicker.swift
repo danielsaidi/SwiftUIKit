@@ -26,7 +26,8 @@ public struct SimpleSinglePicker<Value: SimplePickerValue>: SimplePicker {
     public init(
         selection: Binding<Value>,
         options: [Value],
-        buttonBuilder: @escaping ButtonBuilder = Self.standardButtonBuilder) {
+        buttonBuilder: @escaping ButtonBuilder = Self.standardButtonBuilder
+    ) {
         self._selection = selection
         self.options = options
         self.buttonBuilder = buttonBuilder

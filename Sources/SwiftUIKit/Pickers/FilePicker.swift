@@ -38,7 +38,8 @@ public struct FilePicker: UIViewControllerRepresentable {
     public init(
         documentTypes: [String],
         cancelAction: @escaping CancelAction = {},
-        resultAction: @escaping ResultAction) {
+        resultAction: @escaping ResultAction
+    ) {
         self.documentTypes = documentTypes
         self.cancelAction = cancelAction
         self.resultAction = resultAction

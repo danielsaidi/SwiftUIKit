@@ -22,7 +22,7 @@ public struct ListToggle<Content: View>: View {
     }
     
     private let isOn: Binding<Bool>
-    @ViewBuilder private let content: () -> Content
+    private let content: () -> Content
     
     public var body: some View {
         ListItem {

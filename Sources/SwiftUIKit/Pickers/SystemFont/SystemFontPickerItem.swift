@@ -16,7 +16,8 @@ public struct SystemFontPickerItem: View {
     public init(
         font: SystemFontPickerFont,
         fontSize: CGFloat = 20,
-        isSelected: Bool) {
+        isSelected: Bool
+    ) {
         self.font = font
         self.fontSize = fontSize
         self.isSelected = isSelected

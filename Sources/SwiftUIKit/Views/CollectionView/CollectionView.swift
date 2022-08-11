@@ -48,7 +48,8 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
         layout: CollectionViewLayout,
         scrollOffset: Binding<CGPoint>? = nil,
         @ViewBuilder cell: @escaping (IndexPath, Item) -> Cell,
-        @ViewBuilder supplementaryView: @escaping (IndexPath) -> SupplementaryView) {
+        @ViewBuilder supplementaryView: @escaping (IndexPath) -> SupplementaryView
+    ) {
         self.init(
             rows: rows,
             sectionLayoutProvider: layout.sectionLayoutProvider,
@@ -65,7 +66,8 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
         sectionLayoutProvider: @escaping (Int, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection,
         scrollOffset: Binding<CGPoint>? = nil,
         @ViewBuilder cell: @escaping (IndexPath, Item) -> Cell,
-        @ViewBuilder supplementaryView: @escaping (IndexPath) -> SupplementaryView) {
+        @ViewBuilder supplementaryView: @escaping (IndexPath) -> SupplementaryView
+    ) {
         self.cell = cell
         self.scrollOffset = scrollOffset
         self.rows = rows

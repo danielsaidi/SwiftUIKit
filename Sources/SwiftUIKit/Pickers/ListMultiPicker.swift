@@ -24,7 +24,8 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
     public init(
         items: [Item],
         selection: Binding<[Item]>,
-        listItem: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder
+    ) {
         self.init(
             sections: [ListPickerSection(title: "", items: items)],
             selection: selection,

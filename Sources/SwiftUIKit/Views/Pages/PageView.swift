@@ -47,7 +47,8 @@ public struct PageView<PageViewType: View>: View {
         pages: [PageViewType],
         currentPageIndex: Binding<Int>,
         pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic,
-        pageIndicatorStyle: PageIndicatorStyle = .standard) {
+        pageIndicatorStyle: PageIndicatorStyle = .standard
+    ) {
         self.pages = pages
         self.pageIndicatorDisplayMode = pageIndicatorDisplayMode
         self.pageIndicatorStyle = pageIndicatorStyle
@@ -70,7 +71,8 @@ public struct PageView<PageViewType: View>: View {
         currentPageIndex: Binding<Int>,
         pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic,
         pageIndicatorStyle: PageIndicatorStyle = .standard,
-        @ViewBuilder pageBuilder: (Model) -> PageViewType) {
+        @ViewBuilder pageBuilder: (Model) -> PageViewType
+    ) {
         self.pages = items.map(pageBuilder)
         self.pageIndicatorDisplayMode = pageIndicatorDisplayMode
         self.pageIndicatorStyle = pageIndicatorStyle

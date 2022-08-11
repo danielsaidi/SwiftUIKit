@@ -26,7 +26,8 @@ public class FolderObservable: ObservableObject {
      */
     public init(
         folderUrl: URL,
-        fileManager: FileManager = .default) {
+        fileManager: FileManager = .default
+    ) {
         self.folderUrl = folderUrl
         self.fileManager = fileManager
         folderMonitor.startMonitoring()

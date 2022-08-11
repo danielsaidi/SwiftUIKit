@@ -20,6 +20,9 @@ import SwiftUI
  ```swift
  @Environment(\.presentationMode) var presentationMode
  ```
+
+ In later versions of SwiftUI, use `@Environment(\.dismiss)`
+ instead of this protocol and the presentation mode.
  */
 public protocol DismissableView: View {
     

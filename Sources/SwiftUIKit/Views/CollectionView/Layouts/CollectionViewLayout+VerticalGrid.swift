@@ -20,7 +20,8 @@ public extension CollectionViewLayout {
     static func verticalGrid(
         itemsPerRow: Int,
         itemHeight: CGFloat = 200,
-        itemInsets: NSDirectionalEdgeInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)) -> CollectionViewLayout {
+        itemInsets: NSDirectionalEdgeInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+    ) -> CollectionViewLayout {
         CollectionViewLayout { _, _ in
             let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let layoutItem = NSCollectionLayoutItem(layoutSize: layoutSize)

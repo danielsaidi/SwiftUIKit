@@ -22,7 +22,8 @@ public struct SearchBar: View {
         searchFieldBackgroundColor: Color = Color.primary.opacity(0.1),
         searchFieldCornerRadius: CGFloat = 10,
         searchFieldPadding: CGFloat = 5,
-        searchFieldMargin: CGFloat = 8) {
+        searchFieldMargin: CGFloat = 8
+    ) {
         self.title = title
         self.text = text
         self.cancelText = cancelText

@@ -29,7 +29,8 @@ public struct SystemFontPicker: View {
     public init(
         selectedFontName: Binding<String>,
         fonts: [SystemFontPickerFont] = .all,
-        itemFontSize: CGFloat = 20) {
+        itemFontSize: CGFloat = 20
+    ) {
         self._selectedFontName = selectedFontName
         self.fonts = fonts
         self.itemFontSize = itemFontSize
@@ -80,7 +81,10 @@ private extension SystemFontPickerFont {
     /**
      Use the selected font name as tag for the selected font.
      */
-    func tag(for selectedFont: SystemFontPickerFont?, selectedName: String) -> String {
+    func tag(
+        for selectedFont: SystemFontPickerFont?,
+        selectedName: String
+    ) -> String {
         let isSelected = fontName == selectedFont?.fontName
         return isSelected ? selectedName : fontName
     }

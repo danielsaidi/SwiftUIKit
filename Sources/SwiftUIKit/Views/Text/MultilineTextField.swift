@@ -17,12 +17,15 @@ public struct MultilineTextField: UIViewRepresentable {
     
     public init(
         text: Binding<String>,
-        configuration: @escaping Configuration = { _ in }) {
+        configuration: @escaping Configuration = { _ in }
+    ) {
         self._text = text
         self.configuration = configuration
     }
     
-    @Binding public var text: String
+    @Binding
+    public var text: String
+
     private let configuration: Configuration
     
     public typealias Configuration = (UITextView) -> Void

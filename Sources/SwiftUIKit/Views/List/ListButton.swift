@@ -16,13 +16,14 @@ public struct ListButton<Content: View>: View {
     
     public init(
         action: @escaping () -> Void,
-        @ViewBuilder content: @escaping () -> Content) {
+        @ViewBuilder content: @escaping () -> Content
+    ) {
         self.action = action
         self.content = content
     }
     
     private let action: () -> Void
-    @ViewBuilder private let content: () -> Content
+    private let content: () -> Content
     
     public var body: some View {
         Button(action: action) {

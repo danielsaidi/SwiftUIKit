@@ -18,7 +18,8 @@ public extension View {
     func font(
         name: String,
         style: UIFont.TextStyle,
-        weight: Font.Weight = .regular) -> some View {
+        weight: Font.Weight = .regular
+    ) -> some View {
         font(FontStyle(
             name: name,
             style: style,
@@ -33,7 +34,8 @@ public extension View {
     func font(
         identifier: FontIdentifier,
         style: UIFont.TextStyle,
-        weight: Font.Weight = .regular) -> some View {
+        weight: Font.Weight = .regular
+    ) -> some View {
         font(
             name: identifier.fontName,
             style: style,
