@@ -59,12 +59,14 @@ import SwiftUI
      else: fallbackView)
  ```
  */
+@available(*, deprecated, message: "This view has been deprecated, since conditional views shouldn't be encouraged.")
 public struct OptionalView<Value, Content: View, Fallback: View>: View {
     
     public init(
         if value: Value?,
         @ViewBuilder then content: @escaping ContentBuilder,
-        @ViewBuilder else fallback: @escaping FallbackBuilder) {
+        @ViewBuilder else fallback: @escaping FallbackBuilder
+    ) {
         self.value = value
         self.content = content
         self.fallback = fallback
@@ -86,6 +88,7 @@ public struct OptionalView<Value, Content: View, Fallback: View>: View {
     }
 }
 
+@available(*, deprecated, message: "This view has been deprecated, since conditional views shouldn't be encouraged.")
 public extension OptionalView where Fallback == EmptyView {
     
     init(_ value: Value?, @ViewBuilder content: @escaping ContentBuilder) {
@@ -94,21 +97,5 @@ public extension OptionalView where Fallback == EmptyView {
             then: content,
             else: { EmptyView() }
         )
-    }
-}
-
-struct OptionalView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let nilValue: Int? = nil
-        return VStack {
-            OptionalView(1) { Text("\($0)") }
-            OptionalView(nilValue) { Text("\($0)") }
-            OptionalView(3) { Text("\($0)") }
-            OptionalView(
-                if: nilValue,
-                then: { Text("\($0)") },
-                else: { Text("No age who dis") })
-        }
     }
 }

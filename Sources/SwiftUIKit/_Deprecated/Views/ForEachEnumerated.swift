@@ -12,11 +12,12 @@ import SwiftUI
  This view can be used on any collection, and will enumerate
  the provided collection instead of requiring the collection
  item type to be `Identifiable`.
- 
- Only use this approach when the collection should be listed
+
+ `IMPORTANT` Only use this when collections should be listed
  in order. This will not consider any identifying properties
- of the listed type. This can cause SwiftUI rendering issues.
+ of the list items, which can cause SwiftUI rendering issues.
  */
+@available(*, deprecated, message: "Use Collection+EnumeratedArray instead.")
 public struct ForEachEnumerated<CollectionType: Collection, ViewType: View>: View {
     
     public init(_ collection: CollectionType, content: @escaping ContentBuilder) {
