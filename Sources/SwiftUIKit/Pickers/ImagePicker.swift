@@ -72,6 +72,33 @@ public struct ImagePicker: UIViewControllerRepresentable {
     public func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
 
+/**
+ This enum is used to handle ``ImagePicker`` specific errors.
+ */
+public enum ImagePickerError {
+
+    case hasNoPhotoLibraryAccess(status: PHAuthorizationStatus)
+}
+
+public extension ImagePicker {
+
+    /**
+     Get a collection of available image picker source types
+     that have been verified to work with this picker.
+     */
+    static var allSourceTypes: [UIImagePickerController.SourceType] {
+        [.camera, .photoLibrary, .savedPhotosAlbum]
+    }
+
+    /**
+     Get a collection of available image picker source types
+     that have been verified to work with this picker.
+     */
+    static var availableSourceTypes: [UIImagePickerController.SourceType] {
+        allSourceTypes.filter(UIImagePickerController.isSourceTypeAvailable)
+    }
+}
+
 
 // MARK: - Coordinator
 
