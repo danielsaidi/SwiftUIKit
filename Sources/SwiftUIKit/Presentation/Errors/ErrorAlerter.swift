@@ -8,18 +8,27 @@
 
 import SwiftUI
 
-protocol ErrorAlerter {
+public protocol ErrorAlerter {
     
     var alert: AlertContext { get }
 }
 
-extension ErrorAlerter {
+public extension ErrorAlerter {
     
     typealias AsyncOperation = () async throws -> Void
     typealias BlockResult<ErrorType: Error> = Result<Void, ErrorType>
     typealias BlockCompletion<ErrorType: Error> = (BlockResult<ErrorType>) -> Void
     typealias BlockOperation<ErrorType: Error> = (BlockCompletion<ErrorType>) -> Void
-    
+
+    /**
+     Alert the provided error.
+     */
+    func alertAsync(error: Error) {
+        DispatchQueue.main.async {
+            alert(error: error)
+        }
+    }
+
     /**
      Try performing a block-based operation and alert if the
      operation fails in any way.
@@ -48,20 +57,8 @@ extension ErrorAlerter {
     }
 }
 
-private extension ErrorAlerter {
-    
-    /**
-     Alert the provided error.
-     */
-    func alertAsync(error: Error) {
-        DispatchQueue.main.async {
-            alert(error: error)
-        }
-    }
-}
-
 @MainActor
-extension ErrorAlerter {
+public extension ErrorAlerter {
     
     /**
      Alert the provided error.

@@ -23,6 +23,10 @@ I've also adjusted the indentation of multiline function signature end parenthes
 * `View+PersistentSystemOverlays` adds a view extension for only hiding persistent system overlays if the feature is available.
 * `View+Searchable` adds a conditional searchable view extension. 
 
+### 💡 Behavior changes
+
+* `ErrorAlerter` has been made public.
+
 ### 🗑 Deprecations
 
 * `ConditionalView` has been deprecated, since conditional views shouldn't be encouraged.
