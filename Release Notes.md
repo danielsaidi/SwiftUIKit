@@ -20,6 +20,7 @@ I've also adjusted the indentation of multiline function signature end parenthes
 * `DotAnimation` is a re-added, previously removed view, that animates a series of dots.
 * `DotAnimationText` is a re-added, previously removed view, that renders a text followed by a dot animation.
 * `ImagePicker` has new `allSourceTypes` and `availableSourceTypes` properties.
+* `TagTextField` has a new `placeholder` parameter.
 * `View+PersistentSystemOverlays` adds a view extension for only hiding persistent system overlays if the feature is available.
 * `View+Searchable` adds a conditional searchable view extension. 
 

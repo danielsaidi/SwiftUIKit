@@ -13,8 +13,18 @@ import SwiftUI
  entered into it.
  */
 public struct TagTextField: View {
-    
-    public init(text: Binding<String>) {
+
+    /**
+     Create a new tag text field.
+
+     - Parameters:
+       - text: The text binding.
+       - placeholder: The text field placeholder, by default empty.
+     */
+    public init(
+        text: Binding<String>,
+        placeholder: String = ""
+    ) {
         self.text = Binding<String>(
             get: { text.wrappedValue.slugified() },
             set: {
@@ -22,12 +32,14 @@ public struct TagTextField: View {
                 text.wrappedValue = $0.slugified()
             }
         )
+        self.placeholder = placeholder
     }
     
-    private var text: Binding<String>
+    private let text: Binding<String>
+    private let placeholder: String
     
     public var body: some View {
-        TextField("", text: text)
+        TextField(placeholder, text: text)
             .lowercased()
             .withoutCapitalization()
     }
@@ -58,19 +70,17 @@ struct TagTextField_Previews: PreviewProvider {
     
     struct Preview: View {
     
-        @State var text = "Testar lite!"
+        @State var text = ""
         
         var body: some View {
             VStack {
                 Text(text)
-                TagTextField(text: $text)
+                TagTextField(text: $text, placeholder: "Enter tag")
                     .padding()
                     .background(Color.primary.opacity(0.1))
             }.padding()
         }
     }
-    
-    
     
     static var previews: some View {
         Preview()
