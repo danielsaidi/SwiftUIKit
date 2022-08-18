@@ -12,6 +12,7 @@ import SwiftUI
  This text field will automatically slugify any text that is
  entered into it.
  */
+@available(*, deprecated, message: "This type has been moved to TagKit - https://github.com/danielsaidi/TagKit")
 public struct TagTextField: View {
 
     /**

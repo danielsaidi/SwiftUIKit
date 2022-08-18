@@ -33,6 +33,7 @@ I've also adjusted the indentation of multiline function signature end parenthes
 * `ConditionalView` has been deprecated, since conditional views shouldn't be encouraged.
 * `ForEachEnumerated` has been deprecated. Use `Collection+EnumeratedArray` instead.
 * `OptionalView` has been deprecated, since conditional views shouldn't be encouraged.
+* `TagTextField` has been deprecated and moved to https://github.com/danielsaidi/TagKit
 
 
 
