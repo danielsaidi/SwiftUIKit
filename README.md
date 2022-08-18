@@ -19,7 +19,7 @@ SwiftUIKit adds extra functionality to `SwiftUI`, like extensions to existing ty
 
 You can explore the various sections in the [documentation][Documentation] and the demo app.
 
-`IMPORTANT` Moving to 3.0, many parts will be moved from this library to separate libraries, for instance, functionality that consists of many types (like the list and picker utils) and views that have great value in themselves. This will make the things in this library easier to understand and document since they will require less context and coupling.
+`IMPORTANT` Moving to 3.0, many parts will be moved from this library to separate libraries. The old types will be left as deprecated until 3.0 and refer you to the new libraries.
 
 
 
