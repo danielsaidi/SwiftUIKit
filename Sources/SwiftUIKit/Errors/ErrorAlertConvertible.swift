@@ -8,14 +8,24 @@
 
 import SwiftUI
 
-protocol ErrorAlertConvertible: Error {
-    
+/**
+ This protocol can be implemented by error types that can be
+ used together with an ``ErrorAlerter``.
+ */
+public protocol ErrorAlertConvertible: Error {
+
+    /// The title to display in the alert.
     var errorTitle: String { get }
+
+    /// The message to display in the alert.
     var errorMessage: String { get }
 }
 
-extension ErrorAlertConvertible {
-    
+public extension ErrorAlertConvertible {
+
+    /**
+     Create an error alert for the type.
+     */
     var errorAlert: Alert {
         Alert(
             title: Text(errorTitle),

@@ -52,10 +52,6 @@ SwiftUIKit is available under the MIT license.
 
 ## Topics
 
-### Bridging
-
-- ``ImageResource``
-
 ### Cameras
 
 - ``DocumentCamera``
@@ -63,6 +59,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Colors
 
+- ``ColorRepresentable``
 - ``SystemColor``
 
 ### Data
@@ -75,19 +72,34 @@ SwiftUIKit is available under the MIT license.
 ### Documents
 
 - ``DocumentPresenter``
+- ``DocumentGroupInspector``
 - ``DocumentGroupPresenter``
 - ``DocumentGroupSheet``
 - ``DocumentGroupSheetError``
 - ``DocumentRenameError``
+
+### Errors
+
+- ``ErrorAlerter``
+- ``ErrorAlertConvertible``
 
 ### Files
 
 - ``FolderMonitor``
 - ``FolderObservable``
 
+### Fonts
+
+- ``FontRepresentable``
+
 ### Gestures
 
 - ``GestureTimer``
+
+### Images
+
+- ``ImageRepresentable``
+- ``ImageRenderer``
 
 ### Navigation
 
@@ -99,6 +111,7 @@ SwiftUIKit is available under the MIT license.
 - ``ForEachPicker``
 - ``ForEachMultiPicker``
 - ``ImagePicker``
+- ``ImagePickerError``
 - ``ListPicker``
 - ``ListMultiPicker``
 - ``ListPickerItem``
@@ -152,13 +165,12 @@ SwiftUIKit is available under the MIT license.
 
 ### Views
 
-- ``ConditionalView``
 - ``CustomRoundedRectangle``
 - ``DismissableView``
+- ``DotAnimation``
+- ``DotAnimationText``
 - ``FetchedDataView``
-- ``ForEachEnumerated``
 - ``NavigationLinkArrow``
-- ``OptionalView``
 - ``PageIndicator``
 - ``PageIndicatorDisplayMode``
 - ``PageIndicatorStyle``
@@ -201,6 +213,7 @@ SwiftUIKit is available under the MIT license.
 - ``ListItem``
 - ``ListButton``
 - ``ListDisclosureIndicator``
+- ``ListHeader``
 - ``ListNavigationButton``
 - ``ListNavigationLink``
 - ``ListSelectItem``
@@ -219,5 +232,4 @@ SwiftUIKit is available under the MIT license.
 
 - ``MultilineText``
 - ``MultilineTextField``
-- ``TagTextField``
 - ``TextFieldClearButton``
