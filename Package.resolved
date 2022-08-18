@@ -9,15 +9,6 @@
           "revision": "3e51adb1a3922cdccbe84a3088b7fa4d67ae236d",
           "version": "1.1.0"
         }
-      },
-      {
-        "package": "SwiftDocCPlugin",
-        "repositoryURL": "https://github.com/apple/swift-docc-plugin",
-        "state": {
-          "branch": null,
-          "revision": "3303b164430d9a7055ba484c8ead67a52f7b74f6",
-          "version": "1.0.0"
-        }
       }
     ]
   },

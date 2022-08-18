@@ -38,7 +38,7 @@ You can also clone the repository and build the library locally.
 
 ## About this documentation
 
-The online documentation is currently iOS only. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
+The online documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
 
 Note that type extensions are not included in this documentation.
 

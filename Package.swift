@@ -16,7 +16,6 @@ let package = Package(
             targets: ["SwiftUIKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
         .package(url: "https://github.com/danielsaidi/MockingKit.git", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
