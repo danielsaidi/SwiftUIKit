@@ -66,24 +66,3 @@ private extension View {
         }
     }
 }
-
-struct TagTextField_Previews: PreviewProvider {
-    
-    struct Preview: View {
-    
-        @State var text = ""
-        
-        var body: some View {
-            VStack {
-                Text(text)
-                TagTextField(text: $text, placeholder: "Enter tag")
-                    .padding()
-                    .background(Color.primary.opacity(0.1))
-            }.padding()
-        }
-    }
-    
-    static var previews: some View {
-        Preview()
-    }
-}

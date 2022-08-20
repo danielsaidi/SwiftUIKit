@@ -27,6 +27,7 @@ I've also adjusted the indentation of multiline function signature end parenthes
 ### 💡 Behavior changes
 
 * `ErrorAlerter` has been made public.
+* `ListItem` no longer applies a minimum height.
 
 ### 🗑 Deprecations
 
