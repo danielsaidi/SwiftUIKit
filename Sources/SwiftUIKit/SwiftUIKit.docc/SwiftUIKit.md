@@ -233,3 +233,7 @@ SwiftUIKit is available under the MIT license.
 - ``MultilineText``
 - ``MultilineTextField``
 - ``TextFieldClearButton``
+
+### Views/Toggle
+
+- ``ActionToggle``
