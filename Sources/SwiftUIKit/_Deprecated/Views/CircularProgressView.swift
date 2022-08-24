@@ -9,10 +9,7 @@
 #if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
-/**
- This view is just a convenience for a `ProgressView` with a
- `CircularProgressViewStyle` applied.
- */
+@available(*, deprecated, message: "Just use ProgressView with a circular style instead.")
 @available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public struct CircularProgressView: View {
     
@@ -21,14 +18,6 @@ public struct CircularProgressView: View {
     public var body: some View {
         ProgressView()
             .progressViewStyle(.circular)
-    }
-}
-
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
-struct CircularProgressView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        CircularProgressView()
     }
 }
 #endif

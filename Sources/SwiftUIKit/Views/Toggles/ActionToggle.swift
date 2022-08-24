@@ -102,12 +102,8 @@ private extension ActionToggle {
 
     @ViewBuilder
     var toggle: some View {
-        ZStack {
-            Toggle(isOn: $state.isOffToggleOn, label: label)
-                .opacity(isOn ? 1 : 0)
-            Toggle(isOn: $state.isOnToggleOn, label: label)
-                .opacity(isOn ? 0 : 1)
-        }
+        Toggle(isOn: isOn ? $state.isOffToggleOn.animation()
+               : $state.isOnToggleOn.animation(), label: label)
     }
 }
 
