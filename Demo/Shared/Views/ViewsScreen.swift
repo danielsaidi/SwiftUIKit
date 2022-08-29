@@ -30,12 +30,6 @@ struct ViewsScreen: View {
                 Label("Circular Progress Bar", image: .circularProgressBar)
             }
             
-            #if os(iOS) || os(tvOS) || os(watchOS)
-            ListNavigationLink(destination: CircularProgressViewScreen()) {
-                Label("Circular Progress View", image: .circularProgressView)
-            }
-            #endif
-            
             #if os(iOS) || os(tvOS)
             ListNavigationLink(destination: CollectionViewGridScreen()) {
                 Label("Collection View (grid)", image: .collectionViewGrid)
@@ -45,9 +39,6 @@ struct ViewsScreen: View {
             }
             #endif
             
-            ListNavigationLink(destination: ConditionalViewScreen()) {
-                Label("Conditional View", image: .conditional)
-            }
             ListNavigationLink(destination: DismissableViewScreen()) {
                 Label("Dismissable View", image: .dismiss)
             }
@@ -68,10 +59,6 @@ struct ViewsScreen: View {
     
     private var list2: some View {
         Group {
-            ListNavigationLink(destination: OptionalViewScreen()) {
-                Label("Optional View", image: .optional)
-            }
-            
             #if os(iOS) || os(tvOS) || os(watchOS)
             ListNavigationLink(destination: PageViewScreen()) {
                 Label("Page View", image: .pageControl)

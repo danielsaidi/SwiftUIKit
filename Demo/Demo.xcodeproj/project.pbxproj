@@ -30,8 +30,6 @@
 		A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */; };
 		A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */; };
 		A901F1372570771600F1C285 /* CircularProgressBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F1362570771600F1C285 /* CircularProgressBarScreen.swift */; };
-		A901F13E2570797E00F1C285 /* CircularProgressViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F13D2570797E00F1C285 /* CircularProgressViewScreen.swift */; };
-		A901F14725707A8F00F1C285 /* ConditionalViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F14625707A8F00F1C285 /* ConditionalViewScreen.swift */; };
 		A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */; };
 		A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */; };
 		A92115FF25D5B691003510D9 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A92115FC25D5B690003510D9 /* LuckiestGuy-Regular.ttf */; };
@@ -43,7 +41,6 @@
 		A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355054256F7E6C00BBE9CE /* Image+Demo.swift */; };
 		A9544B3C25710F2200522141 /* MultilineTextFieldScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */; };
 		A9544B412571114400522141 /* PageViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B402571114400522141 /* PageViewScreen.swift */; };
-		A9544B48257113E800522141 /* OptionalViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B47257113E800522141 /* OptionalViewScreen.swift */; };
 		A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */; };
 		A9544B52257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
 		A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B562571404E00522141 /* ShareSheetScreen.swift */; };
@@ -82,8 +79,6 @@
 		A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewShelvesScreen.swift; sourceTree = "<group>"; };
 		A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridScreen.swift; sourceTree = "<group>"; };
 		A901F1362570771600F1C285 /* CircularProgressBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarScreen.swift; sourceTree = "<group>"; };
-		A901F13D2570797E00F1C285 /* CircularProgressViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressViewScreen.swift; sourceTree = "<group>"; };
-		A901F14625707A8F00F1C285 /* ConditionalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalViewScreen.swift; sourceTree = "<group>"; };
 		A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableViewScreen.swift; sourceTree = "<group>"; };
 		A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedDataViewScreen.swift; sourceTree = "<group>"; };
 		A92115FC25D5B690003510D9 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
@@ -99,7 +94,6 @@
 		A9355054256F7E6C00BBE9CE /* Image+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Demo.swift"; sourceTree = "<group>"; };
 		A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextFieldScreen.swift; sourceTree = "<group>"; };
 		A9544B402571114400522141 /* PageViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewScreen.swift; sourceTree = "<group>"; };
-		A9544B47257113E800522141 /* OptionalViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewScreen.swift; sourceTree = "<group>"; };
 		A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperScreen.swift; sourceTree = "<group>"; };
 		A9544B51257132FA00522141 /* DocumentCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraScreen.swift; sourceTree = "<group>"; };
 		A9544B562571404E00522141 /* ShareSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetScreen.swift; sourceTree = "<group>"; };
@@ -218,15 +212,12 @@
 			isa = PBXGroup;
 			children = (
 				A901F1362570771600F1C285 /* CircularProgressBarScreen.swift */,
-				A901F13D2570797E00F1C285 /* CircularProgressViewScreen.swift */,
 				A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */,
 				A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */,
-				A901F14625707A8F00F1C285 /* ConditionalViewScreen.swift */,
 				A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */,
 				A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */,
 				A901F11A257010DB00F1C285 /* FlipViewScreen.swift */,
 				A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */,
-				A9544B47257113E800522141 /* OptionalViewScreen.swift */,
 				A9544B402571114400522141 /* PageViewScreen.swift */,
 				A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */,
 				A901F084256F964600F1C285 /* ViewsScreen.swift */,
@@ -481,7 +472,6 @@
 				A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
 				A9544B412571114400522141 /* PageViewScreen.swift in Sources */,
 				A901F049256F8CC900F1C285 /* PresentationScreen.swift in Sources */,
-				A901F13E2570797E00F1C285 /* CircularProgressViewScreen.swift in Sources */,
 				A9355045256F7E3D00BBE9CE /* ContentView.swift in Sources */,
 				A901F1372570771600F1C285 /* CircularProgressBarScreen.swift in Sources */,
 				A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */,
@@ -502,7 +492,6 @@
 				A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
 				A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
 				A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */,
-				A9544B48257113E800522141 /* OptionalViewScreen.swift in Sources */,
 				A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,
@@ -512,7 +501,6 @@
 				A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */,
 				A9544B932571B34D00522141 /* PhotoCameraScreen.swift in Sources */,
 				A9544B3C25710F2200522141 /* MultilineTextFieldScreen.swift in Sources */,
-				A901F14725707A8F00F1C285 /* ConditionalViewScreen.swift in Sources */,
 				A9544B52257132FA00522141 /* DocumentCameraScreen.swift in Sources */,
 				A901F1102570079800F1C285 /* Fonts.swift in Sources */,
 			);
