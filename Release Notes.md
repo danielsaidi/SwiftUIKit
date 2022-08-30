@@ -17,6 +17,7 @@ I've also adjusted the indentation of multiline function signature end parenthes
 ### ✨ New features
 
 * `ActionToggle` is a toggle that performs actions when it's toggled, instead of toggling the value. 
+* `Color+Random` now has a range parameter to let you randomize colors in a certain range. 
 * `Collection+EnumeratedArray` adds `enumeratedArray()` as a shorthand for `Array(self.enumerated())`. 
 * `DotAnimation` is a re-added, previously removed view, that animates a series of dots.
 * `DotAnimationText` is a re-added, previously removed view, that renders a text followed by a dot animation.
