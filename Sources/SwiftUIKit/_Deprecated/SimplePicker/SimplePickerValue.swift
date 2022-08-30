@@ -12,11 +12,13 @@ import Foundation
  This protocol must be implemented by any value type that is
  to be used in a simple picker.
  */
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public protocol SimplePickerValue: Identifiable {
     
     var displayName: String { get }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 enum DemoSimplePickerValue: String, CaseIterable, SimplePickerValue {
     
     case first, second, third

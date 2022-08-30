@@ -14,6 +14,7 @@ import SwiftUI
  custom header with a divider, a picker that is wrapped in a
  scroll view and a footer with an OK button.
  */
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public struct SimplePickerTvScreen<Header: View, Picker: View>: View {
     
     /**
@@ -45,6 +46,7 @@ public struct SimplePickerTvScreen<Header: View, Picker: View>: View {
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 private extension SimplePickerTvScreen {
     
     func headerContent(_ dismissAction: @escaping DismissAction) -> some View {
@@ -68,7 +70,7 @@ private extension SimplePickerTvScreen {
     }
 }
 
-
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 struct SimplePickerTvScreen_Previews: PreviewProvider {
     
     class Context: ObservableObject {

@@ -21,6 +21,7 @@ import SwiftUI
  buttons for the available options. Otherwise, the init will
  use the ``SimpleSinglePicker/standardButtonBuilder(_:_:)``. 
  */
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public struct SimpleOptionalPicker<Value: SimplePickerValue>: SimplePicker {
     
     public init(
@@ -49,6 +50,7 @@ public struct SimpleOptionalPicker<Value: SimplePickerValue>: SimplePicker {
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 private extension SimpleOptionalPicker {
 
     func isSelected(_ value: Value) -> Bool {
@@ -60,6 +62,7 @@ private extension SimpleOptionalPicker {
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 struct SimpleOptionalPicker_Previews: PreviewProvider {
     
     class Context: ObservableObject {

@@ -22,7 +22,6 @@ I've also adjusted the indentation of multiline function signature end parenthes
 * `DotAnimation` is a re-added, previously removed view, that animates a series of dots.
 * `DotAnimationText` is a re-added, previously removed view, that renders a text followed by a dot animation.
 * `ImagePicker` has new `allSourceTypes` and `availableSourceTypes` properties.
-* `TagTextField` has a new `placeholder` parameter.
 * `View+PersistentSystemOverlays` adds a view extension for only hiding persistent system overlays if the feature is available.
 * `View+Searchable` adds a conditional searchable view extension. 
 
@@ -37,6 +36,7 @@ I've also adjusted the indentation of multiline function signature end parenthes
 * `ConditionalView` has been deprecated, since conditional views shouldn't be encouraged.
 * `ForEachEnumerated` has been deprecated. Use `Collection+EnumeratedArray` instead.
 * `OptionalView` has been deprecated, since conditional views shouldn't be encouraged.
+* `SimplePicker` types have been deprecated; use the new picker views instead.
 * `TagTextField` has been deprecated and moved to https://github.com/danielsaidi/TagKit
 
 

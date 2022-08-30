@@ -21,6 +21,7 @@ import SwiftUI
  You can find templates in this folders. These templates can
  be used to quickly setup pickers, e.g. for tvOS and iOS.
  */
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public struct SimplePickerScreen<Header: View, Picker: View, Footer: View>: DismissableView {
     
     /**
@@ -56,6 +57,7 @@ public struct SimplePickerScreen<Header: View, Picker: View, Footer: View>: Dism
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public extension SimplePickerScreen where Header == EmptyView {
 
     /**
@@ -69,6 +71,7 @@ public extension SimplePickerScreen where Header == EmptyView {
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public extension SimplePickerScreen where Footer == EmptyView {
 
     /**
@@ -82,6 +85,7 @@ public extension SimplePickerScreen where Footer == EmptyView {
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public extension SimplePickerScreen where Header == EmptyView, Footer == EmptyView {
 
     /**
@@ -92,6 +96,7 @@ public extension SimplePickerScreen where Header == EmptyView, Footer == EmptyVi
     }
 }
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 struct SimplePickerScreen_Previews: PreviewProvider {
     
     class Context: ObservableObject {

@@ -12,8 +12,10 @@ import SwiftUI
  This protocol can be implemented by a view that can be used
  as a simple picker.
  */
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public protocol SimplePicker: View {}
 
+@available(*, deprecated, message: "Use the ForEachPicker or ListPicker components instead")
 public extension SimplePicker {
     
     /**
