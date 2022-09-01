@@ -5,7 +5,7 @@
 <p align="center">
     <img src="https://img.shields.io/github/v/release/danielsaidi/SwiftUIKit?color=%2300550&sort=semver" alt="Version" />
     <img src="https://img.shields.io/badge/platform-SwiftUI-red.svg" alt="Swift UI" />
-    <img src="https://img.shields.io/badge/Swift-5.3-orange.svg" alt="Swift 5.3" />
+    <img src="https://img.shields.io/badge/Swift-5.6-orange.svg" alt="Swift 5.6" />
     <img src="https://img.shields.io/github/license/danielsaidi/SwiftUIKit" alt="MIT License" />
     <a href="https://twitter.com/danielsaidi">
         <img src="https://img.shields.io/badge/contact-@danielsaidi-blue.svg?style=flat" alt="Twitter: @danielsaidi" />
@@ -31,13 +31,13 @@ SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 
 ## Installation
 
-The best way to add SwiftUIKit to your app is to use the Swift Package Manager.
+SwiftUIKit can be installed with the Swift Package Manager:
 
 ```
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-SwiftUIKit also supports CocoaPods:
+or with CocoaPods:
 
 ```
 pod DSSwiftUIKit
@@ -49,7 +49,7 @@ You can also clone the repository and build the library locally.
 
 ## Documentation
 
-The [online documentation][Documentation] contains more information, code examples, etc., and makes it easy to overview the various parts of the library.
+The [online documentation][Documentation] has articles, code examples etc. that let you overview the various parts of the library.
 
 The online documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
 
@@ -57,7 +57,7 @@ The online documentation is currently iOS-specific. To generate documentation fo
 
 ## Demo Application
 
-This project contains a demo app that lets you explore SwiftUIKit on iOS and macOS. To run it, just open and run `Demo/Demo.xcodeproj`.
+This project has a demo app that lets you explore the library on iOS and macOS. To try it out, just open and run `Demo/Demo.xcodeproj`.
 
 
 

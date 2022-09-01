@@ -20,13 +20,13 @@ SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 
 ## Installation
 
-The best way to add SwiftUIKit to your app is to use the Swift Package Manager.
+SwiftUIKit can be installed with the Swift Package Manager:
 
 ```
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-SwiftUIKit also supports CocoaPods:
+or with CocoaPods:
 
 ```
 pod DSSwiftUIKit
@@ -121,15 +121,6 @@ SwiftUIKit is available under the MIT license.
 - ``SystemFontListPicker``
 - ``SystemFontPickerFont``
 - ``SystemFontPickerItem``
-
-### Pickers/SimplePicker
-
-- ``SimplePicker``
-- ``SimpleMultiPicker``
-- ``SimpleOptionalPicker``
-- ``SimplePickerScreen``
-- ``SimplePickerValue``
-- ``SimpleSinglePicker``
 
 ### Presentation
 
@@ -226,7 +217,6 @@ SwiftUIKit is available under the MIT license.
 
 - ``CircularProgressBar``
 - ``CircularProgressBarStyle``
-- ``CircularProgressView``
 
 ### Views/Text
 
