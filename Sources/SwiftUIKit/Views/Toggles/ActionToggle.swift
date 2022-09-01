@@ -135,7 +135,7 @@ struct ActionToggle_Previews: PreviewProvider {
                     isSheetActive = true
                 }
             }
-            .sheet(isPresented: $isSheetActive, content: { PreviewSheet(isOn: $isOn) } )
+            .sheet(isPresented: $isSheetActive) { PreviewSheet(isOn: $isOn) }
         }
     }
 

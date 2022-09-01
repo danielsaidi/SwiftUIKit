@@ -29,7 +29,7 @@ public extension Collection {
      }
      ```
      */
-    func enumeratedArray() -> Array<EnumeratedSequence<Self>.Element> {
+    func enumeratedArray() -> [EnumeratedSequence<Self>] {
         Array(enumerated())
     }
 }

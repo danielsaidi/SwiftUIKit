@@ -46,11 +46,17 @@ public extension View {
                     let points = isVertical ? absHeight : absWidth
                     if points > maximumDistance { return }
                     if isVertical {
-                        let isUp = translation.height < 0
-                        isUp ? up() : down()
+                        if translation.height < 0 {
+                            up()
+                        } else {
+                            down()
+                        }
                     } else {
-                        let isLeft = translation.width < 0
-                        isLeft ? left() : right()
+                        if translation.width < 0 {
+                            left()
+                        } else {
+                            right()
+                        }
                     }
                 }
         )

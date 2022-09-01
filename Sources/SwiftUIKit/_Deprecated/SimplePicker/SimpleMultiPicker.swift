@@ -71,7 +71,11 @@ private extension SimpleMultiPicker {
     }
 
     func toggle(_ value: Value) {
-        isSelected(value) ? deselect(value) : select(value)
+        if isSelected(value) {
+            deselect(value)
+        } else {
+            select(value)
+        }
     }
 }
 
