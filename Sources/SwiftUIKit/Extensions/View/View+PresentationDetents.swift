@@ -22,8 +22,8 @@ public extension View {
     func presentationDetents(
         undimmed detents: Set<PresentationDetent>
     ) -> some View {
-        self.presentationDetents(detents)
-            .background(UndimmedDetentView())
+        self.background(UndimmedDetentView())
+            .presentationDetents(detents.withLarge())
     }
 
     /**
@@ -38,8 +38,21 @@ public extension View {
         undimmed detents: Set<PresentationDetent>,
         selection: Binding<PresentationDetent>
     ) -> some View {
-        self.presentationDetents(detents, selection: selection)
-            .background(UndimmedDetentView())
+        self.background(UndimmedDetentView())
+            .presentationDetents(
+                detents.withLarge(),
+                selection: selection
+            )
+    }
+}
+
+@available(iOS 16.0, *)
+private extension Set where Element == PresentationDetent {
+
+    func withLarge() -> Set<PresentationDetent> {
+        var detent = self
+        detent.insert(.large)
+        return detent
     }
 }
 
@@ -49,7 +62,7 @@ private struct UndimmedDetentView: UIViewControllerRepresentable {
     var largestUndimmedDetent: PresentationDetent?
 
     func makeUIViewController(context: Context) -> UIViewController {
-        UndimmedDetentController(rootView: Color.clear)
+        UndimmedDetentController()
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
@@ -57,12 +70,51 @@ private struct UndimmedDetentView: UIViewControllerRepresentable {
 }
 
 @available(iOS 16.0, *)
-private class UndimmedDetentController<Content: View>: UIHostingController<Content> {
+private class UndimmedDetentController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        avoidDimmingParent()
+        avoidDisablingControls()
+    }
+
+    func avoidDimmingParent() {
         sheetPresentationController?.largestUndimmedDetentIdentifier = .large
-        parent?.presentingViewController?.view.tintAdjustmentMode = .normal
+    }
+
+    func avoidDisablingControls() {
+        presentingViewController?.view.tintAdjustmentMode = .normal
+    }
+}
+
+@available(iOS 16.0, *)
+struct View_PresentationDetents_Previews: PreviewProvider {
+
+    struct Preview: View {
+
+        @State
+        private var isPresented = false
+
+        var body: some View {
+            Color.green.ignoresSafeArea()
+                .overlay(button)
+                .sheet(isPresented: $isPresented) {
+                    Color.red.ignoresSafeArea()
+                        .presentationDetents(undimmed: [
+                            .fraction(0.3)
+                        ])
+                }
+        }
+
+        var button: some View {
+            Button("Toggle sheet") {
+                isPresented.toggle()
+            }.buttonStyle(.borderedProminent)
+        }
+    }
+
+    static var previews: some View {
+        Preview()
     }
 }
 #endif

@@ -8,6 +8,14 @@ This will make the things in this library easier to understand and document, sin
 
 
 
+## 2.9.1
+
+This version adjusts the undimmed presentation detents view extension, that has stopped working in later Xcode 14 betas.
+
+The fix makes sure to always inject a `.large` detents into the provided set. This is hopefully temporary.
+
+
+
 ## 2.9
 
 This version adds some minor features and deprecates more functionality.
