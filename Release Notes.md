@@ -8,6 +8,38 @@ This will make the things in this library easier to understand and document, sin
 
 
 
+## 2.10
+
+This version deprecates more things, such as the list items.
+
+The list views are deprecated since later SwiftUI versions makes great use of the `Label` view to render things natively. The list views just adds extra complexity with little gains.
+
+One thing that the list views did well, though, was to make the entire list items tappable, where native labels only take up as much space as they need, even in lists.
+
+To address this, there is a new button style called `ListButtonStyle`, which you can apply to an entire list to make all buttons behave the same way.  
+
+### ✨ New features
+
+* `ListButtonStyle` makes the button span across the entire width and applies a rectangular content shape.
+
+### 💡 Behavior changes
+
+* List items will render differently, without the padding.
+
+### 🗑 Deprecations
+
+* `ListButton` has been deprecated.
+* `ListDisclosureIndicator` has been deprecated.
+* `ListHeader` has been deprecated.
+* `ListItem` has been deprecated.
+* `ListNavigationButton` has been renamed to `NavigationButton`.
+* `ListNavigationLink` has been deprecated.
+* `ListText` has been deprecated.
+* `ListTextContent` has been deprecated.
+* `ListToggle` has been deprecated.
+
+
+
 ## 2.9.1
 
 This version adjusts the undimmed presentation detents view extension, that has stopped working in later Xcode 14 betas.

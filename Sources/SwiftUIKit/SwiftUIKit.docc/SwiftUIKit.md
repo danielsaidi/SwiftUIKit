@@ -161,6 +161,7 @@ SwiftUIKit is available under the MIT license.
 - ``DotAnimation``
 - ``DotAnimationText``
 - ``FetchedDataView``
+- ``NavigationButton``
 - ``NavigationLinkArrow``
 - ``PageIndicator``
 - ``PageIndicatorDisplayMode``
@@ -201,17 +202,9 @@ SwiftUIKit is available under the MIT license.
 
 ### Views/List
 
-- ``ListItem``
-- ``ListButton``
-- ``ListDisclosureIndicator``
-- ``ListHeader``
-- ``ListNavigationButton``
-- ``ListNavigationLink``
+- ``ListButtonStyle``
 - ``ListSelectItem``
 - ``ListSubtitle``
-- ``ListText``
-- ``ListTextContent``
-- ``ListToggle``
 
 ### Views/Progress
 

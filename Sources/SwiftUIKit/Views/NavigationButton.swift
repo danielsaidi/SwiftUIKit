@@ -9,11 +9,11 @@
 import SwiftUI
 
 /**
- This view wraps its content in a ``ListButton`` and appends
- a trailing ``ListDisclosureIndicator``, which makes it look
- like a navigation link.
+ This view wraps a regular SwiftUI `Button` and also appends
+ a trailing ``NavigationLinkArrow`` to let the button render
+ as a `NavigationLink`.
  */
-public struct ListNavigationButton<Content: View>: View {
+public struct NavigationButton<Content: View>: View {
     
     public init(
         action: @escaping () -> Void,
@@ -27,18 +27,18 @@ public struct ListNavigationButton<Content: View>: View {
     private let content: () -> Content
     
     public var body: some View {
-        ListButton(action: action) {
+        Button(action: action) {
             HStack {
                 content()
                 Spacer()
-                ListDisclosureIndicator()
+                NavigationLinkArrow()
             }
-        }.buttonStyle(.plain)
+        }.buttonStyle(.list)
     }
 }
 
 #if os(iOS)
-struct ListNavigationButtonItem_Previews: PreviewProvider {
+struct NavigationButtonItem_Previews: PreviewProvider {
     
     struct Preview: View {
         
@@ -47,13 +47,13 @@ struct ListNavigationButtonItem_Previews: PreviewProvider {
         var body: some View {
             NavigationView {
                 List {
-                    ListItem {
-                        Text("Is toggled: \(isToggled ? 1 : 0)")
+                    Text("Is toggled: \(isToggled ? 1 : 0)")
+                    NavigationLink("Test") {
+                        Text("Test")
                     }
-                    ListItem {
-                        NavigationLink("Navigation link", destination: Text("HEJ"))
-                    }
-                    ListNavigationButton(action: { isToggled.toggle() }, content: {
+                    NavigationLink("Navigation link", destination: Text("HEJ"))
+
+                NavigationButton(action: { isToggled.toggle() }, content: {
                         Text("Toggle")
                     })
                 }

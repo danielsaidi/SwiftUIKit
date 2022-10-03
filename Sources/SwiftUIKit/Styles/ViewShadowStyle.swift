@@ -9,7 +9,7 @@
 import SwiftUI
 
 @available(*, deprecated, message: "ShadowStyle has been renamed to ViewShadowStyle to not conflict with the new SwiftUI 4 ShadowStyle.")
-public typealias X = ViewShadowStyle
+public typealias ShadowStyle = ViewShadowStyle
 
 /**
  This struct represents a style with properties that matches

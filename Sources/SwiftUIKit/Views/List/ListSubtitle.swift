@@ -28,9 +28,21 @@ public struct ListSubtitle: View {
     }
 }
 
+@available(iOS 14.0, *)
 struct ListSubtitle_Previews: PreviewProvider {
     
     static var previews: some View {
-        ListSubtitle("Test")
+        List {
+            HStack {
+                Label {
+                    Text("Title")
+                } icon: {
+                    Color.red
+                }
+                Spacer()
+                ListSubtitle("Subtitle")
+            }
+
+        }
     }
 }

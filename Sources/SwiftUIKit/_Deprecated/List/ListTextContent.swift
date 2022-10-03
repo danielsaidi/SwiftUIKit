@@ -8,14 +8,7 @@
 
 import SwiftUI
 
-/**
- This view embeds the provided texts and icon in an `HStack`
- and wraps the stack in a ``ListItem``.
- 
- Use this view when you just want the plain content, without
- any list item modifications. Use ``ListText`` to get a full
- list item rendering of the same content.
- */
+@available(*, deprecated, message: "Just use a plain label instead.")
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public struct ListTextContent<Icon: View>: View {
     
@@ -38,7 +31,7 @@ public struct ListTextContent<Icon: View>: View {
             if let icon = icon {
                 Label { Text(text) } icon: { icon }
             } else {
-                Text(text)
+                Label { Text(text) } icon: { EmptyView() }
             }
             
             if let subtitle = subtitle {
@@ -49,6 +42,7 @@ public struct ListTextContent<Icon: View>: View {
     }
 }
 
+@available(*, deprecated, message: "Just use a plain label instead.")
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension ListTextContent where Icon == EmptyView {
     
@@ -62,6 +56,7 @@ public extension ListTextContent where Icon == EmptyView {
     }
 }
 
+@available(*, deprecated, message: "Just use a plain label instead.")
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension ListTextContent where Icon == Image {
     
@@ -73,26 +68,5 @@ public extension ListTextContent where Icon == Image {
         self.text = text
         self.icon = icon
         self.subtitle = subtitle
-    }
-}
-
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-struct ListTextContent_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        List {
-            ListTextContent("Text 1")
-            ListTextContent("Text 2")
-            ListTextContent(
-                "Text with icon",
-                icon: Image(systemName: "lightbulb"))
-            ListTextContent(
-                "Text with color badge",
-                icon: Color.blue.clipShape(Circle()).padding(1))
-            ListTextContent(
-                "Text with icon and subtitle",
-                icon: Image(systemName: "lightbulb"),
-                subtitle: "Subtitle")
-        }
     }
 }

@@ -26,12 +26,10 @@ public struct ListSelectItem<Content: View>: View {
     private let content: () -> Content
     
     public var body: some View {
-        ListItem {
-            HStack {
-                content()
-                Spacer()
-                image.foregroundColor(.accentColor)
-            }
+        HStack {
+            content()
+            Spacer()
+            image.foregroundColor(.accentColor)
         }
     }
 }

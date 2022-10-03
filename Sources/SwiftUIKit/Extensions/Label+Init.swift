@@ -17,6 +17,10 @@ public extension Label where Icon == Image, Title == Text {
      This may be easier to use than the multi-closure init.
      */
     init(_ text: String, image: Image) {
-        self.init(title: { Text(text) }, icon: { image })
+        self.init {
+            Text(text)
+        } icon: {
+            image
+        }
     }
 }
