@@ -6,7 +6,7 @@
 //  Copyright © 2022 Daniel Saidi. All rights reserved.
 //
 
-#if compiler(>=5.7)
+#if os(iOS) && compiler(>=5.7)
 import SwiftUI
 
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)

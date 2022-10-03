@@ -10,13 +10,11 @@ This will make the things in this library easier to understand and document, sin
 
 ## 2.9.2
 
-This version deprecates more things, such as the list items.
+This version makes ocmpiling for macOS work in Xcode 14.
 
-The list views are deprecated since later SwiftUI versions makes great use of the `Label` view to render things natively. The list views just adds extra complexity with little gains.
+The version also deprecates more things, such as the list items. The list views are deprecated since later SwiftUI versions makes great use of the `Label` view to render things natively. The list views just adds extra complexity with little gains.
 
-One thing that the list views did well, though, was to make the entire list items tappable, where native labels only take up as much space as they need, even in lists.
-
-To address this, there is a new button style called `ListButtonStyle`, which you can apply to an entire list to make all buttons behave the same way.  
+One thing that the list views did well, though, was to make the entire list items tappable, where native labels only take up as much space as they need, even in lists. To address this, there is a new button style called `ListButtonStyle`, which you can apply to an entire list to make all buttons behave the same way.  
 
 ### ✨ New features
 
@@ -25,6 +23,10 @@ To address this, there is a new button style called `ListButtonStyle`, which you
 ### 💡 Behavior changes
 
 * List items will render differently, without the padding.
+
+### 🐛 Bug fixes
+
+* This version fixes compile errors on macOS by temporarily only making some types available for iOS. 
 
 ### 🗑 Deprecations
 
