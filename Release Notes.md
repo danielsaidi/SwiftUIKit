@@ -8,6 +8,12 @@ This will make the things in this library easier to understand and document, sin
 
 
 
+## 2.9.3
+
+This version removes MockingKit dependency.
+
+
+
 ## 2.9.2
 
 This version makes ocmpiling for macOS work in Xcode 14.

@@ -15,15 +15,13 @@ let package = Package(
             name: "SwiftUIKit",
             targets: ["SwiftUIKit"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/danielsaidi/MockingKit.git", .upToNextMajor(from: "1.0.0"))
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "SwiftUIKit",
             dependencies: []),
         .testTarget(
             name: "SwiftUIKitTests",
-            dependencies: ["SwiftUIKit", "MockingKit"])
+            dependencies: ["SwiftUIKit"])
     ]
 )

@@ -7,7 +7,6 @@
 //
 
 #if os(iOS)
-import MockingKit
 import SwiftUIKit
 import UIKit
 import XCTest
@@ -15,24 +14,23 @@ import XCTest
 final class UIImage_PasteboardTests: XCTestCase {
 
     func testIgnoresCopyingToPasteboardWhenImageHasNoPngData() {
-        let pasteboard = MockPasteboard()
-        let result = UIImage().copyToPasteboard(pasteboard)
+        let image = UIImage()
+        let pasteboard = UIPasteboard()
+        let result = image.copyToPasteboard(pasteboard)
 
         XCTAssertFalse(result)
-        XCTAssertFalse(pasteboard.hasCalled(pasteboard.setDataRef))
+        XCTAssertNil(image.pngData())
+        XCTAssertNil(pasteboard.image)
     }
 
     func testCopiesToPasteboardWhenImageHasPngData() {
-        let pasteboard = MockPasteboard()
-
-        let image = UIImage().resized(to: CGSize(width: 1, height: 1))!
+        let image = UIImage()
+            .resized(to: CGSize(width: 1, height: 1))!
+        let pasteboard = UIPasteboard()
         let result = image.copyToPasteboard(pasteboard)
-        let invokes = pasteboard.calls(to: pasteboard.setDataRef)
 
         XCTAssertTrue(result)
-        XCTAssertTrue(pasteboard.hasCalled(pasteboard.setDataRef))
-        XCTAssertNotNil(invokes[0].arguments.0)
-        XCTAssertEqual(invokes[0].arguments.1, "public.png")
+        XCTAssertNotNil(image.pngData())
     }
 }
 #endif
