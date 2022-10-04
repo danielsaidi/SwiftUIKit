@@ -10,7 +10,7 @@ This will make the things in this library easier to understand and document, sin
 
 ## 2.9.3
 
-This version removes MockingKit dependency.
+This version removes the `MockingKit` dependency.
 
 
 
