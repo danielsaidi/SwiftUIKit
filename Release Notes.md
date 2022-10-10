@@ -1,16 +1,11 @@
 # Release notes
 
-Moving to 3.0, larger and more conceptual parts will be moved from this library to separate, smaller libraries.
 
-Some examples are functionality that consists of many types (like the list and picker utils) and views that have great value in themselves.
-
-This will make the things in this library easier to understand and document, since they will require less context and coupling.  
-
-
-
-## 4.0
+## 3.0
 
 This major version removes all previously deprecated logic to make the library tighter and cleaner.
+
+If you need any parts of the library that have now been removed, just grab them from the previous `2.9` versions.
 
 ### ✨ New features
 
@@ -22,6 +17,8 @@ This major version removes all previously deprecated logic to make the library t
 * The `Documents` namespace has been removed without being previously deprecated.
 * The `.safeAreaInsets` environment value has been removed without being previously deprecated.
 * The `Views/DetailPanel` namespace has been removed without being previously deprecated.
+* The `UIViewWrapper` view has been removed without being previously deprecated.
+
 
 
 ## 2.9.3

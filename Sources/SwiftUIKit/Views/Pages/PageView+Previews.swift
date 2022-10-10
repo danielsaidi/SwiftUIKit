@@ -40,7 +40,8 @@ struct PageView_Previews: PreviewProvider {
         
         let pageIndicatorDisplayMode: PageIndicatorDisplayMode
         
-        @State private var index = 0
+        @State
+        private var index = 0
         
         var body: some View {
             PageView(
@@ -58,7 +59,8 @@ struct PageView_Previews: PreviewProvider {
         
         let pageIndicatorStyle: PageIndicatorStyle
         
-        @State private var index = 0
+        @State
+        private var index = 0
         
         var body: some View {
             PageView(
