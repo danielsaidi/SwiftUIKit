@@ -14,10 +14,9 @@ import UIKit
  This picker wraps `UIDocumentPickerViewController` that can
  can be used to pick files from Files.
  
- You create a picker instance by providing two action blocks
- that can be used to inspect what happens with the operation.
- You must also specify the document types you want to handle
- (`["public.png"]` if you only want to support `.png` files):
+ You create a picker by providing the types of documents you
+ want it to support, such as `["public.png"]` as well as two
+ action blocks for handling cancel and completion events:
  
  ```swift
  let picker = FilePicker(
@@ -26,12 +25,12 @@ import UIKit
     finishAction: { result in ... })            // Mandatory
  }
  ```
+
+ You can then present the picker with a sheet, a full screen
+ cover etc.
  
  The picker result contains a list of file urls that you can
  handle in any way  you want.
- 
- You can use a ``SheetContext`` to easily present the picker
- as a modal sheet.
  */
 public struct FilePicker: UIViewControllerRepresentable {
     

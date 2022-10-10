@@ -13,7 +13,7 @@ public extension EdgeInsets {
     /**
      Create an `EdgeInsets` with the same insets everywhere.
      */
-    static func all(_ all: CGFloat) -> EdgeInsets {
+    static func all(_ all: Double) -> EdgeInsets {
         self.init(
             top: all,
             leading: all,
@@ -25,8 +25,8 @@ public extension EdgeInsets {
      Create an `EdgeInsets` with horizontal/vertical values.
      */
     static func horizontal(
-        _ horizontal: CGFloat,
-        vertical: CGFloat
+        _ horizontal: Double,
+        vertical: Double
     ) -> EdgeInsets {
         self.init(
             top: vertical,

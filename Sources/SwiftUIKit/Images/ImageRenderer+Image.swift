@@ -13,7 +13,7 @@ import SwiftUI
 public extension ImageRenderer {
 
     /**
-     Render the provided view as an image.
+     Render the provided view as a platform-specific image.
      */
     @MainActor
     var image: ImageRepresentable? {

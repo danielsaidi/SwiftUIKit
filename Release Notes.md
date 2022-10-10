@@ -20,7 +20,7 @@ This major version removes all previously deprecated logic to make the library t
 
 * The `Documents` namespace has been removed without being previously deprecated.
 * The `.safeAreaInsets` environment value has been removed without being previously deprecated.
-
+* The `Views/DetailPanel` namespace has been removed without being previously deprecated.
 
 
 ## 2.9.3

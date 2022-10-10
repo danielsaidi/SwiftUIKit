@@ -11,10 +11,14 @@ import SwiftUI
 
 /**
  This protocol can be implemented by any views or types that
- presents a macOS sidebar.
+ presents a leading macOS sidebar.
  
- The protocol adds more features to the type, which makes it
- easier to control the sidebar.
+ The protocol adds more features to the type that implements
+ it, which makes it easier to control the sidebar.
+
+ For instance, you can add an ``sidebarToggleButton`` to the
+ toolbar to get a button with the correct icon, that toggles
+ the sidebar. You can also call ``toggleSidebar()`` directly.
  */
 public protocol SidebarPresenter {}
 

@@ -6,15 +6,14 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-import CoreGraphics
 import SwiftUI
 
 public extension EdgeInsets {
     
     /**
-     Get the inset for a certain edge.
+     Get the inset value for a certain edge.
      */
-    func inset(for edge: Edge) -> CGFloat {
+    func inset(for edge: Edge) -> Double {
         switch edge {
         case.top: return top
         case.bottom: return bottom
