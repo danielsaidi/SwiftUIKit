@@ -15,6 +15,7 @@ This major version removes all previously deprecated logic to make the library t
 ### 💥 Breaking Changes
 
 * The `Documents` namespace has been removed without being previously deprecated.
+* The `.safeAreaInsets` environment value has been removed without being previously deprecated.
 
 
 
