@@ -12,6 +12,10 @@ This will make the things in this library easier to understand and document, sin
 
 This major version removes all previously deprecated logic to make the library tighter and cleaner.
 
+### ✨ New features
+
+* The `disableDynamicType` view extension now accepts a size category.
+
 ### 💥 Breaking Changes
 
 * The `Documents` namespace has been removed without being previously deprecated.

@@ -15,10 +15,11 @@ public extension View {
      Marks this view as searchable if the provided condition
      is `true`, which configures a search field for the view.
 
-     `IMPORTANT` The extension uses an `if` clause to toggle
-     between the searchable and non-searchable view. Do only
-     use conditional views when you know the implications of
-     doing so, such as how the view hierarchy is affected.
+     This function uses an `if` clause to toggle between the
+     searchable and non-searchable result types. Do only use
+     conditional views if you know the implications of doing
+     so, such as how the view hierarchy is affected. This is
+     only a convenience for when you do.
 
      - Parameters:
        - condition: Whether or not to make the view conditional.

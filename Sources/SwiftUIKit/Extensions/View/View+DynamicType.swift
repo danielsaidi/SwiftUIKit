@@ -11,9 +11,14 @@ import SwiftUI
 public extension View {
 
     /**
-     Disable dynamic type by applying a medium size category.
+     Disable dynamic type by applying a fixed size category.
+
+     - Parameters:
+       - sizeCategory: The size to apply, by default `.medium`.
      */
-    func disableDynamicType() -> some View {
+    func disableDynamicType(
+        sizeCategory: ContentSizeCategory = .medium
+    ) -> some View {
         self.environment(\.sizeCategory, .medium)
     }
 }

@@ -10,6 +10,11 @@ import SwiftUI
 
 public extension View {
 
+    /**
+     This modifier will apply the `persistentSystemOverlays`
+     modifier with a `.hidden` value, but only if the api is
+     available. If not, the view will remain unchanged.
+     */
     func prefersPersistentSystemOverlaysHidden() -> some View {
         #if os(iOS) && compiler(>=5.7)
         if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *) {
