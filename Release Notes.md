@@ -8,6 +8,12 @@ This will make the things in this library easier to understand and document, sin
 
 
 
+## 4.0
+
+This major version removes all previously deprecated logic.
+
+
+
 ## 2.9.3
 
 This version removes the `MockingKit` dependency.
