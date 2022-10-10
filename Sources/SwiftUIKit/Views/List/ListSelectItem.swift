@@ -9,39 +9,36 @@
 import SwiftUI
 
 /**
- This view wraps the provided content in a ``ListItem`` then
+ This view wraps the provided content within an `HStack` and
+ adds a trailing image if the view is selected.
+
+
+ the provided content in a ``ListItem`` then
  appends a checkmark if the item is selected.
  */
 public struct ListSelectItem<Content: View>: View {
     
     public init(
         isSelected: Bool,
+        selectedImage: Image = Image(systemName: "checkmark"),
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.isSelected = isSelected
+        self.selectedImage = selectedImage
         self.content = content
     }
     
     private let isSelected: Bool
+    private let selectedImage: Image
     private let content: () -> Content
     
     public var body: some View {
         HStack {
             content()
             Spacer()
-            image.foregroundColor(.accentColor)
-        }
-    }
-}
-
-private extension ListSelectItem {
-    
-    @ViewBuilder
-    var image: some View {
-        if isSelected {
-            Image(systemName: "checkmark")
-        } else {
-            EmptyView()
+            if isSelected {
+                selectedImage
+            }
         }
     }
 }
@@ -51,7 +48,8 @@ struct ListSelectItem_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var selection = 0
+        @State
+        private var selection = 0
         
         var body: some View {
             List {

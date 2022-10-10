@@ -42,7 +42,6 @@ struct ListSubtitle_Previews: PreviewProvider {
                 Spacer()
                 ListSubtitle("Subtitle")
             }
-
         }
     }
 }

@@ -15,6 +15,7 @@ This major version removes all previously deprecated logic to make the library t
 ### ✨ New features
 
 * The `disableDynamicType` view extension now accepts a size category.
+* The `ListSelectItem` now accepts a customizable checkmark icon.
 
 ### 💥 Breaking Changes
 
