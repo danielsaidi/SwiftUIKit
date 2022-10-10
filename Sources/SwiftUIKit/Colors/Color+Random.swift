@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+/**
+ This extension extends `Color` with ways to generate random
+ colors.
+ */
 public extension Color {
 
     /**

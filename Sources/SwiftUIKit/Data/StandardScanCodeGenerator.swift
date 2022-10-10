@@ -10,7 +10,8 @@
 import SwiftUI
 
 /**
- This generator uses `CoreImage` to generate scan codes.
+ This scan code generator uses `CoreImage` to generate codes
+ that can be scanned by a camera.
  */
 public class StandardScanCodeGenerator: ScanCodeGenerator {
     

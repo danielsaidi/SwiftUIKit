@@ -21,13 +21,19 @@ import WatchKit
 import AppKit
 #endif
 
-@available(iOS 14, tvOS 14, watchOS 7, *)
+/**
+ This extension extends `Color` with `Codable` functionality.
+ */
+@available(iOS 14, macOS 11, tvOS 14, watchOS 7, *)
 extension Color: Codable {
     
     enum CodingKeys: String, CodingKey {
         case red, green, blue, alpha
     }
-    
+
+    /**
+     Initialize a color value from a decoder.
+     */
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let r = try container.decode(Double.self, forKey: .red)
@@ -37,6 +43,14 @@ extension Color: Codable {
         self.init(red: r, green: g, blue: b, opacity: a)
     }
 
+    /**
+     Encode the color, using an encoder.
+
+     Note that encoding dynamic colors that support features
+     like dark mode, high contrast etc. will cause the color
+     value that is encoded to only contain the current color
+     information.
+     */
     public func encode(to encoder: Encoder) throws {
         guard let colorComponents = self.colorComponents else { return }
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -47,7 +61,7 @@ extension Color: Codable {
     }
 }
 
-@available(iOS 14, tvOS 14, watchOS 7, *)
+@available(iOS 14, macOS 11, tvOS 14, watchOS 7, *)
 private extension Color {
     
     #if os(macOS)

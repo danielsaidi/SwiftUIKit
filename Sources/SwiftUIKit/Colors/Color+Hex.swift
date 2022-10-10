@@ -42,7 +42,6 @@ public extension Color {
     }
 }
 
-
 struct Color_Hex_Previews: PreviewProvider {
 
     struct Preview: View {

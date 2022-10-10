@@ -16,6 +16,10 @@ public protocol ScanCodeGenerator {
 
     /**
      Generate a scan code image for the provided `string`.
+
+     - Parameters:
+       - type: The type of code to generate.
+       - string: The string to code into the scan code.
      */
     func generateCode(
         _ type: ScanCodeType,

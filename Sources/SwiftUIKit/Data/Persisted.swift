@@ -19,6 +19,14 @@ import SwiftUI
 @propertyWrapper
 public struct Persisted<Value: Codable>: DynamicProperty {
 
+    /**
+     Create a persisted property wrapper.
+
+     - Parameters:
+       - key: The unique key to persist the value to.
+       - store: The store to persist the value in.
+       - defaultValue: The default value to return when no stored value exists.
+     */
     public init(
         key: String,
         store: UserDefaults = .standard,

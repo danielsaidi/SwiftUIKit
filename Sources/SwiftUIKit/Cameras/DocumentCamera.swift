@@ -11,9 +11,9 @@ import SwiftUI
 import VisionKit
 
 /**
- This view wraps a `VNDocumentCameraViewController` that can
- be used to scan documents with the device's camera.
- 
+ This view can be used to open a camera that can scan one or
+ multiple pages in a physical document.
+
  You create a document camera by providing two action blocks:
  
  ```swift
@@ -23,14 +23,22 @@ import VisionKit
  }
  ```
 
- You can then present the document camera with a sheet, full
- screen cover etc.
- 
- The camera result is a `VNDocumentCameraScan` that contains
- a list of scanned files, if any.
+ You can then present the camera with a sheet, a full screen
+ cover etc.
+
+ The camera uses a `VNDocumentCameraViewController` and will
+ return a `VNDocumentCameraScan` that contains a list of all
+ scanned document pages, if any.
  */
 public struct DocumentCamera: UIViewControllerRepresentable {
-    
+
+    /**
+     Create a document camera.
+
+     - Parameters:
+       - cancelAction: The action to trigger when the scan is cancelled.
+       - resultAction: The action to trigger when the scan is completes.
+     */
     public init(
         cancelAction: @escaping CancelAction = {},
         resultAction: @escaping ResultAction) {

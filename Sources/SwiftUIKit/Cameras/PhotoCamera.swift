@@ -9,14 +9,11 @@
 #if os(iOS)
 import Photos
 import SwiftUI
-import UIKit
 
 /**
- This camera is an alias for an `ImagePicker` with `.camera`
- as `sourceType`.
- 
- You create a camera instance by providing two action blocks
- that can be used to inspect what happens with the operation:
+ This view can be used to open a camera that can take photos.
+
+ You create a camera instance by providing two action blocks:
  
  ```swift
  let picker = Camera(
@@ -24,15 +21,22 @@ import UIKit
     finishAction: { result in ... })            // Mandatory
  }
  ```
+
+ You can then present the camera with a sheet, a full screen
+ cover etc.
  
  The camera result contains the picked image, which you then
  can use in any way you want.
- 
- You can use a ``SheetContext`` to easily present the camera
- as a modal sheet.
  */
 public struct PhotoCamera: View {
-    
+
+    /**
+     Create a photo camera.
+
+     - Parameters:
+       - cancelAction: The action to trigger when the operation is cancelled.
+       - resultAction: The action to trigger when the operation is completes.
+     */
     public init(
         cancelAction: @escaping ImagePicker.CancelAction = {},
         resultAction: @escaping ImagePicker.ResultAction) {
