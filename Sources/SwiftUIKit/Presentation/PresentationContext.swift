@@ -10,28 +10,43 @@ import Combine
 import SwiftUI
 
 /**
- This class is shared by many presentation-specific contexts,
- like ``AlertContext``, ``SheetContext`` and ``ToastContext``.
- 
- The context can be used to manage a generic view as well as
- its presentation state.
+ This class is shared by presentation-specific contexts, and
+ can be used to setup global state or present many different
+ views with a single view modifier.
  
  To use the context, first create an observed instance, then
- bind it to a presentation-specific view modifier that takes
- an `isPresented` binding and a `content` view builder, then
- call any of the context's `present` functions.
- 
- For instance, using a ``SheetContext`` involves these steps:
+ bind it to a view using custom view modifiers. For instance,
+ using a ``SheetContext`` works like this:
  
  ```swift
- @StateObject var context = SheetContext()
- 
- view.sheet(context)
- 
- context.present(Text("Hello, world!"))
+ struct MyView: View {
+
+    @StateObject
+    var sheet = SheetContext()
+
+    var body: some View {
+        Button("Show sheet", action: showSheet)
+            .sheet(sheet)
+    }
+ }
+
+ extension MyView {
+
+    func showSheet() {
+        sheet.present(Text("Hello, world!"))
+    }
+ }
  ```
- 
- Have a look at more specific contexts for more information.
+
+ To setup global state, you can define the context as we did
+ above and pass it into the view hierarchy as an environment
+ object. Any nested views in the view hierarchy can then use
+ the same context to present all sheets, alerts etc. using a
+ single view modifier.
+
+ Note that presenting new sheets and full screen covers will
+ require that you create and apply new contexts, otherwise a
+ presentation or a dismissal will use the presenting context.
  */
 open class PresentationContext<Content>: ObservableObject {
     

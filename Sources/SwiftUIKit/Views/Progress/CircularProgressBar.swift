@@ -16,9 +16,9 @@ import SwiftUI
  going clockwise. `0` means that the arc starts from the top,
  `90` from the right etc.
 
- The view can be styled with a ``Style``. There are a couple
- of built-in styles to choose from. You can also create your
- own styles like this:
+ The view can be styled with a ``Style-swift.struct``. There
+ are a couple of built-in styles to choose from, and you can
+ create your own styles like this:
 
  ```
  extension CircularProgressBar.Style {
@@ -36,7 +36,7 @@ import SwiftUI
  }
  ```
 
- and use it like this:
+ You can then use the custom style like this:
 
  ```
  CircularProgressBar(
@@ -44,8 +44,8 @@ import SwiftUI
      style: .swedish)
  ```
 
- You can modify the ``Style/standard`` style to change how a
- view will look by default, if you don't provide a style.
+ You can also customize the built-in styles, to change their
+ standard configuration and how this view looks by default.
  */
 public struct CircularProgressBar: View {
 
@@ -56,7 +56,7 @@ public struct CircularProgressBar: View {
        - progress: The percentage progress, from `0` to `1`.
        - decimals: The number of decimals to display, by default `0`.
        - startAngle: The start angle in degrees, by default `0`.
-       - style: The style to apply, by default ``Style/standard``.
+       - style: The style to apply, by default `.standard`.
      */
     public init(
         progress: Double,

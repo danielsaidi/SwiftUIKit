@@ -1,6 +1,23 @@
 # Release notes
 
 
+## 3.1
+
+### ✨ New features
+
+* `LinearProgressBar` is a new, style-based progress view.
+* `ScrollViewHeader` is a new header view with stretch and parallax support.
+
+### 🐛 Bug fixes
+
+* `CircularProgressBar` is no longer greedy and only allocates the space it needs. 
+
+### 💥 Breaking Changes
+
+* `CircularProgressBarStyle` has been renamed to `CircularProgressBar.Style`. 
+
+
+
 ## 3.0
 
 This major version removes all previously deprecated logic to make the library tighter and cleaner.

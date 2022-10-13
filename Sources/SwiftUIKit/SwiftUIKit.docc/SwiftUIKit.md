@@ -69,15 +69,6 @@ SwiftUIKit is available under the MIT license.
 - ``ScanCodeType``
 - ``StandardScanCodeGenerator``
 
-### Documents
-
-- ``DocumentPresenter``
-- ``DocumentGroupInspector``
-- ``DocumentGroupPresenter``
-- ``DocumentGroupSheet``
-- ``DocumentGroupSheetError``
-- ``DocumentRenameError``
-
 ### Errors
 
 - ``ErrorAlerter``
@@ -99,7 +90,6 @@ SwiftUIKit is available under the MIT license.
 ### Images
 
 - ``ImageRepresentable``
-- ``ImageRenderer``
 
 ### Navigation
 
@@ -168,8 +158,8 @@ SwiftUIKit is available under the MIT license.
 - ``PageIndicatorStyle``
 - ``PageView``
 - ``SearchBar``
+- ``ScrollViewHeader``
 - ``TextReplacement``
-- ``UIViewWrapper``
 
 ### Views/CollectionView
 
@@ -209,7 +199,7 @@ SwiftUIKit is available under the MIT license.
 ### Views/Progress
 
 - ``CircularProgressBar``
-- ``CircularProgressBarStyle``
+- ``LinearProgressBar``
 
 ### Views/Text
 

@@ -11,10 +11,6 @@ import SwiftUI
 /**
  This view wraps the provided content within an `HStack` and
  adds a trailing image if the view is selected.
-
-
- the provided content in a ``ListItem`` then
- appends a checkmark if the item is selected.
  */
 public struct ListSelectItem<Content: View>: View {
     

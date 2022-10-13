@@ -10,9 +10,6 @@ import Foundation
 
 /**
  This enum defines all supported printable types.
- 
- To add new item types, all ``Printer`` implementations must
- be able to handle them.
  */
 public enum PrintableItem {
     
