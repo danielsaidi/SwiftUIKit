@@ -4,6 +4,9 @@ default_platform :ios
 
 platform :ios do
 
+  library_name = "SwiftUIKit"
+  pod_name = "DSSwiftUIKit"
+  main_branch = "master"
   build_folder_docs = ".build/docs"
 
 
@@ -36,7 +39,7 @@ platform :ios do
   desc "Ensure that the repo is valid for release"
   lane :ensure_release_ready do
     ensure_git_status_clean
-    ensure_git_branch(branch: 'master')
+    ensure_git_branch(branch: main_branch)
     lint
     test
   end
@@ -51,7 +54,7 @@ platform :ios do
     
     bump_type = options[:type]
     version = version_bump_podspec(
-      path: "DSSwiftUIKit.podspec",
+      path: pod_name + '.podspec',
       bump_type: bump_type)
     
     git_commit(path: "*", message: "Bump to #{version}")
@@ -76,22 +79,22 @@ platform :ios do
   desc "Build documentation for a single platform"
   lane :docc_platform do |values|
     sh('cd .. && mkdir -p ' + build_folder_docs)
-    docc_delete_derived_data
+    docc_delete_derived_data(lib: library_name)
     sh('cd .. && xcodebuild docbuild \
-      -scheme SwiftUIKit \
+      -scheme ' + library_name + ' \
       -destination \'generic/platform=' + values[:destination] + '\'')
     sh('cd .. && \
       find ~/Library/Developer/Xcode/DerivedData \
-      -name "SwiftUIKit.doccarchive" \
+      -name "' + library_name + '.doccarchive" \
       -exec cp -R {} ' + build_folder_docs + ' \;')
     sh('cd .. && \
-      mv ' + build_folder_docs + '/SwiftUIKit.doccarchive ' + build_folder_docs + '/SwiftUIKit_' + values[:name] + '.doccarchive')
+      mv ' + build_folder_docs + '/' + library_name + '.doccarchive ' + build_folder_docs + '/' + library_name + '_' + values[:name] + '.doccarchive')
   end
   
   desc "Delete documentation derived data (may be historic duplicates)"
   lane :docc_delete_derived_data do
     sh('find ~/Library/Developer/Xcode/DerivedData \
-      -name "SwiftUIKit.doccarchive" \
+      -name "' + library_name + '.doccarchive" \
       -exec rm -Rf {} \; || true')
   end
     
@@ -107,9 +110,9 @@ platform :ios do
   desc "Build static documentation website for a single platform"
   lane :docc_web_platform do |values|
     sh('cd .. && $(xcrun --find docc) process-archive \
-      transform-for-static-hosting ' + build_folder_docs + '/SwiftUIKit_' + values[:name] + '.doccarchive \
+      transform-for-static-hosting ' + build_folder_docs + '/' + library_name + '_' + values[:name] + '.doccarchive \
       --output-path  ' + build_folder_docs + '/web_' + values[:name] + ' \
-      --hosting-base-path SwiftUIKit')
+      --hosting-base-path ' + library_name + '')
   end
   
 end
