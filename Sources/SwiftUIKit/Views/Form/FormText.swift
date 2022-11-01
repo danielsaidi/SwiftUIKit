@@ -19,7 +19,16 @@ import SwiftUI
  rendered as an `EmptyView`.
  */
 public struct FormText<TrailingView: View>: View {
-    
+
+    /**
+     Create a form text view.
+
+     - Parameters:
+       - title: The footnote text title.
+       - text: The long text text.
+       - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
+       - trailingView: An optional trailing view to apply to the view.
+     */
     public init(
         title: String,
         text: String,
@@ -30,6 +39,25 @@ public struct FormText<TrailingView: View>: View {
         self.text = text
         self.hideIfEmpty = hideIfEmpty
         self.trailingView = trailingView
+    }
+
+    /**
+     Create a form text view.
+
+     - Parameters:
+       - title: The footnote text title.
+       - text: The long text text.
+       - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
+     */
+    public init(
+        title: String,
+        text: String,
+        hideIfEmpty: Bool = false
+    ) where TrailingView == EmptyView {
+        self.title = title
+        self.text = text
+        self.hideIfEmpty = hideIfEmpty
+        self.trailingView = nil
     }
     
     public let text: String
@@ -49,33 +77,18 @@ public struct FormText<TrailingView: View>: View {
     }
 }
 
-public extension FormText {
-    
-    var hasEmptyText: Bool {
-        text.trimmingCharacters(in: .whitespaces).isEmpty
-    }
-}
-
-public extension FormText where TrailingView == EmptyView {
-    
-    init(
-        title: String,
-        text: String,
-        hideIfEmpty: Bool = false
-    ) {
-        self.title = title
-        self.text = text
-        self.hideIfEmpty = hideIfEmpty
-        self.trailingView = nil
-    }
-}
-
 private extension FormText {
+
+    var hasEmptyText: Bool {
+        text.trimmingCharacters(in: .whitespaces)
+            .isEmpty
+    }
     
     var stack: some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 5) {
-                Text(title.lowercased())
+                Text(title)
+                    .lineLimit(1)
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 Text(text)
@@ -96,22 +109,22 @@ struct FormText_Previews: PreviewProvider {
     static var previews: some View {
         List {
             FormText(
-                title: "Title 1",
+                title: "title 1",
                 text: "Text value")
             FormText(
-                title: "Title 2",
+                title: "title 2",
                 text: "A looong text value with a trailing view.") {
                 Button(action: {}, label: { Image(systemName: "doc.on.doc") })
             }
             FormText(
-                title: "Title 3",
+                title: "title 3",
                 text: "Long\nmultuline\ntext that could have been entered in a text editor.")
             FormText(
-                title: "Title 4",
+                title: "title 4",
                 text: "",
                 hideIfEmpty: true)
             FormText(
-                title: "Title 5",
+                title: "title 5",
                 text: "",
                 hideIfEmpty: false)
         }
