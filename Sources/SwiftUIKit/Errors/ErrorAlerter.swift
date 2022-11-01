@@ -31,26 +31,43 @@ public extension ErrorAlerter {
 
     /**
      Alert the provided error.
+
+     If the error is an ``ErrorAlertConvertible``, then this
+     presents its ``ErrorAlertConvertible/errorAlert``, else
+     the error's `localizedDescription` is alerted.
      */
-    func alert(error: Error) {
+    func alert(
+        error: Error,
+        okButtonText: String = "OK"
+    ) {
         if let error = error as? ErrorAlertConvertible {
             return alert.present(error.errorAlert)
         }
-        alert.present(Alert(
-            title: Text(error.localizedDescription),
-            dismissButton: .default(Text("OK"))))        // TODO: Make this configurable
+        alert.present(
+            Alert(
+                title: Text(error.localizedDescription),
+                dismissButton: .default(Text(okButtonText))
+            )
+        )
     }
 }
 
 public extension ErrorAlerter {
-    
+
+    /// This typealias describes an async operation.
     typealias AsyncOperation = () async throws -> Void
-    typealias BlockResult<ErrorType: Error> = Result<Void, ErrorType>
+
+    /// This typealias describes a block completion.
     typealias BlockCompletion<ErrorType: Error> = (BlockResult<ErrorType>) -> Void
+
+    /// This typealias describes a block completion result.
+    typealias BlockResult<ErrorType: Error> = Result<Void, ErrorType>
+
+    /// This typealias describes a block operation.
     typealias BlockOperation<ErrorType: Error> = (BlockCompletion<ErrorType>) -> Void
 
     /**
-     Alert the provided error.
+     Alert the provided error asynchronously.
      */
     func alertAsync(error: Error) {
         DispatchQueue.main.async {

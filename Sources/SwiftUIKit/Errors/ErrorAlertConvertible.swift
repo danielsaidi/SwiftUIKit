@@ -19,18 +19,21 @@ public protocol ErrorAlertConvertible: Error {
 
     /// The message to display in the alert.
     var errorMessage: String { get }
+
+    /// The text to use for the alert button.
+    var errorButtonText: String { get }
 }
 
 public extension ErrorAlertConvertible {
 
     /**
-     Create an error alert for the type.
+     Create an error `Alert`.
      */
     var errorAlert: Alert {
         Alert(
             title: Text(errorTitle),
             message: Text(errorMessage),
-            dismissButton: .default(Text("OK"))     // TODO: Make this configurable
+            dismissButton: .default(Text(errorButtonText))
         )
     }
 }

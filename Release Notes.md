@@ -17,6 +17,7 @@
 ### 💥 Breaking Changes
 
 * `CircularProgressBarStyle` has been renamed to `CircularProgressBar.Style`.
+* `ErrorAlertConvertible` has a new `errorButtonText` property to avoid the hard-coded "OK".
 * `ScanCodeGenerator` has a cleaner function name for generating a scan code. 
 
 
