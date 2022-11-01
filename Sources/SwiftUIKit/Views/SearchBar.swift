@@ -41,17 +41,12 @@ public struct SearchBar: View {
     private let searchFieldPadding: CGFloat
     private let searchFieldMargin: CGFloat
     
-    public var hasText: Bool {
-        !text.wrappedValue.isEmpty
-    }
-    
     public var body: some View {
         VStack(spacing: 0) {
             HStack {
                 searchField
                 cancelButton
             }.padding(searchFieldMargin)
-            Divider()
         }
     }
 }
@@ -60,6 +55,10 @@ public struct SearchBar: View {
 // MARK: - Private Functionality
 
 private extension SearchBar {
+
+    var hasText: Bool {
+        !text.wrappedValue.isEmpty
+    }
 
     @ViewBuilder
     var cancelButton: some View {
@@ -75,7 +74,8 @@ private extension SearchBar {
     var searchField: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-            TextField(title, text: text).withClearButton(for: text)
+            TextField(title, text: text)
+                .withClearButton(for: text)
         }
         .padding(searchFieldPadding)
         .background(searchFieldBackground)
@@ -95,11 +95,19 @@ private extension SearchBar {
 }
 
 struct SearchBar_Previews: PreviewProvider {
-    
-    @State static var text = ""
+
+    struct Preview: View {
+
+        @State
+        var text = ""
+
+        var body: some View {
+            SearchBar(title: "Search", text: $text, cancelText: "Cancel")
+        }
+    }
     
     static var previews: some View {
-        SearchBar(title: "Search", text: $text, cancelText: "Cancel")
+        Preview()
     }
 }
 #endif

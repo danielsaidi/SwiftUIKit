@@ -18,6 +18,7 @@
 * `FormActionButton` now uses `true` as default value for the `dimmed` modifier.
 * `FormActionButtonStyle` now lets you style more parts of the form action button.
 * `FormText` no longers forces lowercase to its title.
+* `SearchBar` no longer adds a divider below the text field.
 * `TextFieldClearButton` now animates in the clear button.
 
 ### 🐛 Bug fixes
