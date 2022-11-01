@@ -11,21 +11,50 @@ import SwiftUI
 /**
  This view wraps the provided content within an `HStack` and
  adds a trailing image if the view is selected.
+
+ Although the `selectedImage` is a checkmark by default, the
+ selection indicator view can be any custom view.
  */
-public struct ListSelectItem<Content: View>: View {
-    
+public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
+
+    /**
+     Create a list select item.
+
+     - Parameters:
+       - isSelected: Whether or not the item is selected.
+       - selectedImage: The image to show for selected views.
+       - content: The list item content view.
+     */
+    public init(
+        isSelected: Bool,
+        selectIndicator: SelectIndicator,
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.isSelected = isSelected
+        self.selectedIndicator = selectIndicator
+        self.content = content
+    }
+
+    /**
+     Create a list select item.
+
+     - Parameters:
+       - isSelected: Whether or not the item is selected.
+       - selectedImage: The image to show for selected views, by default `.checkmark`.
+       - content: The list item content view.
+     */
     public init(
         isSelected: Bool,
         selectedImage: Image = Image(systemName: "checkmark"),
         @ViewBuilder content: @escaping () -> Content
-    ) {
+    ) where SelectIndicator == Image {
         self.isSelected = isSelected
-        self.selectedImage = selectedImage
+        self.selectedIndicator = selectedImage
         self.content = content
     }
     
     private let isSelected: Bool
-    private let selectedImage: Image
+    private let selectedIndicator: SelectIndicator
     private let content: () -> Content
     
     public var body: some View {
@@ -33,7 +62,7 @@ public struct ListSelectItem<Content: View>: View {
             content()
             Spacer()
             if isSelected {
-                selectedImage
+                selectedIndicator
             }
         }
     }
@@ -51,6 +80,13 @@ struct ListSelectItem_Previews: PreviewProvider {
             List {
                 ForEach(0...10, id: \.self) { index in
                     ListSelectItem(isSelected: index == selection) {
+                        Label("Item \(index)", systemImage: "\(index).circle")
+                    }
+                    ListSelectItem(
+                        isSelected: index == selection,
+                        selectIndicator: Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                    ) {
                         Label("Item \(index)", systemImage: "\(index).circle")
                     }
                 }

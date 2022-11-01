@@ -13,7 +13,7 @@ import SwiftUI
  list items.
  */
 public struct ListSubtitle: View {
-    
+
     public init(_ text: String) {
         self.text = text
     }

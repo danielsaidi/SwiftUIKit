@@ -7,6 +7,7 @@
 
 * `FormTextField` is now available in iOS 13 as well.
 * `LinearProgressBar` is a new, style-based progress view.
+* `ListSelectItem` now supports providing a custom select indicator view.
 * `ScrollViewHeader` is a new header view with stretch and parallax support.
 * `SwiftPreviewInspector` and `StandardSwiftPreviewInspector` are new types for detecting SwiftUI preview mode.
 * `UndimmedPresentationDetent` is a new enum that is used to define undimmed detents with `View+PresentationDetents`.
