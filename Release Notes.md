@@ -5,6 +5,7 @@
 
 ### ✨ New features
 
+* `FormTextField` is now available in iOS 13 as well.
 * `LinearProgressBar` is a new, style-based progress view.
 * `ScrollViewHeader` is a new header view with stretch and parallax support.
 * `SwiftPreviewInspector` and `StandardSwiftPreviewInspector` are new types for detecting SwiftUI preview mode.

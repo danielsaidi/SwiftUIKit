@@ -12,9 +12,16 @@ import SwiftUI
 /**
  This view can be used to present text fields in a list form.
  */
-@available(iOS 14, *)
 public struct FormTextField: View {
-    
+
+    /**
+     Create a form multiline text editor.
+
+     - Parameters:
+       - title: The view title.
+       - placeholder: The text field placeholder text.
+       - text: The text to edit.
+     */
     public init(
         title: String,
         placeholder: String,
@@ -33,16 +40,12 @@ public struct FormTextField: View {
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.footnote)
-                .textCase(.lowercase)
-                .foregroundColor(.secondary)
+            FormTextTitle(title)
             TextField(placeholder, text: $text)
         }.padding(.vertical, 3)
     }
 }
 
-@available(iOS 14, *)
 struct FormTextField_Previews: PreviewProvider {
     
     static var previews: some View {

@@ -12,11 +12,8 @@ import SwiftUI
 /**
  This view can be used to present text values in a list form.
  
- You can use the `text` property to get the current text and
- handle it in various ways, e.g. copying it.
- 
- If `hideIfEmpty` is `true` and `text` is empty, the view is
- rendered as an `EmptyView`.
+ If `hideIfEmpty` is true and the trimmed text is empty, the
+ view is rendered as an `EmptyView`.
  */
 public struct FormText<TrailingView: View>: View {
 
@@ -24,7 +21,7 @@ public struct FormText<TrailingView: View>: View {
      Create a form text view.
 
      - Parameters:
-       - title: The footnote text title.
+       - title: The view title.
        - text: The long text text.
        - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
        - trailingView: An optional trailing view to apply to the view.
@@ -87,10 +84,7 @@ private extension FormText {
     var stack: some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 5) {
-                Text(title)
-                    .lineLimit(1)
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+                FormTextTitle(title)
                 Text(text)
             }
             if let trailing = trailingView {

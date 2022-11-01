@@ -14,7 +14,15 @@ import SwiftUI
  */
 @available(iOS 14, *)
 public struct FormTextEditor: View {
-    
+
+    /**
+     Create a form multiline text editor.
+
+     - Parameters:
+       - title: The view title.
+       - text: The text to edit.
+       - editorHeight: The height of the editor, by default `100`.
+     */
     public init(
         title: String,
         text: Binding<String>,
@@ -33,10 +41,7 @@ public struct FormTextEditor: View {
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.footnote)
-                .textCase(.lowercase)
-                .foregroundColor(.secondary)
+            FormTextTitle(title)
             TextEditor(text: $text)
                 .frame(height: editorHeight)
                 .padding(.vertical, -6)
@@ -64,10 +69,10 @@ In the cold November rain
         
         var body: some View {
             FormText(
-                title: "Viewer",
+                title: "viewer",
                 text: text)
             FormTextEditor(
-                title: "Editor",
+                title: "editor",
                 text: $text,
                 editorHeight: 150)
         }
