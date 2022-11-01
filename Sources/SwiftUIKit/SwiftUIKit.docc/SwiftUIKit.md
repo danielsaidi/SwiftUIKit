@@ -125,6 +125,11 @@ SwiftUIKit is available under the MIT license.
 - ``SheetContextFocusedValueKey``
 - ``SheetProvider``
 
+### Previews
+
+- ``SwiftPreviewInspector``
+- ``StandardSwiftPreviewInspector``
+
 ### Printing
 
 - ``ItemPrinter``
