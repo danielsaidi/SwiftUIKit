@@ -10,16 +10,21 @@
 import SwiftUI
 
 /**
- This button replicates the horizontally aligned form action
- buttons that are used in e.g. the Contacts app.
- 
- `TODO` The private parts are not in extensions, since using
- available annotations on extensions mess up previews. Check
- bck on this when bumping the library to iOS 14 or later.
+ This button aims to replicate the horizontal action buttons
+ that are used in e.g. the Contacts app.
  */
 @available(iOS 14, *)
 public struct FormActionButton: View {
-    
+
+    /**
+     Create a form action button.
+
+     - Parameters:
+       - icon: The topmost icon.
+       - title: The button title text.
+       - style: The style to apply, by default `.standard`.
+       - action: The action to apply when the button is tapped.
+     */
     public init(
         icon: Image,
         title: String,
@@ -39,35 +44,41 @@ public struct FormActionButton: View {
     
     public var body: some View {
         Button(action: action) {
-            VStack(spacing: 7) {
+            VStack(spacing: style.verticalSpacing) {
                 image
                 text
             }
         }.buttonStyle(style)
     }
-    
-    
-    // MARK: - Public Functions
-    
+}
+
+@available(iOS 14, *)
+public extension FormActionButton {
+
     /**
-     A dimmed action button looks disabled, but can still be
-     tapped, which is a nice way to be able to inform a user
-     why the button doesn't work.
+     Dim the button, which will make it look disabled, while
+     still being tappable.
+
+     Dimming buttons is a nice way to make buttons look like
+     they are disabled, while still being able to inform the
+     user about why they are when they're tapped.
      */
-    public func dimmed(_ val: Bool) -> some View {
-        self.opacity(val ? 0.5 : 1)
+    func dimmed(_ value: Bool = true) -> some View {
+        self.opacity(value ? style.disabledOpacity : 1)
     }
-    
-    
-    // MARK: - Private Views
-    
-    private var image: some View {
+}
+
+@available(iOS 14, *)
+private extension FormActionButton {
+
+    var image: some View {
         icon.resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(height: 18)
+            .frame(height: style.iconHeight)
+            .padding(.top, 2)
     }
-    
-    private var text: some View {
+
+    var text: some View {
         Text(title)
             .fixedSize()
             .font(.caption2)
@@ -80,30 +91,30 @@ struct FormActionButton_Previews: PreviewProvider {
     
     static func button(
         _ image: Image,
-        _ title: String
+        _ title: String,
+        _ style: FormActionButtonStyle = .standard
     ) -> FormActionButton {
-        FormActionButton(icon: image, title: title, action: {})
+        FormActionButton(
+            icon: image,
+            title: title,
+            style: style,
+            action: {})
     }
     
-    static func preview(_ scheme: ColorScheme) -> some View {
+    static var previews: some View {
         VStack {
             button(.add, "Add something")
-            
+
             HStack(spacing: 10) {
                 button(.bug, "Report bug")
                 button(.camera, "Camera").disabled(true)
                 button(.photoLibrary, "Photos").dimmed(true)
-                button(.feedback, "Feedback")
+                button(.feedback, "Feedback", .swedish)
             }
         }
         .padding()
-        .preferredColorScheme(scheme)
-        .previewLayout(.sizeThatFits)
-    }
-    
-    static var previews: some View {
-        preview(.dark)
-        preview(.light)
+        .frame(maxHeight: .infinity)
+        .background(Color.black.opacity(0.08).ignoresSafeArea())
     }
 }
 

@@ -13,6 +13,8 @@
 
 ### 💡 Behavior changes
 
+* `FormActionButton` now uses `true` as default value for the `dimmed` modifier.
+* `FormActionButtonStyle` now lets you style more parts of the form action button.
 * `TextFieldClearButton` now animates in the clear button.
 
 ### 🐛 Bug fixes
