@@ -4,6 +4,8 @@ default_platform :ios
 
 platform :ios do
 
+  build_folder_docs = ".build/docs"
+
 
   # Documentation ==============
 
@@ -64,7 +66,7 @@ platform :ios do
   
   desc "Build documentation for all platforms"
   lane :docc do
-    sh('cd .. && rm -rf Docs')
+    sh('cd .. && rm -rf ' + build_folder_docs)
     docc_platform(destination: 'iOS', name: 'ios')
     docc_platform(destination: 'OS X', name: 'osx')
     docc_platform(destination: 'tvOS', name: 'tvos')
@@ -73,7 +75,7 @@ platform :ios do
     
   desc "Build documentation for a single platform"
   lane :docc_platform do |values|
-    sh('cd .. && mkdir -p Docs')
+    sh('cd .. && mkdir -p ' + build_folder_docs)
     docc_delete_derived_data
     sh('cd .. && xcodebuild docbuild \
       -scheme SwiftUIKit \
@@ -81,9 +83,9 @@ platform :ios do
     sh('cd .. && \
       find ~/Library/Developer/Xcode/DerivedData \
       -name "SwiftUIKit.doccarchive" \
-      -exec cp -R {} Docs \;')
+      -exec cp -R {} ' + build_folder_docs + ' \;')
     sh('cd .. && \
-      mv Docs/SwiftUIKit.doccarchive Docs/SwiftUIKit_' + values[:name] + '.doccarchive')
+      mv ' + build_folder_docs + '/SwiftUIKit.doccarchive ' + build_folder_docs + '/SwiftUIKit_' + values[:name] + '.doccarchive')
   end
   
   desc "Delete documentation derived data (may be historic duplicates)"
@@ -105,8 +107,8 @@ platform :ios do
   desc "Build static documentation website for a single platform"
   lane :docc_web_platform do |values|
     sh('cd .. && $(xcrun --find docc) process-archive \
-      transform-for-static-hosting Docs/SwiftUIKit_' + values[:name] + '.doccarchive \
-      --output-path Docs/web_' + values[:name] + ' \
+      transform-for-static-hosting ' + build_folder_docs + '/SwiftUIKit_' + values[:name] + '.doccarchive \
+      --output-path  ' + build_folder_docs + '/web_' + values[:name] + ' \
       --hosting-base-path SwiftUIKit')
   end
   
