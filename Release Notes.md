@@ -7,6 +7,8 @@
 
 * `LinearProgressBar` is a new, style-based progress view.
 * `ScrollViewHeader` is a new header view with stretch and parallax support.
+* `UndimmedPresentationDetent` is a new enum that is used to define undimmed detents with `View+PresentationDetents`.
+* `View+PresentationDetents` now supports specifying a `largestUndimmed` presentation detent.
 
 ### 🐛 Bug fixes
 

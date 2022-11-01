@@ -17,13 +17,15 @@ public extension View {
      underlying views when this view is presented as a sheet.
 
      - Parameters:
-       - detents: The detents to enable for the view.
+       - detents: The undimmed detents to enable for the view.
+       - largestUndimmed: The largest undimmed detent, by default the last detents in the provided `detents` collection.
      */
     func presentationDetents(
-        undimmed detents: Set<PresentationDetent>
+        undimmed detents: [UndimmedPresentationDetent],
+        largestUndimmed: UndimmedPresentationDetent? = nil
     ) -> some View {
-        self.background(UndimmedDetentView())
-            .presentationDetents(detents.withLarge())
+        self.background(UndimmedDetentView(largestUndimmed: largestUndimmed ?? detents.last))
+            .presentationDetents(detents.swiftUISet)
     }
 
     /**
@@ -31,38 +33,32 @@ public extension View {
      underlying views when this view is presented as a sheet.
 
      - Parameters:
-       - detents: The detents to enable for the view.
-       - selection: The pre-selected detents.
+       - detents: The undimmed detents to enable for the view.
+       - largestUndimmed: The largest undimmed detent, by default the last detents in the provided `detents` collection.
+       - selection: An external seleciton binding.
      */
     func presentationDetents(
-        undimmed detents: Set<PresentationDetent>,
+        undimmed detents: [UndimmedPresentationDetent],
+        largestUndimmed: UndimmedPresentationDetent? = nil,
         selection: Binding<PresentationDetent>
     ) -> some View {
-        self.background(UndimmedDetentView())
+        self.background(UndimmedDetentView(largestUndimmed: largestUndimmed ?? detents.last))
             .presentationDetents(
-                detents.withLarge(),
+                Set(detents.swiftUISet),
                 selection: selection
             )
     }
 }
 
 @available(iOS 16.0, *)
-private extension Set where Element == PresentationDetent {
-
-    func withLarge() -> Set<PresentationDetent> {
-        var detent = self
-        detent.insert(.large)
-        return detent
-    }
-}
-
-@available(iOS 16.0, *)
 private struct UndimmedDetentView: UIViewControllerRepresentable {
 
-    var largestUndimmedDetent: PresentationDetent?
+    var largestUndimmed: UndimmedPresentationDetent?
 
     func makeUIViewController(context: Context) -> UIViewController {
-        UndimmedDetentController()
+        let result = UndimmedDetentController()
+        result.largestUndimmedDetent = largestUndimmed
+        return result
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
@@ -72,6 +68,8 @@ private struct UndimmedDetentView: UIViewControllerRepresentable {
 @available(iOS 16.0, *)
 private class UndimmedDetentController: UIViewController {
 
+    var largestUndimmedDetent: UndimmedPresentationDetent?
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         avoidDimmingParent()
@@ -79,7 +77,8 @@ private class UndimmedDetentController: UIViewController {
     }
 
     func avoidDimmingParent() {
-        sheetPresentationController?.largestUndimmedDetentIdentifier = .large
+        let id = largestUndimmedDetent?.uiKitIdentifier
+        sheetPresentationController?.largestUndimmedDetentIdentifier = id
     }
 
     func avoidDisablingControls() {
@@ -100,9 +99,14 @@ struct View_PresentationDetents_Previews: PreviewProvider {
                 .overlay(button)
                 .sheet(isPresented: $isPresented) {
                     Color.red.ignoresSafeArea()
-                        .presentationDetents(undimmed: [
-                            .fraction(0.3)
-                        ])
+                        .presentationDetents(
+                            undimmed: [
+                                .fraction(0.3),
+                                .fraction(0.5),
+                                .height(500)
+                            ],
+                            largestUndimmed: .fraction(0.3)
+                        )
                 }
         }
 
