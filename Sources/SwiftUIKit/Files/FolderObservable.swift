@@ -23,6 +23,10 @@ public class FolderObservable: ObservableObject {
     /**
      Create an instance that observes file system changes in
      a folder at the provided `folderUrl`.
+
+     - Parameters:
+       - folderUrl: The folder to observe.
+       - fileManager: The file manager to use, by default `.default`.
      */
     public init(
         folderUrl: URL,
@@ -35,9 +39,10 @@ public class FolderObservable: ObservableObject {
     }
     
     /**
-     The latest fetch files in the folder.
+     The latest fetched files in the folder.
      */
-    @Published public var files: [URL] = []
+    @Published
+    public var files: [URL] = []
     
     private let folderUrl: URL
     private let fileManager: FileManager

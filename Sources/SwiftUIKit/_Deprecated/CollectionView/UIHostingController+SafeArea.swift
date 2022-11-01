@@ -14,6 +14,7 @@ import SwiftUI
  to bring amazing, performant collection views to `SwiftUI`:
  https://github.com/defagos/SwiftUICollection
  */
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 public extension UIHostingController {
     
     /**
@@ -28,6 +29,7 @@ public extension UIHostingController {
     }
 }
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 private extension UIHostingController {
     
     /**

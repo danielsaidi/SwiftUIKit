@@ -35,6 +35,7 @@ import SwiftUI
  to bring amazing, performant collection views to `SwiftUI`:
  https://github.com/defagos/SwiftUICollection
  */
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, SupplementaryView: View>: UIViewRepresentable {
     
     
@@ -112,6 +113,7 @@ public struct CollectionView<Section: Hashable, Item: Hashable, Cell: View, Supp
 
 // MARK: - Private Functions
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 private extension CollectionView {
     
     func createCollectionView(for context: Context) -> UICollectionView {
@@ -179,6 +181,7 @@ private extension CollectionView {
 
 // MARK: - Coordinator
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 public extension CollectionView {
     
     class Coordinator: NSObject, UICollectionViewDelegate {
@@ -210,6 +213,7 @@ public extension CollectionView {
 
 // MARK: - HostCell
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 private extension CollectionView {
     
     class HostCell: UICollectionViewCell, CollectionViewHost {
@@ -229,6 +233,7 @@ private extension CollectionView {
 
 // MARK: - HostSupplementaryView
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 private extension CollectionView {
     
     class HostSupplementaryView: UICollectionReusableView, CollectionViewHost {
@@ -248,6 +253,7 @@ private extension CollectionView {
 
 // MARK: - CollectionViewHost
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 private protocol CollectionViewHost: UIView {
     
     associatedtype HostedView: View
@@ -255,6 +261,7 @@ private protocol CollectionViewHost: UIView {
     var hostController: UIHostingController<HostedView>? { get set }
 }
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 private extension CollectionViewHost {
     
     func handlePrepareForReuse() {

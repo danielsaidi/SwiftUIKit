@@ -17,7 +17,11 @@
 
 ### 🐛 Bug fixes
 
-* `CircularProgressBar` is no longer greedy and only allocates the space it needs. 
+* `CircularProgressBar` is no longer greedy and only allocates the space it needs.
+
+### 🗑 Deprecations
+
+* The entire `CollectionView` namespace has been deprecated, since it's no longer needed on tvOS. 
 
 ### 💥 Breaking Changes
 

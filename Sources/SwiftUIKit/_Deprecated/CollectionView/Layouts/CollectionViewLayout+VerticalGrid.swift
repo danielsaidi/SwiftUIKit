@@ -8,6 +8,7 @@
 #if os(iOS) || os(tvOS)
 import UIKit
 
+@available(*, deprecated, message: "The CollectionView namespace is deprecated and will be removed in SwiftUIKit 4.0.")
 public extension CollectionViewLayout {
     
     /**
