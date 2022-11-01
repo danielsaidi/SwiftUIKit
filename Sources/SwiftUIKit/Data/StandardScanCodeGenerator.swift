@@ -37,11 +37,11 @@ public class StandardScanCodeGenerator: ScanCodeGenerator {
     /**
      Generate a scan code for the provided type and string.
      */
-    public func generateCode(
-        _ type: ScanCodeType,
+    public func generateScanCode(
+        ofType type: ScanCodeType,
         from string: String
     ) -> ImageRepresentable? {
-        guard let image = generateCoreImage(of: type, from: string) else { return nil }
+        guard let image = generateCoreImage(ofType: type, from: string) else { return nil }
         return ImageRepresentable(cgImage: image)
     }
 }
@@ -49,7 +49,7 @@ public class StandardScanCodeGenerator: ScanCodeGenerator {
 private extension StandardScanCodeGenerator {
     
     func generateCoreImage(
-        of type: ScanCodeType,
+        ofType type: ScanCodeType,
         from string: String
     ) -> CGImage? {
         let ciContext = CIContext()
@@ -78,10 +78,10 @@ struct Previews_StandardScanCodeGenerator_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            generator.generateCodeView(.aztek, from: "123456789")
-            generator.generateCodeView(.code128, from: "123456789")
-            generator.generateCodeView(.pdf417, from: "123456789")
-            generator.generateCodeView(.qr, from: "123456789")
+            generator.generateScanCodeView(ofType: .aztek, from: "123456789")
+            generator.generateScanCodeView(ofType: .code128, from: "123456789")
+            generator.generateScanCodeView(ofType: .pdf417, from: "123456789")
+            generator.generateScanCodeView(ofType: .qr, from: "123456789")
         }
     }
 }

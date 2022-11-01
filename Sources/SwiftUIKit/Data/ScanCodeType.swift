@@ -48,7 +48,7 @@ public extension ScanCodeType {
     var name: String { rawValue.capitalized }
     
     /**
-     The CoreImage filter to use when generating a scan code.
+     The `CIFilter` name to use when generating a scan code.
      */
     var ciFilterName: String {
         switch self {

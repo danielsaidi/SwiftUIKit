@@ -21,8 +21,8 @@ public protocol ScanCodeGenerator {
        - type: The type of code to generate.
        - string: The string to code into the scan code.
      */
-    func generateCode(
-        _ type: ScanCodeType,
+    func generateScanCode(
+        ofType type: ScanCodeType,
         from string: String
     ) -> ImageRepresentable?
 }
@@ -33,8 +33,11 @@ public extension ScanCodeGenerator {
      Generate a scan code `Image` view for the provided type
      and string.
      */
-    func generateCodeView(_ type: ScanCodeType, from string: String) -> Image? {
-        guard let image = generateCode(type, from: string) else { return nil }
+    func generateScanCodeView(
+        ofType type: ScanCodeType,
+        from string: String
+    ) -> Image? {
+        guard let image = generateScanCode(ofType: type, from: string) else { return nil }
         return Image(image: image)
     }
 }

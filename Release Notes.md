@@ -16,7 +16,8 @@
 
 ### 💥 Breaking Changes
 
-* `CircularProgressBarStyle` has been renamed to `CircularProgressBar.Style`. 
+* `CircularProgressBarStyle` has been renamed to `CircularProgressBar.Style`.
+* `ScanCodeGenerator` has a cleaner function name for generating a scan code. 
 
 
 
