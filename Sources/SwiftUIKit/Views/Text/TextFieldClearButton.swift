@@ -10,8 +10,10 @@
 import SwiftUI
 
 /**
- This view mimics a text field clear button that is trailing
- in a text field.
+ This view modifier adds a clear button to any `TextField`.
+
+ You can apply it with `.modifier(TextFieldClearButton(...))`
+ or the custom `.withClearButton(for: $text)`.
  */
 public struct TextFieldClearButton: ViewModifier {
 
@@ -20,7 +22,7 @@ public struct TextFieldClearButton: ViewModifier {
     }
 
     @Binding
-    var text: String
+    private var text: String
 
     public func body(content: Content) -> some View {
         HStack {
@@ -29,16 +31,38 @@ public struct TextFieldClearButton: ViewModifier {
             Image(systemName: "multiply.circle.fill")
                 .foregroundColor(.secondary)
                 .opacity(text == "" ? 0 : 1)
+                .animation(.default, value: text)
                 .onTapGesture { self.text = "" }
         }
     }
 }
 
-struct TextFieldClearButton_Previews: PreviewProvider {
-    
+public extension TextField {
+
+    /**
+     Append a trailing ``TextFieldClearButton`` to this text
+     field, that can be used to clear the text field content.
+     */
+    func withClearButton(for text: Binding<String>) -> some View {
+        self.modifier(TextFieldClearButton(text: text))
+    }
+}
+
+struct TextField_ClearButton_Previews: PreviewProvider {
+
+    struct Preview: View {
+
+        @State
+        private var text = ""
+
+        var body: some View {
+            TextField("Test", text: $text)
+                .withClearButton(for: $text)
+        }
+    }
+
     static var previews: some View {
-        TextField("Enter text", text: .constant("Text"))
-            .modifier(TextFieldClearButton(text: .constant("Text")))
+        Preview()
     }
 }
 #endif

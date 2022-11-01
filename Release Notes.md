@@ -11,6 +11,10 @@
 * `UndimmedPresentationDetent` is a new enum that is used to define undimmed detents with `View+PresentationDetents`.
 * `View+PresentationDetents` now supports specifying a `largestUndimmed` presentation detent.
 
+### 💡 Behavior changes
+
+* `TextFieldClearButton` now animates in the clear button.
+
 ### 🐛 Bug fixes
 
 * `CircularProgressBar` is no longer greedy and only allocates the space it needs. 

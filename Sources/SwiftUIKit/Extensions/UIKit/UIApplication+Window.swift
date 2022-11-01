@@ -10,6 +10,14 @@
 import UIKit
 
 public extension UIApplication {
+
+    /**
+     Get all currently active key windows.
+     */
+    var activeKeyWindows: [UIWindow] {
+        activeWindows
+            .filter { $0.isKeyWindow }
+    }
     
     /**
      Get all currently active window scenes.
@@ -26,14 +34,6 @@ public extension UIApplication {
     var activeWindows: [UIWindow] {
         activeWindowScenes
             .flatMap { $0.windows }
-    }
-
-    /**
-     Get all currently active key windows.
-     */
-    var activeKeyWindows: [UIWindow] {
-        activeWindows
-            .filter { $0.isKeyWindow }
     }
 }
 #endif

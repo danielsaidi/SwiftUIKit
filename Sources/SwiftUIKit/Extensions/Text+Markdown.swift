@@ -3,6 +3,7 @@
 //  Text+Markdown
 //
 //  Created by Daniel Saidi on 2021-09-05.
+//  Copyright © 2021 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS) || os(tvOS) || os(watchOS)
