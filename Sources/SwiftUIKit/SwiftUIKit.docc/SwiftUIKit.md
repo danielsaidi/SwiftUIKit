@@ -85,7 +85,9 @@ SwiftUIKit is available under the MIT license.
 
 ### Gestures
 
+- ``GestureButton``
 - ``GestureTimer``
+- ``SwipeGestureViewModifier``
 
 ### Images
 
@@ -124,6 +126,7 @@ SwiftUIKit is available under the MIT license.
 - ``SheetContext``
 - ``SheetContextFocusedValueKey``
 - ``SheetProvider``
+- ``UndimmedPresentationDetent``
 
 ### Previews
 

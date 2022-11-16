@@ -7,6 +7,7 @@
 
 * `GestureButton` is a new view that can be used to handle multiple gestures with a single button.
 * `LinkText` is a new view that lets you combine text and tappable links without Markdown.
+* `SwipeGestureViewModifier` is a new view modifier that exposes the `View+onSwipeGesture` extension to DocC.
 
 
 
