@@ -1,6 +1,15 @@
 # Release notes
 
 
+## 3.2
+
+### ✨ New features
+
+* `GestureButton` is a new view that can be used to handle multiple gestures with a single button.
+* `LinkText` is a new view that lets you combine text and tappable links without Markdown.
+
+
+
 ## 3.1
 
 ### ✨ New features
