@@ -10,8 +10,9 @@
 import SwiftUI
 
 /**
- This view modifier applies swipe gestures to any views that
- can trigger actions when they are swiped left/right/up/down.
+ This view modifier can be used to apply swipe gestures to a
+ views, which will then trigger actions when it is swiped in
+ any of the specified directions.
 
  The modifier is used by the `View+onSwipeGesture` extension.
  */
@@ -93,8 +94,8 @@ public struct SwipeGestureViewModifier: ViewModifier {
 public extension View {
     
     /**
-     This extension can be used to add a `SwipeGesture` to a
-     `View` in a more declarative way.
+     Add swipe gestures that will be triggered when the view
+     is swiped in any of the specified directions.
      
      - Parameters:
        - maximumTime: The max time the gesture can be active before cancelling itself, by default `1`.
@@ -115,15 +116,17 @@ public extension View {
         right: SwipeGestureViewModifier.Action? = nil,
         down: SwipeGestureViewModifier.Action? = nil
     ) -> some View {
-        self.modifier(SwipeGestureViewModifier(
-            maximumTime: maximumTime,
-            minimumDistance: minimumDistance,
-            maximumDistance: maximumDistance,
-            gestureTimer: gestureTimer,
-            up: up,
-            left: left,
-            right: right,
-            down: down)
+        self.modifier(
+            SwipeGestureViewModifier(
+                maximumTime: maximumTime,
+                minimumDistance: minimumDistance,
+                maximumDistance: maximumDistance,
+                gestureTimer: gestureTimer,
+                up: up,
+                left: left,
+                right: right,
+                down: down
+            )
         )
     }
 }

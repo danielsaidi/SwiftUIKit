@@ -1,5 +1,5 @@
 //
-//  View+PresentationDetents.swift
+//  UndimmedPresentationDetentsViewModifier.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-06-21.
@@ -8,6 +8,63 @@
 
 #if os(iOS) && compiler(>=5.7)
 import SwiftUI
+
+/**
+ This view modifier applies swipe gestures to any views that
+ can trigger actions when they are swiped left/right/up/down.
+
+ The modifier is used by the `View+onSwipeGesture` extension.
+ */
+@available(iOS 16.0, *)
+public struct UndimmedPresentationDetentsViewModifier: ViewModifier {
+
+    init(
+        undimmedDetents: [UndimmedPresentationDetent],
+        largestUndimmed: UndimmedPresentationDetent? = nil
+    ) {
+        self.undimmedDetents = undimmedDetents
+        self.largestUndimmed = largestUndimmed
+        self.selection = nil
+    }
+
+    init(
+        undimmedDetents: [UndimmedPresentationDetent],
+        largestUndimmed: UndimmedPresentationDetent? = nil,
+        selection: Binding<PresentationDetent>
+    ) {
+        self.undimmedDetents = undimmedDetents
+        self.largestUndimmed = largestUndimmed
+        self.selection = selection
+    }
+
+    private let undimmedDetents: [UndimmedPresentationDetent]
+    private let largestUndimmed: UndimmedPresentationDetent?
+    private let selection: Binding<PresentationDetent>?
+
+    public func body(content: Content) -> some View {
+        if let selection = selection {
+            content
+                .background(background)
+                .presentationDetents(
+                    Set(undimmedDetents.swiftUISet),
+                    selection: selection)
+        } else {
+            content
+                .background(background)
+                .presentationDetents(undimmedDetents.swiftUISet)
+        }
+    }
+}
+
+@available(iOS 16.0, *)
+private extension UndimmedPresentationDetentsViewModifier {
+
+    var background: some View {
+        UndimmedDetentView(
+            largestUndimmed: largestUndimmed ?? undimmedDetents.last
+        )
+    }
+}
 
 @available(iOS 16.0, *)
 public extension View {
@@ -24,8 +81,12 @@ public extension View {
         undimmed detents: [UndimmedPresentationDetent],
         largestUndimmed: UndimmedPresentationDetent? = nil
     ) -> some View {
-        self.background(UndimmedDetentView(largestUndimmed: largestUndimmed ?? detents.last))
-            .presentationDetents(detents.swiftUISet)
+        self.modifier(
+            UndimmedPresentationDetentsViewModifier(
+                undimmedDetents: detents,
+                largestUndimmed: largestUndimmed
+            )
+        )
     }
 
     /**
@@ -42,11 +103,13 @@ public extension View {
         largestUndimmed: UndimmedPresentationDetent? = nil,
         selection: Binding<PresentationDetent>
     ) -> some View {
-        self.background(UndimmedDetentView(largestUndimmed: largestUndimmed ?? detents.last))
-            .presentationDetents(
-                Set(detents.swiftUISet),
+        self.modifier(
+            UndimmedPresentationDetentsViewModifier(
+                undimmedDetents: detents,
+                largestUndimmed: largestUndimmed,
                 selection: selection
             )
+        )
     }
 }
 
@@ -105,7 +168,7 @@ struct View_PresentationDetents_Previews: PreviewProvider {
                                 .fraction(0.5),
                                 .height(500)
                             ],
-                            largestUndimmed: .fraction(0.3)
+                            largestUndimmed: .fraction(0.5)
                         )
                 }
         }

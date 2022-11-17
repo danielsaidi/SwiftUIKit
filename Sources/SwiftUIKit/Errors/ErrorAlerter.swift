@@ -12,10 +12,10 @@ import SwiftUI
  This protocol can be implemented by anything that can alert
  errors, e.g. a view that performs a throwing async function.
 
- By implementing the protocol, types get access to functions
- like ``alert(error:)``, ``alertAsync(error:)`` and the most
- powerful ``tryWithErrorAlert(_:)``, which makes it possible
- to trigger async functions and alert any errors that occur.
+ By implementing the protocol, types get access to new alert
+ functions as well as the convenient ``tryWithErrorAlert(_:)``
+ function, that makes it possible to trigger async functions
+ and alert any errors that occur.
 
  If you throw errors that conform to ``ErrorAlertConvertible``
  you get full control over what's alerted. Other error types
@@ -69,9 +69,15 @@ public extension ErrorAlerter {
     /**
      Alert the provided error asynchronously.
      */
-    func alertAsync(error: Error) {
+    func alertAsync(
+        error: Error,
+        okButtonText: String = "OK"
+    ) {
         DispatchQueue.main.async {
-            alert(error: error)
+            alert(
+                error: error,
+                okButtonText: okButtonText
+            )
         }
     }
 

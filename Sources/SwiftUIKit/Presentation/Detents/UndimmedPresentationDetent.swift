@@ -10,8 +10,8 @@
 import SwiftUI
 
 /**
- This enum is used to bridge the SwiftUI `PresentationDetent`
- with the `UISheetPresentationController.Detent.Identifier`.
+ This is used to bridge the SwiftUI `PresentationDetent`with
+ the UIKit `UISheetPresentationController.Detent.Identifier`.
  */
 @available(iOS 16.0, *)
 public enum UndimmedPresentationDetent {

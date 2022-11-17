@@ -127,6 +127,7 @@ SwiftUIKit is available under the MIT license.
 - ``SheetContextFocusedValueKey``
 - ``SheetProvider``
 - ``UndimmedPresentationDetent``
+- ``UndimmedPresentationDetentsViewModifier``
 
 ### Previews
 
