@@ -37,6 +37,7 @@ public extension ButtonStyle where Self == ListButtonStyle {
     static var list: ListButtonStyle { ListButtonStyle() }
 }
 
+#if os(iOS) || os(macOS)
 struct ListButtonStyle_Previews: PreviewProvider {
 
     struct Preview: View {
@@ -74,3 +75,4 @@ struct ListButtonStyle_Previews: PreviewProvider {
         Preview()
     }
 }
+#endif

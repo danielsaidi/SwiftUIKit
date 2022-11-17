@@ -160,13 +160,21 @@ private extension View {
 }
 
 
-struct FlippableView_Previews: PreviewProvider {
+struct FlipView_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var isFlipped = false
+        @State
+        private var isFlipped = false
         
         var body: some View {
+            flipView
+                .cornerRadius(10)
+                .shadow(radius: 5, x: 0, y: 2)
+                .padding()
+        }
+
+        var flipView: some View {
             #if os(tvOS)
             FlipView(
                 front: Color.green,

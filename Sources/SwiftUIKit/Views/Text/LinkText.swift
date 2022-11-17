@@ -290,7 +290,7 @@ private extension View {
         label: String?,
         hint: String?
     ) -> some View {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, watchOS 7, *) {
             self.accessibilityIdentifier(identifier ?? "")
                 .accessibilityLabel(label ?? "")
                 .accessibilityHint(hint ?? "")

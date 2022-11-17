@@ -7,6 +7,7 @@
 
 * `GestureButton` is a new view that can be used to handle multiple gestures with a single button.
 * `LinkText` is a new view that lets you combine text and tappable links without Markdown.
+* `RepeatGestureTimer` is a new class that can be used to trigger a repeating action.
 * `SwipeGestureViewModifier` is a new view modifier that exposes the `View+onSwipeGesture` extension to DocC.
 * `UndimmedPresentationDetentsViewModifier` is a new view modifier that exposes the `View+presentationDetents` extension to DocC.
 
