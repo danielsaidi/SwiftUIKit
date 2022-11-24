@@ -6,8 +6,10 @@
 ### ✨ New features
 
 * `GestureButton` is a new view that can be used to handle multiple gestures with a single button.
+* `GestureButtonDefaults` is a new class that can be used to configure the default values for the new gesture buttons.
 * `LinkText` is a new view that lets you combine text and tappable links without Markdown.
 * `RepeatGestureTimer` is a new class that can be used to trigger a repeating action.
+* `ScrollViewGestureButton` is a variant of `GestureButton` that works within a scroll view.
 * `SwipeGestureViewModifier` is a new view modifier that exposes the `View+onSwipeGesture` extension to DocC.
 * `UndimmedPresentationDetentsViewModifier` is a new view modifier that exposes the `View+presentationDetents` extension to DocC.
 

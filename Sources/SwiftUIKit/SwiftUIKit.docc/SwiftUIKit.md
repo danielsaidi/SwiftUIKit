@@ -86,7 +86,10 @@ SwiftUIKit is available under the MIT license.
 ### Gestures
 
 - ``GestureButton``
+- ``GestureButtonDefaults``
 - ``GestureTimer``
+- ``RepeatGestureTimer``
+- ``ScrollViewGestureButton``
 - ``SwipeGestureViewModifier``
 
 ### Images
@@ -212,6 +215,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Views/Text
 
+- ``LinkText``
 - ``MultilineText``
 - ``MultilineTextField``
 - ``TextFieldClearButton``
