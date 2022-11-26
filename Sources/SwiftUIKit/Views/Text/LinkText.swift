@@ -156,7 +156,7 @@ private extension LinkText {
      When a new line is required, then vertical is decreased
      and horizontal is reset to 0.
      */
-    func stackViews(for geo: GeometryProxy) -> some View { //swiftlint:disable:this function_body_length
+    func stackViews(for geo: GeometryProxy) -> some View { // swiftlint:disable:this function_body_length
         var horizontal: CGFloat = 0
         var vertical: CGFloat = 0
 

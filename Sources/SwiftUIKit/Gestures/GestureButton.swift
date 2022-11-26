@@ -368,7 +368,7 @@ struct GestureButton_Previews: PreviewProvider {
             label(title, "\(point.x.rounded()), \(point.y.rounded())")
         }
 
-        func label(_ title: String, _ value:String) -> some View {
+        func label(_ title: String, _ value: String) -> some View {
             HStack {
                 Text("\(title):")
                 Text(value).bold()

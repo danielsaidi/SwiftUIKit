@@ -1,4 +1,5 @@
 disabled_rules:
+  - file_length
   - identifier_name
   - large_tuple
   - line_length
