@@ -19,7 +19,7 @@ struct ShareSheetScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("This sheet can be used to share urls, objects etc. In this demo, you can share a custom url.")
+                Text("This sheet can be used to share urls, objects etc. In this demo, you can share a custom url.")
             }
             
             Section(header: Text("URL")) {
@@ -27,7 +27,7 @@ struct ShareSheetScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                ListButton(action: shareUrl) {
+                Button(action: shareUrl) {
                     Label("Share the url", image: .sharing)
                 }.enabled(hasUrl)
             }

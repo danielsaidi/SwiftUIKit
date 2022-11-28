@@ -14,7 +14,7 @@ struct ViewsScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("SwiftUIKit contains a large collection of additional views for SwiftUI, for instance:")
+                Text("SwiftUIKit contains a large collection of additional views for SwiftUI, for instance:")
             }
             
             Section(header: Text("Views")) {
@@ -26,31 +26,22 @@ struct ViewsScreen: View {
     
     private var list1: some View {
         Group {
-            ListNavigationLink(destination: CircularProgressBarScreen()) {
+            NavigationLink(destination: CircularProgressBarScreen()) {
                 Label("Circular Progress Bar", image: .circularProgressBar)
             }
             
-            #if os(iOS) || os(tvOS)
-            ListNavigationLink(destination: CollectionViewGridScreen()) {
-                Label("Collection View (grid)", image: .collectionViewGrid)
-            }
-            ListNavigationLink(destination: CollectionViewShelvesScreen()) {
-                Label("Collection View (shelves)", image: .collectionViewShelves)
-            }
-            #endif
-            
-            ListNavigationLink(destination: DismissableViewScreen()) {
+            NavigationLink(destination: DismissableViewScreen()) {
                 Label("Dismissable View", image: .dismiss)
             }
-            ListNavigationLink(destination: FetchedDataViewScreen()) {
+            NavigationLink(destination: FetchedDataViewScreen()) {
                 Label("Fetched Data View", image: .download)
             }
             
             #if os(iOS)
-            ListNavigationLink(destination: FlipViewScreen()) {
+            NavigationLink(destination: FlipViewScreen()) {
                 Label("Flip View", image: .swipeGesture)
             }
-            ListNavigationLink(destination: MultilineTextFieldScreen()) {
+            NavigationLink(destination: MultilineTextFieldScreen()) {
                 Label("Multiline Text Field", image: .multiline)
             }
             #endif
@@ -60,14 +51,8 @@ struct ViewsScreen: View {
     private var list2: some View {
         Group {
             #if os(iOS) || os(tvOS) || os(watchOS)
-            ListNavigationLink(destination: PageViewScreen()) {
+            NavigationLink(destination: PageViewScreen()) {
                 Label("Page View", image: .pageControl)
-            }
-            #endif
-            
-            #if os(iOS) || os(tvOS)
-            ListNavigationLink(destination: UIViewWrapperScreen()) {
-                Label("UIView Wrapper", image: .wrapper)
             }
             #endif
         }

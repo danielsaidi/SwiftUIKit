@@ -14,43 +14,46 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Sections")) {
+                Section(
+                    header: Text("Sections"),
+                    footer: Text("Note that the demo doesn't contain everything in the library. There are much more than is presented here, so have a look at the documentation and source code as well.")
+                ) {
                     #if os(iOS)
-                    ListNavigationLink(destination: CamerasScreen()) {
+                    NavigationLink(destination: CamerasScreen()) {
                         Label("Cameras", image: .camera)
                     }
                     #endif
                     
-                    ListNavigationLink(destination: DataScreen()) {
+                    NavigationLink(destination: DataScreen()) {
                         Label("Data", image: .data)
                     }
-                    ListNavigationLink(destination: ExtensionsScreen()) {
+                    NavigationLink(destination: ExtensionsScreen()) {
                         Label("Extensions", image: .extensions)
                     }
-                    ListNavigationLink(destination: GesturesScreen()) {
+                    NavigationLink(destination: GesturesScreen()) {
                         Label("Gestures", image: .gestures)
                     }
                     
                     #if os(iOS)
-                    ListNavigationLink(destination: PickersScreen()) {
+                    NavigationLink(destination: PickersScreen()) {
                         Label("Pickers", image: .pickers)
                     }
                     #endif
                     
-                    ListNavigationLink(destination: PresentationScreen()) {
+                    NavigationLink(destination: PresentationScreen()) {
                         Label("Presentation", image: .presentation)
                     }
                     
                     #if os(iOS)
-                    ListNavigationLink(destination: SharingScreen()) {
+                    NavigationLink(destination: SharingScreen()) {
                         Label("Sharing", image: .sharing)
                     }
                     #endif
                     
-                    ListNavigationLink(destination: StylesScreen()) {
+                    NavigationLink(destination: StylesScreen()) {
                         Label("Styles", image: .styles)
                     }
-                    ListNavigationLink(destination: ViewsScreen()) {
+                    NavigationLink(destination: ViewsScreen()) {
                         Label("Views", image: .views)
                     }
                 }

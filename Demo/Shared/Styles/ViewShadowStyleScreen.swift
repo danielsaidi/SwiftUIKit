@@ -13,7 +13,7 @@ struct ViewShadowStyleScreen: View {
  
     var body: some View {
         List {
-            ListHeader("""
+            Text("""
 This style makes it possible to create styles that can be applied to any view.
 
 The styles used in this example are defined in the demo project.

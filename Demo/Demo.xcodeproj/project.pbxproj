@@ -27,8 +27,6 @@
 		A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */; };
 		A901F1102570079800F1C285 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F10E2570079800F1C285 /* Fonts.swift */; };
 		A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F11A257010DB00F1C285 /* FlipViewScreen.swift */; };
-		A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */; };
-		A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */; };
 		A901F1372570771600F1C285 /* CircularProgressBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F1362570771600F1C285 /* CircularProgressBarScreen.swift */; };
 		A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */; };
 		A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */; };
@@ -41,7 +39,6 @@
 		A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9355054256F7E6C00BBE9CE /* Image+Demo.swift */; };
 		A9544B3C25710F2200522141 /* MultilineTextFieldScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */; };
 		A9544B412571114400522141 /* PageViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B402571114400522141 /* PageViewScreen.swift */; };
-		A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */; };
 		A9544B52257132FA00522141 /* DocumentCameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B51257132FA00522141 /* DocumentCameraScreen.swift */; };
 		A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B562571404E00522141 /* ShareSheetScreen.swift */; };
 		A9544B5C2571481800522141 /* FilePickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9544B5B2571481800522141 /* FilePickerScreen.swift */; };
@@ -76,8 +73,6 @@
 		A901F0ED2570027F00F1C285 /* FontStyleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleScreen.swift; sourceTree = "<group>"; };
 		A901F10E2570079800F1C285 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A901F11A257010DB00F1C285 /* FlipViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewScreen.swift; sourceTree = "<group>"; };
-		A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewShelvesScreen.swift; sourceTree = "<group>"; };
-		A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewGridScreen.swift; sourceTree = "<group>"; };
 		A901F1362570771600F1C285 /* CircularProgressBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarScreen.swift; sourceTree = "<group>"; };
 		A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableViewScreen.swift; sourceTree = "<group>"; };
 		A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedDataViewScreen.swift; sourceTree = "<group>"; };
@@ -94,7 +89,6 @@
 		A9355054256F7E6C00BBE9CE /* Image+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Demo.swift"; sourceTree = "<group>"; };
 		A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextFieldScreen.swift; sourceTree = "<group>"; };
 		A9544B402571114400522141 /* PageViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewScreen.swift; sourceTree = "<group>"; };
-		A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWrapperScreen.swift; sourceTree = "<group>"; };
 		A9544B51257132FA00522141 /* DocumentCameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraScreen.swift; sourceTree = "<group>"; };
 		A9544B562571404E00522141 /* ShareSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetScreen.swift; sourceTree = "<group>"; };
 		A9544B5B2571481800522141 /* FilePickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerScreen.swift; sourceTree = "<group>"; };
@@ -212,14 +206,11 @@
 			isa = PBXGroup;
 			children = (
 				A901F1362570771600F1C285 /* CircularProgressBarScreen.swift */,
-				A901F12F2570754A00F1C285 /* CollectionViewGridScreen.swift */,
-				A901F12825706F4E00F1C285 /* CollectionViewShelvesScreen.swift */,
 				A901F14D25707CFD00F1C285 /* DismissableViewScreen.swift */,
 				A901F15425707D8000F1C285 /* FetchedDataViewScreen.swift */,
 				A901F11A257010DB00F1C285 /* FlipViewScreen.swift */,
 				A9544B3B25710F2200522141 /* MultilineTextFieldScreen.swift */,
 				A9544B402571114400522141 /* PageViewScreen.swift */,
-				A9544B4C2571179F00522141 /* UIViewWrapperScreen.swift */,
 				A901F084256F964600F1C285 /* ViewsScreen.swift */,
 			);
 			path = Views;
@@ -466,7 +457,6 @@
 				A901F099256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */,
 				A901F0DF256FE65E00F1C285 /* DemoPresentable.swift in Sources */,
 				A901F044256F8CBC00F1C285 /* GesturesScreen.swift in Sources */,
-				A901F1302570754A00F1C285 /* CollectionViewGridScreen.swift in Sources */,
 				A9544B5C2571481800522141 /* FilePickerScreen.swift in Sources */,
 				A9ADC33A285F0B3C00864B58 /* ImageRendererScreen.swift in Sources */,
 				A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */,
@@ -481,7 +471,6 @@
 				A901F074256F962600F1C285 /* CamerasScreen.swift in Sources */,
 				A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
-				A9544B4D2571179F00522141 /* UIViewWrapperScreen.swift in Sources */,
 				A901F07B256F963400F1C285 /* PickersScreen.swift in Sources */,
 				A901F03A256F8CA600F1C285 /* DataScreen.swift in Sources */,
 				A901F03F256F8CB100F1C285 /* ExtensionsScreen.swift in Sources */,
@@ -490,7 +479,6 @@
 				A901F0D5256FE64500F1C285 /* SheetsScreen.swift in Sources */,
 				A9355043256F7E3D00BBE9CE /* DemoApp.swift in Sources */,
 				A9355055256F7E6C00BBE9CE /* Image+Demo.swift in Sources */,
-				A901F12925706F4E00F1C285 /* CollectionViewShelvesScreen.swift in Sources */,
 				A901F11B257010DC00F1C285 /* FlipViewScreen.swift in Sources */,
 				A901F0E92570027400F1C285 /* CornerRadiusStyleScreen.swift in Sources */,
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,

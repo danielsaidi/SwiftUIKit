@@ -24,7 +24,7 @@ struct ScanCodeGeneratorScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("Enter a text and tap the bottom buttons to generate various type of scan codes.")
+                Text("Enter a text and tap the bottom buttons to generate various type of scan codes.")
             }
             
             Section(header: Text("Text")) {
@@ -33,7 +33,7 @@ struct ScanCodeGeneratorScreen: View {
             
             Section(header: Text("Show scan code")) {
                 ForEach(ScanCodeType.allCases) { type in
-                    ListButton(action: { showScanCode(type) }) {
+                    Button(action: { showScanCode(type) }) {
                         Label(type.name, image: type.icon)
                     }.enabled(hasText)
                 }
@@ -66,7 +66,7 @@ private extension ScanCodeType {
 private extension ScanCodeGeneratorScreen {
     
     func showScanCode(_ type: ScanCodeType) {
-        guard let image = generator.generateCodeView(type, from: text) else { return }
+        guard let image = generator.generateScanCodeView(ofType: type, from: text) else { return }
         sheetContext.present(
             NavigationView {
                 VStack {

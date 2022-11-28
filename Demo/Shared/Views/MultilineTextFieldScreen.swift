@@ -17,7 +17,7 @@ struct MultilineTextFieldScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("MultilineTextField wraps a UIKit view to bring multiline text editing to SwiftUI.")
+                Text("MultilineTextField wraps a UIKit view to bring multiline text editing to SwiftUI.")
             }
             
             Section(header: Text("Example")) {

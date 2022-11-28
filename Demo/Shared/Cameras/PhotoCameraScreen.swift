@@ -20,7 +20,7 @@ struct PhotoCameraScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("This camera can take photos. In this demo, the photos you take are added to a PageView.")
+                Text("This camera can take photos. In this demo, the photos you take are added to a PageView.")
             }
             
             if photos.count > 0 {
@@ -34,7 +34,7 @@ struct PhotoCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                ListButton(action: openCamera) {
+                Button(action: openCamera) {
                     Label("Open camera", image: .camera)
                 }
             }

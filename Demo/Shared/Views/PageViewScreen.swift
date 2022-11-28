@@ -18,7 +18,7 @@ struct PageViewScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("This view can be used to wrap multiple views in a paged horizontal scroll view.\n\nThe view supports iOS, macOS, tvOS and watchOS.")
+                Text("This view can be used to wrap multiple views in a paged horizontal scroll view.\n\nThe view supports iOS, macOS, tvOS and watchOS.")
             }
             
             Section(header: Text("Example")) {

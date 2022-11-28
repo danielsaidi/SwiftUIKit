@@ -13,20 +13,20 @@ struct StylesScreen: View {
     
     var body: some View {
         List {
-            ListHeader("""
+            Text("""
 SwiftUIKit has styles that make it easier to define and apply custom styles.
 """)
             
             Section(header: Text("Styles")) {
-                ListNavigationLink(destination: CornerRadiusStyleScreen()) {
+                NavigationLink(destination: CornerRadiusStyleScreen()) {
                     Label("Corner Radius", image: .cornerRadius)
                 }
                 #if os(iOS) || os(tvOS)
-                ListNavigationLink(destination: FontStyleScreen()) {
+                NavigationLink(destination: FontStyleScreen()) {
                     Label("Fonts", image: .font)
                 }
                 #endif
-                ListNavigationLink(destination: ViewShadowStyleScreen()) {
+                NavigationLink(destination: ViewShadowStyleScreen()) {
                     Label("Shadows", image: .shadow)
                 }
             }

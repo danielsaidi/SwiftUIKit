@@ -16,7 +16,7 @@ struct PersistedScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("Any text you type below is automatically persisted, using the @Persisted property wrapper. This also supports codable types.")
+                Text("Any text you type below is automatically persisted, using the @Persisted property wrapper. This also supports codable types.")
             }
             
             Section(header: Text("Text")) {
@@ -24,7 +24,7 @@ struct PersistedScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                ListButton(action: reset) {
+                Button(action: reset) {
                     Label("Clear text", image: .clear)
                 }
             }

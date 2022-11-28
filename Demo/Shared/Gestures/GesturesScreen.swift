@@ -14,11 +14,11 @@ struct GesturesScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("SwiftUIKit has additional gestures for SwiftUI.")
+                Text("SwiftUIKit has additional gestures for SwiftUI.")
             }
             
             Section(header: Text("Gestures")) {
-                ListNavigationLink(destination: SwipeGestureScreen()) {
+                NavigationLink(destination: SwipeGestureScreen()) {
                     Label("Swipe Gesture", image: .swipeGesture)
                 }
             }

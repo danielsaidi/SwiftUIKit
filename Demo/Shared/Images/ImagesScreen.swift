@@ -14,11 +14,11 @@ struct ImagesScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("SwiftUIKit has additional gestures for SwiftUI.")
+                Text("SwiftUIKit has additional gestures for SwiftUI.")
             }
             
             Section(header: Text("Gestures")) {
-                ListNavigationLink(destination: ImageRendererScreen()) {
+                NavigationLink(destination: ImageRendererScreen()) {
                     Label("ImageRenderer", image: .swipeGesture)
                 }
             }

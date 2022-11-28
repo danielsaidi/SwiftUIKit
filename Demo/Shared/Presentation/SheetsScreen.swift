@@ -22,19 +22,19 @@ struct SheetsScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
+                Text("SwiftUIKit has additional utils that make it easier to manage and present sheets.")
             }
             
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
-                    ListNavigationButton(action: { presentSheet(item) }) {
+                    NavigationButton(action: { presentSheet(item) }) {
                         Label(item.listText(for: "sheet"), image: item.listIcon)
                     }
                 }
             }
             #if os(iOS) || os(tvOS) || os(watchOS)
             Section(header: Text("Cover (for testing purpose)")) {
-                ListNavigationButton(action: presentCover) {
+                NavigationButton(action: presentCover) {
                     Label("Show an flag cover", image: .cover)
                 }.fullScreenCover(coverContext)
             }

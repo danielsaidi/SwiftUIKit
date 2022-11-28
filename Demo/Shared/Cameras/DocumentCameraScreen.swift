@@ -21,7 +21,7 @@ struct DocumentCameraScreen: View {
     var body: some View {
         List {
             Section {
-                ListText("This camera can scan documents. In this demo, the scans are added to a PageView.")
+                Text("This camera can scan documents. In this demo, the scans are added to a PageView.")
             }
             
             if scans.count > 0 {
@@ -35,7 +35,7 @@ struct DocumentCameraScreen: View {
             }
             
             Section(header: Text("Actions")) {
-                ListButton(action: openCamera) {
+                Button(action: openCamera) {
                     Label("Open camera", image: .documentCamera)
                 }
             }

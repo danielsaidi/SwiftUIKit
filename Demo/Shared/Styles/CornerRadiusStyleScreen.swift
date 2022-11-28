@@ -13,7 +13,7 @@ struct CornerRadiusStyleScreen: View {
  
     var body: some View {
         List {
-            ListHeader("""
+            Text("""
 This style makes it possible to create named styles that can be applied to any view.
 
 The styles used in this example are defined in the demo project.

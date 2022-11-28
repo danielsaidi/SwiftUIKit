@@ -11,12 +11,13 @@ import SwiftUIKit
 
 struct CircularProgressBarScreen: View {
     
-    @State private var progress = 0.1
+    @State
+    private var progress = 0.1
     
     var body: some View {
         List {
             Section {
-                ListText("This view can display a percentual progress in a circular bar and can be styled to great extent.")
+                Text("This view can display a percentual progress in a circular bar and can be styled to great extent.")
             }
             
             Section(header: Text("Progress")) {
@@ -27,9 +28,13 @@ struct CircularProgressBarScreen: View {
             
             Section(header: Text("Result")) {
                 CircularProgressBar(
-                    progress: $progress, decimals: 1, startAngle: 0, style: swedishStyle)
-                    .frame(height: 300)
-                    .padding()
+                    progress: progress,
+                    decimals: 1,
+                    startAngle: 0,
+                    style: swedishStyle
+                )
+                .frame(height: 300)
+                .padding()
             }
         }.navigationTitle("CircularProgressBar")
     }
@@ -37,8 +42,8 @@ struct CircularProgressBarScreen: View {
 
 private extension CircularProgressBarScreen {
     
-    var swedishStyle: CircularProgressBarStyle {
-        var style = CircularProgressBarStyle.standard
+    var swedishStyle: CircularProgressBar.Style {
+        var style = CircularProgressBar.Style.standard
         style.backgroundColor = .blue
         style.strokeColor = .yellow
         style.strokeWidth = 6
