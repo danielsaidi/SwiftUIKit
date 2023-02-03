@@ -146,6 +146,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Scrolling
 
+- ``ScrollViewHeader``
 - ``ScrollViewWithOffset``
 
 ### Sharing
@@ -174,7 +175,6 @@ SwiftUIKit is available under the MIT license.
 - ``PageIndicatorStyle``
 - ``PageView``
 - ``SearchBar``
-- ``ScrollViewHeader``
 - ``TextReplacement``
 
 ### Views/CollectionView

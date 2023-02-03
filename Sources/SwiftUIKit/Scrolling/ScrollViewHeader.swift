@@ -100,11 +100,75 @@ public extension ScrollViewHeader {
     }
 }
 
+@available(iOS 16.0, *)
 struct ScrollViewHeader_Previews: PreviewProvider {
 
-    static var previews: some View {
-        ScrollView {
-            ScrollViewHeader(parallaxMode: .prominent) {
+    struct Preview: View {
+
+        @State
+        private var navigationBarHeight: CGFloat = 0
+
+        @State
+        private var scrollOffset: CGPoint = .zero
+
+        private let scrollHeaderHeight: CGFloat = 300
+
+        private var scrollHeaderVisibleRatio: CGFloat {
+            (scrollHeaderHeight + scrollOffset.y) / scrollHeaderHeight
+        }
+
+        var body: some View {
+            NavigationView {
+                NavigationLink("FOOOO") {
+                    ZStack(alignment: .top) {
+                        GeometryReader { proxy in
+                            ScrollViewWithOffset(scrollOffset: $scrollOffset) {
+                                VStack {
+                                    scrollHeader
+
+                                    Text("\(scrollHeaderVisibleRatio)")
+                                    Text("\(scrollOffset.y)")
+                                    Text("\(scrollHeaderHeight)")
+                                    Text("\(scrollHeaderHeight + scrollOffset.y)")
+
+                                    ForEach(1...100, id: \.self) {
+                                        Text("\($0)").frame(maxWidth: .infinity)
+                                    }.background(Color.primary.colorInvert())
+                                }
+                            }
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button("Edit") {}
+                                }
+                            }
+                            .onAppear {
+                                DispatchQueue.main.async {
+                                    navigationBarHeight = proxy.safeAreaInsets.top
+                                }
+                            }
+                        }
+
+                        navbarOverlay
+                            .ignoresSafeArea(edges: .top)
+                    }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle("Title")
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Text("Title")
+                                .font(.callout.bold())
+                                .opacity(1-scrollHeaderVisibleRatio)
+                                .environment(\.colorScheme, .dark)
+                        }
+                    }
+                    .toolbarBackground(.hidden, for: .navigationBar)
+                }.accentColor(.accentColor)
+            }
+            .accentColor(.white)
+        }
+
+        private var scrollHeader: some View {
+            ScrollViewHeader(parallaxMode: .none) {
                 ZStack(alignment: .bottomLeading) {
                     LinearGradient(
                         colors: [.red, .blue],
@@ -118,14 +182,26 @@ struct ScrollViewHeader_Previews: PreviewProvider {
                         Text("Title").font(.title)
                         Text("Subtitle").font(.headline)
                     }
+                    .opacity(scrollHeaderVisibleRatio)
                     .shadow(.elevated)
                     .padding()
                 }.colorScheme(.dark)
-            }.frame(height: 300)
-
-            ForEach(1...100, id: \.self) {
-                Text("\($0)").frame(maxWidth: .infinity)
-            }.background(Color.primary.colorInvert())
+            }.frame(height: scrollHeaderHeight)
         }
+
+        @ViewBuilder
+        private var navbarOverlay: some View {
+            if (scrollHeaderVisibleRatio <= 0) {
+                Color.clear
+                    .frame(height: navigationBarHeight)
+                    .overlay(scrollHeader, alignment: .bottom)
+            } else {
+                Color.clear
+            }
+        }
+    }
+
+    static var previews: some View {
+        Preview()
     }
 }
