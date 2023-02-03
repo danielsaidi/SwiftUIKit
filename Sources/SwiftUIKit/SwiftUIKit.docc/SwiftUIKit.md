@@ -144,6 +144,10 @@ SwiftUIKit is available under the MIT license.
 - ``PrintableItem``
 - ``StandardItemPrinter``
 
+### Scrolling
+
+- ``ScrollViewWithOffset``
+
 ### Sharing
 
 - ``ShareSheet``
