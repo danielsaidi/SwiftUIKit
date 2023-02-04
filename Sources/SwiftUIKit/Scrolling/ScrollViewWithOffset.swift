@@ -72,7 +72,6 @@ private struct ScrollOffsetPreferenceKey: PreferenceKey {
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {}
 }
 
-@available(iOS 14.0, *)
 struct ScrollViewWithOffset_Previews: PreviewProvider {
 
     struct Preview: View {

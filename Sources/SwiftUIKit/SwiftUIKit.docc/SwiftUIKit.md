@@ -148,6 +148,7 @@ SwiftUIKit is available under the MIT license.
 
 - ``ScrollViewHeader``
 - ``ScrollViewWithOffset``
+- ``ScrollViewWithStickyHeader``
 
 ### Sharing
 

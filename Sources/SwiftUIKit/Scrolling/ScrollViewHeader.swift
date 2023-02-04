@@ -103,6 +103,37 @@ public extension ScrollViewHeader {
 @available(iOS 16.0, *)
 struct ScrollViewHeader_Previews: PreviewProvider {
 
+    struct PreviewHeader: View {
+
+        let scrollOffset: CGPoint
+        let visibleRatio: CGFloat
+
+        var body: some View {
+            ZStack(alignment: .bottomLeading) {
+                LinearGradient(
+                    colors: [.red, .blue],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing)
+                LinearGradient(
+                    colors: [.clear, .black.opacity(0.6)],
+                    startPoint: .top,
+                    endPoint: .bottom)
+                headerTitle
+            }.colorScheme(.dark)
+        }
+
+        private var headerTitle: some View {
+            VStack(alignment: .leading) {
+                Text("Title").font(.title)
+                Text("Subtitle").font(.headline)
+            }
+            .opacity(visibleRatio)
+            .shadow(.elevated)
+            .padding()
+        }
+    }
+
+
     struct Preview: View {
 
         @State
@@ -119,89 +150,56 @@ struct ScrollViewHeader_Previews: PreviewProvider {
 
         var body: some View {
             NavigationView {
-                NavigationLink("FOOOO") {
-                    ZStack(alignment: .top) {
-                        GeometryReader { proxy in
-                            ScrollViewWithOffset(scrollOffset: $scrollOffset) {
-                                VStack {
-                                    scrollHeader
-
-                                    Text("\(scrollHeaderVisibleRatio)")
-                                    Text("\(scrollOffset.y)")
-                                    Text("\(scrollHeaderHeight)")
-                                    Text("\(scrollHeaderHeight + scrollOffset.y)")
-
-                                    ForEach(1...100, id: \.self) {
-                                        Text("\($0)").frame(maxWidth: .infinity)
-                                    }.background(Color.primary.colorInvert())
-                                }
-                            }
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button("Edit") {}
-                                }
-                            }
-                            .onAppear {
-                                DispatchQueue.main.async {
-                                    navigationBarHeight = proxy.safeAreaInsets.top
-                                }
-                            }
+                ScrollViewWithStickyHeader(
+                    scrollOffset: $scrollOffset,
+                    header: header,
+                    headerHeight: scrollHeaderHeight
+                ) {
+                    VStack {
+                        ForEach(1...100, id: \.self) {
+                            Text("\($0)").frame(maxWidth: .infinity)
+                            Divider()
                         }
-
-                        navbarOverlay
-                            .ignoresSafeArea(edges: .top)
-                    }
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarTitle("Title")
-                    .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            Text("Title")
-                                .font(.callout.bold())
-                                .opacity(1-scrollHeaderVisibleRatio)
-                                .environment(\.colorScheme, .dark)
-                        }
-                    }
-                    .toolbarBackground(.hidden, for: .navigationBar)
-                }.accentColor(.accentColor)
+                    }.padding()
+                }
+                .setupPreview(with: scrollHeaderVisibleRatio)
             }
             .accentColor(.white)
         }
 
-        private var scrollHeader: some View {
-            ScrollViewHeader(parallaxMode: .none) {
-                ZStack(alignment: .bottomLeading) {
-                    LinearGradient(
-                        colors: [.red, .blue],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing)
-                    LinearGradient(
-                        colors: [.clear, .black.opacity(0.6)],
-                        startPoint: .top,
-                        endPoint: .bottom)
-                    VStack(alignment: .leading) {
-                        Text("Title").font(.title)
-                        Text("Subtitle").font(.headline)
-                    }
-                    .opacity(scrollHeaderVisibleRatio)
-                    .shadow(.elevated)
-                    .padding()
-                }.colorScheme(.dark)
-            }.frame(height: scrollHeaderHeight)
-        }
-
-        @ViewBuilder
-        private var navbarOverlay: some View {
-            if (scrollHeaderVisibleRatio <= 0) {
-                Color.clear
-                    .frame(height: navigationBarHeight)
-                    .overlay(scrollHeader, alignment: .bottom)
-            } else {
-                Color.clear
-            }
+        private func header() -> PreviewHeader {
+            PreviewHeader(
+                scrollOffset: scrollOffset,
+                visibleRatio: scrollHeaderVisibleRatio
+            )
         }
     }
 
     static var previews: some View {
         Preview()
+    }
+}
+
+@available(iOS 16.0, *)
+private extension View {
+
+    func setupPreview(with headerVisibleRatio: CGFloat) -> some View {
+        self
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("Title")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Title")
+                        .font(.callout.bold())
+                        .opacity(1-headerVisibleRatio)
+                        .environment(\.colorScheme, .dark)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Edit") {}
+                }
+            }
+            .toolbarBackground(.hidden, for: .navigationBar)
     }
 }
