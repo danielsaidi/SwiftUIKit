@@ -64,6 +64,8 @@ private enum DemoStyle: String {
 struct CornerRadiusStyleScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        CornerRadiusStyleScreen()
+        NavigationView {
+            CornerRadiusStyleScreen()
+        }
     }
 }

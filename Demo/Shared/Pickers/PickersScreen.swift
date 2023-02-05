@@ -33,7 +33,9 @@ struct PickersScreen: View {
 struct PickersScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        PickersScreen()
+        NavigationView {
+            PickersScreen()
+        }
     }
 }
 #endif

@@ -29,6 +29,8 @@ struct ImagesScreen: View {
 struct ImagesScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ImagesScreen()
+        NavigationView {
+            ImagesScreen()
+        }
     }
 }

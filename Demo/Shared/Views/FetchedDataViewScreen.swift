@@ -54,6 +54,8 @@ private extension FetchedDataViewScreen {
 struct FetchedDataViewScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        FetchedDataViewScreen()
+        NavigationView {
+            FetchedDataViewScreen()
+        }
     }
 }

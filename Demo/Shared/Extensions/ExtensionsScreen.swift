@@ -27,6 +27,8 @@ Since this namespace contains a lot will grow over time, extensions are not demo
 struct ExtensionsScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ExtensionsScreen()
+        NavigationView {
+            ExtensionsScreen()
+        }
     }
 }

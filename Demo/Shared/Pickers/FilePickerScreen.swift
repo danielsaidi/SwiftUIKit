@@ -72,7 +72,9 @@ private extension FilePickerScreen {
 struct FilePickerScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        FilePickerScreen()
+        NavigationView {
+            FilePickerScreen()
+        }
     }
 }
 #endif

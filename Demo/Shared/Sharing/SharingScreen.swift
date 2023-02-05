@@ -30,7 +30,9 @@ struct SharingScreen: View {
 struct SharingScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        SharingScreen()
+        NavigationView {
+            SharingScreen()
+        }
     }
 }
 #endif
