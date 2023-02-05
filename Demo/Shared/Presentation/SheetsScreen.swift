@@ -91,6 +91,8 @@ private extension View {
 struct SheetsScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        SheetsScreen()
+        NavigationView {
+            SheetsScreen()
+        }
     }
 }

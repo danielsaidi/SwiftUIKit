@@ -68,7 +68,9 @@ private enum DemoStyle: String {
 struct FontStyleScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        FontStyleScreen()
+        NavigationView {
+            FontStyleScreen()
+        }
     }
 }
 #endif

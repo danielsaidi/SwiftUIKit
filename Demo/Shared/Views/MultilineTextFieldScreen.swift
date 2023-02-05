@@ -32,7 +32,9 @@ struct MultilineTextFieldScreen: View {
 struct MultilineTextFieldScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        MultilineTextFieldScreen()
+        NavigationView {
+            MultilineTextFieldScreen()
+        }
     }
 }
 #endif

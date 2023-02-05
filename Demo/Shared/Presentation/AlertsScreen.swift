@@ -42,6 +42,8 @@ private extension AlertsScreen {
 struct AlertsScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        AlertsScreen()
+        NavigationView {
+            AlertsScreen()
+        }
     }
 }

@@ -65,6 +65,8 @@ private enum DemoStyle: String {
 struct ShadowStyleScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ViewShadowStyleScreen()
+        NavigationView {
+            ViewShadowStyleScreen()
+        }
     }
 }

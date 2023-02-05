@@ -78,7 +78,9 @@ private extension PhotoCameraScreen {
 struct PhotoCameraScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        PhotoCameraScreen()
+        NavigationView {
+            PhotoCameraScreen()
+        }
     }
 }
 #endif

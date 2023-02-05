@@ -48,6 +48,8 @@ private extension SwipeGestureScreen {
 struct SwipeGestureScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        SwipeGestureScreen()
+        NavigationView {
+            SwipeGestureScreen()
+        }
     }
 }

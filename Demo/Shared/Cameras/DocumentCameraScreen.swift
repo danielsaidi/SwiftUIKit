@@ -90,7 +90,9 @@ private extension VNDocumentCameraScan {
 struct DocumentCameraScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        DocumentCameraScreen()
+        NavigationView {
+            DocumentCameraScreen()
+        }
     }
 }
 #endif

@@ -90,7 +90,9 @@ private extension ImagePickerScreen {
 struct ImagePickerScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ImagePickerScreen()
+        NavigationView {
+            ImagePickerScreen()
+        }
     }
 }
 #endif

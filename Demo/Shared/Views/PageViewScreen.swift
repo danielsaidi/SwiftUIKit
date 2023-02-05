@@ -44,7 +44,9 @@ private extension PageViewScreen {
 struct PageViewScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        PageViewScreen()
+        NavigationView {
+            PageViewScreen()
+        }
     }
 }
 #endif

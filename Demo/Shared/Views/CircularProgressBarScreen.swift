@@ -57,6 +57,8 @@ private extension CircularProgressBarScreen {
 struct CircularProgressBarScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        CircularProgressBarScreen()
+        NavigationView {
+            CircularProgressBarScreen()
+        }
     }
 }

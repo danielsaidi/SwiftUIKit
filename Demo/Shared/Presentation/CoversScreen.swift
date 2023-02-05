@@ -79,7 +79,9 @@ private extension CoversScreen {
 struct CoversScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        CoversScreen()
+        NavigationView {
+            CoversScreen()
+        }
     }
 }
 #endif

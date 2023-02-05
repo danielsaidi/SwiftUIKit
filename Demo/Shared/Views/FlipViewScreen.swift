@@ -48,7 +48,9 @@ private extension FlipViewScreen {
 struct FlipScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        FlipViewScreen()
+        NavigationView {
+            FlipViewScreen()
+        }
     }
 }
 #endif

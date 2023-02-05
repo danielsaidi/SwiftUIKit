@@ -53,7 +53,9 @@ private extension ShareSheetScreen {
 struct ShareSheetScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ShareSheetScreen()
+        NavigationView {
+            ShareSheetScreen()
+        }
     }
 }
 #endif

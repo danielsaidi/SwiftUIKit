@@ -29,6 +29,8 @@ struct GesturesScreen: View {
 struct GesturesScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        GesturesScreen()
+        NavigationView {
+            GesturesScreen()
+        }
     }
 }

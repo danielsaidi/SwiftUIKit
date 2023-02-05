@@ -37,6 +37,8 @@ SwiftUIKit has styles that make it easier to define and apply custom styles.
 struct StylesScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        StylesScreen()
+        NavigationView {
+            StylesScreen()
+        }
     }
 }

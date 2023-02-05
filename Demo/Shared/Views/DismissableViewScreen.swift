@@ -31,6 +31,8 @@ struct DismissableViewScreen: View, DismissableView {
 struct DismissableViewScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        DismissableViewScreen()
+        NavigationView {
+            DismissableViewScreen()
+        }
     }
 }

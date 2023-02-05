@@ -48,6 +48,8 @@ private extension ImageRendererScreen {
 struct ImageRendererScreen_Previews: PreviewProvider {
     
     static var previews: some View {
-        ImageRendererScreen()
+        NavigationView {
+            ImageRendererScreen()
+        }
     }
 }
