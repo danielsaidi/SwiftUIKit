@@ -14,11 +14,11 @@ import UIKit
 /**
  This picker wraps a `UIImagePickerController`, which can be
  used to pick an images from photos, the camera etc.
- 
+
  You create a picker instance by providing two action blocks
  that can be used to inspect what happens with the operation,
  as well as the desired source type:
- 
+
  ```swift
  let picker = ImagePicker(
     sourceType: .camera,
@@ -26,15 +26,31 @@ import UIKit
     finishAction: { result in ... })            // Mandatory
  }
  ```
- 
+
  The picker result contains the picked image, which you then
  can use in any way you want.
- 
+
  You can use a ``SheetContext`` to easily present the picker
  as a modal sheet.
+
+ It also adds conformance to `Identifiable` to `UIImagePickerController.SourceType`
+ so that you can present it like so:
+
+ ```swift
+ @State
+ var imagePickerSource: UIImagePickerController.SourceType?
+
+ ...
+
+ .fullScreenCover(item: $imagePickerSource) { imagePickerSource in
+    ImagePicker(sourceType: imagePickerSource) { imagePickerResult in
+        // Do something with the result
+    }
+ }
+ ```
  */
 public struct ImagePicker: UIViewControllerRepresentable {
-    
+
     public init(
         sourceType: UIImagePickerController.SourceType,
         cancelAction: @escaping CancelAction = {},
@@ -44,20 +60,20 @@ public struct ImagePicker: UIViewControllerRepresentable {
         self.cancelAction = cancelAction
         self.resultAction = resultAction
     }
-    
+
     public typealias PickerResult = Result<ImageRepresentable, Error>
     public typealias CancelAction = () -> Void
     public typealias ResultAction = (PickerResult) -> Void
-    
+
     public enum PickerError: Error {
         case missingPhotoLibraryPermissions
         case missingPickedImage
     }
-    
+
     private let sourceType: UIImagePickerController.SourceType
     private let cancelAction: CancelAction
     private let resultAction: ResultAction
-        
+
     public func makeCoordinator() -> Coordinator {
         Coordinator(picker: self)
     }
@@ -103,19 +119,19 @@ public extension ImagePicker {
 // MARK: - Coordinator
 
 public extension ImagePicker {
-    
+
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
         public init(picker: ImagePicker) {
             self.picker = picker
         }
-        
+
         private let picker: ImagePicker
-        
+
         public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             self.picker.cancelAction()
         }
-        
+
         public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.originalImage] as? UIImage {
                 self.picker.resultAction(.success(image))
@@ -126,4 +142,13 @@ public extension ImagePicker {
         }
     }
 }
+
+// MARK: - Identifiable
+
+// MARK: - Identifiable
+extension UIImagePickerController.SourceType: Identifiable {
+
+    public var id: Int { rawValue }
+}
 #endif
+
