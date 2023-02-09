@@ -12,12 +12,6 @@ SwiftUIKit is divided into the sections found in the Topics section below.
 
 
 
-## Supported Platforms
-
-SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
-
-
-
 ## Installation
 
 SwiftUIKit can be installed with the Swift Package Manager:
@@ -32,7 +26,13 @@ or with CocoaPods:
 pod DSSwiftUIKit
 ```
 
-You can also clone the repository and build the library locally.
+If you prefer to not have external dependencies, you can also just copy the source code into your app.
+
+
+
+## Supported Platforms
+
+SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
 
 
 
