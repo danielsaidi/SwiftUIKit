@@ -53,7 +53,7 @@ public struct ScrollViewGestureButton<Label: View>: View {
        - endAction: The action to trigger when a button gesture ends, by default `nil`.
        - label: The button label.
      */
-    init(
+    public init(
         isPressed: Binding<Bool>? = nil,
         pressAction: Action? = nil,
         releaseInsideAction: Action? = nil,
