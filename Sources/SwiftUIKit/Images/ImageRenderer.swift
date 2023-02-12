@@ -58,14 +58,14 @@ public class ImageRenderer<Content: View> {
         hosting.view.frame = window.frame
         window.addSubview(hosting.view)
         window.makeKeyAndVisible()
-        return hosting.view.renderedImage
+        return hosting.view.renderedImage(withScale: scale)
     }
 }
 
 private extension UIView {
 
-    var renderedImage: UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+    func renderedImage(withScale scale: CGFloat): UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale)
         let context = UIGraphicsGetCurrentContext()!
         layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()!
