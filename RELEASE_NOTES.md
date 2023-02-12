@@ -13,9 +13,13 @@
 * `SwipeGestureViewModifier` is a new view modifier that exposes the `View+onSwipeGesture` extension to DocC.
 * `UndimmedPresentationDetentsViewModifier` is a new view modifier that exposes the `View+presentationDetents` extension to DocC.
 
+### 💡 Behavior changes
+
+* `ImageRenderer` now renders with correct scale - thanks [alfredcc](https://github.com/alfredcc) for this! 
+
 ### 🗑 Deprecations
 
-* The `ScrollViewHeader` has been moved to ScrollKit - https://github.com/danielsaidi/ScrollKit 
+* The `ScrollViewHeader` has been moved to ScrollKit - https://github.com/danielsaidi/ScrollKit
 
 
 
