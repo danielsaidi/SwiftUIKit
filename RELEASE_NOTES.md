@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 3.3
+
+### ✨ Behavior changes
+
+* `Persisted` initializer parameters have changed.
+
+
+
 ## 3.2
 
 ### ✨ New features

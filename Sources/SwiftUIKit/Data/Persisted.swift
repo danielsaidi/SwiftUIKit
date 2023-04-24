@@ -13,6 +13,14 @@ import SwiftUI
  to user defaults and sets the initial property value to the
  last persisted value or a default value.
 
+ You can provide this wrapper with a persistency key, a default
+ value and an optional store.
+
+ ```swift
+ @Persisted(key: "com.myapp.value", defaultValue: .standard, store: .shared)
+ private var persistedValue: CodableValueType
+ ```
+
  This property wrapper will properly update any SwiftUI view
  that you use it with.
  */
@@ -28,13 +36,13 @@ public struct Persisted<Value: Codable>: DynamicProperty {
        - defaultValue: The default value to return when no stored value exists.
      */
     public init(
-        key: String,
-        store: UserDefaults = .standard,
+        _ key: String,
+        store: UserDefaults? = .standard,
         defaultValue: Value
     ) {
         self.key = key
-        self.store = store
-        let initialValue: Value? = Self.initialValue(for: key, in: store)
+        self.store = store ?? .standard
+        let initialValue: Value? = Self.initialValue(for: key, in: self.store)
         self._value = State(initialValue: initialValue ?? defaultValue)
     }
 
