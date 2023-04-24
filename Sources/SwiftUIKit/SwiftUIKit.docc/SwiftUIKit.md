@@ -64,7 +64,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Data
 
-- ``Persisted``
 - ``ScanCodeGenerator``
 - ``ScanCodeType``
 - ``StandardScanCodeGenerator``

@@ -5,12 +5,13 @@
 
 ### ✨ New features
 
+* `Array+Codable` is a new extension that lets us store `Codable` data in `AppStorage`.
 * `ImageRepresentable` has new resising tools.
 * `ProcessInfo` has a new static preview property.
 
 ### ✨ Behavior changes
 
-* `Persisted` initializer parameters have changed.
+* `Persisted` has been deprecated due to the new `Array+Codable`.
 
 
 
