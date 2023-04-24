@@ -6,6 +6,7 @@
 ### ✨ New features
 
 * `ImageRepresentable` has new resising tools.
+* `ProcessInfo` has a new static preview property.
 
 ### ✨ Behavior changes
 
