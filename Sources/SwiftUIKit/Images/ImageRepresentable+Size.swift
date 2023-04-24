@@ -62,6 +62,17 @@ public extension ImageRepresentable {
     }
 
     /**
+     Create a resized copy of the image, using a new height,
+     but only if the current is larger than the provided.
+
+     This operation will preserve the original aspect ratio.
+     */
+    func resized(toMaxHeight points: CGFloat) -> UIImage? {
+        if size.height < points { return self }
+        return resized(toHeight: points)
+    }
+
+    /**
      Create a resized copy of the image, using a new width.
 
      This operation will preserve the original aspect ratio.
@@ -71,5 +82,16 @@ public extension ImageRepresentable {
         let height = size.height * ratio
         let newSize = CGSize(width: points, height: height)
         return resized(to: newSize)
+    }
+
+    /**
+     Create a resized copy of the image, using a new width,
+     but only if the current is larger than the provided.
+
+     This operation will preserve the original aspect ratio.
+     */
+    func resized(toMaxWidth points: CGFloat) -> UIImage? {
+        if size.width < points { return self }
+        return resized(toWidth: points)
     }
 }

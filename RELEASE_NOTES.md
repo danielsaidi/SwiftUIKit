@@ -3,6 +3,10 @@
 
 ## 3.3
 
+### ✨ New features
+
+* `ImageRepresentable` has new resising tools.
+
 ### ✨ Behavior changes
 
 * `Persisted` initializer parameters have changed.
