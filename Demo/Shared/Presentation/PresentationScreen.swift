@@ -16,6 +16,12 @@ struct PresentationScreen: View {
             Section {
                 Text("SwiftUIKit has utils that make it easier to present certain kind of content in SwiftUI.")
             }
+
+            Section(header: Text("Resizable Sheets")) {
+                NavigationLink(destination: DetentsScreen()) {
+                    Label("Undimmed Presentation Detents", image: .detents)
+                }
+            }
             
             Section(header: Text("Presentation Types")) {
                 NavigationLink(destination: AlertsScreen()) {

@@ -10,27 +10,17 @@
 import SwiftUI
 
 /**
- This view modifier applies swipe gestures to any views that
- can trigger actions when they are swiped left/right/up/down.
-
- The modifier is used by the `View+onSwipeGesture` extension.
+ This view modifier applies undimmed presentation detents to
+ any view, which can be used to describe which sheet detents
+ that should be undimmed.
  */
 @available(iOS 16.0, *)
 public struct UndimmedPresentationDetentsViewModifier: ViewModifier {
 
     init(
         undimmedDetents: [UndimmedPresentationDetent],
-        largestUndimmed: UndimmedPresentationDetent? = nil
-    ) {
-        self.undimmedDetents = undimmedDetents
-        self.largestUndimmed = largestUndimmed
-        self.selection = nil
-    }
-
-    init(
-        undimmedDetents: [UndimmedPresentationDetent],
         largestUndimmed: UndimmedPresentationDetent? = nil,
-        selection: Binding<PresentationDetent>
+        selection: Binding<PresentationDetent>? = nil
     ) {
         self.undimmedDetents = undimmedDetents
         self.largestUndimmed = largestUndimmed
@@ -73,40 +63,23 @@ public extension View {
      Define a set of presentation detents that don't dim any
      underlying views when this view is presented as a sheet.
 
+     Make sure that, if specified, `dimmed` only has detents
+     than are larger than the ones in `undimmed`.
+
      - Parameters:
-       - detents: The undimmed detents to enable for the view.
-       - largestUndimmed: The largest undimmed detent, by default the last detents in the provided `detents` collection.
+       - undimmed: The undimmed detents to enable for the view.
+       - dimmed: The dimmed detents to enable for the view.
+       - selection: An external selection binding.
      */
     func presentationDetents(
-        undimmed detents: [UndimmedPresentationDetent],
-        largestUndimmed: UndimmedPresentationDetent? = nil
+        undimmed: [UndimmedPresentationDetent],
+        dimmed: [UndimmedPresentationDetent] = [],
+        selection: Binding<PresentationDetent>? = nil
     ) -> some View {
         self.modifier(
             UndimmedPresentationDetentsViewModifier(
-                undimmedDetents: detents,
-                largestUndimmed: largestUndimmed
-            )
-        )
-    }
-
-    /**
-     Define a set of presentation detents that don't dim any
-     underlying views when this view is presented as a sheet.
-
-     - Parameters:
-       - detents: The undimmed detents to enable for the view.
-       - largestUndimmed: The largest undimmed detent, by default the last detents in the provided `detents` collection.
-       - selection: An external seleciton binding.
-     */
-    func presentationDetents(
-        undimmed detents: [UndimmedPresentationDetent],
-        largestUndimmed: UndimmedPresentationDetent? = nil,
-        selection: Binding<PresentationDetent>
-    ) -> some View {
-        self.modifier(
-            UndimmedPresentationDetentsViewModifier(
-                undimmedDetents: detents,
-                largestUndimmed: largestUndimmed,
+                undimmedDetents: undimmed + dimmed,
+                largestUndimmed: undimmed.last,
                 selection: selection
             )
         )
@@ -133,8 +106,8 @@ private class UndimmedDetentController: UIViewController {
 
     var largestUndimmedDetent: UndimmedPresentationDetent?
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         avoidDimmingParent()
         avoidDisablingControls()
     }

@@ -14,6 +14,14 @@
 
 * `Persisted` has been deprecated due to `AppStorageCodable`.
 
+### 🐛 Bug fixes
+
+* The undimmed presentation detents move some code to after layout to improve behavior.
+
+### 🗑 Deprecations
+
+* The `.presentationDetents(undimmed:largestUndimmed:selection:)` modifier is deprecated and replaced by `.presentationDetents(undimmed:dimmed:selection:)`. 
+
 
 
 ## 3.2

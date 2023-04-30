@@ -49,6 +49,7 @@
 		A9ADC339285F0B3C00864B58 /* ImagesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */; };
 		A9ADC33A285F0B3C00864B58 /* ImageRendererScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */; };
 		A9ADC33C285F1C4F00864B58 /* ViewShadowStyleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADC33B285F1C4F00864B58 /* ViewShadowStyleScreen.swift */; };
+		A9C93E9D29FE966D00EFFCD7 /* DetentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C93E9C29FE966D00EFFCD7 /* DetentsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		A9ADC337285F0B3C00864B58 /* ImagesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesScreen.swift; sourceTree = "<group>"; };
 		A9ADC338285F0B3C00864B58 /* ImageRendererScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRendererScreen.swift; sourceTree = "<group>"; };
 		A9ADC33B285F1C4F00864B58 /* ViewShadowStyleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewShadowStyleScreen.swift; sourceTree = "<group>"; };
+		A9C93E9C29FE966D00EFFCD7 /* DetentsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetentsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */,
 				A901F0CF256FE63A00F1C285 /* CoversScreen.swift */,
 				A901F0D4256FE64500F1C285 /* SheetsScreen.swift */,
+				A9C93E9C29FE966D00EFFCD7 /* DetentsScreen.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */,
 				A9544B572571404E00522141 /* ShareSheetScreen.swift in Sources */,
 				A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */,
+				A9C93E9D29FE966D00EFFCD7 /* DetentsScreen.swift in Sources */,
 				A901F074256F962600F1C285 /* CamerasScreen.swift in Sources */,
 				A98278E1257E969C0006D64F /* Color+Demo.swift in Sources */,
 				A901F15525707D8000F1C285 /* FetchedDataViewScreen.swift in Sources */,
