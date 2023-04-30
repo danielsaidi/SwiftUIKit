@@ -21,10 +21,6 @@ struct DataScreen: View {
                 NavigationLink(destination: ScanCodeGeneratorScreen()) {
                     Label("Scan Code Generator", image: .qrCode)
                 }
-                
-                NavigationLink(destination: PersistedScreen()) {
-                    Label("Persisted", image: .data)
-                }
             }
         }.navigationTitle("Data")
     }

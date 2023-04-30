@@ -11,7 +11,8 @@ import SwiftUIKit
 
 struct AlertsScreen: View {
     
-    @StateObject private var context = AlertContext()
+    @StateObject
+    private var context = AlertContext()
     
     var body: some View {
         List {

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 @propertyWrapper
-@available(*, deprecated, message: "Due to Array+Codable, this is no longer needed.")
+@available(*, deprecated, message: "Use AppStorageCodable instead.")
 public struct Persisted<Value: Codable>: DynamicProperty {
 
     /**

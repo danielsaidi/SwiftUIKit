@@ -17,7 +17,6 @@
 		A901F080256F963E00F1C285 /* SharingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F07F256F963E00F1C285 /* SharingScreen.swift */; };
 		A901F085256F964600F1C285 /* ViewsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F084256F964600F1C285 /* ViewsScreen.swift */; };
 		A901F099256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */; };
-		A901F0A0256FAF9A00F1C285 /* PersistedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F09F256FAF9A00F1C285 /* PersistedScreen.swift */; };
 		A901F0BC256FBFF700F1C285 /* SwipeGestureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */; };
 		A901F0CB256FE62E00F1C285 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */; };
 		A901F0D0256FE63A00F1C285 /* CoversScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901F0CF256FE63A00F1C285 /* CoversScreen.swift */; };
@@ -63,7 +62,6 @@
 		A901F07F256F963E00F1C285 /* SharingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingScreen.swift; sourceTree = "<group>"; };
 		A901F084256F964600F1C285 /* ViewsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsScreen.swift; sourceTree = "<group>"; };
 		A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeGeneratorScreen.swift; sourceTree = "<group>"; };
-		A901F09F256FAF9A00F1C285 /* PersistedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedScreen.swift; sourceTree = "<group>"; };
 		A901F0BB256FBFF700F1C285 /* SwipeGestureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureScreen.swift; sourceTree = "<group>"; };
 		A901F0CA256FE62E00F1C285 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
 		A901F0CF256FE63A00F1C285 /* CoversScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoversScreen.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				A901F039256F8CA600F1C285 /* DataScreen.swift */,
-				A901F09F256FAF9A00F1C285 /* PersistedScreen.swift */,
 				A901F098256FAF0100F1C285 /* ScanCodeGeneratorScreen.swift */,
 			);
 			path = Data;
@@ -484,7 +481,6 @@
 				A901F04E256F8CFE00F1C285 /* StylesScreen.swift in Sources */,
 				A901F14E25707CFD00F1C285 /* DismissableViewScreen.swift in Sources */,
 				A9ADC339285F0B3C00864B58 /* ImagesScreen.swift in Sources */,
-				A901F0A0256FAF9A00F1C285 /* PersistedScreen.swift in Sources */,
 				A901F080256F963E00F1C285 /* SharingScreen.swift in Sources */,
 				A901F0EE2570027F00F1C285 /* FontStyleScreen.swift in Sources */,
 				A9544B932571B34D00522141 /* PhotoCameraScreen.swift in Sources */,
