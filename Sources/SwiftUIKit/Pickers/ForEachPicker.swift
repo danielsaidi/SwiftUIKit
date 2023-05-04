@@ -60,12 +60,12 @@ public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, Dismissab
 
 private extension ForEachPicker {
     
-    var seletedId: Item.ID {
+    var selectedId: Item.ID {
         selection.wrappedValue.id
     }
     
     func isSelected(_ item: Item) -> Bool {
-        seletedId == item.id
+        selectedId == item.id
     }
     
     func select(_ item: Item) {
