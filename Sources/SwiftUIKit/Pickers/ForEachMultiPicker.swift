@@ -51,12 +51,12 @@ public struct ForEachMultiPicker<Item: Identifiable, ItemView: View>: View, Dism
 
 private extension ForEachMultiPicker {
     
-    var seletedIds: [Item.ID] {
+    var selectedIds: [Item.ID] {
         selection.wrappedValue.map { $0.id }
     }
     
     func isSelected(_ item: Item) -> Bool {
-        seletedIds.contains(item.id)
+        selectedIds.contains(item.id)
     }
     
     func toggleSelection(for item: Item) {
