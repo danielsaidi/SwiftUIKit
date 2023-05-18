@@ -126,8 +126,8 @@ public extension FormActionButtonStyle {
     /**
      The standard form action button style.
 
-     You can change this standard style to affect the global
-     appearance of the ``FormActionButtonStyle`` view.
+     You can change this style to affect the standard global
+     style of the ``FormActionButtonStyle`` view.
      */
     static var standard = FormActionButtonStyle()
 

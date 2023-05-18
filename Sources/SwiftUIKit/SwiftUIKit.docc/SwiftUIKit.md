@@ -98,6 +98,8 @@ SwiftUIKit is available under the MIT license.
 ### List
 
 - ``ListButtonStyle``
+- ``ListCard``
+- ``ListCardStyle``
 - ``ListDragHandle``
 - ``ListSelectItem``
 - ``ListSubtitle``

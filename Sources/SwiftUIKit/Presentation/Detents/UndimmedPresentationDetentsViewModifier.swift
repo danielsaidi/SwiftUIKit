@@ -137,11 +137,12 @@ struct View_PresentationDetents_Previews: PreviewProvider {
                     Color.red.ignoresSafeArea()
                         .presentationDetents(
                             undimmed: [
-                                .fraction(0.3),
-                                .fraction(0.5),
-                                .height(500)
+                                .fraction(0.1),
+                                .fraction(0.3)
                             ],
-                            largestUndimmed: .fraction(0.5)
+                            dimmed: [
+                                .fraction(0.5)
+                            ]
                         )
                 }
         }
