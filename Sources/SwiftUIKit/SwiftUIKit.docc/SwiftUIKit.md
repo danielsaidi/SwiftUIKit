@@ -95,6 +95,13 @@ SwiftUIKit is available under the MIT license.
 
 - ``ImageRepresentable``
 
+### List
+
+- ``ListButtonStyle``
+- ``ListDragHandle``
+- ``ListSelectItem``
+- ``ListSubtitle``
+
 ### Navigation
 
 - ``UrlOpener``
@@ -200,12 +207,6 @@ SwiftUIKit is available under the MIT license.
 - ``FormText``
 - ``FormTextEditor``
 - ``FormTextField``
-
-### Views/List
-
-- ``ListButtonStyle``
-- ``ListSelectItem``
-- ``ListSubtitle``
 
 ### Views/Progress
 

@@ -8,6 +8,7 @@
 * `Array` has a new `RawRepresentable` extension that makes it possible to 
 * `AppStorageCodable` is a new protocol that lets us store `Codable` data in `AppStorage`.
 * `ImageRepresentable` has new resizing tools.
+* `ListDragHandle` is a new view to mimic the native iOS list drag handle.
 * `ProcessInfo` has a new static preview property.
 
 ### ✨ Behavior changes

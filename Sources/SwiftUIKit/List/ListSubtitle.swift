@@ -9,7 +9,7 @@
 import SwiftUI
 
 /**
- This view can be used to display trailing subtitle texts in
+ This view can be used to display a trailing subtitle in any
  list items.
  */
 public struct ListSubtitle: View {
