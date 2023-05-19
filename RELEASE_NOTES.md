@@ -8,7 +8,9 @@
 * `Array` has a new `RawRepresentable` extension that makes it possible to 
 * `AppStorageCodable` is a new protocol that lets us store `Codable` data in `AppStorage`.
 * `ImageRepresentable` has new resizing tools.
+* `ListCard` is a new view that can be used to create cards for a list or grid.
 * `ListDragHandle` is a new view to mimic the native iOS list drag handle.
+* `ListShelfSection` is a new view that can be used to create horizontally scrolling shelves in vertically scrolling lists.
 * `ProcessInfo` has a new static preview property.
 
 ### ✨ Behavior changes

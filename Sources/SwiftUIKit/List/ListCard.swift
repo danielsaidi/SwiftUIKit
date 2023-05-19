@@ -19,7 +19,7 @@ import SwiftUI
 public struct ListCard<Content: View, ContextMenuView: View>: View {
 
     /**
-     Create a list card style
+     Create a list card.
 
      - Parameters:
        - style: The style to apply, by default ``ListCardStyle/standard``.
