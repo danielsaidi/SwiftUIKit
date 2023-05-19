@@ -99,6 +99,7 @@ SwiftUIKit is available under the MIT license.
 
 - ``ListButtonStyle``
 - ``ListCard``
+- ``ListCardButtonStyle``
 - ``ListCardStyle``
 - ``ListDragHandle``
 - ``ListSelectItem``
