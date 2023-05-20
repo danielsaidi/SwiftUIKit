@@ -42,12 +42,5 @@ public extension View {
             weight: weight
         )
     }
-    
-    /**
-     Apply a ``FontStyle`` to the view.
-     */
-    func font(_ style: FontStyle) -> some View {
-        font(style.font)
-    }
 }
 #endif

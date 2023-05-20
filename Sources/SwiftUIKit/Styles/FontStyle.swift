@@ -54,4 +54,14 @@ public struct FontStyle {
         UIFont.preferredFont(forTextStyle: style).pointSize
     }
 }
+
+public extension View {
+
+    /**
+     Apply a ``FontStyle`` to the view.
+     */
+    func font(_ style: FontStyle) -> some View {
+        font(style.font)
+    }
+}
 #endif

@@ -16,6 +16,8 @@
 ### ✨ Behavior changes
 
 * `Persisted` has been deprecated due to `AppStorageCodable`.
+* `ViewShadowStyle` now allows not specifying a shadow color.
+* `ViewShadowStyle.badge` has been redesigned to look more like a sticker.
 
 ### 🐛 Bug fixes
 

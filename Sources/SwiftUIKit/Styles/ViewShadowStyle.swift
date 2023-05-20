@@ -32,7 +32,7 @@ import SwiftUI
 public struct ViewShadowStyle {
     
     public init(
-        color: Color = .black,
+        color: Color? = nil,
         radius: CGFloat,
         x: CGFloat = 0,
         y: CGFloat = 0
@@ -43,7 +43,7 @@ public struct ViewShadowStyle {
         self.y = y
     }
     
-    public let color: Color
+    public let color: Color?
     public let radius: CGFloat
     public let x: CGFloat
     public let y: CGFloat
@@ -68,7 +68,7 @@ public extension ViewShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var badge = ViewShadowStyle(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 2)
+    static var badge = ViewShadowStyle(color: nil, radius: 1, x: 0, y: 1)
     
     /**
      This style represents a shadow that is cast from a view
@@ -79,6 +79,30 @@ public extension ViewShadowStyle {
      */
     static var elevated = ViewShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
 }
+
+public extension View {
+
+    /**
+     Apply a ``ViewShadowStyle`` to the view.
+     */
+    @ViewBuilder
+    func shadow(_ style: ViewShadowStyle) -> some View {
+        if let color = style.color {
+            shadow(
+                color: color,
+                radius: style.radius,
+                x: style.x,
+                y: style.y)
+        }
+        else {
+            shadow(
+                radius: style.radius,
+                x: style.x,
+                y: style.y)
+        }
+    }
+}
+
 
 struct ShadowStyle_Previews: PreviewProvider {
     

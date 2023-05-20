@@ -33,3 +33,13 @@ public struct CornerRadiusStyle {
     
     public let radius: CGFloat
 }
+
+public extension View {
+
+    /**
+     Apply a ``CornerRadiusStyle`` to the view.
+     */
+    func cornerRadius(_ style: CornerRadiusStyle) -> some View {
+        cornerRadius(style.radius)
+    }
+}
