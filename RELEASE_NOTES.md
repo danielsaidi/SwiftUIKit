@@ -3,6 +3,10 @@
 
 ## 3.3
 
+From this version, the demo application has been removed. 
+
+Instead of the demo application, use the previews directly from now on. 
+
 ### ✨ New features
 
 * `Array` has a new `RawRepresentable` extension that makes it possible to 
