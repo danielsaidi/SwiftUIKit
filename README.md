@@ -52,7 +52,7 @@ You can use the [online documentation][Documentation] to overview the various pa
 
 ## Demo Application
 
-The demo app lets you explore the library on iOS and macOS. To try it out, just open and run the `Demo` project.
+This repository doesn't have a demo application, but you can use the source code previews to preview most features.
 
 
 
