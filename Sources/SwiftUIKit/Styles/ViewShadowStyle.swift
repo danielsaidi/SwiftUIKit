@@ -33,7 +33,7 @@ public struct ViewShadowStyle {
     
     public init(
         color: Color? = nil,
-        radius: CGFloat,
+        radius: CGFloat = 0,
         x: CGFloat = 0,
         y: CGFloat = 0
     ) {
@@ -58,7 +58,7 @@ public extension ViewShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var none = ViewShadowStyle(color: .clear, radius: 0, x: 0, y: 0)
+    static var none = ViewShadowStyle(color: .clear)
     
     /**
      This style represents a badge or "sticker" and is meant
@@ -68,7 +68,7 @@ public extension ViewShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var badge = ViewShadowStyle(color: nil, radius: 1, x: 0, y: 1)
+    static var badge = ViewShadowStyle(radius: 1, y: 1)
     
     /**
      This style represents a shadow that is cast from a view
@@ -77,7 +77,12 @@ public extension ViewShadowStyle {
      You can set this style to another style value to change
      its default look.
      */
-    static var elevated = ViewShadowStyle(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
+    static var elevated = ViewShadowStyle(
+        color: Color.black.opacity(0.2),
+        radius: 3,
+        x: 0,
+        y: 2
+    )
 }
 
 public extension View {
