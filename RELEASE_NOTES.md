@@ -14,6 +14,7 @@ Instead of the demo application, use the previews directly from now on.
 * `ImageRepresentable` has new resizing tools.
 * `ListCard` is a new view that can be used to create cards for a list or grid.
 * `ListDragHandle` is a new view to mimic the native iOS list drag handle.
+* `ListSectionTitle` is a new view that mimics a grouped iOS section title.
 * `ListShelfSection` is a new view that can be used to create horizontally scrolling shelves in vertically scrolling lists.
 * `ProcessInfo` has a new static preview property.
 
