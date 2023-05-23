@@ -17,6 +17,7 @@ Instead of the demo application, use the previews directly from now on.
 * `ListSectionTitle` is a new view that mimics a grouped iOS section title.
 * `ListShelfSection` is a new view that can be used to create horizontally scrolling shelves in vertically scrolling lists.
 * `ProcessInfo` has a new static preview property.
+* `TextEditorStyle` lets you style a `TextEditor` like a `TextField`.
 
 ### ✨ Behavior changes
 
