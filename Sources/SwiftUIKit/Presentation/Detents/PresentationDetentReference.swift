@@ -1,5 +1,5 @@
 //
-//  UndimmedPresentationDetent.swift
+//  PresentationDetentReference.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-11-01.
@@ -10,11 +10,11 @@
 import SwiftUI
 
 /**
- This is used to bridge the SwiftUI `PresentationDetent`with
- the UIKit `UISheetPresentationController.Detent.Identifier`.
+ This enum is used to bridge the SwiftUI `PresentationDetent`
+ with UIKit `UISheetPresentationController.Detent.Identifier`.
  */
 @available(iOS 16.0, *)
-public enum UndimmedPresentationDetent {
+public enum PresentationDetentReference: Hashable {
 
     /// The system detent for a sheet at full height.
     case large
@@ -48,10 +48,24 @@ public enum UndimmedPresentationDetent {
 }
 
 @available(iOS 16.0, *)
-extension Collection where Element == UndimmedPresentationDetent {
+extension Collection where Element == PresentationDetentReference {
 
     var swiftUISet: Set<PresentationDetent> {
         Set(map { $0.swiftUIDetent })
+    }
+}
+
+@available(iOS 16.0, *)
+public extension UISheetPresentationController.Detent.Identifier {
+
+    /// A fraction-specific detent identifier.
+    static func fraction(_ value: CGFloat) -> Self {
+        .init("Fraction:\(String(format: "%.1f", value))")
+    }
+
+    /// A height-specific detent identifier.
+    static func height(_ value: CGFloat) -> Self {
+        .init("Height:\(value)")
     }
 }
 #endif

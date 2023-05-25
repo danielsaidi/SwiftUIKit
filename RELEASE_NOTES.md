@@ -31,7 +31,8 @@ Instead of the demo application, use the previews directly from now on.
 
 ### 🗑 Deprecations
 
-* The `.presentationDetents(undimmed:largestUndimmed:selection:)` modifier is deprecated and replaced by `.presentationDetents(undimmed:dimmed:selection:)`. 
+* `UndimmedPresentationDetent` is renamed to `PresentationDetentReference`.
+* The `.presentationDetents(undimmed:largestUndimmed:selection:)` modifier is deprecated and replaced by `.presentationDetents(:largestUndimmed:selection:)`. 
 
 
 
