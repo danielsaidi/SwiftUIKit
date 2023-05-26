@@ -1,3 +1,4 @@
+#if os(iOS)
 //
 //  ListDragHandle.swift
 //  SwiftUIKit
@@ -15,7 +16,7 @@ import SwiftUI
  being edited, since the edit mode should present the native
  drag handle.
  */
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+@available(iOS 14.0, *)
 public struct ListDragHandle: View {
 
     public init() {}
@@ -33,7 +34,7 @@ public struct ListDragHandle: View {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+@available(iOS 14.0, *)
 private extension ListDragHandle {
 
     var isEditing: Bool {
@@ -45,7 +46,7 @@ private extension ListDragHandle {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+@available(iOS 14.0, *)
 struct ListDragHandle_Previews: PreviewProvider {
 
     static var previews: some View {
@@ -71,3 +72,4 @@ struct ListDragHandle_Previews: PreviewProvider {
         }
     }
 }
+#endif

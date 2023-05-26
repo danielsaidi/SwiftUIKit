@@ -67,7 +67,7 @@ public extension ImageRepresentable {
 
      This operation will preserve the original aspect ratio.
      */
-    func resized(toMaxHeight points: CGFloat) -> UIImage? {
+    func resized(toMaxHeight points: CGFloat) -> ImageRepresentable? {
         if size.height < points { return self }
         return resized(toHeight: points)
     }
@@ -90,7 +90,7 @@ public extension ImageRepresentable {
 
      This operation will preserve the original aspect ratio.
      */
-    func resized(toMaxWidth points: CGFloat) -> UIImage? {
+    func resized(toMaxWidth points: CGFloat) -> ImageRepresentable? {
         if size.width < points { return self }
         return resized(toWidth: points)
     }
