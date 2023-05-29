@@ -48,16 +48,14 @@ struct NavigationButtonItem_Previews: PreviewProvider {
             NavigationView {
                 List {
                     Text("Is toggled: \(isToggled ? 1 : 0)")
-                    NavigationLink("Test") {
-                        Text("Test")
-                    }
-                    NavigationLink("Navigation link", destination: Text("HEJ"))
-
-                NavigationButton(action: { isToggled.toggle() }, content: {
-                        Text("Toggle")
+                    NavigationLink("Navigation link") {
+                        Text("HEJ")
+                    }.offset()
+                    NavigationButton(action: { isToggled.toggle() }, content: {
+                        Text("Navigation Button")
                     })
                 }
-            }
+            }.foregroundColor(.red)
         }
     }
     

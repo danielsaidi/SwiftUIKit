@@ -13,12 +13,12 @@ import SwiftUI
  added to iOS `NavigationLink` items in a `List`.
  */
 public struct NavigationLinkArrow: View {
-    
+
     public var body: some View {
         Image(systemName: "chevron.right")
-            .padding(.leading, 2)
             .font(font)
             .opacity(0.3)
+            .padding(.leading, 2)
             .scaleEffect(scale)
     }
 }
@@ -49,6 +49,16 @@ private extension NavigationLinkArrow {
 struct Image_App_Previews: PreviewProvider {
     
     static var previews: some View {
-        NavigationLinkArrow()
+        NavigationView {
+            List {
+                NavigationLink("Test") {
+                    Color.red
+                }
+                NavigationButton {} content: {
+                    Text("HEJ")
+                }
+                NavigationLinkArrow()
+            }
+        }.foregroundColor(.red)
     }
 }
