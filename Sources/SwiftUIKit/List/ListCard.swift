@@ -65,12 +65,12 @@ public struct ListCard<Content: View, ContextMenuView: View>: View {
 
     public var body: some View {
         content()
+            #if os(iOS)
+            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: style.cornerRadius))
+            #endif
             .background(Color.primary.colorInvert())
             .cornerRadius(style.cornerRadius)
             .contextMenu(menuItems: contextMenu)
-        #if os(iOS)
-            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: style.cornerRadius))
-        #endif
             .shadow(style.shadowStyle)
     }
 }
