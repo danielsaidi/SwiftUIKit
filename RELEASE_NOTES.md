@@ -18,6 +18,9 @@ Instead of the demo application, use the previews directly from now on.
 * `ListShelfSection` is a new view that can be used to create horizontally scrolling shelves in vertically scrolling lists.
 * `ProcessInfo` has a new static preview property.
 * `TextEditorStyle` lets you style a `TextEditor` like a `TextField`.
+* `SystemSettingsListIcon` is a new view that mimics the system settings color badged icons.
+* `Image+Symbol` is a new `Image` initializer that serves as a shorthand for `.init(systemName:)`.
+* `Image+SystemSettingsListIcon` is a new `Image` modifier that can be used to convert an image to a color badged icon.
 
 ### ✨ Behavior changes
 
