@@ -9,8 +9,8 @@ Instead of the demo application, use the previews directly from now on.
 
 ### ✨ New features
 
-* `Array` has a new `RawRepresentable` extension that makes it possible to 
-* `AppStorageCodable` is a new protocol that lets us store `Codable` data in `AppStorage`.
+* `Array` has new extensions that make it possible to use with `Codable` and `AppStorage`.
+* `Dictionary` has new extensions that make it possible to use with `Codable` and `AppStorage`. 
 * `ImageRepresentable` has new resizing tools.
 * `ListCard` is a new view that can be used to create cards for a list or grid.
 * `ListDragHandle` is a new view to mimic the native iOS list drag handle.
