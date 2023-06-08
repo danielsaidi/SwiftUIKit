@@ -10,9 +10,11 @@ import SwiftUI
 
 /**
  This view represents the trailing navigation arrow that are
- added to iOS `NavigationLink` items in a `List`.
+ added to `NavigationLink` items in a `List`.
  */
 public struct NavigationLinkArrow: View {
+
+    public init() {}
 
     public var body: some View {
         Image(systemName: "chevron.right")
