@@ -48,8 +48,10 @@ private extension NavigationLinkArrow {
     }
 }
 
+
+@available(watchOS 7.0, *)
 struct Image_App_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         NavigationView {
             List {

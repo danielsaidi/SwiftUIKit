@@ -125,8 +125,10 @@ struct ShadowStyle_Previews: PreviewProvider {
                 item.shadow(.none)
                 item.shadow(.badge)
 
+                #if os(iOS)
                 item.onTapGesture(perform: toggleElevated)
                     .shadow(isItemElevated ? .elevated : .badge)
+                #endif
 
                 item.shadow(.elevated)
             }

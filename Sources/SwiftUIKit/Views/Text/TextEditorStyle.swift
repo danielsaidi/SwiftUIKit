@@ -6,6 +6,7 @@
 //  Copyright © 2023 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(macOS)
 import SwiftUI
 
 /**
@@ -76,3 +77,4 @@ struct TextEditorStyle_Previews: PreviewProvider {
         // .environment(\.colorScheme, .dark)
     }
 }
+#endif
