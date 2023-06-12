@@ -97,6 +97,7 @@ SwiftUIKit is available under the MIT license.
 
 ### List
 
+- ``ListBadgeIcon``
 - ``ListButtonStyle``
 - ``ListCard``
 - ``ListCardButtonStyle``
@@ -105,7 +106,6 @@ SwiftUIKit is available under the MIT license.
 - ``ListSelectItem``
 - ``ListShelfSection``
 - ``ListSubtitle``
-- ``SystemSettingsBadgeIcon``
 
 ### Navigation
 

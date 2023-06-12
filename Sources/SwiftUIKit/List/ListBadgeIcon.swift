@@ -10,13 +10,14 @@
 import SwiftUI
 
 /**
- This view mimics a colored iOS system settings badge icon.
+ This view mimics the color badge icons that can be found in
+ e.g. System Settings.
 
- You can also use the `.systemSettingsBadgeIcon` modifier to
- convert any image to a system settings list icon.
+ You can use the `.listBadgeIcon()` view modifier to convert
+ any `Image` to a list badge icon.
  */
 @available(iOS 15.0, *)
-public struct SystemSettingsBadgeIcon: View {
+public struct ListBadgeIcon: View {
 
     /**
      Create a system settings mimicing list icon.
@@ -56,11 +57,11 @@ public extension Image {
 
      Note that this behaves best with SF Symbols.
      */
-    func systemSettingsBadgeIcon(
+    func listBadgeIcon(
         _ color: Color,
         height: CGFloat? = 30
     ) -> some View {
-        SystemSettingsBadgeIcon(
+        ListBadgeIcon(
             image: self,
             color: color,
             height: height
@@ -81,20 +82,20 @@ private extension View {
 }
 
 @available(iOS 15.0, *)
-struct SystemSettingsBadgeIcon_Previews: PreviewProvider {
+struct ListBadgeIcon_Previews: PreviewProvider {
 
     static var previews: some View {
         List {
-            SystemSettingsBadgeIcon(
+            ListBadgeIcon(
                 image: .symbol("exclamationmark.triangle"),
                 color: .orange
             )
 
             Image.symbol("checkmark")
-                .systemSettingsBadgeIcon(.green)
+                .listBadgeIcon(.green)
 
             Image.symbol("checkmark")
-                .systemSettingsBadgeIcon(.green)
+                .listBadgeIcon(.green)
                 .font(.body.bold())
         }
     }

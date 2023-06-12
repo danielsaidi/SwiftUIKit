@@ -3,24 +3,26 @@
 
 ## 3.3
 
-From this version, the demo application has been removed. 
+This release adds new support for `Codable` and `AppStorage`.
 
-Instead of the demo application, use the previews directly from now on. 
+This release also adds new list functionality and text editor styling.
+
+From this version, the demo application has been removed. Instead of the demo application, you can use the internal previews directly. 
 
 ### ✨ New features
 
 * `Array` has new extensions that make it possible to use with `Codable` and `AppStorage`.
 * `Dictionary` has new extensions that make it possible to use with `Codable` and `AppStorage`. 
 * `ImageRepresentable` has new resizing tools.
+* `ListBadgeIcon` is a new view that mimics the color badge icons in System Settings.
 * `ListCard` is a new view that can be used to create cards for a list or grid.
 * `ListDragHandle` is a new view to mimic the native iOS list drag handle.
 * `ListSectionTitle` is a new view that mimics a grouped iOS section title.
 * `ListShelfSection` is a new view that can be used to create horizontally scrolling shelves in vertically scrolling lists.
 * `ProcessInfo` has a new static preview property.
 * `TextEditorStyle` lets you style a `TextEditor` like a `TextField`.
-* `SystemSettingsBadgeIcon` is a new view that mimics the system settings color badged icons.
 * `Image+Symbol` is a new `Image` initializer that serves as a shorthand for `.init(systemName:)`.
-* `Image+SystemSettingsBadgeIcon` is a new `Image` modifier that can be used to convert an image to a color badged icon.
+* `Image+ListBadgeIcon` is a new `Image` modifier that can be used to convert an image to a color badged icon.
 
 ### ✨ Behavior changes
 

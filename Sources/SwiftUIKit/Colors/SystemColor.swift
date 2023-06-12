@@ -24,7 +24,7 @@ import SwiftUI
  the current platform. Avoid this by filtering out supported
  values with the `isSupported` property.
  */
-public enum SystemColor: String, CaseIterable, Codable, Equatable {
+public enum SystemColor: String, CaseIterable, Codable, Equatable, Identifiable {
     
     case primary
     case secondary

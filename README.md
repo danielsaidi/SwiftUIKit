@@ -16,7 +16,7 @@
 
 SwiftUIKit adds extra functionality to `SwiftUI`, like extensions to existing types and completely new stuff.
 
-You can explore the various sections in the [documentation][Documentation] and the demo app.
+You can explore the various sections in the [documentation][Documentation].
 
 
 
@@ -52,7 +52,7 @@ You can use the [online documentation][Documentation] to overview the various pa
 
 ## Demo Application
 
-This repository doesn't have a demo application, but you can use the source code previews to preview most features.
+This repository doesn't have a demo application, but you can use the source code previews to preview most features directly in Xcode.
 
 
 
