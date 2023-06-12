@@ -43,7 +43,7 @@ final class AppStorageCodableTests: XCTestCase {
     func testCanPersistDictionary() {
         let state1 = MyState()
         XCTAssertNil(state1.dictionary)
-        state1.dictionary = ["foo": .init(name: "Daniel"), ]
+        state1.dictionary = ["foo": .init(name: "Daniel")]
         let state2 = MyState()
         XCTAssertEqual(state2.dictionary?["foo"]?.name, "Daniel")
         state2.dictionary = nil

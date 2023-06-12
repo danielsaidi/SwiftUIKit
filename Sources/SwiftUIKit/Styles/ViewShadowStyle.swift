@@ -97,8 +97,7 @@ public extension View {
                 radius: style.radius,
                 x: style.x,
                 y: style.y)
-        }
-        else {
+        } else {
             shadow(
                 radius: style.radius,
                 x: style.x,
