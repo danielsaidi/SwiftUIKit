@@ -1,6 +1,6 @@
 # ``SwiftUIKit``
 
-SwiftUIKit adds extra functionality to the SwiftUI framework, like extensions to native types, new views, pickers, utilites etc.
+SwiftUIKit adds extra functionality to `SwiftUI`.
 
 
 
@@ -8,7 +8,9 @@ SwiftUIKit adds extra functionality to the SwiftUI framework, like extensions to
 
 ![SwiftUIKit logo](Logo.png)
 
-SwiftUIKit is divided into the sections found in the Topics section below.
+The online documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
+
+The library is divided into the namespaces found in the Topics section below. For more information, source code, an if you want to report issues, sponsor the project etc., visit the [project repository](https://github.com/danielsaidi/SwiftUIKit).
 
 
 
@@ -20,27 +22,7 @@ SwiftUIKit can be installed with the Swift Package Manager:
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-or with CocoaPods:
-
-```
-pod DSSwiftUIKit
-```
-
 If you prefer to not have external dependencies, you can also just copy the source code into your app.
-
-
-
-## Supported Platforms
-
-SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.
-
-
-
-## About this documentation
-
-The online documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
-
-Note that type extensions are not included in this documentation.
 
 
 
@@ -137,11 +119,11 @@ SwiftUIKit is available under the MIT license.
 - ``FullScreenCoverContext``
 - ``FullScreenCoverContextFocusedValueKey``
 - ``FullScreenCoverProvider``
+- ``PresentationDetentsViewModifier``
 - ``SheetContext``
 - ``SheetContextFocusedValueKey``
 - ``SheetProvider``
 - ``UndimmedPresentationDetent``
-- ``UndimmedPresentationDetentsViewModifier``
 
 ### Previews
 
