@@ -24,6 +24,7 @@ import SwiftUI
  the current platform. Avoid this by filtering out supported
  values with the `isSupported` property.
  */
+@available(*, deprecated, message: "Use picker color instead")
 public enum SystemColor: String, CaseIterable, Codable, Equatable, Identifiable {
     
     case primary
@@ -65,6 +66,7 @@ public enum SystemColor: String, CaseIterable, Codable, Equatable, Identifiable 
     #endif
 }
 
+@available(*, deprecated, message: "Use picker color instead")
 public extension SystemColor {
     
     var id: String { rawValue }
@@ -163,6 +165,7 @@ public extension SystemColor {
     }
 }
 
+@available(*, deprecated, message: "Use picker color instead")
 private extension SystemColor {
     
     func error(for color: SystemColor) -> String {

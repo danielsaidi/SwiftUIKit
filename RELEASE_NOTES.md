@@ -1,6 +1,17 @@
 # Release notes
 
 
+## 3.4
+
+### ✨ New features
+
+* `ColorPickerBar` is a new picker component.
+
+### 🗑 Deprecations
+
+* `SystemColor` is deprecated.
+
+
 ## 3.3
 
 This release adds new support for `Codable` and `AppStorage`.
