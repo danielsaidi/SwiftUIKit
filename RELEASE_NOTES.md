@@ -6,10 +6,12 @@
 ### ✨ New features
 
 * `ColorPickerBar` is a new picker component.
+* `View` has new `prefers` extensions.
 
 ### 🗑 Deprecations
 
 * `SystemColor` is deprecated.
+
 
 
 ## 3.3
