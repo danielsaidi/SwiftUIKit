@@ -5,7 +5,7 @@
 
 ### ✨ New features
 
-* `ColorPickerBar` is a new picker component.
+* `ColorPickerBar` is a new color picker component.
 * `View` has new `prefers` extensions.
 
 ### 🗑 Deprecations
