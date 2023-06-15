@@ -3,6 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-06-13.
+//  Copyright © 2023 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
@@ -14,26 +15,26 @@ import SwiftUI
  This color picker bar can be used to select colors, using a
  SwiftUI `ColorPicker` and a list of colors.
 
- Note that you have to pass in a list of colors. You can use
- `.colorPickerBarColors` for a standard set of colors. 
+ The picker supports both optional and non-optional bindings.
 
- This picker supports binding to an optional color, and will
- pass in a non-optional binding to the native color picker.
+ The picker uses `.colorPickerBarColors` as the default list
+ of colors to list, but you can pass in any custom list, for
+ instance by adding `.clear` to the standard list.
  */
 @available(iOS 15.0, macOS 12.0, *)
 public struct ColorPickerBar: View {
 
     /**
-     Create a color picker bar.
+     Create a color picker bar with an optional binding.
 
      - Parameters:
        - value: The value to bind to.
-       - colors: The colors to show in the trailing list, by default `.colorPickerBarColors`.
+       - colors: The colors to list in the bar, by default `.colorPickerBarColors`.
        - config: The configuration to use, by default `.standard`.
        - style: The style to use, by default `.standard`.
      */
     public init(
-        value: Binding<Color>,
+        value: Binding<Color?>,
         colors: [Color] = .colorPickerBarColors,
         config: Configuration = .standard,
         style: Style = .standard
@@ -44,7 +45,32 @@ public struct ColorPickerBar: View {
         self.style = style
     }
 
-    private let value: Binding<Color>
+    /**
+     Create a color picker bar with a non-optional binding.
+
+     - Parameters:
+       - value: The value to bind to.
+       - colors: The colors to list in the bar, by default `.colorPickerBarColors`.
+       - config: The configuration to use, by default `.standard`.
+       - style: The style to use, by default `.standard`.
+     */
+    public init(
+        value: Binding<Color>,
+        colors: [Color] = .colorPickerBarColors,
+        config: Configuration = .standard,
+        style: Style = .standard
+    ) {
+        self.value = .init(get: {
+            value.wrappedValue
+        }, set: {
+            value.wrappedValue = $0 ?? .clear
+        })
+        self.colors = colors
+        self.config = config
+        self.style = style
+    }
+
+    private let value: Binding<Color?>
     private let colors: [Color]
     private let config: Configuration
     private let style: Style
@@ -56,11 +82,16 @@ public struct ColorPickerBar: View {
         HStack(spacing: 0) {
             picker
             if !colors.isEmpty {
-                scrollViewDivider
+                divider
                 scrollView
+            }
+            if shouldShowResetButton {
+                divider
+                resetButton
             }
         }
         .labelsHidden()
+        .frame(maxHeight: style.selectedColorSize)
     }
 }
 
@@ -74,24 +105,29 @@ public extension ColorPickerBar {
          Create a color picker bar configuration.
 
          - Parameters:
-           - pickerSupportsOpacity: Whether or not the color picker supports opacity, by default `true`.
+           - addOpacityToPicker: Whether or not to add color picker opacity, by default `true`.
          */
         public init(
-            pickerSupportsOpacity: Bool = true
+            addOpacityToPicker: Bool = true,
+            addResetButton: Bool = false,
+            resetButtonValue: Color? = nil
         ) {
-            self.pickerSupportsOpacity = pickerSupportsOpacity
+            self.addOpacityToPicker = addOpacityToPicker
+            self.addResetButton = addResetButton
+            self.resetButtonValue = resetButtonValue
         }
 
-        /// Whether or not the color picker supports opacity.
-        public var pickerSupportsOpacity: Bool
+        /// Whether or not to add color picker opacity.
+        public var addOpacityToPicker: Bool
+
+        /// Whether or not to add a reset button to the bar.
+        public var addResetButton: Bool
+
+        /// The color to apply when tapping the reset button.
+        public var resetButtonValue: Color?
 
         /// Get the standard configuration.
         public static var standard: Configuration = .init()
-
-        /// Get a configuration that disables picker opacity.
-        public static let withoutOpacity: Configuration = .init(
-            pickerSupportsOpacity: false
-        )
     }
 
     /// This type can be used to style a ``ColorPickerBar``.
@@ -101,28 +137,40 @@ public extension ColorPickerBar {
          Create a color picker bar configuration.
 
          - Parameters:
+           - animation: The animation to apply when picking color, by default `.default`.
            - spacing: The bar item spacing, by default `10`.
            - colorSize: The size of non-selected colors, by default `20`.
            - selectedColorSize: The size of the selected color, by default `30`.
+           - resetButtonImage: The image to use as reset button image, by default `circle.slash`.
          */
         public init(
+            animation: Animation = .default,
             spacing: Double = 10.0,
             colorSize: Double = 20.0,
-            selectedColorSize: Double = 30.0
+            selectedColorSize: Double = 30.0,
+            resetButtonImage: Image = Image(systemName: "xmark.circle")
         ) {
+            self.animation = animation
             self.spacing = spacing
             self.colorSize = colorSize
             self.selectedColorSize = selectedColorSize
+            self.resetButtonImage = resetButtonImage
         }
+
+        /// The animation to apply when picking colors.
+        public var animation: Animation
 
         /// The bar item spacing.
         public var spacing: Double
 
         /// The size of non-selected colors.
-        var colorSize: Double
+        public var colorSize: Double
 
         /// The size of the selected color.
-        var selectedColorSize: Double
+        public var selectedColorSize: Double
+
+        /// The image to use as reset button image
+        public var resetButtonImage: Image
 
         /// Get the standard style.
         public static var standard: Style = .init()
@@ -132,45 +180,60 @@ public extension ColorPickerBar {
 @available(iOS 15.0, macOS 12.0, *)
 private extension ColorPickerBar {
 
+    func colorButton(for color: Color) -> some View {
+        Button {
+            value.wrappedValue = color
+        } label: {
+            let size = scrollViewCircleSize(for: color)
+            colorCircle(for: color)
+                .frame(width: size, height: size)
+                .padding(.vertical, isSelected(color) ? 0 : 5)
+                .animation(style.animation, value: value.wrappedValue)
+        }.buttonStyle(.plain)
+    }
+
+    @ViewBuilder
+    func colorCircle(for color: Color) -> some View {
+        Circle()
+            .stroke(scrollViewCircleStroke(for: color), lineWidth: 1)
+            .background(scrollViewCircleBackground(for: color))
+    }
+
+    var divider: some View {
+        Divider()
+    }
+
     var picker: some View {
         ColorPicker(
             "",
-            selection: value,
-            supportsOpacity: config.pickerSupportsOpacity
+            selection: value ?? .clear,
+            supportsOpacity: config.addOpacityToPicker
         )
         .fixedSize()
-        .padding(.horizontal, style.spacing)
+        .padding(.trailing, style.spacing)
+    }
+
+    var resetButton: some View {
+        Button {
+            value.wrappedValue = config.resetButtonValue
+        } label: {
+            style.resetButtonImage
+                .resizable()
+                .frame(width: style.colorSize, height: style.colorSize)
+        }
+        .padding(.leading, style.spacing)
     }
 
     var scrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: style.spacing) {
                 ForEach(Array(colors.enumerated()), id: \.offset) {
-                    scrollViewButton(for: $0.element)
+                    colorButton(for: $0.element)
                 }
             }
             .padding(.horizontal, style.spacing)
             .padding(.vertical, 2)
         }.frame(maxWidth: .infinity)
-    }
-
-    func scrollViewButton(for color: Color) -> some View {
-        Button {
-            value.wrappedValue = color
-        } label: {
-            let size = scrollViewCircleSize(for: color)
-            scrollViewCircle(for: color)
-                .frame(width: size, height: size)
-                .padding(.vertical, isSelected(color) ? 0 : 5)
-                .animation(.default, value: value.wrappedValue)
-        }.buttonStyle(.plain)
-    }
-
-    @ViewBuilder
-    func scrollViewCircle(for color: Color) -> some View {
-        Circle()
-            .stroke(scrollViewCircleStroke(for: color), lineWidth: 1)
-            .background(scrollViewCircleBackground(for: color))
     }
 
     @ViewBuilder
@@ -193,16 +256,18 @@ private extension ColorPickerBar {
         if color == .black && colorScheme == .dark { return .white }
         return .clear
     }
-
-    var scrollViewDivider: some View {
-        Divider()
-            .padding(0)
-            .frame(maxHeight: style.selectedColorSize)
-    }
 }
 
 @available(iOS 15.0, macOS 12.0, *)
 private extension ColorPickerBar {
+
+    var hasChanges: Bool {
+        value.wrappedValue != config.resetButtonValue
+    }
+
+    var shouldShowResetButton: Bool {
+        config.addResetButton && hasChanges
+    }
 
     func isSelected(_ color: Color) -> Bool {
         value.wrappedValue == color
@@ -239,16 +304,22 @@ struct ColorPickerBar_Previews: PreviewProvider {
     struct Preview: View {
 
         @State
-        private var color1 = Color.red
+        private var color1: Color = .red
 
         @State
-        private var color2 = Color.yellow
+        private var color2: Color = .yellow
 
         @State
-        private var color3 = Color.purple
+        private var color3: Color = .purple
+
+        @State
+        private var optionalColor: Color? = nil
+
+        @State
+        var optionalDouble: Double? = nil
 
         var pickers: some View {
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading) {
                 ColorPickerBar(
                     value: $color1,
                     colors: [.red, .green, .blue]
@@ -260,16 +331,25 @@ struct ColorPickerBar_Previews: PreviewProvider {
                     value: $color3,
                     colors: .colorPickerBarColors(withClearColor: true)
                 )
+                ColorPickerBar(
+                    value: $optionalColor,
+                    colors: .colorPickerBarColors(withClearColor: true),
+                    config: .init(
+                        addOpacityToPicker: false,
+                        addResetButton: true,
+                        resetButtonValue: nil
+                    )
+                )
             }
-            .padding(.vertical)
+            .padding()
         }
 
         var body: some View {
             VStack {
                 pickers
                 pickers
-                .background(Color.black)
-                .colorScheme(.dark)
+                    .background(Color.black)
+                    .colorScheme(.dark)
             }
         }
     }
