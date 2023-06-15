@@ -6,10 +6,12 @@
 ### ✨ New features
 
 * `ColorPickerBar` is a new color picker component.
+* `OptionalBinding` is a new func that makes it possible to pass in optional values as a non-optional binding.
 * `View` has new `prefers` extensions.
 
 ### 🗑 Deprecations
 
+* `ImageRenderer` was not available to 5.7 compilers and has been removed altogether.
 * `SystemColor` is deprecated.
 
 
