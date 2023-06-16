@@ -44,13 +44,18 @@ public class ImageRenderer<Content: View> {
     public var scale: CGFloat
 
     @MainActor
-    public var uiImage: UIImage {
-        let window = UIWindow(frame: CGRect(origin: .zero, size: size))
-        let hosting = UIHostingController(rootView: content)
-        hosting.view.frame = window.frame
-        window.addSubview(hosting.view)
-        window.makeKeyAndVisible()
-        return hosting.view.renderedImage(withScale: scale)
+    public var uiImage: UIImage? {
+        if #available(iOS 16, *) {
+            let renderer = SwiftUI.ImageRenderer(content: content)
+            return renderer.uiImage
+        } else {
+            let window = UIWindow(frame: CGRect(origin: .zero, size: size))
+            let hosting = UIHostingController(rootView: content)
+            hosting.view.frame = window.frame
+            window.addSubview(hosting.view)
+            window.makeKeyAndVisible()
+            return hosting.view.renderedImage(withScale: scale)
+        }
     }
 }
 
