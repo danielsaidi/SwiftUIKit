@@ -43,12 +43,17 @@ public class ImageRenderer<Content: View> {
             let renderer = SwiftUI.ImageRenderer(content: content)
             return renderer.uiImage
         } else {
-            let hostingController = UIHostingController(rootView: content)
-            hostingController.view.frame = UIScreen.main.bounds
-            let unitSize = CGSize(width: hostingController.view.frame.width * scale, height: hostingController.view.frame.height * scale)
-            let window = UIWindow(frame: CGRect(origin: .zero, size: unitSize))
+            let dummyController = UIHostingController(rootView: content.edgesIgnoringSafeArea(.all))
+            dummyController.view.setNeedsLayout()
+            dummyController.view.layoutIfNeeded()
+            let contentSize = dummyController.sizeThatFits(in: UIView.layoutFittingExpandedSize)
+
+            let hostingController = UIHostingController(rootView: content.edgesIgnoringSafeArea(.all))
+            hostingController.view.bounds.size = contentSize
+            let window = UIWindow(frame: CGRect(origin: .zero, size: contentSize))
             window.rootViewController = hostingController
             window.makeKeyAndVisible()
+
             return hostingController.view.renderedImage(withScale: scale)
         }
     }
