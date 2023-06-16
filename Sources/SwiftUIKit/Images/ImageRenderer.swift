@@ -21,21 +21,25 @@ public class ImageRenderer<Content: View> {
     @MainActor
     public init(content: Content) {
         self.content = content
+        self.size = nil
         self.scale = UIScreen.main.scale
     }
 
     @MainActor
     public init(
         content: Content,
+        size: CGSize? = nil,
         scale: CGFloat? = nil
     ) {
         self.content = content
+        self.size = size
         self.scale = scale ?? UIScreen.main.scale
     }
 
     private let content: Content
     @MainActor
     public var scale: CGFloat
+    public var size: CGSize?
 
     @MainActor
     public var uiImage: UIImage? {
@@ -50,7 +54,7 @@ public class ImageRenderer<Content: View> {
 
             let hostingController = UIHostingController(rootView: content.edgesIgnoringSafeArea(.all))
             hostingController.view.bounds.size = contentSize
-            let window = UIWindow(frame: CGRect(origin: .zero, size: contentSize))
+            let window = UIWindow(frame: CGRect(origin: .zero, size: size ?? contentSize))
             window.rootViewController = hostingController
             window.makeKeyAndVisible()
 
