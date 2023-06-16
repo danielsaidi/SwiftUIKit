@@ -45,7 +45,8 @@ public class ImageRenderer<Content: View> {
         } else {
             let hostingController = UIHostingController(rootView: content)
             hostingController.view.frame = UIScreen.main.bounds
-            let window = UIWindow(frame: hostingController.view.frame)
+            let unitSize = CGSize(width: hostingController.view.frame.width / scale, height: hostingController.view.frame.height / scale)
+            let window = UIWindow(frame: CGRect(origin: .zero, size: unitSize))
             window.rootViewController = hostingController
             window.makeKeyAndVisible()
             return hostingController.view.renderedImage(withScale: scale)
