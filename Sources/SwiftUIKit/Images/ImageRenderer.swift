@@ -1,4 +1,4 @@
-/
+//
 //  ImageRenderer.swift
 //  SwiftUIKit
 //
@@ -20,13 +20,13 @@ import UIKit
  You can also define a resolution scale directly in `init`.
  */
 public class ImageRenderer<Content: View> {
-    /**
-     Create an image renderer with a certain view content.
-     - Parameters:
-       - content: The view to render.
-       - size: The size of the rendered image.
-       - scale: The scale of the rendered image.
-     */
+    @MainActor
+    public init(content: Content) {
+        self.content = content
+        self.size = UIScreen.main.bounds.size
+        self.scale = UIScreen.main.scale
+    }
+
     @MainActor
     public init(
         content: Content,
@@ -40,13 +40,9 @@ public class ImageRenderer<Content: View> {
 
     private let content: Content
     private let size: CGSize
-
     @MainActor
     public var scale: CGFloat
 
-    /**
-     Render the provided view as a UI image.
-     */
     @MainActor
     public var uiImage: UIImage {
         let window = UIWindow(frame: CGRect(origin: .zero, size: size))
@@ -59,7 +55,7 @@ public class ImageRenderer<Content: View> {
 }
 
 private extension UIView {
-    func renderedImage(withScale scale: CGFloat): UIImage {
+    func renderedImage(withScale scale: CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale)
         let context = UIGraphicsGetCurrentContext()!
         layer.render(in: context)
