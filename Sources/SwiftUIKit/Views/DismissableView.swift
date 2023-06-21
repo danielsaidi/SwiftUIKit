@@ -9,20 +9,16 @@
 import SwiftUI
 
 /**
- This protocol simplifies dismissing `SwiftUI` views, e.g. a
- view that is presented as a modal sheet.
- 
- Implement this protocol and add a presentation mode binding
- and you can dismiss a view with the `dismiss()` function.
- 
- You can add a `presentationMode` property to a view as such:
- 
+ This protocol simplifies dismissing the view, e.g. a screen.
+
+ Implement the protocol and add a `presentationMode` binding:
+
  ```swift
- @Environment(\.presentationMode) var presentationMode
+ @Environment(\.presentationMode)
+ var presentationMode
  ```
 
- In later versions of SwiftUI, use `@Environment(\.dismiss)`
- instead of this protocol and the presentation mode.
+ You can then dismiss the view with the `dismiss()` function.
  */
 public protocol DismissableView: View {
     

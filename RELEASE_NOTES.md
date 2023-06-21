@@ -6,6 +6,7 @@
 ### ✨ New features
 
 * `ColorPickerBar` is a new color picker component.
+* `EditableView` is a new view protocol.
 * `OptionalBinding` is a new func that makes it possible to pass in optional values as a non-optional binding.
 * `View` has new `prefers` extensions.
 

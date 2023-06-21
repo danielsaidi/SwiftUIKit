@@ -156,6 +156,7 @@ SwiftUIKit is available under the MIT license.
 - ``DismissableView``
 - ``DotAnimation``
 - ``DotAnimationText``
+- ``EditableView``
 - ``FetchedDataView``
 - ``NavigationButton``
 - ``NavigationLinkArrow``
