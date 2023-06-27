@@ -9,10 +9,7 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This view wraps a `UITextView` and provides multi-line text
- editing to SwiftUI apps.
- */
+@available(*, deprecated, message: "Multiline is supported by TextField in iOS 16 and later")
 public struct MultilineTextField: UIViewRepresentable {
     
     public init(

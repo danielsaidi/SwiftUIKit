@@ -15,6 +15,7 @@
 * `ImageRenderer` was not available to 5.7 compilers and has been removed altogether.
 * `ImageRenderer` can still be found and copied from any earlier versions of SwiftUIKit.
 * `SystemColor` is deprecated.
+* `MultilineTextField` has been deprecated.
 
 
 
