@@ -77,7 +77,7 @@ SwiftUIKit is available under the MIT license.
 
 - ``ImageRepresentable``
 
-### List
+### Lists
 
 - ``ListBadgeIcon``
 - ``ListButtonStyle``
@@ -85,6 +85,7 @@ SwiftUIKit is available under the MIT license.
 - ``ListCardButtonStyle``
 - ``ListCardStyle``
 - ``ListDragHandle``
+- ``ListHeaderIcon``
 - ``ListSelectItem``
 - ``ListShelfSection``
 - ``ListSubtitle``
@@ -150,6 +151,13 @@ SwiftUIKit is available under the MIT license.
 - ``FontStyle``
 - ``ViewShadowStyle``
 
+### Text
+
+- ``LinkText``
+- ``MultilineText``
+- ``TextEditorStyle``
+- ``TextFieldClearButton``
+
 ### Views
 
 - ``CustomRoundedRectangle``
@@ -201,12 +209,6 @@ SwiftUIKit is available under the MIT license.
 
 - ``CircularProgressBar``
 - ``LinearProgressBar``
-
-### Views/Text
-
-- ``LinkText``
-- ``MultilineText``
-- ``TextFieldClearButton``
 
 ### Views/Toggle
 

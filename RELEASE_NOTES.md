@@ -7,6 +7,7 @@
 
 * `ColorPickerBar` is a new color picker component.
 * `EditableView` is a new view protocol.
+* `ListHeaderIcon` is a new view.
 * `OptionalBinding` is a new func that makes it possible to pass in optional values as a non-optional binding.
 * `View` has new `prefers` extensions.
 
@@ -14,8 +15,8 @@
 
 * `ImageRenderer` was not available to 5.7 compilers and has been removed altogether.
 * `ImageRenderer` can still be found and copied from any earlier versions of SwiftUIKit.
-* `SystemColor` is deprecated.
 * `MultilineTextField` has been deprecated.
+* `SystemColor` has been deprecated.
 
 
 
