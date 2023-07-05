@@ -17,6 +17,8 @@ import SwiftUI
  `iconColor`. If that image is an SF Symbol, you can apply a
  `.symbolRenderingMode` and `.foregroundStyle` view modifier
  to apply any custom style to the icon, e.g. a palette style.
+ You can make an icon multicolor with the `.multiColor` view
+ modifier.
  
  Note that icon modification, like applying foreground color
  and symbol variant, works best with SF Symbols.
@@ -29,16 +31,16 @@ public struct ListBadgeIcon: View {
      badge color and a white, filled icon.
      
      - Parameters:
-       - image: The image to use.
+       - icon: The image to use.
        - color: The badge color to apply.
        - height: The icon height, by default `30`.
      */
     public init(
-        image: Image,
+        _ icon: Image,
         badgeColor: Color,
         height: CGFloat? = 30
     ) {
-        self.image = image
+        self.icon = icon
         self.badgeColor = badgeColor
         self.badgeStrokeColor = .clear
         self.iconColor = .white
@@ -51,28 +53,28 @@ public struct ListBadgeIcon: View {
      badge color and a custom colored, filled icon.
      
      - Parameters:
-       - image: The image to use.
+       - icon: The image to use.
        - badgeColor: The badge color to apply.
        - iconColor: The icon color to apply, if any.
        - iconGradient: Whether or not to apply a gradient to the icon, by default `true`.
        - height: The icon height, by default `30`.
      */
     public init(
-        image: Image,
+        _ icon: Image,
         badgeColor: Color,
         iconColor: Color?,
         iconGradient: Bool = true,
         height: CGFloat? = 30
     ) {
-        self.image = image
+        self.icon = icon
         self.badgeColor = badgeColor
-        self.badgeStrokeColor = badgeColor == .white ? .hex(0xeeeeee) : .clear
+        self.badgeStrokeColor = badgeColor == .white ? .hex(0xe7e7e7) : .clear
         self.iconColor = iconColor
         self.iconGradient = iconGradient
         self.height = height
     }
 
-    private let image: Image
+    private let icon: Image
     private let badgeColor: Color
     private let badgeStrokeColor: Color
     private let iconColor: Color?
@@ -85,7 +87,7 @@ public struct ListBadgeIcon: View {
                 .asGradientBackground()
                 .withStrokeColor(badgeStrokeColor)
                 .aspectRatio(1, contentMode: .fit)
-            image.symbolVariant(.fill)
+            icon.symbolVariant(.fill)
                 .padding(5)
                 .aspectRatio(1, contentMode: .fit)
                 .foregroundColor(iconColor, gradientIf: iconGradient)
@@ -98,46 +100,61 @@ public struct ListBadgeIcon: View {
 @available(iOS 16.0, *)
 public extension ListBadgeIcon {
     
-    /// A gray settings icon.
+    /// A blue language settings icon.
+    static var languageSettings: ListBadgeIcon {
+        .white(
+            .symbol("globe"),
+            iconColor: .cyan
+        )
+    }
+    
+    /// A multi-color palette icon.
     static var multicolorPalette: some View {
         ListBadgeIcon.white(
-            withIcon: .symbol("paintpalette"),
+            .symbol("paintpalette"),
             iconColor: nil
         ).multiColor()
+    }
+    
+    /// A prominent, orange badge with an alert icon
+    static var prominentAlert: ListBadgeIcon {
+        ListBadgeIcon(
+            .symbol("exclamationmark.triangle"),
+            badgeColor: .orange
+        )
+    }
+    
+    /// A prominent, green badge with a checkmark icon
+    static var prominentCheckmark: some View {
+        ListBadgeIcon(
+            .symbol("checkmark"),
+            badgeColor: .green
+        ).fontWeight(.semibold)
     }
     
     /// A white, red heard badge icon.
     static var redHeart: ListBadgeIcon {
         .white(
-            withIcon: .symbol("heart"),
+            .symbol("heart"),
             iconColor: .red
-        )
-    }
-    
-    /// A gray settings icon.
-    static var settings: ListBadgeIcon {
-        ListBadgeIcon(
-            image: .symbol("gearshape"),
-            badgeColor: .gray,
-            iconColor: .white
         )
     }
     
     /// A white, yellow star badge icon.
     static var yellowStar: ListBadgeIcon {
         .white(
-            withIcon: .symbol("star"),
+            .symbol("star"),
             iconColor: .yellow
         )
     }
     
     /// A white badge icon with a colored icon.
     static func white(
-        withIcon icon: Image,
+        _ icon: Image,
         iconColor: Color?
     ) -> ListBadgeIcon {
         ListBadgeIcon(
-            image: icon,
+            icon,
             badgeColor: .white,
             iconColor: iconColor
         )
@@ -190,18 +207,22 @@ struct ListBadgeIcon_Previews: PreviewProvider {
     static var previews: some View {
         List {
             ListBadgeIcon(
-                image: .symbol("exclamationmark.triangle"),
+                .symbol("exclamationmark.triangle"),
                 badgeColor: .orange
             )
             ListBadgeIcon(
-                image: .symbol("exclamationmark.triangle"),
-                badgeColor: .orange,
-                iconColor: .red
+                .symbol("exclamationmark.triangle"),
+                badgeColor: .white,
+                iconColor: .orange
             )
-            ListBadgeIcon.settings
-            ListBadgeIcon.multicolorPalette
-            ListBadgeIcon.redHeart
-            ListBadgeIcon.yellowStar
+            Section {
+                ListBadgeIcon.languageSettings
+                ListBadgeIcon.multicolorPalette
+                ListBadgeIcon.prominentAlert
+                ListBadgeIcon.prominentCheckmark
+                ListBadgeIcon.redHeart
+                ListBadgeIcon.yellowStar
+            }
         }
     }
 }

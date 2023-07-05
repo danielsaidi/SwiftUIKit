@@ -9,7 +9,7 @@ public extension Image {
         height: CGFloat? = 30
     ) -> ListBadgeIcon {
         ListBadgeIcon(
-            image: self,
+            self,
             badgeColor: color,
             height: height
         )
@@ -22,7 +22,7 @@ public extension Image {
         height: CGFloat? = 30
     ) -> ListBadgeIcon {
         ListBadgeIcon(
-            image: self,
+            self,
             badgeColor: badgeColor,
             iconColor: iconColor,
             height: height
