@@ -6,6 +6,7 @@
 //  Copyright © 2023 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS)
 import SwiftUI
 
 /**
@@ -38,3 +39,4 @@ public extension EditableView {
         editMode?.wrappedValue = isEditing ? .active : .inactive
     }
 }
+#endif

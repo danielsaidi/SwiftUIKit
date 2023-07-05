@@ -12,8 +12,7 @@ import SwiftUI
  This view can be used as a floating card in lists and grids.
 
  The card can be styled with a corner radius and shadow, and
- can also be provided with a list of context menu items that
- will be presented when long pressing the card.
+ can also be provided with a list of context menu items.
  */
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 public struct ListCard<Content: View, ContextMenuView: View>: View {
