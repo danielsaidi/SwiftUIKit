@@ -45,6 +45,7 @@ public struct ListBadgeIcon: View {
         self.badgeStrokeColor = .clear
         self.iconColor = .white
         self.iconGradient = false
+        self.iconFill = true
         self.height = height
     }
     
@@ -55,22 +56,27 @@ public struct ListBadgeIcon: View {
      - Parameters:
        - icon: The image to use.
        - badgeColor: The badge color to apply.
+       - badgeStrokeColor: The badge stroke color to apply, if any.
        - iconColor: The icon color to apply, if any.
        - iconGradient: Whether or not to apply a gradient to the icon, by default `true`.
+       - iconFill: Whether or not to apply a fill to the icon, by default `true`.
        - height: The icon height, by default `30`.
      */
     public init(
         _ icon: Image,
         badgeColor: Color,
+        badgeStrokeColor: Color? = nil,
         iconColor: Color?,
         iconGradient: Bool = true,
+        iconFill: Bool = true,
         height: CGFloat? = 30
     ) {
         self.icon = icon
         self.badgeColor = badgeColor
-        self.badgeStrokeColor = badgeColor == .white ? .hex(0xe7e7e7) : .clear
+        self.badgeStrokeColor = badgeStrokeColor ?? badgeColor == .white ? .hex(0xe7e7e7) : .clear
         self.iconColor = iconColor
         self.iconGradient = iconGradient
+        self.iconFill = iconFill
         self.height = height
     }
 
@@ -79,6 +85,7 @@ public struct ListBadgeIcon: View {
     private let badgeStrokeColor: Color
     private let iconColor: Color?
     private let iconGradient: Bool
+    private let iconFill: Bool
     private let height: CGFloat?
 
     public var body: some View {
@@ -87,7 +94,7 @@ public struct ListBadgeIcon: View {
                 .asGradientBackground()
                 .withStrokeColor(badgeStrokeColor)
                 .aspectRatio(1, contentMode: .fit)
-            icon.symbolVariant(.fill)
+            icon.symbolVariant(iconFill ? .fill : .none)
                 .padding(5)
                 .aspectRatio(1, contentMode: .fit)
                 .foregroundColor(iconColor, gradientIf: iconGradient)
@@ -141,6 +148,15 @@ public extension ListBadgeIcon {
     }
     
     /// A white, yellow star badge icon.
+    static var share: ListBadgeIcon {
+        .white(
+            .symbol("square.and.arrow.up"),
+            iconColor: .black.opacity(0.8),
+            iconFill: false
+        )
+    }
+    
+    /// A white, yellow star badge icon.
     static var yellowStar: ListBadgeIcon {
         .white(
             .symbol("star"),
@@ -151,12 +167,14 @@ public extension ListBadgeIcon {
     /// A white badge icon with a colored icon.
     static func white(
         _ icon: Image,
-        iconColor: Color?
+        iconColor: Color?,
+        iconFill: Bool = true
     ) -> ListBadgeIcon {
         ListBadgeIcon(
             icon,
             badgeColor: .white,
-            iconColor: iconColor
+            iconColor: iconColor,
+            iconFill: iconFill
         )
     }
     
@@ -221,6 +239,7 @@ struct ListBadgeIcon_Previews: PreviewProvider {
                 ListBadgeIcon.prominentAlert
                 ListBadgeIcon.prominentCheckmark
                 ListBadgeIcon.redHeart
+                ListBadgeIcon.share
                 ListBadgeIcon.yellowStar
             }
         }
