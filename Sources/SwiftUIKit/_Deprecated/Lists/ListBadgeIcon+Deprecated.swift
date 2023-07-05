@@ -10,7 +10,7 @@ public extension Image {
     ) -> ListBadgeIcon {
         ListBadgeIcon(
             image: self,
-            color: color,
+            badgeColor: color,
             height: height
         )
     }
