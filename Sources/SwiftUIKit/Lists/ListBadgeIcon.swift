@@ -38,6 +38,7 @@ public struct ListBadgeIcon: View {
     ) {
         self.image = image
         self.badgeColor = color
+        self.badgeStrokeColor = .clear
         self.iconColor = .white
         self.iconGradient = false
         self.height = height
@@ -50,6 +51,7 @@ public struct ListBadgeIcon: View {
      - Parameters:
        - image: The image to use.
        - badgeColor: The badge color to apply.
+       - badgeStrokeColor: The badge stroke color to apply, by default `.clear`.
        - iconColor: The icon color to apply.
        - iconGradient: Whether or not to apply a gradient to the icon color. by default `false`.
        - height: The icon height, by default `30`.
@@ -57,12 +59,14 @@ public struct ListBadgeIcon: View {
     public init(
         image: Image,
         badgeColor: Color,
+        badgeStrokeColor: Color = .clear,
         iconColor: Color,
         iconGradient: Bool = false,
         height: CGFloat? = 30
     ) {
         self.image = image
         self.badgeColor = badgeColor
+        self.badgeStrokeColor = badgeStrokeColor
         self.iconColor = iconColor
         self.iconGradient = iconGradient
         self.height = height
@@ -70,6 +74,7 @@ public struct ListBadgeIcon: View {
 
     private let image: Image
     private let badgeColor: Color
+    private let badgeStrokeColor: Color
     private let iconColor: Color
     private let iconGradient: Bool
     private let height: CGFloat?
@@ -78,8 +83,8 @@ public struct ListBadgeIcon: View {
         ZStack {
             badgeColor
                 .asGradientBackground()
+                .withStrokeColor(badgeStrokeColor)
                 .aspectRatio(1, contentMode: .fit)
-                .cornerRadius(7)
             image.symbolVariant(.fill)
                 .padding(5)
                 .aspectRatio(1, contentMode: .fit)
@@ -93,6 +98,7 @@ public struct ListBadgeIcon: View {
 @available(iOS 16.0, *)
 public extension ListBadgeIcon {
     
+    /// A gray settings icon.
     static var settings: ListBadgeIcon {
         ListBadgeIcon(
             image: .symbol("gearshape"),
@@ -102,20 +108,32 @@ public extension ListBadgeIcon {
         )
     }
     
-    static var heart: ListBadgeIcon {
-        ListBadgeIcon(
-            image: .symbol("heart"),
-            badgeColor: .hex(0xfafafa),
-            iconColor: .red,
-            iconGradient: true
+    /// A white, red heard badge icon.
+    static var redHeart: ListBadgeIcon {
+        .white(
+            withIcon: .symbol("heart"),
+            iconColor: .red
         )
     }
     
-    static var star: ListBadgeIcon {
+    /// A white, yellow star badge icon.
+    static var yellowStar: ListBadgeIcon {
+        .white(
+            withIcon: .symbol("star"),
+            iconColor: .yellow
+        )
+    }
+    
+    /// A white badge icon with a colored icon.
+    static func white(
+        withIcon icon: Image,
+        iconColor: Color
+    ) -> ListBadgeIcon {
         ListBadgeIcon(
-            image: .symbol("star"),
-            badgeColor: .hex(0xfafafa),
-            iconColor: .yellow,
+            image: icon,
+            badgeColor: .white,
+            badgeStrokeColor: .hex(0xeeeeee),
+            iconColor: iconColor,
             iconGradient: true
         )
     }
@@ -124,15 +142,8 @@ public extension ListBadgeIcon {
 @available(iOS 16.0, *)
 private extension Color {
     
-    @ViewBuilder
-    func asGradientBackground(
-        if condition: Bool = true
-    ) -> some View {
-        if condition {
-            Color.clear.overlay(self.gradient)
-        } else {
-            self
-        }
+    func asGradientBackground() -> some View {
+        Color.clear.overlay(self.gradient)
     }
 }
 
@@ -150,6 +161,15 @@ private extension View {
             self.foregroundStyle(color)
         }
     }
+    
+    @ViewBuilder
+    func withStrokeColor(
+        _ color: Color
+    ) -> some View {
+        self.cornerRadius(7)
+            .padding(0.6)
+            .background(color.cornerRadius(7.6))
+    }
 }
 
 @available(iOS 16.0, *)
@@ -163,8 +183,8 @@ struct ListBadgeIcon_Previews: PreviewProvider {
             )
             
             ListBadgeIcon.settings
-            ListBadgeIcon.heart
-            ListBadgeIcon.star
+            ListBadgeIcon.redHeart
+            ListBadgeIcon.yellowStar
         }
     }
 }
