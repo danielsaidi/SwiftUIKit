@@ -5,6 +5,7 @@
 
 ### ✨ New features
 
+* `Color+Hex` has new static functions.
 * `ColorPickerBar` is a new color picker component.
 * `EditableView` is a new view protocol.
 * `ListHeaderIcon` is a new view.

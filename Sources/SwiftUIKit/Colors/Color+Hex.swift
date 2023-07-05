@@ -8,14 +8,10 @@
 
 import SwiftUI
 
-/**
- This extension extends `Color` with ways to be created with
- hex strings and int values.
- */
 public extension Color {
 
     /**
-     Initialize a color with a hex value, e.g. `0xabcdef`.
+     Create a color with an integer hex, e.g. `0xabcdef`.
 
      - Parameters:
        - hex: The hex value to apply.
@@ -27,7 +23,7 @@ public extension Color {
     }
 
     /**
-     Initialize a color with a hex string, e.g. `#abcdef`.
+     Create a color with a string hex, e.g. `#abcdef`,
 
      This initializer supports multiple string formats, like
      `abcdef`, `#abcdef`, `0xabcdef`, `#abcdef`.
@@ -39,6 +35,31 @@ public extension Color {
     init?(hex: String, alpha: CGFloat = 1) {
         guard let color = ColorRepresentable(hex: hex, alpha: alpha) else { return nil }
         self.init(color)
+    }
+    
+    /**
+     Create a color with an integer hex, e.g. `0xabcdef`.
+
+     - Parameters:
+       - hex: The hex value to apply.
+       - alpha: The alpha value to apply, from 0 to 1.
+     */
+    static func hex(_ hex: UInt64, alpha: CGFloat = 1) -> Color {
+        Color(hex: hex, alpha: alpha)
+    }
+
+    /**
+     Create a color with a string hex, e.g. `#abcdef`,
+
+     This initializer supports multiple string formats, like
+     `abcdef`, `#abcdef`, `0xabcdef`, `#abcdef`.
+
+     - Parameters:
+       - hex: The hex string to parse.
+       - alpha: The alpha value to apply, from 0 to 1.
+     */
+    static func hex(_ hex: String, alpha: CGFloat = 1) -> Color? {
+        Color(hex: hex, alpha: alpha)
     }
 }
 

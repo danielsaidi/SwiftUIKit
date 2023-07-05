@@ -97,6 +97,12 @@ struct ListBadgeIcon_Previews: PreviewProvider {
             Image.symbol("checkmark")
                 .listBadgeIcon(.green)
                 .font(.body.bold())
+            
+            Image.symbol("checkmark")
+                .listBadgeIcon(.hex(0xf0f0f0))
+            
+            Image.symbol("checkmark")
+                .listBadgeIcon(.hex("#f0f0f0") ?? .red)
         }
     }
 }
