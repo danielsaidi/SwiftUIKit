@@ -52,36 +52,28 @@ public struct ViewShadowStyle {
 public extension ViewShadowStyle {
     
     /**
-     This style does not apply anything and can be used when
-     a style is required, but none is desired.
-     
-     You can set this style to another style value to change
-     its default look.
+     This style can be used when a style is required, but no
+     shadow should be applied.
      */
-    static var none = ViewShadowStyle(color: .clear)
+    static let none = ViewShadowStyle(color: .clear)
     
     /**
-     This style represents a badge or "sticker" and is meant
-     to make the view look as if it's attached to the parent
-     view, but be in a separate layer.
-     
-     You can set this style to another style value to change
-     its default look.
+     This style represents a badge that's attached to a view,
+     but in a separate layer and with a little blur
      */
     static var badge = ViewShadowStyle(radius: 1, y: 1)
     
     /**
      This style represents a shadow that is cast from a view
-     that elevates above the parent view.
-     
-     You can set this style to another style value to change
-     its default look.
+     that is elevated above the parent view.
      */
-    static var elevated = ViewShadowStyle(
-        radius: 3,
-        x: 0,
-        y: 2
-    )
+    static var elevated = ViewShadowStyle(radius: 3, x: 0, y: 2)
+    
+    /**
+     This style represents a badge that's attached to a view,
+     but unlike a badge, it doesn't have any blur.
+     */
+    static var sticker = ViewShadowStyle(radius: 1, y: 1)
 }
 
 public extension View {

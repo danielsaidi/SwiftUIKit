@@ -12,6 +12,7 @@
 * `ListHeaderIcon` is a new view.
 * `OptionalBinding` is a new func that makes it possible to pass in optional values as a non-optional binding.
 * `View` has new `prefers` extensions.
+* `ViewShadowStyle` has a new `.sticker` style.
 
 ### 🗑 Deprecations
 
