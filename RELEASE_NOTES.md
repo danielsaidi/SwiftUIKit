@@ -10,6 +10,7 @@
 * `EditableView` is a new view protocol.
 * `ListBadgeIcon` now supports custom icon colors and icon gradients.
 * `ListHeaderIcon` is a new view.
+* `ListSectionTitle` has a new `withInsets()` init parameter. 
 * `ListShelfSection` has a new style.
 * `OptionalBinding` is a new func that makes it possible to pass in optional values as a non-optional binding.
 * `View` has new `prefers` extensions.
