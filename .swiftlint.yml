@@ -4,6 +4,7 @@ disabled_rules:
   - large_tuple
   - line_length
   - nesting
+  - operator_whitespace
   - todo
   - trailing_whitespace
   - type_name

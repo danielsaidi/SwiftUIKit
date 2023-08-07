@@ -313,10 +313,10 @@ struct ColorPickerBar_Previews: PreviewProvider {
         private var color3: Color = .purple
 
         @State
-        private var optionalColor: Color? = nil
+        private var optionalColor: Color?
 
         @State
-        var optionalDouble: Double? = nil
+        var optionalDouble: Double?
 
         var pickers: some View {
             VStack(alignment: .leading) {
