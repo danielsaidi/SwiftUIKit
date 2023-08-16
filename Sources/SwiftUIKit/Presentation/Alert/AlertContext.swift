@@ -37,8 +37,4 @@ public class AlertContext: PresentationContext<Alert> {
     public func present(_ alert: @autoclosure @escaping () -> Alert) {
         presentContent(alert())
     }
-    
-    public func present(_ provider: AlertProvider) {
-        present(provider.alert)
-    }
 }

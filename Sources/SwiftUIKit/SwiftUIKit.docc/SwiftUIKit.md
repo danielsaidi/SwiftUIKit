@@ -117,14 +117,11 @@ SwiftUIKit is available under the MIT license.
 - ``PresentationContext``
 - ``AlertContext``
 - ``AlertContextFocusedValueKey``
-- ``AlertProvider``
 - ``FullScreenCoverContext``
 - ``FullScreenCoverContextFocusedValueKey``
-- ``FullScreenCoverProvider``
 - ``PresentationDetentsViewModifier``
 - ``SheetContext``
 - ``SheetContextFocusedValueKey``
-- ``SheetProvider``
 - ``UndimmedPresentationDetent``
 
 ### Previews

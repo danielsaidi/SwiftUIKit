@@ -38,8 +38,4 @@ public class FullScreenCoverContext: PresentationContext<AnyView> {
     public func present<Cover: View>(_ cover: @autoclosure @escaping () -> Cover) {
         presentContent(cover().any())
     }
-    
-    public func present(_ provider: FullScreenCoverProvider) {
-        present(provider.cover)
-    }
 }

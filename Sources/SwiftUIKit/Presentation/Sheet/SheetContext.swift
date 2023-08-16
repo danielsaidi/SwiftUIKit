@@ -38,8 +38,4 @@ public class SheetContext: PresentationContext<AnyView> {
     public func present<Sheet: View>(_ sheet: @autoclosure @escaping () -> Sheet) {
         presentContent(sheet().any())
     }
-    
-    public func present(_ provider: SheetProvider) {
-        present(provider.sheet)
-    }
 }
