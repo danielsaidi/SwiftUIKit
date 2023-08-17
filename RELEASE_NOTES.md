@@ -6,6 +6,7 @@
 ### ✨ New features
 
 * `NavigationContext` is a new observable class.
+* `Image+Resized` is a new `Image` extension.
 
 ### 🗑 Deprecations
 
