@@ -92,6 +92,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Navigation
 
+- ``NavigationContext``
 - ``UrlOpener``
 
 ### Pickers
