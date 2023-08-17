@@ -42,7 +42,8 @@ struct NavigationButtonItem_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State var isToggled = false
+        @State
+        var isToggled = false
         
         var body: some View {
             NavigationView {

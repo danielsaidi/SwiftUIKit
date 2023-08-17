@@ -92,7 +92,9 @@ SwiftUIKit is available under the MIT license.
 
 ### Navigation
 
+- ``NavigationButton``
 - ``NavigationContext``
+- ``NavigationLinkArrow``
 - ``UrlOpener``
 
 ### Pickers
@@ -164,8 +166,6 @@ SwiftUIKit is available under the MIT license.
 - ``DotAnimationText``
 - ``EditableView``
 - ``FetchedDataView``
-- ``NavigationButton``
-- ``NavigationLinkArrow``
 - ``PageIndicator``
 - ``PageIndicatorDisplayMode``
 - ``PageIndicatorStyle``

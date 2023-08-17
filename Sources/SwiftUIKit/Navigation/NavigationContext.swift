@@ -12,12 +12,14 @@ import Foundation
  This context can be used to manage the state of a nav stack.
  */
 public class NavigationContext<Screen: Hashable>: ObservableObject {
+    
+    public init() {}
 
     @Published
-    var path = [Screen]()
+    public var path = [Screen]()
 }
 
-extension NavigationContext {
+public extension NavigationContext {
 
     /// Pop a certain number of elements off the stack.
     func goBack(_ steps: Int) {
