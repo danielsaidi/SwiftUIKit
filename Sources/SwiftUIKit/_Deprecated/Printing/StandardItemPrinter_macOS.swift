@@ -1,39 +1,18 @@
-//
-//  StandardItemPrinter.swift
-//  SwiftUIKit
-//
-//  Created by Daniel Saidi on 2022-04-07.
-//  Copyright © 2022 Daniel Saidi. All rights reserved.
-//
-
 #if os(macOS)
 import AppKit
 import PDFKit
 
-/**
- This class implements the ``ItemPrinter`` protocol by using
- a `AppKit` to print items.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/printingkit.")
 public class StandardItemPrinter: ItemPrinter {
     
     public init() {}
-    
-    /**
-     Whether or not the printer can print a certain item.
-     
-     - Parameters:
-       - item: The item to print.
-     */
+
     public func canPrint(_ item: PrintableItem) -> Bool {
-        return true
+        switch item {
+        case .pdf: return true
+        }
     }
     
-    /**
-     Print a list of printable items.
-     
-     - Parameters:
-       - item: The item to print.
-     */
     public func printItem(_ item: PrintableItem) {
         switch item {
         case .pdf(let url): printPdf(at: url)
@@ -41,6 +20,7 @@ public class StandardItemPrinter: ItemPrinter {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/printingkit.")
 private extension StandardItemPrinter {
     
     func printPdf(at url: URL) {

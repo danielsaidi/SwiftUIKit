@@ -132,13 +132,6 @@ SwiftUIKit is available under the MIT license.
 - ``SwiftPreviewInspector``
 - ``StandardSwiftPreviewInspector``
 
-### Printing
-
-- ``ItemPrinter``
-- ``ItemPrintingView``
-- ``PrintableItem``
-- ``StandardItemPrinter``
-
 ### Sharing
 
 - ``ShareSheet``

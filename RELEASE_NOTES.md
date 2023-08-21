@@ -3,6 +3,14 @@
 
 ## 3.5
 
+### 🗑 Deprecations
+
+* The `Printing` namespace has been deprecated and moved to the new PrintingKit.
+
+
+
+## 3.5
+
 ### ✨ New features
 
 * `NavigationContext` is a new observable class.
@@ -13,6 +21,7 @@
 * `AlertProvider` has been deprecated.
 * `FullScreenCoverProvider` has been deprecated.
 * `SheetProvider` has been deprecated.
+
 
 
 ## 3.4
