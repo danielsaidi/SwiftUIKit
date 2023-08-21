@@ -41,7 +41,8 @@ public struct DocumentCamera: UIViewControllerRepresentable {
      */
     public init(
         cancelAction: @escaping CancelAction = {},
-        resultAction: @escaping ResultAction) {
+        resultAction: @escaping ResultAction
+    ) {
         self.cancelAction = cancelAction
         self.resultAction = resultAction
     }
@@ -56,10 +57,13 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     public func makeCoordinator() -> Coordinator {
         Coordinator(
             cancelAction: cancelAction,
-            resultAction: resultAction)
+            resultAction: resultAction
+        )
     }
     
-    public func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
+    public func makeUIViewController(
+        context: Context
+    ) -> VNDocumentCameraViewController {
         let controller = VNDocumentCameraViewController()
         controller.delegate = context.coordinator
         return controller
@@ -67,7 +71,8 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     
     public func updateUIViewController(
         _ uiViewController: VNDocumentCameraViewController,
-        context: Context) {}
+        context: Context
+    ) {}
 }
 
 public extension DocumentCamera {

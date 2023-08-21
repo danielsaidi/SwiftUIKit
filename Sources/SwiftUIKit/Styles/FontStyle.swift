@@ -6,7 +6,7 @@
 //  Copyright © 2020 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
 
 /**
@@ -32,6 +32,7 @@ public struct FontStyle {
         self.weight = weight
     }
     
+    @available(*, deprecated, message: "Use .init(name:style:weight:) directly instead.")
     public init(
         identifier: FontIdentifier,
         style: UIFont.TextStyle,
@@ -58,10 +59,27 @@ public struct FontStyle {
 public extension View {
 
     /**
-     Apply a ``FontStyle`` to the view.
+     Apply the provided ``FontStyle``.
      */
     func font(_ style: FontStyle) -> some View {
         font(style.font)
+    }
+    
+    /**
+     Apply a custom font with a `name`, `style` and `weight`.
+     */
+    func font(
+        name: String,
+        style: UIFont.TextStyle,
+        weight: Font.Weight = .regular
+    ) -> some View {
+        font(
+            FontStyle(
+                name: name,
+                style: style,
+                weight: weight
+            )
+        )
     }
 }
 #endif

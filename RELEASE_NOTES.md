@@ -3,6 +3,10 @@
 
 ## 3.5
 
+### ✨ New features
+
+* `View+Font` extensions are now available on tvOS and watchOS as well.
+
 ### 🗑 Deprecations
 
 * The `Printing` namespace has been deprecated and moved to the new PrintingKit.

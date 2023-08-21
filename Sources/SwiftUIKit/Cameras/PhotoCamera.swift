@@ -39,7 +39,8 @@ public struct PhotoCamera: View {
      */
     public init(
         cancelAction: @escaping ImagePicker.CancelAction = {},
-        resultAction: @escaping ImagePicker.ResultAction) {
+        resultAction: @escaping ImagePicker.ResultAction
+    ) {
         self.cancelAction = cancelAction
         self.resultAction = resultAction
     }
@@ -53,7 +54,8 @@ public struct PhotoCamera: View {
         ImagePicker(
             sourceType: .camera,
             cancelAction: cancelAction,
-            resultAction: resultAction)
+            resultAction: resultAction
+        )
     }
 }
 #endif
