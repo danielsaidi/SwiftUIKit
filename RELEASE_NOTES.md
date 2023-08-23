@@ -1,10 +1,11 @@
 # Release notes
 
 
-## 3.5.1
+## 3.6
 
 ### ✨ New features
 
+* `StorageCodable` is a new protocol for persisting `Codable` in `AppStorage` and `SceneStorage`.
 * `View+Font` extensions are now available on tvOS and watchOS as well.
 
 ### ✨ Behavior changes

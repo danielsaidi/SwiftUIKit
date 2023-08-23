@@ -49,6 +49,7 @@ SwiftUIKit is available under the MIT license.
 - ``ScanCodeGenerator``
 - ``ScanCodeType``
 - ``StandardScanCodeGenerator``
+- ``StorageCodable``
 
 ### Errors
 
