@@ -17,6 +17,14 @@ public struct Persisted<Value: Codable>: DynamicProperty {
         let initialValue: Value? = Self.initialValue(for: key, in: self.store)
         self._value = State(initialValue: initialValue ?? defaultValue)
     }
+    
+    init(
+        key: String,
+        store: UserDefaults = .standard,
+        defaultValue: Value
+    ) {
+        self.init(key, store: store, defaultValue: defaultValue)
+    }
 
     @State
     private var value: Value
@@ -41,18 +49,5 @@ public struct Persisted<Value: Codable>: DynamicProperty {
     ) -> Value? {
         guard let data = store.object(forKey: key) as? Data else { return nil }
         return try? JSONDecoder().decode(Value.self, from: data)
-    }
-}
-
-
-@available(*, deprecated, message: "Use init with implicit key name instead.")
-public extension Persisted {
-
-    init(
-        key: String,
-        store: UserDefaults = .standard,
-        defaultValue: Value
-    ) {
-        self.init(key, store: store, defaultValue: defaultValue)
     }
 }
