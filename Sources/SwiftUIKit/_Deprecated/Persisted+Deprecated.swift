@@ -2,17 +2,11 @@ import Foundation
 import SwiftUI
 
 @propertyWrapper
-@available(*, deprecated, message: "Use AppStorageCodable instead.")
+/// [DEPRECATED]
+///
+/// This will be removed in SwiftUIKit 4.0
 public struct Persisted<Value: Codable>: DynamicProperty {
 
-    /**
-     Create a persisted property wrapper.
-
-     - Parameters:
-       - key: The unique key to persist the value to.
-       - store: The store to persist the value in.
-       - defaultValue: The default value to return when no stored value exists.
-     */
     public init(
         _ key: String,
         store: UserDefaults? = .standard,

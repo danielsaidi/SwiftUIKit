@@ -1,11 +1,15 @@
 # Release notes
 
 
-## 3.5
+## 3.5.1
 
 ### ✨ New features
 
 * `View+Font` extensions are now available on tvOS and watchOS as well.
+
+### ✨ Behavior changes
+
+* `Persisted` is changed to soft deprecated since the `RawRepresentable` `AppStorage` support requires iOS 15.
 
 ### 🗑 Deprecations
 
