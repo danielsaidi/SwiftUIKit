@@ -5,8 +5,10 @@
 
 ### ✨ New features
 
+* `SidebarListRowBackgroundModifier` is a new view modifier for sidebar lists.
 * `StorageCodable` is a new protocol for persisting `Codable` in `AppStorage` and `SceneStorage`.
 * `View+Font` extensions are now available on tvOS and watchOS as well.
+* `sidebarListRowBackground` is a new `View` modifier for applying a sidebar list row background.  
 
 ### ✨ Behavior changes
 
