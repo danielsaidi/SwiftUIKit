@@ -90,6 +90,7 @@ SwiftUIKit is available under the MIT license.
 - ``ListSelectItem``
 - ``ListShelfSection``
 - ``ListSubtitle``
+- ``ReorderableForEach``
 
 ### Navigation
 
