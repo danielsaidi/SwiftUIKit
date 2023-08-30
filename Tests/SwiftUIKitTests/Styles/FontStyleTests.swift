@@ -19,18 +19,5 @@ final class FontStyleTests: XCTestCase {
         XCTAssertEqual(style.style, .callout)
         XCTAssertEqual(style.weight, .bold)
     }
-    
-    func testSetupWithIdentifier() {
-        let identifier = TestIdentifier()
-        let style = FontStyle(identifier: identifier, style: .callout, weight: .bold)
-        XCTAssertEqual(style.name, "MyFont")
-        XCTAssertEqual(style.style, .callout)
-        XCTAssertEqual(style.weight, .bold)
-    }
-}
-
-private struct TestIdentifier: FontIdentifier {
-    
-    var fontName: String { "MyFont" }
 }
 #endif

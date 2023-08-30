@@ -5,7 +5,8 @@
 
 ### ✨ New features
 
-* `GridItem+Convenience` contains convenience utils for working with `GridItem`.
+* `GridItem+Convenience` is a new extension with `GridItem` builders.
+* `ReorderableForEach` is a new view that lets you reorder items in stacks and grids.
 
 
 
