@@ -1,7 +1,17 @@
 # Release notes
 
 
+## 3.7
+
+### ✨ New features
+
+* `GridItem+Convenience` contains convenience utils for working with `GridItem`.
+
+
+
 ## 3.6.2
+
+### ✨ New features
 
 * `SidebarListRowBackgroundModifier` is a new view modifier for sidebar lists.
 
@@ -15,11 +25,13 @@ This version removes another deprecation.
 
 ## 3.6
 
+### ✨ New features
+
 * `StorageCodable` is a new protocol for persisting `Codable` in `AppStorage` and `SceneStorage`.
 * `View+Font` extensions are now available on tvOS and watchOS as well.
 * `sidebarListRowBackground` is a new `View` modifier for applying a sidebar list row background.  
 
-### ✨ Behavior changes
+### 💡 Behavior changes
 
 * `Persisted` is changed to soft deprecated since the `RawRepresentable` `AppStorage` support requires iOS 15.
 
@@ -91,7 +103,7 @@ From this version, the demo application has been removed. Instead of the demo ap
 * `Image+Symbol` is a new `Image` initializer that serves as a shorthand for `.init(systemName:)`.
 * `Image+ListBadgeIcon` is a new `Image` modifier that can be used to convert an image to a color badged icon.
 
-### ✨ Behavior changes
+### 💡 Behavior changes
 
 * `Persisted` has been deprecated due to `AppStorageCodable`.
 * `ViewShadowStyle` now allows not specifying a shadow color.
