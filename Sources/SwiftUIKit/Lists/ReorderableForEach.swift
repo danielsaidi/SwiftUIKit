@@ -275,7 +275,7 @@ struct ReorderableForEach_Previews: PreviewProvider {
                                     .overlay(Text("\(item.id)"))
                                     .contentShape(.dragPreview, shape)
                             } preview: { item in
-                                Color.white
+                                shape
                                     .frame(width: 200, height: 200)
                                     .overlay(Text("\(item.id)"))
                                     .contentShape(.dragPreview, shape)
@@ -285,9 +285,11 @@ struct ReorderableForEach_Previews: PreviewProvider {
                         }
                     }.padding()
                 }
-                .background(Color.blue.gradient)
                 #if os(iOS)
+                .background(Color.blue.gradient)
                 .scrollContentBackground(.hidden)
+                #else
+                .background(Color.blue)
                 #endif
                 .reorderableForEachContainer(active: $active)
             }
