@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 3.8.0
+
+### ✨ New features
+
+* `ImageCache` is a new convenience util for caching images.
+* `ImageRepresentable` has a new ` jpegData(resizedToWidth:withCompressionQuality:)` extension.
+* `ListPadding` is a new view that can be used to add vertical padding to lists.
+
+
+
 ## 3.7
 
 ### ✨ New features
