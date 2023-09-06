@@ -1,7 +1,7 @@
 # Release notes
 
 
-## 3.8.0
+## 3.8
 
 ### ✨ New features
 

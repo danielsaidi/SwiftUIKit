@@ -1,10 +1,10 @@
 import Foundation
 import SwiftUI
 
-@propertyWrapper
 /// [DEPRECATED]
 ///
 /// This will be removed in SwiftUIKit 4.0
+@propertyWrapper
 public struct Persisted<Value: Codable>: DynamicProperty {
 
     public init(

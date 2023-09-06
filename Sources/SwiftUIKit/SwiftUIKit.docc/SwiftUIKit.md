@@ -42,7 +42,6 @@ SwiftUIKit is available under the MIT license.
 ### Colors
 
 - ``ColorRepresentable``
-- ``SystemColor``
 
 ### Data
 
@@ -76,6 +75,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Images
 
+- ``ImageCache``
 - ``ImageRepresentable``
 
 ### Lists
@@ -87,10 +87,15 @@ SwiftUIKit is available under the MIT license.
 - ``ListCardStyle``
 - ``ListDragHandle``
 - ``ListHeaderIcon``
+- ``ListPadding``
+- ``ListSectionTitle``
 - ``ListSelectItem``
 - ``ListShelfSection``
+- ``ListShelfSectionStyle``
 - ``ListSubtitle``
+- ``Reorderable``
 - ``ReorderableForEach``
+- ``SidebarListRowBackgroundModifier``
 
 ### Navigation
 
@@ -111,6 +116,7 @@ SwiftUIKit is available under the MIT license.
 - ``ListMultiPicker``
 - ``ListPickerItem``
 - ``ListPickerSection``
+- ``OptionalBinding(_:_:)``
 - ``SystemFontPicker``
 - ``SystemFontForEachPicker``
 - ``SystemFontListPicker``
@@ -124,10 +130,10 @@ SwiftUIKit is available under the MIT license.
 - ``AlertContextFocusedValueKey``
 - ``FullScreenCoverContext``
 - ``FullScreenCoverContextFocusedValueKey``
+- ``PresentationDetentReference``
 - ``PresentationDetentsViewModifier``
 - ``SheetContext``
 - ``SheetContextFocusedValueKey``
-- ``UndimmedPresentationDetent``
 
 ### Previews
 
@@ -165,14 +171,7 @@ SwiftUIKit is available under the MIT license.
 - ``PageIndicatorStyle``
 - ``PageView``
 - ``SearchBar``
-- ``ScrollViewHeader``
 - ``TextReplacement``
-
-### Views/CollectionView
-
-- ``CollectionView``
-- ``CollectionViewLayout``
-- ``CollectionViewRow``
 
 <!--### Views/DetailPanel-->
 <!---->
