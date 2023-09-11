@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-03.
-//  Copyright © 2021 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2023 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
@@ -36,6 +36,30 @@ public struct FormText<TrailingView: View>: View {
         self.text = text
         self.hideIfEmpty = hideIfEmpty
         self.trailingView = trailingView
+    }
+    
+    /**
+     Create a form text view with a trailing action button.
+
+     - Parameters:
+       - title: The footnote text title.
+       - text: The long text text.
+       - quickAction: The quick action to trigger.
+     */
+    @available(iOS 15.0, *)
+    public init(
+        title: String,
+        text: String,
+        hideIfEmpty: Bool = false,
+        action: FormTextButton.ActionType,
+        actionLabel: String
+    ) where TrailingView == FormTextButton {
+        self.title = title
+        self.text = text
+        self.hideIfEmpty = hideIfEmpty
+        self.trailingView = {
+            FormTextButton(action, label: actionLabel)
+        }
     }
 
     /**
@@ -96,6 +120,7 @@ private extension FormText {
     }
 }
 
+@available(iOS 15.0, *)
 struct FormText_Previews: PreviewProvider {
     
     static var action: (() -> Void) = {}
@@ -110,6 +135,11 @@ struct FormText_Previews: PreviewProvider {
                 text: "A looong text value with a trailing view.") {
                 Button(action: {}, label: { Image(systemName: "doc.on.doc") })
             }
+            FormText(
+                title: "title 2",
+                text: "A looong text value with a trailing view.",
+                action: .copy("123"),
+                actionLabel: "")
             FormText(
                 title: "title 3",
                 text: "Long\nmultuline\ntext that could have been entered in a text editor.")

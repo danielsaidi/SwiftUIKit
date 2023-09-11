@@ -1,6 +1,15 @@
 # Release notes
 
 
+## 3.8.2
+
+### ✨ New features
+
+* `FormText` has a new action-based initializer.
+* `FormTextButton` is a new `FormText` button view.
+
+
+
 ## 3.8.1
 
 ### ✨ New features
