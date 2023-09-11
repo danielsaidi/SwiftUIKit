@@ -10,7 +10,7 @@ import Foundation
 
 public extension ImageRepresentable {
     
-    /// Get a resized and compressed JPG data.
+    /// Get resized and compressed JPG data from the image.
     ///
     /// - Parameters:
     ///   - width: The width of the new image, by default `1000`.
