@@ -1,6 +1,14 @@
 # Release notes
 
 
+## 3.8.1
+
+### ✨ New features
+
+* `ImageCache.shared` has been made public.
+
+
+
 ## 3.8
 
 ### ✨ New features
