@@ -44,7 +44,8 @@ public struct FormText<TrailingView: View>: View {
      - Parameters:
        - title: The footnote text title.
        - text: The long text text.
-       - quickAction: The quick action to trigger.
+       - action: The quick action to trigger.
+       - actionLabel: The quick action accessibility label.
      */
     @available(iOS 15.0, *)
     public init(

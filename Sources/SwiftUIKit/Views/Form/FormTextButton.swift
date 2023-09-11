@@ -10,7 +10,8 @@
 import SwiftUI
 
 /**
- This button can be used to add an action to a ``FormText``.
+ This view can be used to add a quick action to a ``FormText``
+ component.
  
  When using `call` and `email` actions, just provide the raw
  URL without the `tel:` or `mailto:` prefix.
