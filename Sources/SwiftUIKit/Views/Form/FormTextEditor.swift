@@ -11,6 +11,10 @@ import SwiftUI
 
 /**
  This view can be used to present text fields in a list form.
+ 
+ This will become deprecated when the library starts to only
+ support iOS 16, since ``FormTextField`` will then have more
+ support for multiline capabilities.
  */
 @available(iOS 14, *)
 public struct FormTextEditor: View {

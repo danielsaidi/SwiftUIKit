@@ -1,6 +1,18 @@
 # Release notes
 
 
+## 3.8.3
+
+### ✨ New features
+
+* `FormTextField` has new multiline capabilities.
+
+### 🗑 Deprecations
+
+* `FormTextEditor` has been soft deprecated.
+
+
+
 ## 3.8.2
 
 ### ✨ New features
