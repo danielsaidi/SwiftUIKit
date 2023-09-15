@@ -43,7 +43,7 @@ public struct Persisted<Value: Codable>: DynamicProperty {
         }
     }
 
-    private static func initialValue<Value: Codable>(
+    private static func initialValue(
         for key: String,
         in store: UserDefaults
     ) -> Value? {

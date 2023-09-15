@@ -1,6 +1,15 @@
 # Release notes
 
 
+## 3.9
+
+### ✨ New features
+
+* `MultilineSubmitViewModifier` is a new view modifier to make multiline text fields submit when return is pressed.
+* `View` has a new `multilineSubmit(...)` extension.
+* `View` has a new `onMultilineSubmit(...)` extension.  
+
+
 ## 3.8.3
 
 ### ✨ New features
