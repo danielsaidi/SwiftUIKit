@@ -60,9 +60,23 @@ SwiftUIKit is available under the MIT license.
 - ``FolderMonitor``
 - ``FolderObservable``
 
+### Flip
+
+- ``FlipView``
+- ``FlipDirection``
+
 ### Fonts
 
 - ``FontRepresentable``
+
+### Form
+
+- ``FormActionButton``
+- ``FormActionButtonStyle``
+- ``FormText``
+- ``FormTextButton``
+- ``FormTextEditor``
+- ``FormTextField``
 
 ### Gestures
 
@@ -109,6 +123,13 @@ SwiftUIKit is available under the MIT license.
 - ``NavigationLinkArrow``
 - ``UrlOpener``
 
+### Pages
+
+- ``PageIndicator``
+- ``PageIndicatorDisplayMode``
+- ``PageIndicatorStyle``
+- ``PageView``
+
 ### Pickers
 
 - ``ColorPickerBar``
@@ -145,6 +166,11 @@ SwiftUIKit is available under the MIT license.
 - ``SwiftPreviewInspector``
 - ``StandardSwiftPreviewInspector``
 
+### Progress
+
+- ``CircularProgressBar``
+- ``LinearProgressBar``
+
 ### Sharing
 
 - ``ShareSheet``
@@ -163,48 +189,15 @@ SwiftUIKit is available under the MIT license.
 - ``TextEditorStyle``
 - ``TextFieldClearButton``
 
+### Toggles
+
+- ``ActionToggle``
+
 ### Views
 
 - ``CustomRoundedRectangle``
 - ``DismissableView``
 - ``EditableView``
 - ``FetchedDataView``
-- ``PageIndicator``
-- ``PageIndicatorDisplayMode``
-- ``PageIndicatorStyle``
-- ``PageView``
 - ``SearchBar``
 - ``TextReplacement``
-
-<!--### Views/DetailPanel-->
-<!---->
-<!--- ``DetailPanel``-->
-<!--- ``DetailPanelButtonGroup``-->
-<!--- ``DetailPanelContainer``-->
-<!--- ``DetailPanelContext``-->
-<!--- ``DetailPanelForm``-->
-<!--- ``DetailPanelHeader``-->
-<!--- ``DetailPanelPresenter``-->
-
-### Views/Flip
-
-- ``FlipView``
-- ``FlipDirection``
-
-### Views/Form
-
-- ``FormActionButton``
-- ``FormActionButtonStyle``
-- ``FormText``
-- ``FormTextButton``
-- ``FormTextEditor``
-- ``FormTextField``
-
-### Views/Progress
-
-- ``CircularProgressBar``
-- ``LinearProgressBar``
-
-### Views/Toggle
-
-- ``ActionToggle``
