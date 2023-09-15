@@ -1,5 +1,5 @@
 //
-//  DotAnimation.swift
+//  DotLoadingAnimation.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-08-09.
@@ -17,14 +17,14 @@ import SwiftUI
  The view just renders plain text, so you can style the text
  just like you would any other text.
 
- You can use the ``DotAnimationText`` view to present a text
+ You can use the ``DotLoadingAnimationText`` view to present a text
  with the dot animation playing after the text.
 
  Note that something causes this view's preview to not start
- the animation. Look at ``DotAnimationText`` to see how this
+ the animation. Look at ``DotLoadingAnimationText`` to see how this
  animation behaves when it's active.
  */
-public struct DotAnimation: View {
+public struct DotLoadingAnimation: View {
 
     /**
      Create a dot animation.
@@ -54,7 +54,7 @@ public struct DotAnimation: View {
     }
 }
 
-private extension DotAnimation {
+private extension DotLoadingAnimation {
 
     var dotText: String {
         if currentDotCount == 0 {
@@ -66,7 +66,7 @@ private extension DotAnimation {
     }
 }
 
-private extension DotAnimation {
+private extension DotLoadingAnimation {
 
     func increaseDotCount() {
         var newCount = currentDotCount + 1
@@ -77,9 +77,9 @@ private extension DotAnimation {
     }
 }
 
-struct DotAnimation_Previews: PreviewProvider {
+struct DotLoadingAnimation_Previews: PreviewProvider {
 
     static var previews: some View {
-        DotAnimation()
+        DotLoadingAnimation()
     }
 }

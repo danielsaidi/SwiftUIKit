@@ -78,6 +78,11 @@ SwiftUIKit is available under the MIT license.
 - ``ImageCache``
 - ``ImageRepresentable``
 
+### Loading
+
+- ``DotLoadingAnimation``
+- ``DotLoadingAnimationText``
+
 ### Lists
 
 - ``ListBadgeIcon``
@@ -154,7 +159,7 @@ SwiftUIKit is available under the MIT license.
 ### Text
 
 - ``LinkText``
-- ``MultilineText``
+- ``MultilineSubmitViewModifier``
 - ``TextEditorStyle``
 - ``TextFieldClearButton``
 
@@ -162,8 +167,6 @@ SwiftUIKit is available under the MIT license.
 
 - ``CustomRoundedRectangle``
 - ``DismissableView``
-- ``DotAnimation``
-- ``DotAnimationText``
 - ``EditableView``
 - ``FetchedDataView``
 - ``PageIndicator``

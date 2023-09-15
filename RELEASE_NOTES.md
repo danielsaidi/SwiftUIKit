@@ -12,7 +12,9 @@
 ### 🗑 Deprecations
 
 * `MultilineText` has been deprecated. 
-  
+* `DotAnimation` has been renamed to `DotLoadingAnimation`.
+* `DotAnimationText` has been renamed to `DotLoadingAnimationText`.
+
 
 
 ## 3.8.3

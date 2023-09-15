@@ -1,5 +1,5 @@
 //
-//  DotAnimationText.swift
+//  DotLoadingAnimationText.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-08-09.
@@ -9,13 +9,13 @@
 import SwiftUI
 
 /**
- This text view renders a text with a ``DotAnimation`` added
- after the text, to animate a loading state.
+ This view adds a ``DotLoadingAnimation`` after the provided
+ `text`, to indicate a loading state.
 
  The view just renders plain text, so you can style the text
  just like you would any other text.
  */
-public struct DotAnimationText: View {
+public struct DotLoadingAnimationText: View {
 
     /**
      Create a dot animation text.
@@ -49,10 +49,10 @@ public struct DotAnimationText: View {
     }
 }
 
-private extension DotAnimationText {
+private extension DotLoadingAnimationText {
 
     var dotAnimation: some View {
-        DotAnimation(
+        DotLoadingAnimation(
             dotCount: dotCount,
             interval: interval
         )
@@ -72,9 +72,9 @@ private extension DotAnimationText {
     }
 }
 
-struct DotAnimationText_Previews: PreviewProvider {
+struct DotLoadingAnimationText_Previews: PreviewProvider {
 
     static var previews: some View {
-        DotAnimationText(text: "Testing")
+        DotLoadingAnimationText(text: "Testing")
     }
 }
