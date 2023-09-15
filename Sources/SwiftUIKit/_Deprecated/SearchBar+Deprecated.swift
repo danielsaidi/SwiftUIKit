@@ -1,18 +1,7 @@
-//
-//  SearchBar.swift
-//  SwiftUIKit
-//
-//  Created by Daniel Saidi on 2020-12-13.
-//  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
-//
-
 #if os(iOS)
 import SwiftUI
 
-/**
- This view wraps a text field within a rounded rectangle and
- appends a clear button and a trailing cancel button.
- */
+@available(*, deprecated, message: "Use .searchable instead")
 public struct SearchBar: View {
     
     public init(
@@ -51,9 +40,7 @@ public struct SearchBar: View {
     }
 }
 
-
-// MARK: - Private Functionality
-
+@available(*, deprecated, message: "Use .searchable instead")
 private extension SearchBar {
 
     var hasText: Bool {
@@ -91,23 +78,6 @@ private extension SearchBar {
             text.wrappedValue = ""
             hideKeyboard()
         }
-    }
-}
-
-struct SearchBar_Previews: PreviewProvider {
-
-    struct Preview: View {
-
-        @State
-        var text = ""
-
-        var body: some View {
-            SearchBar(title: "Search", text: $text, cancelText: "Cancel")
-        }
-    }
-    
-    static var previews: some View {
-        Preview()
     }
 }
 #endif

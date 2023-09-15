@@ -14,6 +14,7 @@
 * `MultilineText` has been deprecated. 
 * `DotAnimation` has been renamed to `DotLoadingAnimation`.
 * `DotAnimationText` has been renamed to `DotLoadingAnimationText`.
+* `SearchBar` has been deprecated.
 
 
 

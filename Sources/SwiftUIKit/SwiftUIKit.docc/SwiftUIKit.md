@@ -199,5 +199,4 @@ SwiftUIKit is available under the MIT license.
 - ``DismissableView``
 - ``EditableView``
 - ``FetchedDataView``
-- ``SearchBar``
 - ``TextReplacement``
