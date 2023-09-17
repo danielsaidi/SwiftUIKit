@@ -47,7 +47,6 @@ public extension View {
 
 struct View_PersistentSystemOverlays_Previews: PreviewProvider {
 
-
     static var previews: some View {
         VStack {
             #if os(iOS) || os(macOS)

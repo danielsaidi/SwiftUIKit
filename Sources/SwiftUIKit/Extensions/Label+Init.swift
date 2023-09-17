@@ -11,11 +11,7 @@ import SwiftUI
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension Label where Icon == Image, Title == Text {
     
-    /**
-     Create a label with a string and an image.
-     
-     This may be easier to use than the multi-closure init.
-     */
+    /// Create a label with a string and an image.
     init(_ text: String, image: Image) {
         self.init {
             Text(text)

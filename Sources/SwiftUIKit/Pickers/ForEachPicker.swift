@@ -53,7 +53,7 @@ public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, Dismissab
         ForEach(items) { item in
             Button(action: { select(item) }, label: {
                 listItem(item, isSelected(item))
-            }).buttonStyle(.plain)
+            })
         }
     }
 }
@@ -123,7 +123,8 @@ struct ForEachPicker_Previews: PreviewProvider {
                                 Text(item.name)
                             }
                         }
-                }.withTitle("Pick an item")
+                }
+                .withTitle("Pick an item")
             }
         }
     }

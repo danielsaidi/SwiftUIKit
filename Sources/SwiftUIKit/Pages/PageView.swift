@@ -33,9 +33,9 @@ public struct PageView<PageViewType: View>: View {
     /**
      Create a page view with a set of pre-built pages.
      
-     This approach requires the pages to be the same kind of
-     view. To render different kind of views, use the `items`
-     and `pageBuilder` based initializer instead.
+     This initializer requires the pages to be the same kind
+     of view. To use different kind of views, use the `items`
+     and `pageBuilder`-based initializer.     
      
      - Parameters:
        - pages: The pages to present in the page view.

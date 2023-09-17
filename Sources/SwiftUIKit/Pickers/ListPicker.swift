@@ -79,7 +79,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
     
-    @Environment(\.presentationMode) public var presentationMode
+    @Environment(\.presentationMode)
+    public var presentationMode
     
     public var body: some View {
         List {
@@ -90,7 +91,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
                         selection: selection,
                         animatedSelection: animatedSelection,
                         dismissAfterPick: dismissAfterPick,
-                        listItem: listItem)
+                        listItem: listItem
+                    )
                 }
             }
         }
@@ -131,11 +133,12 @@ struct ListPicker_Previews: PreviewProvider {
                         section(""),
                         section("Another section")
                     ],
-                    selection: $selection) { item, isSelected in
-                        ListSelectItem(isSelected: isSelected) {
-                            Text(item.name)
-                        }
-                    }.withTitle("Pick an item")
+                    selection: $selection
+                ) { item, isSelected in
+                    ListSelectItem(isSelected: isSelected) {
+                        Text(item.name)
+                    }
+                }.withTitle("Pick an item")
             }
         }
     }

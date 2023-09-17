@@ -17,8 +17,14 @@ import Foundation
  */
 public protocol SwiftPreviewInspector {
 
-    /**
-     Whether or not the code runs in a SwiftUI preview.
-     */
+    /// Whether or not the code runs in a SwiftUI preview.
     var isSwiftUIPreview: Bool { get }
+}
+
+public extension SwiftPreviewInspector {
+    
+    /// Whether or not the code runs in a SwiftUI preview.
+     var isSwiftUIPreview: Bool {
+        ProcessInfo.processInfo.isSwiftUIPreview
+    }
 }

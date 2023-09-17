@@ -164,7 +164,6 @@ SwiftUIKit is available under the MIT license.
 ### Previews
 
 - ``SwiftPreviewInspector``
-- ``StandardSwiftPreviewInspector``
 
 ### Progress
 

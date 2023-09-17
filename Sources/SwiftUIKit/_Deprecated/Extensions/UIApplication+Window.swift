@@ -9,6 +9,7 @@
 #if os(iOS)
 import UIKit
 
+@available(*, deprecated, message: "These extensions will be removed from SwiftUIKit in 4.0.")
 public extension UIApplication {
 
     /**

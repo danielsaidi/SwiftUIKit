@@ -40,38 +40,24 @@ public struct PageIndicatorStyle: Equatable {
         self.isAnimated = isAnimated
     }
     
-    /**
-     The indicator current dot color.
-     */
+    /// The indicator current dot color.
     public var currentDotColor: Color
     
-    /**
-     The indicator current dot size.
-     */
+    /// The indicator current dot size.
     public var currentDotSize: CGFloat
     
-    /**
-     The indicator dot color.
-     */
+    /// The indicator dot color.
     public var dotColor: Color
     
-    /**
-     The indicator dot size.
-     */
+    /// The indicator dot size.
     public var dotSize: CGFloat
     
-    /**
-     The spacing to apply between dots.
-     */
+    /// The spacing to apply between dots.
     public var dotSpacing: CGFloat?
     
-    /**
-     Whether or not changing pages is animated.
-     */
+    /// Whether or not changing pages is animated.
     public var isAnimated: Bool
     
-    /**
-     The standard style.
-     */
+    /// The standard style.
     public static var standard: PageIndicatorStyle { PageIndicatorStyle() }
 }

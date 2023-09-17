@@ -10,6 +10,7 @@
 import SwiftUI
 
 @available(iOS 15, tvOS 15, watchOS 8, *)
+@available(*, deprecated, message: "Just use the default initializer.")
 public extension Text {
     
     /**
@@ -19,15 +20,6 @@ public extension Text {
         let options = AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)
         let str = try? AttributedString(markdown: markdown, options: options)
         self.init(str ?? "Invalid markdown")
-    }
-}
-
-@available(iOS 15, tvOS 15, watchOS 8, *)
-struct Text_Markdown_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Text(markdown: "Hello, **world**!\n\nThis is *markdown*!")
-            .multilineTextAlignment(.center)
     }
 }
 #endif

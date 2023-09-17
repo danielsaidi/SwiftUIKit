@@ -15,13 +15,8 @@ import SwiftUI
  
  The original image will be used if you provide `nil` as the
  `iconColor`. If that image is an SF Symbol, you can apply a
- `.symbolRenderingMode` and `.foregroundStyle` view modifier
- to apply any custom style to the icon, e.g. a palette style.
- You can make an icon multicolor with the `.multiColor` view
- modifier.
- 
- Note that icon modification, like applying foreground color
- and symbol variant, works best with SF Symbols.
+ `.symbolRenderingMode` and `.foregroundStyle` to add custom
+ styles to the icon.
  */
 @available(iOS 16.0, *)
 public struct ListBadgeIcon: View {

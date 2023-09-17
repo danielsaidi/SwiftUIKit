@@ -22,15 +22,15 @@ public struct PageView<PageViewType: View>: View {
     /**
      Create a page view with a set of pre-built pages.
      
-     This approach requires the pages to be the same kind of
-     view. To render different kind of views, use the `items`
-     and `pageBuilder` based initializer instead.
+     This initializer requires the pages to be the same kind
+     of view. To use different kind of views, use the `items`
+     and `pageBuilder`-based initializer.
      
      - Parameters:
-     - pages: The pages to present in the page view.
-     - currentPageIndex: The currently presented page index.
-     - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
-     - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
+       - pages: The pages to present in the page view.
+       - currentPageIndex: The currently presented page index.
+       - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
+       - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
      */
     public init(
         pages: [PageViewType],
@@ -49,11 +49,11 @@ public struct PageView<PageViewType: View>: View {
      applies a page builder to each item.
      
      - Parameters:
-     - items: The items to present in the page view.
-     - currentPageIndex: The currently presented page index.
-     - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
-     - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
-     - pageBuilder: A function that builds a page for each item in the items collection.
+       - items: The items to present in the page view.
+       - currentPageIndex: The currently presented page index.
+       - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
+       - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
+       - pageBuilder: A function that builds a page for each item in the items collection.
      */
     public init<Model>(
         items: [Model],

@@ -14,9 +14,8 @@ public extension View {
     /**
      Apply a list row background color for a sidebar list.
      
-     Unlike `listRowBackground`, this will check if the list
-     is being rendered on a regular sized device. If so, the
-     provided color will be ignored.
+     Unlike `listRowBackground`, this will have no effect on
+     regular sized user interface.
      */
     func sidebarListRowBackground(
         _ color: Color
@@ -27,9 +26,8 @@ public extension View {
     /**
      Apply a list row background view for a sidebar list.
      
-     Unlike `listRowBackground`, this will check if the list
-     is being rendered on a regular sized device. If so, the
-     provided view will be ignored.
+     Unlike `listRowBackground`, this will have no effect on
+     regular sized user interface.
      */
     func sidebarListRowBackground<Style: View>(
         _ style: Style
@@ -42,10 +40,9 @@ public extension View {
  This modifier can be used to apply a list row background to
  a list that appears in the sidebar.
  
- Unlike `listRowBackground`, this modifier will check if the
- list is being rendered on a regular sized device. If so, it
- will ignore the background, since a sidebar by default does
- not use a list row background on iPad.
+ Unlike `listRowBackground`, this has no effect on a regular
+ sized list, since a sidebar by default doesn't use list row
+ background on iPad.
  */
 public struct SidebarListRowBackgroundModifier<Style: View>: ViewModifier {
     

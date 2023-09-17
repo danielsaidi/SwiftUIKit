@@ -12,9 +12,7 @@ import UIKit
 
 public extension UIEdgeInsets {
 
-    /**
-     Get SwiftUI edge insets for these UIKit-specific insets.
-     */
+    /// Map the insets to a SwiftUI-specific value.
     var insets: EdgeInsets {
         EdgeInsets(top: top, leading: left, bottom: bottom, trailing: right)
     }

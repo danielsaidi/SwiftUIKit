@@ -12,9 +12,7 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Hide the system keyboard.
-     */
+    @available(*, deprecated, message: "Use FocusState instead.")
     func hideKeyboard() {
         let app = UIApplication.shared
         let sel = #selector(UIResponder.resignFirstResponder)

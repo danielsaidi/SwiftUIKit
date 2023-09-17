@@ -3,11 +3,21 @@
 
 ## 3.9
 
+This release deprecates a bunch of things in preparation for the 4.0 bump.
+
+SwiftUIKit 4.0 will drop support for iOS 13.
+
 ### ✨ New features
 
 * `MultilineSubmitViewModifier` is a new view modifier to make multiline text fields submit when return is pressed.
 * `View` has a new `multilineSubmit(...)` extension.
 * `View` has a new `onMultilineSubmit(...)` extension.
+
+### 💡 Behavior changes
+
+* `ForEachPicker` no longer applies a `.plain` button style.
+* `ForEachMultiPicker` no longer applies a `.plain` button style.
+* `SwiftPreviewInspector` now provides a standard implementation.
 
 ### 🗑 Deprecations
 
@@ -15,6 +25,12 @@
 * `DotAnimation` has been renamed to `DotLoadingAnimation`.
 * `DotAnimationText` has been renamed to `DotLoadingAnimationText`.
 * `SearchBar` has been deprecated.
+* `SidebarPresenter` has been deprecated.
+* `StandardSwiftPreviewInspector` has been deprecated.
+* `Text+Markdown` has been deprecated.
+* `UIApplication+Windows` has been deprecated.
+* `View` height and width modifiers have been deprecated.
+* `View+Keyboard` has been deprecated.
 
 
 

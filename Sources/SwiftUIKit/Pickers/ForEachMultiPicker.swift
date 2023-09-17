@@ -44,7 +44,7 @@ public struct ForEachMultiPicker<Item: Identifiable, ItemView: View>: View, Dism
         ForEach(items) { item in
             Button(action: { toggleSelection(for: item) }, label: {
                 listItem(item, isSelected(item))
-            }).buttonStyle(.plain)
+            })
         }
     }
 }
@@ -89,7 +89,8 @@ struct ForEachMultiPicker_Previews: PreviewProvider {
     
     struct Preview: View {
         
-        @State private var selection = [PreviewItem.all[0]]
+        @State
+        private var selection = [PreviewItem.all[0]]
         
         var body: some View {
             NavigationView {
@@ -101,7 +102,8 @@ struct ForEachMultiPicker_Previews: PreviewProvider {
                                 Text(item.name)
                             }
                         }
-                }.withTitle("Pick multiple items")
+                }
+                .withTitle("Pick multiple items")
             }
         }
     }

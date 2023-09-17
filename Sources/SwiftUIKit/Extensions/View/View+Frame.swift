@@ -10,32 +10,13 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Positions this view within an invisible frame using the
-     provided size.
-     */
+    /// Apply a size-based frame.
     func frame(_ size: CGSize) -> some View {
         self.frame(width: size.width, height: size.height)
     }
     
-    /**
-     Apply the same size to all sides of the view.
-     */
+    /// Apply the same size to all sides of the view.
     func frame(square size: CGFloat) -> some View {
         self.frame(width: size, height: size)
-    }
-    
-    /**
-     This is a shorthand to `frame(height:)`
-     */
-    func height(_ height: CGFloat) -> some View {
-        self.frame(height: height)
-    }
-    
-    /**
-     This is a shorthand to `frame(width:)`
-     */
-    func width(_ width: CGFloat) -> some View {
-        self.frame(width: width)
     }
 }

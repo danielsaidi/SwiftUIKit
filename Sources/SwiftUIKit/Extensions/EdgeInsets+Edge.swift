@@ -10,9 +10,7 @@ import SwiftUI
 
 public extension EdgeInsets {
     
-    /**
-     Get the inset value for a certain edge.
-     */
+    /// Get the inset value for a certain edge.
     func inset(for edge: Edge) -> Double {
         switch edge {
         case.top: return top

@@ -13,8 +13,7 @@ import SwiftUI
  an item in movable `List`.
 
  The drag handle will only be displayed when the list is not
- being edited, since the edit mode should present the native
- drag handle.
+ being edited, since edit mode should use a native handle.
  */
 @available(iOS 14.0, *)
 public struct ListDragHandle: View {

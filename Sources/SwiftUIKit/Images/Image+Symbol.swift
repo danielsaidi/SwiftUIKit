@@ -10,9 +10,7 @@ import SwiftUI
 
 public extension Image {
 
-    /**
-     This is a shorthand for `Image(systemName:)`.
-     */
+    /// This is a shorthand for `Image(systemName:)`.
     static func symbol(_ name: String) -> Image {
         Image(systemName: name)
     }

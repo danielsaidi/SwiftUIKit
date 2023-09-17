@@ -22,7 +22,7 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
 
      - Parameters:
        - isSelected: Whether or not the item is selected.
-       - selectedImage: The image to show for selected views.
+       - selectIndicator: The view to show for selected views.
        - content: The list item content view.
      */
     public init(

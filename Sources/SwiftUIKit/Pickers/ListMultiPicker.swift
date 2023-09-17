@@ -29,7 +29,8 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
         self.init(
             sections: [ListPickerSection(title: "", items: items)],
             selection: selection,
-            listItem: listItem)
+            listItem: listItem
+        )
     }
     
     /**
@@ -50,7 +51,8 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
     
-    @Environment(\.presentationMode) public var presentationMode
+    @Environment(\.presentationMode)
+    public var presentationMode
     
     public var body: some View {
         List {
@@ -59,7 +61,8 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
                     ForEachMultiPicker(
                         items: section.items,
                         selection: selection,
-                        listItem: listItem)
+                        listItem: listItem
+                    )
                 }
             }
         }
@@ -92,7 +95,8 @@ struct ListMultiPicker_Previews: PreviewProvider {
         func section(_ title: String) -> ListPickerSection<PreviewItem> {
             ListPickerSection(
                 title: title,
-                items: PreviewItem.all)
+                items: PreviewItem.all
+            )
         }
         
         var body: some View {
@@ -102,11 +106,12 @@ struct ListMultiPicker_Previews: PreviewProvider {
                         section("First section"),
                         section("Another section")
                     ],
-                    selection: $selection) { item, isSelected in
-                        ListSelectItem(isSelected: isSelected) {
-                            Text(item.name)
-                        }
-                    }.withTitle("Pick multiple items")
+                    selection: $selection
+                ) { item, isSelected in
+                    ListSelectItem(isSelected: isSelected) {
+                        Text(item.name)
+                    }
+                }.withTitle("Pick multiple items")
             }
         }
     }
