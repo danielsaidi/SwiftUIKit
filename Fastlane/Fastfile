@@ -54,7 +54,7 @@ platform :ios do
     
     bump_type = options[:type]
     version = version_bump_podspec(
-      path: pod_name + '.podspec',
+      path: 'Version',
       bump_type: bump_type)
     
     git_commit(path: "*", message: "Bump to #{version}")
