@@ -3,12 +3,15 @@
 
 ## 4.0
 
-This major version bumps the deployment targets to iOS 15, tvOS 15, watchOS 8, and macOS 12.
+This major version bumps the deployment targets to iOS 15, tvOS 15, watchOS 8, and macOS 12. This lets us remove a lot of code for older OS versions.
 
-This lets us remove a lot of code that is just there to cater to the needs of older OS versions.
+This version also adds everything from `SwiftKit`, which is a barely used library of mine. I don't want to manage or add two libraries, so merging them seems valid. 
 
 ### ✨ New features
 
+* `Bundle+Information` adds bundle-specific extensions.
+* `Collection+Async` adds collection concurrency extensions.
+* `CsvParser` can be used to parse CSV files and strings.
 * `ListAction` is a new enum with quick list action types.
 
 ### 🐛 Bug fixes

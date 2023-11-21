@@ -45,6 +45,8 @@ SwiftUIKit is available under the MIT license.
 
 ### Data
 
+- ``CsvParser``
+- ``MimeType``
 - ``ScanCodeType``
 - ``StorageCodable``
 
@@ -183,10 +185,6 @@ SwiftUIKit is available under the MIT license.
 - ``MultilineSubmitViewModifier``
 - ``TextEditorStyle``
 - ``TextFieldClearButton``
-
-### Toggles
-
-- ``ActionToggle``
 
 ### Views
 

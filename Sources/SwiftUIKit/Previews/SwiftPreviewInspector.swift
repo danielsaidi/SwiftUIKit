@@ -12,8 +12,7 @@ import Foundation
  This protocol can be implemented by types that can check if
  the code is running in a SwiftUI preview.
 
- The protocol is implemented by `ProcessInfo` as well as the
- ``StandardSwiftPreviewInspector`` class.
+ The protocol is implemented by `ProcessInfo`.
  */
 public protocol SwiftPreviewInspector {
 
@@ -25,6 +24,6 @@ public extension SwiftPreviewInspector {
     
     /// Whether or not the code runs in a SwiftUI preview.
      var isSwiftUIPreview: Bool {
-        ProcessInfo.processInfo.isSwiftUIPreview
+        ProcessInfo.isSwiftUIPreview
     }
 }

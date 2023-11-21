@@ -12,34 +12,12 @@ extension ProcessInfo: SwiftPreviewInspector {}
 
 public extension ProcessInfo {
 
-    /**
-     Whether or not the code runs in a SwiftUI preview.
-
-     You can check this in your Swift code, as such:
-
-     ```swift
-     if ProcessInfo.processInfo.isSwiftUIPreview { ... }
-     ```
-
-     This can be used to customize some logic based on if it
-     is used in a preview or not.
-     */
+    /// Whether or not the code runs in a SwiftUI preview.
     var isSwiftUIPreview: Bool {
         environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
     }
 
-    /**
-     Whether or not the code runs in a SwiftUI preview.
-
-     You can check this in your Swift code, as such:
-
-     ```swift
-     if ProcessInfo.processInfo.isSwiftUIPreview { ... }
-     ```
-
-     This can be used to customize some logic based on if it
-     is used in a preview or not.
-     */
+    /// Whether or not the code runs in a SwiftUI preview.
     static var isSwiftUIPreview: Bool {
         processInfo.isSwiftUIPreview
     }
