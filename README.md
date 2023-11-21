@@ -7,18 +7,16 @@
     <img src="https://img.shields.io/badge/Swift-5.9-orange.svg" alt="Swift 5.9" />
     <img src="https://img.shields.io/badge/platform-SwiftUI-blue.svg" alt="Swift UI" title="Swift UI" />
     <img src="https://img.shields.io/github/license/danielsaidi/SwiftUIKit" alt="MIT License" />
-    <a href="https://twitter.com/danielsaidi">
-        <img src="https://img.shields.io/twitter/url?label=Twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Fdanielsaidi" alt="Twitter: @danielsaidi" title="Twitter: @danielsaidi" />
-    </a>
-    <a href="https://mastodon.social/@danielsaidi">
-        <img src="https://img.shields.io/mastodon/follow/000253346?label=mastodon&style=social" alt="Mastodon: @danielsaidi@mastodon.social" title="Mastodon: @danielsaidi@mastodon.social" />
-    </a>
+    <a href="https://twitter.com/danielsaidi"><img src="https://img.shields.io/twitter/url?label=Twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Fdanielsaidi" alt="Twitter: @danielsaidi" title="Twitter: @danielsaidi" /></a>
+    <a href="https://mastodon.social/@danielsaidi"><img src="https://img.shields.io/mastodon/follow/000253346?label=mastodon&style=social" alt="Mastodon: @danielsaidi@mastodon.social" title="Mastodon: @danielsaidi@mastodon.social" /></a>
 </p>
 
 
 ## About SwiftUIKit
 
-SwiftUIKit adds extra functionality to `SwiftUI`, like extensions to existing types and completely new stuff.
+SwiftUIKit adds extra functionality to `SwiftUI`, like additional view, extensions to existing types and completely new stuff.
+
+SwiftUIKit also has a bunch of non-SwiftUI related things that I often use in my apps.
 
 
 
@@ -40,17 +38,11 @@ The [online documentation][Documentation] has more information, code examples, e
 
 
 
-## Demo Application
+## Support my work
 
-This repository doesn't have a demo application, but you can use the source code previews to preview most features directly in Xcode.
+I manage many open-source projects on my spare time and would be very thankful for any help I can get to keep my work going. 
 
-
-
-## Support
-
-I manage my various open-source projects in my free time and am really thankful for any help I can get from the community. 
-
-You can sponsor this project on [GitHub Sponsors][Sponsors] or get in touch for paid support.
+You can sponsor my work on [GitHub Sponsors][Sponsors] or get in touch for paid support.
 
 
 
@@ -61,13 +53,7 @@ Feel free to reach out if you have questions or if you want to contribute in any
 * Website: [danielsaidi.com][Website]
 * Mastodon: [@danielsaidi@mastodon.social][Mastodon]
 * Twitter: [@danielsaidi][Twitter]
-* E-mail: [daniel.saidi@gmail.com][Email]
-
-
-
-## Supported Platforms
-
-SwiftUIKit supports `iOS 13`, `macOS 11`, `tvOS 13` and `watchOS 6`.  
+* E-mail: [daniel.saidi@gmail.com][Email] 
 
 
 

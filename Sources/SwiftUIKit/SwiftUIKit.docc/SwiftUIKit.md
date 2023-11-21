@@ -8,9 +8,9 @@ SwiftUIKit adds extra functionality to `SwiftUI`.
 
 ![SwiftUIKit logo](Logo.png)
 
-The online documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator then run `Product/Build Documentation`.
+This documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator and run `Product/Build Documentation`.
 
-The library is divided into the namespaces found in the Topics section below. For more information, source code, an if you want to report issues, sponsor the project etc., visit the [project repository](https://github.com/danielsaidi/SwiftUIKit).
+The library is divided into the namespaces found in the Topics section below. For more information, source code, issues, to sponsor the project etc., visit the [project repository][Repository].
 
 
 
@@ -210,3 +210,6 @@ SwiftUIKit is available under the MIT license.
 - ``EditableView``
 - ``FetchedDataView``
 - ``TextReplacement``
+
+
+[Repository]: https://github.com/danielsaidi/SwiftUIKit

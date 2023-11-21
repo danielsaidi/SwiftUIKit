@@ -15,8 +15,8 @@ import Foundation
  This class can be used to observe file system changes for a
  certain folder.
  
- The uses an internal ``FolderMonitor`` instance to keep the
- ``FolderObservable/files`` property in sync.
+ The uses an internal ``DirectoryMonitor`` instance, to keep
+ the ``files`` property in sync.
  */
 public class DirectoryObservable: ObservableObject {
     
