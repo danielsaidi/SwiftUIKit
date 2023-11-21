@@ -10,7 +10,6 @@ import SwiftUI
 import SwiftUIKit
 import XCTest
 
-@available(iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 private struct MyCodable: Codable, Identifiable {
 
     var name: String
@@ -18,7 +17,6 @@ private struct MyCodable: Codable, Identifiable {
     var id: String { name }
 }
 
-@available(iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 private class MyState: ObservableObject {
 
     @AppStorage("com.example.appstorage.array", store: .standard)
@@ -28,7 +26,6 @@ private class MyState: ObservableObject {
     var dictionary: [MyCodable.ID: MyCodable]?
 }
 
-@available(iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 final class AppStorageCodableTests: XCTestCase {
 
     func testCanPersistArray() {

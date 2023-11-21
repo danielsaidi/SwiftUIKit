@@ -9,10 +9,12 @@ This version also adds everything from `SwiftKit`, which is a barely used librar
 
 ### ✨ New features
 
-* `Bundle+Information` adds bundle-specific extensions.
-* `Collection+Async` adds collection concurrency extensions.
-* `CsvParser` can be used to parse CSV files and strings.
+* `Bundle+Information` is a new extension with bundle-specific information.
+* `Collection+Async` is a new extension with concurrency-specific utils.
+* `CsvParser` is a new class that can be used to parse CSV files and strings.
+* `Date` is a new namespace with date-related extensions and utilities.
 * `ListAction` is a new enum with quick list action types.
+* `MimeType` is a new type that defines various MIME types.
 
 ### 🐛 Bug fixes
 
