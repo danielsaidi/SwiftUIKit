@@ -16,21 +16,19 @@ import Foundation
  
  This is a convenience protocol that automatically makes the
  implementing type implement `RawRepresentable`, which means
- that it can be stored in SwiftUI various storages in iOS 15.
+ that it can be stored in various SwiftUI storages.
  
  The `RawRepresentable` implementations use the `JSONEncoder`
  and `JSONDecoder` to encode and decode the types.
  
  The reason to why `RawRepresentable` is not just applied to
  `Codable` directly, is that some codable types may not want
- to use JSON encoding and decoding. For such cases, just let
- types implement `RawRepresentable` instead of this protocol.
+ to use JSON encoding and decoding.
  
  > Important: Keep in mind that JSON encoding may affect the
  object. For instance, JSON encoding a dynamic `Color` value
  to a raw data representation will remove any light and dark
- mode support, support for high constrasts etc. and just use
- the raw color information.
+ mode support, support for high constrasts etc.
  */
 public protocol StorageCodable: Codable, RawRepresentable {}
 
