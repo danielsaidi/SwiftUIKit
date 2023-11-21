@@ -1,5 +1,5 @@
 //
-//  FormGroupButtonStyle.swift
+//  FormInlineButtonStyle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
@@ -13,7 +13,7 @@ import SwiftUI
  This style can be used to generate horizontal button groups
  that mimics the look of the topmost iOS Contact buttons.
  */
-public struct FormGroupButtonStyle: ButtonStyle {
+public struct FormInlineActionButtonStyle: ButtonStyle {
     
     /**
      Create a custom form group button style.
@@ -82,7 +82,7 @@ public struct FormGroupButtonStyle: ButtonStyle {
     }
 }
 
-private extension FormGroupButtonStyle {
+private extension FormInlineActionButtonStyle {
     
     @ViewBuilder
     var background: some View {
@@ -102,23 +102,23 @@ private extension FormGroupButtonStyle {
     }
 }
 
-public extension FormGroupButtonStyle {
+public extension FormInlineActionButtonStyle {
     
     /**
      A standard form group button style.
      
      You can override the value to mofify the global default.
      */
-    static var standard = FormGroupButtonStyle()
+    static var standard = FormInlineActionButtonStyle()
 }
 
-public extension ButtonStyle where Self == FormGroupButtonStyle {
+public extension ButtonStyle where Self == FormInlineActionButtonStyle {
     
-    /// A standard ``FormGroupButtonStyle``.
-    static var formGroup: FormGroupButtonStyle { .standard }
+    /// A standard ``FormInlineActionButtonStyle``.
+    static var formInlineAction: FormInlineActionButtonStyle { .standard }
     
-    /// A custom ``FormGroupButtonStyle``.
-    static func formGroup(
+    /// A custom ``FormInlineActionButtonStyle``.
+    static func formInlineAction(
         backgroundColor: Color? = nil,
         cornerRadius: Double = 10,
         disabledOpacity: Double = 0.5,
@@ -126,7 +126,7 @@ public extension ButtonStyle where Self == FormGroupButtonStyle {
         padding: Double = 8,
         pressedOpacity: Double = 0.5,
         shadowStyle: ViewShadowStyle = .none
-    ) -> FormGroupButtonStyle {
+    ) -> FormInlineActionButtonStyle {
         .init(
             backgroundColor: backgroundColor,
             cornerRadius: cornerRadius,
@@ -140,7 +140,7 @@ public extension ButtonStyle where Self == FormGroupButtonStyle {
 }
 
 
-public extension FormGroupButtonStyle {
+public extension FormInlineActionButtonStyle {
     /**
      This style can be used to generate horizontal button groups
      that mimics the look of the topmost iOS Contact buttons.
@@ -210,7 +210,7 @@ public extension FormGroupButtonStyle {
     }
 }
 
-public extension FormGroupButtonStyle.ButtonLabelStyle {
+public extension FormInlineActionButtonStyle.ButtonLabelStyle {
     
     /**
      A standard button label style.
@@ -220,13 +220,13 @@ public extension FormGroupButtonStyle.ButtonLabelStyle {
     static var standard = Self()
 }
 
-public extension LabelStyle where Self == FormGroupButtonStyle.ButtonLabelStyle {
+public extension LabelStyle where Self == FormInlineActionButtonStyle.ButtonLabelStyle {
     
     /// A standard button label style.
-    static var formGroup: Self { .init() }
+    static var formInlineAction: Self { .init() }
     
     /// A custom button label style.
-    static func formGroup(
+    static func formInlineAction(
         spacing: Double = 7,
         iconFont: Font = .body,
         titleFont: Font = .caption2
@@ -256,7 +256,7 @@ struct FormActionButton_Previews: PreviewProvider {
                     .opacity(0.5)
                 Button {} label: { Label("Feedback", image: .feedback) }
             }
-            .buttonStyle(.formGroup)
+            .buttonStyle(.formInlineAction)
             
         }
         .padding()
@@ -265,7 +265,7 @@ struct FormActionButton_Previews: PreviewProvider {
     }
 }
 
-private extension ButtonStyle where Self == FormGroupButtonStyle {
+private extension ButtonStyle where Self == FormInlineActionButtonStyle {
     
     static var swedish: Self {
         .init(

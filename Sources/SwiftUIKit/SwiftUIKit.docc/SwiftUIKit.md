@@ -69,9 +69,9 @@ SwiftUIKit is available under the MIT license.
 
 ### Form
 
-- ``FormGroupButtonStyle``
+- ``FormInlineActionButtonStyle``
+- ``FormQuickAction``
 - ``FormText``
-- ``FormTextButton``
 - ``FormTextEditor``
 - ``FormTextField``
 
@@ -96,6 +96,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Lists
 
+- ``ListAction``
 - ``ListBadgeIcon``
 - ``ListButtonStyle``
 - ``ListCard``
@@ -104,6 +105,7 @@ SwiftUIKit is available under the MIT license.
 - ``ListDragHandle``
 - ``ListHeaderIcon``
 - ``ListPadding``
+- ``ListQuickAction``
 - ``ListSectionTitle``
 - ``ListSelectItem``
 - ``ListShelfSection``

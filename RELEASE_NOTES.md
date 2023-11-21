@@ -7,6 +7,10 @@ This major version bumps the deployment targets to iOS 15, tvOS 15, watchOS 8, a
 
 This lets us remove a lot of code that is just there to cater to the needs of older OS versions.
 
+### ✨ New features
+
+* `ListAction` is a new enum with quick list action types.
+
 ### 🐛 Bug fixes
 
 * `View` `disableDynamicType` now applies the provided size category instead of always `.medium`.
@@ -19,6 +23,7 @@ This lets us remove a lot of code that is just there to cater to the needs of ol
 * `EdgeInsets` static factory functions are replaced with proper initializers.
 * `FilePicker` now requires `UTType` instead of `String`.
 * `FormActionButton` is replaced with a single `FormActionButtonStyle` and a new `FormLabelButtonStyle`.
+* `FormTextButton` has been removed, since the `ListAction` is so easy to use.
 * `ScanCodeGenerator` is replaced by `Image` and `ImageRepresentable` init extensions.
 
 

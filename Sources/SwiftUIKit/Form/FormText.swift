@@ -37,31 +37,6 @@ public struct FormText<TrailingView: View>: View {
         self.hideIfEmpty = hideIfEmpty
         self.trailingView = trailingView
     }
-    
-    /**
-     Create a form text view with a trailing action button.
-
-     - Parameters:
-       - title: The footnote text title.
-       - text: The long text text.
-       - action: The quick action to trigger.
-       - actionLabel: The quick action accessibility label.
-     */
-    @available(iOS 15.0, *)
-    public init(
-        title: String,
-        text: String,
-        hideIfEmpty: Bool = false,
-        action: FormTextButton.ActionType,
-        actionLabel: String
-    ) where TrailingView == FormTextButton {
-        self.title = title
-        self.text = text
-        self.hideIfEmpty = hideIfEmpty
-        self.trailingView = {
-            FormTextButton(action, label: actionLabel)
-        }
-    }
 
     /**
      Create a form text view.
@@ -121,38 +96,35 @@ private extension FormText {
     }
 }
 
-@available(iOS 15.0, *)
-struct FormText_Previews: PreviewProvider {
-    
-    static var action: (() -> Void) = {}
-    
-    static var previews: some View {
-        List {
-            FormText(
-                title: "title 1",
-                text: "Text value")
-            FormText(
-                title: "title 2",
-                text: "A looong text value with a trailing view.") {
-                Button(action: {}, label: { Image(systemName: "doc.on.doc") })
-            }
-            FormText(
-                title: "title 2",
-                text: "A looong text value with a trailing view.",
-                action: .copy("123"),
-                actionLabel: "")
-            FormText(
-                title: "title 3",
-                text: "Long\nmultuline\ntext that could have been entered in a text editor.")
-            FormText(
-                title: "title 4",
-                text: "",
-                hideIfEmpty: true)
-            FormText(
-                title: "title 5",
-                text: "",
-                hideIfEmpty: false)
+#Preview {
+    List {
+        FormText(
+            title: "title 1",
+            text: "Text value")
+        FormText(
+            title: "title 2",
+            text: "A looong text value with a trailing view."
+        ) {
+            ListAction.call(phoneNumber: "1234").button
         }
+            .buttonStyle(.borderedProminent)
+        FormText(
+            title: "title 2",
+            text: "A looong text value with a trailing view."
+        ) {
+            ListAction.copy("").button
+        }.buttonStyle(.borderedProminent)
+        FormText(
+            title: "title 3",
+            text: "Long\nmultuline\ntext that could have been entered in a text editor.")
+        FormText(
+            title: "title 4",
+            text: "",
+            hideIfEmpty: true)
+        FormText(
+            title: "title 5",
+            text: "",
+            hideIfEmpty: false)
     }
 }
 #endif
