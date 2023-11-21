@@ -6,6 +6,7 @@
 //  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 import SwiftUIKit
 import XCTest

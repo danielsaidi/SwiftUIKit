@@ -65,6 +65,7 @@ SwiftUIKit is available under the MIT license.
 - ``DirectoryFileManager``
 - ``DirectoryMonitor``
 - ``DirectoryObservable``
+- ``iCloudDocumentSync``
 
 ### Flip
 
@@ -179,6 +180,10 @@ SwiftUIKit is available under the MIT license.
 
 - ``CircularProgressBar``
 - ``LinearProgressBar``
+
+### Regex
+
+- ``ValidationRegex``
 
 ### Sharing
 
