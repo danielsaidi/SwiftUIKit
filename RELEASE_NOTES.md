@@ -10,6 +10,8 @@ This lets us remove a lot of code that is just there to cater to the needs of ol
 ### 💥 Breaking Changes
 
 * All previously deprecated code has been removed.
+
+* `ActionToggle` is removed - just use `onChange(of:)` to observe the toggle state instead.
 * `FilePicker` now requires `UTType` instead of `String`.
 
 
