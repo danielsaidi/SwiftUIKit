@@ -7,12 +7,18 @@ This major version bumps the deployment targets to iOS 15, tvOS 15, watchOS 8, a
 
 This lets us remove a lot of code that is just there to cater to the needs of older OS versions.
 
+### 🐛 Bug fixes
+
+* `View` `disableDynamicType` now applies the provided size category instead of always `.medium`.
+
 ### 💥 Breaking Changes
 
 * All previously deprecated code has been removed.
 
 * `ActionToggle` is removed - just use `onChange(of:)` to observe the toggle state instead.
+* `EdgeInsets` static factory functions are replaced with proper initializers.
 * `FilePicker` now requires `UTType` instead of `String`.
+* `FormActionButton` is replaced with a single `FormActionButtonStyle` and a new `FormLabelButtonStyle`.
 * `ScanCodeGenerator` is replaced by `Image` and `ImageRepresentable` init extensions.
 
 

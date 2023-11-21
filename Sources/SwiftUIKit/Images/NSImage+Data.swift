@@ -7,7 +7,9 @@
 //
 
 #if os(macOS)
+import AppKit
 import Cocoa
+import CoreGraphics
 
 public extension NSImage {
     

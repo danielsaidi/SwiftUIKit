@@ -69,8 +69,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Form
 
-- ``FormActionButton``
-- ``FormActionButtonStyle``
+- ``FormGroupButtonStyle``
 - ``FormText``
 - ``FormTextButton``
 - ``FormTextEditor``

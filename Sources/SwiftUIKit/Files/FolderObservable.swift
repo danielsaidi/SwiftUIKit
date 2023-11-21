@@ -34,13 +34,10 @@ public class FolderObservable: ObservableObject {
     ) {
         self.folderUrl = folderUrl
         self.fileManager = fileManager
-        folderMonitor.startMonitoring()
+        folderMonitor.startMonitoringChanges()
         self.handleChanges()
     }
     
-    /**
-     The latest fetched files in the folder.
-     */
     @Published
     public var files: [URL] = []
     
@@ -49,7 +46,8 @@ public class FolderObservable: ObservableObject {
     
     private lazy var folderMonitor = FolderMonitor(
         folderUrl: folderUrl,
-        onChange: handleChanges)
+        onChange: handleChanges
+    )
 }
 
 private extension FolderObservable {

@@ -41,10 +41,8 @@ public class FolderMonitor {
     private var monitorSource: DispatchSourceFileSystemObject?
     
     
-    /**
-     Start monitoring changes to the directory.
-     */
-    public func startMonitoring() {
+    /// Start monitoring changes to the directory.
+    public func startMonitoringChanges() {
         guard
             monitorSource == nil,
             fileDescriptor == -1
@@ -76,10 +74,8 @@ public class FolderMonitor {
         monitorSource?.resume()
     }
     
-    /**
-     Stop monitoring changes to the directory.
-     */
-    public func stopMonitoring() {
+    /// Stop monitoring changes to the directory.
+    public func stopMonitoringChanges() {
         monitorSource?.cancel()
     }
 }

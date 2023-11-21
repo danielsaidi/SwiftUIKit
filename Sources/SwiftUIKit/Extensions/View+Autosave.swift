@@ -13,8 +13,7 @@ public extension View {
     
     /**
      This modifier can be applied to a view, to make it call
-     an autosave function whenever the provided publisher is
-     emitting new data.
+     an autosave function when a publisher emits new changes.
      */
     func autosave<T>(
         _ obj: Published<T>.Publisher,

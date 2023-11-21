@@ -11,19 +11,17 @@ import SwiftUI
 public extension EdgeInsets {
     
     /// Create a value with the same insets everywhere.
-    static func all(_ all: Double) -> EdgeInsets {
+    init(all: Double) {
         self.init(
             top: all,
             leading: all,
             bottom: all,
-            trailing: all)
+            trailing: all
+        )
     }
     
     /// Create a value with horizontal/vertical values.
-    static func horizontal(
-        _ horizontal: Double,
-        vertical: Double
-    ) -> EdgeInsets {
+    init(horizontal: Double, vertical: Double) {
         self.init(
             top: vertical,
             leading: horizontal,

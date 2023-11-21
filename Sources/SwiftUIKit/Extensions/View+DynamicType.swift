@@ -19,6 +19,6 @@ public extension View {
     func disableDynamicType(
         sizeCategory: ContentSizeCategory = .medium
     ) -> some View {
-        self.environment(\.sizeCategory, .medium)
+        self.environment(\.sizeCategory, sizeCategory)
     }
 }

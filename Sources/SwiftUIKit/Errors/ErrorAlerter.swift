@@ -18,8 +18,7 @@ import SwiftUI
  and alert any errors that occur.
 
  If you throw errors that conform to ``ErrorAlertConvertible``
- you get full control over what's alerted. Other error types
- will alert their localized description.
+ you get full control over what's alerted.
  */
 public protocol ErrorAlerter {
     

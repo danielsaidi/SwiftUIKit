@@ -8,10 +8,7 @@
 
 import Foundation
 
-/**
- This enum defines the scan code types that can be used with
- a ``ScanCodeGenerator``.
- */
+/// This enum defines various scan code types.
 public enum ScanCodeType: String, CaseIterable, Identifiable {
     
     /// An `Aztek` scan code.
@@ -29,27 +26,19 @@ public enum ScanCodeType: String, CaseIterable, Identifiable {
 
 public extension ScanCodeType {
     
-    /**
-     This type is an alias for ``ScanCodeType/code128``.
-     */
+    /// This type is an alias for ``ScanCodeType/code128``.
     static var barcode: ScanCodeType { .code128 }
 }
 
 public extension ScanCodeType {
     
-    /**
-     The display name of the code type.
-     */
+    /// The display name of the code type.
     var id: String { rawValue }
     
-    /**
-     The display name of the code type.
-     */
+    /// The display name of the code type.
     var name: String { rawValue.capitalized }
     
-    /**
-     The `CIFilter` name to use when generating a scan code.
-     */
+    /// The filter name to use when generating a scan code.
     var ciFilterName: String {
         switch self {
         case .aztek: return "CIAztecCodeGenerator"

@@ -11,6 +11,9 @@ import SwiftUI
 /**
  This protocol can be implemented by error types that can be
  used together with an ``ErrorAlerter``.
+ 
+ This makes it possible to specify display content for error
+ types that are meant to be presented to users.
  */
 public protocol ErrorAlertConvertible: Error {
 
