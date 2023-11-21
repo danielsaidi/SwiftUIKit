@@ -141,6 +141,10 @@ SwiftUIKit is available under the MIT license.
 - ``PageIndicatorStyle``
 - ``PageView``
 
+### Pasteboard
+
+- ``Pasteboard``
+
 ### Pickers
 
 - ``ColorPickerBar``

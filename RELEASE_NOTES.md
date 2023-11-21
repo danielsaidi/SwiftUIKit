@@ -14,6 +14,7 @@ This version removes protocols where not needed. This means that it will no long
 * `Bundle+Information` is a new extension with bundle-specific information.
 * `BundleFileFinder` is a new file service that can search for files in a bundle.
 * `Collections` is a new namespace with collection-related utilities and extensions.
+* `Commands` is a new namespace with `macOS` commands.
 * `CsvParser` is a new class that can be used to parse CSV files and strings.
 * `Date` is a new namespace with date-related extensions and utilities.
 * `DeviceIdentifier` is a new class for generating unique device IDs.
@@ -21,6 +22,7 @@ This version removes protocols where not needed. This means that it will no long
 * `Keychain` is a new namespace with keychain-related utilities and services.
 * `ListAction` is a new enum with quick list action types.
 * `MimeType` is a new type that defines various MIME types.
+* `Pasteboard` is a multi-platform pasteboard typealias.
 * `String` is a new namespace with string-related utilities and extensions.
 * `URL+iCloud` adds new iCloud-specific URLs.
 * `ValidationRegex` is a struct that defines various regex-based validation expressions.
