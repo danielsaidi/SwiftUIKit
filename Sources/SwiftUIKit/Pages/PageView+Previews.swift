@@ -33,7 +33,6 @@ private struct PreviewPage: View {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 struct PageView_Previews: PreviewProvider {
     
     struct StaticPreview: View {

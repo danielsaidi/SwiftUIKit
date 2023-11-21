@@ -10,9 +10,7 @@ import SwiftUI
 
 public extension Image {
     
-    /**
-     Create an image from a certain ``ImageRepresentable``.
-     */
+    /// Create an image from a certain ``ImageRepresentable``.
     init(image: ImageRepresentable) {
         #if os(iOS) || os(watchOS) || os(tvOS)
         self.init(uiImage: image)

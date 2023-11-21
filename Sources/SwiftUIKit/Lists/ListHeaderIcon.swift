@@ -14,12 +14,6 @@ import SwiftUI
  */
 public struct ListHeaderIcon<Icon: View>: View {
 
-    /**
-     Create a list header icon.
-
-     - Parameters:
-       - icon: The icon to add.
-     */
     public init(
         icon: Icon
     ) {

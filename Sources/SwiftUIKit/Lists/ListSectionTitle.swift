@@ -17,9 +17,6 @@ import SwiftUI
  */
 public struct ListSectionTitle: View {
 
-    /**
-     Create a list section title.
-     */
     public init(
         _ text: String,
         withInsets: Bool = false

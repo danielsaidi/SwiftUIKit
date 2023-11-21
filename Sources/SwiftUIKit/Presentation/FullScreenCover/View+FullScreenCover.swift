@@ -9,7 +9,6 @@
 #if os(iOS) || os(tvOS) || os(watchOS) 
 import SwiftUI
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public extension View {
     
     /**

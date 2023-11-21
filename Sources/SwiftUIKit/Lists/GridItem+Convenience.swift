@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public extension GridItem {
     
     /// Several items in the space of a single flexible item.
@@ -27,7 +26,6 @@ public extension GridItem {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public extension Collection where Element == GridItem {
     
     /// Several items in the space of a single flexible item.

@@ -32,7 +32,6 @@ import SwiftUI
  context.present(AppCover.videoPlayer(url))
  ```
  */
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public class FullScreenCoverContext: PresentationContext<AnyView> {
     
     public func present<Cover: View>(_ cover: @autoclosure @escaping () -> Cover) {

@@ -12,7 +12,6 @@ import SwiftUI
 /**
  This enum defined various text editor styles.
  */
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public enum TextEditorStyle {
 
     /// The standard, borderless style.
@@ -29,7 +28,6 @@ public enum TextEditorStyle {
 
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension TextEditor {
 
     @ViewBuilder
@@ -57,7 +55,6 @@ public extension TextEditor {
     }
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct TextEditorStyle_Previews: PreviewProvider {
 
     @State

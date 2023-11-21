@@ -15,7 +15,6 @@ import SwiftUI
  The drag handle will only be displayed when the list is not
  being edited, since edit mode should use a native handle.
  */
-@available(iOS 14.0, *)
 public struct ListDragHandle: View {
 
     public init() {}
@@ -33,7 +32,6 @@ public struct ListDragHandle: View {
     }
 }
 
-@available(iOS 14.0, *)
 private extension ListDragHandle {
 
     var isEditing: Bool {
@@ -45,7 +43,6 @@ private extension ListDragHandle {
     }
 }
 
-@available(iOS 14.0, *)
 struct ListDragHandle_Previews: PreviewProvider {
 
     static var previews: some View {

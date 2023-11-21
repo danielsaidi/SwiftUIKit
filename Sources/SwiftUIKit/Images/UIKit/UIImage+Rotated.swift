@@ -11,9 +11,7 @@ import UIKit
 
 public extension UIImage {
     
-    /**
-     Rotate an image a certain amount of radians.
-     */
+    /// Rotate an image a certain amount of radians.
     func rotated(withRadians radians: Float) -> UIImage? {
         let radians = CGFloat(radians)
         let transform = CGAffineTransform(rotationAngle: radians)

@@ -15,7 +15,6 @@ import SwiftUI
  This type represents a reorderable item that can be used in
  a ``ReorderableForEach``.
  */
-@available(iOS 15.0, macOS 12.0, *)
 public typealias Reorderable = Identifiable & Equatable
 
 /**
@@ -82,7 +81,6 @@ public typealias Reorderable = Identifiable & Equatable
  Also, using a material background will cause a dragged view
  to flicker black.
  */
-@available(iOS 15.0, macOS 12.0, *)
 public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View>: View {
     
     /**
@@ -151,7 +149,6 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 private extension ReorderableForEach {
     
     func contentView(for item: Item) -> some View {
@@ -178,7 +175,6 @@ private extension ReorderableForEach {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 public extension View {
     
     /**
@@ -192,7 +188,6 @@ public extension View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 struct ReorderableDropOutsideDelegate<Item: Reorderable>: DropDelegate {
     
     @Binding
@@ -208,7 +203,6 @@ struct ReorderableDropOutsideDelegate<Item: Reorderable>: DropDelegate {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
     
     let item: Item

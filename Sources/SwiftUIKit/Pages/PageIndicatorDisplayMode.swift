@@ -26,7 +26,6 @@ public enum PageIndicatorDisplayMode {
 #if os(iOS) || os(tvOS) || os(watchOS)
 extension PageIndicatorDisplayMode {
     
-    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
     var tabViewMode: PageTabViewStyle.IndexDisplayMode {
         #if os(iOS) || os(tvOS)
         switch self {

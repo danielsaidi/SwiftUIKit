@@ -16,7 +16,6 @@ import SwiftUI
  When using `call` and `email` actions, just provide the raw
  URL without the `tel:` or `mailto:` prefix.
  */
-@available(iOS 15.0, *)
 public struct FormTextButton: View {
     
     public init(
@@ -59,7 +58,6 @@ public struct FormTextButton: View {
     }
 }
 
-@available(iOS 15.0, *)
 private extension FormTextButton {
     
     func copy(_ value: String) {
@@ -67,7 +65,6 @@ private extension FormTextButton {
     }
 }
 
-@available(iOS 15.0, *)
 private extension FormTextButton {
     
     func icon(_ name: String) -> some View {
@@ -96,7 +93,6 @@ private extension FormTextButton {
     }
 }
 
-@available(iOS 15.0, *)
 private extension View {
     
     func formTextButton(label: String) -> some View {
@@ -105,7 +101,6 @@ private extension View {
     }
 }
 
-@available(iOS 15.0, *)
 struct FormTextButton_Previews: PreviewProvider {
     
     static var action: (() -> Void) = {}

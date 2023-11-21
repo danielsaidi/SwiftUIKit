@@ -13,7 +13,6 @@ import SwiftUI
  This button aims to replicate the horizontal action buttons
  that are used in e.g. the Contacts app.
  */
-@available(iOS 14, *)
 public struct FormActionButton: View {
 
     /**
@@ -52,7 +51,6 @@ public struct FormActionButton: View {
     }
 }
 
-@available(iOS 14, *)
 public extension FormActionButton {
 
     /**
@@ -68,7 +66,6 @@ public extension FormActionButton {
     }
 }
 
-@available(iOS 14, *)
 private extension FormActionButton {
 
     var image: some View {
@@ -86,7 +83,6 @@ private extension FormActionButton {
     }
 }
 
-@available(iOS 14, *)
 struct FormActionButton_Previews: PreviewProvider {
     
     static func button(

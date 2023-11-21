@@ -12,7 +12,6 @@ import SwiftUI
  This view modifier can be applied to a multiline `TextField`
  to make it submit when the primary (return) key is pressed.
  */
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 public struct MultilineSubmitViewModifier: ViewModifier {
     
     /**
@@ -56,7 +55,6 @@ public struct MultilineSubmitViewModifier: ViewModifier {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 public extension View {
     
     /**

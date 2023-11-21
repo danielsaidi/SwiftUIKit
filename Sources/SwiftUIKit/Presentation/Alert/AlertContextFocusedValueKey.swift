@@ -31,7 +31,6 @@ public struct AlertContextFocusedValueKey: FocusedValueKey {
     public typealias Value = AlertContext
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension FocusedValues {
     
     var alertContext: AlertContextFocusedValueKey.Value? {

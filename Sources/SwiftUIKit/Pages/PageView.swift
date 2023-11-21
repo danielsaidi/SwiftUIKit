@@ -27,7 +27,6 @@ import SwiftUI
  approach, use `never` as `pageIndicatorDisplayMode` and add
  a ``PageIndicator`` view as an overlay.
  */
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 public struct PageView<PageViewType: View>: View {
     
     /**
@@ -94,7 +93,6 @@ public struct PageView<PageViewType: View>: View {
     }
 }
 
-@available(iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 private extension PageView {
     
     func trySetupStyle() {

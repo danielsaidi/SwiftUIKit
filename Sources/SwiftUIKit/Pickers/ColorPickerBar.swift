@@ -21,7 +21,6 @@ import SwiftUI
  of colors to list, but you can pass in any custom list, for
  instance by adding `.clear` to the standard list.
  */
-@available(iOS 15.0, macOS 12.0, *)
 public struct ColorPickerBar: View {
 
     /**
@@ -95,7 +94,6 @@ public struct ColorPickerBar: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 public extension ColorPickerBar {
 
     /// This type can be used to config a ``ColorPickerBar``.
@@ -177,7 +175,6 @@ public extension ColorPickerBar {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 private extension ColorPickerBar {
 
     func colorButton(for color: Color) -> some View {
@@ -258,7 +255,6 @@ private extension ColorPickerBar {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 private extension ColorPickerBar {
 
     var hasChanges: Bool {
@@ -278,7 +274,6 @@ private extension ColorPickerBar {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 public extension Collection where Element == Color {
 
     /// Get a standard list of `ColorPickerBar` colors.
@@ -298,7 +293,6 @@ public extension Collection where Element == Color {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, *)
 struct ColorPickerBar_Previews: PreviewProvider {
 
     struct Preview: View {

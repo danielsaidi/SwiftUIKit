@@ -8,7 +8,6 @@ import SwiftUI
  but since it will not affect the value, changing this value
  should be a side-effect of the triggered actions.
  */
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public struct ActionToggle<Label: View>: View {
 
     /**
@@ -68,8 +67,6 @@ public struct ActionToggle<Label: View>: View {
     }
 }
 
-
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public extension ActionToggle where Label == Text {
 
     /**
@@ -96,8 +93,6 @@ public extension ActionToggle where Label == Text {
     }
 }
 
-
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 private extension ActionToggle {
 
     @ViewBuilder
@@ -107,8 +102,6 @@ private extension ActionToggle {
     }
 }
 
-
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct ActionToggle_Previews: PreviewProvider {
 
     /**
@@ -123,9 +116,20 @@ struct ActionToggle_Previews: PreviewProvider {
 
         @State
         private var isSheetActive = false
+        
+        @State
+        private var isNewStateOn = false
+        @State
+        private var newText = ""
 
         var body: some View {
             VStack {
+                Text(newText)
+                Toggle("New", isOn: $isNewStateOn)
+                    .onChange(of: isNewStateOn) { _ in
+                        newText = isNewStateOn ? "On" : "Off"
+                    }
+                
                 ActionToggle("Feature", isOn: $isOn) {
                     isSheetActive = true
                 } offAction: {

@@ -50,12 +50,10 @@ struct View_PersistentSystemOverlays_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             #if os(iOS) || os(macOS)
-            if #available(iOS 14.0, macOS 11.0, *) {
-                Menu("Test") {
-                    Button("1") {}
-                    Button("2") {}
-                }.prefersMenuOrderFixed()
-            }
+            Menu("Test") {
+                Button("1") {}
+                Button("2") {}
+            }.prefersMenuOrderFixed()
             #endif
         }.prefersPersistentSystemOverlaysHidden()
     }

@@ -39,7 +39,6 @@ import SwiftUI
  You can also customize the built-in styles, to change their
  standard configuration and how this view looks by default.
  */
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 public struct LinearProgressBar: View {
 
     /**
@@ -85,7 +84,6 @@ public struct LinearProgressBar: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 private extension LinearProgressBar {
 
     var backgroundMaterial: some ShapeStyle {
@@ -111,7 +109,6 @@ private extension LinearProgressBar {
 
 // MARK: - Style
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 public extension LinearProgressBar {
 
     /**
@@ -183,7 +180,6 @@ public extension LinearProgressBar {
 
 // MARK: - Styles
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 public extension LinearProgressBar.Style {
 
     /// The standard linear progress bar style.
@@ -229,7 +225,6 @@ public extension Animation {
 
 // MARK: - Previews
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 struct LinearProgressBar_Previews: PreviewProvider {
 
     struct Preview: View {
@@ -274,7 +269,6 @@ struct LinearProgressBar_Previews: PreviewProvider {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, *)
 private extension LinearProgressBar.Style {
 
     static var swedish: LinearProgressBar.Style = {

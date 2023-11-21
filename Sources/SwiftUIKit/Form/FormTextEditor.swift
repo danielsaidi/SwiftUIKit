@@ -16,7 +16,6 @@ import SwiftUI
  support iOS 16, since ``FormTextField`` will then have more
  support for multiline capabilities.
  */
-@available(iOS 14, *)
 public struct FormTextEditor: View {
 
     /**
@@ -54,7 +53,6 @@ public struct FormTextEditor: View {
     }
 }
 
-@available(iOS 14, *)
 struct FormTextEditor_Previews: PreviewProvider {
     
     struct Preview: View {

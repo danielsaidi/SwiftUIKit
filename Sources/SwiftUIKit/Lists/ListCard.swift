@@ -14,7 +14,6 @@ import SwiftUI
  The card can be styled with a corner radius and shadow, and
  can also be provided with a list of context menu items.
  */
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 public struct ListCard<Content: View, ContextMenuView: View>: View {
 
     /**
@@ -167,7 +166,6 @@ public extension ViewShadowStyle {
     )
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 struct ListCard_Previews: PreviewProvider {
 
     static var previews: some View {
