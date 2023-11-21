@@ -108,7 +108,7 @@ struct ListShelfSection_Previews: PreviewProvider {
 
     static var section: some View {
         ListShelfSection {
-            Text("Section").font(.headline)
+            ListSectionTitle("Section")
         } content: {
             Group {
                 ListCard {

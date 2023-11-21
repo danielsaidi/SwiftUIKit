@@ -78,9 +78,7 @@ public extension ViewShadowStyle {
 
 public extension View {
 
-    /**
-     Apply a ``ViewShadowStyle`` to the view.
-     */
+    /// Apply a ``ViewShadowStyle`` to the view.
     @ViewBuilder
     func shadow(_ style: ViewShadowStyle) -> some View {
         if let color = style.color {

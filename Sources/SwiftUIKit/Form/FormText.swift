@@ -83,10 +83,8 @@ private extension FormText {
     
     var stack: some View {
         HStack(spacing: 10) {
-            VStack(alignment: .leading, spacing: 5) {
-                FormTextTitle(title)
-                Text(text)
-            }
+            Text(text)
+                .formRowTitle(title)
             if let trailing = trailingView {
                 Spacer()
                 trailing()

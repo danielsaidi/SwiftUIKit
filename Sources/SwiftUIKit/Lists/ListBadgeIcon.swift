@@ -12,11 +12,6 @@ import SwiftUI
 /**
  This view mimics the color badge icons that can be found in
  e.g. System Settings lists on iOS.
- 
- The original image will be used if you provide `nil` as the
- `iconColor`. If that image is an SF Symbol, you can apply a
- `.symbolRenderingMode` and `.foregroundStyle` to add custom
- styles to the icon.
  */
 @available(iOS 16.0, *)
 public struct ListBadgeIcon: View {

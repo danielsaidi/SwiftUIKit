@@ -79,8 +79,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View, DismissableV
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
     
-    @Environment(\.presentationMode)
-    public var presentationMode
+    @Environment(\.dismiss)
+    public var dismiss
     
     public var body: some View {
         List {

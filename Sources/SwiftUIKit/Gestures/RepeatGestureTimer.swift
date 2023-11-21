@@ -30,14 +30,11 @@ public class RepeatGestureTimer {
 
     deinit { stop() }
 
-    /**
-     This singleton instance can be used whenever applicable.
-     */
+    
+    /// A shared singleton instance.
     public static let shared = RepeatGestureTimer()
 
-    /**
-     The repeat time interval.
-     */
+    /// The repeat time interval.
     public var repeatInterval: TimeInterval
 
 
@@ -48,25 +45,16 @@ public class RepeatGestureTimer {
 
 public extension RepeatGestureTimer {
 
-    /**
-     The elapsed time since the timer was started.
-     */
+    /// The elapsed time since the timer was started.
     var duration: TimeInterval? {
         guard let date = startDate else { return nil }
         return Date().timeIntervalSince(date)
     }
 
-    /**
-     Whether or not the timer is active.
-     */
+    /// Whether or not the timer is active.
     var isActive: Bool { timer != nil }
 
-    /**
-     Start the repeat gesture timer with a certain action.
-
-     - Parameters:
-       - action: The action to repeat.
-     */
+    /// Start the repeat gesture timer with a certain action.
     func start(action: @escaping () -> Void) {
         if isActive { return }
         stop()
@@ -76,9 +64,7 @@ public extension RepeatGestureTimer {
             repeats: true) { _ in action() }
     }
 
-    /**
-     Stop the repeat gesture timer.
-     */
+    /// Stop the repeat gesture timer.
     func stop() {
         timer?.invalidate()
         timer = nil

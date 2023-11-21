@@ -9,11 +9,11 @@
 import SwiftUI
 
 /**
- This view mimics the `Section` title in a grouped `List`.
+ This view mimics the `Section` title in a grouped `List` to
+ let us use that style outside of lists.
  
- The view doesn't add any insets by default, but you can use
- the `withInsets` init parameter to make it apply a standard
- grouped title padding to the view.
+ The view doesn't add any insets by default, but you can set
+ `withInsets` to `true` to apply a standard padding.
  */
 public struct ListSectionTitle: View {
 

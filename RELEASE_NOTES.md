@@ -20,10 +20,12 @@ This lets us remove a lot of code that is just there to cater to the needs of ol
 * All previously deprecated code has been removed.
 
 * `ActionToggle` is removed - just use `onChange(of:)` to observe the toggle state instead.
+* `DismissableView` now uses `DismissAction` instead of `PresentationMode`.
 * `EdgeInsets` static factory functions are replaced with proper initializers.
 * `FilePicker` now requires `UTType` instead of `String`.
 * `FormActionButton` is replaced with a single `FormActionButtonStyle` and a new `FormLabelButtonStyle`.
 * `FormTextButton` has been removed, since the `ListAction` is so easy to use.
+* `FormTextEditor` and `FormTextField` has been removed. Use native types with a `.formRowTitle(...)` modifier instead.
 * `ScanCodeGenerator` is replaced by `Image` and `ImageRepresentable` init extensions.
 
 

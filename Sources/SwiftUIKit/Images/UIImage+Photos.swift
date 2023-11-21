@@ -22,10 +22,6 @@ public extension UIImage {
     }
 }
 
-/**
- This class is used as a target/selector holder by the image
- extension above.
- */
 private class ImageService: NSObject {
     
     public typealias Completion = (Error?) -> Void

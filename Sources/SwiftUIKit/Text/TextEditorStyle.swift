@@ -25,7 +25,6 @@ public enum TextEditorStyle {
 
     /// A rounded border style with a custom color.
     case roundedColorBorder(Color, Double = 0.5)
-
 }
 
 public extension TextEditor {

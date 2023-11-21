@@ -47,16 +47,12 @@ public struct FontStyle {
 
 public extension View {
 
-    /**
-     Apply the provided ``FontStyle``.
-     */
+    /// Apply the provided ``FontStyle``.
     func font(_ style: FontStyle) -> some View {
         font(style.font)
     }
     
-    /**
-     Apply a custom font with a `name`, `style` and `weight`.
-     */
+    /// Apply a custom font with a name, style and weight.
     func font(
         name: String,
         style: UIFont.TextStyle,

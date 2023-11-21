@@ -31,7 +31,6 @@ public struct TextFieldClearButton: ViewModifier {
             Image(systemName: "multiply.circle.fill")
                 .foregroundColor(.secondary)
                 .opacity(text == "" ? 0 : 1)
-                .animation(.default, value: text)
                 .onTapGesture { self.text = "" }
         }
     }

@@ -8,13 +8,12 @@
 
 import SwiftUI
 
-
 /**
- This style makes buttons take up the entire row and applies
- a content shape that makes the entire row tappable.
+ This style makes a button take up an entire row and applies
+ a content shape that makes the entire view tappable.
 
- You can apply the style to an entire `List` and can use the
- `.buttonStyle(.list)` view modifier shorthand.
+ You can apply the style with `.buttonStyle(.list)`, and can
+ apply it to an entire list, just as with other styles.
  */
 public struct ListButtonStyle: ButtonStyle {
 
@@ -29,8 +28,7 @@ public extension ButtonStyle where Self == ListButtonStyle {
 
     /**
      This style makes the button label take up all available
-     width and also applies a rectangular content shape that
-     makes the entire button row tappable.
+     width makes the entire view tappable.
      */
     static var list: ListButtonStyle { .init() }
 }

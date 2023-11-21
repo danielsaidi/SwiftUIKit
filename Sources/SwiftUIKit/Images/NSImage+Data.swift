@@ -13,16 +13,12 @@ import CoreGraphics
 
 public extension NSImage {
     
-    /**
-     Get the image's core graphics image representation.
-     */
+    /// Get the image's core graphics image representation.
     var cgImage: CGImage? {
         cgImage(forProposedRect: nil, context: nil, hints: nil)
     }
     
-    /**
-     Get the image's JPEG data representation.
-     */
+    /// Get the image's JPEG data representation.
     func jpegData(compressionQuality: CGFloat) -> Data? {
         guard let image = cgImage else { return nil }
         let bitmap = NSBitmapImageRep(cgImage: image)

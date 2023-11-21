@@ -38,7 +38,8 @@ public struct ForEachMultiPicker<Item: Identifiable, ItemView: View>: View, Dism
     
     public typealias ItemViewBuilder = (_ item: Item, _ isSelected: Bool) -> ItemView
     
-    @Environment(\.presentationMode) public var presentationMode
+    @Environment(\.dismiss)
+    public var dismiss
     
     public var body: some View {
         ForEach(items) { item in

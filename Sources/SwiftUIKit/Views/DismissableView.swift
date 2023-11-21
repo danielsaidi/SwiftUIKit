@@ -22,12 +22,44 @@ import SwiftUI
  */
 public protocol DismissableView: View {
     
-    var presentationMode: Binding<PresentationMode> { get }
+    var dismiss: DismissAction { get }
 }
 
 public extension DismissableView {
     
     func dismiss() {
-        presentationMode.wrappedValue.dismiss()
+        dismiss.callAsFunction()
     }
+}
+
+#Preview {
+    
+    struct Preview: View {
+        
+        @State
+        var isPresented = false
+        
+        var body: some View {
+            Button("Present") {
+                isPresented.toggle()
+            }
+            .sheet(isPresented: $isPresented) {
+                PreviewSheet()
+            }
+        }
+    }
+    
+    struct PreviewSheet: View {
+        
+        @Environment(\.dismiss)
+        var dismiss
+        
+        var body: some View {
+            Button("Dismiss") {
+                dismiss()
+            }
+        }
+    }
+    
+    return Preview()
 }
