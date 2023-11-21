@@ -91,7 +91,7 @@ private extension ListAction {
 private extension ListAction {
     
     func copy(_ value: String) {
-        Pasteboard.general.setString(value)
+        Pasteboard.general.copy(value)
     }
 }
 

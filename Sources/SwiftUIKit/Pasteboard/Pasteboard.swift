@@ -16,7 +16,8 @@ public typealias Pasteboard = UIPasteboard
 
 public extension Pasteboard {
     
-    func setString(_ string: String) {
+    /// Copy a string to the pasteboard.
+    func copy(_ string: String) {
         #if os(macOS)
         clearContents()
         setString(string, forType: .string)
