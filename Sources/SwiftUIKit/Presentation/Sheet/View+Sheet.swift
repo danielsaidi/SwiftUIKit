@@ -11,8 +11,9 @@ import SwiftUI
 public extension View {
     
     /**
-     Present a sheet from a certain sheet context. The sheet
-     will be presented when the context is active.
+     Present a sheet with a certain context.
+     
+     The sheet will be presented when the context is active.
      */
     func sheet(_ context: SheetContext) -> some View {
         sheet(

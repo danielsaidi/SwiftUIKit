@@ -10,12 +10,13 @@ import SwiftUI
 
 /**
  This key can be used to keep track of the currently focused
- sheet context.
+ context within a multi-window app.
  
- To apply it to a view, just use the `focusedValue` modifier:
+ To apply it to a view, just use the `focusedValue` modifier
+ with your context instance:
  
  ```swift
- .focusedValue(\.sheetContext, sheetContext)
+ .focusedValue(\.sheetContext, context)
  ```
  
  To access the focus value, e.g. in a menu command, just use

@@ -12,8 +12,9 @@ import SwiftUI
 public extension View {
     
     /**
-     Present a cover from a certain context. The cover will be
-     will be presented when the context is active.
+     Present a cover with a certain context. 
+     
+     The cover will be presented when the context is active.
      */
     func fullScreenCover(_ context: FullScreenCoverContext) -> some View {
         fullScreenCover(

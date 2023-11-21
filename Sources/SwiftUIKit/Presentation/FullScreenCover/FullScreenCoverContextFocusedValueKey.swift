@@ -10,12 +10,13 @@ import SwiftUI
 
 /**
  This key can be used to keep track of the currently focused
- full screen cover context.
+ context within a multi-window app.
  
- To apply it to a view, just use the `focusedValue` modifier:
+ To apply it to a view, just use the `focusedValue` modifier
+ with your context instance:
  
  ```swift
- .focusedValue(\.fullscreenCoverContext, fullscreenCoverContext)
+ .focusedValue(\.fullscreenCoverContext, context)
  ```
  
  To access the focus value, e.g. in a menu command, just use

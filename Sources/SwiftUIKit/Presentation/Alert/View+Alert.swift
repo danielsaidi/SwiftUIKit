@@ -11,8 +11,9 @@ import SwiftUI
 public extension View {
     
     /**
-     Present an alert from a certain context. The alert will
-     be presented when the context is active.
+     Present an alert with a certain context. 
+     
+     The alert will be presented when the context is active.
      */
     func alert(_ context: AlertContext) -> some View {
         alert(

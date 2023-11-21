@@ -11,12 +11,10 @@ import SwiftUI
 
 /**
  This class is shared by presentation-specific contexts, and
- can be used to setup global state or present many different
- views with a single view modifier.
+ can be used to present many views with a single context.
  
  To use the context, first create an observed instance, then
- bind it to a view using custom view modifiers. For instance,
- using a ``SheetContext`` works like this:
+ bind it to a view using custom view modifiers, for instance:
  
  ```swift
  struct MyView: View {
@@ -39,10 +37,9 @@ import SwiftUI
  ```
 
  To setup global state, you can define the context as we did
- above and pass it into the view hierarchy as an environment
- object. Any nested views in the view hierarchy can then use
- the same context to present all sheets, alerts etc. using a
- single view modifier.
+ above and pass it into the view hierarchy. Any nested views
+ in the view hierarchy can then use the context to present a
+ sheet, alert, cover, etc.
 
  Note that presenting new sheets and full screen covers will
  require that you create and apply new contexts, otherwise a

@@ -10,17 +10,13 @@ import SwiftUI
 
 /**
  This context can be used to present any `SwiftUI` view as a
- modal sheet. You can either present plain views or anything
- that implements ``SheetProvider``.
+ modal sheet.
  
- For instance, you can create an enum where all cases return
- a view and have it implement ``SheetProvider``.
+ To work with strong types, you can create an enum where all
+ cases return a sheet view, then present that view.
  
- To use this class, create a `@StateObject` instance in your
- presenting view, then bind the context to the view with the
- context-specific modifier.
- 
- You can now use the `present` functions to present a sheet:
+ To use this class, just create a `@StateObject` instance in
+ your presenting view and bind the context to that view:
  
  ```swift
  @StateObject var context = SheetContext()
@@ -31,7 +27,8 @@ import SwiftUI
  // ...or if an `AppSheet` enum implements `SheetProvider`:
  context.present(AppSheet.settings)
  ```
- ```
+ 
+ You can now use the contexts functions to present any sheet.
  */
 public class SheetContext: PresentationContext<AnyView> {
     

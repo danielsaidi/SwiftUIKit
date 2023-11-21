@@ -10,17 +10,13 @@ import SwiftUI
 
 /**
  This context can be used to present any `SwiftUI` view as a
- full screen cover. You can either present standard views or
- anything that implements ``FullScreenCoverProvider``.
+ full screen cover.
  
- For instance, you can create an enum where all cases return
- a view and have it implement ``FullScreenCoverProvider``.
+ To work with strong types, you can create an enum where all
+ cases return a cover view, then present that view.
  
- To use this class, create a `@StateObject` instance in your
- presenting view, then bind the context to the view with the
- context-specific modifier.
- 
- You can now use the `present` functions to present a cover:
+ To use this class, just create a `@StateObject` instance in
+ your presenting view and bind the context to that view:
  
  ```swift
  @StateObject var context = FullScreenCoverContext()
@@ -31,6 +27,8 @@ import SwiftUI
  // ...or if an `AppCover` enum implements `FullScreenCoverProvider`:
  context.present(AppCover.videoPlayer(url))
  ```
+ 
+ You can now use the contexts functions to present any cover.
  */
 public class FullScreenCoverContext: PresentationContext<AnyView> {
     

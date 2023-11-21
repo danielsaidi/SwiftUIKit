@@ -9,18 +9,13 @@
 import SwiftUI
 
 /**
- This context can be used to present `SwiftUI` `Alert`s. You
- can either present plain `Alert` instances or anything that
- implements ``AlertProvider``.
+ This context can be used to present `SwiftUI` `Alert`s.
  
- For instance, you can create an enum where all cases return
- an `Alert` and have it implement ``AlertProvider``.
+ To work with strong types, you can create an enum where all
+ cases return an `Alert`, then present that alert.
  
  To use this class, just create a `@StateObject` instance in
- your presenting view then bind the context to the view with
- the context-specific modifier.
- 
- You can now use the `present` functions to present alerts:
+ your presenting view and bind the context to that view:
  
  ```swift
  @StateObject var context = AlertContext()
@@ -31,6 +26,8 @@ import SwiftUI
  // ...or if an `AppAlert` enum implements `AlertProvider`:
  context.present(AppAlert.generalWarning)
  ```
+
+ You can now use the contexts functions to present any alert.
  */
 public class AlertContext: PresentationContext<Alert> {
     
