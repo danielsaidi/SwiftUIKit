@@ -12,6 +12,7 @@ This version removes protocols where not needed. This means that it will no long
 ### ✨ New features
 
 * `Bundle+Information` is a new extension with bundle-specific information.
+* `BundleFileFinder` is a new file service that can search for files in a bundle.
 * `Collection+Async` is a new extension with concurrency-specific utils.
 * `CsvParser` is a new class that can be used to parse CSV files and strings.
 * `Date` is a new namespace with date-related extensions and utilities.
@@ -28,14 +29,16 @@ This version removes protocols where not needed. This means that it will no long
 
 * All previously deprecated code has been removed.
 
-* `ActionToggle` is removed - just use `onChange(of:)` to observe the toggle state instead.
+* `ActionToggle` has been removed - just use `onChange(of:)` to observe the toggle state instead.
 * `DismissableView` now uses `DismissAction` instead of `PresentationMode`.
-* `EdgeInsets` static factory functions are replaced with proper initializers.
+* `EdgeInsets` factory functions have been replaced with proper initializers.
 * `FilePicker` now requires `UTType` instead of `String`.
-* `FormActionButton` is replaced with a single `FormActionButtonStyle` and a new `FormLabelButtonStyle`.
-* `FormTextButton` has been removed, since the `ListAction` is so easy to use.
-* `FormTextEditor` and `FormTextField` has been removed. Use native types with a `.formRowTitle(...)` modifier instead.
-* `ScanCodeGenerator` is replaced by `Image` and `ImageRepresentable` init extensions.
+* `FolderMonitor` has been renamed to `DirectoryMonitor`.
+* `FolderObservable` has been renamed to `DirectoryObservable`.
+* `FormActionButton` has been replaced with a `FormActionButtonStyle`.
+* `FormTextButton` has been removed since `ListAction` is so easy to use.
+* `FormTextEditor` and `FormTextField` has been removed. Use `.formRowTitle(...)` instead.
+* `ScanCodeGenerator` has been replaced by `Image` and `ImageRepresentable` init extensions.
 
 
 

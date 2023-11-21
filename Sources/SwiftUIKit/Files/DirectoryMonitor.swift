@@ -1,5 +1,5 @@
 //
-//  FolderMonitor.swift
+//  DirectoryMonitor.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-04-17.
@@ -13,27 +13,27 @@ import Foundation
 
 /**
  This class can be used to monitor file system changes for a
- certain folder.
+ certain directory.
  */
-public class FolderMonitor {
+public class DirectoryMonitor {
     
     /**
-     Create an instance that monitors file system changes in
-     a folder at the provided `folderUrl`.
+     Create an monitor instance.
 
      - Parameters:
-       - folderUrl: The url of the folder to observe.
-       - onChange: The function to call when the folder changes.     
+       - url: The directory url to observe.
+       - onChange: The function to call when the folder changes.
      */
     public init(
-        folderUrl: URL,
-        onChange: @escaping () -> Void) {
-        self.folderUrl = folderUrl
+        url: URL,
+        onChange: @escaping () -> Void
+    ) {
+        self.url = url
         self.onChange = onChange
     }
 
     
-    private let folderUrl: URL
+    private let url: URL
     private let onChange: (() -> Void)
     
     private var fileDescriptor: CInt = -1
@@ -49,7 +49,7 @@ public class FolderMonitor {
         else { return }
         
         // Open the directory referenced by URL for monitoring only.
-        fileDescriptor = open(folderUrl.path, O_EVTONLY)
+        fileDescriptor = open(url.path, O_EVTONLY)
         
         // Define a dispatch source monitoring the directory for additions, deletions, and renamings.
         monitorSource = DispatchSource.makeFileSystemObjectSource(

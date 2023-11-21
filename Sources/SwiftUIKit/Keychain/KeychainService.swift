@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2016-11-24.
-//  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2016-2023 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ import Foundation
  This class can be used to read from and write to the device
  keychain, using a ``KeychainWrapper``.
  */
-open class KeychainService: KeychainReader, KeychainWriter {
+open class KeychainService {
     
     public init(
         wrapper: KeychainWrapper = .standard

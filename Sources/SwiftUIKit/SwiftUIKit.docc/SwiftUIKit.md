@@ -50,6 +50,10 @@ SwiftUIKit is available under the MIT license.
 - ``ScanCodeType``
 - ``StorageCodable``
 
+### Device
+
+- ``DeviceIdentifier``
+
 ### Errors
 
 - ``ErrorAlerter``
@@ -57,8 +61,10 @@ SwiftUIKit is available under the MIT license.
 
 ### Files
 
-- ``FolderMonitor``
-- ``FolderObservable``
+- ``BundleFileFinder``
+- ``DirectoryFileManager``
+- ``DirectoryMonitor``
+- ``DirectoryObservable``
 
 ### Flip
 
@@ -88,6 +94,12 @@ SwiftUIKit is available under the MIT license.
 
 - ``ImageCache``
 - ``ImageRepresentable``
+
+### Keychain
+
+- ``KeychainItemAccessibility``
+- ``KeychainService``
+- ``KeychainWrapper``
 
 ### Loading
 

@@ -3,7 +3,7 @@
 //  SwiftUIKit
 
 //  Created by Daniel Saidi on 2016-11-24.
-//  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2016-2023 Daniel Saidi. All rights reserved.
 //
 //  Based on https://github.com/jrendel/SwiftKeychainWrapper
 //  Created by Jason Rendel on 9/23/14.

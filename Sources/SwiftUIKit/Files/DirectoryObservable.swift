@@ -1,5 +1,5 @@
 //
-//  FolderObservable.swift
+//  DirectoryObservable.swift
 //  MetaNotes
 //
 //  Created by Daniel Saidi on 2021-04-17.
@@ -18,21 +18,20 @@ import Foundation
  The uses an internal ``FolderMonitor`` instance to keep the
  ``FolderObservable/files`` property in sync.
  */
-public class FolderObservable: ObservableObject {
+public class DirectoryObservable: ObservableObject {
     
     /**
-     Create an instance that observes file system changes in
-     a folder at the provided `folderUrl`.
+     Create an instance that observes the provided `url`.
 
      - Parameters:
-       - folderUrl: The folder to observe.
+       - url: The directory URL to observe.
        - fileManager: The file manager to use, by default `.default`.
      */
     public init(
-        folderUrl: URL,
+        url: URL,
         fileManager: FileManager = .default
     ) {
-        self.folderUrl = folderUrl
+        self.url = url
         self.fileManager = fileManager
         folderMonitor.startMonitoringChanges()
         self.handleChanges()
@@ -41,20 +40,20 @@ public class FolderObservable: ObservableObject {
     @Published
     public var files: [URL] = []
     
-    private let folderUrl: URL
+    private let url: URL
     private let fileManager: FileManager
     
-    private lazy var folderMonitor = FolderMonitor(
-        folderUrl: folderUrl,
+    private lazy var folderMonitor = DirectoryMonitor(
+        url: url,
         onChange: handleChanges
     )
 }
 
-private extension FolderObservable {
+private extension DirectoryObservable {
 
     func handleChanges() {
         let files = try? fileManager.contentsOfDirectory(
-            at: folderUrl,
+            at: url,
             includingPropertiesForKeys: nil,
             options: .producesRelativePathURLs)
         

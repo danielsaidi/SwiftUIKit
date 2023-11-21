@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2016-11-24.
-//  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2016-2023 Daniel Saidi. All rights reserved.
 //
 //  Based on https://github.com/jrendel/SwiftKeychainWrapper
 //  Created by James Blair on 4/24/16.
@@ -11,8 +11,7 @@
 
 import Foundation
 
-
-public protocol KeychainAttrRepresentable {
+protocol KeychainAttrRepresentable {
     
     var keychainAttrValue: CFString { get }
 }
@@ -29,11 +28,6 @@ public protocol KeychainAttrRepresentable {
  This is recommended for items that must be available to any
  background applications or processes.
  
- * `ThisDeviceOnly`
- The attribute will not be included in encrypted backup, and
- are thus not available after restoring apps from backups on
- a different device.
- 
  * `whenPasscodeSet`
  The attribute can only be accessed when the device has been
  unlocked by the user and a device passcode is set. No items
@@ -44,6 +38,11 @@ public protocol KeychainAttrRepresentable {
  The attribute can only be accessed when the device has been
  unlocked by the user. This is recommended for items that we
  only mean to use when the application is active.
+ 
+ * `*ThisDeviceOnly`
+ The attribute will not be included in encrypted backup, and
+ are thus not available after restoring apps from backups on
+ a different device.
  */
 public enum KeychainItemAccessibility {
     
