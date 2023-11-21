@@ -9,6 +9,7 @@
 #if os(iOS)
 import SwiftUI
 import UIKit
+import UniformTypeIdentifiers
 
 /**
  This picker wraps `UIDocumentPickerViewController` that can
@@ -35,7 +36,7 @@ import UIKit
 public struct FilePicker: UIViewControllerRepresentable {
     
     public init(
-        documentTypes: [String],
+        documentTypes: [UTType],
         cancelAction: @escaping CancelAction = {},
         resultAction: @escaping ResultAction
     ) {
@@ -52,7 +53,7 @@ public struct FilePicker: UIViewControllerRepresentable {
         case noAvailableUrl
     }
     
-    private let documentTypes: [String]
+    private let documentTypes: [UTType]
     private let cancelAction: CancelAction
     private let resultAction: ResultAction
         
@@ -61,7 +62,7 @@ public struct FilePicker: UIViewControllerRepresentable {
     }
 
     public func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let controller = UIDocumentPickerViewController(documentTypes: documentTypes, in: .import)
+        let controller = UIDocumentPickerViewController(forOpeningContentTypes: documentTypes)
         controller.delegate = context.coordinator
         return controller
     }

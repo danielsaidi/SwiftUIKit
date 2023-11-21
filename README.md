@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/v/release/danielsaidi/SwiftUIKit?color=%2300550&sort=semver" alt="Version" />
-    <img src="https://img.shields.io/badge/Swift-5.6-orange.svg" alt="Swift 5.6" />
+    <img src="https://img.shields.io/badge/Swift-5.9-orange.svg" alt="Swift 5.9" />
     <img src="https://img.shields.io/badge/platform-SwiftUI-blue.svg" alt="Swift UI" title="Swift UI" />
     <img src="https://img.shields.io/github/license/danielsaidi/SwiftUIKit" alt="MIT License" />
     <a href="https://twitter.com/danielsaidi">

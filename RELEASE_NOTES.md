@@ -10,6 +10,7 @@ This lets us remove a lot of code that is just there to cater to the needs of ol
 ### 💥 Breaking Changes
 
 * All previously deprecated code has been removed.
+* `FilePicker` now requires `UTType` instead of `String`.
 
 
 
