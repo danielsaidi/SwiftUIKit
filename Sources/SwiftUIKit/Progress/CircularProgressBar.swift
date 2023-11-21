@@ -105,7 +105,7 @@ private extension CircularProgressBar {
                 .rotation(.degrees(startAngle - 90))
                 .stroke(style: StrokeStyle(lineWidth: style.progressWidth, lineCap: .round, lineJoin: .round))
                 .foregroundColor(style.progressColor)
-                .animation(.linear)
+                .animation(.default, value: progress)
                 .any()
         )
     }
@@ -178,23 +178,37 @@ public extension CircularProgressBar {
 
 struct CircularProgressBar_Previews: PreviewProvider {
     
-    static var previews: some View {
-        VStack(spacing: 30) {
-            CircularProgressBar(
-                progress: 0.1,
-                decimals: 2)
+    struct Preview: View {
+        
+        @State
+        private var progress = 0.1
+        
+        var body: some View {
+            VStack(spacing: 30) {
+                CircularProgressBar(
+                    progress: progress,
+                    decimals: 2)
 
-            CircularProgressBar(
-                progress: 0.256,
-                decimals: 0,
-                startAngle: 20,
-                style: .swedish)
-            
-            CircularProgressBar(
-                progress: 0.8,
-                style: .noText)
+                CircularProgressBar(
+                    progress: progress,
+                    decimals: 0,
+                    startAngle: 20,
+                    style: .swedish)
+                
+                CircularProgressBar(
+                    progress: progress,
+                    style: .noText)
+                
+                Button("Progress!") {
+                    progress += 0.1
+                }
+            }
+            .background(Color.green.edgesIgnoringSafeArea(.all))
         }
-        .background(Color.green.edgesIgnoringSafeArea(.all))
+    }
+    
+    static var previews: some View {
+        Preview()
     }
 }
 
