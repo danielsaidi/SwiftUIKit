@@ -5,7 +5,9 @@
 
 This major version bumps the deployment targets to iOS 15, tvOS 15, watchOS 8, and macOS 12. This lets us remove a lot of code for older OS versions.
 
-This version also adds everything from `SwiftKit`, which is a barely used library of mine. I don't want to manage or add two libraries, so merging them seems valid. 
+This version also adds everything from `SwiftKit`, which is discontinued. I don't want to manage or add two libraries, so merging them seems valid.
+
+This version removes protocols where not needed. This means that it will no longer have a protocol and a standard implementation if not needed. 
 
 ### ✨ New features
 
@@ -13,6 +15,8 @@ This version also adds everything from `SwiftKit`, which is a barely used librar
 * `Collection+Async` is a new extension with concurrency-specific utils.
 * `CsvParser` is a new class that can be used to parse CSV files and strings.
 * `Date` is a new namespace with date-related extensions and utilities.
+* `DeviceIdentifier` is a new class for generating unique device IDs.
+* `Keychain` is a new namespace with keychain-related utilities and services.
 * `ListAction` is a new enum with quick list action types.
 * `MimeType` is a new type that defines various MIME types.
 
