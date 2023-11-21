@@ -32,17 +32,6 @@ public struct FontStyle {
         self.weight = weight
     }
     
-    @available(*, deprecated, message: "Use .init(name:style:weight:) directly instead.")
-    public init(
-        identifier: FontIdentifier,
-        style: UIFont.TextStyle,
-        weight: Font.Weight = .regular
-    ) {
-        self.name = identifier.fontName
-        self.style = style
-        self.weight = weight
-    }
-    
     public let name: String
     public let style: UIFont.TextStyle
     public let weight: Font.Weight
