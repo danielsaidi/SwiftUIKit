@@ -91,10 +91,10 @@ private extension ListAction {
 private extension ListAction {
     
     func copy(_ value: String) {
-        #if os(macOS) || os(iOS) || os(tvOS)
+        #if os(macOS) || os(iOS)
         Pasteboard.general.copy(value)
         #else
-        print("Unsupported on watchOS")
+        print("Unsupported platform")
         #endif
     }
 }

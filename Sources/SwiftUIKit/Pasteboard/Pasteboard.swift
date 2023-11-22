@@ -10,11 +10,11 @@ import SwiftUI
 
 #if os(macOS)
 public typealias Pasteboard = NSPasteboard
-#elseif os(iOS) || os(tvOS)
+#elseif os(iOS)
 public typealias Pasteboard = UIPasteboard
 #endif
 
-#if os(macOS) || os(iOS) || os(tvOS)
+#if os(macOS) || os(iOS)
 public extension Pasteboard {
     
     /// Copy a string to the pasteboard.
