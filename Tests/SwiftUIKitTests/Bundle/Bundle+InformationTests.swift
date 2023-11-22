@@ -22,7 +22,7 @@ final class Bundle_InformationTests: XCTestCase {
 
 private class MyBundle: Bundle {
     
-    override var infoDictionary: [String : Any]? {
+    override var infoDictionary: [String: Any]? {
         [
             String(kCFBundleVersionKey): "123",
             "CFBundleDisplayName": "SwiftUIKit Tests",
