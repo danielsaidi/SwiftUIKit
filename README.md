@@ -14,9 +14,7 @@
 
 ## About SwiftUIKit
 
-SwiftUIKit adds extra functionality to `SwiftUI`, like additional view, extensions to existing types and completely new stuff.
-
-SwiftUIKit also has a bunch of non-SwiftUI related things that I often use in my apps.
+SwiftUIKit adds extra functionality to `SwiftUI`, like additional view, extensions to existing types and completely new stuff. It also has a bunch of non-SwiftUI related things that I often use in my apps.
 
 
 
