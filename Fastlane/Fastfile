@@ -5,33 +5,8 @@ default_platform :ios
 platform :ios do
 
   library_name = "SwiftUIKit"
-  pod_name = "DSSwiftUIKit"
   main_branch = "master"
   build_folder_docs = ".build/docs"
-
-
-  # Documentation ==============
-
-  desc "Generate documentation"
-  lane :documentation do
-      docc_web
-  end
-
-
-  # Lint =======================
-
-  desc "Run SwiftLint"
-  lane :lint do
-    swiftlint(strict: true)
-  end
-
-
-  # Test ===================
-
-  desc "Run unit tests"
-  lane :test do
-    sh("swift test")
-  end
 
 
   # Validate ===================
@@ -40,8 +15,8 @@ platform :ios do
   lane :ensure_release_ready do
     ensure_git_status_clean
     ensure_git_branch(branch: main_branch)
-    lint
-    test
+    swiftlint(strict: true)
+    sh("swift test")
   end
   
   
@@ -61,7 +36,6 @@ platform :ios do
     add_git_tag(tag: version)
     push_git_tags()
     push_to_git_remote()
-    pod_push()
   end
 
 
@@ -74,6 +48,7 @@ platform :ios do
     docc_platform(destination: 'OS X', name: 'osx')
     docc_platform(destination: 'tvOS', name: 'tvos')
     docc_platform(destination: 'watchOS', name: 'watchos')
+    docc_web
   end
     
   desc "Build documentation for a single platform"
