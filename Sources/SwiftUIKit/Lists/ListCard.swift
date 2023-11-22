@@ -68,7 +68,9 @@ public struct ListCard<Content: View, ContextMenuView: View>: View {
             #endif
             .background(Color.primary.colorInvert())
             .cornerRadius(style.cornerRadius)
+            #if os(iOS) || os(macOS) || os(tvOS)
             .contextMenu(menuItems: contextMenu)
+            #endif
             .shadow(style.shadowStyle)
     }
 }

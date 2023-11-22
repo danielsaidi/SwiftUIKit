@@ -7,6 +7,7 @@
 //  Copyright © 2021-2023 Daniel Saidi. All rights reserved.
 //
 
+#if os(iOS) || os(tvOS) || os(macOS)
 import SwiftUI
 
 public extension Image {
@@ -77,7 +78,6 @@ private extension ImageRepresentable {
 }
 #endif
 
-#if os(iOS) || os(tvOS) || os(macOS)
 struct Previews_ImageScanCode: PreviewProvider {
     
     static var previews: some View {
