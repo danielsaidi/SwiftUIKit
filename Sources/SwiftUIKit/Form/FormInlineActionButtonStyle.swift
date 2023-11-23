@@ -69,6 +69,9 @@ public struct FormInlineActionButtonStyle: ButtonStyle {
     @Environment(\.isEnabled)
     private var isEnabled
     
+    @Environment(\.colorScheme)
+    private var colorScheme
+    
     public func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
@@ -89,7 +92,7 @@ private extension FormInlineActionButtonStyle {
         if let backgroundColor {
             backgroundColor
         } else {
-            Color.primary.colorInvert()
+            Color.standardListBackground(forScheme: colorScheme)
         }
     }
     
@@ -239,30 +242,53 @@ public extension LabelStyle where Self == FormInlineActionButtonStyle.ButtonLabe
     }
 }
 
-struct FormActionButton_Previews: PreviewProvider {
+#Preview {
     
-    static var previews: some View {
-        VStack {
-            Button {} label: { Label("Add something", image: .add) }
-                .buttonStyle(.swedish)
-                .foregroundColor(.yellow)
-            
-            HStack {
-                Button {} label: { Label("Report Bug", image: .bug) }
-                    .tint(Color.green)
-                Button {} label: { Label("Camera", image: .camera) }
-                    .disabled(true)
-                Button {} label: { Label("Photos", image: .camera) }
-                    .opacity(0.5)
-                Button {} label: { Label("Feedback", image: .feedback) }
+    struct PreviewList: View {
+        
+        var body: some View {
+            List {
+                Group {
+                    Button {} label: { Label("Add something", image: .add) }
+                        .buttonStyle(.swedish)
+                        .foregroundColor(.yellow)
+                    
+                    Section {
+                        HStack {
+                            Button {} label: { Label("Report Bug", image: .bug) }
+                                .tint(Color.green)
+                            Button {} label: { Label("Camera", image: .camera) }
+                                .disabled(true)
+                            Button {} label: { Label("Photos", image: .camera) }
+                                .opacity(0.5)
+                            Button {} label: { Label("Feedback", image: .feedback) }
+                        }
+                    }
+                }
+                .listRowInsets(.init(all: 0))
+                .listRowBackground(Color.clear)
+                
+                Section {
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                }
             }
-            .buttonStyle(.formInlineAction)
-            
         }
-        .padding()
-        .frame(maxHeight: .infinity)
-        .background(Color.black.opacity(0.08).ignoresSafeArea())
     }
+    
+    return VStack {
+        VStack {
+            PreviewList()
+                .buttonStyle(.formInlineAction)
+            PreviewList()
+                .buttonStyle(.formInlineAction)
+                .environment(\.colorScheme, .dark)
+        }
+    }
+    .frame(maxHeight: .infinity)
+    .background(Color.black.opacity(0.08).ignoresSafeArea())
 }
 
 private extension ButtonStyle where Self == FormInlineActionButtonStyle {

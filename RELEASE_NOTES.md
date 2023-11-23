@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 4.0.1
+
+This patch fixes the default `FormInlineButtonStyle` background in dark mode.
+
+### ✨ New features
+
+* `Color` has a new `standardRowBackground` function.
+
+
+
 ## 4.0
 
 This major version bumps the deployment targets to iOS 15, tvOS 15, watchOS 8, and macOS 12. This lets us remove a lot of code for older OS versions.
