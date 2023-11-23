@@ -75,7 +75,6 @@ platform :ios do
     
   desc "Build static documentation websites for all platforms"
   lane :docc_web do
-    docc
     docc_web_platform(name: 'ios')
     docc_web_platform(name: 'osx')
     docc_web_platform(name: 'tvos')
