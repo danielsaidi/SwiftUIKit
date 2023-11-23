@@ -78,15 +78,13 @@ private extension ImageRepresentable {
 }
 #endif
 
-struct Previews_ImageScanCode: PreviewProvider {
+#Preview {
     
-    static var previews: some View {
-        VStack {
-            Image(scanCode: "123456789", type: .aztek)
-            Image(scanCode: "123456789", type: .code128)
-            Image(scanCode: "123456789", type: .pdf417)
-            Image(scanCode: "123456789", type: .qr, scale: 5)
-        }
+    VStack {
+        Image(scanCode: "123456789", type: .aztek)
+        Image(scanCode: "123456789", type: .code128)
+        Image(scanCode: "123456789", type: .pdf417)
+        Image(scanCode: "123456789", type: .qr, scale: 5)
     }
 }
 #endif

@@ -54,23 +54,28 @@ public extension TextEditor {
     }
 }
 
-struct TextEditorStyle_Previews: PreviewProvider {
-
-    @State
-    static var text: String = "Hello, world"
-
-    static var previews: some View {
-        VStack {
-            TextField("", text: $text)
-                .textFieldStyle(.roundedBorder)
-            TextEditor(text: $text)
-                .textEditorStyle(.roundedBorder)
-            TextEditor(text: $text)
-                .textEditorStyle(.roundedColorBorder(.red, 1))
+#Preview {
+    
+    struct Preview: View {
+        
+        @State
+        var text: String = "Hello, world"
+        
+        var body: some View {
+            VStack {
+                TextField("", text: $text)
+                    .textFieldStyle(.roundedBorder)
+                TextEditor(text: $text)
+                    .textEditorStyle(.roundedBorder)
+                TextEditor(text: $text)
+                    .textEditorStyle(.roundedColorBorder(.red, 1))
+            }
+            .padding(10)
+            .background(Color.primary.colorInvert())
+            // .environment(\.colorScheme, .dark)
         }
-        .padding(10)
-        .background(Color.primary.colorInvert())
-        // .environment(\.colorScheme, .dark)
     }
+    
+    return Preview()
 }
 #endif

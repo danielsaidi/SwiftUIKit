@@ -17,7 +17,10 @@ import Foundation
  */
 public struct SystemFontPickerFont: Identifiable {
     
-    public init(fontName: String) {
+    /// Create a system picker font based on font name.
+    public init(
+        fontName: String
+    ) {
         let fontName = fontName.capitalized
         self.fontName = fontName
         self.fontDisplayName = Self.displayName(for: fontName)
@@ -28,10 +31,7 @@ public struct SystemFontPickerFont: Identifiable {
     
     public var id: String { fontName.lowercased() }
     
-    /**
-     The display name for the standard system font, which is
-     used if the font name is empty.
-     */
+    ///  The display name for the standard system font.
     public static var systemFontDisplayName: String {
         #if os(macOS)
         return "Standard"
@@ -40,10 +40,7 @@ public struct SystemFontPickerFont: Identifiable {
         #endif
     }
     
-    /**
-     The font name prefix for the standard system font. This
-     is used if the font name is empty.
-     */
+    ///  The font name prefix for the standard system font.
     public static var systemFontNamePrefix: String {
         #if os(macOS)
         return ".AppleSystemUIFont"
@@ -55,9 +52,7 @@ public struct SystemFontPickerFont: Identifiable {
 
 public extension Collection where Element == SystemFontPickerFont {
     
-    /**
-     Get all available system fonts.
-     */
+    /// Get all available system fonts.
     static var all: [SystemFontPickerFont] {
         let all = FontRepresentable.allFonts
         let systemFont = SystemFontPickerFont(fontName: "")
@@ -66,9 +61,7 @@ public extension Collection where Element == SystemFontPickerFont {
         return sorted
     }
     
-    /**
-     Move a certain font topmost in the list.
-     */
+    /// Move a certain font topmost in the list.
     func moveTopmost(_ topmost: String) -> [SystemFontPickerFont] {
         let topmost = topmost.trimmingCharacters(in: .whitespaces)
         let exists = contains { $0.fontName.lowercased() == topmost.lowercased() }

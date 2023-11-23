@@ -210,28 +210,26 @@ private extension View {
 }
 
 @available(iOS 16.0, *)
-struct ListBadgeIcon_Previews: PreviewProvider {
-
-    static var previews: some View {
-        List {
-            ListBadgeIcon(
-                .symbol("exclamationmark.triangle"),
-                badgeColor: .orange
-            )
-            ListBadgeIcon(
-                .symbol("exclamationmark.triangle"),
-                badgeColor: .white,
-                iconColor: .orange
-            )
-            Section {
-                ListBadgeIcon.languageSettings
-                ListBadgeIcon.multicolorPalette
-                ListBadgeIcon.prominentAlert
-                ListBadgeIcon.prominentCheckmark
-                ListBadgeIcon.redHeart
-                ListBadgeIcon.share
-                ListBadgeIcon.yellowStar
-            }
+#Preview {
+    
+    List {
+        ListBadgeIcon(
+            .symbol("exclamationmark.triangle"),
+            badgeColor: .orange
+        )
+        ListBadgeIcon(
+            .symbol("exclamationmark.triangle"),
+            badgeColor: .white,
+            iconColor: .orange
+        )
+        Section {
+            ListBadgeIcon.languageSettings
+            ListBadgeIcon.multicolorPalette
+            ListBadgeIcon.prominentAlert
+            ListBadgeIcon.prominentCheckmark
+            ListBadgeIcon.redHeart
+            ListBadgeIcon.share
+            ListBadgeIcon.yellowStar
         }
     }
 }

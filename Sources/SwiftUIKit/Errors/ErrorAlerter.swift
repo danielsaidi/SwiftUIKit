@@ -65,9 +65,7 @@ public extension ErrorAlerter {
     /// This typealias describes a block operation.
     typealias BlockOperation<ErrorType: Error> = (BlockCompletion<ErrorType>) -> Void
 
-    /**
-     Alert the provided error asynchronously.
-     */
+    /// Alert the provided error asynchronously.
     func alertAsync(
         error: Error,
         okButtonText: String = "OK"

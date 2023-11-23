@@ -47,7 +47,7 @@ public extension TextField {
     }
 }
 
-struct TextField_ClearButton_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -60,8 +60,6 @@ struct TextField_ClearButton_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 #endif

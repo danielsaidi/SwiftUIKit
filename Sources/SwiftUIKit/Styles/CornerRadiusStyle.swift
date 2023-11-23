@@ -36,9 +36,7 @@ public struct CornerRadiusStyle {
 
 public extension View {
 
-    /**
-     Apply a ``CornerRadiusStyle`` to the view.
-     */
+    /// Apply a ``CornerRadiusStyle`` to the view.
     func cornerRadius(_ style: CornerRadiusStyle) -> some View {
         cornerRadius(style.radius)
     }

@@ -69,7 +69,7 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
 }
 
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
-struct ListSelectItem_Previews: PreviewProvider {
+#Preview {
     
     struct Preview: View {
         
@@ -94,7 +94,5 @@ struct ListSelectItem_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }

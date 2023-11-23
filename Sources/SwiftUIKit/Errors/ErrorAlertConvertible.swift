@@ -29,9 +29,7 @@ public protocol ErrorAlertConvertible: Error {
 
 public extension ErrorAlertConvertible {
 
-    /**
-     Create an error `Alert`.
-     */
+    /// Create an error `Alert`.
     var errorAlert: Alert {
         Alert(
             title: Text(errorTitle),

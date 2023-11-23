@@ -225,7 +225,7 @@ public extension Animation {
 
 // MARK: - Previews
 
-struct LinearProgressBar_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -246,26 +246,25 @@ struct LinearProgressBar_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        ZStack {
-            LinearGradient(
-                colors: [Color.pink, Color.purple],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing)
-            Image(systemName: "theatermasks")
-                .symbolRenderingMode(.hierarchical)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            VStack(spacing: 30) {
-                ProgressView(value: 0.5)
-                    .progressViewStyle(.linear)
-                Preview(style: .standard)
-                Preview(style: .padding)
-                Preview(style: .tallPadding)
-                Preview(style: .swedish)
-                Preview(style: .swedishFrosted)
-            }.padding(50)
-        }
+    return ZStack {
+        LinearGradient(
+            colors: [Color.pink, Color.purple],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing)
+        Image(systemName: "theatermasks")
+            .symbolRenderingMode(.hierarchical)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+        VStack(spacing: 30) {
+            ProgressView(value: 0.5)
+                .progressViewStyle(.linear)
+            Preview(style: .standard)
+            Preview(style: .padding)
+            Preview(style: .tallPadding)
+            Preview(style: .swedish)
+            Preview(style: .swedishFrosted)
+                .shadow(.elevated)
+        }.padding(50)
     }
 }
 

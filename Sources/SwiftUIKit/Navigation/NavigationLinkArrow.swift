@@ -50,19 +50,17 @@ private extension NavigationLinkArrow {
 
 
 @available(watchOS 7.0, *)
-struct Image_App_Previews: PreviewProvider {
-
-    static var previews: some View {
-        NavigationView {
-            List {
-                NavigationLink("Test") {
-                    Color.red
-                }
-                NavigationButton {} content: {
-                    Text("HEJ")
-                }
-                NavigationLinkArrow()
+#Preview {
+    
+    NavigationView {
+        List {
+            NavigationLink("Test") {
+                Color.red
             }
-        }.foregroundColor(.red)
-    }
+            NavigationButton {} content: {
+                Text("HEJ")
+            }
+            NavigationLinkArrow()
+        }
+    }.foregroundColor(.red)
 }

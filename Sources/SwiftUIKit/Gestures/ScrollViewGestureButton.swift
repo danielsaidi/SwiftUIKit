@@ -288,7 +288,7 @@ private extension GeometryProxy {
     }
 }
 
-struct ScrollViewGestureButton_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -449,8 +449,6 @@ struct ScrollViewGestureButton_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 #endif

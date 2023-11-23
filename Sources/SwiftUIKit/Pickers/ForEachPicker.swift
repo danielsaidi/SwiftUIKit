@@ -104,11 +104,7 @@ private extension View {
 }
 
 #if os(iOS) || os(tvOS)
-struct ForEachPicker_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Preview()
-    }
+#Preview {
     
     struct Preview: View {
         
@@ -154,5 +150,7 @@ struct ForEachPicker_Previews: PreviewProvider {
             PreviewItem(name: "Item #15")
         ]
     }
+    
+    return Preview()
 }
 #endif

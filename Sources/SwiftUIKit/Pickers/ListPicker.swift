@@ -112,11 +112,7 @@ private extension View {
 }
 
 #if os(iOS)
-struct ListPicker_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Preview()
-    }
+#Preview {
     
     struct Preview: View {
         
@@ -167,5 +163,7 @@ struct ListPicker_Previews: PreviewProvider {
             PreviewItem(name: "Item #15")
         ]
     }
+    
+    return Preview()
 }
 #endif

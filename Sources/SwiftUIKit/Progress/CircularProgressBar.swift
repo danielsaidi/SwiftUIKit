@@ -176,7 +176,7 @@ public extension CircularProgressBar {
     }
 }
 
-struct CircularProgressBar_Previews: PreviewProvider {
+#Preview {
     
     struct Preview: View {
         
@@ -193,23 +193,26 @@ struct CircularProgressBar_Previews: PreviewProvider {
                     progress: progress,
                     decimals: 0,
                     startAngle: 20,
-                    style: .swedish)
+                    style: .swedish
+                )
+                .shadow(.elevated)
                 
                 CircularProgressBar(
                     progress: progress,
-                    style: .noText)
+                    style: .noText
+                )
+                .shadow(.sticker)
                 
                 Button("Progress!") {
                     progress += 0.1
                 }
             }
+            .frame(maxWidth: .infinity)
             .background(Color.green.edgesIgnoringSafeArea(.all))
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 
 fileprivate extension CircularProgressBar.Style {

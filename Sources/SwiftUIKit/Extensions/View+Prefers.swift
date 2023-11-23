@@ -45,16 +45,14 @@ public extension View {
     }
 }
 
-struct View_PersistentSystemOverlays_Previews: PreviewProvider {
+#Preview {
 
-    static var previews: some View {
-        VStack {
-            #if os(iOS) || os(macOS)
-            Menu("Test") {
-                Button("1") {}
-                Button("2") {}
-            }.prefersMenuOrderFixed()
-            #endif
-        }.prefersPersistentSystemOverlaysHidden()
-    }
+    VStack {
+        #if os(iOS) || os(macOS)
+        Menu("Test") {
+            Button("1") {}
+            Button("2") {}
+        }.prefersMenuOrderFixed()
+        #endif
+    }.prefersPersistentSystemOverlaysHidden()
 }

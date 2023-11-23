@@ -28,19 +28,17 @@ public struct ListSubtitle: View {
     }
 }
 
-struct ListSubtitle_Previews: PreviewProvider {
+#Preview {
     
-    static var previews: some View {
-        List {
-            HStack {
-                Label {
-                    Text("Title")
-                } icon: {
-                    Color.red
-                }
-                Spacer()
-                ListSubtitle("Subtitle")
+    List {
+        HStack {
+            Label {
+                Text("Title")
+            } icon: {
+                Color.red
             }
+            Spacer()
+            ListSubtitle("Subtitle")
         }
     }
 }

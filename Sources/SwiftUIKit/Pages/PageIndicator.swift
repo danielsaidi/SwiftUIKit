@@ -35,21 +35,9 @@ public struct PageIndicator: View {
         self.style = style
     }
     
-    /**
-     The currently selected page index.
-     */
     private let currentPageIndex: Binding<Int>
-    
-    /**
-     The number of pages to display.
-     */
     private let numberOfPages: Int
-    
-    /**
-     The style to apply to the indicator.
-     */
     private let style: PageIndicatorStyle
-    
     
     public var body: some View {
         HStack(spacing: style.dotSpacing) {
@@ -80,25 +68,23 @@ private extension PageIndicator {
     }
 }
 
-struct PageIndicator_Previews: PreviewProvider {
+#Preview {
     
-    static var previews: some View {
-        VStack(spacing: 20) {
-            PageIndicator(
-                numberOfPages: 10,
-                currentPageIndex: .constant(3))
-            
-            PageIndicator(
-                numberOfPages: 5,
-                currentPageIndex: .constant(3),
-                style: PageIndicatorStyle(
-                    dotColor: .blue,
-                    dotSpacing: 20,
-                    currentDotColor: .yellow))
-            
-        }
-        .padding()
-        .background(Color.gray)
-        .cornerRadius(20)
+    VStack(spacing: 20) {
+        PageIndicator(
+            numberOfPages: 10,
+            currentPageIndex: .constant(3))
+        
+        PageIndicator(
+            numberOfPages: 5,
+            currentPageIndex: .constant(3),
+            style: PageIndicatorStyle(
+                dotColor: .blue,
+                dotSpacing: 20,
+                currentDotColor: .yellow))
+        
     }
+    .padding()
+    .background(Color.gray)
+    .cornerRadius(20)
 }

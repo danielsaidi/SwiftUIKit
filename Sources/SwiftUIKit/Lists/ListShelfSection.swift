@@ -103,47 +103,47 @@ public struct ListShelfSectionStyle {
     public static var standard = ListShelfSectionStyle()
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-struct ListShelfSection_Previews: PreviewProvider {
-
-    static var section: some View {
-        ListShelfSection {
-            ListSectionTitle("Section")
-        } content: {
-            Group {
-                ListCard {
-                    Color.red
-                } contextMenu: {
-                    Button("1") {}
-                    Button("2") {}
-                    Button("3") {}
+#Preview {
+    
+    struct PreviewSection: View {
+        
+        var body: some View {
+            ListShelfSection {
+                ListSectionTitle("Section")
+            } content: {
+                Group {
+                    ListCard {
+                        Color.red
+                    } contextMenu: {
+                        Button("1") {}
+                        Button("2") {}
+                        Button("3") {}
+                    }
+                    ListCard {
+                        Color.green
+                    } contextMenu: {
+                        Button("1") {}
+                        Button("2") {}
+                        Button("3") {}
+                    }
+                    ListCard {
+                        Color.blue
+                    } contextMenu: {
+                        Button("1") {}
+                        Button("2") {}
+                        Button("3") {}
+                    }
                 }
-                ListCard {
-                    Color.green
-                } contextMenu: {
-                    Button("1") {}
-                    Button("2") {}
-                    Button("3") {}
-                }
-                ListCard {
-                    Color.blue
-                } contextMenu: {
-                    Button("1") {}
-                    Button("2") {}
-                    Button("3") {}
-                }
+                .frame(width: 150, height: 150)
             }
-            .frame(width: 150, height: 150)
         }
     }
-
-    static var previews: some View {
-        ScrollView(.vertical) {
-            VStack {
-                section
-                section
-                section
-            }
+        
+    return ScrollView(.vertical) {
+        VStack {
+            PreviewSection()
+            PreviewSection()
+            PreviewSection()
         }
     }
 }

@@ -23,13 +23,11 @@ public extension ProcessInfo {
     }
 }
 
-struct CamerasScreen_Previews: PreviewProvider {
+#Preview {
 
-    static var previews: some View {
-        VStack {
-            Text("Is SwiftUI preview?")
-                .font(.title)
-            Text("\(ProcessInfo.processInfo.isSwiftUIPreview ? "Yes" : "No")")
-        }
+    VStack {
+        Text("Is SwiftUI preview?")
+            .font(.title)
+        Text("\(ProcessInfo.processInfo.isSwiftUIPreview ? "Yes" : "No")")
     }
 }

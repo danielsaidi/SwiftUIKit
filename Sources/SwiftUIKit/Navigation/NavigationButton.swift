@@ -38,7 +38,7 @@ public struct NavigationButton<Content: View>: View {
 }
 
 #if os(iOS)
-struct NavigationButtonItem_Previews: PreviewProvider {
+#Preview {
     
     struct Preview: View {
         
@@ -60,8 +60,6 @@ struct NavigationButtonItem_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 #endif

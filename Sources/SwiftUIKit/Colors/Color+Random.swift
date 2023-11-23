@@ -35,18 +35,16 @@ public extension Color {
 }
 
 
-struct Previews_Color_Random_Previews: PreviewProvider {
+#Preview {
 
-    static func preview(for color: Color) -> some View {
+    func preview(for color: Color) -> some View {
         color.cornerRadius(10)
     }
 
-    static var previews: some View {
-        VStack {
-            preview(for: .random())
-            preview(for: .random(randomOpacity: true))
-            preview(for: .random(in: 0...0.3))
-            preview(for: .random(in: 0...0.3, randomOpacity: true))
-        }.padding()
-    }
+    return VStack {
+        preview(for: .random())
+        preview(for: .random(randomOpacity: true))
+        preview(for: .random(in: 0...0.3))
+        preview(for: .random(in: 0...0.3, randomOpacity: true))
+    }.padding()
 }

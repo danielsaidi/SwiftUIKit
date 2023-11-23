@@ -34,7 +34,7 @@ public extension ButtonStyle where Self == ListButtonStyle {
 }
 
 #if os(iOS) || os(macOS)
-struct ListButtonStyle_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -67,8 +67,6 @@ struct ListButtonStyle_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 #endif

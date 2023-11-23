@@ -63,7 +63,7 @@ public extension Color {
     }
 }
 
-struct Color_Hex_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -85,7 +85,5 @@ struct Color_Hex_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }

@@ -33,7 +33,7 @@ private struct PreviewPage: View {
     }
 }
 
-struct PageView_Previews: PreviewProvider {
+#Preview {
     
     struct StaticPreview: View {
         
@@ -71,14 +71,12 @@ struct PageView_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        
-        VStack {
-            StaticPreview(pageIndicatorDisplayMode: .automatic)
-            StaticPreview(pageIndicatorDisplayMode: .never)
-            DynamicPreview(pageIndicatorStyle: PageIndicatorStyle(
-                dotColor: .blue,
-                currentDotSize: 12))
-        }
+    return VStack {
+        StaticPreview(pageIndicatorDisplayMode: .automatic)
+        StaticPreview(pageIndicatorDisplayMode: .never)
+        DynamicPreview(pageIndicatorStyle: PageIndicatorStyle(
+            dotColor: .blue,
+            currentDotSize: 12)
+        )
     }
 }

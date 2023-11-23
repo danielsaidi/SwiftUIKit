@@ -239,7 +239,7 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
 }
 
 @available(iOS 16.0, macOS 12.0, *)
-struct ReorderableForEach_Previews: PreviewProvider {
+#Preview {
     
     struct Preview: View {
         
@@ -294,9 +294,7 @@ struct ReorderableForEach_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 
 #endif

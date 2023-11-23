@@ -293,7 +293,7 @@ public extension Collection where Element == Color {
     }
 }
 
-struct ColorPickerBar_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -348,8 +348,6 @@ struct ColorPickerBar_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 #endif

@@ -77,9 +77,7 @@ private extension DotLoadingAnimation {
     }
 }
 
-struct DotLoadingAnimation_Previews: PreviewProvider {
+#Preview {
 
-    static var previews: some View {
-        DotLoadingAnimation()
-    }
+    DotLoadingAnimation()
 }

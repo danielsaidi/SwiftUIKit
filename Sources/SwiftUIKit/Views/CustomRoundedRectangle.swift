@@ -59,10 +59,14 @@ public struct CustomRoundedRectangle: Shape {
     }
 }
 
-struct CustomRoundedRectangle_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomRoundedRectangle(topLeft: 10, topRight: 20, bottomLeft: 30, bottomRight: 40)
-            .foregroundColor(.red)
-            .padding()
-    }
+#Preview {
+    
+    CustomRoundedRectangle(
+        topLeft: 10,
+        topRight: 20,
+        bottomLeft: 30,
+        bottomRight: 40
+    )
+    .foregroundColor(.red)
+    .padding()
 }

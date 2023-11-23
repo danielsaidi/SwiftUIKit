@@ -121,7 +121,7 @@ private class UndimmedDetentViewController: UIViewController {
 }
 
 @available(iOS 16.0, *)
-struct View_PresentationDetents_Previews: PreviewProvider {
+#Preview {
 
     struct Preview: View {
 
@@ -189,8 +189,6 @@ struct View_PresentationDetents_Previews: PreviewProvider {
         }
     }
 
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 #endif

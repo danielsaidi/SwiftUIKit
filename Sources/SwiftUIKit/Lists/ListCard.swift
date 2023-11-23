@@ -168,20 +168,18 @@ public extension ViewShadowStyle {
     )
 }
 
-struct ListCard_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Button {
-        } label: {
-            ListCard {
-                Color.red.frame(width: 200, height: 200)
-            } contextMenu: {
-
-            }
+#Preview {
+    
+    Button {
+    } label: {
+        ListCard {
+            Color.red.frame(width: 200, height: 200)
+        } contextMenu: {
+            
         }
-        .buttonStyle(.listCard)
-        .padding(50)
-        .background(Color.gray)
-        .cornerRadius(20)
     }
+    .buttonStyle(.listCard)
+    .padding(50)
+    .background(Color.gray)
+    .cornerRadius(20)
 }

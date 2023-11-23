@@ -61,19 +61,24 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
     }
 }
 
-struct FetchedDataView_Previews: PreviewProvider {
+#Preview {
     
-    static var previews: some View {
+    struct Preview: View {
+        
         let nilData: String? = nil
         let content: (String) -> AnyView = { Text($0).any() }
         let loadingView = Text("Loading...")
         let noDataView = Text("No data")
         
-        return Group {
-            FetchedDataView(data: "Fetched data", isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
-            FetchedDataView(data: "Fetched data", isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
-            FetchedDataView(data: nilData, isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
-            FetchedDataView(data: nilData, isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
-        }.previewLayout(.sizeThatFits)
+        var body: some View {
+            Group {
+                FetchedDataView(data: "Fetched data", isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
+                FetchedDataView(data: "Fetched data", isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
+                FetchedDataView(data: nilData, isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
+                FetchedDataView(data: nilData, isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
+            }.previewLayout(.sizeThatFits)
+        }
     }
+    
+    return Preview()
 }

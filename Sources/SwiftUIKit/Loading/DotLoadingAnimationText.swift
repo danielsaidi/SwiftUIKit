@@ -72,9 +72,7 @@ private extension DotLoadingAnimationText {
     }
 }
 
-struct DotLoadingAnimationText_Previews: PreviewProvider {
+#Preview {
 
-    static var previews: some View {
-        DotLoadingAnimationText(text: "Testing")
-    }
+    DotLoadingAnimationText(text: "Testing")
 }

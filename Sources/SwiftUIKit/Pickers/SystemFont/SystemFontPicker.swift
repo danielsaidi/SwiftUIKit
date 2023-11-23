@@ -90,7 +90,7 @@ private extension SystemFontPickerFont {
     }
 }
 
-struct SystemFontPicker_Previews: PreviewProvider {
+#Preview {
     
     struct Preview: View {
         
@@ -103,9 +103,7 @@ struct SystemFontPicker_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }
 
 private extension View {

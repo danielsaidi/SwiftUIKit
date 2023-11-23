@@ -160,7 +160,7 @@ private extension View {
 }
 
 
-struct FlipView_Previews: PreviewProvider {
+#Preview {
     
     struct Preview: View {
         
@@ -194,7 +194,5 @@ struct FlipView_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }

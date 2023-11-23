@@ -12,8 +12,14 @@ public extension View {
     
     /**
      Bind the view's safe area to a binding.
+     
+     Do not overuse this modifier. Since the size binding is
+     calculated as the view is being rendered, it will start
+     with an incorrect value, which may cause glitches.
      */
-    func bindSafeAreaInsets(to binding: Binding<EdgeInsets>) -> some View {
+    func bindSafeAreaInsets(
+        to binding: Binding<EdgeInsets>
+    ) -> some View {
         background(safeAreaBindingView(for: binding))
     }
     
@@ -22,10 +28,11 @@ public extension View {
 
      Do not overuse this modifier. Since the size binding is
      calculated as the view is being rendered, it will start
-     with an incorrect initial binding value, which may give
-     you glitches depending on how you use the size value.
+     with an incorrect value, which may cause glitches.
     */
-    func bindSize(to binding: Binding<CGSize>) -> some View {
+    func bindSize(
+        to binding: Binding<CGSize>
+    ) -> some View {
         background(sizeBindingView(for: binding))
     }
 }

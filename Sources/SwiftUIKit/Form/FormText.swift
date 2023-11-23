@@ -95,6 +95,7 @@ private extension FormText {
 }
 
 #Preview {
+    
     List {
         FormText(
             title: "title 1",

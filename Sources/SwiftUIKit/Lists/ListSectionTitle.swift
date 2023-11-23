@@ -51,13 +51,11 @@ private extension View {
     }
 }
 
-struct ListSectionTitle_Previews: PreviewProvider {
+#Preview {
 
-    static var previews: some View {
-        List {
-            Section(header: Text("Foo bar")) {
-                ListSectionTitle("Foo bar")
-            }
+    List {
+        Section(header: Text("Foo bar")) {
+            ListSectionTitle("Foo bar")
         }
     }
 }

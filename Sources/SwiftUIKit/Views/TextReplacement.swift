@@ -31,10 +31,13 @@ public struct TextReplacement: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextReplacement("This view, is a view! that create views view that create views view that create views view that create views", replace: "view") {
-            Text($0).font(.title).underline()
-        }.font(.headline)
+#Preview {
+    
+    TextReplacement(
+        "This view, is a view! that create views view that create views view that create views view that create views",
+        replace: "view"
+    ) {
+        Text($0).font(.title).underline()
     }
+    .font(.headline)
 }

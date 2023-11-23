@@ -327,35 +327,38 @@ private struct Underline: View {
 
 // MARK: - Preview
 
-struct LinkText_Previews: PreviewProvider {
+#Preview {
 
-    static func preview(style: LinkText.Style = .standard) -> some View {
-        LinkText(
-            components: [
-                .text("You must accept our "),
-                .link("terms and conditions", action: { print("action 1") }),
-                .text(" Also, we have some more "),
-                .link("terms and conditions", action: { print("action 2") }),
-                .text(" that you need to accept, then some more "),
-                .link("terms and conditions", action: { print("action 3") }),
-                .text(".")
-            ],
-            style: style
-        )
-    }
-
-    static var previews: some View {
-        List {
-            preview()
-            preview()
-                .foregroundColor(.red)
-                .accentColor(.green)
-            preview()
-                .font(.headline.italic())
-            preview(style: .plain)
-                .accentColor(.orange)
-                .lineSpacing(10)
+    struct PreviewText: View {
+        
+        var style: LinkText.Style = .standard
+        
+        var body: some View {
+            LinkText(
+                components: [
+                    .text("You must accept our "),
+                    .link("terms and conditions", action: { print("action 1") }),
+                    .text(" Also, we have some more "),
+                    .link("terms and conditions", action: { print("action 2") }),
+                    .text(" that you need to accept, then some more "),
+                    .link("terms and conditions", action: { print("action 3") }),
+                    .text(".")
+                ],
+                style: style
+            )
         }
+    }
+    
+    return List {
+        PreviewText()
+        PreviewText()
+            .foregroundColor(.red)
+            .accentColor(.green)
+        PreviewText()
+            .font(.headline.italic())
+        PreviewText(style: .plain)
+            .accentColor(.orange)
+            .lineSpacing(10)
     }
 }
 #endif

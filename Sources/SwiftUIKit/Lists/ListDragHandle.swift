@@ -43,28 +43,26 @@ private extension ListDragHandle {
     }
 }
 
-struct ListDragHandle_Previews: PreviewProvider {
+#Preview {
 
-    static var previews: some View {
-        NavigationView {
-            List {
-                ForEach(1...10, id: \.self) { item in
-                    HStack {
-                        Label {
-                            Text("Title \(item)")
-                        } icon: {
-                            Color.red
-                        }
-                        Spacer()
-                        ListDragHandle()
+    NavigationView {
+        List {
+            ForEach(1...10, id: \.self) { item in
+                HStack {
+                    Label {
+                        Text("Title \(item)")
+                    } icon: {
+                        Color.red
                     }
+                    Spacer()
+                    ListDragHandle()
                 }
-                .onMove { _, _ in }
-                .onDelete { _ in }
             }
-            .toolbar {
-                EditButton()
-            }
+            .onMove { _, _ in }
+            .onDelete { _ in }
+        }
+        .toolbar {
+            EditButton()
         }
     }
 }
