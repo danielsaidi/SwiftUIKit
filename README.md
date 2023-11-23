@@ -1,5 +1,5 @@
 <p align="center">
-    <img src ="Resources/Logo.png" alt="SwiftUIKit Logo" title="SwiftUIKit" width=600 />
+    <img src ="Resources/Logo.png" alt="SwiftUIKit Logo" title="SwiftUIKit" />
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 ## About SwiftUIKit
 
-SwiftUIKit adds extra functionality to `SwiftUI`, like additional view, extensions to existing types and completely new stuff. It also has a bunch of non-SwiftUI related things that I often use in my apps.
+SwiftUIKit adds extra functionality to `SwiftUI` and `Swift` in general, like additional view and components, a lot of extensions to native types and much more. It can kickstart your development and solves many tricky problems.
 
 
 
@@ -32,13 +32,13 @@ If you prefer to not have external dependencies, you can also just copy the sour
 
 ## Documentation
 
-The [online documentation][Documentation] has more information, code examples, etc., and makes it easy to overview the various parts of the library.
+The [online documentation][Documentation] has information, examples, code samples, etc., and makes it easy to browse the library.
 
 
 
 ## Support my work
 
-I manage many open-source projects on my spare time and would be very thankful for any help I can get to keep my work going. 
+I manage many open-source projects on my spare time and am very thankful for any help to keep my work going. 
 
 You can sponsor my work on [GitHub Sponsors][Sponsors] or get in touch for paid support.
 
@@ -57,7 +57,7 @@ Feel free to reach out if you have questions or if you want to contribute in any
 
 ## License
 
-SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
+SwiftUIKit is available under the [MIT License][License].
 
 
 
