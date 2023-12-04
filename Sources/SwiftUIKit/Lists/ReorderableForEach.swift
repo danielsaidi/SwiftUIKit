@@ -13,7 +13,7 @@ import SwiftUI
 
 /**
  This type represents a reorderable item that can be used in
- a ``ReorderableForEach``.
+ a ``ReorderableForEach`` view.
  */
 public typealias Reorderable = Identifiable & Equatable
 
@@ -119,9 +119,11 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
     @Binding
     private var active: Item?
     
-    // A hack needed in order to make view back opaque if it
-    // has not been dragged or moved. Without this hack, the
-    // item remains semi-transparent.
+    /**
+     This hack is needed to reset view opaqueness when items
+     are dragged but not moved. Without it, items would stay
+     semi-transparent when the drag gesture ends.
+     */
     @State
     private var hasChangedLocation = false
     
@@ -178,10 +180,10 @@ private extension ReorderableForEach {
 public extension View {
     
     /**
-     Apply the modifier to the root of a view hierarchy that
-     contains a ``ReorderableForEach``, to make the view  view to make it end active state
-     end a reorder drag when it ends outside of the
-     source list.
+     Apply the modifier to the root view of a view hierarchy
+     that contains a ``ReorderableForEach`` view, to make it
+     end an reorder drag gesture when it ends outside of the
+     drag source view.
      */
     func reorderableForEachContainer<Item: Reorderable>(active: Binding<Item?>) -> some View {
         onDrop(of: [.text], delegate: ReorderableDropOutsideDelegate(active: active))
