@@ -8,8 +8,6 @@ SwiftUIKit adds extra functionality to `SwiftUI`.
 
 ![SwiftUIKit logo](Logo.png)
 
-This documentation is currently iOS-specific. To generate documentation for other platforms, open the package in Xcode, select a simulator and run `Product/Build Documentation`.
-
 The library is divided into the namespaces found in the Topics section below. For more information, source code, issues, to sponsor the project etc., visit the [project repository][Repository].
 
 
@@ -26,9 +24,15 @@ If you prefer to not have external dependencies, you can also just copy the sour
 
 
 
+## Repository
+
+For more information, source code, etc., visit the [project repository][Repository].
+
+
+
 ## License
 
-SwiftUIKit is available under the MIT license.
+SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
 
 
 
@@ -216,4 +220,6 @@ SwiftUIKit is available under the MIT license.
 - ``TextReplacement``
 
 
+
+[License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
 [Repository]: https://github.com/danielsaidi/SwiftUIKit
