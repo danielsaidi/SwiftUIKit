@@ -46,7 +46,7 @@ You can sponsor my work on [GitHub Sponsors][Sponsors] or get in touch for paid 
 
 ## Contact
 
-Feel free to reach out if you have questions or if you want to contribute in any way:
+Feel free to reach out if you have questions or want to contribute in any way:
 
 * Website: [danielsaidi.com][Website]
 * Mastodon: [@danielsaidi@mastodon.social][Mastodon]
