@@ -237,6 +237,7 @@ private extension View {
                         toggleIsPressedForQuickTap(isPressed)
                         config.releaseInsideAction()
                         config.tryTriggerDoubleTap()
+                        config.tryStopRepeatTimer()
                         if !pressed { config.endAction() }
                     }
                 )
