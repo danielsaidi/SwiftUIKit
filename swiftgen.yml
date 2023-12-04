@@ -1,6 +1,0 @@
-fonts:
-  inputs:
-    - Demo/Shared/Resources/Fonts
-  outputs:
-    - templateName: swift4
-      output: Demo/Shared/Resources/Fonts.swift
