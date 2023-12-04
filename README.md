@@ -32,7 +32,7 @@ If you prefer to not have external dependencies, you can also just copy the sour
 
 ## Documentation
 
-The [online documentation][Documentation] has information, examples, code samples, etc., and makes it easy to browse the library.
+The [online documentation][Documentation] has information, examples, code samples, etc.
 
 
 
