@@ -240,24 +240,23 @@ private extension View {
 @available(iOS 16.0, *)
 #Preview {
     
-    List {
-        Section {
-            ListBadgeIcon.bug
-            ListBadgeIcon.email
-            ListBadgeIcon.featureRequest
-            ListBadgeIcon.languageSettings
-            ListBadgeIcon.lightbulb
-            ListBadgeIcon.multicolorPalette
-            ListBadgeIcon.person
-            ListBadgeIcon.privacy
-            ListBadgeIcon.prominentAlert
-            ListBadgeIcon.prominentCheckmark
-            ListBadgeIcon.redHeart
-            ListBadgeIcon.review
-            ListBadgeIcon.safari
-            ListBadgeIcon.share
-            ListBadgeIcon.yellowStar
-        }
+    LazyVGrid(columns: .adaptive(minimum: 40, maximum: 50)) {
+        ListBadgeIcon.bug
+        ListBadgeIcon.email
+        ListBadgeIcon.featureRequest
+        ListBadgeIcon.languageSettings
+        ListBadgeIcon.lightbulb
+        ListBadgeIcon.multicolorPalette
+        ListBadgeIcon.person
+        ListBadgeIcon.privacy
+        ListBadgeIcon.prominentAlert
+        ListBadgeIcon.prominentCheckmark
+        ListBadgeIcon.redHeart
+        ListBadgeIcon.review
+        ListBadgeIcon.safari
+        ListBadgeIcon.share
+        ListBadgeIcon.yellowStar
     }
+    .padding(50)
 }
 #endif

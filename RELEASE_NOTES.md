@@ -8,6 +8,7 @@ This version adjusts the `ListBadgeIcon` to behave better.
 ### ✨ New features
 
 * `ListBadgeIcon` has new properties and render better on iOS 17.
+* `ListBadgeIcon` has new predefined types.
 
 
 
