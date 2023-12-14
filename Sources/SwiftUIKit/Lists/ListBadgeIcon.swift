@@ -6,14 +6,14 @@
 //  Copyright © 2023 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(macOS)
 import SwiftUI
 
 /**
  This view mimics the color badge icons that can be found in
  e.g. System Settings lists on iOS.
  */
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 public struct ListBadgeIcon: View {
     
     /**
@@ -22,7 +22,7 @@ public struct ListBadgeIcon: View {
      
      - Parameters:
        - icon: The image to use.
-       - iconColor: The icon color, by default `white`.
+       - iconColor: The icon color, by default `semi-black` or `white`.
        - iconFill: The icon fill mode, by default `true`.
        - iconGradient: The icon gradient mode, by default `true`.
        - iconOffset: The icon offset, by default `.zero`.
@@ -33,7 +33,7 @@ public struct ListBadgeIcon: View {
      */
     public init(
         icon: Image,
-        iconColor: Color? = .white,
+        iconColor: Color? = nil,
         iconFill: Bool = true,
         iconGradient: Bool = true,
         iconOffset: CGPoint = .zero,
@@ -44,10 +44,11 @@ public struct ListBadgeIcon: View {
     ) {
         let whiteBadge = badgeColor == .white
         let whiteBadgeStroke: Color = .hex(0xe7e7e7)
+        let fallbackIconColor = whiteBadge ? .black.opacity(0.8) : Color.white
         let fallbackStroke = whiteBadge ? whiteBadgeStroke : .clear
         
         self.icon = icon
-        self.iconColor = iconColor
+        self.iconColor = iconColor ?? fallbackIconColor
         self.iconFill = iconFill
         self.iconGradient = iconGradient
         self.iconOffset = iconOffset
@@ -84,8 +85,16 @@ public struct ListBadgeIcon: View {
     }
 }
 
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 public extension ListBadgeIcon {
+    
+    static var appStore: Self {
+        .init(
+            icon: Image(systemName: "apple.logo"),
+            iconColor: .white.opacity(0.6),
+            badgeColor: .black.opacity(0.9)
+        )
+    }
     
     static var bug: some View {
         ListBadgeIcon(
@@ -94,7 +103,7 @@ public extension ListBadgeIcon {
         .symbolRenderingMode(.multicolor)
     }
     
-    static var email: ListBadgeIcon {
+    static var email: Self {
         .init(
             icon: .symbol("envelope"),
             iconColor: .white,
@@ -109,7 +118,7 @@ public extension ListBadgeIcon {
         )
     }
     
-    static var languageSettings: ListBadgeIcon {
+    static var languageSettings: Self {
         .init(
             icon: .symbol("globe"),
             iconColor: .cyan
@@ -121,7 +130,6 @@ public extension ListBadgeIcon {
             icon: .symbol("lightbulb"),
             iconColor: .yellow
         )
-        .symbolRenderingMode(.multicolor)
     }
     
     static var multicolorPalette: some View {
@@ -132,10 +140,9 @@ public extension ListBadgeIcon {
         .symbolRenderingMode(.multicolor)
     }
     
-    static var person: ListBadgeIcon {
+    static var person: Self {
         .init(
-            icon: .symbol("person"),
-            iconColor: .black.opacity(0.8)
+            icon: .symbol("person")
         )
     }
     
@@ -147,7 +154,7 @@ public extension ListBadgeIcon {
         .symbolRenderingMode(.multicolor)
     }
     
-    static var prominentAlert: ListBadgeIcon {
+    static var prominentAlert: Self {
         .init(
             icon: .symbol("exclamationmark.triangle"),
             badgeColor: .orange
@@ -163,17 +170,16 @@ public extension ListBadgeIcon {
         .fontWeight(.semibold)
     }
     
-    static var redHeart: ListBadgeIcon {
+    static var redHeart: Self {
         .init(
             icon: .symbol("heart"),
             iconColor: .red
         )
     }
     
-    static var review: ListBadgeIcon {
+    static var review: Self {
         .init(
-            icon: .symbol("star"),
-            iconColor: .black.opacity(0.8)
+            icon: .symbol("star")
         )
     }
     
@@ -185,16 +191,15 @@ public extension ListBadgeIcon {
         .symbolRenderingMode(.multicolor)
     }
     
-    static var share: ListBadgeIcon {
+    static var share: Self {
         .init(
             icon: .symbol("square.and.arrow.up"),
-            iconColor: .black.opacity(0.8),
             iconFill: false,
             iconOffset: .init(x: 0, y: -1)
         )
     }
     
-    static var yellowStar: ListBadgeIcon {
+    static var yellowStar: Self {
         .init(
             icon: .symbol("star"),
             iconColor: .yellow
@@ -202,7 +207,7 @@ public extension ListBadgeIcon {
     }
 }
 
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 private extension Color {
     
     func asGradientBackground() -> some View {
@@ -210,7 +215,7 @@ private extension Color {
     }
 }
 
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 private extension View {
     
     @ViewBuilder
@@ -237,10 +242,11 @@ private extension View {
     }
 }
 
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 #Preview {
     
     LazyVGrid(columns: .adaptive(minimum: 40, maximum: 50)) {
+        ListBadgeIcon.appStore
         ListBadgeIcon.bug
         ListBadgeIcon.email
         ListBadgeIcon.featureRequest
@@ -258,5 +264,6 @@ private extension View {
         ListBadgeIcon.yellowStar
     }
     .padding(50)
+    .frame(width: 500, height: 300)
 }
 #endif

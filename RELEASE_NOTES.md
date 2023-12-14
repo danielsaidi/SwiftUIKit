@@ -1,6 +1,18 @@
 # Release notes
 
 
+## 4.1.1
+
+This version makes the `ListBadgeIcon` available on macOS.
+
+### ✨ New features
+
+* `ListBadgeIcon` is now available on macOS.
+* `ListBadgeIcon` has a new `appStore` badge.
+* `ListBadgeIcon` iconColor is nil by default and adaptive to the badge color.
+
+
+
 ## 4.1
 
 This version adjusts the `ListBadgeIcon` to behave better.
