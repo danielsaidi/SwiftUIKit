@@ -14,6 +14,7 @@ import SwiftUI
  e.g. System Settings lists on iOS.
  */
 @available(iOS 16.0, macOS 13.0, *)
+@available(*, deprecated, message: "This type has moved to https://github.com/danielsaidi/BadgeIcon")
 public struct ListBadgeIcon: View {
     
     /**
@@ -86,6 +87,7 @@ public struct ListBadgeIcon: View {
 }
 
 @available(iOS 16.0, macOS 13.0, *)
+@available(*, deprecated, message: "This type has moved to https://github.com/danielsaidi/BadgeIcon")
 public extension ListBadgeIcon {
     
     static var appStore: Self {
@@ -208,6 +210,7 @@ public extension ListBadgeIcon {
 }
 
 @available(iOS 16.0, macOS 13.0, *)
+@available(*, deprecated, message: "This type has moved to https://github.com/danielsaidi/BadgeIcon")
 private extension Color {
     
     func asGradientBackground() -> some View {
@@ -216,6 +219,7 @@ private extension Color {
 }
 
 @available(iOS 16.0, macOS 13.0, *)
+@available(*, deprecated, message: "This type has moved to https://github.com/danielsaidi/BadgeIcon")
 private extension View {
     
     @ViewBuilder
@@ -240,30 +244,5 @@ private extension View {
             .padding(0.6)
             .background(color.cornerRadius(7.6))
     }
-}
-
-@available(iOS 16.0, macOS 13.0, *)
-#Preview {
-    
-    LazyVGrid(columns: .adaptive(minimum: 40, maximum: 50)) {
-        ListBadgeIcon.appStore
-        ListBadgeIcon.bug
-        ListBadgeIcon.email
-        ListBadgeIcon.featureRequest
-        ListBadgeIcon.languageSettings
-        ListBadgeIcon.lightbulb
-        ListBadgeIcon.multicolorPalette
-        ListBadgeIcon.person
-        ListBadgeIcon.privacy
-        ListBadgeIcon.prominentAlert
-        ListBadgeIcon.prominentCheckmark
-        ListBadgeIcon.redHeart
-        ListBadgeIcon.review
-        ListBadgeIcon.safari
-        ListBadgeIcon.share
-        ListBadgeIcon.yellowStar
-    }
-    .padding(50)
-    .frame(width: 500, height: 300)
 }
 #endif

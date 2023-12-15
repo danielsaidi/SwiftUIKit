@@ -1,6 +1,16 @@
 # Release notes
 
 
+## 4.1.2
+
+This version deprecates `ListBadgeIcon`.
+
+### 🗑️ Deprecations
+
+* `ListBadgeIcon` has moved to `https://github.com/danielsaidi/BadgeIcon`.
+
+
+
 ## 4.1.1
 
 This version makes the `ListBadgeIcon` available on macOS.
