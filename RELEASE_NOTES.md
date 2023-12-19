@@ -3,6 +3,16 @@
 
 ## 4.1.2
 
+This version adds a few additional utilities.
+
+### 🗑️ Deprecations
+
+* `View+macOS` has a new `openAppSettings()` view extension.
+
+
+
+## 4.1.2
+
 This version deprecates `ListBadgeIcon`.
 
 ### 🗑️ Deprecations
