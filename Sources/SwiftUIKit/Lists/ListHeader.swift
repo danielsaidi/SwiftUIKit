@@ -29,7 +29,7 @@ public struct ListHeader<Icon: View>: View {
         @ViewBuilder view: @escaping () -> Icon
     ) {
         #if os(iOS)
-        let defaultPadding: Double = -20
+        let defaultPadding: Double = -10
         #else
         let defaultPadding: Double = 0
         #endif
@@ -42,14 +42,10 @@ public struct ListHeader<Icon: View>: View {
     private let view: (() -> Icon)
 
     public var body: some View {
-        Section {
-            EmptyView()
-        } header: {
-            ZStack(alignment: .center) {
-                view()
-            }
-            .frame(maxWidth: .infinity)
+        ZStack(alignment: .center) {
+            view()
         }
+        .frame(maxWidth: .infinity)
         .listRowBackground(Color.clear)
         .padding(.bottom, bottomPadding)
     }
@@ -107,7 +103,7 @@ public extension Image {
             }
         }
         List {
-            Image(systemName: "checkmark").listHeader(height: 75)
+            Image(systemName: "face.smiling").listHeader(height: 75)
             Section {
                 Text("Item")
                 Text("Item")

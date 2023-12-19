@@ -1,6 +1,12 @@
 # Release notes
 
 
+## 4.1.5
+
+This version makes the list header not use a section, to avoid disclosure groups.
+
+    
+
 ## 4.1.4
 
 This version fixes a bug in the image list header extension.
