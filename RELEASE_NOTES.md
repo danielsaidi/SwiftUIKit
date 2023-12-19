@@ -5,7 +5,7 @@
 
 This version fixes a bug in the image list header extension.
 
-
+    
 
 ## 4.1.3
 
