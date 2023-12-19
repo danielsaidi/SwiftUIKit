@@ -8,6 +8,7 @@ This version adds a few additional utilities.
 ### ✨ New features
 
 * `ListHeader` has a new image-specific modifier.
+* `View+Label` makes it easy to convert any view to a label.
 * `View+macOS` has a new `openAppSettings()` view extension.
 
 ### 💡 Behavior changes
