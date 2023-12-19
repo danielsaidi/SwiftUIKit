@@ -10,13 +10,12 @@
 import SwiftUI
 
 /**
- This command can be used to customize the app's about panel
- in macOS.
+ This command can be used to open the macOS About Panel.
  */
 public struct AboutPanelCommand: Commands {
     
     /**
-     Create an about panel command with custom properties.
+     Create an About Panel command with panel properties.
      
      - Parameters:
        - title: The menu bar title.
@@ -47,7 +46,7 @@ public struct AboutPanelCommand: Commands {
     }
     
     /**
-     Create an about panel command with custom panel options.
+     Create an About Panel command with custom panel options.
      
      - Parameters:
        - title: The menu bar title.
