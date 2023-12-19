@@ -72,6 +72,25 @@ public extension View {
     }
 }
 
+public extension Image {
+    
+    /**
+     Convert the image to a list header.
+     
+     - Parameters:
+       - height: The image height, if any.
+       - bottomPadding: The bottom padding, by default a platform-specific value.
+     */
+    func listHeader(
+        height: CGFloat?,
+        bottomPadding: Double? = nil
+    ) -> some View {
+        self.resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: height)
+    }
+}
+
 #Preview {
     
     VStack {
