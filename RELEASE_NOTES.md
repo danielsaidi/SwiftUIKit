@@ -1,6 +1,12 @@
 # Release notes
 
 
+## 4.1.4
+
+This version fixes a bug in the image list header extension.
+
+
+
 ## 4.1.3
 
 This version adds a few additional utilities.

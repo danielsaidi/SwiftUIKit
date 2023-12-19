@@ -88,6 +88,7 @@ public extension Image {
         self.resizable()
             .aspectRatio(contentMode: .fit)
             .frame(height: height)
+            .listHeader()
     }
 }
 
@@ -106,10 +107,7 @@ public extension Image {
             }
         }
         List {
-            ListHeader {
-                Image(systemName: "checkmark")
-                    .font(.largeTitle)
-            }
+            Image(systemName: "checkmark").listHeader(height: 75)
             Section {
                 Text("Item")
                 Text("Item")
