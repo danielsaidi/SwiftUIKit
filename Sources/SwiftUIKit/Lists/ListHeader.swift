@@ -21,14 +21,19 @@ public struct ListHeader<Icon: View>: View {
      Create a list header.
      
      - Parameters:
-       - bottomPadding: A bottom padding meant to reduce the spacing to the list content, by default `20`.
+       - bottomPadding: The bottom padding, by default a platform-specific value.
        - view: The header view.
      */
     public init(
-        bottomPadding: Double = -20,
+        bottomPadding: Double? = nil,
         @ViewBuilder view: @escaping () -> Icon
     ) {
-        self.bottomPadding = bottomPadding
+        #if os(iOS)
+        let defaultPadding: Double = -20
+        #else
+        let defaultPadding: Double = 0
+        #endif
+        self.bottomPadding = bottomPadding ?? defaultPadding
         self.view = view
     }
     
@@ -46,14 +51,22 @@ public struct ListHeader<Icon: View>: View {
             .frame(maxWidth: .infinity)
         }
         .listRowBackground(Color.clear)
-        .padding(.bottom, -20)
+        .padding(.bottom, bottomPadding)
     }
 }
 
 public extension View {
     
-    func listHeader() -> some View {
-        ListHeader {
+    /**
+     Convert the view to a list header.
+     
+     - Parameters:
+       - bottomPadding: The bottom padding, by default a platform-specific value.
+     */
+    func listHeader(
+        bottomPadding: Double? = nil
+    ) -> some View {
+        ListHeader(bottomPadding: bottomPadding) {
             self
         }
     }

@@ -1,13 +1,18 @@
 # Release notes
 
 
-## 4.1.2
+## 4.1.3
 
 This version adds a few additional utilities.
 
-### 🗑️ Deprecations
+### ✨ New features
 
+* `ListHeader` has a new image-specific modifier.
 * `View+macOS` has a new `openAppSettings()` view extension.
+
+### 💡 Behavior changes
+
+* `ListHeader` now applies a platform-specific bottom padding.
 
 
 
