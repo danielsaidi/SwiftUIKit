@@ -1,5 +1,5 @@
 <p align="center">
-    <img src ="Resources/Logo.png" alt="SwiftUIKit Logo" title="SwiftUIKit" />
+    <img src ="Resources/Logo_GitHub.png" alt="SwiftUIKit Logo" title="SwiftUIKit" />
 </p>
 
 <p align="center">
@@ -12,9 +12,12 @@
 </p>
 
 
+
 ## About SwiftUIKit
 
-SwiftUIKit adds extra functionality to `SwiftUI` and `Swift` in general, like additional view and components, a lot of extensions to native types and much more. It can kickstart your development and solves many tricky problems.
+SwiftUIKit is a Swift SDK that adds extra functionality to `SwiftUI` and `Swift`. It contains additional components, a lot of extensions to native types, and much more. 
+
+SwiftUIKit can kickstart your development and solves many tricky problems.
 
 
 
@@ -26,21 +29,31 @@ SwiftUIKit can be installed with the Swift Package Manager:
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-If you prefer to not have external dependencies, you can also just copy the source code into your app.
+
+
+## Getting Started
+
+SwiftUIKit started as a small project, but has grown pretty huge over the years.
+
+Due to its complexity, I have decided to remove the demo. Instead, have a look at the various namespaces and use the live previews to explore the components in the SDK.
+
+I will therefore extract parts of this SDK into separate libraries, to be able to provide better documentation & help. 
+
+For more Swift & SwiftUI SDKs that I have created, please have a look at [my open-source listing page][OpenSource].
 
 
 
 ## Documentation
 
-The [online documentation][Documentation] has information, examples, code samples, etc.
+The [online documentation][Documentation] has more information, code examples, etc.
 
 
 
-## Support my work
+## Support my work 
 
-I manage many open-source projects on my spare time and am very thankful for any help to keep my work going. 
+You can [sponsor me][Sponsors] on GitHub Sponsors or [reach out][Email] for paid support, to help support my [open-source projects][OpenSource].
 
-You can sponsor my work on [GitHub Sponsors][Sponsors] or get in touch for paid support.
+Your support makes it possible for me to put more work into these projects and make them the best they can be.
 
 
 
@@ -57,15 +70,19 @@ Feel free to reach out if you have questions or want to contribute in any way:
 
 ## License
 
-SwiftUIKit is available under the [MIT License][License].
+ApiKit is available under the MIT license. See the [LICENSE][License] file for more info.
 
 
 
 [Email]: mailto:daniel.saidi@gmail.com
-[Website]: https://www.danielsaidi.com
-[Twitter]: https://www.twitter.com/danielsaidi
+
+[Website]: https://danielsaidi.com
+[GitHub]: https://github.com/danielsaidi
+[Twitter]: https://twitter.com/danielsaidi
 [Mastodon]: https://mastodon.social/@danielsaidi
+[OpenSource]: https://danielsaidi.com/opensource
 [Sponsors]: https://github.com/sponsors/danielsaidi
 
-[Documentation]: https://danielsaidi.github.io/SwiftUIKit/documentation/swiftuikit/
+[Documentation]: https://danielsaidi.github.io/SwiftUIKit
+
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
