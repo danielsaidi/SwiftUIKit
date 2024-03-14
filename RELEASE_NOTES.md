@@ -1,6 +1,15 @@
 # Release notes
 
 
+
+## 4.2
+
+### 🗑️ Deprecations
+
+* `Color.standardListBackground` has been renamed to `.listBackground`.
+
+
+
 ## 4.1.5
 
 This version makes the list header not use a section, to avoid disclosure groups.

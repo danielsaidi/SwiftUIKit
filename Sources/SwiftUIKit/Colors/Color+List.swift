@@ -11,7 +11,7 @@ public extension Color {
     
     /// Get the standard list background color for a scheme.
     @ViewBuilder
-    static func standardListBackground(
+    static func listBackground(
         forScheme scheme: ColorScheme
     ) -> some View {
         if scheme == .light {

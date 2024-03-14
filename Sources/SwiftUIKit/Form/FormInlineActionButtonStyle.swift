@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
-//  Copyright © 2021-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
@@ -92,7 +92,7 @@ private extension FormInlineActionButtonStyle {
         if let backgroundColor {
             backgroundColor
         } else {
-            Color.standardListBackground(forScheme: colorScheme)
+            Color.listBackground(forScheme: colorScheme)
         }
     }
     

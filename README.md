@@ -70,7 +70,7 @@ Feel free to reach out if you have questions or want to contribute in any way:
 
 ## License
 
-ApiKit is available under the MIT license. See the [LICENSE][License] file for more info.
+SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
 
 
 

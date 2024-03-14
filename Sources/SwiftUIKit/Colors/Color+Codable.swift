@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-23.
-//  Copyright © 2021-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
 //
 
 //  This extension makes `Color` implement `Codable`.
@@ -21,18 +21,14 @@ import WatchKit
 import AppKit
 #endif
 
-/**
- This extension extends `Color` with `Codable` functionality.
- */
+/// This extension makes `Color` implement `Codable`.
 extension Color: Codable {
     
     enum CodingKeys: String, CodingKey {
         case red, green, blue, alpha
     }
 
-    /**
-     Initialize a color value from a decoder.
-     */
+    /// Initialize a color value from a decoder.
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let r = try container.decode(Double.self, forKey: .red)
@@ -42,14 +38,11 @@ extension Color: Codable {
         self.init(red: r, green: g, blue: b, opacity: a)
     }
 
-    /**
-     Encode the color, using an encoder.
-
-     Note that encoding dynamic colors that support features
-     like dark mode, high contrast etc. will cause the color
-     value that is encoded to only contain the current color
-     information.
-     */
+    /// Encode the color, using an encoder.
+    ///
+    /// Note that encoding colors that support features like
+    /// dark mode, high contrast etc. will cause the encoded
+    /// colors to only contain the current color information.
     public func encode(to encoder: Encoder) throws {
         guard let colorComponents = self.colorComponents else { return }
         var container = encoder.container(keyedBy: CodingKeys.self)

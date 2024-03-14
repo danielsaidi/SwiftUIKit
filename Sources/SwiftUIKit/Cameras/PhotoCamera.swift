@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-11-27.
-//  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
@@ -22,21 +22,18 @@ import SwiftUI
  }
  ```
 
- You can then present the camera with a sheet, a full screen
- cover etc.
+ You can then present this camera with a sheet, a modal, etc.
  
- The camera result contains the picked image, which you then
- can use in any way you want.
+ This camera returns a result that contains the picked image,
+ which you then can use in any way you want.
  */
 public struct PhotoCamera: View {
 
-    /**
-     Create a photo camera.
-
-     - Parameters:
-       - cancelAction: The action to trigger when the operation is cancelled.
-       - resultAction: The action to trigger when the operation is completes.
-     */
+    /// Create a photo camera.
+    ///
+    /// - Parameters:
+    ///   - cancelAction: The action to trigger when the operation is cancelled.
+    ///   - resultAction: The action to trigger when the operation is completes.
     public init(
         cancelAction: @escaping ImagePicker.CancelAction = {},
         resultAction: @escaping ImagePicker.ResultAction

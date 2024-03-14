@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-01-22.
-//  Copyright © 2020-2023 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
@@ -23,22 +23,18 @@ import VisionKit
  }
  ```
 
- You can then present the camera with a sheet, a full screen
- cover etc.
+ You can then present this camera with a sheet, a modal, etc.
 
  The camera uses a `VNDocumentCameraViewController` and will
- return a `VNDocumentCameraScan` that contains a list of all
- scanned document pages, if any.
+ return a `VNDocumentCameraScan` with all document pages.
  */
 public struct DocumentCamera: UIViewControllerRepresentable {
 
-    /**
-     Create a document camera.
-
-     - Parameters:
-       - cancelAction: The action to trigger when the scan is cancelled.
-       - resultAction: The action to trigger when the scan is completes.
-     */
+    /// Create a document camera.
+    ///
+    /// - Parameters:
+    ///   - cancelAction: The action to trigger when the scan is cancelled.
+    ///   - resultAction: The action to trigger when the scan is completes.
     public init(
         cancelAction: @escaping CancelAction = {},
         resultAction: @escaping ResultAction
