@@ -1,5 +1,5 @@
 //
-//  View+PersistentSystemOverlays.swift
+//  View+Prefers.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-08-01.
@@ -8,18 +8,11 @@
 
 import SwiftUI
 
-/**
- This extension provides extensions that apply view modifier
- behavior only if the runtime platform supports it.
- */
 public extension View {
 
-    /**
-     Applies `.menuOrder(.fixed)`.
-
-     The modifier will only be applied on iOS 16.0 and later,
-     as well as macOS 13.0, tvOS 16.0 and watchOS 9.0.
-     */
+    /// Applies `.menuOrder(.fixed)`.
+    ///
+    /// This modifier is only applied in iOS 16.0 and later.
     @ViewBuilder
     func prefersMenuOrderFixed() -> some View {
         if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *) {
@@ -29,12 +22,9 @@ public extension View {
         }
     }
 
-    /**
-     Applies `.persistentSystemOverlays(.hidden)`.
-
-     The modifier will only be applied on iOS 16.0 and later,
-     as well as macOS 13.0, tvOS 16.0 and watchOS 9.0.
-     */
+    /// Applies `.persistentSystemOverlays(.hidden)`.
+    ///
+    /// This modifier is only applied in iOS 16.0 and later.
     @ViewBuilder
     func prefersPersistentSystemOverlaysHidden() -> some View {
         if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *) {
@@ -52,7 +42,9 @@ public extension View {
         Menu("Test") {
             Button("1") {}
             Button("2") {}
-        }.prefersMenuOrderFixed()
+        }
+        .prefersMenuOrderFixed()
         #endif
-    }.prefersPersistentSystemOverlaysHidden()
+    }
+    .prefersPersistentSystemOverlaysHidden()
 }

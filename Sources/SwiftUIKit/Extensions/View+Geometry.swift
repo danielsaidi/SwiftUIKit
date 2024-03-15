@@ -10,26 +10,23 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Bind the view's safe area to a binding.
-     
-     Do not overuse this modifier. Since the size binding is
-     calculated as the view is being rendered, it will start
-     with an incorrect value, which may cause glitches.
-     */
+    /// Bind the view's safe area to a binding.
+    ///
+    /// Do not overuse this modifier. Since the size binding
+    /// is calculated as the view is being rendered, it will
+    /// start with an incorrect value, which causes glitches.
     func bindSafeAreaInsets(
         to binding: Binding<EdgeInsets>
     ) -> some View {
         background(safeAreaBindingView(for: binding))
     }
     
-    /**
-     Bind the view's size to a binding.
-
-     Do not overuse this modifier. Since the size binding is
-     calculated as the view is being rendered, it will start
-     with an incorrect value, which may cause glitches.
-    */
+    /// Bind the view's size to a binding.
+    ///
+    ///
+    /// Do not overuse this modifier. Since the size binding
+    /// is calculated as the view is being rendered, it will
+    /// start with an incorrect value, which causes glitches. 
     func bindSize(
         to binding: Binding<CGSize>
     ) -> some View {

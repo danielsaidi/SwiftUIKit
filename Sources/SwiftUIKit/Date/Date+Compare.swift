@@ -8,10 +8,7 @@
 
 import Foundation
 
-/**
- These extensions provide a semantic, more readable layer on
- top of the raw comparisons.
- */
+/// This extension provides more readable date comparisons.
 public extension Date {
     
     /// Whether or not the date occurs after another date.

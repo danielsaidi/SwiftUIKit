@@ -20,12 +20,13 @@ public extension EdgeInsets {
         )
     }
     
-    /// Create a value with horizontal/vertical values.
+    /// Create a value with horizontal and vertical values.
     init(horizontal: Double, vertical: Double) {
         self.init(
             top: vertical,
             leading: horizontal,
             bottom: vertical,
-            trailing: horizontal)
+            trailing: horizontal
+        )
     }
 }

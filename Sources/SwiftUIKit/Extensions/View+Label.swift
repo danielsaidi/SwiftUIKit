@@ -10,12 +10,10 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Convert the view to a label.
-     
-     - Parameters:
-       - text: The label text.
-     */
+    /// Convert the view to a label.
+    ///
+    /// - Parameters:
+    ///   - text: The label text.
     func label(_ text: String) -> some View {
         Label {
             Text(text)
@@ -26,6 +24,7 @@ public extension View {
 }
 
 #Preview {
+    
     VStack {
         Color.red
             .label("Red")

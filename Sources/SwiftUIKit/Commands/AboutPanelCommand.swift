@@ -14,14 +14,12 @@ import SwiftUI
  */
 public struct AboutPanelCommand: Commands {
     
-    /**
-     Create an About Panel command with panel properties.
-     
-     - Parameters:
-       - title: The menu bar title.
-       - applicationName: The name of the app, buy default the main bundle display name.
-       - credits: Additional credits, by default `nil`.
-     */
+    /// Create an About Panel command with panel properties.
+    ///
+    /// - Parameters:
+    ///   - title: The menu bar title.
+    ///   - applicationName: The name of the app, buy default the main bundle display name.
+    ///   - credits: Additional credits, by default `nil`.
     public init(
         title: String,
         applicationName: String = Bundle.main.displayName,
@@ -45,13 +43,11 @@ public struct AboutPanelCommand: Commands {
         self.init(title: title, options: options)
     }
     
-    /**
-     Create an About Panel command with custom panel options.
-     
-     - Parameters:
-       - title: The menu bar title.
-       - options: Custom about panel options.
-     */
+    /// Create an About Panel command with custom options.
+    ///
+    /// - Parameters:
+    ///   - title: The menu bar title.
+    ///   - options: Custom about panel options.
     public init(
         title: String,
         options: [NSApplication.AboutPanelOptionKey: Any]

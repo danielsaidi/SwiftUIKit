@@ -78,13 +78,8 @@ public extension ErrorAlerter {
         }
     }
 
-    /**
-     Try performing a block-based operation and alert if the
-     operation fails in any way.
-
-     This function is a good alternative if you need to know
-     whether or not the operation fails.
-     */
+    /// Try to perform a block-based operation, and alert if
+    /// this operation fails in any way.
     func tryWithErrorAlert<ErrorType: Error>(
         _ operation: @escaping BlockOperation<ErrorType>,
         completion: @escaping BlockCompletion<ErrorType>
@@ -98,14 +93,11 @@ public extension ErrorAlerter {
         }
     }
     
-    /**
-     Try performing an async operation and alert if it fails.
-
-     This function wraps the async operation in a task, then
-     alerts any errors that are thrown. It's convenient when
-     performing failing operations from SwiftUI views, where
-     handling async functions are a bit messy.
-     */
+    /// Try to perform an async operation, and alert if this
+    /// operation fails in any way.
+    ///
+    /// This function wraps an async operation in a task and
+    /// alerts any errors that are thrown.
     func tryWithErrorAlert(_ operation: @escaping AsyncOperation) {
         Task {
             do {

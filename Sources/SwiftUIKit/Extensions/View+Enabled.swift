@@ -10,13 +10,10 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Adds a condition that controls whether or not users can
-     interact with this view.
-
-     This is just an inverted version of the `disabled` view
-     modifier, intended to increase readability.
-     */
+    /// Enable the view is a certain condition is met.
+    ///
+    /// This is just an inverted version of `disabled`. It's
+    /// intended to increase readability.
     func enabled(_ condition: Bool) -> some View {
         disabled(!condition)
     }

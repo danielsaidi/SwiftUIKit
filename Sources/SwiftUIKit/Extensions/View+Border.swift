@@ -10,10 +10,8 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Adds a border to with a certain content (for instance a
-     certain `Color`), width and corner radius.
-     */
+    /// Adds a border with a certain content (for instance a
+    /// certain `Color`), width and corner radius.
     func border<Content: ShapeStyle>(
         _ content: Content,
         width: CGFloat = 1,

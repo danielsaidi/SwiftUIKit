@@ -14,7 +14,7 @@ public extension UIEdgeInsets {
 
     /// Map the insets to a SwiftUI-specific value.
     var insets: EdgeInsets {
-        EdgeInsets(top: top, leading: left, bottom: bottom, trailing: right)
+        .init(top: top, leading: left, bottom: bottom, trailing: right)
     }
 }
 #endif

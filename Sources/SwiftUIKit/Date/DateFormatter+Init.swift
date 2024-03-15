@@ -11,14 +11,14 @@ import Foundation
 public extension DateFormatter {
 
     /**
-     Create a custom date formatter, that uses a custom date
-     format, calendar, locale and time zone.
+     Create a custom date formatter, with a date style, time
+     style, locale, and calendar.
 
      - Parameters:
        - dateStyle: The date style to use.
        - timeStyle: The time style to use, by default `.none`.
        - locale: The locale to use, by default `en_US_POSIX`.
-       - calendar: The calendar to use, by default `iso8601`.
+       - calendar: The calendar to use, by default `.iso8601`.
      */
     convenience init(
         dateStyle: DateFormatter.Style,
@@ -34,8 +34,8 @@ public extension DateFormatter {
     }
     
     /**
-     Create a custom date formatter, that uses a custom date
-     format, calendar, locale and time zone.
+     Create a custom date formatter, with a date format, for
+     a certain calender, locale and time zone.
 
      - Parameters:
        - dateFormat: The date string format to use.

@@ -10,12 +10,7 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Hide the view if the provided condition is `true`.
-     
-     This function uses an `if` clause to toggle state. Only
-     use this when it won't affect your app performance.
-     */
+    /// Hide the view if the provided condition is `true`.
     @ViewBuilder
     func hidden(if condition: Bool) -> some View {
         if condition {
@@ -25,12 +20,7 @@ public extension View {
         }
     }
 
-    /**
-     Make the view searchable if the condition is `true`.
-     
-     This function uses an `if` clause to toggle state. Only
-     use this when it won't affect your app performance.
-     */
+    /// Make the view searchable if the condition is `true`.
     @ViewBuilder
     func searchable(
         if condition: Bool,
@@ -48,12 +38,7 @@ public extension View {
         }
     }
     
-    /**
-     Show the view if the provided condition is `true`.
-
-     This function uses an `if` clause to toggle state. Only
-     use this when it won't affect your app performance.
-     */
+    /// Show the view if the provided condition is `true`.
     func visible(if condition: Bool) -> some View {
         hidden(if: !condition)
     }

@@ -12,10 +12,7 @@ import SwiftUI
 
 public extension Image {
     
-    /**
-     Create a scan code image with a certain value, and of a
-     certain type. You can also provide a custom scale.
-     */
+    /// Create a scan code image with a `value` and `type`.
     init?(
         scanCode value: String,
         type: ScanCodeType,
@@ -33,10 +30,7 @@ public extension Image {
 
 public extension ImageRepresentable {
     
-    /**
-     Create a scan code image with a certain value, and of a
-     certain type. You can also provide a custom scale.
-     */
+    /// Create a scan code image with a `value` and `type`.
     convenience init?(
         scanCode value: String,
         type: ScanCodeType,
@@ -81,9 +75,9 @@ private extension ImageRepresentable {
 #Preview {
     
     VStack {
-        Image(scanCode: "123456789", type: .aztek)
-        Image(scanCode: "123456789", type: .code128)
-        Image(scanCode: "123456789", type: .pdf417)
+        Image(scanCode: "123456789", type: .aztek, scale: 5)
+        Image(scanCode: "123456789", type: .code128, scale: 2)
+        Image(scanCode: "123456789", type: .pdf417, scale: 2)
         Image(scanCode: "123456789", type: .qr, scale: 5)
     }
 }

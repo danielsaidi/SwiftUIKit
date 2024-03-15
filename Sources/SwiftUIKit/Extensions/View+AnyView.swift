@@ -10,13 +10,10 @@ import SwiftUI
 
 public extension View {
     
-    /**
-     Wrap the view in an `AnyView`. This lets you chain this
-     modifier to make your code cleaner.
-
-     > Important: Do not misuse AnyView. It will mess up the
-     view identity, which may mess up animations, state etc.
-     */
+    /// Wrap the view in an `AnyView`.
+    ///
+    /// > Important: Do not misuse AnyView. It esmess up the
+    /// view identity, which messes up animations, state etc.
     func any() -> AnyView {
         AnyView(self)
     }
