@@ -47,22 +47,29 @@ open class KeychainWrapper {
     
     // MARK: - Initialization
     
-    /**
-     Create a standard instance of this class.
-     */
+    /// Create a standard instance of this class.
     private convenience init() {
         let id = Bundle.main.bundleIdentifier
         let fallback = "com.swiftkit.keychain"
         self.init(serviceName: id ?? fallback)
     }
     
-    /**
-     Create a custom instance of this class.
-     
-     - parameter serviceName: The service name for this instance. Used to uniquely identify all keys stored using this keychain wrapper instance.
-     - parameter accessGroup: An optional, unique access group for this instance. Use a matching AccessGroup between applications to allow shared keychain access.
-     */
-    public init(serviceName: String, accessGroup: String? = nil) {
+    /// Create a custom instance of this class.
+    ///
+    /// The `serviceName` is used to uniquely identify every
+    /// key that has been stored in the keychain, using this
+    /// wrapper instance.
+    ///
+    /// Use matching access groups between applications when
+    /// you want to allow shared keychain access.
+    ///
+    /// - Parameters:
+    ///   - serviceName: The service name to use for this instance.
+    ///   - accessGroup: An optional, unique access group for this instance.
+    public init(
+        serviceName: String,
+        accessGroup: String? = nil
+    ) {
         self.serviceName = serviceName
         self.accessGroup = accessGroup
     }
@@ -70,21 +77,13 @@ open class KeychainWrapper {
     
     // MARK: - Properties
     
-    /**
-     The standard keychain wrapper instance.
-     */
+    /// A standard keychain wrapper instance.
     public static let standard = KeychainWrapper()
     
-    /**
-     This is used to uniquely identify the keychain wrapper.
-     */
+    /// The service name to use for this instance.
     private let serviceName: String
     
-    /**
-     This is used to identify to which Keychain Access Group
-     this entry belongs. This allows you to use this wrapper
-     with shared access between applications.
-     */
+    /// An optional, unique access group for this instance.
     private let accessGroup: String?
     
     
@@ -224,28 +223,22 @@ open class KeychainWrapper {
         return status == errSecSuccess
     }
     
-    /**
-     Remove all keychain items added with this wrapper. This
-     will only delete items matching the current ServiceName
-     and AccessGroup, if one is set.
-     */
+    /// Remove all items from the device keychain, that were
+    /// added by this wrapper.
     open func removeAllKeys() -> Bool {
         var dict: [String: Any] = [paramSecClass: kSecClassGenericPassword]
         dict[paramSecAttrService] = serviceName
-        if let accessGroup = self.accessGroup {
+        if let accessGroup {
             dict[paramSecAttrAccessGroup] = accessGroup
         }
         let status = SecItemDelete(dict as CFDictionary)
         return status == errSecSuccess
     }
     
-    /**
-     Remove all keychain data, including data not added with
-     this keychain wrapper.
-     
-     - Warning: This may remove custom keychain entries that
-     you did not add via this wrapper.
-     */
+    /// Remove all items from the device keychain, including
+    /// entries that were not added by this wrapper.
+    ///
+    /// > Warning: This will remove all data from the store.
     open class func wipeKeychain() {
         deleteKeychainSecClass(kSecClassGenericPassword)    // Generic password items
         deleteKeychainSecClass(kSecClassInternetPassword)   // Internet password items
@@ -260,9 +253,7 @@ open class KeychainWrapper {
 
 private extension KeychainWrapper {
     
-    /**
-     Remove all items for a given Keychain Item Class
-     */
+    /// Remove all items for a given Keychain Item Class.
     @discardableResult
     class func deleteKeychainSecClass(_ secClass: AnyObject) -> Bool {
         let query = [paramSecClass: secClass]
@@ -270,11 +261,14 @@ private extension KeychainWrapper {
         return status == errSecSuccess
     }
     
-    /**
-     Update ayn existing data associated with a specific key
-     name. The existing data will be overwritten by new data.
-     */
-    func update(_ value: Data, forKey key: String, with accessibility: KeychainItemAccessibility? = nil) -> Bool {
+    /// Update all data that's associated with a certain key.
+    ///
+    /// Any existing data will be overwritten.
+    func update(
+        _ value: Data,
+        forKey key: String,
+        with accessibility: KeychainItemAccessibility? = nil
+    ) -> Bool {
         var keychainQueryDictionary: [String: Any] = setupKeychainQueryDictionary(forKey: key, with: accessibility)
         let updateDictionary = [paramSecValueData: value]
         if let accessibility = accessibility {
@@ -284,16 +278,21 @@ private extension KeychainWrapper {
         return status == errSecSuccess
     }
     
-    /**
-     Setup the keychain query dictionary, used to access the
-     keychain on iOS for a specific key name and taking into
-     account the Service Name and Access Group if one is set.
-     
-     - parameter forKey: The key this query is for
-     - parameter with: Optional accessibility to use when setting the keychain item. If none is provided, will default to .WhenUnlocked
-     - returns: A dictionary with all the needed properties setup to access the keychain on iOS
-     */
-    func setupKeychainQueryDictionary(forKey key: String, with accessibility: KeychainItemAccessibility? = nil) -> [String: Any] {
+    /// Setup the keychain query dictionary.
+    ///
+    /// The dictionary is used to access the keychain on iOS
+    /// for a certain key, taking into account service names
+    /// and access groups, whenever set.
+    ///
+    /// - Parameters:
+    ///   - forKey: The key this query is for.
+    ///   - accessibility: Optional keychain accessibility.
+    ///
+    /// - returns: A dictionary with all properties needed to access the keychain on iOS.
+    func setupKeychainQueryDictionary(
+        forKey key: String,
+        with accessibility: KeychainItemAccessibility? = nil
+    ) -> [String: Any] {
         var dict: [String: Any] = [paramSecClass: kSecClassGenericPassword]
         dict[paramSecAttrService] = serviceName
         if let accessibility = accessibility {

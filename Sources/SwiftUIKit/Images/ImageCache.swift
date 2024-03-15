@@ -8,10 +8,7 @@
 
 import Foundation
 
-/**
- This cache type can be used to avoid having to create image
- values for image data over and over.
- */
+/// This type can be used to cache images.
 public class ImageCache {
 
     /// The cache dictionary that is used to store images.

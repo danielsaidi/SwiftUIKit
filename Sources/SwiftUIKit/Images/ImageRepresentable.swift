@@ -6,6 +6,8 @@
 //  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
 //
 
+import SwiftUI
+
 #if canImport(AppKit)
 import class AppKit.NSImage
 
@@ -25,3 +27,15 @@ import class UIKit.UIImage
  */
 public typealias ImageRepresentable = UIImage
 #endif
+
+public extension Image {
+    
+    /// Create an image from a certain ``ImageRepresentable``.
+    init(image: ImageRepresentable) {
+        #if os(iOS) || os(watchOS) || os(tvOS)
+        self.init(uiImage: image)
+        #elseif os(macOS)
+        self.init(nsImage: image)
+        #endif
+    }
+}
