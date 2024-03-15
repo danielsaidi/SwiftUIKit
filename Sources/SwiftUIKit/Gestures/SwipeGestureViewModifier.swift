@@ -10,26 +10,23 @@
 import SwiftUI
 
 /**
- This view modifier can be used to apply swipe gestures to a
- views, which will then trigger actions when it is swiped in
- any of the specified directions.
-
- The modifier is used by the `View+onSwipeGesture` extension.
+ This view modifier can apply swipe gestures to a view, that
+ trigger actions when being swiped in certain directions.
+ 
+ You can apply this with the `.onSwipeGesture` view modifier.
  */
 public struct SwipeGestureViewModifier: ViewModifier {
 
-    /**
-     Create a swipe gesture view modifier.
-
-     - Parameters:
-       - maximumTime: The max time the gesture can be active before cancelling itself, by default `1`.
-       - minimumDistance: The minimum distance in points the gesture must be dragged before it triggers, by default `10`.
-       - maximumDistance: The maximum distance in points the gesture can be dragged before it cancels, by default `100_000`.
-       - up: The action to trigger when the user swipes up, by default `nil`.
-       - left: The action to trigger when the user swipes left, by default `nil`.
-       - right: The action to trigger when the user swipes right, by default `nil`.
-       - down: The action to trigger when the user swipes down, by default `nil`.
-     */
+    /// Create a swipe gesture view modifier.
+    ///
+    /// - Parameters:
+    ///   - maximumTime: The max time the gesture can be active before cancelling itself, by default `1`.
+    ///   - minimumDistance: The minimum distance in points the gesture must be dragged before it triggers, by default `10`.
+    ///   - maximumDistance: The maximum distance in points the gesture can be dragged before it cancels, by default `100_000`.
+    ///   - up: The action to trigger when the user swipes up, if any.
+    ///   - left: The action to trigger when the user swipes left, if any.
+    ///   - right: The action to trigger when the user swipes right, if any.
+    ///   - down: The action to trigger when the user swipes down, if any.
     public init(
         maximumTime: TimeInterval = 1,
         minimumDistance: CGFloat = 10,
@@ -93,19 +90,17 @@ public struct SwipeGestureViewModifier: ViewModifier {
 
 public extension View {
     
-    /**
-     Add swipe gestures that will be triggered when the view
-     is swiped in any of the specified directions.
-     
-     - Parameters:
-       - maximumTime: The max time the gesture can be active before cancelling itself, by default `1`.
-       - minimumDistance: The minimum distance in points the gesture must be dragged before it triggers, by default `10`.
-       - maximumDistance: The maximum distance in points the gesture can be dragged before it cancels, by default `100_000`.
-       - up: The action to trigger when the user swipes up, by default `nil`.
-       - left: The action to trigger when the user swipes left, by default `nil`.
-       - right: The action to trigger when the user swipes right, by default `nil`.
-       - down: The action to trigger when the user swipes down, by default `nil`.
-     */
+    /// Add swipe gestures that are triggered when this view
+    /// is swiped in any of the specified directions.
+    ///
+    /// - Parameters:
+    ///   - maximumTime: The max time the gesture can be active before cancelling itself, by default `1`.
+    ///   - minimumDistance: The minimum distance in points the gesture must be dragged before it triggers, by default `10`.
+    ///   - maximumDistance: The maximum distance in points the gesture can be dragged before it cancels, by default `100_000`.
+    ///   - up: The action to trigger when the user swipes up, if any.
+    ///   - left: The action to trigger when the user swipes left, if any.
+    ///   - right: The action to trigger when the user swipes right, if any.
+    ///   - down: The action to trigger when the user swipes down, if any.
     func onSwipeGesture(
         maximumTime: TimeInterval = 1,
         minimumDistance: CGFloat = 10,

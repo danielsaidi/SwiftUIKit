@@ -10,20 +10,20 @@
 import SwiftUI
 
 /**
- This button can be used to apply a bunch of gestures to the
- provided label, in a way that works within a `ScrollView`.
+ This button supports triggering different gestures in a way
+ that works within a `ScrollView`.
+ 
+ This button can't be used in a `ScrollView` since it blocks
+ the scroll view gesture. To implement multi-gesture support
+ in a `ScrollView`, use a ``ScrollViewGestureButton``.
 
- This button can be used within a `ScrollView` since it will
- not block the scroll view's scrolling, despite all gestures
- that is applied to it. The code is so complicated, since it
- is the result of many trials and errors, where every change
+ This button can be used in a `ScrollView` and doesn't block
+ the scroll view gesture despite applying many gestures. The
+ complicated code is the result of much trial and error, and
  has been tested to not affect the scrolling or any gestures.
 
  If you don't need to use a scroll view, you should consider
- using a ``GestureButton`` instead. It's way more responsive,
- since it uses a single drag gesture to trigger actions with
- no delay. This is something that this button can't do since
- it has to work in a scroll view.
+ using a ``GestureButton`` instead.
 
  Note that the view uses an underlying `ButtonStyle` to make
  gestures work. It can thus not apply another style, but you
@@ -32,26 +32,25 @@ import SwiftUI
  */
 public struct ScrollViewGestureButton<Label: View>: View {
 
-    /**
-     Create a gesture button.
-
-     - Parameters:
-       - isPressed: A custom, optional binding to track pressed state, by default `nil`.
-       - pressAction: The action to trigger when the button is pressed, by default `nil`.
-       - releaseInsideAction: The action to trigger when the button is released inside, by default `nil`.
-       - releaseOutsideAction: The action to trigger when the button is released outside of its bounds, by default `nil`.
-       - longPressDelay: The time it takes for a press to count as a long press, by default ``GestureButtonDefaults/longPressDelay``.
-       - longPressAction: The action to trigger when the button is long pressed, by default `nil`.
-       - doubleTapTimeout: The max time between two taps for them to count as a double tap, by default ``GestureButtonDefaults/doubleTapTimeout``.
-       - doubleTapAction: The action to trigger when the button is double tapped, by default `nil`.
-       - repeatTimer: The repeat timer to use for the repeat action, by default ``RepeatGestureTimer/shared``.
-       - repeatAction: The action to repeat while the button is being pressed, by default `nil`.
-       - dragStartAction: The action to trigger when a drag gesture starts.
-       - dragAction: The action to trigger when a drag gesture changes.
-       - dragEndAction: The action to trigger when a drag gesture ends.
-       - endAction: The action to trigger when a button gesture ends, by default `nil`.
-       - label: The button label.
-     */
+    /// Create a gesture button.
+    ///
+    /// - Parameters:
+    ///   - isPressed: The binding used to track pressed state, if any.
+    ///   - pressAction: An action to trigger when the button is pressed, if any.
+    ///   - releaseInsideAction: An action to trigger when the button is released inside, if any.
+    ///   - releaseOutsideAction: An action to trigger when the button is released outside, if any.
+    ///   - longPressDelay: The time it takes for a press to count as a long press, by default ``GestureButtonDefaults/longPressDelay``.
+    ///   - longPressAction: An action to trigger when the button is long pressed, if any.
+    ///   - doubleTapTimeout: The max time between two taps to count as a double tap, by default ``GestureButtonDefaults/doubleTapTimeout``.
+    ///   - doubleTapAction: An action to trigger when the button is double tapped, if any.
+    ///   - repeatDelay: The time it takes for a press to count as a repeat trigger, by default ``GestureButtonDefaults/repeatDelay``.
+    ///   - repeatTimer: The repeat timer to use for the repeat action, by default ``RepeatGestureTimer/shared``.
+    ///   - repeatAction: An action to repeat while the button is being pressed, if any.
+    ///   - dragStartAction: An action to trigger when a drag gesture starts.
+    ///   - dragAction: An action to trigger when a drag gesture changes.
+    ///   - dragEndAction: An action to trigger when a drag gesture ends.
+    ///   - endAction: An action to trigger when a button gesture ends, if any.
+    ///   - label: The button label.
     public init(
         isPressed: Binding<Bool>? = nil,
         pressAction: Action? = nil,

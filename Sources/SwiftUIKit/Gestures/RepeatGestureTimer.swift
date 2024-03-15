@@ -16,12 +16,10 @@ import Foundation
  */
 public class RepeatGestureTimer {
 
-    /**
-     Create a repeat gesture timer.
-
-     - Parameters:
-       - repeatInterval: The repeat time interval.
-     */
+    /// Create a repeat gesture timer.
+    ///
+    /// - Parameters:
+    ///   - repeatInterval: The repeat time interval.
     public init(
         repeatInterval: TimeInterval = 0.4
     ) {

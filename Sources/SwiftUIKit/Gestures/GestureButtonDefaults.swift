@@ -8,13 +8,10 @@
 
 import Foundation
 
-/**
- This struct can be used to configure default values for the
- ``GestureButton`` and ``ScrollViewGestureButton`` views.
- */
+/// This struct is used to configure gesture button defaults.
 public struct GestureButtonDefaults {
 
-    /// The max time between two taps for them to count as a double tap, by default `0.2`.
+    /// The max time between two taps to count as a double tap, by default `0.2`.
     public static var doubleTapTimeout = 0.2
 
     /// The time it takes for a press to count as a long press, by default `1.0`.
