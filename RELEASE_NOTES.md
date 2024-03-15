@@ -10,6 +10,7 @@ This version refactors many views to take their styles & configs as environment 
 
 ### ✨ New features
 
+* `CircularProgressBar` now supports customizing animation.
 * `FilePicker` now supports providing a custom picker config.
 * `ImagePicker` now supports providing a custom picker config.
 * `ListButtonGroup` is a new view for creating button groups.
