@@ -1,18 +1,10 @@
-//
-//  FormRowTitle.swift
-//  SwiftUIKit
-//
-//  Created by Daniel Saidi on 2022-11-01.
-//  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
-//
-
+#if os(iOS)
 import SwiftUI
 
-/**
- This view renders a standard form row title.
- 
- You can apply it to any view with `.formRowTitle(...)`.
- */
+@available(*, deprecated, renamed: "ListActionRow")
+public typealias FormText = ListActionRow
+
+@available(*, deprecated, message: "This type is no longer used.")
 public struct FormRowTitle: View {
 
     public init(
@@ -33,7 +25,7 @@ public struct FormRowTitle: View {
 
 public extension View {
     
-    /// Apply a ``FormRowTitle`` to the view.
+    @available(*, deprecated, message: "This type is no longer used.")
     func formRowTitle(
         _ title: String,
         spacing: Double = 5
@@ -44,3 +36,4 @@ public extension View {
         }
     }
 }
+#endif

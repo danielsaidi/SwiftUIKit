@@ -82,7 +82,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 ### Form
 
-- ``FormInlineActionButtonStyle``
 - ``FormRowTitle``
 - ``FormText``
 
@@ -114,7 +113,10 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 ### Lists
 
 - ``ListAction``
+- ``ListActionRow``
 - ``ListBadgeIcon``
+- ``ListButtonGroup``
+- ``ListButtonGroupStyle``
 - ``ListButtonStyle``
 - ``ListCard``
 - ``ListCardButtonStyle``

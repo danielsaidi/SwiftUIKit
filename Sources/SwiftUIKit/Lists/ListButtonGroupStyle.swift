@@ -1,5 +1,5 @@
 //
-//  FormButtonGroupStyle.swift
+//  ListButtonGroupStyle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
@@ -11,7 +11,7 @@ import SwiftUI
 
 /// This button style can generate inline button groups that
 /// mimics the look of the topmost iOS Contact buttons.
-public struct FormButtonGroupStyle: ButtonStyle {
+public struct ListButtonGroupStyle: ButtonStyle {
     
     /// Create a custom form group button style.
     ///
@@ -81,7 +81,7 @@ public struct FormButtonGroupStyle: ButtonStyle {
     }
 }
 
-private extension FormButtonGroupStyle {
+private extension ListButtonGroupStyle {
     
     @ViewBuilder
     var background: some View {
@@ -101,7 +101,7 @@ private extension FormButtonGroupStyle {
     }
 }
 
-public extension FormButtonGroupStyle {
+public extension ListButtonGroupStyle {
     
     /// A standard form group button style.
     ///
@@ -109,12 +109,12 @@ public extension FormButtonGroupStyle {
     static var standard = Self()
 }
 
-public extension ButtonStyle where Self == FormButtonGroupStyle {
+public extension ButtonStyle where Self == ListButtonGroupStyle {
     
-    /// A standard ``FormButtonGroupStyle``.
+    /// A standard ``ListButtonGroupStyle``.
     static var formGroup: Self { .standard }
     
-    /// A custom ``FormButtonGroupStyle``.
+    /// A custom ``ListButtonGroupStyle``.
     static func formGroup(
         backgroundColor: Color? = nil,
         cornerRadius: Double = 10,
@@ -136,7 +136,7 @@ public extension ButtonStyle where Self == FormButtonGroupStyle {
     }
 }
 
-public extension FormButtonGroupStyle {
+public extension ListButtonGroupStyle {
     
     /// This style affects the label of a form group button.
     struct LabelStyle: SwiftUI.LabelStyle {
@@ -202,7 +202,7 @@ public extension FormButtonGroupStyle {
     }
 }
 
-public extension FormButtonGroupStyle.LabelStyle {
+public extension ListButtonGroupStyle.LabelStyle {
     
     /// A standard label style.
     ///
@@ -210,7 +210,7 @@ public extension FormButtonGroupStyle.LabelStyle {
     static var standard = Self()
 }
 
-public extension LabelStyle where Self == FormButtonGroupStyle.LabelStyle {
+public extension LabelStyle where Self == ListButtonGroupStyle.LabelStyle {
     
     /// A standard button label style.
     static var formGroupLabel: Self { .init() }
@@ -233,13 +233,13 @@ public extension LabelStyle where Self == FormButtonGroupStyle.LabelStyle {
     
     struct PreviewList: View {
         
-        let style: FormButtonGroupStyle?
+        let style: ListButtonGroupStyle?
         
         var body: some View {
             List {
                 "Add something".previewButton(.add)
                 
-                FormButtonGroupSection(style: style ?? .standard) {
+                ListButtonGroup(style: style ?? .standard) {
                     HStack {
                         "Report Bug".previewButton(.bug)
                         "Camera".previewButton(.camera).disabled(true)
@@ -270,7 +270,7 @@ public extension LabelStyle where Self == FormButtonGroupStyle.LabelStyle {
     .background(Color.black.opacity(0.08).ignoresSafeArea())
 }
 
-private extension ButtonStyle where Self == FormButtonGroupStyle {
+private extension ButtonStyle where Self == ListButtonGroupStyle {
     
     static var swedish: Self {
         .init(

@@ -13,7 +13,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 ### 💡 Behavior changes
 
 * `Color.standardListBackground` has been renamed to `.listBackground`.
-* `FormInlineActionButtonStyle` has been replaced by `FormButtonGroup`.
+* `FormInlineActionButtonStyle` has been replaced by `ListButtonGroup`.
+* `FormText` has been renamed to `ListActionRow`.
+
+### 🗑️ Deprecations
+
+* `FormRowTitle` has been deprecated. 
 
 
 

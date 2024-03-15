@@ -10,12 +10,12 @@
 import SwiftUI
 
 /**
- This view can be used to present text values in a list form.
+ This view can be used to present action rows in a `List`.
  
- If `hideIfEmpty` is true and the trimmed text is empty, the
- view is rendered as an `EmptyView`.
+ If `hideIfEmpty` is `true` and the text is empty, this view
+ is rendered as an `EmptyView`.
  */
-public struct FormText<TrailingView: View>: View {
+public struct ListActionRow<TrailingView: View>: View {
 
     /**
      Create a form text view.
@@ -74,7 +74,7 @@ public struct FormText<TrailingView: View>: View {
     }
 }
 
-private extension FormText {
+private extension ListActionRow {
 
     var hasEmptyText: Bool {
         text.trimmingCharacters(in: .whitespaces)
@@ -83,8 +83,14 @@ private extension FormText {
     
     var stack: some View {
         HStack(spacing: 10) {
-            Text(text)
-                .formRowTitle(title)
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .lineLimit(1)
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                Text(text)
+            }
+            
             if let trailing = trailingView {
                 Spacer()
                 trailing()
@@ -97,30 +103,30 @@ private extension FormText {
 #Preview {
     
     List {
-        FormText(
+        ListActionRow(
             title: "title 1",
             text: "Text value")
-        FormText(
+        ListActionRow(
             title: "title 2",
             text: "A looong text value with a trailing view."
         ) {
             ListAction.call(phoneNumber: "1234").button
         }
             .buttonStyle(.borderedProminent)
-        FormText(
+        ListActionRow(
             title: "title 2",
             text: "A looong text value with a trailing view."
         ) {
             ListAction.copy("").button
         }.buttonStyle(.borderedProminent)
-        FormText(
+        ListActionRow(
             title: "title 3",
             text: "Long\nmultuline\ntext that could have been entered in a text editor.")
-        FormText(
+        ListActionRow(
             title: "title 4",
             text: "",
             hideIfEmpty: true)
-        FormText(
+        ListActionRow(
             title: "title 5",
             text: "",
             hideIfEmpty: false)

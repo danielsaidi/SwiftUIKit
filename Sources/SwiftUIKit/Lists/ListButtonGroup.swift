@@ -1,5 +1,5 @@
 //
-//  FormButtonGroup.swift
+//  ListButtonGroup.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2024-03-15.
@@ -15,23 +15,23 @@ import SwiftUI
 /// Examples of such a group are the quick action buttons in
 /// the Contact form.
 ///
-/// You can apply a group style with `.formButtonGroupStyle`.
-public struct FormButtonGroup<Content: View>: View {
+/// You can apply a group style with `.ListButtonGroupStyle`.
+public struct ListButtonGroup<Content: View>: View {
     
     /// Create a form button group section.
     ///
     /// - Parameters:
-    ///   - style: The style to apply, by default ``FormButtonGroupStyle/standard``.
+    ///   - style: The style to apply, by default ``ListButtonGroupStyle/standard``.
     ///   - content: A custom content builder.
     public init(
-        style: FormButtonGroupStyle = .standard,
+        style: ListButtonGroupStyle = .standard,
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.style = style
         self.content = content
     }
     
-    private let style: FormButtonGroupStyle
+    private let style: ListButtonGroupStyle
     private let content: () -> Content
     
     public var body: some View {
@@ -52,7 +52,7 @@ public struct FormButtonGroup<Content: View>: View {
             List {
                 "Add something".previewButton(.add)
                 
-                FormButtonGroup() {
+                ListButtonGroup() {
                     HStack {
                         "Report Bug".previewButton(.bug)
                         "Camera".previewButton(.camera).disabled(true)
