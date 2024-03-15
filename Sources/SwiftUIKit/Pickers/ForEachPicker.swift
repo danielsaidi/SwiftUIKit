@@ -17,14 +17,18 @@ import SwiftUI
  the provided `listItem` to build an item view for each item.
  
  If `dismissAfterPick` is `true` the picker dismisses itself
- automatically when an item is picked. This is nice when the
- picker is used in e.g. a sheet.
+ automatically when an item is picked.
  */
 public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
-    /**
-     Create a picker with a single section.
-     */
+    /// Create a for-each picker.
+    ///
+    /// - Parameters:
+    ///   - items: The items to list in the picker.
+    ///   - selection: The current selection.
+    ///   - animatedSelection: Whether or not to animate selections, by default `false`.
+    ///   - dismissAfterPick: Whether or not to dismiss the picker after picking, by default `false`.
+    ///   - listItem: A list view builder.
     public init(
         items: [Item],
         selection: Binding<Item>,
@@ -103,7 +107,6 @@ private extension View {
     }
 }
 
-#if os(iOS) || os(tvOS)
 #Preview {
     
     struct Preview: View {
@@ -153,4 +156,3 @@ private extension View {
     
     return Preview()
 }
-#endif

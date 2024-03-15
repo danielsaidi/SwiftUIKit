@@ -18,46 +18,31 @@ import SwiftUI
  The picker supports both optional and non-optional bindings.
 
  The picker uses `.colorPickerBarColors` as the default list
- of colors to list, but you can pass in any custom list, for
- instance by adding `.clear` to the standard list.
+ of colors to list, but you can pass in any colors.
  */
 public struct ColorPickerBar: View {
 
-    /**
-     Create a color picker bar with an optional binding.
-
-     - Parameters:
-       - value: The value to bind to.
-       - colors: The colors to list in the bar, by default `.colorPickerBarColors`.
-       - config: The configuration to use, by default `.standard`.
-       - style: The style to use, by default `.standard`.
-     */
+    /// Create a color picker bar with an optional binding.
+    ///
+    /// - Parameters:
+    ///   - value: The value to bind to.
+    ///   - colors: The colors to list in the bar, by default `.colorPickerBarColors`.
     public init(
         value: Binding<Color?>,
-        colors: [Color] = .colorPickerBarColors,
-        config: Configuration = .standard,
-        style: Style = .standard
+        colors: [Color] = .colorPickerBarColors
     ) {
         self.value = value
         self.colors = colors
-        self.config = config
-        self.style = style
     }
 
-    /**
-     Create a color picker bar with a non-optional binding.
-
-     - Parameters:
-       - value: The value to bind to.
-       - colors: The colors to list in the bar, by default `.colorPickerBarColors`.
-       - config: The configuration to use, by default `.standard`.
-       - style: The style to use, by default `.standard`.
-     */
+    /// Create a color picker bar with a non-optional binding.
+    ///
+    /// - Parameters:
+    ///   - value: The value to bind to.
+    ///   - colors: The colors to list in the bar, by default `.colorPickerBarColors`.
     public init(
         value: Binding<Color>,
-        colors: [Color] = .colorPickerBarColors,
-        config: Configuration = .standard,
-        style: Style = .standard
+        colors: [Color] = .colorPickerBarColors
     ) {
         self.value = .init(get: {
             value.wrappedValue
@@ -65,14 +50,16 @@ public struct ColorPickerBar: View {
             value.wrappedValue = $0 ?? .clear
         })
         self.colors = colors
-        self.config = config
-        self.style = style
     }
 
     private let value: Binding<Color?>
     private let colors: [Color]
-    private let config: Configuration
-    private let style: Style
+    
+    @Environment(\.colorPickerBarConfig)
+    private var config: Config
+    
+    @Environment(\.colorPickerBarStyle)
+    private var style: Style
 
     @Environment(\.colorScheme)
     private var colorScheme
@@ -91,87 +78,6 @@ public struct ColorPickerBar: View {
         }
         .labelsHidden()
         .frame(maxHeight: style.selectedColorSize)
-    }
-}
-
-public extension ColorPickerBar {
-
-    /// This type can be used to config a ``ColorPickerBar``.
-    struct Configuration {
-
-        /**
-         Create a color picker bar configuration.
-
-         - Parameters:
-           - addOpacityToPicker: Whether or not to add color picker opacity, by default `true`.
-         */
-        public init(
-            addOpacityToPicker: Bool = true,
-            addResetButton: Bool = false,
-            resetButtonValue: Color? = nil
-        ) {
-            self.addOpacityToPicker = addOpacityToPicker
-            self.addResetButton = addResetButton
-            self.resetButtonValue = resetButtonValue
-        }
-
-        /// Whether or not to add color picker opacity.
-        public var addOpacityToPicker: Bool
-
-        /// Whether or not to add a reset button to the bar.
-        public var addResetButton: Bool
-
-        /// The color to apply when tapping the reset button.
-        public var resetButtonValue: Color?
-
-        /// Get the standard configuration.
-        public static var standard: Configuration = .init()
-    }
-
-    /// This type can be used to style a ``ColorPickerBar``.
-    struct Style {
-
-        /**
-         Create a color picker bar configuration.
-
-         - Parameters:
-           - animation: The animation to apply when picking color, by default `.default`.
-           - spacing: The bar item spacing, by default `10`.
-           - colorSize: The size of non-selected colors, by default `20`.
-           - selectedColorSize: The size of the selected color, by default `30`.
-           - resetButtonImage: The image to use as reset button image, by default `circle.slash`.
-         */
-        public init(
-            animation: Animation = .default,
-            spacing: Double = 10.0,
-            colorSize: Double = 20.0,
-            selectedColorSize: Double = 30.0,
-            resetButtonImage: Image = Image(systemName: "xmark.circle")
-        ) {
-            self.animation = animation
-            self.spacing = spacing
-            self.colorSize = colorSize
-            self.selectedColorSize = selectedColorSize
-            self.resetButtonImage = resetButtonImage
-        }
-
-        /// The animation to apply when picking colors.
-        public var animation: Animation
-
-        /// The bar item spacing.
-        public var spacing: Double
-
-        /// The size of non-selected colors.
-        public var colorSize: Double
-
-        /// The size of the selected color.
-        public var selectedColorSize: Double
-
-        /// The image to use as reset button image
-        public var resetButtonImage: Image
-
-        /// Get the standard style.
-        public static var standard: Style = .init()
     }
 }
 
@@ -327,13 +233,13 @@ public extension Collection where Element == Color {
                 )
                 ColorPickerBar(
                     value: $optionalColor,
-                    colors: .colorPickerBarColors(withClearColor: true),
-                    config: .init(
-                        addOpacityToPicker: false,
-                        addResetButton: true,
-                        resetButtonValue: nil
-                    )
+                    colors: .colorPickerBarColors(withClearColor: true)
                 )
+                .colorPickerBarConfig(.init(
+                    addOpacityToPicker: false,
+                    addResetButton: true,
+                    resetButtonValue: nil
+                ))
             }
             .padding()
         }

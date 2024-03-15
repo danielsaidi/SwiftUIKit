@@ -20,15 +20,13 @@ import SwiftUI
  */
 public struct SystemFontListPicker: View {
     
-    /**
-     Create a font list picker.
-     
-     - Parameters:
-       - selectedFontName: The selected font name.
-       - fonts: The fonts to display in the list, by default `all` with the selected font topmost.
-       - itemFontSize: The font size to use in the list items.
-       - dismissAfterPick: Whether or not to dismiss the picker after a font has been selected, by default `true`.
-     */
+    /// Create a font list picker.
+    ///
+    /// - Parameters:
+    ///   - selectedFontName: The selected font name.
+    ///   - fonts: The fonts to display in the list, by default `all`.
+    ///   - itemFontSize: The font size to apply, by default `20`.
+    ///   - dismissAfterPick: Whether or not to dismiss the picker after picking, by default `false`.
     public init(
         selectedFontName: Binding<String>,
         fonts: [SystemFontPickerFont]? = nil,

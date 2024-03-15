@@ -12,49 +12,55 @@ import SwiftUI
 import UIKit
 
 /**
- This picker wraps a `UIImagePickerController`, which can be
- used to pick an images from photos, the camera etc.
+ This picker can be used to pick photos from Photos, using a
+ camera to take a photo, etc.
  
- You create a picker instance by providing two action blocks
- that can be used to inspect what happens with the operation,
- as well as the desired source type:
+ The view wraps a `UIImagePickerController` and makes itself
+ the delegate.
+ 
+ You can create a picker instance by providing a source type,
+ as well as action blocks that are triggered when picking or
+ cancelling the picker operation:
  
  ```swift
  let picker = ImagePicker(
     sourceType: .camera,
     cancelAction: { print("User did cancel") }  // Optional
-    finishAction: { result in ... })            // Mandatory
+    resultAction: { result in ... })            // Mandatory
  }
  ```
  
  The picker result contains the picked image, which you then
  can use in any way you want.
- 
- You can use a ``SheetContext`` to easily present the picker
- as a modal sheet.
  */
 public struct ImagePicker: UIViewControllerRepresentable {
     
+    /// Create an image picker.
+    ///
+    /// - Parameters:
+    ///   - documentTypes: The uniform types to pick.
+    ///   - pickerConfig: A custom picker configuration, if any.
+    ///   - cancelAction: The cancel action to trigger, if any.
+    ///   - resultAction: The result action to trigger, if any.
     public init(
         sourceType: UIImagePickerController.SourceType,
+        pickerConfig: @escaping PickerConfig = { _ in },
         cancelAction: @escaping CancelAction = {},
         resultAction: @escaping ResultAction
     ) {
         self.sourceType = sourceType
+        self.pickerConfig = pickerConfig
         self.cancelAction = cancelAction
         self.resultAction = resultAction
     }
     
+    public typealias PickerConfig = (UIImagePickerController) -> Void
     public typealias PickerResult = Result<ImageRepresentable, Error>
     public typealias CancelAction = () -> Void
     public typealias ResultAction = (PickerResult) -> Void
     
-    public enum PickerError: Error {
-        case missingPhotoLibraryPermissions
-        case missingPickedImage
-    }
-    
     private let sourceType: UIImagePickerController.SourceType
+    private let pickerConfig: PickerConfig
     private let cancelAction: CancelAction
     private let resultAction: ResultAction
         
@@ -63,44 +69,37 @@ public struct ImagePicker: UIViewControllerRepresentable {
     }
 
     public func makeUIViewController(context: Context) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.sourceType = sourceType
-        picker.delegate = context.coordinator
-        return picker
+        let controller = UIImagePickerController()
+        controller.sourceType = sourceType
+        controller.delegate = context.coordinator
+        pickerConfig(controller)
+        return controller
     }
 
     public func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
 
-/**
- This enum is used to handle ``ImagePicker`` specific errors.
- */
-public enum ImagePickerError {
-
-    case hasNoPhotoLibraryAccess(status: PHAuthorizationStatus)
+public extension ImagePicker {
+    
+    /// This enum defines ``ImagePicker``-specific errors.
+    enum PickerError: Error {
+        case missingPhotoLibraryPermissions
+        case missingPickedImage
+    }
 }
 
 public extension ImagePicker {
 
-    /**
-     Get a collection of available image picker source types
-     that have been verified to work with this picker.
-     */
+    /// Get all source types that work with the picker.
     static var allSourceTypes: [UIImagePickerController.SourceType] {
         [.camera, .photoLibrary, .savedPhotosAlbum]
     }
 
-    /**
-     Get a collection of available image picker source types
-     that have been verified to work with this picker.
-     */
+    /// Get all source types that are enabled for the picker.
     static var availableSourceTypes: [UIImagePickerController.SourceType] {
         allSourceTypes.filter(UIImagePickerController.isSourceTypeAvailable)
     }
 }
-
-
-// MARK: - Coordinator
 
 public extension ImagePicker {
     

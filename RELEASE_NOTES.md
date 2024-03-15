@@ -6,20 +6,22 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 ## 4.2
 
+This version refactors many views to take their styles & configs as environment values, instead of injecting them in the initializer.
+
 ### ✨ New features
 
+* `FilePicker` now supports providing a custom picker config.
+* `ImagePicker` now supports providing a custom picker config.
 * `ListButtonGroup` is a new view for creating button groups.
 * `ListButtonStyle` has a new `pressedOpacity` init parameter.
+* `ListCard` now supports specifying a custom pressed scale animation.
 
 ### 💡 Behavior changes
 
 * `Color.standardListBackground` has been renamed to `listBackground`.
 * `FormInlineActionButtonStyle` has been replaced by `ListButtonGroup`.
-* `FormText` has been renamed to `ListActionRow` and is now sty-based.
+* `FormText` has been renamed to `ListActionRow` and is now style-based.
 * `ListActionRow` now takes a `ListAction` instead of a trailing view.
-* `ListButtonGroup` now uses an environment-based style instead of init.
-* `ListCard` now uses an environment-based style instead of init.
-* `ListCard` now supports specifying a custom pressed scale animation.
 
 ### 🗑️ Deprecations
 

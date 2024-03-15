@@ -26,10 +26,7 @@ public protocol ListPickerItem: View {
 
 public extension ListPickerItem {
     
-    /**
-     This property returns a checkmark image when an item is
-     selected, else an empty image placeholder.
-     */
+    /// This checkmark image to use for the selection state.
     var checkmark: some View {
         Image(systemName: "checkmark")
             .visible(if: isSelected)

@@ -18,14 +18,12 @@ import SwiftUI
  */
 public struct SystemFontPicker: View {
     
-    /**
-     Create a font picker.
-     
-     - Parameters:
-       - selectedFontName: The selected font name.
-       - fonts: The fonts to display in the list, by default `all` with the selected font topmost.
-       - itemFontSize: The font size to use in the list items.
-     */
+    /// Create a font picker.
+    ///
+    /// - Parameters:
+    ///   - selectedFontName: The selected font name.
+    ///   - fonts: The fonts to display in the list, by default `all`.
+    ///   - itemFontSize: The font size to apply, by default `20`.
     public init(
         selectedFontName: Binding<String>,
         fonts: [SystemFontPickerFont] = .all,

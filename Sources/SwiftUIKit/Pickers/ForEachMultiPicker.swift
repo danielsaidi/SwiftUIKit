@@ -10,18 +10,20 @@ import SwiftUI
 
 /**
  This generic picker lists `Identifiable` items in a SwiftUI
- `List` and binds its `selection` to an external value.
+ `ForEach` and binds its `selection` to an external value.
  
  You can use this view instead of the native SwiftUI `Picker`
  to get more control over the list item views. The view uses
- the `listItem` function to build an item view for each item
- in the provided `items` or `sections`.
+ the provided `listItem` to build an item view for each item.
  */
 public struct ForEachMultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
-    /**
-     Create a picker with a single section.
-     */
+    /// Create a for-each multi-picker.
+    ///
+    /// - Parameters:
+    ///   - items: The items to list in the picker.
+    ///   - selection: The current selection.
+    ///   - listItem: A list view builder.
     public init(
         items: [Item],
         selection: Binding<[Item]>,
@@ -81,7 +83,6 @@ private extension View {
     }
 }
 
-#if os(iOS)
 #Preview {
     
     struct Preview: View {
@@ -132,4 +133,3 @@ private extension View {
     
     return Preview()
 }
-#endif

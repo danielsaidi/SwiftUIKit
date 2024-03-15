@@ -95,17 +95,12 @@ public extension SystemFontPickerFont {
     }
 }
 
-
-// MARK: - AppKit
-
 #if os(macOS)
 import AppKit
 
 private extension NSFont {
     
-    /**
-     Get all available NSFont families.
-     */
+    /// Get all available NSFont families.
     static var allFonts: [SystemFontPickerFont] {
         NSFontManager.shared
             .availableFontFamilies
@@ -114,20 +109,12 @@ private extension NSFont {
             }
     }
 }
-#endif
-
-
-
-// MARK: - UIKit
-
-#if os(iOS) || os(tvOS) || os(watchOS)
+#else
 import UIKit
 
 private extension UIFont {
     
-    /**
-     Get all available NSFont families.
-     */
+    /// Get all available NSFont families.
     static var allFonts: [SystemFontPickerFont] {
         UIFont.familyNames
             .map {

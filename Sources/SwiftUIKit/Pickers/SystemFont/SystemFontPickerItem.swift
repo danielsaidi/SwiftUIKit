@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-/**
- This picker item displays the provided font.
- */
+/// This picker item can be used to display a certain font.
 public struct SystemFontPickerItem: View {
     
     public init(

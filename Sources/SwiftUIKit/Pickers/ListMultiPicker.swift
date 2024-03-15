@@ -18,9 +18,12 @@ import SwiftUI
  */
 public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
     
-    /**
-     Create a picker with a single section.
-     */
+    /// Create a list picker.
+    ///
+    /// - Parameters:
+    ///   - items: The items to list in the picker.
+    ///   - selection: The current selection.
+    ///   - listItem: A list view builder.
     public init(
         items: [Item],
         selection: Binding<[Item]>,
@@ -33,13 +36,17 @@ public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, Dismiss
         )
     }
     
-    /**
-     Create a picker with multiple sections.
-     */
+    /// Create a list picker with multiple sections.
+    ///
+    /// - Parameters:
+    ///   - sections: The sections to list in the picker.
+    ///   - selection: The current selection.
+    ///   - listItem: A list view builder.
     public init(
         sections: [ListPickerSection<Item>],
         selection: Binding<[Item]>,
-        listItem: @escaping ItemViewBuilder) {
+        listItem: @escaping ItemViewBuilder
+    ) {
         self.sections = sections
         self.selection = selection
         self.listItem = listItem
@@ -81,7 +88,6 @@ private extension View {
     }
 }
 
-#if os(iOS)
 #Preview {
     
     struct Preview: View {
@@ -139,4 +145,3 @@ private extension View {
     
     return Preview()
 }
-#endif
