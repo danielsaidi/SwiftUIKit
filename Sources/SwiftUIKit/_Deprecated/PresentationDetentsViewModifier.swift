@@ -14,6 +14,7 @@ import SwiftUI
  any view, which can be used to describe which sheet detents
  that should be undimmed.
  */
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 public struct PresentationDetentsViewModifier: ViewModifier {
 
@@ -46,6 +47,7 @@ public struct PresentationDetentsViewModifier: ViewModifier {
     }
 }
 
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 private extension PresentationDetentsViewModifier {
 
@@ -56,6 +58,7 @@ private extension PresentationDetentsViewModifier {
     }
 }
 
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 public extension View {
 
@@ -83,6 +86,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 private struct UndimmedDetentView: UIViewControllerRepresentable {
 
@@ -99,6 +103,7 @@ private struct UndimmedDetentView: UIViewControllerRepresentable {
     }
 }
 
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 private class UndimmedDetentViewController: UIViewController {
 
@@ -118,77 +123,4 @@ private class UndimmedDetentViewController: UIViewController {
     func avoidDisablingControls() {
         presentingViewController?.view.tintAdjustmentMode = .normal
     }
-}
-
-@available(iOS 16.0, *)
-#Preview {
-
-    struct Preview: View {
-
-        @State
-        private var isPresented = false
-
-        var body: some View {
-            Color.green.ignoresSafeArea()
-                .overlay(button)
-                .sheet(isPresented: $isPresented) {
-                    Color.red.ignoresSafeArea()
-                        .presentationDetents(
-                            [.fraction(0.1), .fraction(0.2), .fraction(0.3), .fraction(0.4), .fraction(0.5), .large],
-                            largestUndimmed: .fraction(0.3)
-                        )
-                }
-        }
-
-        var button: some View {
-            Button("Toggle sheet") {
-                isPresented.toggle()
-            }.buttonStyle(.borderedProminent)
-        }
-    }
-
-    struct BugPreview: View {
-
-        @State
-        var sheetHeight = 100.0
-
-        @State
-        var sheetIsPresented = false
-
-        var body: some View {
-            VStack {
-                Button(
-                    action: {
-                        sheetIsPresented.toggle()
-                        sheetHeight = 100
-                    },
-                    label: {
-                        Text("Show Sheet")
-                    }
-                )
-            }
-            .sheet(
-                isPresented: $sheetIsPresented
-            ) {
-                VStack {
-                    Text("\(sheetHeight)")
-                    Button(
-                        action: {
-                            sheetHeight += 10
-                        },
-                        label: {
-                            Text("Increase Sheet Size")
-                        }
-                    )
-                }
-                .presentationDetents(
-                    [.height(sheetHeight)],
-                    largestUndimmed: .height(sheetHeight)
-                )
-            }
-        }
-    }
-
-    return Preview()
-}
-#endif
+}#endif

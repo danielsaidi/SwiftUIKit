@@ -24,7 +24,7 @@ import SwiftUI
  
  ```swift
  @FocusedValue(\.alertContext)
- private var alertContext: AlertContext?
+ var alertContext: AlertContext?
  ```
  */
 public struct AlertContextFocusedValueKey: FocusedValueKey {

@@ -24,7 +24,7 @@ import SwiftUI
  
  ```swift
  @FocusedValue(\.fullscreenCoverContext)
- private var fullscreenCoverContext: FullscreenCoverContext?
+ var fullscreenCoverContext: FullscreenCoverContext?
  ```
  */
 public struct FullScreenCoverContextFocusedValueKey: FocusedValueKey {

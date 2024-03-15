@@ -9,10 +9,7 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This enum is used to bridge the SwiftUI `PresentationDetent`
- with UIKit `UISheetPresentationController.Detent.Identifier`.
- */
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 public enum PresentationDetentReference: Hashable {
 
@@ -47,6 +44,7 @@ public enum PresentationDetentReference: Hashable {
     }
 }
 
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 extension Collection where Element == PresentationDetentReference {
 
@@ -55,6 +53,7 @@ extension Collection where Element == PresentationDetentReference {
     }
 }
 
+@available(*, deprecated, message: "This has been deprecated, since SwiftUI now has native support for presentation detents.")
 @available(iOS 16.0, *)
 public extension UISheetPresentationController.Detent.Identifier {
 

@@ -25,7 +25,8 @@ This version refactors many views to take their styles & configs as environment 
 
 ### 🗑️ Deprecations
 
-* `FormRowTitle` has been deprecated. 
+* `FormRowTitle` has been deprecated.
+* `PresentationDetents` has been deprecated since SwiftUI has native support now.
 
 
 
