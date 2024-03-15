@@ -16,22 +16,6 @@ import SwiftUI
 /// it up, since the view can become upside down.
 public struct FlipView<FrontView: View, BackView: View>: View {
     
-    #if os(tvOS)
-    public init(
-        front: FrontView,
-        back: BackView,
-        isFlipped: Binding<Bool>,
-        flipDuration: Double = 0.3,
-        tapDirection: FlipDirection = .right
-    ) {
-        self.front = front
-        self.back = back
-        self._isFlipped = isFlipped
-        self.flipDuration = flipDuration
-        self.tapDirection = tapDirection
-        self.swipeDirections = []
-    }
-    #else
     public init(
         front: FrontView,
         back: BackView,
@@ -47,7 +31,6 @@ public struct FlipView<FrontView: View, BackView: View>: View {
         self.tapDirection = tapDirection
         self.swipeDirections = swipeDirections
     }
-    #endif
     
     @Binding private var isFlipped: Bool
     
@@ -83,6 +66,7 @@ private extension View {
     func withTapGesture(action: @escaping () -> Void) -> some View {
         #if os(tvOS)
         Button(action: action) { self }
+            .buttonStyle(.plain)
         #else
         self.onTapGesture(perform: action)
         #endif
@@ -167,27 +151,19 @@ private extension View {
         var body: some View {
             flipView
                 .cornerRadius(10)
-                .shadow(radius: 5, x: 0, y: 2)
+                .shadow(radius: 0, x: 0, y: 2)
                 .padding()
         }
 
         var flipView: some View {
-            #if os(tvOS)
-            FlipView(
-                front: Color.green,
-                back: Color.red,
-                isFlipped: $isFlipped,
-                flipDuration: 0.5,
-                tapDirection: .right)
-            #else
             FlipView(
                 front: Color.green,
                 back: Color.red,
                 isFlipped: $isFlipped,
                 flipDuration: 0.5,
                 tapDirection: .right,
-                swipeDirections: [.left, .right, .up, .down])
-            #endif
+                swipeDirections: [.left, .right, .up, .down]
+            )
         }
     }
     
