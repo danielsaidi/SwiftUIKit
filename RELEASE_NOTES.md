@@ -8,7 +8,8 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 ### ✨ New features
 
-* `FormButtonGroupSection` is a new view that simplifies creating form button groups.
+* `ListButtonGroup` is a new view for creating button groups.
+* `ListButtonStyle` has a new `pressedOpacity` init parameter.
 
 ### 💡 Behavior changes
 
@@ -16,6 +17,9 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 * `FormInlineActionButtonStyle` has been replaced by `ListButtonGroup`.
 * `FormText` has been renamed to `ListActionRow` and is now sty-based.
 * `ListActionRow` now takes a `ListAction` instead of a trailing view.
+* `ListButtonGroup` now uses an environment-based style instead of init.
+* `ListCard` now uses an environment-based style instead of init.
+* `ListCard` now supports specifying a custom pressed scale animation.
 
 ### 🗑️ Deprecations
 

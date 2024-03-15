@@ -14,25 +14,19 @@ import SwiftUI
  */
 public struct ListShelfSection<Title: View, Content: View>: View {
 
-    /**
-     Create a list shelf section.
-
-     - Parameters:
-       - style: The style to use, by default `.standard`.
-       - title: The section title view.
-       - content: The section content.
-     */
+    /// Create a list shelf section.
+    ///
+    /// - Parameters:
+    ///   - title: The section title view.
+    ///   - content: The section content.
     public init(
-        style: ListShelfSectionStyle = .standard,
         @ViewBuilder title: @escaping () -> Title,
         @ViewBuilder content: @escaping () -> Content
     ) {
-        self.style = style
         self.title = title
         self.content = content
     }
     
-    private let style: ListShelfSectionStyle
     private let shadowSpacing = 50.0
 
     @ViewBuilder
@@ -40,6 +34,9 @@ public struct ListShelfSection<Title: View, Content: View>: View {
 
     @ViewBuilder
     private let content: () -> Content
+    
+    @Environment(\.listShelfSectionStyle)
+    private var style
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -60,49 +57,6 @@ public struct ListShelfSection<Title: View, Content: View>: View {
     }
 }
 
-public struct ListShelfSectionStyle {
-    
-    /**
-     Create a new section style.
-     
-     - Parameters:
-       - horizontalPadding: The horizontal edge padding to apply, by default `16`.
-       - rowSpacing: The spacing to apply between each row, by default `16`.
-       - rowTitleSpacing: The bottom padding to apply to each row title, by default `0`.
-       - rowItemSpacing: The spacing to apply between each row item, by default `16`.
-     */
-    public init(
-        horizontalPadding: Double = 16,
-        rowSpacing: Double = 16,
-        rowTitleSpacing: Double = 10,
-        rowItemSpacing: Double = 16
-    ) {
-        self.horizontalPadding = horizontalPadding
-        self.rowSpacing = rowSpacing
-        self.rowTitleSpacing = rowTitleSpacing
-        self.rowItemSpacing = rowItemSpacing
-    }
-    
-    /// The horizontal edge padding to apply.
-    public var horizontalPadding: Double
-    
-    /// The spacing to apply between each row.
-    public var rowSpacing: Double
-    
-    /// The bottom padding to apply to each row title.
-    public var rowTitleSpacing: Double
-    
-    /// The spacing to apply between each row item.
-    public var rowItemSpacing: Double
-    
-    /**
-     The standard ``ListShelfSectionStyle``.
-     
-     You can set this style to affect the global default.
-     */
-    public static var standard = ListShelfSectionStyle()
-}
-
 #Preview {
     
     struct PreviewSection: View {
@@ -112,13 +66,16 @@ public struct ListShelfSectionStyle {
                 ListSectionTitle("Section")
             } content: {
                 Group {
-                    ListCard {
-                        Color.red
-                    } contextMenu: {
-                        Button("1") {}
-                        Button("2") {}
-                        Button("3") {}
+                    Button {} label: {
+                        ListCard {
+                            Color.red
+                        } contextMenu: {
+                            Button("1") {}
+                            Button("2") {}
+                            Button("3") {}
+                        }
                     }
+                    
                     ListCard {
                         Color.green
                     } contextMenu: {
@@ -126,6 +83,7 @@ public struct ListShelfSectionStyle {
                         Button("2") {}
                         Button("3") {}
                     }
+                    
                     ListCard {
                         Color.blue
                     } contextMenu: {
@@ -134,6 +92,7 @@ public struct ListShelfSectionStyle {
                         Button("3") {}
                     }
                 }
+                .buttonStyle(.listCard)
                 .frame(width: 150, height: 150)
             }
         }

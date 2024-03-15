@@ -68,7 +68,6 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
     }
 }
 
-@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 #Preview {
     
     struct Preview: View {
@@ -79,15 +78,20 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
         var body: some View {
             List {
                 ForEach(0...10, id: \.self) { index in
-                    ListSelectItem(isSelected: index == selection) {
-                        Label("Item \(index)", systemImage: "\(index).circle")
+                    Group {
+                        ListSelectItem(isSelected: index == selection) {
+                            Label("Item \(index)", systemImage: "\(index).circle")
+                        }
+                        ListSelectItem(
+                            isSelected: index == selection,
+                            selectIndicator: Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(.green)
+                        ) {
+                            Label("Item \(index)", systemImage: "\(index).circle")
+                        }
                     }
-                    ListSelectItem(
-                        isSelected: index == selection,
-                        selectIndicator: Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.green)
-                    ) {
-                        Label("Item \(index)", systemImage: "\(index).circle")
+                    .onTapGesture {
+                        selection = index
                     }
                 }
             }

@@ -109,33 +109,6 @@ public extension ListButtonGroupStyle {
     static var standard = Self()
 }
 
-public extension ButtonStyle where Self == ListButtonGroupStyle {
-    
-    /// A standard ``ListButtonGroupStyle``.
-    static var formGroup: Self { .standard }
-    
-    /// A custom ``ListButtonGroupStyle``.
-    static func formGroup(
-        backgroundColor: Color? = nil,
-        cornerRadius: Double = 10,
-        disabledOpacity: Double = 0.5,
-        labelStyle: Self.LabelStyle = .standard,
-        padding: Double = 8,
-        pressedOpacity: Double = 0.5,
-        shadowStyle: ViewShadowStyle = .none
-    ) -> Self {
-        .init(
-            backgroundColor: backgroundColor,
-            cornerRadius: cornerRadius,
-            disabledOpacity: disabledOpacity,
-            labelStyle: labelStyle,
-            padding: padding,
-            pressedOpacity: pressedOpacity,
-            shadowStyle: shadowStyle
-        )
-    }
-}
-
 public extension ListButtonGroupStyle {
     
     /// This style affects the label of a form group button.
@@ -229,74 +202,30 @@ public extension LabelStyle where Self == ListButtonGroupStyle.LabelStyle {
     }
 }
 
-#Preview {
-    
-    struct PreviewList: View {
-        
-        let style: ListButtonGroupStyle?
-        
-        var body: some View {
-            List {
-                "Add something".previewButton(.add)
-                
-                ListButtonGroup(style: style ?? .standard) {
-                    HStack {
-                        "Report Bug".previewButton(.bug)
-                        "Camera".previewButton(.camera).disabled(true)
-                        "Photos".previewButton(.camera).opacity(0.5)
-                        "Feedback".previewButton(.feedback)
-                    }
-                }
-                
-                Section {
-                    Text("Row")
-                    Text("Row")
-                    Text("Row")
-                    Text("Row")
-                }
-            }
-        }
-    }
-    
-    return VStack(spacing: 0) {
-        PreviewList(style: nil)
-        Divider()
-        PreviewList(style: .swedish)
-        Divider()
-        PreviewList(style: nil)
-            .environment(\.colorScheme, .dark)
-    }
-    .frame(maxHeight: .infinity)
-    .background(Color.black.opacity(0.08).ignoresSafeArea())
-}
+public extension View {
 
-private extension ButtonStyle where Self == ListButtonGroupStyle {
-    
-    static var swedish: Self {
-        .init(
-            backgroundColor: .blue,
-            labelStyle: .init(color: .yellow)
-        )
+    /// Apply a ``ListButtonGroupStyle`` style to the view.
+    func listButtonGroupStyle(
+        _ style: ListButtonGroupStyle
+    ) -> some View {
+        self.environment(\.listButtonGroupStyle, style)
     }
 }
 
-private extension String {
-    
-    func previewButton(_ icon: Image) -> some View {
-        Button {} label: { Label(self, image: icon) }
+private extension ListButtonGroupStyle {
+
+    struct Key: EnvironmentKey {
+
+        public static var defaultValue: ListButtonGroupStyle = .standard
     }
 }
 
-private extension Image {
-    
-    static let add = systemImage("plus")
-    static let bug = systemImage("ladybug")
-    static let camera = systemImage("camera")
-    static let feedback = systemImage("envelope")
-    static let photoLibrary = systemImage("photo.on.rectangle.angled")
-    
-    static func systemImage(_ name: String) -> Image {
-        Image(systemName: name)
+public extension EnvironmentValues {
+
+    /// This value can bind to a line spacing picker config.
+    var listButtonGroupStyle: ListButtonGroupStyle {
+        get { self [ListButtonGroupStyle.Key.self] }
+        set { self [ListButtonGroupStyle.Key.self] = newValue }
     }
 }
 #endif

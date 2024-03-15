@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-/**
- This view can be used to add additional vertical padding to
- a `List`.
- */
+/// This view can be used to add vertical padding to a `List`.
 public struct ListPadding: View {
     
     public init(height: CGFloat) {

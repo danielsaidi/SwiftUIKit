@@ -9,30 +9,29 @@
 #if os(iOS)
 import SwiftUI
 
-/// This group renders a section that applies the insets and
-/// backgrounds needed to render as an iOS form button group.
+/// This group applies zero insets and a clear background to
+/// render buttons in the content as a horizontal group.
 ///
-/// Examples of such a group are the quick action buttons in
-/// the Contact form.
+/// An example of a similar group in the iOS platform is the
+/// quick action button group in the Contact form.
 ///
-/// You can apply a group style with `.ListButtonGroupStyle`.
+/// You can style the view with `.listButtonGroupStyle(...)`.
 public struct ListButtonGroup<Content: View>: View {
     
     /// Create a form button group section.
     ///
     /// - Parameters:
-    ///   - style: The style to apply, by default ``ListButtonGroupStyle/standard``.
     ///   - content: A custom content builder.
     public init(
-        style: ListButtonGroupStyle = .standard,
         @ViewBuilder content: @escaping () -> Content
     ) {
-        self.style = style
         self.content = content
     }
     
-    private let style: ListButtonGroupStyle
     private let content: () -> Content
+    
+    @Environment(\.listButtonGroupStyle)
+    private var style
     
     public var body: some View {
         Section {
@@ -52,7 +51,7 @@ public struct ListButtonGroup<Content: View>: View {
             List {
                 "Add something".previewButton(.add)
                 
-                ListButtonGroup() {
+                ListButtonGroup {
                     HStack {
                         "Report Bug".previewButton(.bug)
                         "Camera".previewButton(.camera).disabled(true)
@@ -60,17 +59,38 @@ public struct ListButtonGroup<Content: View>: View {
                         "Feedback".previewButton(.feedback)
                     }
                 }
+                
+                Section {
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                    Text("Row")
+                }
             }
         }
     }
     
     return VStack(spacing: 0) {
         PreviewList()
+        Divider()
+        PreviewList()
+            .listButtonGroupStyle(.swedish)
+        Divider()
         PreviewList()
             .environment(\.colorScheme, .dark)
     }
     .frame(maxHeight: .infinity)
     .background(Color.black.opacity(0.08).ignoresSafeArea())
+}
+
+private extension ButtonStyle where Self == ListButtonGroupStyle {
+    
+    static var swedish: Self {
+        .init(
+            backgroundColor: .blue,
+            labelStyle: .init(color: .yellow)
+        )
+    }
 }
 
 private extension String {

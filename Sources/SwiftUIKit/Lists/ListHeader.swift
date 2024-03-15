@@ -17,13 +17,11 @@ import SwiftUI
  */
 public struct ListHeader<Icon: View>: View {
 
-    /**
-     Create a list header.
-     
-     - Parameters:
-       - bottomPadding: The bottom padding, by default a platform-specific value.
-       - view: The header view.
-     */
+    /// Create a list header.
+    ///
+    /// - Parameters:
+    ///   - bottomPadding: A custom bottom padding, if any.
+    ///   - view: The header view.
     public init(
         bottomPadding: Double? = nil,
         @ViewBuilder view: @escaping () -> Icon
@@ -53,12 +51,10 @@ public struct ListHeader<Icon: View>: View {
 
 public extension View {
     
-    /**
-     Convert the view to a list header.
-     
-     - Parameters:
-       - bottomPadding: The bottom padding, by default a platform-specific value.
-     */
+    /// Convert the view to a list header.
+    ///
+    /// - Parameters:
+    ///   - bottomPadding: A custom bottom padding, if any.
     func listHeader(
         bottomPadding: Double? = nil
     ) -> some View {
@@ -70,13 +66,11 @@ public extension View {
 
 public extension Image {
     
-    /**
-     Convert the image to a list header.
-     
-     - Parameters:
-       - height: The image height, if any.
-       - bottomPadding: The bottom padding, by default a platform-specific value.
-     */
+    /// Convert the image to a list header.
+    ///
+    /// - Parameters:
+    ///   - height: The image height, if any.
+    ///   - bottomPadding: A custom bottom padding, if any.
     func listHeader(
         height: CGFloat?,
         bottomPadding: Double? = nil

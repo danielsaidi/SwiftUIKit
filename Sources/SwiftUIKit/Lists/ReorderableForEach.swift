@@ -240,7 +240,6 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
     }
 }
 
-@available(iOS 16.0, macOS 12.0, *)
 #Preview {
     
     struct Preview: View {
@@ -261,33 +260,37 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
                 #if os(macOS)
                 Color.gray
                 #endif
-                ScrollView(.vertical) {
-                    VStack {
-                        LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
-                            ReorderableForEach(items, active: $active) { item in
-                                shape
-                                    .fill(.white.opacity(0.5))
-                                    .frame(height: 100)
-                                    .overlay(Text("\(item.id)"))
-                                    .contentShape(.dragPreview, shape)
-                            } preview: { item in
-                                shape
-                                    .frame(width: 200, height: 200)
-                                    .overlay(Text("\(item.id)"))
-                                    .contentShape(.dragPreview, shape)
-                            } moveAction: { from, to in
-                                items.move(fromOffsets: from, toOffset: to)
+                if #available(iOS 16.0, *) {
+                    ScrollView(.vertical) {
+                        VStack {
+                            LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
+                                ReorderableForEach(items, active: $active) { item in
+                                    shape
+                                        .fill(.thinMaterial)
+                                        .frame(height: 100)
+                                        .overlay(Text("\(item.id)"))
+                                        .contentShape(.dragPreview, shape)
+                                } preview: { item in
+                                    shape
+                                        .frame(width: 200, height: 200)
+                                        .overlay(Text("\(item.id)"))
+                                        .contentShape(.dragPreview, shape)
+                                } moveAction: { from, to in
+                                    items.move(fromOffsets: from, toOffset: to)
+                                }
                             }
-                        }
-                    }.padding()
+                        }.padding()
+                    }
+                    #if os(iOS)
+                    .background(Color.blue)
+                    .scrollContentBackground(.hidden)
+                    #else
+                    .background(Color.blue)
+                    #endif
+                    .reorderableForEachContainer(active: $active)
+                } else {
+                    // Fallback on earlier versions
                 }
-                #if os(iOS)
-                .background(Color.blue.gradient)
-                .scrollContentBackground(.hidden)
-                #else
-                .background(Color.blue)
-                #endif
-                .reorderableForEachContainer(active: $active)
             }
         }
         

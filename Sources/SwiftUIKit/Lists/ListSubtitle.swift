@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-/**
- This view can be used to display a trailing subtitle in any
- list items.
- */
+/// This view can be used as a trailing list row subtitle.
 public struct ListSubtitle: View {
 
     public init(_ text: String) {
