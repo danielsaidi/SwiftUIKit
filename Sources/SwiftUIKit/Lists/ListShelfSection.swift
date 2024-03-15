@@ -98,7 +98,7 @@ public struct ListShelfSectionStyle {
     /**
      The standard ``ListShelfSectionStyle``.
      
-     You can change this style to affect the global default.
+     You can set this style to affect the global default.
      */
     public static var standard = ListShelfSectionStyle()
 }

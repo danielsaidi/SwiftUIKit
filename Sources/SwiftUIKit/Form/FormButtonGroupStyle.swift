@@ -1,5 +1,5 @@
 //
-//  FormInlineButtonStyle.swift
+//  FormButtonGroupStyle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
@@ -9,29 +9,25 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This style can be used to generate horizontal button groups
- that mimics the look of the topmost iOS Contact buttons.
- */
-public struct FormInlineActionButtonStyle: ButtonStyle {
+/// This button style can generate inline button groups that
+/// mimics the look of the topmost iOS Contact buttons.
+public struct FormButtonGroupStyle: ButtonStyle {
     
-    /**
-     Create a custom form group button style.
-     
-     - Parameters:
-       - backgroundColor: The background color to apply, by default the standard form background.
-       - cornerRadius: The corner radius to apply, by default `10`.
-       - disabledOpacity: The disabled opacity to apply, by default `0.5`.
-       - labelStyle: The label style to apply, by default `.standard`.
-       - padding: The padding to apply, by default `8`.
-       - pressedOpacity: The pressed opacity to apply, by default ` 0.5`.
-       - shadowStyle: The shadow style to apply, by default `.none`.
-     */
+    /// Create a custom form group button style.
+    ///
+    /// - Parameters:
+    ///   - backgroundColor: The background color to apply, by default the standard form background.
+    ///   - cornerRadius: The corner radius to apply, by default `10`.
+    ///   - disabledOpacity: The disabled opacity to apply, by default `0.5`.
+    ///   - labelStyle: The label style to apply, by default `.standard`.
+    ///   - padding: The padding to apply, by default `8`.
+    ///   - pressedOpacity: The pressed opacity to apply, by default ` 0.5`.
+    ///   - shadowStyle: The shadow style to apply, by default `.none`.
     public init(
         backgroundColor: Color? = nil,
         cornerRadius: Double = 10,
         disabledOpacity: Double = 0.5,
-        labelStyle: ButtonLabelStyle = .standard,
+        labelStyle: LabelStyle = .standard,
         padding: Double = 8,
         pressedOpacity: Double = 0.5,
         shadowStyle: ViewShadowStyle = .none
@@ -55,7 +51,7 @@ public struct FormInlineActionButtonStyle: ButtonStyle {
     public var disabledOpacity: Double
     
     /// The label style to apply.
-    public var labelStyle: ButtonLabelStyle
+    public var labelStyle: LabelStyle
     
     /// The padding to apply.
     public var padding: Double
@@ -85,7 +81,7 @@ public struct FormInlineActionButtonStyle: ButtonStyle {
     }
 }
 
-private extension FormInlineActionButtonStyle {
+private extension FormButtonGroupStyle {
     
     @ViewBuilder
     var background: some View {
@@ -105,31 +101,29 @@ private extension FormInlineActionButtonStyle {
     }
 }
 
-public extension FormInlineActionButtonStyle {
+public extension FormButtonGroupStyle {
     
-    /**
-     A standard form group button style.
-     
-     You can override the value to mofify the global default.
-     */
-    static var standard = FormInlineActionButtonStyle()
+    /// A standard form group button style.
+    ///
+    /// You can set this value to mofify the global default.
+    static var standard = Self()
 }
 
-public extension ButtonStyle where Self == FormInlineActionButtonStyle {
+public extension ButtonStyle where Self == FormButtonGroupStyle {
     
-    /// A standard ``FormInlineActionButtonStyle``.
-    static var formInlineAction: FormInlineActionButtonStyle { .standard }
+    /// A standard ``FormButtonGroupStyle``.
+    static var formGroup: Self { .standard }
     
-    /// A custom ``FormInlineActionButtonStyle``.
-    static func formInlineAction(
+    /// A custom ``FormButtonGroupStyle``.
+    static func formGroup(
         backgroundColor: Color? = nil,
         cornerRadius: Double = 10,
         disabledOpacity: Double = 0.5,
-        labelStyle: Self.ButtonLabelStyle = .standard,
+        labelStyle: Self.LabelStyle = .standard,
         padding: Double = 8,
         pressedOpacity: Double = 0.5,
         shadowStyle: ViewShadowStyle = .none
-    ) -> FormInlineActionButtonStyle {
+    ) -> Self {
         .init(
             backgroundColor: backgroundColor,
             cornerRadius: cornerRadius,
@@ -142,25 +136,20 @@ public extension ButtonStyle where Self == FormInlineActionButtonStyle {
     }
 }
 
-
-public extension FormInlineActionButtonStyle {
-    /**
-     This style can be used to generate horizontal button groups
-     that mimics the look of the topmost iOS Contact buttons.
-     */
-    struct ButtonLabelStyle: LabelStyle {
+public extension FormButtonGroupStyle {
+    
+    /// This style affects the label of a form group button.
+    struct LabelStyle: SwiftUI.LabelStyle {
         
-        /**
-         Create a custom form group button style.
-         
-         - Parameters:
-           - spacing: The vertical spacing between the icon and title, by default `7`.
-           - color: The color to apply to the icon and title, by default `nil`.
-           - iconColor: The color to apply to the icon, by default `nil`.
-           - titleFont: The font to apply to the title, by default `.caption2`.
-           - titleColor: The color to apply to the title, by default `nil`.
-           - titleFont: The font to apply to the title, by default `.caption2`.
-         */
+        /// Create a custom label style.
+        ///
+        /// - Parameters:
+        ///   - spacing: The vertical spacing between the icon and title, by default `7`.
+        ///   - color: The color to apply to the icon and title, by default `nil`.
+        ///   - iconColor: The color to apply to the icon, by default `nil`.
+        ///   - iconFont: The font to apply to the title, by default `.body`.
+        ///   - titleColor: The color to apply to the title, by default `nil`.
+        ///   - titleFont: The font to apply to the title, by default `.caption2`.
         public init(
             spacing: Double = 7,
             color: Color? = nil,
@@ -213,23 +202,21 @@ public extension FormInlineActionButtonStyle {
     }
 }
 
-public extension FormInlineActionButtonStyle.ButtonLabelStyle {
+public extension FormButtonGroupStyle.LabelStyle {
     
-    /**
-     A standard button label style.
-     
-     You can override the value to mofify the global default.
-     */
+    /// A standard label style.
+    ///
+    /// You can set this style to affect the global default.
     static var standard = Self()
 }
 
-public extension LabelStyle where Self == FormInlineActionButtonStyle.ButtonLabelStyle {
+public extension LabelStyle where Self == FormButtonGroupStyle.LabelStyle {
     
     /// A standard button label style.
-    static var formInlineAction: Self { .init() }
+    static var formGroupLabel: Self { .init() }
     
     /// A custom button label style.
-    static func formInlineAction(
+    static func formGroupLabel(
         spacing: Double = 7,
         iconFont: Font = .body,
         titleFont: Font = .caption2
@@ -246,27 +233,20 @@ public extension LabelStyle where Self == FormInlineActionButtonStyle.ButtonLabe
     
     struct PreviewList: View {
         
+        let style: FormButtonGroupStyle?
+        
         var body: some View {
             List {
-                Group {
-                    Button {} label: { Label("Add something", image: .add) }
-                        .buttonStyle(.swedish)
-                        .foregroundColor(.yellow)
-                    
-                    Section {
-                        HStack {
-                            Button {} label: { Label("Report Bug", image: .bug) }
-                                .tint(Color.green)
-                            Button {} label: { Label("Camera", image: .camera) }
-                                .disabled(true)
-                            Button {} label: { Label("Photos", image: .camera) }
-                                .opacity(0.5)
-                            Button {} label: { Label("Feedback", image: .feedback) }
-                        }
+                "Add something".previewButton(.add)
+                
+                FormButtonGroupSection(style: style ?? .standard) {
+                    HStack {
+                        "Report Bug".previewButton(.bug)
+                        "Camera".previewButton(.camera).disabled(true)
+                        "Photos".previewButton(.camera).opacity(0.5)
+                        "Feedback".previewButton(.feedback)
                     }
                 }
-                .listRowInsets(.init(all: 0))
-                .listRowBackground(Color.clear)
                 
                 Section {
                     Text("Row")
@@ -278,26 +258,32 @@ public extension LabelStyle where Self == FormInlineActionButtonStyle.ButtonLabe
         }
     }
     
-    return VStack {
-        VStack {
-            PreviewList()
-                .buttonStyle(.formInlineAction)
-            PreviewList()
-                .buttonStyle(.formInlineAction)
-                .environment(\.colorScheme, .dark)
-        }
+    return VStack(spacing: 0) {
+        PreviewList(style: nil)
+        Divider()
+        PreviewList(style: .swedish)
+        Divider()
+        PreviewList(style: nil)
+            .environment(\.colorScheme, .dark)
     }
     .frame(maxHeight: .infinity)
     .background(Color.black.opacity(0.08).ignoresSafeArea())
 }
 
-private extension ButtonStyle where Self == FormInlineActionButtonStyle {
+private extension ButtonStyle where Self == FormButtonGroupStyle {
     
     static var swedish: Self {
         .init(
             backgroundColor: .blue,
             labelStyle: .init(color: .yellow)
         )
+    }
+}
+
+private extension String {
+    
+    func previewButton(_ icon: Image) -> some View {
+        Button {} label: { Label(self, image: icon) }
     }
 }
 

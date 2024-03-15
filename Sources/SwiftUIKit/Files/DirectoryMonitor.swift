@@ -11,19 +11,14 @@
 
 import Foundation
 
-/**
- This class can be used to monitor file system changes for a
- certain directory.
- */
+/// This class can monitor file system changes for a folder.
 public class DirectoryMonitor {
     
-    /**
-     Create an monitor instance.
-
-     - Parameters:
-       - url: The directory url to observe.
-       - onChange: The function to call when the folder changes.
-     */
+    /// Create an monitor instance.
+    ///
+    /// - Parameters:
+    ///   - url: The directory url to observe.
+    ///   - onChange: The function to call when the folder changes.
     public init(
         url: URL,
         onChange: @escaping () -> Void

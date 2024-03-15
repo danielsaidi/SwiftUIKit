@@ -10,19 +10,17 @@ import SwiftUI
 
 public extension Font {
 
-    /**
-     Get a dynamic version of the provided font, that scales
-     with dynamic type.
-     */
+    /// Get a dynamic version of the provided font.
+    ///
+    /// This font type scales with dynamic type.
     static func dynamic(_ font: FontRepresentable) -> Font {
         .custom(font.fontName, size: font.pointSize)
     }
 
-    /**
-     Get a fixed version of the provided platform font, that
-     doesn't scale with dynamic type.
-     */
+    /// Get a fixed version of the provided font.
+    ///
+    /// This font type doesn't scale with dynamic type.
     static func fixed(_ font: FontRepresentable) -> Font {
-        Font(font)
+        .init(font)
     }
 }

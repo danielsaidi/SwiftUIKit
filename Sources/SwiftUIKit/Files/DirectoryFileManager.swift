@@ -8,9 +8,7 @@
 
 import Foundation
 
-/**
- This class can be used to handle files in a local directory.
- */
+/// This class can handle files in a local directory.
 open class DirectoryFileManager {
     
     

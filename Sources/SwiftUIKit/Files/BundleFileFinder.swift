@@ -8,9 +8,7 @@
 
 import Foundation
 
-/**
- This class can be used to find files witin a certain bundle.
- */
+/// This class can find files witin a certain bundle.
 open class BundleFileFinder {
     
     public init(

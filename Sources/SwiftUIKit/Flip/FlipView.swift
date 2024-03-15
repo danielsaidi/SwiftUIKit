@@ -8,15 +8,12 @@
 
 import SwiftUI
 
-/**
- This view has a front and a back view and can be flipped to
- show the other side when it's tapped, swiped or both.
- 
- For now, it only supports horizontal flip, since flipping a
- view both horizontally and vertically can mess it up and is
- not good from a usability point of view, since the view can
- become upside down.
- */
+/// This view has a front and a back view and can be flipped
+/// to show the other side when it's tapped, swiped, or both.
+///
+/// For now, this view only supports horizontal flips, since
+/// flipping views both horizontally and vertically can mess
+/// it up, since the view can become upside down.
 public struct FlipView<FrontView: View, BackView: View>: View {
     
     #if os(tvOS)

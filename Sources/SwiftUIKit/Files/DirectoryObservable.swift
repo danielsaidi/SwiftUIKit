@@ -11,22 +11,17 @@
 
 import Foundation
 
-/**
- This class can be used to observe file system changes for a
- certain folder.
- 
- The uses an internal ``DirectoryMonitor`` instance, to keep
- the ``files`` property in sync.
- */
+/// This class can observe file system changes for a folder.
+///
+/// The view uses an internal ``DirectoryMonitor`` instance,
+/// to keep the ``files`` property in sync.
 public class DirectoryObservable: ObservableObject {
     
-    /**
-     Create an instance that observes the provided `url`.
-
-     - Parameters:
-       - url: The directory URL to observe.
-       - fileManager: The file manager to use, by default `.default`.
-     */
+    /// Create an instance that observes the provided `url`.
+    ///
+    /// - Parameters:
+    ///   - url: The directory URL to observe.
+    ///   - fileManager: The file manager to use, by default `.default`.
     public init(
         url: URL,
         fileManager: FileManager = .default

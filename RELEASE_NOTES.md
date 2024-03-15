@@ -1,12 +1,19 @@
 # Release notes
 
+SwiftUIKit makes its best effort to honor semver, but breaking changes can occur even in minor bumps.
+
 
 
 ## 4.2
 
-### 🗑️ Deprecations
+### ✨ New features
+
+* `FormButtonGroupSection` is a new view that simplifies creating form button groups.
+
+### 💡 Behavior changes
 
 * `Color.standardListBackground` has been renamed to `.listBackground`.
+* `FormInlineActionButtonStyle` has been replaced by `FormButtonGroup`.
 
 
 
