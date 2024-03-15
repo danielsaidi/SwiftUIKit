@@ -1,5 +1,5 @@
 //
-//  FormButtonGroupSection.swift
+//  FormButtonGroup.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2024-03-15.
@@ -9,13 +9,14 @@
 #if os(iOS)
 import SwiftUI
 
-/// This section can be used to apply the correct insets and
-/// background to sections that should be rendered as a form
-/// button group, like in the iOS contact form.
+/// This group renders a section that applies the insets and
+/// backgrounds needed to render as an iOS form button group.
 ///
-/// You can apply a form button style with `.buttonStyle` or
-/// pass in a style in the initializer.
-public struct FormButtonGroupSection<Content: View>: View {
+/// Examples of such a group are the quick action buttons in
+/// the Contact form.
+///
+/// You can apply a group style with `.formButtonGroupStyle`.
+public struct FormButtonGroup<Content: View>: View {
     
     /// Create a form button group section.
     ///
@@ -51,7 +52,7 @@ public struct FormButtonGroupSection<Content: View>: View {
             List {
                 "Add something".previewButton(.add)
                 
-                FormButtonGroupSection() {
+                FormButtonGroup() {
                     HStack {
                         "Report Bug".previewButton(.bug)
                         "Camera".previewButton(.camera).disabled(true)
