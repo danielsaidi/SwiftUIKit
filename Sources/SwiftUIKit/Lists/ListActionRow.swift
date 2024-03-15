@@ -15,55 +15,32 @@ import SwiftUI
  If `hideIfEmpty` is `true` and the text is empty, this view
  is rendered as an `EmptyView`.
  */
-public struct ListActionRow<TrailingView: View>: View {
-
-    /**
-     Create a form text view.
-
-     - Parameters:
-       - title: The view title.
-       - text: The long text text.
-       - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
-       - trailingView: An optional trailing view to apply to the view.
-     */
+public struct ListActionRow: View {
+    
+    /// Create a list action row with a custom trailing view.
+    ///
+    /// - Parameters:
+    ///   - title: The row title.
+    ///   - text: The row text.
+    ///   - action: The ``ListAction`` to use.
+    ///   - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
+    ///   - trailingView: An optional trailing view to apply to the view.
     public init(
         title: String,
         text: String,
-        hideIfEmpty: Bool = false,
-        trailingView: @escaping TrailingViewBuilder
+        action: ListAction?,
+        hideIfEmpty: Bool = false
     ) {
         self.title = title
         self.text = text
+        self.action = action
         self.hideIfEmpty = hideIfEmpty
-        self.trailingView = trailingView
-    }
-
-    /**
-     Create a form text view.
-
-     - Parameters:
-       - title: The footnote text title.
-       - text: The long text text.
-       - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
-     */
-    public init(
-        title: String,
-        text: String,
-        hideIfEmpty: Bool = false
-    ) where TrailingView == EmptyView {
-        self.title = title
-        self.text = text
-        self.hideIfEmpty = hideIfEmpty
-        self.trailingView = nil
     }
     
-    public let text: String
-    
+    private let text: String
     private let title: String
     private let hideIfEmpty: Bool
-    private let trailingView: TrailingViewBuilder?
-    
-    public typealias TrailingViewBuilder = () -> TrailingView
+    private let action: ListAction?
     
     public var body: some View {
         if hasEmptyText && hideIfEmpty {
@@ -91,9 +68,9 @@ private extension ListActionRow {
                 Text(text)
             }
             
-            if let trailing = trailingView {
+            if let action {
                 Spacer()
-                trailing()
+                action.button
             }
         }
         .padding(.vertical, 3)
@@ -104,32 +81,37 @@ private extension ListActionRow {
     
     List {
         ListActionRow(
-            title: "title 1",
-            text: "Text value")
+            title: "Title 1",
+            text: "Text 1",
+            action: .call(phoneNumber: "1234")
+        )
+        
         ListActionRow(
-            title: "title 2",
-            text: "A looong text value with a trailing view."
-        ) {
-            ListAction.call(phoneNumber: "1234").button
-        }
-            .buttonStyle(.borderedProminent)
+            title: "Title 2",
+            text: "Text 2",
+            action: .copy("")
+        )
+        .buttonStyle(.borderedProminent)
+        
         ListActionRow(
-            title: "title 2",
-            text: "A looong text value with a trailing view."
-        ) {
-            ListAction.copy("").button
-        }.buttonStyle(.borderedProminent)
+            title: "Title 3",
+            text: "Long\nmultuline\ntext that could have been entered in a text editor.",
+            action: .email(address: "")
+        )
+        
         ListActionRow(
-            title: "title 3",
-            text: "Long\nmultuline\ntext that could have been entered in a text editor.")
-        ListActionRow(
-            title: "title 4",
+            title: "Title 4",
             text: "",
-            hideIfEmpty: true)
+            action: nil,
+            hideIfEmpty: true
+        )
+        
         ListActionRow(
-            title: "title 5",
+            title: "Title 5",
             text: "",
-            hideIfEmpty: false)
+            action: nil,
+            hideIfEmpty: false
+        )
     }
 }
 #endif

@@ -11,16 +11,18 @@ import SwiftUI
  This enum defines quick list actions, that can be triggered
  within a form or list.
  
- You can use the `view` view builder to get a view that will
- trigger the action when it's
+ Use the various view builders like ``button(content:)`` and
+ ``button`` to get a view that triggers the action.
  */
 public enum ListAction {
     
     /// Call a certain phone number.
     case call(phoneNumber: String)
     
+    #if os(macOS) || os(iOS)
     /// Copy a certain value.
     case copy(String)
+    #endif
     
     /// Email a certain address.
     case email(address: String)
@@ -44,13 +46,13 @@ public extension ListAction {
     ) -> some View {
         switch self {
         case .call(let url):
-            link(url: URL(string: "tel:\(url)"), content: content)
+            link(url: .init(string: "tel:\(url)"), content: content)
         case .copy(let text):
             button(action: { copy(text) }, content: content)
         case .email(let url):
-            link(url: URL(string: "mailto:\(url)"), content: content)
+            link(url: .init(string: "mailto:\(url)"), content: content)
         case .open(let url):
-            link(url: URL(string: url), content: content)
+            link(url: .init(string: url), content: content)
         }
     }
     
@@ -107,7 +109,9 @@ private extension ListAction {
     
     return List {
         view(for: .call(phoneNumber: "abc123"))
+        #if os(macOS) || os(iOS)
         view(for: .copy("abc123"))
+        #endif
         view(for: .email(address: "abc123"))
         view(for: .open(url: "https://danielsaidi.com"))
     }
