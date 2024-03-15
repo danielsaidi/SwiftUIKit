@@ -8,22 +8,18 @@
 
 import SwiftUI
 
-/**
- This style can be used to style a `PageIndicator`.
- */
+/// This style can be used to style a ``PageIndicator``.
 public struct PageIndicatorStyle: Equatable {
     
-    /**
-     Create a custom page indicator style.
-     
-     - Parameters:
-       - dotColor: The indicator dot color, by default `.white` with 0.5 opacity.
-       - dotSize: The indicator dot size, by default `10`.
-       - currentDotColor: The indicator current dot color, by default `.white`.
-       - currentDotSize: The indicator current dot size, by default `10`.
-       - dotSpacing: The spacing to apply between dots, by default `nil`.
-       - isAnimated: Whether or not changing pages is animated, by default `true`.
-     */
+    /// Create a custom page indicator style.
+    ///
+    /// - Parameters:
+    ///   - dotColor: The indicator dot color, by default `.white` with 0.5 opacity.
+    ///   - dotSize: The indicator dot size, by default `10`.
+    ///   - currentDotColor: The indicator current dot color, by default `.white`.
+    ///   - currentDotSize: The indicator current dot size, by default `10`.
+    ///   - dotSpacing: The spacing to apply between dots, by default `nil`.
+    ///   - isAnimated: Whether or not changing pages is animated, by default `true`.
     public init(
         dotColor: Color = .white.opacity(0.5),
         dotSize: CGFloat = 7,
@@ -60,4 +56,30 @@ public struct PageIndicatorStyle: Equatable {
     
     /// The standard style.
     public static var standard: PageIndicatorStyle { PageIndicatorStyle() }
+}
+
+public extension View {
+
+    /// Apply a ``PageIndicatorStyle`` style to the view.
+    func pageIndicatorStyle(
+        _ style: PageIndicatorStyle
+    ) -> some View {
+        self.environment(\.pageIndicatorStyle, style)
+    }
+}
+
+private extension PageIndicatorStyle {
+
+    struct Key: EnvironmentKey {
+
+        public static var defaultValue: PageIndicatorStyle = .standard
+    }
+}
+
+public extension EnvironmentValues {
+
+    var pageIndicatorStyle: PageIndicatorStyle {
+        get { self [PageIndicatorStyle.Key.self] }
+        set { self [PageIndicatorStyle.Key.self] = newValue }
+    }
 }

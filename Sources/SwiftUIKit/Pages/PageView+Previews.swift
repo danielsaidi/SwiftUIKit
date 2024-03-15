@@ -50,7 +50,8 @@ private struct PreviewPage: View {
                     PreviewPage(type: .blue)
                 ],
                 currentPageIndex: $index,
-                pageIndicatorDisplayMode: pageIndicatorDisplayMode)
+                pageIndicatorDisplayMode: pageIndicatorDisplayMode
+            )
         }
     }
     
@@ -64,19 +65,18 @@ private struct PreviewPage: View {
         var body: some View {
             PageView(
                 items: PreviewPageType.allCases,
-                currentPageIndex: $index,
-                pageIndicatorStyle: pageIndicatorStyle) {
-                    PreviewPage(type: $0)
-                }
+                currentPageIndex: $index
+            ) {
+                PreviewPage(type: $0)
+            }
+            
         }
     }
     
     return VStack {
         StaticPreview(pageIndicatorDisplayMode: .automatic)
         StaticPreview(pageIndicatorDisplayMode: .never)
-        DynamicPreview(pageIndicatorStyle: PageIndicatorStyle(
-            dotColor: .blue,
-            currentDotSize: 12)
-        )
+        StaticPreview(pageIndicatorDisplayMode: .always)
+            .pageIndicatorStyle(.init(dotColor: .green))
     }
 }

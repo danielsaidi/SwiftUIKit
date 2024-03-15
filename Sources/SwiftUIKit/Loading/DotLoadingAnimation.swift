@@ -26,13 +26,11 @@ import SwiftUI
  */
 public struct DotLoadingAnimation: View {
 
-    /**
-     Create a dot animation.
-
-     - Parameters:
-       - dotCount: The max number of dots, by default `3`.
-       - interval: The timer tick interval in seconds, by default `0.8`.
-     */
+    /// Create a dot animation.
+    ///
+    /// - Parameters:
+    ///   - dotCount: The max number of dots, by default `3`.
+    ///   - interval: The timer tick interval in seconds, by default `0.8`.
     public init(
         dotCount: Int = 3,
         interval: Double = 0.8

@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 public extension ListActionRow {
     
     @available(*, deprecated, message: "Use the new action-based initializer instead.")
@@ -12,10 +13,11 @@ public extension ListActionRow {
         self.init(title: title, text: text, action: nil, hideIfEmpty: hideIfEmpty)
     }
 }
+#endif
 
 public extension ListCard {
     
-    @available(*, deprecated, message: "A style must now be applied with .listCardStyle instead.")
+    @available(*, deprecated, message: "Custom styles must now be applied with .listCardStyle.")
     init(
         style: ListCardStyle = .standard,
         @ViewBuilder content: @escaping ContentBuilder
@@ -23,7 +25,7 @@ public extension ListCard {
         self.init(content: content)
     }
 
-    @available(*, deprecated, message: "A style must now be applied with .listCardStyle instead.")
+    @available(*, deprecated, message: "Custom styles must now be applied with .listCardStyle.")
     init(
         style: ListCardStyle = .standard,
         @ViewBuilder content: @escaping ContentBuilder,
@@ -35,7 +37,7 @@ public extension ListCard {
 
 public extension ListShelfSection {
     
-    @available(*, deprecated, message: "A style must now be applied with .listShelfSectionStyle instead.")
+    @available(*, deprecated, message: "Custom styles must now be applied with .listShelfSectionStyle.")
     init(
         style: ListShelfSectionStyle = .standard,
         @ViewBuilder title: @escaping () -> Title,

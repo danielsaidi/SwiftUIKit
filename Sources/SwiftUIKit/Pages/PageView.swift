@@ -29,67 +29,61 @@ import SwiftUI
  */
 public struct PageView<PageViewType: View>: View {
     
-    /**
-     Create a page view with a set of pre-built pages.
-     
-     This initializer requires the pages to be the same kind
-     of view. To use different kind of views, use the `items`
-     and `pageBuilder`-based initializer.     
-     
-     - Parameters:
-       - pages: The pages to present in the page view.
-       - currentPageIndex: The currently presented page index.
-       - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
-       - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
-     */
+    /// Create a page view with a set of page views.
+    ///
+    /// This requires the pages to be the same view type. To
+    /// use different views, use the `items` initializer.
+    ///
+    /// - Parameters:
+    ///   - pages: The pages to present in the page view.
+    ///   - currentPageIndex: The currently presented page index.
+    ///   - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
     public init(
         pages: [PageViewType],
         currentPageIndex: Binding<Int>,
-        pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic,
-        pageIndicatorStyle: PageIndicatorStyle = .standard
+        pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic
     ) {
         self.pages = pages
         self.pageIndicatorDisplayMode = pageIndicatorDisplayMode
-        self.pageIndicatorStyle = pageIndicatorStyle
         self.currentPageIndex = currentPageIndex
     }
 
-    /**
-     Create a page view that takes a collection of items and
-     applies a page builder to each item.
-     
-     - Parameters:
-       - items: The items to present in the page view.
-       - currentPageIndex: The currently presented page index.
-       - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
-       - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
-       - pageBuilder: A function that builds a page for each item in the items collection.
-     */
+    /// Create a page view with a set of items.
+    ///
+    /// The initializer will apply the provided page builder
+    /// to each item, to generate a dynamic view collection.
+    ///
+    /// - Parameters:
+    ///   - items: The items to present in the page view.
+    ///   - currentPageIndex: The currently presented page index.
+    ///   - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
+    ///   - pageBuilder: A function that builds a page for each item in the items collection.
     public init<Model>(
         items: [Model],
         currentPageIndex: Binding<Int>,
         pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic,
-        pageIndicatorStyle: PageIndicatorStyle = .standard,
         @ViewBuilder pageBuilder: (Model) -> PageViewType
     ) {
         self.pages = items.map(pageBuilder)
         self.pageIndicatorDisplayMode = pageIndicatorDisplayMode
-        self.pageIndicatorStyle = pageIndicatorStyle
         self.currentPageIndex = currentPageIndex
-        trySetupStyle()
     }
     
     private var currentPageIndex: Binding<Int>
     private let pageIndicatorDisplayMode: PageIndicatorDisplayMode
-    private let pageIndicatorStyle: PageIndicatorStyle
     private let pages: [PageViewType]
+    
+    @Environment(\.pageIndicatorStyle)
+    private var pageIndicatorStyle
     
     public var body: some View {
         TabView(selection: currentPageIndex) {
             ForEach(Array(pages.enumerated()), id: \.offset) {
                 $0.element.tag($0.offset)
             }
-        }.tabViewStyle(.page(indexDisplayMode: pageIndicatorDisplayMode.tabViewMode))
+        }
+        .onAppear(perform: trySetupStyle)
+        .tabViewStyle(.page(indexDisplayMode: pageIndicatorDisplayMode.tabViewMode))
     }
 }
 
@@ -97,7 +91,6 @@ private extension PageView {
     
     func trySetupStyle() {
         #if os(iOS) || os(tvOS)
-        if pageIndicatorStyle == .standard { return }
         let style = pageIndicatorStyle
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor(style.dotColor)

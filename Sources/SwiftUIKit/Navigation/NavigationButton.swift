@@ -9,9 +9,7 @@
 import SwiftUI
 
 /**
- This view wraps a regular SwiftUI `Button` and also appends
- a trailing ``NavigationLinkArrow`` to let the button render
- as a `NavigationLink`.
+ This view embeds a regular `Button` then appends a trailing ``NavigationLinkArrow`` to render as a `NavigationLink`.
  */
 public struct NavigationButton<Content: View>: View {
     

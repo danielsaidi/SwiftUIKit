@@ -17,14 +17,12 @@ import SwiftUI
  */
 public struct DotLoadingAnimationText: View {
 
-    /**
-     Create a dot animation text.
-
-     - Parameters:
-       - text: The text to present.
-       - dotCount: The max number of dots, by default `3`.
-       - interval: The timer tick interval in seconds, by default `0.8`.
-     */
+    /// Create a dot animation text.
+    ///
+    /// - Parameters:
+    ///   - text: The text to present.
+    ///   - dotCount: The max number of dots, by default `3`.
+    ///   - interval: The timer tick interval in seconds, by default `0.8`.
     public init(
         text: String,
         dotCount: Int = 3,

@@ -23,21 +23,20 @@ public struct PageIndicator: View {
      - Parameters:
        - numberOfPages: The number of pages to display.
        - currentPageIndex: The currently selected page index.
-       - style: The style to apply to the indicator.
      */
     public init(
         numberOfPages: Int,
-        currentPageIndex: Binding<Int>,
-        style: PageIndicatorStyle = .standard
+        currentPageIndex: Binding<Int>
     ) {
         self.numberOfPages = numberOfPages
         self.currentPageIndex = currentPageIndex
-        self.style = style
     }
     
     private let currentPageIndex: Binding<Int>
     private let numberOfPages: Int
-    private let style: PageIndicatorStyle
+    
+    @Environment(\.pageIndicatorStyle)
+    private var style: PageIndicatorStyle
     
     public var body: some View {
         HStack(spacing: style.dotSpacing) {
@@ -73,16 +72,18 @@ private extension PageIndicator {
     VStack(spacing: 20) {
         PageIndicator(
             numberOfPages: 10,
-            currentPageIndex: .constant(3))
+            currentPageIndex: .constant(3)
+        )
         
         PageIndicator(
             numberOfPages: 5,
-            currentPageIndex: .constant(3),
-            style: PageIndicatorStyle(
-                dotColor: .blue,
-                dotSpacing: 20,
-                currentDotColor: .yellow))
-        
+            currentPageIndex: .constant(3)
+        )
+        .pageIndicatorStyle(.init(
+            dotColor: .blue,
+            dotSpacing: 20,
+            currentDotColor: .yellow
+        ))
     }
     .padding()
     .background(Color.gray)

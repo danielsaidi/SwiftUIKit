@@ -24,14 +24,9 @@ public protocol UrlOpener {
     typealias OpenUrlCompletion = (_ success: Bool) -> Void
 }
 
-
-// MARK: - Public Functionality
-
 public extension UrlOpener {
     
-    /**
-     Whether or not the opener can open the provided `url`.
-     */
+    /// Whether or not this type can open the provided `url`.
     func canOpen(_ url: URL) -> Bool {
         #if os(iOS)
         return app.canOpenURL(url)
@@ -42,25 +37,22 @@ public extension UrlOpener {
         #endif
     }
     
-    /**
-     Whether or not the opener can open the provided `url`.
-     */
+    /// Whether or not this type can open the provided `url`.
     func canOpen(_ url: URL?) -> Bool {
         guard let url = url else { return false }
         return canOpen(url)
     }
     
-    /**
-     Whether or not the opener can open the provided url.
-     */
+    /// Whether or not this type can open the provided url.
     func canOpen(urlString: String?) -> Bool {
         canOpen(URL(string: urlString ?? ""))
     }
     
-    /**
-     Try opening the provided `url`.
-     */
-    func tryOpen(_ url: URL, completion: @escaping OpenUrlCompletion = { _ in }) {
+    /// Try opening the provided `url`.
+    func tryOpen(
+        _ url: URL,
+        completion: @escaping OpenUrlCompletion = { _ in }
+    ) {
         #if os(iOS)
         app.open(url, options: [:], completionHandler: completion)
         #elseif os(macOS)
@@ -70,24 +62,31 @@ public extension UrlOpener {
         #endif
     }
     
-    /**
-     Try opening the provided `url`.
-     */
-    func tryOpen(_ url: URL?, completion: @escaping OpenUrlCompletion = { _ in }) {
+    /// Try opening the provided `url`.
+    func tryOpen(
+        _ url: URL?,
+        completion: @escaping OpenUrlCompletion = { _ in }
+    ) {
         guard let url = url else { return completion(false) }
         tryOpen(url, completion: completion)
     }
     
-    /**
-     Try opening the provided url.
-     */
-    func tryOpen(urlString: String?, completion: @escaping OpenUrlCompletion = { _ in }) {
+    /// Try opening the provided url string.
+    func tryOpen(
+        _ urlString: String?,
+        completion: @escaping OpenUrlCompletion = { _ in }
+    ) {
+        tryOpen(URL(string: urlString ?? ""), completion: completion)
+    }
+    
+    @available(*, deprecated, renamed: "tryOpen(_:completion:)")
+    func tryOpen(
+        urlString: String?,
+        completion: @escaping OpenUrlCompletion = { _ in }
+    ) {
         tryOpen(URL(string: urlString ?? ""), completion: completion)
     }
 }
-
-
-// MARK: - Private Functionality
 
 private extension UrlOpener {
         

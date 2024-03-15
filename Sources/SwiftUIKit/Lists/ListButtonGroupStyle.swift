@@ -222,7 +222,6 @@ private extension ListButtonGroupStyle {
 
 public extension EnvironmentValues {
 
-    /// This value can bind to a line spacing picker config.
     var listButtonGroupStyle: ListButtonGroupStyle {
         get { self [ListButtonGroupStyle.Key.self] }
         set { self [ListButtonGroupStyle.Key.self] = newValue }

@@ -59,7 +59,6 @@ private extension ListCardStyle {
 
 public extension EnvironmentValues {
 
-    /// This value can bind to a line spacing picker config.
     var listCardStyle: ListCardStyle {
         get { self [ListCardStyle.Key.self] }
         set { self [ListCardStyle.Key.self] = newValue }

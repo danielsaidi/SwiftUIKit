@@ -71,7 +71,6 @@ private extension ListShelfSectionStyle {
 
 public extension EnvironmentValues {
 
-    /// This value can bind to a line spacing picker config.
     var listShelfSectionStyle: ListShelfSectionStyle {
         get { self [ListShelfSectionStyle.Key.self] }
         set { self [ListShelfSectionStyle.Key.self] = newValue }

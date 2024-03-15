@@ -19,8 +19,8 @@ public struct NavigationLinkArrow: View {
     public var body: some View {
         Image(systemName: "chevron.right")
             .font(font)
-            .opacity(0.3)
-            .padding(.leading, 2)
+            .opacity(opacity)
+            .padding(.leading, padding)
             .scaleEffect(scale)
     }
 }
@@ -29,27 +29,33 @@ private extension NavigationLinkArrow {
     
     var font: Font {
         #if os(iOS)
-        return Font.footnote.weight(.semibold)
+        Font.footnote.weight(.semibold)
         #elseif os(tvOS)
-        return Font.caption.weight(.bold)
+        Font.caption.weight(.bold)
         #else
-        return Font.footnote.weight(.semibold)
+        Font.footnote.weight(.semibold)
         #endif
     }
     
-    var scale: CGFloat {
+    var opacity: Double {
+        0.3
+    }
+    
+    var padding: Double {
+        2
+    }
+    
+    var scale: Double {
         #if os(iOS)
-        return 1.05
+        1.05
         #elseif os(tvOS)
-        return 0.95
+        0.95
         #else
-        return 1.00
+        1.00
         #endif
     }
 }
 
-
-@available(watchOS 7.0, *)
 #Preview {
     
     NavigationView {
@@ -62,5 +68,6 @@ private extension NavigationLinkArrow {
             }
             NavigationLinkArrow()
         }
-    }.foregroundColor(.red)
+    }
+    .foregroundColor(.red)
 }

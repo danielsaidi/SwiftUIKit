@@ -11,66 +11,55 @@ import SwiftUI
 import Combine
 
 /**
- This view wraps its pages in a horizontal `ScrollView` that
- applies overlays and gestures to mimic a `.page` `TabView`.
+ This view mimics a `.page` styled iOS `TabView`.
  
- You can set it up with a fixed set of `pages` or with a set
- of `items` to which you apply a dynamic page builder.
+ You can set up the view with a set of `pages` or `items` to
+ which you apply a dynamic page builder.
  */
 public struct PageView<PageViewType: View>: View {
     
-    /**
-     Create a page view with a set of pre-built pages.
-     
-     This initializer requires the pages to be the same kind
-     of view. To use different kind of views, use the `items`
-     and `pageBuilder`-based initializer.
-     
-     - Parameters:
-       - pages: The pages to present in the page view.
-       - currentPageIndex: The currently presented page index.
-       - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
-       - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
-     */
+    /// Create a page view with a set of page views.
+    ///
+    /// This requires the pages to be the same view type. To
+    /// use different views, use the `items` initializer.
+    ///
+    /// - Parameters:
+    ///   - pages: The pages to present in the page view.
+    ///   - currentPageIndex: The currently presented page index.
+    ///   - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
     public init(
         pages: [PageViewType],
         currentPageIndex: Binding<Int>,
-        pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic,
-        pageIndicatorStyle: PageIndicatorStyle = .standard
+        pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic
     ) {
         self.currentPageIndex = currentPageIndex
         self.pages = pages
         self.pageIndicatorDisplayMode = pageIndicatorDisplayMode
-        self.pageIndicatorStyle = pageIndicatorStyle
     }
     
-    /**
-     Create a page view that takes a collection of items and
-     applies a page builder to each item.
-     
-     - Parameters:
-       - items: The items to present in the page view.
-       - currentPageIndex: The currently presented page index.
-       - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
-       - pageIndicatorStyle: The style to apply to the page indicator, by default `.standard`.
-       - pageBuilder: A function that builds a page for each item in the items collection.
-     */
+    /// Create a page view with a set of items.
+    ///
+    /// The initializer will apply the provided page builder
+    /// to each item, to generate a dynamic view collection.
+    ///
+    /// - Parameters:
+    ///   - items: The items to present in the page view.
+    ///   - currentPageIndex: The currently presented page index.
+    ///   - pageIndicatorDisplayMode: The page index display mode to use, by default `.automatic`.
+    ///   - pageBuilder: A function that builds a page for each item in the items collection.
     public init<Model>(
         items: [Model],
         currentPageIndex: Binding<Int>,
         pageIndicatorDisplayMode: PageIndicatorDisplayMode = .automatic,
-        pageIndicatorStyle: PageIndicatorStyle = .standard,
         @ViewBuilder pageBuilder: (Model) -> PageViewType
     ) {
         self.currentPageIndex = currentPageIndex
         self.pages = items.map(pageBuilder)
         self.pageIndicatorDisplayMode = pageIndicatorDisplayMode
-        self.pageIndicatorStyle = pageIndicatorStyle
     }
     
     private var currentPageIndex: Binding<Int>
     private let pageIndicatorDisplayMode: PageIndicatorDisplayMode
-    private let pageIndicatorStyle: PageIndicatorStyle
     private let pages: [PageViewType]
     
     public var body: some View {
@@ -87,7 +76,6 @@ public struct PageView<PageViewType: View>: View {
                     .overlay(bugfixLayer(for: scroll))
                 }
                 pageIndicator
-                
             }
         }
     }
@@ -100,9 +88,9 @@ private extension PageView {
         if shouldShowPageIndicator {
             PageIndicator(
                 numberOfPages: pages.count,
-                currentPageIndex: currentPageIndex,
-                style: pageIndicatorStyle
-            ).padding()
+                currentPageIndex: currentPageIndex
+            )
+            .padding()
         } else {
             EmptyView()
         }
