@@ -21,11 +21,11 @@ public enum PageIndicatorDisplayMode {
     case never
 }
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 extension PageIndicatorDisplayMode {
     
     var tabViewMode: PageTabViewStyle.IndexDisplayMode {
-        #if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS) || os(visionOS)
         switch self {
         case .always: return .always
         case .automatic: return .automatic

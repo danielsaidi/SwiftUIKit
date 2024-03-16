@@ -32,9 +32,9 @@ public extension Image {
     
     /// Create an image from a certain ``ImageRepresentable``.
     init(image: ImageRepresentable) {
-        #if os(iOS) || os(watchOS) || os(tvOS)
+        #if canImport(UIKit)
         self.init(uiImage: image)
-        #elseif os(macOS)
+        #elseif canImport(AppKit)
         self.init(nsImage: image)
         #endif
     }

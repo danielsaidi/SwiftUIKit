@@ -43,13 +43,19 @@ public struct MultilineSubmitViewModifier: ViewModifier {
         content
             .focused($isFocused)
             .submitLabel(submitLabel)
-            .onChange(of: text) { newValue in
-                guard isFocused else { return }
-                guard newValue.contains("\n") else { return }
-                isFocused = false
-                text = newValue.replacingOccurrences(of: "\n", with: "")
-                onSubmit()
-            }
+            #if os(visionOS)
+            .onChange(of: text) { handle($1) }
+            #else
+            .onChange(of: text) { handle($0) }
+            #endif
+    }
+    
+    private func handle(_ newText: String) {
+        guard isFocused else { return }
+        guard newText.contains("\n") else { return }
+        isFocused = false
+        text = newText.replacingOccurrences(of: "\n", with: "")
+        onSubmit()
     }
 }
 
