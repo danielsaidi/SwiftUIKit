@@ -10,7 +10,7 @@
 import SwiftUI
 
 /**
- This enum defined various text editor styles.
+ This enum defines various `TextEditor` styles.
  */
 public enum TextEditorStyle {
 
@@ -29,6 +29,10 @@ public enum TextEditorStyle {
 
 public extension TextEditor {
 
+    /// Apply a ``TextEditorStyle`` to a text editor.
+    ///
+    /// Due to how the modifier works, it must be applied to
+    /// the `TextEditor` directly.
     @ViewBuilder
     func textEditorStyle(_ style: TextEditorStyle) -> some View {
         switch style {
@@ -42,10 +46,13 @@ public extension TextEditor {
                 .overlay(stroke(color, lineWidth: width))
         }
     }
+}
 
-    private var cornerRadius: Double { 5.0 }
+private extension TextEditor {
+    
+    var cornerRadius: Double { 5.0 }
 
-    private func stroke(
+    func stroke(
         _ color: Color,
         lineWidth: CGFloat = 0.5
     ) -> some View {
@@ -68,7 +75,7 @@ public extension TextEditor {
                 TextEditor(text: $text)
                     .textEditorStyle(.roundedBorder)
                 TextEditor(text: $text)
-                    .textEditorStyle(.roundedColorBorder(.red, 1))
+                    .textEditorStyle(.roundedColorBorder(.red, 5))
             }
             .padding(10)
             .background(Color.primary.colorInvert())

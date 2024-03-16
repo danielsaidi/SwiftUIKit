@@ -13,15 +13,36 @@ import Foundation
 
 public extension String {
     
-    /// This is a `replacingOccurrences(of:with:)` shorthand.
-    func replacing(_ string: String, with: String) -> String {
-        replacingOccurrences(of: string, with: with)
+    @available(*, deprecated, message: "Use the new options-based version instead.")
+    func replacing(
+        _ string: String,
+        with: String,
+        caseSensitive: Bool
+    ) -> String {
+        caseSensitive
+            ? replacingOccurrences(of: string, with: with)
+            : replacingOccurrences(of: string, with: with, options: .caseInsensitive)
     }
     
-    /// This is a `replacingOccurrences(of:with:)` shorthand.
-    func replacing(_ string: String, with: String, caseSensitive: Bool) -> String {
-        caseSensitive
-            ? replacing(string, with: with)
-            : replacingOccurrences(of: string, with: with, options: .caseInsensitive)
+    /// Replace a certain string with another one.
+    func replacing(
+        _ string: String,
+        with other: String,
+        _ options: NSString.CompareOptions? = nil
+    ) -> String {
+        if let options {
+            replacingOccurrences(of: string, with: other, options: options)
+        } else {
+            replacingOccurrences(of: string, with: other)
+        }
+    }
+    
+    /// Replace a certain string with another one.
+    mutating func replace(
+        _ string: String,
+        with other: String,
+        _ options: NSString.CompareOptions? = nil
+    ) {
+        self = self.replacing(string, with: other, options)
     }
 }

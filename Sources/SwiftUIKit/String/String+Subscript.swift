@@ -16,36 +16,52 @@ import Foundation
  */
 public extension StringProtocol {
     
-    func character(at index: Int) -> String.Element? {
+    func character(
+        at index: Int
+    ) -> String.Element? {
         guard count > index else { return nil }
         return self[index]
     }
     
-    func character(at index: UInt) -> String.Element? {
+    func character(
+        at index: UInt
+    ) -> String.Element? {
         character(at: Int(index))
     }
     
-    subscript(_ offset: Int) -> Element {
+    subscript(
+        _ offset: Int
+    ) -> Element {
         self[index(startIndex, offsetBy: offset)]
     }
     
-    subscript(_ range: Range<Int>) -> SubSequence {
+    subscript(
+        _ range: Range<Int>
+    ) -> SubSequence {
         prefix(range.lowerBound+range.count).suffix(range.count)
     }
     
-    subscript(_ range: ClosedRange<Int>) -> SubSequence {
+    subscript(
+        _ range: ClosedRange<Int>
+    ) -> SubSequence {
         prefix(range.lowerBound+range.count).suffix(range.count)
     }
     
-    subscript(_ range: PartialRangeThrough<Int>) -> SubSequence {
+    subscript(
+        _ range: PartialRangeThrough<Int>
+    ) -> SubSequence {
         prefix(range.upperBound.advanced(by: 1))
     }
     
-    subscript(_ range: PartialRangeUpTo<Int>) -> SubSequence {
+    subscript(
+        _ range: PartialRangeUpTo<Int>
+    ) -> SubSequence {
         prefix(range.upperBound)
     }
     
-    subscript(_ range: PartialRangeFrom<Int>) -> SubSequence {
+    subscript(
+        _ range: PartialRangeFrom<Int>
+    ) -> SubSequence {
         suffix(Swift.max(0, count-range.lowerBound))
     }
 }

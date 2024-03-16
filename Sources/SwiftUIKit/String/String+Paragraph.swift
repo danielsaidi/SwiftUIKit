@@ -10,13 +10,11 @@ import Foundation
 
 public extension String {
     
-    /**
-     Backs to find the index of the first new line paragraph
-     before the provided location, if any.
-     
-     A new paragraph is considered to start at the character
-     after the newline char, not the newline itself.
-     */
+    /// Looks back from a certain location to find the index
+    /// of the first new line paragraph before that location.
+    ///
+    /// A new paragraph is considered to start the character
+    /// after the newline char, not the newline itself.
     func findIndexOfCurrentParagraph(from location: UInt) -> UInt {
         if isEmpty { return 0 }
         let count = UInt(count)
@@ -30,13 +28,11 @@ public extension String {
         return max(index, 0)
     }
     
-    /**
-     Looks forward to find the next new line paragraph after
-     the provided location, if any.
-     
-     A new paragraph is considered to start at the character
-     after the newline char, not the newline itself.
-     */
+    /// Look ahead from a certain location to find the index
+    /// of the first new line paragraph after that location.
+    ///
+    /// A new paragraph is considered to start the character
+    /// after the newline char, not the newline itself. 
     func findIndexOfNextParagraph(from location: UInt) -> UInt {
         var index = location
         repeat {

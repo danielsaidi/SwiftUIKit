@@ -27,7 +27,9 @@ public extension ValidationRegex {
 public extension ValidationRegex {
     
     /// Check if the string is valid for this regex.
-    func validateString(_ string: String) -> Bool {
+    func validateString(
+        _ string: String
+    ) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES %@", expression)
         return predicate.evaluate(with: string)
     }

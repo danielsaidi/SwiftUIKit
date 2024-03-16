@@ -61,9 +61,6 @@ public extension LinearProgressBar.Style {
     static var tallPadding = Self(height: 16, barPadding: 3)
 }
 
-
-// MARK: - Shadows
-
 public extension ViewShadowStyle {
 
     /// This style can be used with ``LinearProgressBar``.

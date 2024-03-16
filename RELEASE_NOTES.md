@@ -13,21 +13,23 @@ This version refactors many views to take their styles & configs as environment 
 * `CircularProgressBar` now supports customizing animation.
 * `FilePicker` now supports providing a custom picker config.
 * `ImagePicker` now supports providing a custom picker config.
-* `ListButtonGroup` is a new view for creating button groups.
-* `ListButtonStyle` has a new `pressedOpacity` init parameter.
+* `LinkText` has new link style options, to define font weight.
+* `ListButtonGroup` is a new group view for groping many buttons.
+* `ListButtonStyle` has a new optional `pressedOpacity` init param.
 * `ListCard` now supports specifying a custom pressed scale animation.
+* `String+Replace` has a new options-based replace extension shorthand.
 
 ### 💡 Behavior changes
 
 * `Color.standardListBackground` has been renamed to `listBackground`.
 * `FormInlineActionButtonStyle` has been replaced by `ListButtonGroup`.
-* `FormText` has been renamed to `ListActionRow` and is now style-based.
-* `ListActionRow` now takes a `ListAction` instead of a trailing view.
+* `FormText` has been renamed to `ListActionRow`, and is now style-based.
+* `ListActionRow` now supports a `ListAction` instead of a trailing view.
 
 ### 🗑️ Deprecations
 
 * `FormRowTitle` has been deprecated.
-* `PresentationDetents` has been deprecated since SwiftUI has native support now.
+* `PresentationDetents` has been deprecated due to SwiftUI native support.
 
 
 

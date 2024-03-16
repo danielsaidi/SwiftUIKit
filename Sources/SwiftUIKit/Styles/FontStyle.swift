@@ -10,15 +10,23 @@
 import SwiftUI
 
 /**
- This struct represents a custom font with a `name`, `style`
- and `weight`.
- 
- You can apply this style with the `shadow(_ style:)` `View`
- extension or use its properties directly using the built-in
- `font(name:,style:,weight:)` extension.
+ This styles defines font properties, to allow strong typing.
  
  You can specify your own standard styles by creating static,
- calculated extension properties.
+ calculated extension properties, for instance:
+ 
+ ```swift
+ extension FontStyle {
+ 
+     static let theBestFont = Self(
+         name: "Comic Sans",
+         style: .largeTitle2,
+         weight: .bold
+     )
+ }
+ ```
+ 
+ You can apply the style with the `.font(_ style:)` modifier.
  */
 public struct FontStyle {
     
@@ -37,7 +45,7 @@ public struct FontStyle {
     public let weight: Font.Weight
     
     public var font: Font {
-        Font.custom(name, size: size).weight(weight)
+        .custom(name, size: size).weight(weight)
     }
     
     public var size: CGFloat {
@@ -52,7 +60,7 @@ public extension View {
         font(style.font)
     }
     
-    /// Apply a custom font with a name, style and weight.
+    @available(*, deprecated, message: "Use the style modifier instead.")
     func font(
         name: String,
         style: UIFont.TextStyle,

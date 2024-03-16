@@ -9,24 +9,24 @@
 import SwiftUI
 
 /**
- This struct represents a style with properties that matches
- the `SwiftUI`s `shadow` modifier.
- 
- You can use the style properties together with the standard
- modifier or use the `shadow(_ style:)` `View` extension.
+ This styles defines shadow values, to allow strong typing.
  
  You can specify your own standard styles by creating static,
  calculated extension properties, for instance:
  
  ```swift
- extension CornerRadiusStyle {
+ extension ShadowStyle {
  
-     static let badge = ShadowStyle(
+     static let badge = Self(
          color: Color.black.opacity(0.1),
          radius: 3,
          x: 0,
-         y: 2)
+         y: 2
+     )
  }
+ ```
+ 
+ You can apply the style with the `.font(_ style:)` modifier.
  ```
  */
 public struct ViewShadowStyle {
@@ -51,29 +51,20 @@ public struct ViewShadowStyle {
 
 public extension ViewShadowStyle {
     
-    /**
-     This style can be used when a style is required, but no
-     shadow should be applied.
-     */
+    /// This style applies no shadow.
     static let none = ViewShadowStyle(color: .clear)
     
-    /**
-     This style represents a badge that's attached to a view,
-     but in a separate layer and with a little blur
-     */
+    /// The shadow of a badge that is attached to its parent
+    /// view, but in a slightly separated layer.
     static var badge = ViewShadowStyle(radius: 1, y: 1)
     
-    /**
-     This style represents a shadow that is cast from a view
-     that is elevated above the parent view.
-     */
+    /// The shadow of a solid element that is elevated a bit
+    /// above its parent view.
     static var elevated = ViewShadowStyle(radius: 3, x: 0, y: 2)
     
-    /**
-     This style represents a badge that's attached to a view,
-     but unlike a badge, it doesn't have any blur.
-     */
-    static var sticker = ViewShadowStyle(radius: 1, y: 1)
+    /// The shadow of a thin sticker that is attached to its
+    /// parent view.
+    static var sticker = ViewShadowStyle(radius: 0, y: 1)
 }
 
 public extension View {
@@ -86,16 +77,17 @@ public extension View {
                 color: color,
                 radius: style.radius,
                 x: style.x,
-                y: style.y)
+                y: style.y
+            )
         } else {
             shadow(
                 radius: style.radius,
                 x: style.x,
-                y: style.y)
+                y: style.y
+            )
         }
     }
 }
-
 
 #Preview {
 
@@ -114,6 +106,7 @@ public extension View {
             VStack(spacing: 20) {
                 item.shadow(.none)
                 item.shadow(.badge)
+                item.shadow(.sticker)
 
                 #if os(iOS)
                 item.onTapGesture(perform: toggleElevated)

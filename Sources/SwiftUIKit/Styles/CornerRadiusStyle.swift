@@ -9,11 +9,7 @@
 import SwiftUI
 
 /**
- This struct represents a style with a property that matches
- the `SwiftUI`s `cornerRadius` modifier.
- 
- You can use the style's property with the standard modifier
- or use the `cornerRadius(_ style:)` `View` extension.
+ This styles defines a corner radius, to allow strong typing.
  
  You can specify your own standard styles by creating static,
  calculated extension properties, for instance:
@@ -21,9 +17,12 @@ import SwiftUI
  ```swift
  extension CornerRadiusStyle {
  
-     static let card = CornerRadiusStyle(radius: 5)
+     static let card = Self(radius: 5)
  }
  ```
+ 
+ You can apply this style using the `.cornerRadius(_ style:)`
+ view modifier.
  */
 public struct CornerRadiusStyle {
     

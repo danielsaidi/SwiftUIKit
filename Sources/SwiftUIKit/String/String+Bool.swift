@@ -10,11 +10,9 @@ import Foundation
 
 public extension String {
     
-    /**
-     Parse the potential bool value in the string.
-     
-     This function handles 1/0, yes/no, YES/NO etc., so it's
-     a good alternative to use e.g. when parsing plist files.
-     */
+    /// Parse a potential boolean value in the string.
+    ///
+    /// This handles 1/0, yes/no, YES/NO etc. so it's a good
+    /// alternative to use when parsing .plist files.
     var boolValue: Bool { (self as NSString).boolValue }
 }

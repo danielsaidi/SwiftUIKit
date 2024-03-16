@@ -10,18 +10,16 @@ import SwiftUI
 
 /**
  This view modifier can be applied to a multiline `TextField`
- to make it submit when the primary (return) key is pressed.
+ to make it submit when the primary key is pressed.
  */
 public struct MultilineSubmitViewModifier: ViewModifier {
     
-    /**
-     Create a multiline submit view modifier.
-     
-     - Parameters:
-       - text: The text binding used by the text field.
-       - submitLabel: The submit label to use.
-       - onSubmit: The function to call when return is pressed.
-     */
+    /// Create a multiline submit view modifier.
+    ///
+    /// - Parameters:
+    ///   - text: The text binding used by the text field.
+    ///   - submitLabel: The submit label to use.
+    ///   - onSubmit: The function to call when return is pressed.
     public init(
         text: Binding<String>,
         submitLabel: SubmitLabel,
@@ -57,40 +55,17 @@ public struct MultilineSubmitViewModifier: ViewModifier {
 
 public extension View {
     
-    /**
-     Apply this to a multiline text field to make it dismiss
-     the keyboard when return is pressed.
-     
-     - Parameters:
-       - text: The text binding used by the text field.
-       - submitLabel: The submit label to use, by default `.done`.
-     */
+    /// Make a multiline textfield dismiss the keyboard when
+    /// the primary button is pressed.
+    ///
+    /// - Parameters:
+    ///   - text: The text binding used by the text field.
+    ///   - submitLabel: The submit label to use, by default `.done`.
+    ///   - action: The function to call when return is pressed.
     func multilineSubmit(
         for text: Binding<String>,
-        submitLabel: SubmitLabel = .done
-    ) -> some View {
-        self.modifier(
-            MultilineSubmitViewModifier(
-                text: text,
-                submitLabel: submitLabel,
-                onSubmit: {}
-            )
-        )
-    }
-    
-    /**
-     Apply this to a multiline text field to make it dismiss
-     the keyboard when return is pressed.
-     
-     - Parameters:
-       - text: The text binding used by the text field.
-       - submitLabel: The submit label to use, by default `.done`.
-       - onSubmit: The function to call when return is pressed.
-     */
-    func onMultilineSubmit(
-        in text: Binding<String>,
         submitLabel: SubmitLabel = .done,
-        action: @escaping () -> Void
+        action: @escaping () -> Void = {}
     ) -> some View {
         self.modifier(
             MultilineSubmitViewModifier(

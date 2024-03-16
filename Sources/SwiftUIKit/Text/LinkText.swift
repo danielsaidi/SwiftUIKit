@@ -5,6 +5,8 @@
 //  Created by Daniel Saidi on 2022-07-31.
 //  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
 //
+//  Original: https://stackoverflow.com/questions/73133551
+//
 
 #if os(iOS) || os(macOS) || os(watchOS)
 import SwiftUI
@@ -17,53 +19,64 @@ import SwiftUI
 
  You can use `.font` and `.foregroundColor` as normal if you
  want to style the text and `.accentColor` to tint the links.
- You can use ``LinkText/Style`` to handle additional styling.
+ Apply a `.linkTextStyle` modifier for view-specific styling.
 
- You can also specify optional link accessibility properties
- that will be applied to links that don't specify them. Note
- that the accessibility identifier must be specified by each
- link, since it must be unique.
-
- Original implementation:
- https://stackoverflow.com/questions/73133551/swiftui-concatenate-multiline-tappable-text/73136937
+ You can specify optional link accessibility properties that
+ will be applied to links that don't specify them. Note that
+ the accessibility identifier must be specified by each link,
+ since it must be unique.
  */
 public struct LinkText: View {
 
-    /**
-     Create a link text.
-
-     If the link accessibility properties are provided, they
-     will be applied to links that lack explicit information.
-     The identifier will be suffixed with the link index.
-
-     - Parameters:
-       - components: The components to render.
-       - style: The style to apply to the view, by default ``Style/standard``.
-       - linkAccessibilityLabel: The accessibility label to add to each link, if any.
-       - linkAccessibilityHint: The accessibility hint to add to each link, if any.
-     */
+    /// Create a link text.
+    ///
+    /// Although the view can be styled with `.linkTextStyle`
+    /// most styling can be done with native modifiers, like
+    /// `foregroundColor`, `accentColor`, `lineSpacing`, etc.
+    ///
+    /// If an accessibility property is provided, it will be
+    /// applied to links that lack explicit information. The
+    /// identifier will be suffixed with the link index.
+    ///
+    /// - Parameters:
+    ///   - components: The components to render.
+    ///   - linkAccessibilityLabel: The accessibility label to add to each link, if any.
+    ///   - linkAccessibilityHint: The accessibility hint to add to each link, if any.
     public init(
         components: [Component],
-        style: Style = .standard,
         linkAccessibilityLabel: String? = nil,
         linkAccessibilityHint: String? = nil
     ) {
         self.components = components
-        self.style = style
-        self.linkAccessibilityLabel = linkAccessibilityLabel
-        self.linkAccessibilityHint = linkAccessibilityHint
+        self.accessibilityLabel = linkAccessibilityLabel
+        self.accessibilityHint = linkAccessibilityHint
+    }
+    
+    @available(*, deprecated, message: "Apply a style with linkTextStyle instead.")
+    public init(
+        components: [Component],
+        style: Style,
+        linkAccessibilityLabel: String? = nil,
+        linkAccessibilityHint: String? = nil
+    ) {
+        self.components = components
+        self.accessibilityLabel = linkAccessibilityLabel
+        self.accessibilityHint = linkAccessibilityHint
     }
 
     private let components: [Component]
-    private let style: Style
-    private let linkAccessibilityLabel: String?
-    private let linkAccessibilityHint: String?
+    private let accessibilityLabel: String?
+    private let accessibilityHint: String?
 
     @State
     private var height: CGFloat = 0
 
     @Environment(\.lineSpacing)
     private var lineSpacing
+    
+    @Environment(\.linkTextStyle)
+    private var style
+    
 
     public var body: some View {
         VStack {
@@ -82,9 +95,7 @@ public struct LinkText: View {
 
 public extension LinkText {
 
-    /**
-     This enum defines the available ``LinkText`` components.
-     */
+    /// This enum defines available ``LinkText`` components.
     enum Component {
 
         /// Plain text.
@@ -99,37 +110,7 @@ public extension LinkText {
             action: () -> Void)
     }
 
-    /**
-     This style can be applied to a ``LinkText``.
-
-     There are a couple of built-in styles, e.g. ``standard``
-     and ``plain``.
-     */
-    struct Style {
-
-        /**
-         Create a style.
-
-         - Parameters:
-         - underlineLinks: Whether or not to underline links, by default `true`.
-         */
-        public init(
-            underlineLinks: Bool = true
-        ) {
-            self.underlineLinks = underlineLinks
-        }
-
-        /// Whether or not to underline links.
-        public var underlineLinks: Bool
-
-
-        /// The standard link text style.
-        public static var standard = Style()
-
-        /// A plain style that doesn't underline links.
-        public static var plain = Style(
-            underlineLinks: false)
-    }
+    
 }
 
 
@@ -149,13 +130,13 @@ private extension LinkText.Component {
 
 private extension LinkText {
 
-    /**
-     This function uses `horizontal` and `vertical` counters
-     to track horizontal and vertical positions in the stack.
-     As a new text or link is added, horizontal is decreased.
-     When a new line is required, then vertical is decreased
-     and horizontal is reset to 0.
-     */
+    /// Generate stack views within a geometry reader, using
+    /// horizontal and vertical counters to track horizontal
+    /// and vertical positions in the stack.
+    ///
+    /// As a new content is added, `horizontal` is decreased.
+    /// When a new line is required, `vertical` is decreased
+    /// and horizontal is reset to 0.
     func stackViews(for geo: GeometryProxy) -> some View { // swiftlint:disable:this function_body_length
         var horizontal: CGFloat = 0
         var vertical: CGFloat = 0
@@ -170,19 +151,16 @@ private extension LinkText {
             case .text:
                 view = AnyView(componentView)
             case .link(_, let identifier, let label, let hint, let action):
-                let accessibilityIdentifier = identifier
-                let accessibilityLabel = label ?? linkAccessibilityLabel
-                let accessibilityHint = hint ?? linkAccessibilityHint
-
                 view = AnyView(
                     componentView
-                        .underlined(if: style.underlineLinks)
+                        .preferredFontWeight(style.fontWeight)
+                        .underlined(if: style.underline)
                         .onTapGesture(perform: action)
                         .foregroundColor(.accentColor)
-                        .prefersAccessibility(
-                            identifier: accessibilityIdentifier,
-                            label: accessibilityLabel,
-                            hint: accessibilityHint)
+                        .accessibilityIdentifier(identifier ?? "")
+                        .accessibilityLabel(label ?? accessibilityLabel ?? "")
+                        .accessibilityHint(hint ?? accessibilityHint ?? "")
+                        .accessibilityAddTraits(.isButton)
                 )
             }
 
@@ -228,10 +206,7 @@ private extension LinkText {
         return ForEach(components.indices, id: \.self, content: view)
     }
 
-    /**
-     This function determines the height of the view that is
-     containing our combined text and link views.
-     */
+    /// Calculate the height of a view with texts and links.
     func calculateHeight(_ binding: Binding<CGFloat>) -> some View {
         GeometryReader { geo -> Color in
             DispatchQueue.main.async {
@@ -242,10 +217,8 @@ private extension LinkText {
     }
 }
 
-/**
- This view is used by ``LinkText`` to render a text view for
- every ``LinkTextComponent`` that should be displayed.
- */
+/// This view is used by ``LinkText`` and renders a view for
+/// every ``LinkTextComponent`` that should be displayed.
 private struct LinkTextComponentView: View {
 
     init(
@@ -283,23 +256,7 @@ private struct LinkTextComponentView: View {
 }
 
 private extension View {
-
-    @ViewBuilder
-    func prefersAccessibility(
-        identifier: String?,
-        label: String?,
-        hint: String?
-    ) -> some View {
-        if #available(iOS 14.0, watchOS 7, *) {
-            self.accessibilityIdentifier(identifier ?? "")
-                .accessibilityLabel(label ?? "")
-                .accessibilityHint(hint ?? "")
-                .accessibilityAddTraits(.isButton)
-        } else {
-            self
-        }
-    }
-
+    
     @ViewBuilder
     func underlined(if condition: Bool) -> some View {
         if condition {
@@ -308,13 +265,20 @@ private extension View {
             self
         }
     }
+    
+    @ViewBuilder
+    func preferredFontWeight(
+        _ weight: Font.Weight
+    ) -> some View {
+        if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 8.0, *) {
+            self.fontWeight(weight)
+        } else {
+            self
+        }
+    }
 }
 
-// MARK: - Underline
-
-/**
- This view is used to mimic an underline.
- */
+/// This view is used to mimic an underline.
 private struct Underline: View {
 
     var body: some View {
@@ -325,26 +289,21 @@ private struct Underline: View {
     }
 }
 
-// MARK: - Preview
-
 #Preview {
 
     struct PreviewText: View {
-        
-        var style: LinkText.Style = .standard
         
         var body: some View {
             LinkText(
                 components: [
                     .text("You must accept our "),
-                    .link("terms and conditions", action: { print("action 1") }),
-                    .text(" Also, we have some more "),
-                    .link("terms and conditions", action: { print("action 2") }),
-                    .text(" that you need to accept, then some more "),
-                    .link("terms and conditions", action: { print("action 3") }),
+                    .link("terms & conditions", action: { print("action 1") }),
+                    .text(". Also, we have some more "),
+                    .link("terms & conditions", action: { print("action 2") }),
+                    .text(" that you need to accept, then some "),
+                    .link("terms & conditions", action: { print("action 3") }),
                     .text(".")
-                ],
-                style: style
+                ]
             )
         }
     }
@@ -356,9 +315,11 @@ private struct Underline: View {
             .accentColor(.green)
         PreviewText()
             .font(.headline.italic())
-        PreviewText(style: .plain)
+            .linkTextStyle(.init(fontWeight: .black))
+        PreviewText()
             .accentColor(.orange)
             .lineSpacing(10)
+            .linkTextStyle(.plain)
     }
 }
 #endif

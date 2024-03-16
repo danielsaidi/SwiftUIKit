@@ -17,12 +17,18 @@ import SwiftUI
  */
 public struct TextFieldClearButton: ViewModifier {
 
-    public init(text: Binding<String>) {
+    public init(
+        text: Binding<String>,
+        animation: Animation? = nil
+    ) {
         self._text = text
+        self.animation = animation ?? .smooth
     }
 
     @Binding
     private var text: String
+    
+    private var animation: Animation
 
     public func body(content: Content) -> some View {
         HStack {
@@ -31,6 +37,7 @@ public struct TextFieldClearButton: ViewModifier {
             Image(systemName: "multiply.circle.fill")
                 .foregroundColor(.secondary)
                 .opacity(text == "" ? 0 : 1)
+                .animation(animation, value: text)
                 .onTapGesture { self.text = "" }
         }
     }
@@ -38,12 +45,18 @@ public struct TextFieldClearButton: ViewModifier {
 
 public extension TextField {
 
-    /**
-     Append a trailing ``TextFieldClearButton`` to this text
-     field, that can be used to clear the text field content.
-     */
-    func withClearButton(for text: Binding<String>) -> some View {
-        self.modifier(TextFieldClearButton(text: text))
+    /// Add a trailing ``TextFieldClearButton`` to this text
+    /// field, that can be used to clear the text binding.
+    func withClearButton(
+        for text: Binding<String>,
+        _ animation: Animation? = nil
+    ) -> some View {
+        self.modifier(
+            TextFieldClearButton(
+                text: text,
+                animation: animation
+            )
+        )
     }
 }
 
@@ -55,8 +68,16 @@ public extension TextField {
         private var text = ""
 
         var body: some View {
-            TextField("Test", text: $text)
-                .withClearButton(for: $text)
+            VStack {
+                TextField("Test", text: $text)
+                    .withClearButton(for: $text)
+                TextField("Test", text: $text)
+                    .withClearButton(
+                        for: $text,
+                        .bouncy(duration: 1, extraBounce: 0.1)
+                    )
+            }
+            .textFieldStyle(.roundedBorder)
         }
     }
 

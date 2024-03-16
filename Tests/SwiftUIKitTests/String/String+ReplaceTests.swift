@@ -13,19 +13,10 @@ final class String_ReplaceTests: XCTestCase {
     
     let string = "Hello, world!"
     
-    func testReplacingDoesNothingIfNoMatchIsFound() {
-        XCTAssertEqual(string.replacing("World", with: "you"), string)
-        XCTAssertEqual(string.replacing("World", with: "you", caseSensitive: true), string)
-        XCTAssertEqual(string.replacing("Earth", with: "you", caseSensitive: false), string)
-    }
-    
-    func testCanPerformCaseSensitiveReplace() {
+    func testReplacingCanPerformOptionsBasedReplacements() {
+        XCTAssertEqual(string.replacing("World", with: "you"), "Hello, world!")
         XCTAssertEqual(string.replacing("world", with: "you"), "Hello, you!")
-        XCTAssertEqual(string.replacing("world", with: "you", caseSensitive: true), "Hello, you!")
-    }
-    
-    func testCanPerformCaseInsensitiveReplace() {
-        XCTAssertEqual(string.replacing("World", with: "you", caseSensitive: false), "Hello, you!")
-        XCTAssertEqual(string.replacing("world", with: "you", caseSensitive: false), "Hello, you!")
+        XCTAssertEqual(string.replacing("World", with: "you", .caseInsensitive), "Hello, you!")
+        XCTAssertEqual(string.replacing("Earth", with: "you"), "Hello, world!")
     }
 }
