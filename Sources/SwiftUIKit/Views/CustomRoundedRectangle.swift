@@ -11,8 +11,10 @@
 import SwiftUI
 
 /**
- This shape is a rounded rectangle where every corner can be
- given a custom corner radius.
+ This shape can apply individual corner radii to each corner.
+ 
+ > Note: iOS 16 has an `UnevenRoundedRectangle` that in time
+ will cause this view to become deprecated.
  */
 public struct CustomRoundedRectangle: Shape {
     
@@ -61,12 +63,25 @@ public struct CustomRoundedRectangle: Shape {
 
 #Preview {
     
-    CustomRoundedRectangle(
-        topLeft: 10,
-        topRight: 20,
-        bottomLeft: 30,
-        bottomRight: 40
-    )
-    .foregroundColor(.red)
+    VStack {
+        if #available(iOS 16.0, *) {
+            UnevenRoundedRectangle(
+                cornerRadii: .init(
+                    topLeading: 10,
+                    bottomLeading: 20,
+                    bottomTrailing: 30,
+                    topTrailing: 40
+                )
+            )
+        }
+     
+        CustomRoundedRectangle(
+            topLeft: 10,
+            topRight: 20,
+            bottomLeft: 30,
+            bottomRight: 40
+        )
+        .foregroundColor(.red)
+    }
     .padding()
 }

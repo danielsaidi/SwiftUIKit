@@ -10,21 +10,17 @@ import SwiftUI
 
 /**
  This view can be used to present asynchronous data that can
- be either in a loading, fetched or failed state.
+ be in a loading, fetched or failed state.
  
- By Providing three views to the view, the view will present
- the correct one depending on the state of the data:
+ By providing three views, the view will present the correct
+ one depending on the state of the data:
  
- * `content` is shown when the optional `data` has a value.
- * `loadingView` is shown when `data` is nil and `isLoading` is true.
- * `noDataView` is shown when `data` is nil and `isLoading` is false.
+ * `content` is shown when `data` has a value.
+ * `loadingView` is shown when `data` is nil and loading.
+ * `noDataView` is shown when `data` is nil and not loading.
  
- My intention was for `loadingView` to be optional, but this
- proved problematic. First, the standard `ProgressView` that
- I meant to return is only available on `iOS 14`, `tvOS 14`,
- so I had to use an obscured fallback for older platforms. I
- also had problems making the init param optional, since the
- `LoadingView` is part of the generic and can not be omitted.
+ This lets you manage all three states of data fetching with
+ a single view.
  */
 public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataView: View>: View {
     
@@ -76,7 +72,8 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
                 FetchedDataView(data: "Fetched data", isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
                 FetchedDataView(data: nilData, isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
                 FetchedDataView(data: nilData, isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
-            }.previewLayout(.sizeThatFits)
+            }
+            .previewLayout(.sizeThatFits)
         }
     }
     
