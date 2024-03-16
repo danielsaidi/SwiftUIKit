@@ -13,6 +13,7 @@ public extension CircularProgressBar {
     }
 }
 
+#if os(iOS) || os(macOS) || os(tvOS) || os(visionOS)
 public extension LinearProgressBar {
     
     @available(*, deprecated, message: "Custom styles must now be applied with .circularProgressBarStyle.")
@@ -24,7 +25,7 @@ public extension LinearProgressBar {
         self.init(progress: progress)
     }
 }
-
+#endif
 
 @available(*, deprecated, message: "This is deprecated, use the new SwiftUI animations instead")
 public extension Animation {

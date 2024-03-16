@@ -90,9 +90,11 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
                             Label("Item \(index)", systemImage: "\(index).circle")
                         }
                     }
+                    #if os(iOS) || os(macOS) || os(visionOS)
                     .onTapGesture {
                         selection = index
                     }
+                    #endif
                 }
             }
         }

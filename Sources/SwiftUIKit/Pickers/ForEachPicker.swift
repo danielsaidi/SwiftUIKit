@@ -19,7 +19,7 @@ import SwiftUI
  If `dismissAfterPick` is `true` the picker dismisses itself
  automatically when an item is picked.
  */
-public struct ForEachPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
+public struct ForEachPicker<Item: Identifiable, ItemView: View>: View {
     
     /// Create a for-each picker.
     ///

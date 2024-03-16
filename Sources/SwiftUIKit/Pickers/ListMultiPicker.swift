@@ -16,7 +16,7 @@ import SwiftUI
  to get more control over the list item views. The view uses
  the provided `listItem` to build an item view for each item.
  */
-public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View, DismissableView {
+public struct ListMultiPicker<Item: Identifiable, ItemView: View>: View {
     
     /// Create a list picker.
     ///

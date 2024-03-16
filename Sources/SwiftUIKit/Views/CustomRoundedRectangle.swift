@@ -64,17 +64,6 @@ public struct CustomRoundedRectangle: Shape {
 #Preview {
     
     VStack {
-        if #available(iOS 16.0, *) {
-            UnevenRoundedRectangle(
-                cornerRadii: .init(
-                    topLeading: 10,
-                    bottomLeading: 20,
-                    bottomTrailing: 30,
-                    topTrailing: 40
-                )
-            )
-        }
-     
         CustomRoundedRectangle(
             topLeft: 10,
             topRight: 20,

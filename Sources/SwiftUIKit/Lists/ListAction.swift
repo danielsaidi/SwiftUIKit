@@ -19,10 +19,8 @@ public enum ListAction {
     /// Call a certain phone number.
     case call(phoneNumber: String)
     
-    #if os(macOS) || os(iOS)
     /// Copy a certain value.
     case copy(String)
-    #endif
     
     /// Email a certain address.
     case email(address: String)
