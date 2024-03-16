@@ -80,11 +80,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 - ``FontRepresentable``
 
-### Form
-
-- ``FormRowTitle``
-- ``FormText``
-
 ### Gestures
 
 - ``GestureButton``
@@ -114,7 +109,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 - ``ListAction``
 - ``ListActionRow``
-- ``ListBadgeIcon``
 - ``ListButtonGroup``
 - ``ListButtonGroupStyle``
 - ``ListButtonStyle``
@@ -158,7 +152,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 - ``ForEachPicker``
 - ``ForEachMultiPicker``
 - ``ImagePicker``
-- ``ImagePickerError``
 - ``ListPicker``
 - ``ListMultiPicker``
 - ``ListPickerItem``
@@ -177,8 +170,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 - ``AlertContextFocusedValueKey``
 - ``FullScreenCoverContext``
 - ``FullScreenCoverContextFocusedValueKey``
-- ``PresentationDetentReference``
-- ``PresentationDetentsViewModifier``
 - ``SheetContext``
 - ``SheetContextFocusedValueKey``
 
@@ -216,7 +207,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 ### Views
 
 - ``CustomRoundedRectangle``
-- ``DismissableView``
 - ``EditableView``
 - ``FetchedDataView``
 - ``TextReplacement``
