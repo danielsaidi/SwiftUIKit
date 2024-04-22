@@ -13,17 +13,12 @@ import SwiftUI
  This button supports triggering different gestures in a way
  that works within a `ScrollView`.
  
- This button can't be used in a `ScrollView` since it blocks
- the scroll view gesture. To implement multi-gesture support
- in a `ScrollView`, use a ``ScrollViewGestureButton``.
-
- This button can be used in a `ScrollView` and doesn't block
- the scroll view gesture despite applying many gestures. The
- complicated code is the result of much trial and error, and
- has been tested to not affect the scrolling or any gestures.
+ This button does npt block scroll view gesture. The code is
+ the result of much trial & error and has been tested to not
+ affect scrolling.
 
  If you don't need to use a scroll view, you should consider
- using a ``GestureButton`` instead.
+ using a ``GestureButton`` instead.-
 
  Note that the view uses an underlying `ButtonStyle` to make
  gestures work. It can thus not apply another style, but you

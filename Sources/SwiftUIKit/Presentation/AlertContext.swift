@@ -35,10 +35,10 @@ import SwiftUI
  
  In the code above, we create a custom, static `Alert` value
  to easily let us share and reuse alerts in an app or domain.
- You can also use enums to define multiple alerts.
  
- You can also setup a global context in the application root,
- and pass it as an environment object, to get a single value.
+ This view modifier will also inject the provided context as
+ an environment object into the view hierarchy, to let other
+ views in the same view hierarchy reuse the same context.
  */
 public class AlertContext: PresentationContext<Alert> {
     
@@ -52,10 +52,13 @@ public class AlertContext: PresentationContext<Alert> {
 public extension View {
     
     /// Bind an ``AlertContext`` to the view.
+    ///
+    /// This also injects this context as environment object.
     func alert(_ context: AlertContext) -> some View {
         alert(
             isPresented: context.isActiveBinding,
             content: context.content ?? { Alert(title: Text("")) }
         )
+        .environmentObject(context)
     }
 }

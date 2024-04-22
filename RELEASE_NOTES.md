@@ -4,6 +4,17 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 4.2.1
+
+### 💡 Behavior changes
+
+* `View.alert` now injects the context as environment object.
+* `View.label` now takes a localized string key instead of a key.
+* `View.sheet` now injects the context as environment object.
+* `View.fullScreenCover` now injects the context as environment object. 
+
+
+
 ## 4.2
 
 This version refactors many views to take their styles & configs as environment values, instead of injecting them in the initializer.

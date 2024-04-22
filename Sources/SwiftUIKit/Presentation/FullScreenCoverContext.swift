@@ -28,8 +28,9 @@ import SwiftUI
  }
  ```
  
- You can also setup a global context in the application root,
- and pass it as an environment object, to get a single value.
+ This view modifier will also inject the provided context as
+ an environment object into the view hierarchy, to let other
+ views in the same view hierarchy reuse the same context.
  */
 public class FullScreenCoverContext: PresentationContext<AnyView> {
     
@@ -46,11 +47,16 @@ import SwiftUI
 public extension View {
     
     /// Bind an ``FullScreenCoverContext`` to the view.
-    func fullScreenCover(_ context: FullScreenCoverContext) -> some View {
+    ///
+    /// This also injects this context as environment object.
+    func fullScreenCover(
+        _ context: FullScreenCoverContext
+    ) -> some View {
         fullScreenCover(
             isPresented: context.isActiveBinding,
             content: context.content ?? EmptyView().any
         )
+        .environmentObject(context)
     }
 }
 #endif

@@ -11,7 +11,7 @@ import SwiftUI
 
 /**
  This button supports triggering different gestures in a way
- that maximized performance.
+ that maximizes performance.
 
  This button can't be used in a `ScrollView` since it blocks
  the scroll view gesture. To implement multi-gesture support

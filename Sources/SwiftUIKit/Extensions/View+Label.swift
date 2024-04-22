@@ -14,9 +14,27 @@ public extension View {
     ///
     /// - Parameters:
     ///   - text: The label text.
-    func label(_ text: String) -> some View {
+    func label(
+        _ text: LocalizedStringKey,
+        bundle: Bundle? = nil
+    ) -> some View {
         Label {
             Text(text)
+        } icon: {
+            self
+        }
+    }
+    
+    /// Convert the view to a localized label.
+    ///
+    /// - Parameters:
+    ///   - text: The label text.
+    func localizedLabel(
+        _ text: LocalizedStringKey,
+        bundle: Bundle? = nil
+    ) -> some View {
+        Label {
+            Text(text, bundle: bundle)
         } icon: {
             self
         }

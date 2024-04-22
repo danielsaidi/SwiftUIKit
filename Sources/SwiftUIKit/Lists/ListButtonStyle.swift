@@ -8,13 +8,11 @@
 
 import SwiftUI
 
-/**
- This style makes buttons take up the entire row and applies
- a content shape that makes the entire view tappable.
-
- You can apply the style with `.buttonStyle(.list)`, and can
- apply it to an entire list, just as with other styles.
- */
+/// This style makes the button take up the entire row, then
+/// applies a shape that makes the entire view tappable.
+///
+/// You can apply this style with `.buttonStyle(.list)`, and
+/// can apply it to an entire list, like any other style.
 public struct ListButtonStyle: ButtonStyle {
     
     /// Create a custom style.
@@ -61,9 +59,11 @@ public extension ButtonStyle where Self == ListButtonStyle {
 
         var body: some View {
             List {
-                ForEach(0...100, id: \.self) {
-                    button("Button \($0)")
-                        .buttonStyle($0 == 0 ? .list : .list(pressedOpacity: 0.1))
+                ForEach(0...100, id: \.self) { index in
+                    Button("Button \(index)") {
+                        overlayText = "\(index) tapped!"
+                    }
+                    .buttonStyle(index == 0 ? .list : .list(pressedOpacity: 0.1))
                 }
             }
             .overlay(overlay)
@@ -77,12 +77,6 @@ public extension ButtonStyle where Self == ListButtonStyle {
                 .cornerRadius(10)
                 .opacity(overlayText.isEmpty ? 0 : 1)
                 .onTapGesture { overlayText = "" }
-        }
-
-        func button(_ name: String) -> some View {
-            Button(name) {
-                overlayText = "\(name) tapped!"
-            }
         }
     }
 
