@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 4.2.2
+
+### 🐛 Bug fixes
+
+* `View+Label` now correctly applies the provided bundle. 
+
+
+
 ## 4.2.1
 
 ### 💡 Behavior changes
