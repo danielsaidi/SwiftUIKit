@@ -11,7 +11,7 @@ import SwiftUI
 public extension Label where Icon == Image, Title == Text {
     
     /// Create a label with a string and a plain image icon.
-    init(_ text: String, image: Image) {
+    init(_ text: LocalizedStringKey, image: Image) {
         self.init {
             Text(text)
         } icon: {

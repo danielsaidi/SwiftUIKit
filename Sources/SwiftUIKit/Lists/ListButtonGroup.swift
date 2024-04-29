@@ -96,7 +96,7 @@ private extension ButtonStyle where Self == ListButtonGroupStyle {
 private extension String {
     
     func previewButton(_ icon: Image) -> some View {
-        Button {} label: { Label(self, image: icon) }
+        Button {} label: { Label(LocalizedStringKey(self), image: icon) }
     }
 }
 

@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 4.2.3
+
+### 💡 Behavior changes
+
+* `Label` now used `LocalizedStringKey` for its title. 
+
+
+
 ## 4.2.2
 
 ### 🐛 Bug fixes
