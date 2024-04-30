@@ -11,14 +11,19 @@ import SwiftUI
 /// This view can be used as a trailing list row subtitle.
 public struct ListSubtitle: View {
 
-    public init(_ text: String) {
+    public init(
+        _ text: LocalizedStringKey,
+        bundle: Bundle? = nil
+    ) {
         self.text = text
+        self.bundle = bundle
     }
     
-    private let text: String
+    private let text: LocalizedStringKey
+    private let bundle: Bundle?
     
     public var body: some View {
-        Text(text)
+        Text(text, bundle: bundle)
             .font(.footnote)
             .foregroundColor(.secondary)
             .lineLimit(1)
@@ -30,12 +35,12 @@ public struct ListSubtitle: View {
     List {
         HStack {
             Label {
-                Text("Title")
+                Text("Preview.Label", bundle: .module)
             } icon: {
                 Color.red
             }
             Spacer()
-            ListSubtitle("Subtitle")
+            ListSubtitle("Preview.Subtitle", bundle: .module)
         }
     }
 }

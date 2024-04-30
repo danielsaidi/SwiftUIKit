@@ -103,7 +103,7 @@ private extension CircularProgressBar {
                 .shadow(.sticker)
                 .circularProgressBarStyle(.noText)
                 
-                Button("Progress!") {
+                Button("Preview.Progress") {
                     progress += 0.1
                 }
             }

@@ -4,6 +4,19 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 4.3
+
+This version adds localization support, and makes more types use `LocalizedStringKey` instead of `String`.
+
+This version also adds standard button types, which makes it easier to create standard button types.
+
+### ✨ New features
+
+* `Button+Init` adds a new button initializer.
+* `Button+Standard` adds new standard button types.
+
+
+
 ## 4.2.3
 
 ### 💡 Behavior changes

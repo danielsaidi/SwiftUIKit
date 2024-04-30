@@ -18,18 +18,22 @@ import SwiftUI
 public struct ListSectionTitle: View {
 
     public init(
-        _ text: String,
+        _ text: LocalizedStringKey,
+        bundle: Bundle? = nil,
         withInsets: Bool = false
     ) {
         self.text = text
+        self.bundle = bundle
         self.applyInsets = withInsets
     }
 
-    private let text: String
+    private let text: LocalizedStringKey
+    private let bundle: Bundle?
     private let applyInsets: Bool
     
     public var body: some View {
-        Text(text.uppercased())
+        Text(text, bundle: bundle)
+            .textCase(.uppercase)
             .foregroundColor(.secondary)
             .font(.footnote)
             .withGroupedListSectionHeaderInsets(if: applyInsets)
@@ -54,8 +58,8 @@ private extension View {
 #Preview {
 
     List {
-        Section(header: Text("Foo bar")) {
-            ListSectionTitle("Foo bar")
+        Section(header: Text("Preview.SectionTitle", bundle: .module)) {
+            ListSectionTitle("Preview.SectionTitle", bundle: .module)
         }
     }
 }

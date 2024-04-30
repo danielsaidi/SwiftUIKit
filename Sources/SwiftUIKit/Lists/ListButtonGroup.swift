@@ -53,7 +53,7 @@ public struct ListButtonGroup<Content: View>: View {
                 
                 ListButtonGroup {
                     HStack {
-                        "Report Bug".previewButton(.bug)
+                        "Bug".previewButton(.bug)
                         "Camera".previewButton(.camera).disabled(true)
                         "Photos".previewButton(.camera).opacity(0.5)
                         "Feedback".previewButton(.feedback)
@@ -61,10 +61,10 @@ public struct ListButtonGroup<Content: View>: View {
                 }
                 
                 Section {
-                    Text("Row")
-                    Text("Row")
-                    Text("Row")
-                    Text("Row")
+                    Text("Preview.Row")
+                    Text("Preview.Row")
+                    Text("Preview.Row")
+                    Text("Preview.Row")
                 }
             }
         }

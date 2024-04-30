@@ -60,11 +60,17 @@ private extension NavigationLinkArrow {
     
     NavigationView {
         List {
-            NavigationLink("Test") {
+            NavigationLink {
+                Text("Preview.Text", bundle: .module)
+            } label: {
+                Text("Preview.Link", bundle: .module)
+            }
+
+            NavigationLink("Preview.Link") {
                 Color.red
             }
             NavigationButton {} content: {
-                Text("HEJ")
+                Text("Preview.Text", bundle: .module)
             }
             NavigationLinkArrow()
         }

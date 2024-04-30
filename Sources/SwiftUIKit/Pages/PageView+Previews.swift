@@ -27,7 +27,7 @@ private struct PreviewPage: View {
     
     var body: some View {
         type.color.opacity(0.5)
-            .overlay(Text("A \(type.rawValue) page")
+            .overlay(Text("Preview.Page.\(type.rawValue)", bundle: .module)
                 .foregroundColor(.white)
             )
     }

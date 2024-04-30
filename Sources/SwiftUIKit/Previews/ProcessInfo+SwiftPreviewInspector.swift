@@ -26,8 +26,8 @@ public extension ProcessInfo {
 #Preview {
 
     VStack {
-        Text("Is SwiftUI preview?")
+        Text("Preview.IsSwiftUIPreview", bundle: .module)
             .font(.title)
-        Text("\(ProcessInfo.processInfo.isSwiftUIPreview ? "Yes" : "No")")
+        Text("\(ProcessInfo.processInfo.isSwiftUIPreview ? "Preview.Yes" : "Preview.No")", bundle: .module)
     }
 }

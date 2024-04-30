@@ -23,49 +23,32 @@ public struct ListActionRow: View {
     ///   - title: The row title.
     ///   - text: The row text.
     ///   - action: The ``ListAction`` to use.
-    ///   - hideIfEmpty: Whether or not to hide the view if the text is empty, by default `false`.
     ///   - trailingView: An optional trailing view to apply to the view.
     public init(
-        title: String,
-        text: String,
-        action: ListAction?,
-        hideIfEmpty: Bool = false
+        title: LocalizedStringKey,
+        text: LocalizedStringKey,
+        bundle: Bundle? = nil,
+        action: ListAction?
     ) {
         self.title = title
         self.text = text
+        self.bundle = bundle
         self.action = action
-        self.hideIfEmpty = hideIfEmpty
     }
     
-    private let text: String
-    private let title: String
-    private let hideIfEmpty: Bool
+    private let title: LocalizedStringKey
+    private let text: LocalizedStringKey
+    private let bundle: Bundle?
     private let action: ListAction?
     
     public var body: some View {
-        if hasEmptyText && hideIfEmpty {
-            EmptyView()
-        } else {
-            stack
-        }
-    }
-}
-
-private extension ListActionRow {
-
-    var hasEmptyText: Bool {
-        text.trimmingCharacters(in: .whitespaces)
-            .isEmpty
-    }
-    
-    var stack: some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 5) {
-                Text(title)
+                Text(title, bundle: bundle)
                     .lineLimit(1)
                     .font(.footnote)
                     .foregroundColor(.secondary)
-                Text(text)
+                Text(text, bundle: bundle)
             }
             
             if let action {
@@ -73,7 +56,6 @@ private extension ListActionRow {
                 action.button
             }
         }
-        .padding(.vertical, 3)
     }
 }
 
@@ -81,36 +63,32 @@ private extension ListActionRow {
     
     List {
         ListActionRow(
-            title: "Title 1",
-            text: "Text 1",
+            title: "Preview.Title.\(1)",
+            text: "Preview.Text.\(1)",
+            bundle: .module,
             action: .call(phoneNumber: "1234")
         )
         
         ListActionRow(
-            title: "Title 2",
-            text: "Text 2",
+            title: "Preview.Title.\(2)",
+            text: "Preview.Text.\(2)",
+            bundle: .module,
             action: .copy("")
         )
         .buttonStyle(.borderedProminent)
         
         ListActionRow(
-            title: "Title 3",
-            text: "Long\nmultuline\ntext that could have been entered in a text editor.",
+            title: "Preview.Title.\(3)",
+            text: "Preview.Text.Long",
+            bundle: .module,
             action: .email(address: "")
         )
         
         ListActionRow(
-            title: "Title 4",
-            text: "",
-            action: nil,
-            hideIfEmpty: true
-        )
-        
-        ListActionRow(
-            title: "Title 5",
-            text: "",
-            action: nil,
-            hideIfEmpty: false
+            title: "Preview.Title.\(4)",
+            text: "Preview.Text.\(4)",
+            bundle: .module,
+            action: nil
         )
     }
 }

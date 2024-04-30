@@ -24,22 +24,25 @@ public struct DotLoadingAnimationText: View {
     ///   - dotCount: The max number of dots, by default `3`.
     ///   - interval: The timer tick interval in seconds, by default `0.8`.
     public init(
-        text: String,
+        text: LocalizedStringKey,
+        bundle: Bundle? = nil,
         dotCount: Int = 3,
         interval: Double = 0.8
     ) {
         self.text = text
+        self.bundle = bundle
         self.dotCount = dotCount
         self.interval = interval
     }
 
-    private let text: String
+    private let text: LocalizedStringKey
+    private let bundle: Bundle?
     private let dotCount: Int
     private let interval: Double
 
     public var body: some View {
         HStack(spacing: 0) {
-            Text(text)
+            Text(text, bundle: bundle)
             Text(staticDotString)
         }
         .opacity(0)
@@ -72,5 +75,8 @@ private extension DotLoadingAnimationText {
 
 #Preview {
 
-    DotLoadingAnimationText(text: "Testing")
+    DotLoadingAnimationText(
+        text: "Preview.LoadingNoDots",
+        bundle: .module
+    )
 }

@@ -61,35 +61,41 @@ public struct ListShelfSection<Title: View, Content: View>: View {
     
     struct PreviewSection: View {
         
+        func button(_ index: Int) -> some View {
+            Button(action: {}) {
+                Text("Preview.Button.\(index)", bundle: .module)
+            }
+        }
+        
         var body: some View {
             ListShelfSection {
-                ListSectionTitle("Section")
+                ListSectionTitle("Preview.SectionTitle", bundle: .module)
             } content: {
                 Group {
                     Button {} label: {
                         ListCard {
                             Color.red
                         } contextMenu: {
-                            Button("1") {}
-                            Button("2") {}
-                            Button("3") {}
+                            button(1)
+                            button(2)
+                            button(3)
                         }
                     }
                     
                     ListCard {
                         Color.green
                     } contextMenu: {
-                        Button("1") {}
-                        Button("2") {}
-                        Button("3") {}
+                        button(1)
+                        button(2)
+                        button(3)
                     }
                     
                     ListCard {
                         Color.blue
                     } contextMenu: {
-                        Button("1") {}
-                        Button("2") {}
-                        Button("3") {}
+                        button(1)
+                        button(2)
+                        button(3)
                     }
                 }
                 .buttonStyle(.listCard)

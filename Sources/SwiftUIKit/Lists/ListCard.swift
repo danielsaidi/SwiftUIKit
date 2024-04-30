@@ -97,9 +97,7 @@ public extension ViewShadowStyle {
                 ListCard {
                     Color.red.frame(width: 200, height: 200)
                 } contextMenu: {
-                    Button {} label: {
-                        Text("Press me")
-                    }
+                    Button("Preview.Button") {}
                 }
             }
         }

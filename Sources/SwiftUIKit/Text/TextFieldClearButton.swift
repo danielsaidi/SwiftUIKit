@@ -66,12 +66,16 @@ public extension TextField {
 
         @State
         private var text = ""
+        
+        var placeholder: String {
+            .init(localized: "Preview.Placeholder", bundle: .module)
+        }
 
         var body: some View {
             VStack {
-                TextField("Test", text: $text)
+                TextField(placeholder, text: $text)
                     .withClearButton(for: $text)
-                TextField("Test", text: $text)
+                TextField(placeholder, text: $text)
                     .withClearButton(
                         for: $text,
                         .bouncy(duration: 1, extraBounce: 0.1)

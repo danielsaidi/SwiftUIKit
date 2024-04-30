@@ -46,12 +46,17 @@ public struct NavigationButton<Content: View>: View {
         var body: some View {
             NavigationView {
                 List {
-                    Text("Is toggled: \(isToggled ? 1 : 0)")
-                    NavigationLink("Navigation link") {
-                        Text("HEJ")
-                    }.offset()
+                    Text("Preview.Toggled.\(isToggled ? 1 : 0)", bundle: .module)
+                    
+                    NavigationLink {
+                        Text("Preview.Text", bundle: .module)
+                    } label: {
+                        Text("Preview.Text", bundle: .module)
+                    }
+                    .offset()
+                    
                     NavigationButton(action: { isToggled.toggle() }, content: {
-                        Text("Navigation Button")
+                        Text("Preview.Button", bundle: .module)
                     })
                 }
             }.foregroundColor(.red)

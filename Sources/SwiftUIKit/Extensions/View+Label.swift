@@ -42,9 +42,9 @@ public extension View {
     
     VStack {
         Color.red
-            .label("Red")
+            .label("Preview.Label", bundle: .module)
         Image.symbol("checkmark")
-            .label("Test")
+            .label("Preview.Label", bundle: .module)
     }
     .frame(width: 200, height: 100)
 }

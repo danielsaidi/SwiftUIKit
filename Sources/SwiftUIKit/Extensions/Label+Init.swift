@@ -20,11 +20,20 @@ public extension Label where Icon == Image, Title == Text {
     }
     
     /// Create a label with a string and a plain image icon.
-    init(_ text: LocalizedStringKey, _ image: Image) {
+    init(
+        _ text: LocalizedStringKey,
+        _ image: Image,
+        _ bundle: Bundle? = nil
+    ) {
         self.init {
-            Text(text)
+            Text(text, bundle: bundle)
         } icon: {
             image
         }
     }
+}
+
+#Preview {
+    
+    Label("Preview.Label", .symbol("checkmark"), .module)
 }

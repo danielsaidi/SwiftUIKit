@@ -80,14 +80,19 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
                 ForEach(0...10, id: \.self) { index in
                     Group {
                         ListSelectItem(isSelected: index == selection) {
-                            Label("Item \(index)", systemImage: "\(index).circle")
+                            Image.symbol("\(index).circle")
+                                .label(
+                                    "Preview.Item.\(index)",
+                                    bundle: .module
+                                )
                         }
                         ListSelectItem(
                             isSelected: index == selection,
                             selectIndicator: Image(systemName: "checkmark.circle.fill")
                                 .foregroundColor(.green)
                         ) {
-                            Label("Item \(index)", systemImage: "\(index).circle")
+                            Image.symbol("\(index).circle")
+                                .label("Preview.Item.\(index)", bundle: .module)
                         }
                     }
                     #if os(iOS) || os(macOS) || os(visionOS)

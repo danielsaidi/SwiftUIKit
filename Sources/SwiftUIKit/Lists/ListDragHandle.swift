@@ -50,7 +50,7 @@ private extension ListDragHandle {
             ForEach(1...10, id: \.self) { item in
                 HStack {
                     Label {
-                        Text("Title \(item)")
+                        Text("Preview.Item.\(item)", bundle: .module)
                     } icon: {
                         Color.red
                     }

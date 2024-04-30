@@ -63,8 +63,8 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
         
         let nilData: String? = nil
         let content: (String) -> AnyView = { Text($0).any() }
-        let loadingView = Text("Loading...")
-        let noDataView = Text("No data")
+        let loadingView = Text("Preview.Loading")
+        let noDataView = Text("Preview.NoData")
         
         var body: some View {
             Group {

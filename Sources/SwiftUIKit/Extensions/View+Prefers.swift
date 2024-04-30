@@ -39,9 +39,9 @@ public extension View {
 
     VStack {
         #if os(iOS) || os(macOS)
-        Menu("Test") {
-            Button("1") {}
-            Button("2") {}
+        Menu("Preview.Menu") {
+            Button("Preview.Button.\(1)") {}
+            Button("Preview.Button.\(2)") {}
         }
         .prefersMenuOrderFixed()
         #endif

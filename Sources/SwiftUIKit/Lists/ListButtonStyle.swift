@@ -60,7 +60,7 @@ public extension ButtonStyle where Self == ListButtonStyle {
         var body: some View {
             List {
                 ForEach(0...100, id: \.self) { index in
-                    Button("Button \(index)") {
+                    Button("Preview.Button.\(index)") {
                         overlayText = "\(index) tapped!"
                     }
                     .buttonStyle(index == 0 ? .list : .list(pressedOpacity: 0.1))

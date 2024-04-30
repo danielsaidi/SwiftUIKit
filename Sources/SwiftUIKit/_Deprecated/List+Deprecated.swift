@@ -10,7 +10,7 @@ public extension ListActionRow {
         hideIfEmpty: Bool = false,
         trailingView: @escaping () -> TrailingView
     ) {
-        self.init(title: title, text: text, action: nil, hideIfEmpty: hideIfEmpty)
+        self.init(title: .init(title), text: .init(text), action: nil)
     }
 }
 #endif
