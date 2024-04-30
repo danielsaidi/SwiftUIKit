@@ -61,8 +61,12 @@ public struct ListShelfSection<Title: View, Content: View>: View {
     
     struct PreviewSection: View {
         
+        func printText() {
+            print("Tapped")
+        }
+        
         func button(_ index: Int) -> some View {
-            Button(action: {}) {
+            Button(action: printText) {
                 Text("Preview.Button.\(index)", bundle: .module)
             }
         }

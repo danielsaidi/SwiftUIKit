@@ -10,7 +10,7 @@ import SwiftUI
 
 public extension Button {
     
-    /// This is a standard add button.
+    /// Create a new ``StandardType``-based button.
     init(
         _ type: StandardType,
         _ title: LocalizedStringKey? = nil,
@@ -42,7 +42,7 @@ public extension Button {
 
 public extension Button.StandardType {
     
-    var id: String{ rawValue }
+    var id: String { rawValue }
     
     var image: Image? {
         guard let imageName else { return nil }
