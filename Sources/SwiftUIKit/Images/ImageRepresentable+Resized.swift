@@ -1,5 +1,5 @@
 //
-//  ImageRepresentable+Size.swift
+//  ImageRepresentable+Resized.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-06-29.
