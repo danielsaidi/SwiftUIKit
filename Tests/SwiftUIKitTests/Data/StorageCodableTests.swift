@@ -1,5 +1,5 @@
 //
-//  AppStorageCodableTests.swift
+//  StorageCodableTests.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-05-30.
@@ -10,28 +10,43 @@ import SwiftUI
 import SwiftUIKit
 import XCTest
 
-private struct MyCodable: Codable, Identifiable {
+private struct User: Codable, Identifiable {
 
     var name: String
+    var age: Int
 
     var id: String { name }
 }
 
 private class MyState: ObservableObject {
 
-    @AppStorage("com.example.appstorage.array", store: .standard)
-    var array: [MyCodable]?
+    @AppStorage("com.swiftuikit.appstorage.object", store: .standard)
+    var object: StorageValue<User>?
 
-    @AppStorage("com.example.appstorage.dict", store: .standard)
-    var dictionary: [MyCodable.ID: MyCodable]?
+    @AppStorage("com.swiftuikit.appstorage.array", store: .standard)
+    var array: [User]?
+
+    @AppStorage("com.swiftuikit.appstorage.dict", store: .standard)
+    var dictionary: [User.ID: User]?
 }
 
 final class AppStorageCodableTests: XCTestCase {
 
+    private let value = User(name: "Daniel", age: 45)
+
+    func testCanPersistObject() {
+        let state1 = MyState()
+        XCTAssertNil(state1.object)
+        state1.object = .init(value)
+        let state2 = MyState()
+        XCTAssertEqual(state2.object?.value.name, "Daniel")
+        state2.object = nil
+    }
+
     func testCanPersistArray() {
         let state1 = MyState()
         XCTAssertNil(state1.array)
-        state1.array = [.init(name: "Daniel")]
+        state1.array = [value]
         let state2 = MyState()
         XCTAssertEqual(state2.array?.first?.name, "Daniel")
         state2.array = nil
@@ -40,7 +55,7 @@ final class AppStorageCodableTests: XCTestCase {
     func testCanPersistDictionary() {
         let state1 = MyState()
         XCTAssertNil(state1.dictionary)
-        state1.dictionary = ["foo": .init(name: "Daniel")]
+        state1.dictionary = ["foo": value]
         let state2 = MyState()
         XCTAssertEqual(state2.dictionary?["foo"]?.name, "Daniel")
         state2.dictionary = nil
