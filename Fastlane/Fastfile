@@ -15,11 +15,24 @@ platform :ios do
     sh("cd .. && xcodebuild -scheme " + name + " -derivedDataPath .build -destination 'generic/platform=" + platform + "';")
   end
 
+  lane :build_all do
+    build(platform: "iOS")
+    build(platform: "OS X")
+    build(platform: "tvOS")
+    build(platform: "watchOS")
+    build(platform: "xrOS")
+  end
+
 
   # Test ==================
   
-  lane :test_ios do
-    sh("cd .. && xcodebuild test -scheme " + name + " -derivedDataPath .build -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.2' -enableCodeCoverage YES;")
+  lane :test do |options|
+    destination = options[:destination]
+    sh("cd .. && xcodebuild test -scheme " + name + " -derivedDataPath .build -destination '" + destination + "' -enableCodeCoverage YES;")
+  end
+
+  lane :test_all do
+    test(destination: "platform=iOS Simulator,name=iPhone 15,OS=17.2")
   end
 
 
@@ -42,12 +55,8 @@ platform :ios do
     ensure_git_status_clean
     ensure_git_branch(branch: main_branch)
     swiftlint(strict: true)
-    build(platform: "iOS")
-    build(platform: "OS X")
-    build(platform: "tvOS")
-    build(platform: "watchOS")
-    build(platform: "xrOS")
-    test_ios
+    build_all
+    test_all
   end
 
 end
