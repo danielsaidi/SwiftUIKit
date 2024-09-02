@@ -9,22 +9,7 @@
 #if os(iOS) || os(macOS) || os(watchOS)
 import SwiftUI
 
-/**
- This button supports triggering different gestures in a way
- that works within a `ScrollView`.
- 
- This button does npt block scroll view gesture. The code is
- the result of much trial & error and has been tested to not
- affect scrolling.
-
- If you don't need to use a scroll view, you should consider
- using a ``GestureButton`` instead.-
-
- Note that the view uses an underlying `ButtonStyle` to make
- gestures work. It can thus not apply another style, but you
- can use the `isPressed` value that is passed to the `label`
- builder, to configure the button view for the pressed state.
- */
+@available(*, deprecated, message: "This has moved to https://github.com/danielsaidi/GestureButton")
 public struct ScrollViewGestureButton<Label: View>: View {
 
     /// Create a gesture button.
@@ -122,6 +107,7 @@ public struct ScrollViewGestureButton<Label: View>: View {
     }
 }
 
+@available(*, deprecated, message: "This has moved")
 extension ScrollViewGestureButton {
 
     class GestureState: ObservableObject {
@@ -189,6 +175,7 @@ extension ScrollViewGestureButton {
     }
 }
 
+@available(*, deprecated, message: "This has moved")
 private extension ScrollViewGestureButton.Style {
 
     func handleIsPressed() {
@@ -211,6 +198,7 @@ private extension ScrollViewGestureButton.Style {
     }
 }
 
+@available(*, deprecated, message: "This has moved")
 private extension View {
 
     typealias Action = () -> Void
@@ -272,6 +260,7 @@ private extension View {
     }
 }
 
+@available(*, deprecated, message: "This has moved")
 private extension GeometryProxy {
 
     func contains(_ dragEndLocation: CGPoint) -> Bool {
@@ -281,169 +270,5 @@ private extension GeometryProxy {
         guard x < size.width, y < size.height else { return false }
         return true
     }
-}
-
-#Preview {
-
-    struct Preview: View {
-
-        @StateObject
-        var state = PreviewState()
-
-        @State
-        private var items = (1...100).map { PreviewItem(id: $0) }
-
-        var body: some View {
-            VStack(spacing: 20) {
-
-                PreviewHeader(state: state)
-                    .padding(.horizontal)
-
-                PreviewScrollGroup(title: "Buttons") {
-                    ScrollViewGestureButton(
-                        isPressed: $state.isPressed,
-                        pressAction: { state.pressCount += 1 },
-                        releaseInsideAction: { state.releaseInsideCount += 1 },
-                        releaseOutsideAction: { state.releaseOutsideCount += 1 },
-                        longPressDelay: 0.8,
-                        longPressAction: { state.longPressCount += 1 },
-                        doubleTapAction: { state.doubleTapCount += 1 },
-                        repeatAction: { state.repeatTapCount += 1 },
-                        dragStartAction: { state.dragStartValue = $0.location },
-                        dragAction: { state.dragChangeValue = $0.location },
-                        dragEndAction: { state.dragEndValue = $0.location },
-                        endAction: { state.endCount += 1 },
-                        label: { PreviewButton(color: .blue, isPressed: $0) }
-                    )
-                }
-            }
-        }
-    }
-
-    struct PreviewItem: Identifiable {
-
-        var id: Int
-    }
-
-    struct PreviewButton: View {
-
-        let color: Color
-        let isPressed: Bool
-
-        var body: some View {
-            color
-                .cornerRadius(10)
-                .frame(width: 100)
-                .opacity(isPressed ? 0.5 : 1)
-                .scaleEffect(isPressed ? 0.9 : 1)
-                .animation(.default, value: isPressed)
-                .padding()
-                .background(Color.random())
-                .cornerRadius(16)
-        }
-    }
-
-    struct PreviewScrollGroup<Content: View>: View {
-
-        let title: String
-        let button: () -> Content
-
-        var body: some View {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(title)
-                    .padding(.horizontal)
-                ScrollView(.horizontal) {
-                    LazyHStack {
-                        ForEach(0...100, id: \.self) { _ in
-                            button()
-                        }
-                    }.padding(.horizontal)
-                }
-            }
-        }
-    }
-
-    class PreviewState: ObservableObject {
-
-        @Published
-        var isPressed = false
-
-        @Published
-        var pressCount = 0
-
-        @Published
-        var releaseInsideCount = 0
-
-        @Published
-        var releaseOutsideCount = 0
-
-        @Published
-        var endCount = 0
-
-        @Published
-        var longPressCount = 0
-
-        @Published
-        var doubleTapCount = 0
-
-        @Published
-        var repeatTapCount = 0
-
-        @Published
-        var dragStartValue = CGPoint.zero
-
-        @Published
-        var dragChangeValue = CGPoint.zero
-
-        @Published
-        var dragEndValue = CGPoint.zero
-    }
-
-    struct PreviewHeader: View {
-
-        @ObservedObject
-        var state: PreviewState
-
-        var body: some View {
-            VStack(alignment: .leading) {
-                Group {
-                    label("Pressed", state.isPressed ? "YES" : "NO")
-                    label("Presses", state.pressCount)
-                    label("Releases", state.releaseInsideCount + state.releaseOutsideCount)
-                    label("     Inside", state.releaseInsideCount)
-                    label("     Outside", state.releaseOutsideCount)
-                    label("Ended", state.endCount)
-                    label("Long presses", state.longPressCount)
-                    label("Double taps", state.doubleTapCount)
-                    label("Repeats", state.repeatTapCount)
-                }
-                Group {
-                    label("Drag start", state.dragStartValue)
-                    label("Drag change", state.dragChangeValue)
-                    label("Drag end", state.dragEndValue)
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 16).stroke(.blue, lineWidth: 3))
-        }
-
-        func label(_ title: String, _ int: Int) -> some View {
-            label(title, "\(int)")
-        }
-
-        func label(_ title: String, _ point: CGPoint) -> some View {
-            label(title, "\(point.x.rounded()), \(point.y.rounded())")
-        }
-
-        func label(_ title: String, _ value: String) -> some View {
-            HStack {
-                Text("\(title):")
-                Text(value).bold()
-            }.lineLimit(1)
-        }
-    }
-
-    return Preview()
 }
 #endif

@@ -82,11 +82,7 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 ### Gestures
 
-- ``GestureButton``
-- ``GestureButtonDefaults``
 - ``GestureTimer``
-- ``RepeatGestureTimer``
-- ``ScrollViewGestureButton``
 - ``SwipeGestureViewModifier``
 
 ### Images

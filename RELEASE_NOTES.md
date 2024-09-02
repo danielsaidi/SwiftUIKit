@@ -15,6 +15,10 @@ This version also adds standard button types, which makes it easier to create st
 * `Button+Init` adds a new button initializer.
 * `Button+Standard` adds new standard button types.
 
+### 🗑️ Deprecations
+
+* `GestureButton` and `ScrollGestureButton` has been moved to `https://github.com/danielsaidi/GestureButton`.
+
 
 
 ## 4.2.3

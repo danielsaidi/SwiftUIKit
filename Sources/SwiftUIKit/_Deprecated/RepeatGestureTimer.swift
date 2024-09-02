@@ -8,12 +8,7 @@
 
 import Foundation
 
-/**
- This class is used to handle repeating actions on a gesture.
-
- The ``shared`` instance can be used if only a single button
- can be pressed to repeat a certain action at any given time.
- */
+@available(*, deprecated, message: "This has moved to https://github.com/danielsaidi/GestureButton")
 public class RepeatGestureTimer {
 
     /// Create a repeat gesture timer.
@@ -41,6 +36,8 @@ public class RepeatGestureTimer {
     private var startDate: Date?
 }
 
+
+@available(*, deprecated, message: "This has moved to https://github.com/danielsaidi/GestureButton")
 public extension RepeatGestureTimer {
 
     /// The elapsed time since the timer was started.
@@ -68,9 +65,6 @@ public extension RepeatGestureTimer {
         timer = nil
         startDate = nil
     }
-}
-
-extension RepeatGestureTimer {
 
     func modifyStartDate(to date: Date) {
         startDate = date

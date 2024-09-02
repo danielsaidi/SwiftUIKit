@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// This struct is used to configure gesture button defaults.
+@available(*, deprecated, message: "This has moved to https://github.com/danielsaidi/GestureButton")
 public struct GestureButtonDefaults {
 
     /// The max time between two taps to count as a double tap, by default `0.2`.
