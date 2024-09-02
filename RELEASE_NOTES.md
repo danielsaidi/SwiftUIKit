@@ -4,6 +4,20 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 4.4
+
+This version adds a new storage value type and moves the gesture buttons to `https://github.com/danielsaidi/GestureButton`.
+
+### ✨ Features
+
+* `StorageValue` is a new property wrapper for serializing data into `AppStorage`.
+
+### 🗑️ Deprecations
+
+* `GestureButton` and `ScrollGestureButton` has been moved to `https://github.com/danielsaidi/GestureButton`.
+
+
+
 ## 4.3
 
 This version adds localization support, and makes more types use `LocalizedStringKey` instead of `String`.
@@ -14,10 +28,6 @@ This version also adds standard button types, which makes it easier to create st
 
 * `Button+Init` adds a new button initializer.
 * `Button+Standard` adds new standard button types.
-
-### 🗑️ Deprecations
-
-* `GestureButton` and `ScrollGestureButton` has been moved to `https://github.com/danielsaidi/GestureButton`.
 
 
 
