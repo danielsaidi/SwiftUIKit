@@ -15,10 +15,10 @@ public extension DispatchQueue {
     /// Perform an operation after a certain time interval.
     func asyncAfter(
         _ interval: DispatchTimeInterval,
-        execute: @escaping () -> Void
+        execute: @escaping @Sendable () -> Void
     ) {
-        asyncAfter(
-            deadline: .now() + interval,
-            execute: execute)
+        asyncAfter(deadline: .now() + interval) {
+            execute()
+        }
     }
 }

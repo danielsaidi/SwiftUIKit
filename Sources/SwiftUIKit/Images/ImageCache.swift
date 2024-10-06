@@ -14,9 +14,6 @@ public class ImageCache {
     /// The cache dictionary that is used to store images.
     public var cache = [String: ImageRepresentable]()
 
-    /// A shared cache instance.
-    public static let shared = ImageCache()
-
     /// Store an image into the cache.
     public func cache(image: ImageRepresentable, for key: String) {
         cache[key] = image

@@ -42,12 +42,10 @@ public extension LinkText {
 public extension LinkText.Style {
     
     /// The standard link text style.
-    ///
-    /// You can set this style to affect the global default.
-    static var standard = Self()
+    static var standard: Self { .init() }
 
     /// A plain link text style that doesn't underline links.
-    static var plain = Self(underline: false)
+    static var plain: Self { .init(underline: false) }
 }
 
 public extension View {
@@ -64,7 +62,9 @@ private extension LinkText.Style {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: LinkText.Style = .standard
+        public static var defaultValue: LinkText.Style {
+            .standard
+        }
     }
 }
 

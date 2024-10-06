@@ -66,21 +66,19 @@ public extension ErrorAlerter {
     typealias BlockOperation<ErrorType: Error> = (BlockCompletion<ErrorType>) -> Void
 
     /// Alert the provided error asynchronously.
-    func alertAsync(
+    @MainActor func alertAsync(
         error: Error,
         okButtonText: String = "OK"
     ) {
-        DispatchQueue.main.async {
-            alert(
-                error: error,
-                okButtonText: okButtonText
-            )
-        }
+        alert(
+            error: error,
+            okButtonText: okButtonText
+        )
     }
 
     /// Try to perform a block-based operation, and alert if
     /// this operation fails in any way.
-    func tryWithErrorAlert<ErrorType: Error>(
+    @MainActor func tryWithErrorAlert<ErrorType: Error>(
         _ operation: @escaping BlockOperation<ErrorType>,
         completion: @escaping BlockCompletion<ErrorType>
     ) {
@@ -98,12 +96,12 @@ public extension ErrorAlerter {
     ///
     /// This function wraps an async operation in a task and
     /// alerts any errors that are thrown.
-    func tryWithErrorAlert(_ operation: @escaping AsyncOperation) {
+    @MainActor func tryWithErrorAlert(_ operation: @escaping AsyncOperation) {
         Task {
             do {
                 try await operation()
             } catch {
-                await alert(error: error)
+                alert(error: error)
             }
         }
     }

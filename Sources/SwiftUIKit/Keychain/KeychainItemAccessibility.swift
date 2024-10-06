@@ -9,7 +9,7 @@
 //  Created by James Blair on 4/24/16.
 //  Copyright © 2016 Jason Rendel. All rights reserved.
 
-import Foundation
+@preconcurrency import Foundation
 
 protocol KeychainAttrRepresentable {
     
@@ -53,22 +53,23 @@ public enum KeychainItemAccessibility {
     case whenUnlockedThisDeviceOnly
     
     static func accessibilityForAttributeValue(_ keychainAttrValue: CFString) -> KeychainItemAccessibility? {
-        keychainItemAccessibilityLookup.first { $0.value == keychainAttrValue }?.key
+        lookupTable.first { $0.value == keychainAttrValue }?.key
+    }
+
+    static var lookupTable: [KeychainItemAccessibility: CFString] {
+        [
+            .afterFirstUnlock: kSecAttrAccessibleAfterFirstUnlock,
+            .afterFirstUnlockThisDeviceOnly: kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly,
+            .whenPasscodeSetThisDeviceOnly: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
+            .whenUnlocked: kSecAttrAccessibleWhenUnlocked,
+            .whenUnlockedThisDeviceOnly: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+        ]
     }
 }
-
-
-private let keychainItemAccessibilityLookup: [KeychainItemAccessibility: CFString] = [
-    .afterFirstUnlock: kSecAttrAccessibleAfterFirstUnlock,
-    .afterFirstUnlockThisDeviceOnly: kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly,
-    .whenPasscodeSetThisDeviceOnly: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
-    .whenUnlocked: kSecAttrAccessibleWhenUnlocked,
-    .whenUnlockedThisDeviceOnly: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
-]
 
 extension KeychainItemAccessibility: KeychainAttrRepresentable {
     
     public var keychainAttrValue: CFString {
-        keychainItemAccessibilityLookup[self]!
+        Self.lookupTable[self]!
     }
 }

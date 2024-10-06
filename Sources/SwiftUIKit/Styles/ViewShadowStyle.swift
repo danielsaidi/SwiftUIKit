@@ -52,19 +52,27 @@ public struct ViewShadowStyle {
 public extension ViewShadowStyle {
     
     /// This style applies no shadow.
-    static let none = ViewShadowStyle(color: .clear)
-    
+    static var none: Self {
+        .init(color: .clear)
+    }
+
     /// The shadow of a badge that is attached to its parent
     /// view, but in a slightly separated layer.
-    static var badge = ViewShadowStyle(radius: 1, y: 1)
-    
+    static var badge: Self {
+        .init(radius: 1, y: 1)
+    }
+
     /// The shadow of a solid element that is elevated a bit
     /// above its parent view.
-    static var elevated = ViewShadowStyle(radius: 3, x: 0, y: 2)
-    
+    static var elevated: Self {
+        .init(radius: 3, x: 0, y: 2)
+    }
+
     /// The shadow of a thin sticker that is attached to its
     /// parent view.
-    static var sticker = ViewShadowStyle(radius: 0, y: 1)
+    static var sticker: Self {
+        .init(radius: 0, y: 1)
+    }
 }
 
 public extension View {

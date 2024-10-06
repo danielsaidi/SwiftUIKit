@@ -15,7 +15,7 @@ import Foundation
 open class KeychainService {
     
     public init(
-        wrapper: KeychainWrapper = .standard
+        wrapper: KeychainWrapper = .init()
     ) {
         self.wrapper = wrapper
     }

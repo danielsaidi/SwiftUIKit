@@ -140,20 +140,20 @@ private extension LinearProgressBar {
 
 private extension LinearProgressBar.Style {
 
-    static var swedish: LinearProgressBar.Style = {
+    static var swedish: LinearProgressBar.Style {
         var style = LinearProgressBar.Style.tallPadding
         style.backgroundColor = .blue
         style.backgroundMaterialOpacity = 0
         style.barColor = .yellow
         return style
-    }()
+    }
 
-    static var swedishFrosted: LinearProgressBar.Style = {
+    static var swedishFrosted: LinearProgressBar.Style {
         var style = LinearProgressBar.Style.tallPadding
         style.animation = .interpolatingSpring()
         style.backgroundColor = .blue
         style.barColor = .yellow
         return style
-    }()
+    }
 }
 #endif

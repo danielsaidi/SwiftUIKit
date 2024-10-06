@@ -17,7 +17,7 @@ public extension UIImage {
     /// Failing to add these permissions before calling this
     /// function will crash the app.
     func saveToPhotos(completion: @escaping (Error?) -> Void) {
-        ImageService.default.saveImageToPhotos(self, completion: completion)
+        ImageService().saveImageToPhotos(self, completion: completion)
     }
 }
 
@@ -25,8 +25,6 @@ private class ImageService: NSObject {
     
     public typealias Completion = (Error?) -> Void
 
-    public static private(set) var `default` = ImageService()
-    
     private var completions = [Completion]()
     
     public func saveImageToPhotos(_ image: UIImage, completion: @escaping (Error?) -> Void) {

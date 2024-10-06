@@ -53,9 +53,12 @@ public struct PageIndicatorStyle: Equatable {
     
     /// Whether or not changing pages is animated.
     public var isAnimated: Bool
-    
-    /// The standard style.
-    public static var standard: PageIndicatorStyle { PageIndicatorStyle() }
+}
+
+public extension PageIndicatorStyle {
+
+    /// The standard page indicator style.
+    static var standard: Self { .init() }
 }
 
 public extension View {
@@ -70,9 +73,11 @@ public extension View {
 
 private extension PageIndicatorStyle {
 
-    struct Key: EnvironmentKey {
+    @MainActor struct Key: @preconcurrency EnvironmentKey {
 
-        public static var defaultValue: PageIndicatorStyle = .standard
+        public static var defaultValue: PageIndicatorStyle {
+            .standard
+        }
     }
 }
 

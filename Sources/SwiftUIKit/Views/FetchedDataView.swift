@@ -73,7 +73,6 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
                 FetchedDataView(data: nilData, isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
                 FetchedDataView(data: nilData, isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
             }
-            .previewLayout(.sizeThatFits)
         }
     }
     

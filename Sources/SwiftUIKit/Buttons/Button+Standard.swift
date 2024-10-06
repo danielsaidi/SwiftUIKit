@@ -101,14 +101,14 @@ public extension Button.StandardType {
         }
     }
 }
-
+/*
 #Preview {
     
     @ViewBuilder
     func buttons() -> some View {
         Section {
-            ForEach(Button.StandardType.allCases) {
-                Button($0) {}
+            ForEach(Button.StandardType.allCases) { type in
+                Button(type) { print("Tapped \(type.title)") }
             }
         }
     }
@@ -124,3 +124,4 @@ public extension Button.StandardType {
         }
     }
 }
+*/

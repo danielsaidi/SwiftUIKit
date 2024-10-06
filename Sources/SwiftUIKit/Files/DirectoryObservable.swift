@@ -15,6 +15,7 @@ import Foundation
 ///
 /// The view uses an internal ``DirectoryMonitor`` instance,
 /// to keep the ``files`` property in sync.
+@MainActor
 public class DirectoryObservable: ObservableObject {
     
     /// Create an instance that observes the provided `url`.
@@ -40,13 +41,12 @@ public class DirectoryObservable: ObservableObject {
     
     private lazy var folderMonitor = DirectoryMonitor(
         url: url,
-        onChange: handleChanges
+        onChange: {
+            self.handleChanges()
+        }
     )
-}
 
-private extension DirectoryObservable {
-
-    func handleChanges() {
+    private func handleChanges() {
         let files = try? fileManager.contentsOfDirectory(
             at: url,
             includingPropertiesForKeys: nil,

@@ -64,6 +64,7 @@ public extension View {
     }
 }
 
+@MainActor
 public extension Image {
     
     /// Convert the image to a list header.

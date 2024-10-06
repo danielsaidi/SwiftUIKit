@@ -8,40 +8,34 @@
 
 import SwiftUI
 
-/**
- This context can be used to present alerts in a dynamic way.
- 
- To use this class, just create a `@StateObject` instance in
- your presenting view and bind the context to that view:
- 
- ```swift
- extension Alert {
- 
-     static let customAlert = Alert(title: "Hello, world!")
- }
- 
- struct MyView: View {
- 
-     @StateObject var context = AlertContext()
- 
-     var body: some View {
-         Button("Show alert") {
-             context.present(.customAlert)
-         }
-         .alert(context)
-     }
- }
- ```
- 
- In the code above, we create a custom, static `Alert` value
- to easily let us share and reuse alerts in an app or domain.
- 
- This view modifier will also inject the provided context as
- an environment object into the view hierarchy, to let other
- views in the same view hierarchy reuse the same context.
- */
+/// This context can be used to present alerts.
+///
+/// To use this class, just create a `@StateObject` instance
+/// in your presenting view and bind the context to the view:
+///
+/// ```swift
+/// extension Alert {
+///     static let customAlert = Alert(title: "Hello, world!")
+/// }
+///
+/// struct MyView: View {
+///
+///     @StateObject var context = AlertContext()
+///     var body: some View {
+///         Button("Show alert") {
+///             context.present(.customAlert)
+///         }
+///         .alert(context)
+///     }
+/// }
+/// ```
+///
+/// This view modifier will also inject the provided context
+/// as an environment object into the view hierarchy, to let
+/// other views in the same hierarchy reuse the same context.
 public class AlertContext: PresentationContext<Alert> {
-    
+
+    @MainActor
     public func present(
         _ alert: @autoclosure @escaping () -> Alert
     ) {

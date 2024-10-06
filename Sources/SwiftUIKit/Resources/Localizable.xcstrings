@@ -187,6 +187,7 @@
       }
     },
     "Preview.Button" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -197,6 +198,7 @@
       }
     },
     "Preview.Button.%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -207,6 +209,7 @@
       }
     },
     "Preview.IsSwiftUIPreview" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -217,6 +220,7 @@
       }
     },
     "Preview.Item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -227,6 +231,7 @@
       }
     },
     "Preview.Item.%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -237,6 +242,7 @@
       }
     },
     "Preview.Label" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -247,6 +253,7 @@
       }
     },
     "Preview.Link" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -257,6 +264,7 @@
       }
     },
     "Preview.Loading" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -267,6 +275,7 @@
       }
     },
     "Preview.LoadingNoDots" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -277,6 +286,7 @@
       }
     },
     "Preview.Menu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -287,6 +297,7 @@
       }
     },
     "Preview.NoData" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -307,6 +318,7 @@
       }
     },
     "Preview.Placeholder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -317,6 +329,7 @@
       }
     },
     "Preview.Progress" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -327,6 +340,7 @@
       }
     },
     "Preview.Row" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -337,6 +351,7 @@
       }
     },
     "Preview.SectionTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -347,6 +362,7 @@
       }
     },
     "Preview.Subtitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -357,6 +373,7 @@
       }
     },
     "Preview.Text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -367,6 +384,7 @@
       }
     },
     "Preview.Text.%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -377,6 +395,7 @@
       }
     },
     "Preview.Text.Long" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -387,6 +406,7 @@
       }
     },
     "Preview.Title.%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -397,6 +417,7 @@
       }
     },
     "Preview.Toggled.%lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -405,9 +426,6 @@
           }
         }
       }
-    },
-    "Toggle user" : {
-
     }
   },
   "version" : "1.0"

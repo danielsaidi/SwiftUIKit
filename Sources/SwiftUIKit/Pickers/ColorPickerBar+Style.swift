@@ -52,10 +52,14 @@ public extension ColorPickerBar {
 
         /// The image to use as reset button image
         public var resetButtonImage: Image
-
-        /// Get the standard style.
-        public static var standard: Style = .init()
     }
+}
+
+public extension ColorPickerBar.Style {
+
+
+    /// The standard color picked bar style.
+    static var standard: Self { .init() }
 }
 
 public extension View {
@@ -72,7 +76,9 @@ private extension ColorPickerBar.Style {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: ColorPickerBar.Style = .standard
+        public static var defaultValue: ColorPickerBar.Style {
+            .standard
+        }
     }
 }
 

@@ -45,10 +45,8 @@ public struct ListShelfSectionStyle {
 
 public extension ListShelfSectionStyle {
     
-    /// The standard ``ListShelfSectionStyle``.
-    ///
-    /// You can set this style to affect the global default.
-    static var standard = ListShelfSectionStyle()
+    /// The standard list sheld section style.
+    static var standard: Self { .init() }
 }
 
 public extension View {
@@ -63,9 +61,11 @@ public extension View {
 
 private extension ListShelfSectionStyle {
 
-    struct Key: EnvironmentKey {
+    @MainActor struct Key: @preconcurrency EnvironmentKey {
 
-        public static var defaultValue: ListShelfSectionStyle = .standard
+        public static var defaultValue: ListShelfSectionStyle {
+            .standard
+        }
     }
 }
 

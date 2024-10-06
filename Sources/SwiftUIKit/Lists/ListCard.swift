@@ -67,15 +67,15 @@ public struct ListCard<Content: View, ContextMenuView: View>: View {
 
 public extension ViewShadowStyle {
 
-    /**
-     The standard list card shadow style.
-     */
-    static var listCard = ViewShadowStyle(
-        color: .black.opacity(0.2),
-        radius: 2,
-        x: 0,
-        y: 2
-    )
+    /// The standard list card shadow style.
+    static var listCard: Self {
+        .init(
+            color: .black.opacity(0.2),
+            radius: 2,
+            x: 0,
+            y: 2
+        )
+    }
 }
 
 #Preview {

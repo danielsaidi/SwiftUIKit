@@ -118,6 +118,7 @@ public extension LinkText {
 
 private extension LinkText.Component {
 
+    @MainActor
     var componentView: LinkTextComponentView {
         switch self {
         case .text(let text):

@@ -93,6 +93,7 @@ private extension ButtonStyle where Self == ListButtonGroupStyle {
     }
 }
 
+@MainActor
 private extension String {
     
     func previewButton(_ icon: Image) -> some View {

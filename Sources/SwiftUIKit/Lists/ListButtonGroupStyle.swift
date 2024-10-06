@@ -177,10 +177,8 @@ public extension ListButtonGroupStyle {
 
 public extension ListButtonGroupStyle.LabelStyle {
     
-    /// A standard label style.
-    ///
-    /// You can set this style to affect the global default.
-    static var standard = Self()
+    /// The standard list button group label style.
+    static var standard: Self { .init() }
 }
 
 public extension LabelStyle where Self == ListButtonGroupStyle.LabelStyle {
@@ -214,9 +212,11 @@ public extension View {
 
 private extension ListButtonGroupStyle {
 
-    struct Key: EnvironmentKey {
+    @MainActor struct Key: @preconcurrency EnvironmentKey {
 
-        public static var defaultValue: ListButtonGroupStyle = .standard
+        public static var defaultValue: ListButtonGroupStyle {
+            .init()
+        }
     }
 }
 

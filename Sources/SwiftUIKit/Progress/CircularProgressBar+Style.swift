@@ -64,9 +64,7 @@ public extension CircularProgressBar {
 public extension CircularProgressBar.Style {
 
     /// The standard circular progress bar style.
-    ///
-    /// You can set this style to affect the global default.
-    static var standard = Self()
+    static var standard: Self { .init() }
 }
 
 public extension View {
@@ -83,7 +81,9 @@ private extension CircularProgressBar.Style {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: CircularProgressBar.Style = .standard
+        public static var defaultValue: CircularProgressBar.Style {
+            .standard
+        }
     }
 }
 

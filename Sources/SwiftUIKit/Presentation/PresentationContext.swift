@@ -9,40 +9,44 @@
 import Combine
 import SwiftUI
 
-/**
- This class is shared by presentation-specific contexts, and
- can be used to present different views with one context.
- 
- To use the context, first create an observed instance, then
- bind it to a view using custom view modifiers. You can also
- set up a global context and pass it into the view hierarchy
- as an environment object.
- */
+/// This context is shared by presentation-specific contexts,
+/// and can be used to present different views.
+///
+/// To use the context, create an observed instance and bind
+/// it to a view hierarchy, for instance by passing it in as
+/// an environment object or with sub-class view modifiers.
+///
+/// You can also setup a global context and pass it into the
+/// view hierarchy as an environment object.
 open class PresentationContext<Content>: ObservableObject {
-    
+
     public init() {}
-    
+
     @Published
     public var isActive = false
-    
+
     @Published
     public internal(set) var content: (() -> Content)? {
         didSet { isActive = content != nil }
     }
-    
-    public var isActiveBinding: Binding<Bool> {
+}
+
+@MainActor
+public extension PresentationContext {
+
+    var isActiveBinding: Binding<Bool> {
         .init(get: { self.isActive },
               set: { self.isActive = $0 }
         )
     }
         
-    public func dismiss() {
+    func dismiss() {
         DispatchQueue.main.async {
             self.isActive = false
         }
     }
-    
-    public func presentContent(_ content: @autoclosure @escaping () -> Content) {
+
+    func presentContent(_ content: @autoclosure @escaping () -> Content) {
         DispatchQueue.main.async {
             self.content = content
         }

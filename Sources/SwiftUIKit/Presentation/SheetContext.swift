@@ -33,7 +33,8 @@ import SwiftUI
  views in the same view hierarchy reuse the same context.
  */
 public class SheetContext: PresentationContext<AnyView> {
-    
+
+    @MainActor
     public func present<Sheet: View>(_ sheet: @autoclosure @escaping () -> Sheet) {
         presentContent(sheet().any())
     }

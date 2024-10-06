@@ -50,25 +50,21 @@ public extension LinearProgressBar {
 public extension LinearProgressBar.Style {
 
     /// The standard liear progress bar style.
-    ///
-    /// You can set this style to affect the global default.
-    static var standard = Self()
+    static var standard: Self { .init() }
 
     /// A style that adds padding to the bar.
-    static var padding = Self(barPadding: 2)
+    static var padding: Self { .init(barPadding: 2) }
 
     /// A style that makes the bar tall and adds padding.
-    static var tallPadding = Self(height: 16, barPadding: 3)
+    static var tallPadding: Self { .init(height: 16, barPadding: 3) }
 }
 
 public extension ViewShadowStyle {
 
     /// This style can be used with ``LinearProgressBar``.
-    static let progressBar = Self(
-        color: .black.opacity(0.4),
-        radius: 2,
-        x: 1
-    )
+    static var progressBar: Self {
+        .init(color: .black.opacity(0.4), radius: 2, x: 1)
+    }
 }
 
 public extension View {
@@ -85,7 +81,9 @@ private extension LinearProgressBar.Style {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: LinearProgressBar.Style = .standard
+        public static var defaultValue: LinearProgressBar.Style {
+            .standard
+        }
     }
 }
 

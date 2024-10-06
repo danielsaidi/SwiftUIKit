@@ -34,9 +34,7 @@ public struct ListCardStyle {
 public extension ListCardStyle {
 
     /// The standard list card style.
-    ///
-    /// You can set this style to affect the global default.
-    static var standard = ListCardStyle()
+    static var standard: Self { .init() }
 }
 
 public extension View {
@@ -53,7 +51,9 @@ private extension ListCardStyle {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: ListCardStyle = .standard
+        public static var defaultValue: ListCardStyle {
+            .standard
+        }
     }
 }
 

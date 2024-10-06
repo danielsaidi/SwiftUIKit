@@ -115,9 +115,10 @@ private extension CircularProgressBar {
     return Preview()
 }
 
+@MainActor
 fileprivate extension CircularProgressBar.Style {
 
-    static var swedish: CircularProgressBar.Style = {
+    static var swedish: CircularProgressBar.Style {
         var style = CircularProgressBar.Style.standard
         style.animation = .easeIn(duration: 3)
         style.backgroundColor = .blue
@@ -132,14 +133,14 @@ fileprivate extension CircularProgressBar.Style {
         style.titleFont = .title.bold()
         style.titleModifier = { $0.shadow(.elevated).any() }
         return style
-    }()
+    }
 
-    static var noText: CircularProgressBar.Style = {
+    static var noText: CircularProgressBar.Style {
         var style = CircularProgressBar.Style.standard
         style.backgroundColor = .white
         style.strokeColor = .clear
         style.progressColor = .black
         style.showTitle = false
         return style
-    }()
+    }
 }

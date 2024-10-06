@@ -4,6 +4,27 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.0
+
+This verison makes SwiftUIKit use Swift 6.
+
+Due to the strict concurrency enforcement, this involves some breaking changes.
+
+If some of the changes made are too strict for you, feel free to open a GitHub issue to discuss it.
+
+### 🚨 Breaking Changes
+
+* All previously deprecated code has been removed.
+* All static style and configurations are now computed properties.
+* Some classes apply `@MainActor` to properly handle mutable state.
+
+* `ImageCache.shared` has been removed.
+* `ImageService.default` has been removed.
+* `KeychainWrapper.shared` has been removed.
+* `URLOpener` has been removed, since there now are native alternatives. 
+* `View+Geometry` has been removed. 
+
+
 ## 4.4
 
 This version adds a new storage value type and moves the gesture buttons to `https://github.com/danielsaidi/GestureButton`.

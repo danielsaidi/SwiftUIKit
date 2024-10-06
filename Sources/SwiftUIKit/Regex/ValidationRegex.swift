@@ -21,7 +21,9 @@ public struct ValidationRegex {
 public extension ValidationRegex {
     
     /// An e-mail validation regex.
-    static var email = Self("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,} ?")
+    static var email: Self {
+        .init("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,} ?")
+    }
 }
 
 public extension ValidationRegex {

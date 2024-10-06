@@ -38,10 +38,13 @@ public extension ColorPickerBar {
 
         /// The color to apply when tapping the reset button.
         public var resetButtonValue: Color?
-
-        /// Get the standard configuration.
-        public static var standard: Config = .init()
     }
+}
+
+public extension ColorPickerBar.Config {
+
+    /// The standard color picker bar configuration.
+    static var standard: Self { .init() }
 }
 
 public extension View {
@@ -58,7 +61,9 @@ private extension ColorPickerBar.Config {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: ColorPickerBar.Config = .standard
+        public static var defaultValue: ColorPickerBar.Config {
+            .standard
+        }
     }
 }
 
