@@ -8,6 +8,8 @@ SwiftUIKit adds extra functionality to `SwiftUI`.
 
 ![SwiftUIKit logo](Logo.png)
 
+SwiftUIKit is a Swift SDK that adds extra functionality to `SwiftUI` and `Swift`. It contains additional components, a lot of extensions to native types, and much more. 
+
 The library is divided into the namespaces found in the Topics section below. For more information, source code, issues, to sponsor the project etc., visit the [project repository][Repository].
 
 
@@ -21,6 +23,14 @@ https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
 If you prefer to not have external dependencies, you can also just copy the source code into your app.
+
+
+
+## Getting Started
+
+SwiftUIKit started small, but has grown big over the years. Due to its complexity, I decided to remove the demo. Instead, have a look at the various namespaces and use the live previews to explore the SDK.
+
+I will extract parts of this SDK into separate libraries, to be able to provide better documentation & help. Have a look at [my open-source listing page][OpenSource] for some of these.
 
 
 
@@ -52,7 +62,9 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 - ``CsvParser``
 - ``MimeType``
 - ``ScanCodeType``
-- ``StorageCodable``
+- ``StorageValue``
+- ``AppStorageValue``
+- ``SceneStorageValue``
 
 ### Device
 
@@ -128,7 +140,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 - ``NavigationButton``
 - ``NavigationContext``
 - ``NavigationLinkArrow``
-- ``UrlOpener``
 
 ### Pages
 
@@ -211,3 +222,4 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 [License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
 [Repository]: https://github.com/danielsaidi/SwiftUIKit
+[OpenSource]: https://danielsaidi.com/opensource
