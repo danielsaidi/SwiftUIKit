@@ -14,6 +14,8 @@ If some of the changes made are too strict for you, feel free to open a GitHub i
 
 ### 🚨 Breaking Changes
 
+* This version renames the `master` branch to `main`.
+
 * All previously deprecated code has been removed.
 * All static style and configurations are now computed properties.
 * Some classes apply `@MainActor` to properly handle mutable state.
