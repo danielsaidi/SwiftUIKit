@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/v/release/danielsaidi/SwiftUIKit?color=%2300550&sort=semver" alt="Version" />
-    <img src="https://img.shields.io/badge/Swift-5.9-orange.svg" alt="Swift 5.9" />
+    <img src="https://img.shields.io/badge/Swift-6.0-orange.svg" alt="Swift 6.0" />
     <img src="https://img.shields.io/badge/platform-SwiftUI-blue.svg" alt="Swift UI" title="Swift UI" />
     <img src="https://img.shields.io/github/license/danielsaidi/SwiftUIKit" alt="MIT License" />
     <a href="https://twitter.com/danielsaidi"><img src="https://img.shields.io/twitter/url?label=Twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Fdanielsaidi" alt="Twitter: @danielsaidi" title="Twitter: @danielsaidi" /></a>
@@ -33,13 +33,9 @@ https://github.com/danielsaidi/SwiftUIKit.git
 
 ## Getting Started
 
-SwiftUIKit started as a small project, but has grown pretty huge over the years.
+SwiftUIKit started as a small project, but has grown big over the years. Due to its complexity, I have decided to remove the demo. Instead, have a look at the various namespaces and use the live previews to explore the SDK.
 
-Due to its complexity, I have decided to remove the demo. Instead, have a look at the various namespaces and use the live previews to explore the components in the SDK.
-
-I will therefore extract parts of this SDK into separate libraries, to be able to provide better documentation & help. 
-
-For more Swift & SwiftUI SDKs that I have created, please have a look at [my open-source listing page][OpenSource].
+I will extract parts of this SDK into separate libraries, to be able to provide better documentation & help. Have a look at [my open-source listing page][OpenSource] for some of these.
 
 
 
