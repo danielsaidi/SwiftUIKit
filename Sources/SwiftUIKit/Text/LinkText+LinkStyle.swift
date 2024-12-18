@@ -1,5 +1,5 @@
 //
-//  LinkText.swift
+//  LinkText+LinkStyle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-07-31.
@@ -16,12 +16,12 @@ public extension LinkText {
     /// apply to all links within the view.
     ///
     /// This style can be applied by using the view modifier
-    /// ``SwiftUICore/View/linkTextStyle(_:)``.
+    /// ``SwiftUICore/View/linkTextLinkStyle(_:)``.
     ///
     /// To style link color, line heights, etc. just use the
     /// standard SwiftUI view modifiers. A link will use the
     /// `.accentColor` while texts use the `.foregroundStyle`.
-    struct Style {
+    struct LinkStyle {
 
         public init(
             bold: Bool = false,
@@ -36,7 +36,7 @@ public extension LinkText {
     }
 }
 
-public extension LinkText.Style {
+public extension LinkText.LinkStyle {
     
     /// The standard, plain link text style.
     static var standard: Self { .init() }
@@ -55,19 +55,19 @@ public extension LinkText.Style {
 
 public extension View {
 
-    /// Apply a ``LinkText/Style`` to the view.
-    func linkTextStyle(
-        _ style: LinkText.Style
+    /// Apply a ``LinkText/LinkStyle`` to the view.
+    func linkTextLinkStyle(
+        _ style: LinkText.LinkStyle
     ) -> some View {
-        self.environment(\.linkTextStyle, style)
+        self.environment(\.linkTextLinkStyle, style)
     }
 }
 
-private extension LinkText.Style {
+private extension LinkText.LinkStyle {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: LinkText.Style {
+        static var defaultValue: LinkText.LinkStyle {
             .standard
         }
     }
@@ -75,8 +75,8 @@ private extension LinkText.Style {
 
 public extension EnvironmentValues {
 
-    var linkTextStyle: LinkText.Style {
-        get { self [LinkText.Style.Key.self] }
-        set { self [LinkText.Style.Key.self] = newValue }
+    var linkTextLinkStyle: LinkText.LinkStyle {
+        get { self [LinkText.LinkStyle.Key.self] }
+        set { self [LinkText.LinkStyle.Key.self] = newValue }
     }
 }

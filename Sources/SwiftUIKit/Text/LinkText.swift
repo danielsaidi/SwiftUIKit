@@ -20,7 +20,7 @@ import SwiftUI
 /// You can also use a ``LinkText/Style`` to style the links
 /// further, making them bold or italic.
 public struct LinkText: View {
-
+    
     /// Create a link text.
     ///
     /// - Parameters:
@@ -28,11 +28,19 @@ public struct LinkText: View {
     public init(_ components: [Component]) {
         self.components = components
     }
+    
+    /// Create a link text.
+    ///
+    /// - Parameters:
+    ///   - components: The components to render.
+    public init(_ components: Component...) {
+        self.components = components
+    }
 
     private let components: [Component]
     
-    @Environment(\.linkTextStyle)
-    private var style
+    @Environment(\.linkTextLinkStyle)
+    private var linkStyle
     
     public var body: some View {
         Text(markdownText)
@@ -48,20 +56,21 @@ public extension LinkText {
         case text(String)
 
         /// A link with a text and a link.
-        case link(String, URL?)
+        case link(String, URL?, LinkText.LinkStyle? = nil)
     }
 }
 
 private extension LinkText.Component {
     
     func markdown(
-        _ style: LinkText.Style
+        _ viewStyle: LinkText.LinkStyle
     ) -> String {
         switch self {
         case .text(let text): text
-        case .link(let text, let url): "[\(text)](\(url?.absoluteString ?? ""))"
-                .markdownBold(if: style.bold)
-                .markdownItalic(if: style.italic)
+        case .link(let text, let url, let style):
+            "[\(text)](\(url?.absoluteString ?? ""))"
+                .markdownBold(if: (style ?? viewStyle).bold)
+                .markdownItalic(if: (style ?? viewStyle).italic)
         }
     }
 }
@@ -81,7 +90,7 @@ private extension LinkText {
     
     var markdownText: LocalizedStringKey {
         .init(stringLiteral: components.map {
-            $0.markdown(style)
+            $0.markdown(linkStyle)
         }.joined())
     }
 }
@@ -91,13 +100,13 @@ private extension LinkText {
     struct PreviewText: View {
         
         var body: some View {
-            LinkText([
+            LinkText(
                 .text("You must accept our "),
                 .link("terms & conditions", .init(string: "https://danielsaidi.com")),
                 .text(". Read more on our "),
                 .link("website", .init(string: "https://danielsaidi.com")),
                 .text(".")
-            ])
+            )
         }
     }
     
@@ -109,25 +118,19 @@ private extension LinkText {
             .accentColor(.green)
         
         PreviewText()
-            .font(.body.italic())
-            .linkTextStyle(.bold)
+            .linkTextLinkStyle(.bold)
         
         PreviewText()
-            .font(.body)
-            .linkTextStyle(.italic)
+            .linkTextLinkStyle(.italic)
         
         PreviewText()
-            .font(.body)
-            .linkTextStyle(.boldItalic)
+            .linkTextLinkStyle(.boldItalic)
         
         PreviewText()
             .font(.headline.italic())
         
         PreviewText()
-            .linkTextStyle(.italic)
-        
-        PreviewText()
-            .accentColor(.orange)
+            .tint(.orange)
             .lineSpacing(10)
     }
 }

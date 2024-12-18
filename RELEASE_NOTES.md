@@ -6,6 +6,11 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 ## 5.0.1
 
+This patch adds variadic component support to `LinkText` and makes it possible for each link component to specify its own style. 
+
+
+## 5.0.1
+
 This patch updates `LinkText` to work with Swift 6, after a post 5.0 Swift concurrency change made it stop compiling.
 
 However, since the complexity of the old `LinkText` implementation couldn't be ported to strict concurrency, the new implementation has breaking changes, and uses plain Markdown for its rendering, which reduces the capability of the component.
