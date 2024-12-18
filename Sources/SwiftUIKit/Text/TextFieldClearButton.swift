@@ -43,6 +43,7 @@ public struct TextFieldClearButton: ViewModifier {
     }
 }
 
+@MainActor
 public extension TextField {
 
     /// Add a trailing ``TextFieldClearButton`` to this text

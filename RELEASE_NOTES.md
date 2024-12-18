@@ -4,9 +4,31 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.0.1
+
+This patch updates `LinkText` to work with Swift 6, after a post 5.0 Swift concurrency change made it stop compiling.
+
+However, since the complexity of the old `LinkText` implementation couldn't be ported to strict concurrency, the new implementation has breaking changes, and uses plain Markdown for its rendering, which reduces the capability of the component.
+
+As a positive side-effect of this change, `LinkText` can now be used on all platforms. 
+
+### ✨ Features
+
+* `LinkText` can now be used on all platforms.
+
+### 💡 Behavior changes
+
+* `TextFieldClearButton` now performs some actions as `MainActor`.
+
+### 🚨 Breaking Changes
+
+* `LinkText` has been reimplemented in Markdown, and has fewer capabilities than before.
+
+
+
 ## 5.0
 
-This verison makes SwiftUIKit use Swift 6.
+This version makes SwiftUIKit use Swift 6.
 
 Due to the strict concurrency enforcement, this involves some breaking changes.
 

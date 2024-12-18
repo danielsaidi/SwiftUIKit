@@ -8,7 +8,6 @@
 //  Original: https://stackoverflow.com/questions/73133551
 //
 
-#if os(iOS) || os(macOS) || os(watchOS)
 import SwiftUI
 
 public extension LinkText {
@@ -16,36 +15,42 @@ public extension LinkText {
     /// This style can be applied to a ``LinkText`` and will
     /// apply to all links within the view.
     ///
-    /// There are some built-in styles like ``standard`` and
-    /// ``plain``. You can also create your own.
+    /// This style can be applied by using the view modifier
+    /// ``SwiftUICore/View/linkTextStyle(_:)``.
     ///
-    /// To style colors, plain texts in a ``LinkText`` apply
-    /// the currently applied `.foregroundColor` while links
-    /// use the currently applied `.accentColor`. The entire
-    /// component will also use other native modifiers, like
-    /// `.lineSpacing`.
+    /// To style link color, line heights, etc. just use the
+    /// standard SwiftUI view modifiers. A link will use the
+    /// `.accentColor` while texts use the `.foregroundStyle`.
     struct Style {
 
         public init(
-            fontWeight: Font.Weight = .regular,
-            underline: Bool = true
+            bold: Bool = false,
+            italic: Bool = false
         ) {
-            self.fontWeight = fontWeight
-            self.underline = underline
+            self.bold = bold
+            self.italic = italic
         }
 
-        public var fontWeight: Font.Weight
-        public var underline: Bool
+        public var bold: Bool
+        public var italic: Bool
     }
 }
 
 public extension LinkText.Style {
     
-    /// The standard link text style.
+    /// The standard, plain link text style.
     static var standard: Self { .init() }
-
-    /// A plain link text style that doesn't underline links.
-    static var plain: Self { .init(underline: false) }
+    
+    /// A bold link style.
+    static var bold: Self { .init(bold: true) }
+    
+    /// A bold, italic link style.
+    static var boldItalic: Self {
+        .init(bold: true, italic: true)
+    }
+    
+    /// An italic link style.
+    static var italic: Self { .init(italic: true) }
 }
 
 public extension View {
@@ -75,5 +80,3 @@ public extension EnvironmentValues {
         set { self [LinkText.Style.Key.self] = newValue }
     }
 }
-
-#endif
