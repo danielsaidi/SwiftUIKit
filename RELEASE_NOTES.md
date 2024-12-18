@@ -15,6 +15,7 @@ As a positive side-effect of this change, `LinkText` can now be used on all plat
 ### ✨ Features
 
 * `LinkText` can now be used on all platforms.
+* `View+Conditionals` has a new `searchable(if:...)` variant.
 
 ### 💡 Behavior changes
 
