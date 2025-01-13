@@ -3,7 +3,7 @@
 //  SwiftUIKitTests
 //
 //  Created by Daniel Saidi on 2017-05-10.
-//  Copyright © 2017-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2017-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUIKit

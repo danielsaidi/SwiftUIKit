@@ -3,7 +3,7 @@
 //  SwiftKit
 //
 //  Created by Daniel Saidi on 2018-10-23.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation

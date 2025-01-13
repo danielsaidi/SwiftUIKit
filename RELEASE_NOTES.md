@@ -4,9 +4,16 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
-## 5.0.1
+## 5.0.3
+
+This patch makes the `ImageCache` initializer public. 
+
+
+
+## 5.0.2
 
 This patch adds variadic component support to `LinkText` and makes it possible for each link component to specify its own style. 
+
 
 
 ## 5.0.1
