@@ -2,17 +2,39 @@
 
 # Documentation:
 # This script bumps the project version number.
+# You can append --no-semver to disable semantic version validation.
+
+# Usage:
+# version_bump.sh [--no-semver]
+# e.g. `bash scripts/version_bump.sh`
+# e.g. `bash scripts/version_bump.sh --no-semver`
 
 # Exit immediately if a command exits with a non-zero status
 set -e
 
 # Use the script folder to refer to other scripts.
 FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-SCRIPT="$FOLDER/version_number.sh"
+SCRIPT_VERSION_NUMBER="$FOLDER/version_number.sh"
+
+
+# Parse --no-semver argument
+VALIDATE_SEMVER=true
+for arg in "$@"; do
+    case $arg in
+        --no-semver)
+            VALIDATE_SEMVER=false
+            shift # Remove --no-semver from processing
+            ;;
+    esac
+done
+
+# Start script
+echo ""
+echo "Bumping version number..."
+echo ""
 
 # Get the latest version
-VERSION=$($SCRIPT)
-
+VERSION=$($SCRIPT_VERSION_NUMBER)
 if [ $? -ne 0 ]; then
     echo "Failed to get the latest version"
     exit 1
@@ -23,6 +45,10 @@ echo "The current version is: $VERSION"
 
 # Function to validate semver format, including optional -rc.<INT> suffix
 validate_semver() {
+    if [ "$VALIDATE_SEMVER" = false ]; then
+        return 0
+    fi
+    
     if [[ $1 =~ ^v?[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?$ ]]; then
         return 0
     else
@@ -34,6 +60,7 @@ validate_semver() {
 while true; do
     read -p "Enter the new version number: " NEW_VERSION
 
+    # Validate the version number to ensure that it's a semver version
     if validate_semver "$NEW_VERSION"; then
         break
     else
@@ -42,6 +69,12 @@ while true; do
     fi
 done
 
+# Push the new tag
 git push -u origin HEAD
 git tag $NEW_VERSION
 git push --tags
+
+# Complete successfully
+echo ""
+echo "Version tag pushed successfully!"
+echo ""
