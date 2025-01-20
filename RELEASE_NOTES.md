@@ -4,6 +4,13 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.1.1
+
+### ✨ Features
+
+* `StandardButtonType` adds even more standard button shortcuts.
+
+
 ## 5.1
 
 ### ✨ Features

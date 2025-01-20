@@ -74,19 +74,17 @@ public extension ButtonType {
     }
     
     #if os(iOS) || os(macOS)
-    var keyboardShortcut: KeyEquivalent? {
+    var keyboardShortcut: (key: KeyEquivalent, modifiers: EventModifiers?)? {
         switch self {
-        case .search: "f"
+        case .add: ("a", .command)
+        case .cancel: (.escape, nil)
+        case .done: (.return, .command)
+        case .edit: ("e", .command)
+        case .search: ("f", .command)
         default: nil
         }
     }
     #endif
-    
-    var keyboardShortcutModifier: EventModifiers? {
-        switch self {
-        default: .command
-        }
-    }
     
     var role: ButtonRole? {
         switch self {
@@ -128,10 +126,10 @@ public extension View {
     ) -> some View {
         #if os(iOS) || os(macOS)
         if let shortcut = button.keyboardShortcut {
-            if let modifier = button.keyboardShortcutModifier {
-                self.keyboardShortcut(shortcut, modifiers: modifier)
+            if let modifiers = shortcut.modifiers {
+                self.keyboardShortcut(shortcut.key, modifiers: modifiers)
             } else {
-                self.keyboardShortcut(shortcut)
+                self.keyboardShortcut(shortcut.key)
             }
         } else {
             self
