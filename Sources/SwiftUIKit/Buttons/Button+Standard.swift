@@ -36,7 +36,7 @@ public extension Button {
              ok, 
              paste,
              removeFavorite, removeFromFavorites, 
-             select, share
+             search, select, share
     }
 }
 
@@ -66,8 +66,16 @@ public extension Button.StandardType {
         case .paste: "clipboard"
         case .removeFavorite: "star.circle.fill"
         case .removeFromFavorites: "star.circle.fill"
+        case .search: "magnifyingglass"
         case .select: "checkmark.circle"
         case .share: "square.and.arrow.up"
+        }
+    }
+    
+    var keyboardShortcut: String? {
+        switch self {
+        case .search: "f"
+        default: nil
         }
     }
     
@@ -96,6 +104,7 @@ public extension Button.StandardType {
         case .paste: "Button.Paste"
         case .removeFavorite: "Button.RemoveFavorite"
         case .removeFromFavorites: "Button.RemoveFromFavorites"
+        case .search: "Button.Search"
         case .select: "Button.Select"
         case .share: "Button.Share"
         }

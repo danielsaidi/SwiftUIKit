@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.0.4
+
+### ✨ Features
+
+* `Button+Standard` has support for a new `.search` type.
+ 
+
+
 ## 5.0.3
 
 This patch makes the `ImageCache` initializer public. 
