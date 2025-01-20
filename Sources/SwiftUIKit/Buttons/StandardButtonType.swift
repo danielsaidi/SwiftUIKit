@@ -12,7 +12,7 @@ public extension Button {
     
     /// Create a new ``StandardType``-based button.
     init(
-        _ type: StandardType,
+        _ type: ButtonType,
         _ title: LocalizedStringKey? = nil,
         _ icon: Image? = nil,
         bundle: Bundle? = nil,
@@ -25,22 +25,23 @@ public extension Button {
             )
         }
     }
-    
-    /// This enum defines standard button types and provides
-    /// standard localized texts and icons.
-    enum StandardType: String, CaseIterable, Identifiable {
-        case add, addFavorite, addToFavorites,
-             cancel, call, copy,
-             delete, deselect, done, 
-             edit, email,
-             ok, 
-             paste,
-             removeFavorite, removeFromFavorites, 
-             search, select, share
-    }
 }
 
-public extension Button.StandardType {
+
+/// This enum defines standard button types and provides
+/// standard localized texts and icons.
+public enum ButtonType: String, CaseIterable, Identifiable {
+    case add, addFavorite, addToFavorites,
+         cancel, call, copy,
+         delete, deselect, done,
+         edit, email,
+         ok,
+         paste,
+         removeFavorite, removeFromFavorites,
+         search, select, share
+}
+
+public extension ButtonType {
     
     var id: String { rawValue }
     
@@ -72,10 +73,16 @@ public extension Button.StandardType {
         }
     }
     
-    var keyboardShortcut: String? {
+    var keyboardShortcut: KeyEquivalent? {
         switch self {
         case .search: "f"
         default: nil
+        }
+    }
+    
+    var keyboardShortcutModifier: EventModifiers? {
+        switch self {
+        default: .command
         }
     }
     
@@ -110,6 +117,25 @@ public extension Button.StandardType {
         }
     }
 }
+
+public extension View {
+    
+    @ViewBuilder
+    func keyboardShortcut(
+        _ button: ButtonType
+    ) -> some View {
+        if let shortcut = button.keyboardShortcut {
+            if let modifier = button.keyboardShortcutModifier {
+                self.keyboardShortcut(shortcut, modifiers: modifier)
+            } else {
+                self.keyboardShortcut(shortcut)
+            }
+        } else {
+            self
+        }
+    }
+}
+
 /*
 #Preview {
     

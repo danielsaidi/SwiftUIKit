@@ -4,12 +4,13 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
-## 5.0.4
+## 5.1
 
 ### ✨ Features
 
-* `Button+Standard` has support for a new `.search` type.
- 
+* `StandardButtonType` has been promoted to a top-level type.
+* `View` has a new `StandardButtonType`-based `.keyboardShortcut` modifier.
+
 
 
 ## 5.0.3
