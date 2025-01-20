@@ -73,12 +73,14 @@ public extension ButtonType {
         }
     }
     
+    #if os(iOS) || os(macOS)
     var keyboardShortcut: KeyEquivalent? {
         switch self {
         case .search: "f"
         default: nil
         }
     }
+    #endif
     
     var keyboardShortcutModifier: EventModifiers? {
         switch self {
@@ -124,6 +126,7 @@ public extension View {
     func keyboardShortcut(
         _ button: ButtonType
     ) -> some View {
+        #if os(iOS) || os(macOS)
         if let shortcut = button.keyboardShortcut {
             if let modifier = button.keyboardShortcutModifier {
                 self.keyboardShortcut(shortcut, modifiers: modifier)
@@ -133,6 +136,9 @@ public extension View {
         } else {
             self
         }
+        #else
+        self
+        #endif
     }
 }
 
