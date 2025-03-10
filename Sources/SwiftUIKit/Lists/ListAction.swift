@@ -1,5 +1,5 @@
 //
-//  FormQuickAction.swift
+//  ListAction.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-11-21.
@@ -7,26 +7,24 @@
 
 import SwiftUI
 
-/**
- This enum defines quick list actions, that can be triggered
- within a form or list.
- 
- Use the various view builders like ``button(content:)`` and
- ``button`` to get a view that triggers the action.
- */
+/// This enum defines actions that can be triggered within a
+/// form or a list.
 public enum ListAction {
     
-    /// Call a certain phone number.
+    /// Call a phone number.
     case call(phoneNumber: String)
     
-    /// Copy a certain value.
+    /// Copy a text.
     case copy(String)
     
-    /// Email a certain address.
+    /// Copy an image.
+    case copyImage(ImageRepresentable)
+    
+    /// Send an e-mail.
     case email(address: String)
     
     /// Open a certain URL.
-    case open(url: String)
+    case openUrl(_ url: String)
 }
 
 public extension ListAction {
@@ -47,9 +45,11 @@ public extension ListAction {
             link(url: .init(string: "tel:\(url)"), content: content)
         case .copy(let text):
             button(action: { copy(text) }, content: content)
+        case .copyImage(let image):
+            button(action: { copy(image) }, content: content)
         case .email(let url):
             link(url: .init(string: "mailto:\(url)"), content: content)
-        case .open(let url):
+        case .openUrl(let url):
             link(url: .init(string: url), content: content)
         }
     }
@@ -57,9 +57,9 @@ public extension ListAction {
     var icon: Image {
         switch self {
         case .call: .init(systemName: "phone")
-        case .copy: .init(systemName: "doc.on.doc")
+        case .copy, .copyImage: .init(systemName: "doc.on.doc")
         case .email: .init(systemName: "envelope")
-        case .open: .init(systemName: "safari")
+        case .openUrl: .init(systemName: "safari")
         }
     }
 }
@@ -91,8 +91,19 @@ private extension ListAction {
 private extension ListAction {
     
     func copy(_ value: String) {
-        #if os(macOS) || os(iOS)
+        #if os(macOS) || os(iOS) || os(visionOS)
         Pasteboard.general.copy(value)
+        #else
+        print("Unsupported platform")
+        #endif
+    }
+    
+    func copy(_ image: ImageRepresentable) {
+        #if os(iOS) || os(visionOS)
+        Pasteboard.general.image = image
+        #elseif os(macOS)
+        Pasteboard.general.clearContents()
+        Pasteboard.general.writeObjects([image])
         #else
         print("Unsupported platform")
         #endif
@@ -107,10 +118,10 @@ private extension ListAction {
     
     return List {
         view(for: .call(phoneNumber: "abc123"))
-        #if os(macOS) || os(iOS)
+        #if os(macOS) || os(iOS) || os(visionOS)
         view(for: .copy("abc123"))
         #endif
         view(for: .email(address: "abc123"))
-        view(for: .open(url: "https://danielsaidi.com"))
+        view(for: .openUrl("https://danielsaidi.com"))
     }
 }

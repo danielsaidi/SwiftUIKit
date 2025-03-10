@@ -62,9 +62,6 @@ public struct ListButtonGroup<Content: View>: View {
                 
                 Section {
                     Text("Preview.Row")
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                    Text("Preview.Row")
                 }
             }
         }
