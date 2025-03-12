@@ -91,7 +91,7 @@ private extension ListAction {
 private extension ListAction {
     
     func copy(_ value: String) {
-        #if os(macOS) || os(iOS) || os(visionOS)
+        #if os(macOS) || os(iOS)
         Pasteboard.general.copy(value)
         #else
         print("Unsupported platform")
@@ -99,7 +99,7 @@ private extension ListAction {
     }
     
     func copy(_ image: ImageRepresentable) {
-        #if os(iOS) || os(visionOS)
+        #if os(iOS)
         Pasteboard.general.image = image
         #elseif os(macOS)
         Pasteboard.general.clearContents()
