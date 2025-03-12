@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.1.3
+
+### ✨ Features
+
+* `ScanCode` has a new `rotation` parameter.
+
+
+
 ## 5.1.2
 
 ### ✨ Features
