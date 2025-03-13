@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.1.5
+
+### 💡 Adjustment
+
+* `ListActionRow` now has an optional title.
+
+
+
 ## 5.1.4
 
 ### ✨ Features
