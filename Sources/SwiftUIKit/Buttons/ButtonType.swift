@@ -1,5 +1,5 @@
 //
-//  Button+Standard.swift
+//  ButtonType.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2024-04-30.
@@ -10,7 +10,11 @@ import SwiftUI
 
 public extension Button {
     
-    /// Create a new ``StandardType``-based button.
+    /// Create a new ``ButtonType``-based button.
+    ///
+    /// You have to tint the icon separately for destructive
+    /// buttons like ``ButtonType/delete``. This can be done
+    /// automatically, by using `.labelStyle(.titleAndIcon)`.
     init(
         _ type: ButtonType,
         _ title: LocalizedStringKey? = nil,
@@ -18,10 +22,16 @@ public extension Button {
         bundle: Bundle? = nil,
         action: @escaping () -> Void
     ) where Label == SwiftUI.Label<Text, Image?> {
-        self.init(role: type.role, action: action) {
+        self.init(
+            role: type.role,
+            action: action
+        ) {
+            let bundle: Bundle? = title == nil ? .module : bundle
+            let displayTitle = title ?? type.title
+            let icon = icon ?? type.image
             Label(
-                title: { Text(title ?? type.title, bundle: title == nil ? .module : bundle) },
-                icon: { icon ?? type.image }
+                title: { Text(displayTitle, bundle: bundle) },
+                icon: { icon }
             )
         }
     }
@@ -31,14 +41,26 @@ public extension Button {
 /// This enum defines standard button types and provides
 /// standard localized texts and icons.
 public enum ButtonType: String, CaseIterable, Identifiable {
-    case add, addFavorite, addToFavorites,
+    case add, addToFavorites,
          cancel, call, copy,
          delete, deselect, done,
-         edit, email,
+         edit, email, export,
+         like,
          ok,
          paste,
-         removeFavorite, removeFromFavorites,
+         removeFromFavorites, removeLike,
          search, select, share
+}
+
+public extension ButtonType {
+    
+    static func toggleFavorite(isFavorite: Bool) -> ButtonType {
+        isFavorite ? .removeFromFavorites : .addToFavorites
+    }
+    
+    static func toggleLike(isLiked: Bool) -> ButtonType {
+        isLiked ? .removeLike : .like
+    }
 }
 
 public extension ButtonType {
@@ -53,8 +75,7 @@ public extension ButtonType {
     var imageName: String? {
         switch self {
         case .add: "plus"
-        case .addFavorite: "star.circle"
-        case .addToFavorites: "star.circle"
+        case .addToFavorites: "star"
         case .cancel: "xmark"
         case .call: "phone"
         case .copy: "doc.on.doc"
@@ -63,10 +84,12 @@ public extension ButtonType {
         case .done: "checkmark"
         case .edit: "pencil"
         case .email: "envelope"
+        case .export: "square.and.arrow.up"
+        case .like: "heart"
         case .ok: "checkmark"
         case .paste: "clipboard"
-        case .removeFavorite: "star.circle.fill"
-        case .removeFromFavorites: "star.circle.fill"
+        case .removeFromFavorites: "star.fill"
+        case .removeLike: "heart.fill"
         case .search: "magnifyingglass"
         case .select: "checkmark.circle"
         case .share: "square.and.arrow.up"
@@ -97,7 +120,6 @@ public extension ButtonType {
     var title: LocalizedStringKey {
         switch self {
         case .add: "Button.Add"
-        case .addFavorite: "Button.AddFavorite"
         case .addToFavorites: "Button.AddToFavorites"
         case .call: "Button.Call"
         case .cancel: "Button.Cancel"
@@ -105,12 +127,14 @@ public extension ButtonType {
         case .deselect: "Button.Deselect"
         case .edit: "Button.Edit"
         case .email: "Button.Email"
+        case .export: "Button.Export"
         case .delete: "Button.Delete"
         case .done: "Button.Done"
+        case .like: "Button.Like"
         case .ok: "Button.OK"
         case .paste: "Button.Paste"
-        case .removeFavorite: "Button.RemoveFavorite"
         case .removeFromFavorites: "Button.RemoveFromFavorites"
+        case .removeLike: "Button.RemoveLike"
         case .search: "Button.Search"
         case .select: "Button.Select"
         case .share: "Button.Share"
@@ -140,20 +164,26 @@ public extension View {
     }
 }
 
-/*
+
 #Preview {
     
     @ViewBuilder
     func buttons() -> some View {
         Section {
-            ForEach(Button.StandardType.allCases) { type in
+            ForEach(ButtonType.allCases) { type in
                 Button(type) { print("Tapped \(type.title)") }
             }
+        }
+        Section {
+            Button(.toggleFavorite(isFavorite: false)) {}
+            Button(.toggleFavorite(isFavorite: true)) {}
+            Button(.toggleLike(isLiked: false)) {}
+            Button(.toggleLike(isLiked: true)) {}
         }
     }
     
     return List {
-        buttons()
+        buttons().labelStyle(.titleAndIcon)
         buttons().labelStyle(.titleOnly)
         buttons().labelStyle(.iconOnly)
     }
@@ -163,4 +193,3 @@ public extension View {
         }
     }
 }
-*/

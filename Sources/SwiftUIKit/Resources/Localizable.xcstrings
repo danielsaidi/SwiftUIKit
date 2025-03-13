@@ -26,16 +26,6 @@
         }
       }
     },
-    "Button.AddFavorite" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add Favorite"
-          }
-        }
-      }
-    },
     "Button.AddToFavorites" : {
       "localizations" : {
         "en" : {
@@ -126,6 +116,26 @@
         }
       }
     },
+    "Button.Export" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export"
+          }
+        }
+      }
+    },
+    "Button.Like" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Like"
+          }
+        }
+      }
+    },
     "Button.OK" : {
       "localizations" : {
         "en" : {
@@ -146,22 +156,22 @@
         }
       }
     },
-    "Button.RemoveFavorite" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove Favorite"
-          }
-        }
-      }
-    },
     "Button.RemoveFromFavorites" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remove From Favorites"
+          }
+        }
+      }
+    },
+    "Button.RemoveLike" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Like"
           }
         }
       }
