@@ -49,7 +49,7 @@ public enum ButtonType: String, CaseIterable, Identifiable {
          ok,
          paste,
          removeFromFavorites, removeLike,
-         search, select, share
+         save, search, select, share
 }
 
 public extension ButtonType {
@@ -90,6 +90,7 @@ public extension ButtonType {
         case .paste: "clipboard"
         case .removeFromFavorites: "star.fill"
         case .removeLike: "heart.fill"
+        case .save: "checkmark"
         case .search: "magnifyingglass"
         case .select: "checkmark.circle"
         case .share: "square.and.arrow.up"
@@ -103,6 +104,7 @@ public extension ButtonType {
         case .cancel: (.escape, nil)
         case .done: (.return, .command)
         case .edit: ("e", .command)
+        case .save: ("s", .command)
         case .search: ("f", .command)
         default: nil
         }
@@ -135,6 +137,7 @@ public extension ButtonType {
         case .paste: "Button.Paste"
         case .removeFromFavorites: "Button.RemoveFromFavorites"
         case .removeLike: "Button.RemoveLike"
+        case .save: "Button.Save"
         case .search: "Button.Search"
         case .select: "Button.Select"
         case .share: "Button.Share"

@@ -176,6 +176,16 @@
         }
       }
     },
+    "Button.Save" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
     "Button.Search" : {
       "localizations" : {
         "en" : {

@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.1.6
+
+### ✨ Features
+
+* `ButtonType` has a new "save" type.
+
+
+
 ## 5.1.5
 
 ### 💡 Adjustment
