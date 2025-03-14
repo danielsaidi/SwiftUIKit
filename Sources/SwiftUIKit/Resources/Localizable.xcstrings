@@ -56,6 +56,16 @@
         }
       }
     },
+    "Button.Close" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
     "Button.Copy" : {
       "localizations" : {
         "en" : {
