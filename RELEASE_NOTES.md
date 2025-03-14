@@ -4,6 +4,15 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.1.7
+
+### ✨ Features
+
+* `ButtonType` has a new "close" type.
+* `ButtonType` has a new "toggleSelected" type.
+
+
+
 ## 5.1.6
 
 ### ✨ Features

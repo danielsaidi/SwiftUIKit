@@ -42,7 +42,7 @@ public extension Button {
 /// standard localized texts and icons.
 public enum ButtonType: String, CaseIterable, Identifiable {
     case add, addToFavorites,
-         cancel, call, copy,
+         cancel, call, close, copy,
          delete, deselect, done,
          edit, email, export,
          like,
@@ -61,6 +61,10 @@ public extension ButtonType {
     static func toggleLike(isLiked: Bool) -> ButtonType {
         isLiked ? .removeLike : .like
     }
+    
+    static func toggleSelect(isSelected: Bool) -> ButtonType {
+        isSelected ? .deselect : .select
+    }
 }
 
 public extension ButtonType {
@@ -77,6 +81,7 @@ public extension ButtonType {
         case .add: "plus"
         case .addToFavorites: "star"
         case .cancel: "xmark"
+        case .close: "xmark.circle"
         case .call: "phone"
         case .copy: "doc.on.doc"
         case .delete: "trash"
@@ -102,6 +107,7 @@ public extension ButtonType {
         switch self {
         case .add: ("a", .command)
         case .cancel: (.escape, nil)
+        case .close: (.escape, nil)
         case .done: (.return, .command)
         case .edit: ("e", .command)
         case .save: ("s", .command)
@@ -125,6 +131,7 @@ public extension ButtonType {
         case .addToFavorites: "Button.AddToFavorites"
         case .call: "Button.Call"
         case .cancel: "Button.Cancel"
+        case .close: "Button.Close"
         case .copy: "Button.Copy"
         case .deselect: "Button.Deselect"
         case .edit: "Button.Edit"
@@ -182,6 +189,8 @@ public extension View {
             Button(.toggleFavorite(isFavorite: true)) {}
             Button(.toggleLike(isLiked: false)) {}
             Button(.toggleLike(isLiked: true)) {}
+            Button(.toggleSelect(isSelected: false)) {}
+            Button(.toggleSelect(isSelected: true)) {}
         }
     }
     
