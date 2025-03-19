@@ -40,7 +40,7 @@ test_platform() {
 
     # Define a local $PLATFORM variable
     local PLATFORM="${1//_/ }"
-
+    
     # Define the destination, based on the $PLATFORM
     case $PLATFORM in
         "iOS")
@@ -66,10 +66,16 @@ test_platform() {
 
     # Test $TARGET for the $DESTINATION
     echo "Testing $TARGET for $PLATFORM..."
-    xcodebuild test -scheme $TARGET -derivedDataPath .build -destination "$DESTINATION" -enableCodeCoverage YES;
+    xcodebuild test -scheme $TARGET -derivedDataPath .build -destination "$DESTINATION" -enableCodeCoverage YES
+    local TEST_RESULT=$?
+    
+    if [[ $TEST_RESULT -ne 0 ]]; then
+        return $TEST_RESULT
+    fi
 
     # Complete successfully
     echo "Successfully tested $TARGET for $PLATFORM"
+    return 0
 }
 
 # Loop through all platforms and call the test function

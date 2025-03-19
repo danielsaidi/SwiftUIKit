@@ -20,11 +20,11 @@ final class Bundle_InformationTests: XCTestCase {
     }
 }
 
-private class MyBundle: Bundle {
+private class MyBundle: Bundle, @unchecked Sendable {
     
     override var infoDictionary: [String: Any]? {
         [
-            String(kCFBundleVersionKey): "123",
+            String(kCFBundleVersionKey): "1234",
             "CFBundleDisplayName": "SwiftUIKit Tests",
             "CFBundleShortVersionString": "1.2.3"
         ]

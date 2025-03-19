@@ -26,6 +26,11 @@ fi
 # Create local argument variables.
 BRANCH=$1
 
+# Start script
+echo ""
+echo "Validating git repository..."
+echo ""
+
 # Check if the current directory is a Git repository
 if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     echo "Error: Not a Git repository"
@@ -37,11 +42,6 @@ if [ -n "$(git status --porcelain)" ]; then
     echo "Error: Git repository is dirty. There are uncommitted changes."
     exit 1
 fi
-
-# Start script
-echo ""
-echo "Validating git repository..."
-echo ""
 
 # Verify that we're on the correct branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
