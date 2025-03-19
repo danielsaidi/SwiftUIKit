@@ -9,12 +9,7 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This view can be used to present action rows in a `List`.
- 
- If `hideIfEmpty` is `true` and the text is empty, this view
- is rendered as an `EmptyView`.
- */
+/// This view can be used to present action rows in a `List`.
 public struct ListActionRow: View {
     
     /// Create a list action row with a custom trailing view.
@@ -22,8 +17,8 @@ public struct ListActionRow: View {
     /// - Parameters:
     ///   - title: The row title, if any.
     ///   - text: The row text.
-    ///   - action: The ``ListAction`` to use.
-    ///   - trailingView: An optional trailing view to apply to the view.
+    ///   - bundle: The bundle to use for localization, if any.
+    ///   - action: The ``ListAction`` to use, if any.
     public init(
         title: LocalizedStringKey? = nil,
         text: LocalizedStringKey,
@@ -80,9 +75,9 @@ public struct ListActionRow: View {
         
         ListActionRow(
             text: "Preview.Text.\(2) Preview.Text.\(2) Preview.Text.\(2) Preview.Text.\(2) Preview.Text.\(2)  Preview.Text.\(2)  Preview.Text.\(2) ",
-            bundle: .module
+            bundle: .module,
+            action: .email(address: "")
         )
-        .font(.footnote)
         
         ListActionRow(
             title: "Preview.Title.\(3)",

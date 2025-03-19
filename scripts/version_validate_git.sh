@@ -33,7 +33,7 @@ if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
 fi
 
 # Check for uncommitted changes
-if ! git diff-index --quiet HEAD --; then
+if [ -n "$(git status --porcelain)" ]; then
     echo "Error: Git repository is dirty. There are uncommitted changes."
     exit 1
 fi
