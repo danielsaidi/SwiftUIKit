@@ -24,7 +24,7 @@ private class MyBundle: Bundle, @unchecked Sendable {
     
     override var infoDictionary: [String: Any]? {
         [
-            String(kCFBundleVersionKey): "1234",
+            String(kCFBundleVersionKey): "123",
             "CFBundleDisplayName": "SwiftUIKit Tests",
             "CFBundleShortVersionString": "1.2.3"
         ]
