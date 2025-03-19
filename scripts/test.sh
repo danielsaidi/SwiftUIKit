@@ -35,6 +35,34 @@ echo ""
 echo "Testing $TARGET for [$PLATFORMS]..."
 echo ""
 
+# A function that gets the latest simulator for a certain OS.
+get_latest_simulator() {
+    local PLATFORM=$1
+    local SIMULATOR_TYPE
+    
+    case $PLATFORM in
+        "iOS")
+            SIMULATOR_TYPE="iPhone"
+            ;;
+        "tvOS")
+            SIMULATOR_TYPE="Apple TV"
+            ;;
+        "watchOS")
+            SIMULATOR_TYPE="Apple Watch"
+            ;;
+        "xrOS")
+            SIMULATOR_TYPE="Apple Vision"
+            ;;
+        *)
+            echo "Error: Unsupported platform for simulator '$PLATFORM'"
+            return 1
+            ;;
+    esac
+    
+    # Get the latest simulator for the platform
+    xcrun simctl list devices available | grep "$SIMULATOR_TYPE" | tail -1 | sed -E 's/.*\(([A-F0-9-]+)\).*/\1/'
+}
+
 # A function that tests $TARGET for a specific platform
 test_platform() {
 
@@ -43,24 +71,20 @@ test_platform() {
     
     # Define the destination, based on the $PLATFORM
     case $PLATFORM in
-        "iOS")
-            DESTINATION="platform=iOS Simulator,name=iPhone 16"
+        "iOS"|"tvOS"|"watchOS"|"xrOS")
+            local SIMULATOR_UDID=$(get_latest_simulator "$PLATFORM")
+            if [ -z "$SIMULATOR_UDID" ]; then
+                echo "Error: No simulator found for $PLATFORM"
+                return 1
+            fi
+            DESTINATION="id=$SIMULATOR_UDID"
             ;;
         "macOS")
             DESTINATION="platform=macOS"
             ;;
-        "tvOS")
-            DESTINATION="platform=tvOS Simulator,name=Apple TV"
-            ;;
-        "watchOS")
-            DESTINATION="platform=watchOS Simulator,name=Apple Watch"
-            ;;
-        "xrOS")
-            DESTINATION="platform=xrOS Simulator,name=Apple Vision Pro"
-            ;;
         *)
             echo "Error: Unsupported platform '$PLATFORM'"
-            exit 1
+            return 1
             ;;
     esac
 
