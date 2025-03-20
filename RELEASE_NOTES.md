@@ -4,6 +4,23 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.1.9
+
+### 💡 Adjustment
+
+* `FlipView` now handles multiple flip directions and behaves better on iOS 17+.
+* `FlipView` now animates when the `isFlipped` binding is changed from the outside.
+
+
+
+## 5.1.8
+
+### 🐛 Bug fixes
+
+* This version adds a missing localization text.
+
+
+
 ## 5.1.7
 
 ### ✨ Features
