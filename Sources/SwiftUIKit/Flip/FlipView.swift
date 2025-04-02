@@ -170,7 +170,7 @@ private extension View {
         private var isFlipped = false
         
         var body: some View {
-            VStack {
+            List {
                 Text("Is Flipped: \(isFlipped)")
                 
                 FlipView(

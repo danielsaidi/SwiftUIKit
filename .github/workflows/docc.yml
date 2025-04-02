@@ -36,7 +36,7 @@ jobs:
         with:
           xcode-version: latest-stable
       - name: Build DocC
-        run: bash scripts/docc.sh ${{ github.event.repository.name }} iOS
+        run: bash scripts/docc.sh ${{ github.event.repository.name }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
