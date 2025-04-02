@@ -162,7 +162,48 @@ private extension View {
     }
 }
 
-#Preview {
+@MainActor
+@ViewBuilder
+func previewContent(isFlipped: Binding<Bool>) -> some View {
+    Text("Is Flipped: \(isFlipped.wrappedValue)")
+    
+    FlipView(
+        front: Color.green.overlay(Text("Front")),
+        back: Color.red.overlay(Text("Back")),
+        isFlipped: isFlipped,
+        flipDuration: 0.5,
+        tapDirection: .right,
+        swipeDirections: [.left, .right, .up, .down]
+    )
+    .cornerRadius(10)
+    .shadow(radius: 0, x: 0, y: 2)
+    
+    Button("Flip") {
+        withAnimation {
+            isFlipped.wrappedValue.toggle()
+        }
+    }
+}
+
+#Preview("Stack") {
+    
+    struct Preview: View {
+        
+        @State
+        private var isFlipped = false
+        
+        var body: some View {
+            VStack {
+                previewContent(isFlipped: $isFlipped)
+            }
+            .padding()
+        }
+    }
+    
+    return Preview()
+}
+
+#Preview("List (BUG)") {
     
     struct Preview: View {
         
@@ -171,24 +212,7 @@ private extension View {
         
         var body: some View {
             List {
-                Text("Is Flipped: \(isFlipped)")
-                
-                FlipView(
-                    front: Color.green.overlay(Text("Front")),
-                    back: Color.red.overlay(Text("Back")),
-                    isFlipped: $isFlipped,
-                    flipDuration: 0.5,
-                    tapDirection: .right,
-                    swipeDirections: [.left, .right, .up, .down]
-                )
-                .cornerRadius(10)
-                .shadow(radius: 0, x: 0, y: 2)
-                
-                Button("Flip") {
-                    withAnimation {
-                        isFlipped.toggle()
-                    }
-                }
+                previewContent(isFlipped: $isFlipped)
             }
             .padding()
         }
