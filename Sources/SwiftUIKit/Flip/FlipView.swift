@@ -14,6 +14,14 @@ import SwiftUI
 /// For now, this view only supports horizontal flips, since
 /// flipping views both horizontally and vertically can mess
 /// it up, since the view can become upside down.
+///
+/// > Important: This view currently handles flip animations
+/// incorrectly when it is used within a `List`. This can be
+/// fixed by wrapping it in a `ZStack`. I tried to create an
+/// additional layer within this component, but that did not
+/// work. Until we come up with another solution, there is a
+/// `.withListRenderingBugFix()` view modifier that performs
+/// the `ZStack` wrap.
 public struct FlipView<FrontView: View, BackView: View>: View {
     
     public init(
@@ -67,6 +75,15 @@ public struct FlipView<FrontView: View, BackView: View>: View {
             back
         } else {
             front
+        }
+    }
+}
+
+public extension FlipView {
+    
+    func withListRenderingBugFix() -> some View {
+        ZStack {
+            self
         }
     }
 }
@@ -175,6 +192,8 @@ func previewContent(isFlipped: Binding<Bool>) -> some View {
         tapDirection: .right,
         swipeDirections: [.left, .right, .up, .down]
     )
+    .withListRenderingBugFix()  // OBS!
+    .frame(minHeight: 100)
     .cornerRadius(10)
     .shadow(radius: 0, x: 0, y: 2)
     

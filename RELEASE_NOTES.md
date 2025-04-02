@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.2
+
+This version updates the icon, logo and build scripts.
+
+It also adds a workaround for the `FlipView` rendering bug when it's placed in a `List`.
+
+
+
 ## 5.1.9
 
 ### 💡 Adjustment
