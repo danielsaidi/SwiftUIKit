@@ -8,27 +8,23 @@
 
 import SwiftUI
 
-/**
- This styles defines shadow values, to allow strong typing.
- 
- You can specify your own standard styles by creating static,
- calculated extension properties, for instance:
- 
- ```swift
- extension ShadowStyle {
- 
-     static let badge = Self(
-         color: Color.black.opacity(0.1),
-         radius: 3,
-         x: 0,
-         y: 2
-     )
- }
- ```
- 
- You can apply the style with the `.font(_ style:)` modifier.
- ```
- */
+/// This styles defines shadow types, to allow strong typing.
+///
+/// You can specify your own standard styles by creating new
+/// static properties, for instance:
+///
+/// ```swift
+/// extension ShadowStyle {
+///     static let badge = Self(
+///         color: Color.black.opacity(0.1),
+///         radius: 3,
+///         x: 0,
+///         y: 2
+///     )
+/// }
+/// ```
+///
+/// You can apply shadows with the `font(_ style:)` modifier.
 public struct ViewShadowStyle {
     
     public init(

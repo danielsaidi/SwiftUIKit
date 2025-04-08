@@ -8,22 +8,7 @@
 
 import SwiftUI
 
-/**
- This styles defines a corner radius, to allow strong typing.
- 
- You can specify your own standard styles by creating static,
- calculated extension properties, for instance:
- 
- ```swift
- extension CornerRadiusStyle {
- 
-     static let card = Self(radius: 5)
- }
- ```
- 
- You can apply this style using the `.cornerRadius(_ style:)`
- view modifier.
- */
+@available(*, deprecated, message: "This is no longer used and will be removed in the next major release.")
 public struct CornerRadiusStyle {
     
     public init(radius: CGFloat) {
@@ -33,6 +18,7 @@ public struct CornerRadiusStyle {
     public let radius: CGFloat
 }
 
+@available(*, deprecated, message: "This is no longer used and will be removed in the next major release.")
 public extension View {
 
     /// Apply a ``CornerRadiusStyle`` to the view.

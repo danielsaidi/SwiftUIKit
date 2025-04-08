@@ -8,10 +8,17 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalyst.
 
+### ✨ Features
+
+* The `FetchedDataView` has a new view-builder initializer.
+
 ### 🗑️ Deprecations
 
+* The `CornerRadiusStyle` type has been deprecated.
+* The `CustomRoundedRectangle` view has been deprecated.
 * The `DateFormatter` init extensions have been deprecated.
 * The `DispatchQueue` `asyncAfter` extension has been deprecated.
+* The `FontStyle` type is no longer used and has been deprecated.
 * The `JsonEncoder/Decoder` date extensions have been deprecated.
 * The `View` `any()` extension should NOT be used and has been deprecated.
 
