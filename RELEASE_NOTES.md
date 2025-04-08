@@ -12,6 +12,11 @@ Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalys
 
 * The `FetchedDataView` has a new view-builder initializer.
 
+### 📦 New Package
+
+* The `TextReplacement` has been deprecated and moved to a new package.
+* Check out the `https://github.com/danielsaidi/TextReplacementView` repo.
+
 ### 🗑️ Deprecations
 
 * The `CornerRadiusStyle` type has been deprecated.
@@ -21,7 +26,6 @@ Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalys
 * The `FontStyle` type is no longer used and has been deprecated.
 * The `JsonEncoder/Decoder` date extensions have been deprecated.
 * The `View` `any()` extension should NOT be used and has been deprecated.
-
 
 
 ## 5.2
