@@ -8,6 +8,10 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalyst.
 
+### 🗑️ Deprecations
+
+* The `DateFormatter` init extensions have been deprecated.
+
 
 
 ## 5.2
