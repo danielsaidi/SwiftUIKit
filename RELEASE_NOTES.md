@@ -4,6 +4,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.3
+
+Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalyst.
+
+
+
 ## 5.2
 
 This version updates the icon, logo and build scripts.

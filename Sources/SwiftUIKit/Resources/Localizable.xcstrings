@@ -16,6 +16,9 @@
     "1" : {
 
     },
+    "Back" : {
+
+    },
     "Button.Add" : {
       "localizations" : {
         "en" : {
@@ -225,6 +228,12 @@
           }
         }
       }
+    },
+    "Flip" : {
+
+    },
+    "Front" : {
+
     },
     "Preview.Page.%@" : {
       "localizations" : {
