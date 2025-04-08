@@ -11,6 +11,7 @@ Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalys
 ### 🗑️ Deprecations
 
 * The `DateFormatter` init extensions have been deprecated.
+* The `DispatchQueue` `asyncAfter` extension has been deprecated.
 * The `JsonEncoder/Decoder` date extensions have been deprecated.
 
 

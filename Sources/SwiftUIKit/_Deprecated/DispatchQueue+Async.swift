@@ -10,6 +10,7 @@
 
 import Foundation
 
+@available(*, deprecated, message: "This is no longer used within the library and will be removed in the next major release.")
 public extension DispatchQueue {
     
     /// Perform an operation after a certain time interval.

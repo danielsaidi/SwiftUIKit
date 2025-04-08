@@ -17,8 +17,6 @@ public extension Comparable {
     
     /// Return the value limited to a closed range.
     func limited(to range: ClosedRange<Self>) -> Self {
-        if self < range.lowerBound { return range.lowerBound }
-        if self > range.upperBound { return range.upperBound }
-        return self
+        min(range.upperBound, max(range.lowerBound, self))
     }
 }
