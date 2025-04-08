@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(*, deprecated, message: "This will be removed in the next major update.")
 public extension Button where Label == SwiftUI.Label<Text, Image> {
     
     /// This initializer lets you use buttons with less code.
@@ -23,12 +24,5 @@ public extension Button where Label == SwiftUI.Label<Text, Image> {
                 icon: { icon }
             )
         }
-    }
-}
-
-#Preview {
-    
-    Button("Preview.Button", .symbol("checkmark"), .module) {
-        print("Tapped!")
     }
 }

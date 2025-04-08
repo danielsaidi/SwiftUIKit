@@ -1,5 +1,5 @@
 //
-//  Collection+RawRepresentable.swift
+//  Collection+Codable.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-04-24.

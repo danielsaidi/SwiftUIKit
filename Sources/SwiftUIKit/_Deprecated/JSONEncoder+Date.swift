@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(*, deprecated, message: "This is no longer used within the library and will be removed in the next major release.")
 public extension JSONEncoder {
     
     /// Create a `JSONEncoder` that can encode ISO8601.
@@ -18,6 +19,7 @@ public extension JSONEncoder {
     }
 }
 
+@available(*, deprecated, message: "This is no longer used within the library and will be removed in the next major release.")
 private extension JSONEncoder.DateEncodingStrategy {
     
     /// A strategy that can encode ISO8601 dates robustly.
