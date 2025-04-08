@@ -38,7 +38,7 @@ public class CsvParser {
     ///
     /// - Parameters:
     ///   - fileName: The name of the file to parse.
-    ///   - fileExtension: The extension of the file to parse.
+    ///   - ext: The extension of the file to parse.
     ///   - bundle: The bundle in which the file is located.
     ///   - componentSeparator: The separator that separates components on each line.
     public func parseCsvFile(

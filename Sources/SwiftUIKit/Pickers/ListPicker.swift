@@ -47,8 +47,8 @@ public struct ListPicker<Item: Identifiable, ItemView: View>: View {
     /// Create a list picker with multiple sections.
     ///
     /// - Parameters:
-    ///   - items: The items to list in the picker.
-    ///   - selection: The current selection.
+    ///   - sections: The sections to render.
+    ///   - selection: The selection binding.   
     ///   - animatedSelection: Whether or not to animate selections, by default `false`.
     ///   - dismissAfterPick: Whether or not to dismiss the picker after picking, by default `false`.
     ///   - listItem: A list view builder.

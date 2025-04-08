@@ -200,8 +200,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 ### Styles
 
-- ``CornerRadiusStyle``
-- ``FontStyle``
 - ``ViewShadowStyle``
 
 ### Text
@@ -215,8 +213,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 - ``CustomRoundedRectangle``
 - ``EditableView``
-- ``FetchedDataView``
-- ``TextReplacement``
 
 
 

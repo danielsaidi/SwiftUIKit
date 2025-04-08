@@ -14,6 +14,7 @@ public extension View {
     ///
     /// - Parameters:
     ///   - text: The label text.
+    ///   - bundle: An optional bundle.
     func label(
         _ text: LocalizedStringKey,
         bundle: Bundle? = nil

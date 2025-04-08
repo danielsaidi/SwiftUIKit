@@ -17,7 +17,7 @@ import SwiftUI
 ///
 /// You can use standard `.font` and `.foregroundStyle` view
 /// modifiers to style text and `.accentColor` to tint links.
-/// You can also use a ``LinkText/Style`` to style the links
+/// You can also use a ``LinkText/LinkStyle`` to style links
 /// further, making them bold or italic.
 public struct LinkText: View {
     

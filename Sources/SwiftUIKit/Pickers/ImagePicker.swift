@@ -38,7 +38,7 @@ public struct ImagePicker: UIViewControllerRepresentable {
     /// Create an image picker.
     ///
     /// - Parameters:
-    ///   - documentTypes: The uniform types to pick.
+    ///   - sourceType: The image source type to pick.
     ///   - pickerConfig: A custom picker configuration, if any.
     ///   - cancelAction: The cancel action to trigger, if any.
     ///   - resultAction: The result action to trigger, if any.

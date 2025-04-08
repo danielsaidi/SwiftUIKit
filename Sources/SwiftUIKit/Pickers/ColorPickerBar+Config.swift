@@ -20,6 +20,8 @@ public extension ColorPickerBar {
         ///
         /// - Parameters:
         ///   - addOpacityToPicker: Whether or not to add color picker opacity, by default `true`.
+        ///   - addResetButton: Whether to add a reset button, by default `false`.
+        ///   - resetButtonValue: The reset button value, if any.
         public init(
             addOpacityToPicker: Bool = true,
             addResetButton: Bool = false,

@@ -21,6 +21,7 @@ public struct DotLoadingAnimationText: View {
     ///
     /// - Parameters:
     ///   - text: The text to present.
+    ///   - bundle: The bundle of the localized text, if any.
     ///   - dotCount: The max number of dots, by default `3`.
     ///   - interval: The timer tick interval in seconds, by default `0.8`.
     public init(

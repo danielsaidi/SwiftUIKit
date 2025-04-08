@@ -11,9 +11,6 @@ import SwiftUI
 /**
  This view displays progress as a circle progress view, with
  the progress text in the center of the circle.
- 
- ``startAngle`` is the clockwise degrees from the circle top.
- If `0`, the arc starts from the top, if `90` the right, etc.
 
  The view can be styled with a ``CircularProgressBar/Style``. 
  There are some built-in styles to choose from. You can also
