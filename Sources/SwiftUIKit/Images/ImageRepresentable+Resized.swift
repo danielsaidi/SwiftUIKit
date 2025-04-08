@@ -8,7 +8,21 @@
 
 import Foundation
 
-#if canImport(AppKit)
+#if canImport(UIKit)
+import UIKit
+
+public extension UIImage {
+
+    /// Create a resized copy of the image.
+    func resized(to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
+}
+#elseif canImport(AppKit)
 import AppKit
 
 public extension NSImage {
@@ -22,23 +36,6 @@ public extension NSImage {
         draw(in: destRect, from: sourceRect, operation: .sourceOver, fraction: CGFloat(1))
         newImage.unlockFocus()
         return newImage
-    }
-}
-#endif
-
-
-#if canImport(UIKit)
-import UIKit
-
-public extension UIImage {
-
-    /// Create a resized copy of the image.
-    func resized(to size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return result
     }
 }
 #endif
