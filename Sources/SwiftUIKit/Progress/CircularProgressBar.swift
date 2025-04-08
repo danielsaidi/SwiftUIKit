@@ -54,13 +54,14 @@ private extension CircularProgressBar {
     
     var progressCircle: some View {
         style.progressModifier(
-            Circle()
+            AnyView(
+                Circle()
                 .trim(from: 0.0, to: CGFloat(progress))
                 .rotation(.degrees(style.startAngle - 90))
                 .stroke(style: StrokeStyle(lineWidth: style.progressWidth, lineCap: .round, lineJoin: .round))
                 .foregroundColor(style.progressColor)
                 .animation(style.animation, value: progress)
-                .any()
+            )
         )
     }
 
@@ -68,11 +69,12 @@ private extension CircularProgressBar {
     var progressText: some View {
         if style.showTitle {
             style.titleModifier(
-                Text("\(progressValue, specifier: "%.\(style.decimals)f")%")
-                    .lineLimit(1)
-                    .font(style.titleFont)
-                    .foregroundColor(style.titleColor)
-                    .any()
+                AnyView(
+                    Text("\(progressValue, specifier: "%.\(style.decimals)f")%")
+                        .lineLimit(1)
+                        .font(style.titleFont)
+                        .foregroundColor(style.titleColor)
+                )
             )
         }
     }
@@ -94,14 +96,12 @@ private extension CircularProgressBar {
                 CircularProgressBar(progress: progress)
 
                 CircularProgressBar(progress: progress)
-                .shadow(.elevated)
-                .circularProgressBarStyle(.swedish)
+                    .shadow(.elevated)
+                    .circularProgressBarStyle(.swedish)
                 
-                CircularProgressBar(
-                    progress: progress
-                )
-                .shadow(.sticker)
-                .circularProgressBarStyle(.noText)
+                CircularProgressBar(progress: progress)
+                    .shadow(.sticker)
+                    .circularProgressBarStyle(.noText)
                 
                 Button("Preview.Progress") {
                     progress += 0.1
@@ -128,10 +128,10 @@ fileprivate extension CircularProgressBar.Style {
         style.startAngle = 45
         style.progressColor = .yellow
         style.progressWidth = 15
-        style.progressModifier = { $0.shadow(.elevated).any() }
+        style.progressModifier = { AnyView($0.shadow(.elevated)) }
         style.titleColor = .yellow
         style.titleFont = .title.bold()
-        style.titleModifier = { $0.shadow(.elevated).any() }
+        style.titleModifier = { AnyView($0.shadow(.elevated)) }
         return style
     }
 

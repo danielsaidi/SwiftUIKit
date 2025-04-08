@@ -36,7 +36,7 @@ public class FullScreenCoverContext: PresentationContext<AnyView> {
     public func present<Cover: View>(
         _ cover: @autoclosure @escaping () -> Cover
     ) {
-        presentContent(cover().any())
+        presentContent(AnyView(cover()))
     }
 }
 
@@ -53,7 +53,7 @@ public extension View {
     ) -> some View {
         fullScreenCover(
             isPresented: context.isActiveBinding,
-            content: context.content ?? EmptyView().any
+            content: context.content ?? { AnyView(EmptyView()) }
         )
         .environmentObject(context)
     }

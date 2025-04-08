@@ -10,10 +10,7 @@ import SwiftUI
 
 public extension View {
     
-    /// Wrap the view in an `AnyView`.
-    ///
-    /// > Important: Do not misuse AnyView. It esmess up the
-    /// view identity, which messes up animations, state etc.
+    @available(*, deprecated, message: "This should not be used and will be removed in the next major release.")
     func any() -> AnyView {
         AnyView(self)
     }

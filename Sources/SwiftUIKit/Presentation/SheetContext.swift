@@ -36,7 +36,7 @@ public class SheetContext: PresentationContext<AnyView> {
 
     @MainActor
     public func present<Sheet: View>(_ sheet: @autoclosure @escaping () -> Sheet) {
-        presentContent(sheet().any())
+        presentContent(AnyView(sheet()))
     }
 }
 
@@ -48,7 +48,7 @@ public extension View {
     func sheet(_ context: SheetContext) -> some View {
         sheet(
             isPresented: context.isActiveBinding,
-            content: context.content ?? EmptyView().any
+            content: context.content ?? { AnyView(EmptyView()) }
         )
         .environmentObject(context)
     }
