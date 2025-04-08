@@ -55,20 +55,3 @@ public struct CustomRoundedRectangle: Shape {
         return path
     }
 }
-
-#Preview {
-    
-    if #available(iOS 16.0, *) {
-        VStack {
-            Color.red.clipShape(
-                UnevenRoundedRectangle(cornerRadii: .init(
-                    topLeading: 10,
-                    bottomLeading: 30,
-                    bottomTrailing: 40,
-                    topTrailing: 20
-                ))
-            )
-        }
-        .padding()
-    }
-}

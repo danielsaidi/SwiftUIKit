@@ -77,7 +77,7 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
         let noDataView = Text("Preview.NoData")
         
         var body: some View {
-            if #available(iOS 17.0, *) {
+            if #available(iOS 17.0, tvOS 17.0, macOS 15.0, watchOS 11.0, visionOS 1.0, *) {
                 FetchedDataView(
                     data: nilData,
                     isLoading: false,
