@@ -10,23 +10,21 @@
 import Photos
 import SwiftUI
 
-/**
- This view can be used to open a camera that can take photos.
-
- You create a camera instance by providing two action blocks:
- 
- ```swift
- let picker = Camera(
-    cancelAction: { print("User did cancel") }  // Optional
-    finishAction: { result in ... })            // Mandatory
- }
- ```
-
- You can then present this camera with a sheet, a modal, etc.
- 
- This camera returns a result that contains the picked image,
- which you then can use in any way you want.
- */
+/// This view can be used to open a regular photo camera.
+///
+/// You can create a camera instance by defining two actions:
+///
+/// ```swift
+/// let picker = PhotoCamera(
+///     cancelAction: { print("User did cancel") }  // Optional
+///     finishAction: { result in ... })            // Mandatory
+/// }
+/// ```
+///
+/// You can then present the camera with a sheet, modal, etc.
+///
+/// The camera returns a result with the picked image, which
+/// you can then use in any way you want.
 public struct PhotoCamera: View {
 
     /// Create a photo camera.

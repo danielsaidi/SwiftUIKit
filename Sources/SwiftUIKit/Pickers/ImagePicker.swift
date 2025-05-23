@@ -11,28 +11,25 @@ import Photos
 import SwiftUI
 import UIKit
 
-/**
- This picker can be used to pick photos from Photos, using a
- camera to take a photo, etc.
- 
- The view wraps a `UIImagePickerController` and makes itself
- the delegate.
- 
- You can create a picker instance by providing a source type,
- as well as action blocks that are triggered when picking or
- cancelling the picker operation:
- 
- ```swift
- let picker = ImagePicker(
-    sourceType: .camera,
-    cancelAction: { print("User did cancel") }  // Optional
-    resultAction: { result in ... })            // Mandatory
- }
- ```
- 
- The picker result contains the picked image, which you then
- can use in any way you want.
- */
+/// This picker can be used to pick photos from Photos, pick
+/// a photo with the camera, etc.
+///
+/// The view wraps a `UIImagePickerController` and registers
+/// itself as the picker delegate.
+///
+/// You can create an image picker instance by providing the
+/// picker source type, plus actions that are triggered when
+/// picking or cancelling the picker operation:
+///
+/// ```swift
+/// let picker = ImagePicker(
+///     sourceType: .camera,
+///     cancelAction: { print("User did cancel") }  // Optional
+///     resultAction: { result in ... })            // Mandatory
+/// }
+/// ```
+/// The picker returns a result with the picked image, which
+/// you can then use in any way you want.
 public struct ImagePicker: UIViewControllerRepresentable {
     
     /// Create an image picker.

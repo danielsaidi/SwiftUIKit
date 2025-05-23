@@ -10,24 +10,22 @@
 import SwiftUI
 import VisionKit
 
-/**
- This view can be used to open a camera that can scan one or
- multiple pages in a physical document.
-
- You create a document camera by providing two action blocks:
- 
- ```swift
- let camera = DocumentCamera(
-    cancelAction: { print("User did cancel") }  // Optional
-    resultAction: { result in ... }             // Mandatory
- }
- ```
-
- You can then present this camera with a sheet, a modal, etc.
-
- The camera uses a `VNDocumentCameraViewController` and will
- return a `VNDocumentCameraScan` with all document pages.
- */
+/// This view can be used to open a camera that can scan one
+/// or multiple pages in a physical document.
+///
+/// You can create a document camera by defining two actions:
+///
+/// ```swift
+/// let camera = DocumentCamera(
+///     cancelAction: { print("User did cancel") }  // Optional
+///     resultAction: { result in ... }             // Mandatory
+/// }
+/// ```
+///
+/// You can then present the camera with a sheet, modal, etc.
+///
+/// This camera uses a `VNDocumentCameraViewController` that
+/// will return a `VNDocumentCameraScan` with all scan pages.
 public struct DocumentCamera: UIViewControllerRepresentable {
 
     /// Create a document camera.
