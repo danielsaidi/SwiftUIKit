@@ -33,7 +33,7 @@ public struct DotLoadingAnimation: View {
     ///   - interval: The timer tick interval in seconds, by default `0.8`.
     public init(
         dotCount: Int = 3,
-        interval: Double = 0.8
+        interval: Double = 0.25
     ) {
         self.dotCount = dotCount
         self.timer = Timer.publish(every: interval, on: .main, in: .common)

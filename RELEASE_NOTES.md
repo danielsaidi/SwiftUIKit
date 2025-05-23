@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.4
+
+### 🗑️ Deprecations
+
+* The `ButtonType` has been moved to the https://github.com/danielsaidi/ButtonKit repository.
+
+
+
 ## 5.3
 
 Thanks to [pnewell](https://github.com/pnewell), SwiftUIKit now supports Catalyst.

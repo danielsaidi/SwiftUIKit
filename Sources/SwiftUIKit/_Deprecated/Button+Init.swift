@@ -12,6 +12,7 @@ import SwiftUI
 public extension Button where Label == SwiftUI.Label<Text, Image> {
     
     /// This initializer lets you use buttons with less code.
+    @_disfavoredOverload
     init(
         _ text: LocalizedStringKey,
         _ icon: Image,

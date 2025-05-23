@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(*, deprecated, message: "ButtonType has been moved to https://github.com/danielsaidi/ButtonKit")
 public extension Button {
     
     /// Create a new ``ButtonType``-based button.
@@ -15,6 +16,7 @@ public extension Button {
     /// You have to tint the icon separately for destructive
     /// buttons like ``ButtonType/delete``. This can be done
     /// automatically, by using `.labelStyle(.titleAndIcon)`.
+    @_disfavoredOverload
     init(
         _ type: ButtonType,
         _ title: LocalizedStringKey? = nil,
@@ -37,9 +39,7 @@ public extension Button {
     }
 }
 
-
-/// This enum defines standard button types and provides
-/// standard localized texts and icons.
+@available(*, deprecated, message: "ButtonType has been moved to https://github.com/danielsaidi/ButtonKit")
 public enum ButtonType: String, CaseIterable, Identifiable {
     case add, addToFavorites,
          cancel, call, close, copy,
@@ -52,6 +52,7 @@ public enum ButtonType: String, CaseIterable, Identifiable {
          save, search, select, share
 }
 
+@available(*, deprecated, message: "ButtonType has been moved to https://github.com/danielsaidi/ButtonKit")
 public extension ButtonType {
     
     static func toggleFavorite(isFavorite: Bool) -> ButtonType {
@@ -65,10 +66,7 @@ public extension ButtonType {
     static func toggleSelect(isSelected: Bool) -> ButtonType {
         isSelected ? .deselect : .select
     }
-}
 
-public extension ButtonType {
-    
     var id: String { rawValue }
     
     var image: Image? {
@@ -152,6 +150,7 @@ public extension ButtonType {
     }
 }
 
+@available(*, deprecated, message: "ButtonType has been moved to https://github.com/danielsaidi/ButtonKit")
 public extension View {
     
     @ViewBuilder
@@ -171,37 +170,5 @@ public extension View {
         #else
         self
         #endif
-    }
-}
-
-
-#Preview {
-    
-    @ViewBuilder
-    func buttons() -> some View {
-        Section {
-            ForEach(ButtonType.allCases) { type in
-                Button(type) { print("Tapped \(type.title)") }
-            }
-        }
-        Section {
-            Button(.toggleFavorite(isFavorite: false)) {}
-            Button(.toggleFavorite(isFavorite: true)) {}
-            Button(.toggleLike(isLiked: false)) {}
-            Button(.toggleLike(isLiked: true)) {}
-            Button(.toggleSelect(isSelected: false)) {}
-            Button(.toggleSelect(isSelected: true)) {}
-        }
-    }
-    
-    return List {
-        buttons().labelStyle(.titleAndIcon)
-        buttons().labelStyle(.titleOnly)
-        buttons().labelStyle(.iconOnly)
-    }
-    .toolbar {
-        ToolbarItemGroup {
-            buttons()
-        }
     }
 }
