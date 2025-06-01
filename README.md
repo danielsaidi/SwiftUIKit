@@ -15,7 +15,7 @@
 
 # SwiftUIKit
 
-SwiftUIKit is a library that adds extra functionality to `SwiftUI` and `Swift`. It contains additional components, a lot of extensions to native types, and much more.
+SwiftUIKit is a library that adds extra functionality to Swift and SwiftUI. It contains additional components, a lot of extensions to native types, and much more.
 
 SwiftUIKit can kickstart your development and solves many tricky problems.
 
