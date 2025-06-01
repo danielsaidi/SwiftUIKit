@@ -8,9 +8,7 @@ SwiftUIKit adds extra functionality to `SwiftUI`.
 
 ![SwiftUIKit logo](Logo.png)
 
-SwiftUIKit is a Swift SDK that adds extra functionality to `SwiftUI` and `Swift`. It contains additional components, a lot of extensions to native types, and much more. 
-
-The library is divided into the namespaces found in the Topics section below. For more information, source code, issues, to sponsor the project etc., visit the [project repository][Repository].
+SwiftUIKit is a library that adds extra functionality to Swift and SwiftUI. It contains additional components, a lot of extensions to native types, and much more.  The library is divided into the namespaces found in the Topics section below.
 
 
 
@@ -22,7 +20,11 @@ SwiftUIKit can be installed with the Swift Package Manager:
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-If you prefer to not have external dependencies, you can also just copy the source code into your app.
+
+
+## Support My Work
+
+You can [become a sponsor][Sponsors] to help me dedicate more time on my various [open-source tools][OpenSource]. Every contribution, no matter the size, makes a real difference in keeping these tools free and actively developed.
 
 
 
@@ -42,7 +44,7 @@ For more information, source code, etc., visit the [project repository][Reposito
 
 ## License
 
-SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
+SwiftUIKit is available under the MIT license.
 
 
 
@@ -216,6 +218,10 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 
 
 
-[License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
 [Repository]: https://github.com/danielsaidi/SwiftUIKit
+
+[Email]: mailto:daniel.saidi@gmail.com
+[Website]: https://danielsaidi.com
+[GitHub]: https://github.com/danielsaidi
 [OpenSource]: https://danielsaidi.com/opensource
+[Sponsors]: https://github.com/sponsors/danielsaidi
