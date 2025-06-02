@@ -88,10 +88,11 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
                             systemImage: "x.circle"
                         )
                         .foregroundStyle(.red)
+                    },
+                    content: { string in
+                        Text(string)
                     }
-                ) { string in
-                    Text(string)
-                }
+                )
             }
         }
     }

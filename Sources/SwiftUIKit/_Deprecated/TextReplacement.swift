@@ -1,3 +1,4 @@
+// swiftlint:disable all
 import SwiftUI
 
 @available(*, deprecated, message: "This view has been moved to the https://github.com/danielsaidi/TextReplacementView repository.")
@@ -106,3 +107,4 @@ public struct TextReplacement: View {
         return result
     }
 }
+// swiftlint:enable all
