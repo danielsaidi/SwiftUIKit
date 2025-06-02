@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// This enum defines flip directions to use with ``FlipView``.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public enum FlipDirection {
     
     case left, right, up, down

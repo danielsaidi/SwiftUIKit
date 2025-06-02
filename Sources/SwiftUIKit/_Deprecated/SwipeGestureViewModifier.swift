@@ -9,12 +9,7 @@
 #if os(iOS) || os(macOS) || os(watchOS) || os(visionOS)
 import SwiftUI
 
-/**
- This view modifier can apply swipe gestures to a view, that
- trigger actions when being swiped in certain directions.
- 
- You can apply this with the `.onSwipeGesture` view modifier.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public struct SwipeGestureViewModifier: ViewModifier {
 
     /// Create a swipe gesture view modifier.
@@ -89,6 +84,7 @@ public struct SwipeGestureViewModifier: ViewModifier {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public extension View {
     
     /// Add swipe gestures that are triggered when this view

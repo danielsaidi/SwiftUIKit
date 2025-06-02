@@ -11,81 +11,74 @@
 #if os(iOS) || os(macOS)
 import SwiftUI
 
-/**
- This type represents a reorderable item that can be used in
- a ``ReorderableForEach`` view.
- */
+/// This type represents a reorderable item that can be used
+/// in a ``ReorderableForEach`` view.
 public typealias Reorderable = Identifiable & Equatable
 
-/**
- This view can be used instead of a `ForEach`, to let a user
- reorder the items by dragging.
- 
- You can for instance add this view to a `LazyVGrid` that is
- wrapped in a `ScrollView`:
- 
- ```swift
- struct GridData: Identifiable, Equatable {
-     let id: Int
- }
- 
- struct ContentView {
- 
-     @State
-     private var items = (1...100).map { GridData(id: $0) }
-     
-     @State
-     private var active: GridData?
- 
-     var body: some View {
-         ScrollView(.vertical) {
-             VStack {
-                 LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
-                     ReorderableForEach(items, active: $active) { item in
-                         shape
-                             .fill(.white.opacity(0.5))
-                             .frame(height: 100)
-                             .overlay(Text("\(item.id)"))
-                             .contentShape(.dragPreview, shape)
-                     } preview: { item in
-                         Color.white
-                             .frame(width: 200, height: 200)
-                             .overlay(Text("\(item.id)"))
-                             .contentShape(.dragPreview, shape)
-                     } moveAction: { from, to in
-                         items.move(fromOffsets: from, toOffset: to)
-                     }
-                 }
-             }.padding()
-         }
-         .background(Color.blue.gradient)
-         .scrollContentBackground(.hidden)
-         .reorderableForEachContainer(active: $active)
-     }
- 
-     var shape: some Shape {
-         RoundedRectangle(cornerRadius: 40)
-     }
- }
- ```
- 
- Providing a `preview` is optional. If you don't provide one,
- the original item view will be used.
- 
- The `.reorderableForEachContainer` modifier must be applied
- to the outmost container view, to ensure that ending a drag
- operation outside the list still works.
- 
- > Note: This view doesn't work well in a simulator. It will
- not show the drag preview and randomly cancel drag gestures.
- Also, using a material background will cause a dragged view
- to flicker black.
- */
+/// This view can be used instead of `ForEach` to let a user
+/// reorder the items by dragging.
+///
+/// You can for instance add this view to a `LazyVGrid` that
+/// is wrapped in a `ScrollView`:
+///
+/// ```swift
+/// struct GridData: Identifiable, Equatable {
+///     let id: Int
+/// }
+
+/// struct ContentView {
+///
+///     @State
+///     private var items = (1...100).map { GridData(id: $0) }
+///
+///     @State
+///     private var active: GridData?
+///
+///     var body: some View {
+///         ScrollView(.vertical) {
+///             VStack {
+///                 LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
+///                     ReorderableForEach(items, active: $active) { item in
+///                         shape
+///                             .fill(.white.opacity(0.5))
+///                             .frame(height: 100)
+///                             .overlay(Text("\(item.id)"))
+///                             .contentShape(.dragPreview, shape)
+///                     } preview: { item in
+///                         Color.white
+///                             .frame(width: 200, height: 200)
+///                             .overlay(Text("\(item.id)"))
+///                             .contentShape(.dragPreview, shape)
+///                     } moveAction: { from, to in
+///                         items.move(fromOffsets: from, toOffset: to)
+///                     }
+///                 }
+///             }.padding()
+///         }
+///         .background(Color.blue.gradient)
+///         .scrollContentBackground(.hidden)
+///         .reorderableForEachContainer(active: $active)
+///     }
+///
+///     var shape: some Shape {
+///         RoundedRectangle(cornerRadius: 40)
+///     }
+/// }
+///
+/// The `preview` parameter is optional. If you don't use it,
+/// the original item view will be used.
+///
+/// The `.reorderableForEachContainer` view modifier must be
+/// applied to the outmost view to ensure that ending a drag
+/// operation outside the list still works.
+///
+/// > Note: This view doesn't work well in the simulator. It
+/// will not show the drag preview, and will randomly cancel
+/// the drag gestures. Also, using a material background can
+/// cause the dragged view to flicker black.
 public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View>: View {
     
-    /**
-     Create a reorderable list with a custom drag preview.
-     */
+    /// Create a reorderable list with a custom drag preview.
     public init(
         _ items: [Item],
         active: Binding<Item?>,
@@ -100,9 +93,7 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
         self.moveAction = moveAction
     }
     
-    /**
-     Create a reorderable list with a standard drag preview.
-     */
+    /// Create a reorderable list with a standard preview.
     public init(
         _ items: [Item],
         active: Binding<Item?>,
@@ -119,11 +110,9 @@ public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View
     @Binding
     private var active: Item?
     
-    /**
-     This hack is needed to reset view opaqueness when items
-     are dragged but not moved. Without it, items would stay
-     semi-transparent when the drag gesture ends.
-     */
+    // This is needed to reset view the opaqueness when item
+    // views are dragged but not moved. Without it, the item
+    // view would stay semi-transparent when the drag ends.
     @State
     private var hasChangedLocation = false
     

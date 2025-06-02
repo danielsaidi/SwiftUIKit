@@ -8,12 +8,7 @@
 
 import Foundation
 
-/**
- This timer can be used to calculate an elapsed gesture time.
- 
- Call ``start()`` when a certain gesture starts then inspect
- ``elapsedTime`` to see how long the gesture has been active.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public class GestureTimer {
     
     public init() {}

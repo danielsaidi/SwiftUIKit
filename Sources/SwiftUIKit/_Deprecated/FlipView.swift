@@ -8,20 +8,7 @@
 
 import SwiftUI
 
-/// This view has a front and a back view and can be flipped
-/// to show the other side when it's tapped, swiped, or both.
-///
-/// For now, this view only supports horizontal flips, since
-/// flipping views both horizontally and vertically can mess
-/// it up, since the view can become upside down.
-///
-/// > Important: This view currently handles flip animations
-/// incorrectly when it is used within a `List`. This can be
-/// fixed by wrapping it in a `ZStack`. I tried to create an
-/// additional layer within this component, but that did not
-/// work. Until we come up with another solution, there is a
-/// `.withListRenderingBugFix()` view modifier that performs
-/// the `ZStack` wrap.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public struct FlipView<FrontView: View, BackView: View>: View {
     
     public init(
@@ -79,6 +66,7 @@ public struct FlipView<FrontView: View, BackView: View>: View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public extension FlipView {
     
     func withListRenderingBugFix() -> some View {
@@ -114,6 +102,7 @@ private extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 private extension FlipView {
     
     func flip(_ direction: FlipDirection) {
@@ -122,15 +111,18 @@ private extension FlipView {
         lastDirection = direction
         cardRotation = isContentFlipped ? 180 : 0
         contentRotation = isContentFlipped ? 180 : 0
-        
+
+        let duration = flipDuration/2
+        let animation = Animation.linear(duration: duration)
+
         let degrees = flipDegrees(for: direction)
         if #available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *) {
-            withAnimation(.linear(duration: flipDuration/2)) {
+            withAnimation(animation) {
                 cardRotation += degrees/2
             } completion: {
                 contentRotation += degrees
                 isContentFlipped.toggle()
-                withAnimation(.linear(duration: flipDuration/2)) {
+                withAnimation(animation) {
                     cardRotation += degrees/2
                 } completion: {
                     isFlipping = false
@@ -177,65 +169,4 @@ private extension View {
         case .up, .down: rotation3DEffect(angles, axis: (x: 1, y: 0, z: 0))
         }
     }
-}
-
-@MainActor
-@ViewBuilder
-func previewContent(isFlipped: Binding<Bool>) -> some View {
-    Text("Is Flipped: \(isFlipped.wrappedValue)")
-    
-    FlipView(
-        front: Color.green.overlay(Text("Front")),
-        back: Color.red.overlay(Text("Back")),
-        isFlipped: isFlipped,
-        flipDuration: 0.5,
-        tapDirection: .right,
-        swipeDirections: [.left, .right, .up, .down]
-    )
-    .withListRenderingBugFix()  // OBS!
-    .frame(minHeight: 100)
-    .cornerRadius(10)
-    .shadow(radius: 0, x: 0, y: 2)
-    
-    Button("Flip") {
-        withAnimation {
-            isFlipped.wrappedValue.toggle()
-        }
-    }
-}
-
-#Preview("Stack") {
-    
-    struct Preview: View {
-        
-        @State
-        private var isFlipped = false
-        
-        var body: some View {
-            VStack {
-                previewContent(isFlipped: $isFlipped)
-            }
-            .padding()
-        }
-    }
-    
-    return Preview()
-}
-
-#Preview("List (BUG)") {
-    
-    struct Preview: View {
-        
-        @State
-        private var isFlipped = false
-        
-        var body: some View {
-            List {
-                previewContent(isFlipped: $isFlipped)
-            }
-            .padding()
-        }
-    }
-    
-    return Preview()
 }

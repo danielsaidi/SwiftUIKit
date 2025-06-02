@@ -4,11 +4,19 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.5
+
+### 🗑️ Deprecations
+
+* The `FlipView` and all related types have been moved to https://github.com/danielsaidi/FlipKit.
+
+
+
 ## 5.4
 
 ### 🗑️ Deprecations
 
-* The `ButtonType` has been moved to the https://github.com/danielsaidi/ButtonKit repository.
+* The `ButtonType` has been moved to https://github.com/danielsaidi/StandardButtons.
 
 
 
