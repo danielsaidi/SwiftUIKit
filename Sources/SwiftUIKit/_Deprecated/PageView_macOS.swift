@@ -10,12 +10,7 @@
 import SwiftUI
 import Combine
 
-/**
- This view mimics a `.page` styled iOS `TabView`.
- 
- You can set up the view with a set of `pages` or `items` to
- which you apply a dynamic page builder.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public struct PageView<PageViewType: View>: View {
     
     /// Create a page view with a set of page views.
@@ -81,6 +76,7 @@ public struct PageView<PageViewType: View>: View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 private extension PageView {
     
     @ViewBuilder
@@ -120,6 +116,7 @@ private extension PageView {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 private extension PageView {
     
     var shouldShowPageIndicator: Bool {

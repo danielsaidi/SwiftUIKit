@@ -8,13 +8,7 @@
 
 import SwiftUI
 
-/**
- This view can be used to display a horizontal collection of
- dots that are bound to pages in a page view.
- 
- You can use this view to customize the style of the dots in
- a `TabView` (or ``PageView``).
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public struct PageIndicator: View {
     
     /**
@@ -50,42 +44,16 @@ public struct PageIndicator: View {
             }
         }
     }
-}
 
-private extension PageIndicator {
-    
-    func isCurrentPage(_ index: Int) -> Bool {
+    private func isCurrentPage(_ index: Int) -> Bool {
         index == currentPageIndex.wrappedValue
     }
     
-    func setCurrentPage(_ index: Int) {
+    private func setCurrentPage(_ index: Int) {
         if style.isAnimated {
             withAnimation { currentPageIndex.wrappedValue = index }
         } else {
             currentPageIndex.wrappedValue = index
         }
     }
-}
-
-#Preview {
-    
-    VStack(spacing: 20) {
-        PageIndicator(
-            numberOfPages: 10,
-            currentPageIndex: .constant(3)
-        )
-        
-        PageIndicator(
-            numberOfPages: 5,
-            currentPageIndex: .constant(3)
-        )
-        .pageIndicatorStyle(.init(
-            dotColor: .blue,
-            dotSpacing: 20,
-            currentDotColor: .yellow
-        ))
-    }
-    .padding()
-    .background(Color.gray)
-    .cornerRadius(20)
 }

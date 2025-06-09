@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-/// This style can be used to style a ``PageIndicator``.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public struct PageIndicatorStyle: Equatable {
     
     /// Create a custom page indicator style.
@@ -55,12 +55,14 @@ public struct PageIndicatorStyle: Equatable {
     public var isAnimated: Bool
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public extension PageIndicatorStyle {
 
     /// The standard page indicator style.
     static var standard: Self { .init() }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public extension View {
 
     /// Apply a ``PageIndicatorStyle`` style to the view.
@@ -71,6 +73,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 private extension PageIndicatorStyle {
 
     @MainActor struct Key: @preconcurrency EnvironmentKey {
@@ -81,6 +84,7 @@ private extension PageIndicatorStyle {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public extension EnvironmentValues {
 
     var pageIndicatorStyle: PageIndicatorStyle {

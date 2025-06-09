@@ -87,17 +87,6 @@ public struct SwipeGestureViewModifier: ViewModifier {
 @available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 public extension View {
     
-    /// Add swipe gestures that are triggered when this view
-    /// is swiped in any of the specified directions.
-    ///
-    /// - Parameters:
-    ///   - maximumTime: The max time the gesture can be active before cancelling itself, by default `1`.
-    ///   - minimumDistance: The minimum distance in points the gesture must be dragged before it triggers, by default `10`.
-    ///   - maximumDistance: The maximum distance in points the gesture can be dragged before it cancels, by default `100_000`.
-    ///   - up: The action to trigger when the user swipes up, if any.
-    ///   - left: The action to trigger when the user swipes left, if any.
-    ///   - right: The action to trigger when the user swipes right, if any.
-    ///   - down: The action to trigger when the user swipes down, if any.
     func onSwipeGesture(
         maximumTime: TimeInterval = 1,
         minimumDistance: CGFloat = 10,

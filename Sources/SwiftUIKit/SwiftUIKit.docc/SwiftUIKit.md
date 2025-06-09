@@ -62,6 +62,7 @@ SwiftUIKit is available under the MIT license.
 ### Data
 
 - ``CsvParser``
+- ``FetchedDataView``
 - ``MimeType``
 - ``ScanCodeType``
 - ``StorageValue``
@@ -85,19 +86,9 @@ SwiftUIKit is available under the MIT license.
 - ``DirectoryObservable``
 - ``iCloudDocumentSync``
 
-### Flip
-
-- ``FlipView``
-- ``FlipDirection``
-
 ### Fonts
 
 - ``FontRepresentable``
-
-### Gestures
-
-- ``GestureTimer``
-- ``SwipeGestureViewModifier``
 
 ### Images
 
@@ -142,13 +133,6 @@ SwiftUIKit is available under the MIT license.
 - ``NavigationButton``
 - ``NavigationContext``
 - ``NavigationLinkArrow``
-
-### Pages
-
-- ``PageIndicator``
-- ``PageIndicatorDisplayMode``
-- ``PageIndicatorStyle``
-- ``PageView``
 
 ### Pasteboard
 
@@ -213,7 +197,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Views
 
-- ``CustomRoundedRectangle``
 - ``EditableView``
 
 

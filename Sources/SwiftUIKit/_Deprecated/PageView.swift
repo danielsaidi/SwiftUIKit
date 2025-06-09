@@ -9,24 +9,7 @@
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
 import SwiftUI
 
-/**
- This view wraps its pages within a `.page` styled `TabView`.
- 
- You can set it up with a fixed set of `pages` or with a set
- of `items` to which you apply a dynamic page builder.
- 
- The view is a semantic alias for `TabView`, since I think a
- "page view" is conceptually different from a "tab view". It
- also has a macOS version, which means that you can use this
- view in the same way on all platforms.
- 
- The view supports styling some parts of the native page dot
- views with a ``PageIndicatorStyle`` for iOS and tvOS, using
- UIKit appearance proxies. This however means that all views
- of this type are affected. For a more flexible and isolated
- approach, use `never` as `pageIndicatorDisplayMode` and add
- a ``PageIndicator`` view as an overlay.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public struct PageView<PageViewType: View>: View {
     
     /// Create a page view with a set of page views.
@@ -85,11 +68,8 @@ public struct PageView<PageViewType: View>: View {
         .onAppear(perform: trySetupStyle)
         .tabViewStyle(.page(indexDisplayMode: pageIndicatorDisplayMode.tabViewMode))
     }
-}
 
-private extension PageView {
-    
-    func trySetupStyle() {
+    private func trySetupStyle() {
         #if os(iOS) || os(tvOS)
         let style = pageIndicatorStyle
         let appearance = UIPageControl.appearance()

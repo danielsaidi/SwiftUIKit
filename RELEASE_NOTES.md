@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.6
+
+### 🗑️ Deprecations
+
+* The `PageView` and all related types have been moved to https://github.com/danielsaidi/PageView.
+
+
+
 ## 5.5
 
 ### 🗑️ Deprecations

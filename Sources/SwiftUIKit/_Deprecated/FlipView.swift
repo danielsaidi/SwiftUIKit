@@ -76,6 +76,7 @@ public extension FlipView {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 private extension View {
     
     typealias FlipAction = (FlipDirection) -> Void
@@ -157,8 +158,9 @@ private extension FlipView {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/FlipKit")
 private extension View {
-    
+
     @ViewBuilder
     func rotationEffect(
         _ angles: Angle,

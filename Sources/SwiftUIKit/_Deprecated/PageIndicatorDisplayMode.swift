@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-/// This enum mimics `PageTabViewStyle.IndexDisplayMode`.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 public enum PageIndicatorDisplayMode {
     
     /// Always display a page indicator regardless of page count.
@@ -22,6 +22,7 @@ public enum PageIndicatorDisplayMode {
 }
 
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PageView")
 extension PageIndicatorDisplayMode {
     
     var tabViewMode: PageTabViewStyle.IndexDisplayMode {
