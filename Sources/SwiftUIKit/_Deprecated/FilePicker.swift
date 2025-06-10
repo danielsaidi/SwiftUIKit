@@ -11,27 +11,7 @@ import SwiftUI
 import UIKit
 import UniformTypeIdentifiers
 
-/**
- This picker can be used to pick files from Files.
- 
- The view wraps a `UIDocumentPickerViewController` and makes
- itself the delegate.
- 
- You can create a picker by providing the types of documents
- you want it to support, such as `["public.png"]` as well as
- two action blocks for handling cancel and completion events:
- 
- ```swift
- let picker = FilePicker(
-    documentTypes: ["public.png"],
-    cancelAction: { print("User did cancel") }  // Optional
-    finishAction: { result in ... })            // Mandatory
- }
- ```
- 
- The picker result contains a list of file urls that you can
- handle in any way  you want.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct FilePicker: UIViewControllerRepresentable {
     
     /// Create a file picker.
@@ -81,6 +61,7 @@ public struct FilePicker: UIViewControllerRepresentable {
     public func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {}
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension FilePicker {
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIDocumentPickerDelegate {
