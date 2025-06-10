@@ -50,11 +50,6 @@ SwiftUIKit is available under the MIT license.
 
 ## Topics
 
-### Cameras
-
-- ``DocumentCamera``
-- ``PhotoCamera``
-
 ### Colors
 
 - ``ColorRepresentable``
@@ -144,7 +139,6 @@ SwiftUIKit is available under the MIT license.
 - ``FilePicker``
 - ``ForEachPicker``
 - ``ForEachMultiPicker``
-- ``ImagePicker``
 - ``ListPicker``
 - ``ListMultiPicker``
 - ``ListPickerItem``

@@ -11,6 +11,7 @@ import Foundation
 #if os(iOS) || os(macOS)
 import SwiftUI
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ColorPickerBar {
 
     /// This type can be used to style a ``ColorPickerBar``.
@@ -23,7 +24,7 @@ public extension ColorPickerBar {
         ///   - spacing: The bar item spacing, by default `10`.
         ///   - colorSize: The size of non-selected colors, by default `20`.
         ///   - selectedColorSize: The size of the selected color, by default `30`.
-        ///   - resetButtonImage: The image to use as reset button image, by default `circle.slash`.
+        ///   - resetButtonImage: The image to use as reset button image, by default `xmark.circle`.
         public init(
             animation: Animation = .default,
             spacing: Double = 10.0,
@@ -55,6 +56,7 @@ public extension ColorPickerBar {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ColorPickerBar.Style {
 
 
@@ -62,6 +64,7 @@ public extension ColorPickerBar.Style {
     static var standard: Self { .init() }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension View {
 
     /// Apply a ``ColorPickerBar/Style`` style to the view.
@@ -72,6 +75,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 private extension ColorPickerBar.Style {
 
     struct Key: EnvironmentKey {
@@ -82,6 +86,7 @@ private extension ColorPickerBar.Style {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension EnvironmentValues {
 
     var colorPickerBarStyle: ColorPickerBar.Style {

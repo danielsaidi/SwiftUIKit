@@ -11,6 +11,7 @@ import Foundation
 #if os(iOS) || os(macOS)
 import SwiftUI
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ColorPickerBar {
 
     /// This type can be used to config a ``ColorPickerBar``.
@@ -43,12 +44,14 @@ public extension ColorPickerBar {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ColorPickerBar.Config {
 
     /// The standard color picker bar configuration.
     static var standard: Self { .init() }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension View {
 
     /// Apply a ``ColorPickerBar/Config`` style to the view.
@@ -59,6 +62,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 private extension ColorPickerBar.Config {
 
     struct Key: EnvironmentKey {
@@ -69,6 +73,7 @@ private extension ColorPickerBar.Config {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension EnvironmentValues {
 
     var colorPickerBarConfig: ColorPickerBar.Config {

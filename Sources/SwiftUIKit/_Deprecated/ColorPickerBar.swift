@@ -11,15 +11,7 @@ import Foundation
 #if os(iOS) || os(macOS)
 import SwiftUI
 
-/**
- This color picker bar can be used to select colors, using a
- SwiftUI `ColorPicker` and a list of colors.
-
- The picker supports both optional and non-optional bindings.
-
- The picker uses `.colorPickerBarColors` as the default list
- of colors to list, but you can pass in any colors.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct ColorPickerBar: View {
 
     /// Create a color picker bar with an optional binding.
@@ -79,9 +71,6 @@ public struct ColorPickerBar: View {
         .labelsHidden()
         .frame(maxHeight: style.selectedColorSize)
     }
-}
-
-private extension ColorPickerBar {
 
     func colorButton(for color: Color) -> some View {
         Button {
@@ -159,9 +148,6 @@ private extension ColorPickerBar {
         if color == .black && colorScheme == .dark { return .white }
         return .clear
     }
-}
-
-private extension ColorPickerBar {
 
     var hasChanges: Bool {
         value.wrappedValue != config.resetButtonValue
@@ -197,63 +183,5 @@ public extension Collection where Element == Color {
         guard withClearColor else { return standard }
         return [.clear] + standard
     }
-}
-
-#Preview {
-
-    struct Preview: View {
-
-        @State
-        private var color1: Color = .red
-
-        @State
-        private var color2: Color = .yellow
-
-        @State
-        private var color3: Color = .purple
-
-        @State
-        private var optionalColor: Color?
-
-        @State
-        var optionalDouble: Double?
-
-        var pickers: some View {
-            VStack(alignment: .leading) {
-                ColorPickerBar(
-                    value: $color1,
-                    colors: [.red, .green, .blue]
-                )
-                ColorPickerBar(
-                    value: $color2
-                )
-                ColorPickerBar(
-                    value: $color3,
-                    colors: .colorPickerBarColors(withClearColor: true)
-                )
-                ColorPickerBar(
-                    value: $optionalColor,
-                    colors: .colorPickerBarColors(withClearColor: true)
-                )
-                .colorPickerBarConfig(.init(
-                    addOpacityToPicker: false,
-                    addResetButton: true,
-                    resetButtonValue: nil
-                ))
-            }
-            .padding()
-        }
-
-        var body: some View {
-            VStack {
-                pickers
-                pickers
-                    .background(Color.black)
-                    .colorScheme(.dark)
-            }
-        }
-    }
-
-    return Preview()
 }
 #endif
