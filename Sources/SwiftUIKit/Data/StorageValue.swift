@@ -23,7 +23,44 @@ import SwiftUI
 /// for light and dark mode, high constrasts, etc.
 public struct StorageValue<Value: Codable>: RawRepresentable {
 
-    public let value: Value
+    /// Create a storage value.
+    public init(_ value: Value? = nil) {
+        self.value = value
+    }
+
+    /// Create a storage value with a JSON encoded string.
+    public init?(rawValue: String) {
+        guard
+            let data = rawValue.data(using: .utf8),
+            let result = try? JSONDecoder().decode(Value.self, from: data)
+        else { return nil }
+        self = .init(result)
+    }
+
+    /// The stored value.
+    public var value: Value?
+}
+
+public extension StorageValue {
+
+    /// Whether the storage value contains an actual value.
+    var hasValue: Bool {
+        value != nil
+    }
+
+    /// A JSON string representation of the storage value.
+    var jsonString: String {
+        guard
+            let data = try? JSONEncoder().encode(value),
+            let result = String(data: data, encoding: .utf8)
+        else { return "" }
+        return result
+    }
+
+    /// A JSON string representation of the storage value.
+    var rawValue: String {
+        jsonString
+    }
 }
 
 /// This is a shorthand for ``StorageValue``.
@@ -32,28 +69,6 @@ public typealias AppStorageValue = StorageValue
 /// This is a shorthand for ``StorageValue``.
 public typealias SceneStorageValue = StorageValue
 
-public extension StorageValue {
-
-    init(_ value: Value) {
-        self.value = value
-    }
-
-    init?(rawValue: String) {
-        guard
-            let data = rawValue.data(using: .utf8),
-            let result = try? JSONDecoder().decode(Value.self, from: data)
-        else { return nil }
-        self = .init(result)
-    }
-
-    var rawValue: String {
-        guard
-            let data = try? JSONEncoder().encode(value),
-            let result = String(data: data, encoding: .utf8)
-        else { return "" }
-        return result
-    }
-}
 
 private struct User: Codable, Identifiable {
 
@@ -68,17 +83,17 @@ private struct User: Codable, Identifiable {
     struct Preview: View {
 
         @AppStorage("com.swiftuikit.appstorage.user")
-        var user: AppStorageValue<User>?
+        var userValue = StorageValue<User>()
+
+        var user: User? { userValue.value }
 
         var body: some View {
-            Text(user?.value.name ?? "-")
+            Text(user?.name ?? "-")
 
             Button("Toggle user") {
-                if user == nil {
-                    user = .init(User(name: "Daniel", age: 45))
-                } else {
-                    user = nil
-                }
+                let hasValue = userValue.hasValue
+                let daniel = User(name: "Daniel", age: 46)
+                userValue.value = hasValue ? nil : daniel
             }
         }
     }

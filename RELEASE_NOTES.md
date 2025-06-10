@@ -4,6 +4,14 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.8
+
+### 💡 Adjustment
+
+* `StorageValue` has been refactored to store an optional value.
+
+
+
 ## 5.7
 
 ### 🗑️ Deprecations
