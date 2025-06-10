@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-/**
- This type can be used to defina a section in a list picker.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct ListPickerSection<Item: Identifiable>: Identifiable {
     
     public init(title: String, items: [Item]) {

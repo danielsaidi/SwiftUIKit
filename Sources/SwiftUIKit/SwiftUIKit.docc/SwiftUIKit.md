@@ -135,13 +135,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Pickers
 
-- ``FilePicker``
-- ``ForEachPicker``
-- ``ForEachMultiPicker``
-- ``ListPicker``
-- ``ListMultiPicker``
-- ``ListPickerItem``
-- ``ListPickerSection``
 - ``SystemFontPicker``
 - ``SystemFontForEachPicker``
 - ``SystemFontListPicker``
