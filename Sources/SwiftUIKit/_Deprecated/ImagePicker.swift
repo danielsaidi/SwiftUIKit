@@ -11,25 +11,8 @@ import Photos
 import SwiftUI
 import UIKit
 
-/// This picker can be used to pick photos from Photos, pick
-/// a photo with the camera, etc.
-///
-/// The view wraps a `UIImagePickerController` and registers
-/// itself as the picker delegate.
-///
-/// You can create an image picker instance by providing the
-/// picker source type, plus actions that are triggered when
-/// picking or cancelling the picker operation:
-///
-/// ```swift
-/// let picker = ImagePicker(
-///     sourceType: .camera,
-///     cancelAction: { print("User did cancel") }  // Optional
-///     resultAction: { result in ... })            // Mandatory
-/// }
-/// ```
-/// The picker returns a result with the picked image, which
-/// you can then use in any way you want.
+
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct ImagePicker: UIViewControllerRepresentable {
     
     /// Create an image picker.
@@ -76,6 +59,7 @@ public struct ImagePicker: UIViewControllerRepresentable {
     public func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ImagePicker {
     
     /// This enum defines ``ImagePicker``-specific errors.
@@ -83,9 +67,6 @@ public extension ImagePicker {
         case missingPhotoLibraryPermissions
         case missingPickedImage
     }
-}
-
-public extension ImagePicker {
 
     /// Get all source types that work with the picker.
     static var allSourceTypes: [UIImagePickerController.SourceType] {
@@ -96,10 +77,7 @@ public extension ImagePicker {
     static var availableSourceTypes: [UIImagePickerController.SourceType] {
         allSourceTypes.filter(UIImagePickerController.isSourceTypeAvailable)
     }
-}
 
-public extension ImagePicker {
-    
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
         public init(picker: ImagePicker) {

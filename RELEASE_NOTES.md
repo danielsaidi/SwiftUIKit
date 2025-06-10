@@ -4,6 +4,16 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.7
+
+### 🗑️ Deprecations
+
+* The `DocumentCamera` has been moved to https://github.com/danielsaidi/PickerKit.
+* The `ImagePicker` has been moved to https://github.com/danielsaidi/PickerKit.
+* The `PhotoCamera` has been moved to https://github.com/danielsaidi/PickerKit.
+
+
+
 ## 5.6
 
 ### 🗑️ Deprecations

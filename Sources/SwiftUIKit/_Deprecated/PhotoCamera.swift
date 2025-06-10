@@ -10,21 +10,7 @@
 import Photos
 import SwiftUI
 
-/// This view can be used to open a regular photo camera.
-///
-/// You can create a camera instance by defining two actions:
-///
-/// ```swift
-/// let picker = PhotoCamera(
-///     cancelAction: { print("User did cancel") }  // Optional
-///     finishAction: { result in ... })            // Mandatory
-/// }
-/// ```
-///
-/// You can then present the camera with a sheet, modal, etc.
-///
-/// The camera returns a result with the picked image, which
-/// you can then use in any way you want.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct PhotoCamera: View {
 
     /// Create a photo camera.

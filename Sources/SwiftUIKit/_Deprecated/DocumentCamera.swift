@@ -10,22 +10,7 @@
 import SwiftUI
 import VisionKit
 
-/// This view can be used to open a camera that can scan one
-/// or multiple pages in a physical document.
-///
-/// You can create a document camera by defining two actions:
-///
-/// ```swift
-/// let camera = DocumentCamera(
-///     cancelAction: { print("User did cancel") }  // Optional
-///     resultAction: { result in ... }             // Mandatory
-/// }
-/// ```
-///
-/// You can then present the camera with a sheet, modal, etc.
-///
-/// This camera uses a `VNDocumentCameraViewController` that
-/// will return a `VNDocumentCameraScan` with all scan pages.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct DocumentCamera: UIViewControllerRepresentable {
 
     /// Create a document camera.
@@ -69,6 +54,7 @@ public struct DocumentCamera: UIViewControllerRepresentable {
     ) {}
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension DocumentCamera {
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
