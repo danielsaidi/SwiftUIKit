@@ -8,19 +8,7 @@
 
 import SwiftUI
 
-/// This lets you use optional bindings with native SwiftUI.
-///
-/// To pass in optional bindings to a non-optional parameter,
-/// just define a fallback value:
-///
-/// ```swift
-/// @State
-/// var myValue: Double?
-///
-/// func doSomething(with binding: Binding<Double>) { ... }
-///
-/// doSomething(with: $myValue ?? 0)
-/// ```
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 @MainActor
 public func OptionalBinding<T>(
     _ binding: Binding<T?>,
@@ -33,6 +21,7 @@ public func OptionalBinding<T>(
     })
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 @MainActor
 public func ??<T> (left: Binding<T?>, right: T) -> Binding<T> {
     OptionalBinding(left, right)
