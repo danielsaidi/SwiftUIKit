@@ -30,6 +30,7 @@ import SwiftUI
 /// This view modifier will also inject the provided context
 /// as an environment object into the view hierarchy, to let
 /// other views in the same hierarchy reuse the same context.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public class FullScreenCoverContext: PresentationContext<AnyView> {
 
     @MainActor
@@ -48,6 +49,7 @@ public extension View {
     /// Bind an ``FullScreenCoverContext`` to the view.
     ///
     /// This also injects this context as environment object.
+    @available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
     func fullScreenCover(
         _ context: FullScreenCoverContext
     ) -> some View {
@@ -59,3 +61,37 @@ public extension View {
     }
 }
 #endif
+
+/**
+ This key can be used to keep track of the currently focused
+ context within a multi-window app.
+
+ To apply it to a view, just use the `focusedValue` modifier
+ with your context instance:
+
+ ```swift
+ .focusedValue(\.fullscreenCoverContext, context)
+ ```
+
+ To access the focus value, e.g. in a menu command, just use
+ the `@FocusedValue` property wrapper:
+
+ ```swift
+ @FocusedValue(\.fullscreenCoverContext)
+ var fullscreenCoverContext: FullscreenCoverContext?
+ ```
+ */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
+public struct FullScreenCoverContextFocusedValueKey: FocusedValueKey {
+
+    public typealias Value = FullScreenCoverContext
+}
+
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
+public extension FocusedValues {
+
+    var fullScreenCoverContext: FullScreenCoverContextFocusedValueKey.Value? {
+        get { self[FullScreenCoverContextFocusedValueKey.self] }
+        set { self[FullScreenCoverContextFocusedValueKey.self] = newValue }
+    }
+}

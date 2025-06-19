@@ -18,6 +18,7 @@ import SwiftUI
 ///
 /// You can also setup a global context and pass it into the
 /// view hierarchy as an environment object.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 open class PresentationContext<Content>: ObservableObject {
 
     public init() {}
@@ -32,6 +33,7 @@ open class PresentationContext<Content>: ObservableObject {
 }
 
 @MainActor
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public extension PresentationContext {
 
     var isActiveBinding: Binding<Bool> {

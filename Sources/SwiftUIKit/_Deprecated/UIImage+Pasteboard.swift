@@ -9,6 +9,7 @@
 #if os(iOS)
 import UIKit
 
+@available(*, deprecated, message: "Use pasteboard instead.")
 public extension UIImage {
     
     /// Copies the image as png data to the pasteboard.
