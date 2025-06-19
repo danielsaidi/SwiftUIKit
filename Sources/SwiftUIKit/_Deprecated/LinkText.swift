@@ -19,6 +19,7 @@ import SwiftUI
 /// modifiers to style text and `.accentColor` to tint links.
 /// You can also use a ``LinkText/LinkStyle`` to style links
 /// further, making them bold or italic.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 public struct LinkText: View {
     
     /// Create a link text.
@@ -47,6 +48,7 @@ public struct LinkText: View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 public extension LinkText {
 
     /// This enum defines available ``LinkText`` components.
@@ -60,6 +62,7 @@ public extension LinkText {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 private extension LinkText.Component {
     
     func markdown(
@@ -75,6 +78,7 @@ private extension LinkText.Component {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 private extension String {
     
     func markdownBold(if condition: Bool) -> String {
@@ -86,51 +90,12 @@ private extension String {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 private extension LinkText {
     
     var markdownText: LocalizedStringKey {
         .init(stringLiteral: components.map {
             $0.markdown(linkStyle)
         }.joined())
-    }
-}
-
-#Preview {
-
-    struct PreviewText: View {
-        
-        var body: some View {
-            LinkText(
-                .text("You must accept our "),
-                .link("terms & conditions", .init(string: "https://danielsaidi.com")),
-                .text(". Read more on our "),
-                .link("website", .init(string: "https://danielsaidi.com")),
-                .text(".")
-            )
-        }
-    }
-    
-    return List {
-        PreviewText()
-        
-        PreviewText()
-            .foregroundStyle(.red)
-            .accentColor(.green)
-        
-        PreviewText()
-            .linkTextLinkStyle(.bold)
-        
-        PreviewText()
-            .linkTextLinkStyle(.italic)
-        
-        PreviewText()
-            .linkTextLinkStyle(.boldItalic)
-        
-        PreviewText()
-            .font(.headline.italic())
-        
-        PreviewText()
-            .tint(.orange)
-            .lineSpacing(10)
     }
 }

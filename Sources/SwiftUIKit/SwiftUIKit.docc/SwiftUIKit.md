@@ -59,7 +59,6 @@ SwiftUIKit is available under the MIT license.
 - ``CsvParser``
 - ``FetchedDataView``
 - ``MimeType``
-- ``ScanCodeType``
 - ``StorageValue``
 - ``AppStorageValue``
 - ``SceneStorageValue``
@@ -141,16 +140,6 @@ SwiftUIKit is available under the MIT license.
 - ``SystemFontPickerFont``
 - ``SystemFontPickerItem``
 
-### Presentation
-
-- ``PresentationContext``
-- ``AlertContext``
-- ``AlertContextFocusedValueKey``
-- ``FullScreenCoverContext``
-- ``FullScreenCoverContextFocusedValueKey``
-- ``SheetContext``
-- ``SheetContextFocusedValueKey``
-
 ### Previews
 
 - ``SwiftPreviewInspector``
@@ -175,7 +164,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Text
 
-- ``LinkText``
 - ``MultilineSubmitViewModifier``
 - ``TextEditorStyle``
 - ``TextFieldClearButton``

@@ -13,11 +13,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 ### 🗑️ Deprecations
 
 * `AlertContext` has been moved to https://github.com/danielsaidi/PresentationKit.
-* `PresentationContext` has been moved to https://github.com/danielsaidi/PresentationKit.
 * `FullScreenCoverContext` has been moved to https://github.com/danielsaidi/PresentationKit.
+* `Image+ScanCode` has been moved to https://github.com/danielsaidi/ScanCodes.
+* `LinkText` has been moved to https://github.com/danielsaidi/TextReplacements.
+* `PresentationContext` has been moved to https://github.com/danielsaidi/PresentationKit.
 * `ScanCodeType` has been moved to https://github.com/danielsaidi/ScanCodes.
 * `SheetContext` has been moved to https://github.com/danielsaidi/PresentationKit.
-* `Image+ScanCode` has been moved to https://github.com/danielsaidi/ScanCodes.
 
 
 

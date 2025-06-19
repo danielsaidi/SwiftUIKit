@@ -10,6 +10,7 @@
 
 import SwiftUI
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 public extension LinkText {
 
     /// This style can be applied to a ``LinkText`` and will
@@ -36,6 +37,7 @@ public extension LinkText {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 public extension LinkText.LinkStyle {
     
     /// The standard, plain link text style.
@@ -53,6 +55,7 @@ public extension LinkText.LinkStyle {
     static var italic: Self { .init(italic: true) }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 public extension View {
 
     /// Apply a ``LinkText/LinkStyle`` to the view.
@@ -63,6 +66,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 private extension LinkText.LinkStyle {
 
     struct Key: EnvironmentKey {
@@ -73,6 +77,7 @@ private extension LinkText.LinkStyle {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/TextReplacements")
 public extension EnvironmentValues {
 
     var linkTextLinkStyle: LinkText.LinkStyle {
