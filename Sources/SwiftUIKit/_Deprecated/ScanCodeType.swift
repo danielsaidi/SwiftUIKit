@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// This enum defines various scan code types.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/ScanCodes")
 public enum ScanCodeType: String, CaseIterable, Identifiable {
     
     /// An `Aztek` scan code.
@@ -24,13 +24,11 @@ public enum ScanCodeType: String, CaseIterable, Identifiable {
     case qr
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ScanCodeType {
     
     /// This type is an alias for ``ScanCodeType/code128``.
     static var barcode: ScanCodeType { .code128 }
-}
-
-public extension ScanCodeType {
     
     /// The display name of the code type.
     var id: String { rawValue }

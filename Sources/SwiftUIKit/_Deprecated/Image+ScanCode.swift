@@ -9,6 +9,7 @@
 #if os(iOS) || os(tvOS) || os(macOS)
 import SwiftUI
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension Image {
     
     /// Create a scan code image with a `value` and `type`.
@@ -29,6 +30,7 @@ public extension Image {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension ImageRepresentable {
     
     /// Create a scan code image with a `value` and `type`.
@@ -49,6 +51,7 @@ public extension ImageRepresentable {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 private extension ImageRepresentable {
     
     static func generateScanCode(
@@ -112,14 +115,4 @@ private extension ImageRepresentable {
 }
 #endif
 
-#Preview {
-    
-    VStack {
-        Image(scanCode: "123456789", type: .aztek, scale: 5)
-        Image(scanCode: "123456789", type: .barcode, scale: 2, rotation: .pi/2)
-        Image(scanCode: "123456789", type: .code128, scale: 2)
-        Image(scanCode: "123456789", type: .pdf417, scale: 2)
-        Image(scanCode: "123456789", type: .qr, scale: 5)
-    }
-}
 #endif

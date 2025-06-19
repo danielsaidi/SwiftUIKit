@@ -10,6 +10,11 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 * `StorageValue` has been refactored to store an optional value.
 
+### 🗑️ Deprecations
+
+* `ScanCodeType` has been moved to https://github.com/danielsaidi/ScanCodes.
+* `Image+ScanCode` has been moved to https://github.com/danielsaidi/ScanCodes.
+
 
 
 ## 5.7
