@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-/**
- This view represents the trailing navigation arrow that are
- added to `NavigationLink` items in a `List`.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public struct NavigationLinkArrow: View {
 
     public init() {}
@@ -25,6 +22,7 @@ public struct NavigationLinkArrow: View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 private extension NavigationLinkArrow {
     
     var font: Font {
@@ -54,26 +52,4 @@ private extension NavigationLinkArrow {
         1.00
         #endif
     }
-}
-
-#Preview {
-    
-    NavigationView {
-        List {
-            NavigationLink {
-                Text("Preview.Text", bundle: .module)
-            } label: {
-                Text("Preview.Link", bundle: .module)
-            }
-
-            NavigationLink("Preview.Link") {
-                Color.red
-            }
-            NavigationButton {} content: {
-                Text("Preview.Text", bundle: .module)
-            }
-            NavigationLinkArrow()
-        }
-    }
-    .foregroundColor(.red)
 }

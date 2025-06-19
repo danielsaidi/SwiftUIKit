@@ -122,12 +122,6 @@ SwiftUIKit is available under the MIT license.
 - ``ReorderableForEach``
 - ``SidebarListRowBackgroundModifier``
 
-### Navigation
-
-- ``NavigationButton``
-- ``NavigationContext``
-- ``NavigationLinkArrow``
-
 ### Pasteboard
 
 - ``Pasteboard``
