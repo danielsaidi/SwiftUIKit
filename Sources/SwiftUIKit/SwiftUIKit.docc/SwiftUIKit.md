@@ -67,11 +67,6 @@ SwiftUIKit is available under the MIT license.
 
 - ``DeviceIdentifier``
 
-### Errors
-
-- ``ErrorAlerter``
-- ``ErrorAlertConvertible``
-
 ### Files
 
 - ``BundleFileFinder``

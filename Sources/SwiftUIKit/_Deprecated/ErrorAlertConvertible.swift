@@ -8,13 +8,7 @@
 
 import SwiftUI
 
-/**
- This protocol can be implemented by error types that can be
- used together with an ``ErrorAlerter``.
- 
- This makes it possible to specify display content for error
- types that are meant to be presented to users.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public protocol ErrorAlertConvertible: Error {
 
     /// The title to display in the alert.
@@ -27,6 +21,7 @@ public protocol ErrorAlertConvertible: Error {
     var errorButtonText: String { get }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public extension ErrorAlertConvertible {
 
     /// Create an error `Alert`.

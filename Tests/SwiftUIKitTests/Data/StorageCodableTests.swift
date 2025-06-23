@@ -39,7 +39,7 @@ final class AppStorageCodableTests: XCTestCase {
         XCTAssertNil(state1.object)
         state1.object = .init(value)
         let state2 = MyState()
-        XCTAssertEqual(state2.object?.value.name, "Daniel")
+        XCTAssertEqual(state2.object?.value?.name, "Daniel")
         state2.object = nil
     }
 

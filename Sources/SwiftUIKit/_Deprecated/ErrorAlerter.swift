@@ -8,23 +8,13 @@
 
 import SwiftUI
 
-/**
- This protocol can be implemented by anything that can alert
- errors, e.g. a view that performs a throwing async function.
-
- By implementing the protocol, types get access to new alert
- functions as well as the convenient ``tryWithErrorAlert(_:)``
- function, that makes it possible to trigger async functions
- and alert any errors that occur.
-
- If you throw errors that conform to ``ErrorAlertConvertible``
- you get full control over what's alerted.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public protocol ErrorAlerter {
     
     var alert: AlertContext { get }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 @MainActor
 public extension ErrorAlerter {
 
@@ -51,6 +41,7 @@ public extension ErrorAlerter {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 public extension ErrorAlerter {
 
     /// This typealias describes an async operation.

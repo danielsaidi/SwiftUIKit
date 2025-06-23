@@ -9,15 +9,13 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This protocol can be implemented by any view that can share
- a url, using a certain ``UrlSharing/sheet``.
- */
+@available(*, deprecated, message: "Use ShareSheet directly instead.")
 public protocol UrlSharing: View {
     
     var sheet: SheetContext { get }
 }
 
+@available(*, deprecated, message: "Use ShareSheet directly instead.")
 public extension UrlSharing {
     
     /// Share the provided url using a ``ShareSheet``.
