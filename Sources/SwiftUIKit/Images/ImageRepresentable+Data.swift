@@ -6,7 +6,7 @@
 //  Copyright © 2022-2025 Daniel Saidi. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 public extension ImageRepresentable {
     
