@@ -23,7 +23,15 @@ let package = Package(
         .target(
             name: "SwiftUIKit",
             dependencies: [],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            swiftSettings: [
+                // Enable library evolution
+                .unsafeFlags(["-enable-library-evolution"]),
+
+                // Additional strict checks
+                // .unsafeFlags(["-warnings-as-errors"]),
+                // .unsafeFlags(["-strict-concurrency=complete"])
+            ]
         ),
         .testTarget(
             name: "SwiftUIKitTests",

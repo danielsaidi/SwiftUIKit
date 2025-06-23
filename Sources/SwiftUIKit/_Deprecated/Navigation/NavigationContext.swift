@@ -6,6 +6,7 @@
 //  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 
 @available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")

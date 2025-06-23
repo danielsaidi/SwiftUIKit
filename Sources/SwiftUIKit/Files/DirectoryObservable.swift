@@ -9,6 +9,7 @@
 //  https://medium.com/over-engineering/monitoring-a-folder-for-changes-in-ios-dc3f8614f902
 //
 
+import Combine
 import SwiftUI
 
 /// This class can observe file system changes for a folder.
