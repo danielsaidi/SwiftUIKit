@@ -4,6 +4,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.8.2
+
+This version disables Swift package flags for framework usage.
+
+
+
 ## 5.8.1
 
 This version enables Swift package flags to catch more errors.

@@ -26,7 +26,7 @@ let package = Package(
             resources: [.process("Resources")],
             swiftSettings: [
                 // Enable library evolution
-                .unsafeFlags(["-enable-library-evolution"]),
+//                .unsafeFlags(["-enable-library-evolution"]),
 
                 // Additional strict checks
                 // .unsafeFlags(["-warnings-as-errors"]),
