@@ -10,6 +10,7 @@
 import SwiftUI
 
 /// This view can be used to present action rows in a `List`.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
 public struct ListActionRow: View {
     
     /// Create a list action row with a custom trailing view.
@@ -53,45 +54,6 @@ public struct ListActionRow: View {
                 action.button
             }
         }
-    }
-}
-
-#Preview {
-    
-    List {
-        ListActionRow(
-            title: "Preview.Title.\(1)",
-            text: "Preview.Text.\(1)",
-            bundle: .module,
-            action: .call(phoneNumber: "1234")
-        )
-        
-        ListActionRow(
-            text: "Preview.Text.\(2)",
-            bundle: .module,
-            action: .copy("")
-        )
-        .buttonStyle(.borderedProminent)
-        
-        ListActionRow(
-            text: "Preview.Text.\(2) Preview.Text.\(2) Preview.Text.\(2) Preview.Text.\(2) Preview.Text.\(2)  Preview.Text.\(2)  Preview.Text.\(2) ",
-            bundle: .module,
-            action: .email(address: "")
-        )
-        
-        ListActionRow(
-            title: "Preview.Title.\(3)",
-            text: "Preview.Text.Long",
-            bundle: .module,
-            action: .email(address: "")
-        )
-        
-        ListActionRow(
-            title: "Preview.Title.\(4)",
-            text: "Preview.Text.\(4)",
-            bundle: .module,
-            action: nil
-        )
     }
 }
 #endif

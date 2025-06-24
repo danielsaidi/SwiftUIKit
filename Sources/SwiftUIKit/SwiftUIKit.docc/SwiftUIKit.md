@@ -97,8 +97,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Lists
 
-- ``ListAction``
-- ``ListActionRow``
 - ``ListButtonGroup``
 - ``ListButtonGroupStyle``
 - ``ListButtonStyle``

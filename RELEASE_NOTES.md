@@ -4,6 +4,21 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.8.3
+
+This version deprecates list action types.
+
+### 💡 Adjustment
+
+* `ListAction` has been adjusted to compile in Xcode 26.
+
+### 🗑️ Deprecations
+
+* `ListAction` has been moved to https://github.com/danielsaidi/StandardButtons.
+* `ListActionRow` has been deprecated.
+
+
+
 ## 5.8.2
 
 This version disables Swift package flags for framework usage.

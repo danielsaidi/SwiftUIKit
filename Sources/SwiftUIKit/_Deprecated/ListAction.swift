@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-/// This enum defines actions that can be triggered within a
-/// form or a list.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
 public enum ListAction {
     
     /// Call a phone number.
@@ -27,6 +26,8 @@ public enum ListAction {
     case openUrl(_ url: String)
 }
 
+@MainActor
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
 public extension ListAction {
     
     var accessibilityLabel: String {
@@ -51,7 +52,7 @@ public extension ListAction {
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
         switch self {
-        case .call(let url): link(for: calllUrl(for: url), content)
+        case .call(let url): link(for: callUrl(for: url), content)
         case .copy(let text): button({ copy(text) }, content: content)
         case .copyImage(let img): button({ copy(img) }, content: content)
         case .email(let addr): link(for: emailUrl(for: addr), content)
@@ -69,22 +70,21 @@ public extension ListAction {
     }
 }
 
+@MainActor
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
 private extension ListAction {
     
     func emailUrl(for url: String) -> URL? {
         .init(string: "mailto:\(url)")
     }
     
-    func calllUrl(for url: String) -> URL? {
+    func callUrl(for url: String) -> URL? {
         .init(string: "tel:\(url)")
     }
     
     func url(for url: String) -> URL? {
         .init(string: url)
     }
-}
-
-private extension ListAction {
     
     func button<Content: View>(
         _ action: @escaping () -> Void,
@@ -109,6 +109,8 @@ private extension ListAction {
     }
 }
 
+@MainActor
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
 private extension ListAction {
     
     func copy(_ value: String) {
@@ -132,7 +134,8 @@ private extension ListAction {
 }
 
 #Preview {
-    
+
+    @MainActor
     func view(for action: ListAction) -> some View {
         action.button
     }
