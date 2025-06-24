@@ -8,23 +8,17 @@
 
 import SwiftUI
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
+@available(*, deprecated, message: "This has been moved to PresentationKit and renamed.")
 public protocol ErrorAlerter {
-    
+
     var alert: AlertContext { get }
 }
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
 @MainActor
+@available(*, deprecated, message: "This has been moved to PresentationKit and renamed.")
 public extension ErrorAlerter {
 
-    /**
-     Alert the provided error.
-
-     If the error is an ``ErrorAlertConvertible``, then this
-     presents its ``ErrorAlertConvertible/errorAlert``, else
-     the error's `localizedDescription` is alerted.
-     */
+    /// Alert the provided error.
     func alert(
         error: Error,
         okButtonText: String = "OK"
@@ -39,10 +33,6 @@ public extension ErrorAlerter {
             )
         )
     }
-}
-
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PresentationKit")
-public extension ErrorAlerter {
 
     /// This typealias describes an async operation.
     typealias AsyncOperation = () async throws -> Void
@@ -57,7 +47,7 @@ public extension ErrorAlerter {
     typealias BlockOperation<ErrorType: Error> = (BlockCompletion<ErrorType>) -> Void
 
     /// Alert the provided error asynchronously.
-    @MainActor func alertAsync(
+    func alertAsync(
         error: Error,
         okButtonText: String = "OK"
     ) {
@@ -69,7 +59,7 @@ public extension ErrorAlerter {
 
     /// Try to perform a block-based operation, and alert if
     /// this operation fails in any way.
-    @MainActor func tryWithErrorAlert<ErrorType: Error>(
+    func tryWithErrorAlert<ErrorType: Error>(
         _ operation: @escaping BlockOperation<ErrorType>,
         completion: @escaping BlockCompletion<ErrorType>
     ) {
@@ -87,7 +77,7 @@ public extension ErrorAlerter {
     ///
     /// This function wraps an async operation in a task and
     /// alerts any errors that are thrown.
-    @MainActor func tryWithErrorAlert(_ operation: @escaping AsyncOperation) {
+    func tryWithErrorAlert(_ operation: @escaping AsyncOperation) {
         Task {
             do {
                 try await operation()

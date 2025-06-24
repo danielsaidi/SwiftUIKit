@@ -4,6 +4,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.8.4
+
+This version updates deprecation information for presentation types.
+
+
+
 ## 5.8.3
 
 This version deprecates list action types.
