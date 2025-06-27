@@ -9,6 +9,7 @@
 #if os(iOS) || os(macOS) || os(tvOS) || os(visionOS)
 import SwiftUI
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension LinearProgressBar {
 
     /// This type can style a ``LinearProgressBar``.
@@ -47,6 +48,7 @@ public extension LinearProgressBar {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension LinearProgressBar.Style {
 
     /// The standard liear progress bar style.
@@ -67,6 +69,7 @@ public extension ViewShadowStyle {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension View {
 
     /// Apply a ``LinearProgressBar/Style`` to the view.
@@ -77,6 +80,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 private extension LinearProgressBar.Style {
 
     struct Key: EnvironmentKey {
@@ -87,6 +91,7 @@ private extension LinearProgressBar.Style {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension EnvironmentValues {
 
     var linearProgressBarStyle: LinearProgressBar.Style {

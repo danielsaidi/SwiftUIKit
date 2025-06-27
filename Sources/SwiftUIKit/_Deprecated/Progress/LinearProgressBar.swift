@@ -39,6 +39,7 @@ import SwiftUI
  You can also customize the built-in styles, to change their
  standard configuration and how this view looks by default.
  */
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public struct LinearProgressBar: View {
 
     /// Create a linear progress bar.
@@ -68,6 +69,7 @@ public struct LinearProgressBar: View {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 private extension LinearProgressBar {
 
     var backgroundMaterial: some ShapeStyle {
@@ -87,73 +89,6 @@ private extension LinearProgressBar {
             .clipShape(Capsule())
             .shadow(style.barShadow)
             .padding(style.barPadding)
-    }
-}
-
-
-// MARK: - Previews
-
-#Preview {
-
-    struct Preview: View {
-
-        let style: LinearProgressBar.Style
-
-        @State
-        private var progress = 0.5
-
-        var body: some View {
-            VStack(spacing: 30) {
-                LinearProgressBar(progress: progress)
-                    .linearProgressBarStyle(style)
-                #if os(iOS) || os(macOS) || os(watchOS)
-                    .onTapGesture {
-                        progress += 0.1
-                    }
-                #endif
-            }
-        }
-    }
-
-    return ZStack {
-        LinearGradient(
-            colors: [Color.pink, Color.purple],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing)
-        Image(systemName: "theatermasks")
-            .symbolRenderingMode(.hierarchical)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-        VStack(spacing: 30) {
-            ProgressView(value: 0.5)
-                .progressViewStyle(.linear)
-            Preview(style: .standard)
-            Preview(style: .padding)
-            Preview(style: .tallPadding)
-            Preview(style: .swedish)
-            Preview(style: .swedishFrosted)
-                .shadow(.elevated)
-        }
-        .padding(50)
-    }
-}
-
-private extension LinearProgressBar.Style {
-
-    static var swedish: LinearProgressBar.Style {
-        var style = LinearProgressBar.Style.tallPadding
-        style.backgroundColor = .blue
-        style.backgroundMaterialOpacity = 0
-        style.barColor = .yellow
-        return style
-    }
-
-    static var swedishFrosted: LinearProgressBar.Style {
-        var style = LinearProgressBar.Style.tallPadding
-        style.animation = .interpolatingSpring()
-        style.backgroundColor = .blue
-        style.barColor = .yellow
-        return style
     }
 }
 #endif

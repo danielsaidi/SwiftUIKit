@@ -4,6 +4,17 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.8.5
+
+This version deprecates progress types, since a native `Gauge` can be used instead.
+
+### 🗑️ Deprecations
+
+* `CircularProgressBar` has been deprecated.
+* `LinearProgressBar` has been deprecated.
+
+
+
 ## 5.8.4
 
 This version updates deprecation information for presentation types.

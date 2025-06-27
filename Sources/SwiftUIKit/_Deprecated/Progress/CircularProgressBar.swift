@@ -18,6 +18,7 @@ import SwiftUI
  
  You can apply a style with `.circularProgressBarStyle(...)`.
  */
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public struct CircularProgressBar: View {
 
     /// Create a circular progress bar.
@@ -40,6 +41,7 @@ public struct CircularProgressBar: View {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 private extension CircularProgressBar {
     
     var baseCircle: some View {
@@ -78,66 +80,5 @@ private extension CircularProgressBar {
     
     var progressValue: Double {
         max(min(progress * 100, 100), 0)
-    }
-}
-
-#Preview {
-    
-    struct Preview: View {
-        
-        @State
-        private var progress = 0.1
-        
-        var body: some View {
-            VStack(spacing: 30) {
-                CircularProgressBar(progress: progress)
-
-                CircularProgressBar(progress: progress)
-                    .shadow(.elevated)
-                    .circularProgressBarStyle(.swedish)
-                
-                CircularProgressBar(progress: progress)
-                    .shadow(.sticker)
-                    .circularProgressBarStyle(.noText)
-                
-                Button("Preview.Progress") {
-                    progress += 0.1
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .background(Color.green.edgesIgnoringSafeArea(.all))
-        }
-    }
-    
-    return Preview()
-}
-
-@MainActor
-fileprivate extension CircularProgressBar.Style {
-
-    static var swedish: CircularProgressBar.Style {
-        var style = CircularProgressBar.Style.standard
-        style.animation = .easeIn(duration: 3)
-        style.backgroundColor = .blue
-        style.decimals = 2
-        style.strokeColor = .yellow
-        style.strokeWidth = 5
-        style.startAngle = 45
-        style.progressColor = .yellow
-        style.progressWidth = 15
-        style.progressModifier = { AnyView($0.shadow(.elevated)) }
-        style.titleColor = .yellow
-        style.titleFont = .title.bold()
-        style.titleModifier = { AnyView($0.shadow(.elevated)) }
-        return style
-    }
-
-    static var noText: CircularProgressBar.Style {
-        var style = CircularProgressBar.Style.standard
-        style.backgroundColor = .white
-        style.strokeColor = .clear
-        style.progressColor = .black
-        style.showTitle = false
-        return style
     }
 }

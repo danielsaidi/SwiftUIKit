@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension CircularProgressBar {
 
     /// This type can style a ``CircularProgressBar``.
@@ -61,12 +62,14 @@ public extension CircularProgressBar {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension CircularProgressBar.Style {
 
     /// The standard circular progress bar style.
     static var standard: Self { .init() }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension View {
 
     /// Apply a ``CircularProgressBar/Style`` to the view.
@@ -77,6 +80,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 private extension CircularProgressBar.Style {
 
     struct Key: EnvironmentKey {
@@ -87,6 +91,7 @@ private extension CircularProgressBar.Style {
     }
 }
 
+@available(*, deprecated, message: "Use a native Gauge instead.")
 public extension EnvironmentValues {
 
     var circularProgressBarStyle: CircularProgressBar.Style {
