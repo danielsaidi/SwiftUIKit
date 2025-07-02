@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-/// This picker item can be used to display a certain font.
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct SystemFontPickerItem: View {
     
     public init(

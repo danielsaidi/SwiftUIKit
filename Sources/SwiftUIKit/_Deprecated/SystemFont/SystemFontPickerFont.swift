@@ -8,13 +8,7 @@
 
 import Foundation
 
-/**
- This struct is used by the various font pickers to make the
- font type platform-agnostic.
- 
- To change the display name of the system font, just set the
- picker's static ``systemFontDisplayName`` property.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct SystemFontPickerFont: Identifiable {
     
     /// Create a system picker font based on font name.
@@ -50,6 +44,7 @@ public struct SystemFontPickerFont: Identifiable {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension Collection where Element == SystemFontPickerFont {
     
     /// Get all available system fonts.
@@ -73,6 +68,7 @@ public extension Collection where Element == SystemFontPickerFont {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public extension SystemFontPickerFont {
     
     /**
@@ -98,6 +94,7 @@ public extension SystemFontPickerFont {
 #if os(macOS)
 import AppKit
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 private extension NSFont {
     
     /// Get all available NSFont families.
@@ -112,6 +109,7 @@ private extension NSFont {
 #else
 import UIKit
 
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 private extension UIFont {
     
     /// Get all available NSFont families.

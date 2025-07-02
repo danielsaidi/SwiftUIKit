@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public extension Button {
     
     /// Create a new ``ButtonType``-based button.
@@ -39,7 +39,7 @@ public extension Button {
     }
 }
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public enum ButtonType: String, CaseIterable, Identifiable {
     case add, addToFavorites,
          cancel, call, close, copy,
@@ -52,7 +52,7 @@ public enum ButtonType: String, CaseIterable, Identifiable {
          save, search, select, share
 }
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public extension ButtonType {
     
     static func toggleFavorite(isFavorite: Bool) -> ButtonType {
@@ -150,7 +150,7 @@ public extension ButtonType {
     }
 }
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public extension View {
     
     @ViewBuilder

@@ -11,18 +11,12 @@ import SwiftUI
 #if canImport(UIKit)
 import class UIKit.UIImage
 
-/**
- This typealias helps bridging UIKit and AppKit when working
- with images in a multi-platform context.
- */
+/// This typealias bridges platform-specific image types.
 public typealias ImageRepresentable = UIImage
 #elseif canImport(AppKit)
 import class AppKit.NSImage
 
-/**
- This typealias helps bridging UIKit and AppKit when working
- with images in a multi-platform context.
- */
+/// This typealias bridges platform-specific image types.
 public typealias ImageRepresentable = NSImage
 #endif
 

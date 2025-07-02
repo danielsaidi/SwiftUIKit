@@ -4,7 +4,7 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
-## 5.8.5
+## 5.9
 
 This version deprecates progress types, since a native `Gauge` can be used instead.
 
@@ -12,6 +12,8 @@ This version deprecates progress types, since a native `Gauge` can be used inste
 
 * `CircularProgressBar` has been deprecated.
 * `LinearProgressBar` has been deprecated.
+* `Pasteboard` has been deprecated.
+* `SystemFont` types have been moved to https://github.com/danielsaidi/PickerKit.
 
 
 
@@ -31,7 +33,7 @@ This version deprecates list action types.
 
 ### 🗑️ Deprecations
 
-* `ListAction` has been moved to https://github.com/danielsaidi/StandardButtons.
+* `ListAction` has been moved to https://github.com/danielsaidi/StandardActions.
 * `ListActionRow` has been deprecated.
 
 
@@ -107,7 +109,7 @@ This makes it easier to prepare SwiftUIKit for framework usage.
 
 ### 🗑️ Deprecations
 
-* The `ButtonType` has been moved to https://github.com/danielsaidi/StandardButtons.
+* The `ButtonType` has been moved to https://github.com/danielsaidi/StandardActions.
 
 
 

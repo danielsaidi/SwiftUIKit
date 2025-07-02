@@ -10,6 +10,8 @@ import SwiftUI
 
 public extension Image {
 
+    
+
     /// This is a shorthand for `Image(systemName:)`.
     static func symbol(_ name: String) -> Image {
         .init(systemName: name)

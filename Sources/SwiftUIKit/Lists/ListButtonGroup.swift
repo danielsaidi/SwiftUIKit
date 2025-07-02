@@ -50,7 +50,7 @@ public struct ListButtonGroup<Content: View>: View {
         var body: some View {
             List {
                 "Add something".previewButton(.add)
-                
+
                 ListButtonGroup {
                     HStack {
                         "Bug".previewButton(.bug)

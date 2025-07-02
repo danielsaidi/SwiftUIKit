@@ -9,21 +9,14 @@
 import Combine
 import SwiftUI
 
-/**
- This animation can be used to render a list of dots where a
- timer increments the number of dots until the specified max
- count is reached, at which the view restarts with zero dots.
-
- The view just renders plain text, so you can style the text
- just like you would any other text.
-
- You can use the ``DotLoadingAnimationText`` view to present a text
- with the dot animation playing after the text.
-
- Note that something causes this view's preview to not start
- the animation. Look at ``DotLoadingAnimationText`` to see how this
- animation behaves when it's active.
- */
+/// This animation can be used to render dots, where a timer
+/// increments the number of presented dots.
+///
+/// The view just renders plain text, so you can style it as
+/// you would any other text.
+///
+/// You can use ``DotLoadingAnimationText`` to present texts
+/// with the dot animation playing after the text.
 public struct DotLoadingAnimation: View {
 
     /// Create a dot animation.

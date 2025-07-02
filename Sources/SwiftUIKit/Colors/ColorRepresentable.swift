@@ -9,19 +9,13 @@
 #if os(macOS)
 import class AppKit.NSColor
 
-/**
- This typealias helps bridging UIKit and AppKit when working
- with colors in a multi-platform context.
- */
+/// This typealias bridges platform-specific color types.
 public typealias ColorRepresentable = NSColor
 #endif
 
 #if canImport(UIKit)
 import class UIKit.UIColor
 
-/**
- This typealias helps bridging UIKit and AppKit when working
- with colors in a multi-platform context.
- */
+/// This typealias bridges platform-specific color types.
 public typealias ColorRepresentable = UIColor
 #endif

@@ -8,16 +8,7 @@
 
 import SwiftUI
 
-/**
- This system font picker renders a `List` that iterates over
- a collection of fonts, of which one can be selected.
- 
- The reason why this is not just a regular `Picker`, is that
- regular pickers don't show custom fonts on some platforms.
- 
- If you don't want a `List`, use a `SystemFontForEachPicker`
- instead, which just renders font items within a `ForEach`.
- */
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/PickerKit")
 public struct SystemFontListPicker: View {
     
     /// Create a font list picker.
@@ -75,23 +66,3 @@ private extension View {
         #endif
     }
 }
-
-#if os(iOS)
-#Preview {
-    
-    struct Preview: View {
-        
-        @State private var font = ""
-        
-        var body: some View {
-            NavigationView {
-                SystemFontListPicker(
-                    selectedFontName: $font)
-                .withTitle("Pick a font")
-            }
-        }
-    }
-    
-    return Preview()
-}
-#endif

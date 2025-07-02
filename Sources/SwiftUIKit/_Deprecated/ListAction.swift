@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public enum ListAction {
     
     /// Call a phone number.
@@ -27,7 +27,7 @@ public enum ListAction {
 }
 
 @MainActor
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public extension ListAction {
     
     var accessibilityLabel: String {
@@ -71,7 +71,7 @@ public extension ListAction {
 }
 
 @MainActor
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 private extension ListAction {
     
     func emailUrl(for url: String) -> URL? {
@@ -110,7 +110,7 @@ private extension ListAction {
 }
 
 @MainActor
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 private extension ListAction {
     
     func copy(_ value: String) {

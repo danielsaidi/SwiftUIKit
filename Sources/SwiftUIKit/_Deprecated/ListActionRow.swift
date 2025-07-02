@@ -10,7 +10,7 @@
 import SwiftUI
 
 /// This view can be used to present action rows in a `List`.
-@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardButtons")
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public struct ListActionRow: View {
     
     /// Create a list action row with a custom trailing view.

@@ -9,19 +9,13 @@
 #if os(macOS)
 import class AppKit.NSFont
 
-/**
- This typealias helps bridging UIKit and AppKit when working
- with fonts in a multi-platform context.
- */
+/// This typealias bridges platform-specific font types.
 public typealias FontRepresentable = NSFont
 #endif
 
 #if canImport(UIKit)
 import class UIKit.UIFont
 
-/**
- This typealias helps bridging UIKit and AppKit when working
- with fonts in a multi-platform context.
- */
+/// This typealias bridges platform-specific font types.
 public typealias FontRepresentable = UIFont
 #endif

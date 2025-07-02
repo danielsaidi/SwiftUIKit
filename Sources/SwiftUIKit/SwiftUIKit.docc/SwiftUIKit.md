@@ -119,14 +119,6 @@ SwiftUIKit is available under the MIT license.
 
 - ``Pasteboard``
 
-### Pickers
-
-- ``SystemFontPicker``
-- ``SystemFontForEachPicker``
-- ``SystemFontListPicker``
-- ``SystemFontPickerFont``
-- ``SystemFontPickerItem``
-
 ### Previews
 
 - ``SwiftPreviewInspector``

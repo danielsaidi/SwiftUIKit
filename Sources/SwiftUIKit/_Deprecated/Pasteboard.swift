@@ -9,15 +9,17 @@
 import SwiftUI
 
 #if os(macOS)
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public typealias Pasteboard = NSPasteboard
 #elseif os(iOS)
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public typealias Pasteboard = UIPasteboard
 #endif
 
 #if os(macOS) || os(iOS)
+@available(*, deprecated, message: "This has been moved to https://github.com/danielsaidi/StandardActions")
 public extension Pasteboard {
     
-    /// Copy a string to the pasteboard.
     func copy(_ string: String) {
         #if os(macOS)
         clearContents()
