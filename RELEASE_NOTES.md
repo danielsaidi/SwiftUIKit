@@ -8,8 +8,13 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 This version deprecates progress types, since a native `Gauge` can be used instead.
 
+### ✨ Features
+
+* `Date` has a new calendar-based comparison extensions.
+
 ### 🗑️ Deprecations
 
+* `Calendar` extensions have been deprecated.
 * `CircularProgressBar` has been deprecated.
 * `LinearProgressBar` has been deprecated.
 * `Pasteboard` has been deprecated.

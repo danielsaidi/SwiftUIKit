@@ -8,45 +8,35 @@
 
 import Foundation
 
+@available(*, deprecated, message: "Use Date extensions instead.")
 public extension Calendar {
     
-    /**
-     Whether or not this calendar thinks that a certain date
-     is the same day as another date.
-     */
+    /// Whether the date is the same day as another date.
     func isDate(
         _ date1: Date,
         sameDayAs date2: Date
     ) -> Bool {
         isDate(date1, equalTo: date2, toGranularity: .day)
     }
-    
-    /**
-     Whether or not this calendar thinks that a certain date
-     is the same month as another date.
-     */
+
+    /// Whether the date is the same month as another date.
     func isDate(
         _ date1: Date,
         sameMonthAs date2: Date
     ) -> Bool {
         isDate(date1, equalTo: date2, toGranularity: .month)
     }
-    
-    /**
-     Whether or not this calendar thinks that a certain date
-     is the same week as another date.
-     */
+
+    /// Whether the date is the same week as another date.
     func isDate(
         _ date1: Date,
         sameWeekAs date2: Date
     ) -> Bool {
         isDate(date1, equalTo: date2, toGranularity: .weekOfYear)
     }
-    
-    /**
-     Whether or not this calendar thinks that a certain date
-     is the same year as another date.
-     */
+
+
+    /// Whether the date is the same year as another date.
     func isDate(
         _ date1: Date,
         sameYearAs date2: Date
