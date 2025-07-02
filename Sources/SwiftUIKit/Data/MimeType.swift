@@ -9,13 +9,11 @@
 import Foundation
 import UniformTypeIdentifiers
 
-/**
- This enum represents a set of different MIME and file types.
- 
- Note that some types may be expected to be a different type,
- but are instead an `.application` type. For instance, `json`
- is a text format, but the mime type is `application/json`.
- */
+/// This enum defines different MIME and file types.
+///
+/// Note that some types are expected to be a different type,
+/// but instead use `application`. For instance, `json` is a
+/// text format, but the mime type is `application/json`.
 public enum MimeType: Identifiable {
     
     case

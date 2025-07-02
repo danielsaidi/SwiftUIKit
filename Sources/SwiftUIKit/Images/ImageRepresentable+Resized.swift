@@ -11,10 +11,10 @@ import Foundation
 #if canImport(UIKit)
 import UIKit
 
-public extension UIImage {
+public extension ImageRepresentable {
 
     /// Create a resized copy of the image.
-    func resized(to size: CGSize) -> UIImage? {
+    func resized(to size: CGSize) -> ImageRepresentable? {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         draw(in: CGRect(origin: CGPoint.zero, size: size))
         let result = UIGraphicsGetImageFromCurrentImageContext()
@@ -25,11 +25,11 @@ public extension UIImage {
 #elseif canImport(AppKit)
 import AppKit
 
-public extension NSImage {
+public extension ImageRepresentable {
 
     /// Create a resized copy of the image.
-    func resized(to newSize: CGSize) -> NSImage? {
-        let newImage = NSImage(size: newSize)
+    func resized(to newSize: CGSize) -> ImageRepresentable? {
+        let newImage = ImageRepresentable(size: newSize)
         newImage.lockFocus()
         let sourceRect = NSRect(x: 0, y: 0, width: size.width, height: size.height)
         let destRect = NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height)

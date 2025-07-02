@@ -9,13 +9,8 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This sheet can be used to present `UIActivityViewController`
- modals for any kind of shareable content.
- 
- You can use a ``SheetContext`` to easily present this sheet
- as a modal sheet.
- */
+/// This sheet can present a `UIActivityViewController` when
+/// sharing any kind of shareable content.
 public struct ShareSheet: UIViewControllerRepresentable {
     
     public init(

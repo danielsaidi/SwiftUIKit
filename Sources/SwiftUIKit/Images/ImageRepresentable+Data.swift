@@ -24,3 +24,24 @@ public extension ImageRepresentable {
         return image.jpegData(compressionQuality: quality)
     }
 }
+
+#if os(macOS)
+import AppKit
+import Cocoa
+import CoreGraphics
+
+public extension ImageRepresentable {
+
+    /// Get the image's core graphics image representation.
+    var cgImage: CGImage? {
+        cgImage(forProposedRect: nil, context: nil, hints: nil)
+    }
+
+    /// Get the image's JPEG data representation.
+    func jpegData(compressionQuality: CGFloat) -> Data? {
+        guard let image = cgImage else { return nil }
+        let bitmap = NSBitmapImageRep(cgImage: image)
+        return bitmap.representation(using: .jpeg, properties: [.compressionFactor: compressionQuality])
+    }
+}
+#endif
