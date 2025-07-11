@@ -4,6 +4,17 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.9.1
+
+This version improves the plain list content capabilities of the SDK.
+
+### ✨ Features
+
+* `PlainListContent` is a wrapper that removes any list decorations from a view.
+* `ListHeader` and `ListFooter` are `PlainListContent` wrappers that perform header/footer specific adjustments.
+
+
+
 ## 5.9
 
 This version deprecates progress types, since a native `Gauge` can be used instead.
