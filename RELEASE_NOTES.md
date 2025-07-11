@@ -4,6 +4,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.9.2
+
+This version improves the list header and footer rendering.
+
+
+
 ## 5.9.1
 
 This version improves the plain list content capabilities of the SDK.

@@ -21,10 +21,12 @@ private struct PlainListContent<Content: View>: View {
     private let content: (() -> Content)
 
     public var body: some View {
-        content()
-            .frame(maxWidth: .infinity)
-            .listRowBackground(Color.clear)
-            .prefersListRowSeparatorHidden()
+        VStack {
+            content()
+        }
+        .frame(maxWidth: .infinity)
+        .listRowBackground(Color.clear)
+        .prefersListRowSeparatorHidden()
     }
 }
 
