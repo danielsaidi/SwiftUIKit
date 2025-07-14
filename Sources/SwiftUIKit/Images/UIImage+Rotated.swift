@@ -6,7 +6,7 @@
 //  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
+#if canImport(UIKit)
 import UIKit
 
 public extension UIImage {
