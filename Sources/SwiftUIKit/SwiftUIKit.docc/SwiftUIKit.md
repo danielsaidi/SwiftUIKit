@@ -52,6 +52,7 @@ SwiftUIKit is available under the MIT license.
 
 ### Colors
 
+- ``SwiftUICore/Color``
 - ``ColorRepresentable``
 
 ### Data
@@ -77,10 +78,12 @@ SwiftUIKit is available under the MIT license.
 
 ### Fonts
 
+- ``SwiftUICore/Font``
 - ``FontRepresentable``
 
 ### Images
 
+- ``SwiftUICore/Image``
 - ``ImageCache``
 - ``ImageRepresentable``
 
@@ -107,14 +110,9 @@ SwiftUIKit is available under the MIT license.
 - ``ListShelfSection``
 - ``ListShelfSectionStyle``
 - ``ListSubtitle``
-- ``PlainListContent``
 - ``Reorderable``
 - ``ReorderableForEach``
 - ``SidebarListRowBackgroundModifier``
-
-### Pasteboard
-
-- ``Pasteboard``
 
 ### Previews
 
@@ -127,7 +125,6 @@ SwiftUIKit is available under the MIT license.
 ### Sharing
 
 - ``ShareSheet``
-- ``UrlSharing``
 
 ### Styles
 
@@ -135,12 +132,14 @@ SwiftUIKit is available under the MIT license.
 
 ### Text
 
+- ``SwiftUICore/Text``
 - ``MultilineSubmitViewModifier``
 - ``TextEditorStyle``
 - ``TextFieldClearButton``
 
 ### Views
 
+- ``SwiftUICore/View``
 - ``EditableView``
 
 
