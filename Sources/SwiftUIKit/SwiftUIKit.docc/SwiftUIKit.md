@@ -90,11 +90,6 @@ SwiftUIKit is available under the MIT license.
 - ``KeychainService``
 - ``KeychainWrapper``
 
-### Loading
-
-- ``DotLoadingAnimation``
-- ``DotLoadingAnimationText``
-
 ### Lists
 
 - ``ListButtonGroup``
@@ -124,11 +119,6 @@ SwiftUIKit is available under the MIT license.
 ### Previews
 
 - ``SwiftUIPreviewInspector``
-
-### Progress
-
-- ``CircularProgressBar``
-- ``LinearProgressBar``
 
 ### Regex
 

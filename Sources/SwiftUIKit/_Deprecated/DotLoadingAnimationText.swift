@@ -8,13 +8,7 @@
 
 import SwiftUI
 
-/**
- This view adds a ``DotLoadingAnimation`` after the provided
- `text`, to indicate a loading state.
-
- The view just renders plain text, so you can style the text
- just like you would any other text.
- */
+@available(*, deprecated, message: "Use SF Symbols instead. See https://danielsaidi.com/blog/2025/06/19/creating-amazing-loading-animations-with-sf-symbols for more information.")
 public struct DotLoadingAnimationText: View {
 
     /// Create a dot animation text.
@@ -49,35 +43,24 @@ public struct DotLoadingAnimationText: View {
         .opacity(0)
         .overlay(titleAnimation, alignment: .leading)
     }
-}
 
-private extension DotLoadingAnimationText {
-
-    var dotAnimation: some View {
+    private var dotAnimation: some View {
         DotLoadingAnimation(
             dotCount: dotCount,
             interval: interval
         )
     }
 
-    var staticDotString: String {
+    private var staticDotString: String {
         (0..<dotCount)
             .map { _ in "." }
             .joined(separator: "")
     }
 
-    var titleAnimation: some View {
+    private var titleAnimation: some View {
         HStack(spacing: 0) {
             Text(text)
             dotAnimation
         }
     }
-}
-
-#Preview {
-
-    DotLoadingAnimationText(
-        text: "Preview.LoadingNoDots",
-        bundle: .module
-    )
 }

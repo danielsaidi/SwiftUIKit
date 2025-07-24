@@ -4,6 +4,12 @@ SwiftUIKit makes its best effort to honor semver, but breaking changes can occur
 
 
 
+## 5.9.4
+
+This version deprecates the `DotLoading` views.
+
+
+
 ## 5.9.3
 
 This version makes image rotation available to all UIKit platforms.

@@ -9,14 +9,7 @@
 import Combine
 import SwiftUI
 
-/// This animation can be used to render dots, where a timer
-/// increments the number of presented dots.
-///
-/// The view just renders plain text, so you can style it as
-/// you would any other text.
-///
-/// You can use ``DotLoadingAnimationText`` to present texts
-/// with the dot animation playing after the text.
+@available(*, deprecated, message: "Use SF Symbols instead. See https://danielsaidi.com/blog/2025/06/19/creating-amazing-loading-animations-with-sf-symbols for more information.")
 public struct DotLoadingAnimation: View {
 
     /// Create a dot animation.
@@ -43,11 +36,8 @@ public struct DotLoadingAnimation: View {
         Text(dotText)
             .onReceive(timer) { _ in increaseDotCount() }
     }
-}
 
-private extension DotLoadingAnimation {
-
-    var dotText: String {
+    private var dotText: String {
         if currentDotCount == 0 {
             return ""
         }
@@ -55,20 +45,12 @@ private extension DotLoadingAnimation {
             .map { _ in "." }
             .joined(separator: "")
     }
-}
 
-private extension DotLoadingAnimation {
-
-    func increaseDotCount() {
+    private func increaseDotCount() {
         var newCount = currentDotCount + 1
         if newCount > dotCount {
             newCount = 0
         }
         currentDotCount = newCount
     }
-}
-
-#Preview {
-
-    DotLoadingAnimation()
 }
