@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-#if os(iOS)
 /// This view mimics the `Section` title od a grouped `List`.
 ///
 /// This font uses `.headline` with a `.scaleEffect` in iOS 26 to allow for
@@ -71,4 +70,3 @@ private extension View {
         }
     }
 }
-#endif
