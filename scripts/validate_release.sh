@@ -6,12 +6,17 @@ set -e
 # Function to display usage information
 show_usage() {
     echo
-    echo "This script builds a <TARGET> for all provided <PLATFORMS>."
+    echo "This script validates a <TARGET> for release by checking the git repo, then running lint and unit tests for all platforms."
 
     echo
     echo "Usage: $0 [TARGET] [-p|--platforms <PLATFORM1> <PLATFORM2> ...]"
-    echo "  [TARGET]              Optional. The target to build (defaults to package name)"
+    echo "  [TARGET]              Optional. The target to validate (defaults to package name)"
     echo "  -p, --platforms       Optional. List of platforms (default: iOS macOS tvOS watchOS xrOS)"
+    
+    echo
+    echo "This script will:"
+    echo "  * Validate that swiftlint passes"
+    echo "  * Validate that all unit tests pass for all platforms"
     
     echo
     echo "Examples:"
@@ -24,11 +29,20 @@ show_usage() {
 }
 
 # Function to display error message, show usage, and exit
-show_error_and_exit() {
+show_usage_error_and_exit() {
     echo
     local error_message="$1"
     echo "Error: $error_message"
     show_usage
+    exit 1
+}
+
+# Function to display error message, and exit
+show_error_and_exit() {
+    echo
+    local error_message="$1"
+    echo "Error: $error_message"
+    echo
     exit 1
 }
 
@@ -52,18 +66,18 @@ while [[ $# -gt 0 ]]; do
             # Remove leading space and check if we got any platforms
             PLATFORMS=$(echo "$PLATFORMS" | sed 's/^ *//')
             if [ -z "$PLATFORMS" ]; then
-                show_error_and_exit "--platforms requires at least one platform"
+                show_usage_error_and_exit "--platforms requires at least one platform"
             fi
             ;;
         -h|--help)
             show_usage; exit 0 ;;
         -*)
-            show_error_and_exit "Unknown option $1" ;;
+            show_usage_error_and_exit "Unknown option $1" ;;
         *)
             if [ -z "$TARGET" ]; then
                 TARGET="$1"
             else
-                show_error_and_exit "Unexpected argument '$1'"
+                show_usage_error_and_exit "Unexpected argument '$1'"
             fi
             shift
             ;;
@@ -83,48 +97,60 @@ if [ -z "$TARGET" ]; then
             echo "Using package name: $TARGET"
         else
             echo ""
-            read -p "Failed to get package name. Please enter the target to build: " TARGET
+            read -p "Failed to get package name. Please enter the target to validate: " TARGET
             if [ -z "$TARGET" ]; then
-                show_error_and_exit "TARGET is required"
+                show_usage_error_and_exit "TARGET is required"
             fi
         fi
     else
         echo ""
-        read -p "Please enter the target to build: " TARGET
+        read -p "Please enter the target to validate: " TARGET
         if [ -z "$TARGET" ]; then
-            show_error_and_exit "TARGET is required"
+            show_usage_error_and_exit "TARGET is required"
         fi
     fi
 fi
 
-# A function that builds $TARGET for a specific platform
-build_platform() {
+# Use the script folder to refer to other scripts
+FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+SCRIPT_VALIDATE_GIT="$FOLDER/validate_git_branch.sh"
+SCRIPT_TEST="$FOLDER/test.sh"
 
-    # Define a local $PLATFORM variable
-    local PLATFORM=$1
+# A function that runs a certain script and checks for errors
+run_script() {
+    local script="$1"
+    shift  # Remove the first argument (script path) from the argument list
 
-    # Build $TARGET for the $PLATFORM
-    echo "Building $TARGET for $PLATFORM..."
-    if ! xcodebuild -scheme $TARGET -derivedDataPath .build -destination generic/platform=$PLATFORM; then
-        echo "Failed to build $TARGET for $PLATFORM" ; return 1
+    if [ ! -f "$script" ]; then
+        show_error_and_exit "Script not found: $script"
     fi
 
-    # Complete successfully
-    echo "Successfully built $TARGET for $PLATFORM"
+    chmod +x "$script"
+    if ! "$script" "$@"; then
+        exit 1
+    fi
 }
 
 # Start script
 echo
-echo "Building $TARGET for [$PLATFORMS]..."
+echo "Validating project for target '$TARGET' with platforms [$PLATFORMS]..."
 
-# Loop through all platforms and call the build function
-for PLATFORM in $PLATFORMS; do
-    if ! build_platform "$PLATFORM"; then
-        exit 1
-    fi
-done
+# Run SwiftLint
+echo "Running SwiftLint..."
+if ! swiftlint --strict; then
+    show_error_and_exit "SwiftLint failed"
+fi
+echo "SwiftLint passed"
+
+# Validate git
+echo "Validating git..."
+run_script "$SCRIPT_VALIDATE_GIT"
+
+# Run unit tests
+echo "Running unit tests..."
+run_script "$SCRIPT_TEST" "$TARGET" -p $PLATFORMS
 
 # Complete successfully
 echo
-echo "Building $TARGET completed successfully!"
+echo "Project successfully validated!"
 echo
