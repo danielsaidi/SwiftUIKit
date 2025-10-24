@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/v/release/danielsaidi/SwiftUIKit?color=%2300550&sort=semver" alt="Version" />
-    <img src="https://img.shields.io/badge/Swift-6.0-orange.svg" alt="Swift 6.0" />
+    <img src="https://img.shields.io/badge/Swift-6.1-orange.svg" alt="Swift 6.1" />
     <a href="https://danielsaidi.github.io/SwiftUIKit"><img src="https://img.shields.io/badge/documentation-web-blue.svg" alt="Documentation" /></a>
     <a href="https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE"><img src="https://img.shields.io/github/license/danielsaidi/SwiftUIKit" alt="MIT License" /></a>
     <a href="https://github.com/sponsors/danielsaidi"><img src="https://img.shields.io/badge/sponsor-GitHub-red.svg" alt="Sponsor my work" /></a>
