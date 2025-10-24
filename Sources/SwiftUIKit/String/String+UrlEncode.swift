@@ -22,7 +22,7 @@ public extension String {
 
     /// Encode the string to work with quary parameters.
     ///
-    /// This uses `addingPercentEncoding` & `.urlPathAllowed`
+    /// This uses `addingPercentEncoding` and `.urlPathAllowed`,
     /// then replaces every `&` with `%26`.
     func urlEncoded() -> String? {
         self.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)?

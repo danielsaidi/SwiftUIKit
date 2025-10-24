@@ -13,8 +13,8 @@ public extension View {
 
     /// Apply a list row background color for a sidebar list.
     ///
-    /// Unlike `.listRowBackground`, this has no effect on a
-    /// regularly sized user interface.
+    /// Unlike `.listRowBackground`, this modifier has no effect on regular
+    /// sized user interfaces.
     func sidebarListRowBackground(
         _ color: Color
     ) -> some View {
@@ -23,8 +23,8 @@ public extension View {
     
     /// Apply a list row background view for a sidebar list.
     ///
-    /// Unlike `.listRowBackground`, this has no effect on a
-    /// regularly sized user interface.
+    /// Unlike `.listRowBackground`, this modifier has no effect on regular
+    /// sized user interfaces.
     func sidebarListRowBackground<Style: View>(
         _ style: Style
     ) -> some View {
@@ -32,13 +32,11 @@ public extension View {
     }
 }
 
-/**
- This modifier can be used to apply a list row background to
- a list that appears in the sidebar.
- 
- Unlike `listRowBackground`, this has no effect on a regular
- sized list, since a sidebar then doesn't use row background.
- */
+/// This modifier can be used to apply a list row background to a list that appears
+/// in the sidebar.
+///
+/// Unlike `listRowBackground` this has no effect on regular sized lists, since
+/// a sidebar then doesn't use row background.
 public struct SidebarListRowBackgroundModifier<Style: View>: ViewModifier {
     
     public init(_ style: Style) {

@@ -11,6 +11,12 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 6.1
+
+This version bumps the package to 6.1 and deprecates some list views.
+
+
+
 ## 6.0
 
 This version removes all deprecations, which means that many parts of the library are no longer available.

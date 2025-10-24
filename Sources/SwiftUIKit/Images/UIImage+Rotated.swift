@@ -19,7 +19,7 @@ public extension UIImage {
             .applying(transform)
             .size
         
-        // Trim off the small float values to prevent core graphics from rounding it up
+        // Trim off small float fractions to prevent rounding
         newSize.width = floor(newSize.width)
         newSize.height = floor(newSize.height)
 

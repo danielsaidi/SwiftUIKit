@@ -8,10 +8,8 @@
 
 import Foundation
 
-/**
- This class can be used to read from and write to the device
- keychain, using a ``KeychainWrapper``.
- */
+/// This class can be used to read from and write to the device keychain, using a
+/// ``KeychainWrapper`` instance.
 open class KeychainService {
     
     public init(

@@ -8,11 +8,10 @@
 
 import SwiftUI
 
-/// This view can present asynchronous data that can be in a
-/// loading, fetched or failed state.
+/// This view can present asynchronous data in a loading, fetched or failed state.
 ///
-/// By providing three views, the view will show the correct
-/// one depending on the state of the data:
+/// By providing three views, this view will show the correct one depending on the
+/// state of the data:
 ///
 /// * `content` is shown when `data` has a value.
 /// * `loadingView` is shown when `data` is nil and loading.

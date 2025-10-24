@@ -11,16 +11,12 @@
 import Foundation
 import SwiftUI
 
-/// This type can wrap any `Codable` type to make it able to
-/// store the value in `AppStorage` and `SceneStorage`.
+/// This type can be used to wrap any `Codable` type, to let us store that value
+/// as JSON in `AppStorage` and `SceneStorage`.
 ///
-/// This type uses `JSONEncoder` and `JSONDecoder` to encode
-/// the value to data then decode it back to the source type.
-///
-/// > Important: JSON encoding may cause important type data
-/// to disappear. For instance, JSON encoding a `Color` will
-/// not include any information about alternate color values
-/// for light and dark mode, high constrasts, etc.
+/// > Important: Values will be encoded and decoded with JSON. This may cause
+/// loss of important data. For instance, a JSON encoded `Color` will not include
+/// any dynamic color information, like dark mode and high contrast variants. 
 public struct StorageValue<Value: Codable>: RawRepresentable {
 
     /// Create a storage value.

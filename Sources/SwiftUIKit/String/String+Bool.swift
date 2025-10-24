@@ -12,7 +12,6 @@ public extension String {
     
     /// Parse a potential boolean value in the string.
     ///
-    /// This handles 1/0, yes/no, YES/NO etc. so it's a good
-    /// alternative to use when parsing .plist files.
+    /// This handles 1/0, yes/no, YES/NO, etc. and is good to parsing .plist files.
     var boolValue: Bool { (self as NSString).boolValue }
 }

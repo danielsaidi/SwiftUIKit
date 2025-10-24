@@ -9,12 +9,10 @@
 #if os(iOS)
 import SwiftUI
 
-/**
- This view modifier adds a clear button to any `TextField`.
-
- You can apply it with `.modifier(TextFieldClearButton(...))`
- or the custom `.withClearButton(for: $text)`.
- */
+/// This view modifier adds a clear button to any `TextField`.
+///
+/// You can apply it with `.modifier(TextFieldClearButton(...))`, or
+/// the custom `.withClearButton(for: $text)`.
 public struct TextFieldClearButton: ViewModifier {
 
     public init(
@@ -46,8 +44,8 @@ public struct TextFieldClearButton: ViewModifier {
 @MainActor
 public extension TextField {
 
-    /// Add a trailing ``TextFieldClearButton`` to this text
-    /// field, that can be used to clear the text binding.
+    /// Add a trailing ``TextFieldClearButton`` to this text field, that can
+    /// be used to clear the text binding.
     func withClearButton(
         for text: Binding<String>,
         _ animation: Animation? = nil

@@ -10,11 +10,8 @@ import Foundation
 
 public extension String {
     
-    /// Clean up any spaces and other characters that can be
-    /// added to the string during dictation.
-    ///
-    /// This happens on the Apple TV, when using a remote to
-    /// dictate text into a text field.
+    /// Clean up spaces and other characters that can be added during dictation,
+    /// for instance when dictating text into a text field.
     func cleanedUpAfterDictation() -> String {
         self
             .replacingOccurrences(of: "\u{fffc}", with: "")

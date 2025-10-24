@@ -8,13 +8,10 @@
 
 import SwiftUI
 
-/**
- This view can be used to display a trailing drag handle for
- an item in movable `List`.
-
- The drag handle will only be displayed when the list is not
- being edited, since edit mode should use a native handle.
- */
+/// This view can be used to display a drag handle for items in reorderable `List`.
+///
+/// The handle is only displayed when a list is not edited, since enabling edit mode
+/// will render the native drag handle.
 public struct ListDragHandle: View {
 
     public init() {}

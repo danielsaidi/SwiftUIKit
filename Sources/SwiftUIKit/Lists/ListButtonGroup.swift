@@ -9,11 +9,8 @@
 #if os(iOS)
 import SwiftUI
 
-/// This group applies zero insets and a clear background to
-/// render buttons in the content as a horizontal group.
-///
-/// An example of a similar group in the iOS platform is the
-/// quick action button group in the Contact form.
+/// This group applies zero insets and a clear background to render buttons in the
+/// content as a horizontal group.
 ///
 /// You can style the view with `.listButtonGroupStyle(...)`.
 public struct ListButtonGroup<Content: View>: View {

@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-/**
- This view can be used to add a horizontally scrolling shelf
- to a vertically scrolling list.
- */
+/// This view can be used to add a horizontally scrolling shelf to a vertical list.
 public struct ListShelfSection<Title: View, Content: View>: View {
 
     /// Create a list shelf section.

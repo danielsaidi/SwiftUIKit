@@ -97,19 +97,16 @@ SwiftUIKit is available under the MIT license.
 
 - ``ListButtonGroup``
 - ``ListButtonGroupStyle``
-- ``ListButtonStyle``
 - ``ListCard``
 - ``ListCardButtonStyle``
 - ``ListCardStyle``
 - ``ListDragHandle``
 - ``ListFooter``
 - ``ListHeader``
-- ``ListPadding``
 - ``ListSectionTitle``
 - ``ListSelectItem``
 - ``ListShelfSection``
 - ``ListShelfSectionStyle``
-- ``ListSubtitle``
 - ``Reorderable``
 - ``ReorderableForEach``
 - ``SidebarListRowBackgroundModifier``

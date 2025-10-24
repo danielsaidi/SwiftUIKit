@@ -10,15 +10,15 @@ import SwiftUI
 
 public extension View {
     
-    /// Adds a border with a certain content (for instance a
-    /// certain `Color`), width and corner radius.
+    /// Adds a border with a certain content, width and corner radius.
     func border<Content: ShapeStyle>(
         _ content: Content,
         width: CGFloat = 1,
         cornerRadius: CGFloat = 0
     ) -> some View {
-        overlay(RoundedRectangle(cornerRadius: cornerRadius)
-            .strokeBorder(content, lineWidth: width)
+        overlay(
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .strokeBorder(content, lineWidth: width)
         )
     }
 }

@@ -13,9 +13,8 @@ public extension UIImage {
     
     /// Save the image to the user's photo album.
     ///
-    /// This requires the correct permission in `Info.plist`.
-    /// Failing to add these permissions before calling this
-    /// function will crash the app.
+    /// This requires the correct permissions in `Info.plist`. Failing to add
+    /// these permissions before calling this function will crash the app.
     func saveToPhotos(completion: @escaping (Error?) -> Void) {
         ImageService().saveImageToPhotos(self, completion: completion)
     }

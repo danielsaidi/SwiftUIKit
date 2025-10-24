@@ -9,8 +9,8 @@
 #if os(iOS) || os(tvOS)
 import SwiftUI
 
-/// This protocol can be implemented by any view that should
-/// be able to toggle its edit mode.
+/// This protocol can be implemented by any view that should be able to toggle its
+/// edit mode.
 ///
 /// To implement the protocol just add an `editMode` binding:
 ///
@@ -19,8 +19,7 @@ import SwiftUI
 /// var editMode
 /// ```
 ///
-/// You can then check the edit mode with ``isEditing``, and
-/// set it with ``setIsEditing(_:)``.
+/// You can check the ``isEditing``, and set it with ``setIsEditing(_:)``.
 public protocol EditableView: View {
     
     var editMode: Binding<EditMode>? { get }

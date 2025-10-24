@@ -22,14 +22,17 @@ import AppKit
 #endif
 
 /// This extension makes `Color` implement `Codable`.
-extension Color: Codable {
-    
+extension Color: @retroactive Decodable {}
+extension Color: @retroactive Encodable {}
+
+public extension Color {
+
     enum CodingKeys: String, CodingKey {
         case red, green, blue, alpha
     }
 
     /// Initialize a color value from a decoder.
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let r = try container.decode(Double.self, forKey: .red)
         let g = try container.decode(Double.self, forKey: .green)
@@ -40,10 +43,9 @@ extension Color: Codable {
 
     /// Encode the color, using an encoder.
     ///
-    /// Note that encoding colors that support features like
-    /// dark mode, high contrast etc. will cause the encoded
-    /// colors to only contain the current color information.
-    public func encode(to encoder: Encoder) throws {
+    /// > Important: Encoding colors that support system features like dark mode,
+    /// high contrast etc. will cause the encoded colors to be non-dynamic.
+    func encode(to encoder: Encoder) throws {
         guard let colorComponents = self.colorComponents else { return }
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(colorComponents.red, forKey: .red)
@@ -69,13 +71,8 @@ private extension Color {
         
         #if os(macOS)
         SystemColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
-        // Note that non RGB color will raise an exception, that I don't now how to catch because it is an Objc exception.
         #else
-        guard SystemColor(self).getRed(&r, green: &g, blue: &b, alpha: &a) else {
-            // Pay attention that the color should be convertible into RGB format
-            // Colors using hue, saturation and brightness won't work
-            return nil
-        }
+        guard SystemColor(self).getRed(&r, green: &g, blue: &b, alpha: &a) else { return nil }
         #endif
         
         return (r, g, b, a)

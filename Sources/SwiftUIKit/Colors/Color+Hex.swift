@@ -22,8 +22,7 @@ public extension Color {
 
     /// Create a color with a string hex, e.g. `#abcdef`,
     ///
-    /// This supports multiple string formats, like `abcdef`,
-    /// `#abcdef`, `0xabcdef`, and `#abcdef`.
+    /// This supports `abcdef`, `#abcdef`, `0xabcdef`, and `#abcdef`.
     ///
     /// - Parameters:
     ///   - hex: The hex string to parse.
@@ -44,8 +43,7 @@ public extension Color {
 
     /// Create a color with a string hex, e.g. `#abcdef`,
     ///
-    /// This supports multiple string formats, like `abcdef`,
-    /// `#abcdef`, `0xabcdef`, and `#abcdef`.
+    /// This supports `abcdef`, `#abcdef`, `0xabcdef`, and `#abcdef`.
     ///
     /// - Parameters:
     ///   - hex: The hex string to parse.
@@ -80,8 +78,7 @@ public extension Color {
     return Preview()
 }
 
-/// This extension extends `ColorRepresentable` with ways to
-/// be created with hex strings and int values.
+/// This extension extends `ColorRepresentable` with hex-based initializers.
 public extension ColorRepresentable {
 
     /// Initialize a color with a hex value, e.g. `0xabcdef`.
@@ -98,8 +95,7 @@ public extension ColorRepresentable {
 
     /// Initialize a color with a hex string, e.g. `#abcdef`.
     ///
-    /// This supports multiple string formats, like `abcdef`,
-    /// `#abcdef`, `0xabcdef`, and `#abcdef`.
+    /// This supports `abcdef`, `#abcdef`, `0xabcdef`, and `#abcdef`.
     ///
     /// - Parameters:
     ///   - hex: The hex string to parse.

@@ -8,11 +8,7 @@
 
 import SwiftUI
 
-/// This style makes the button take up the entire row, then
-/// applies a shape that makes the entire view tappable.
-///
-/// You can apply this style with `.buttonStyle(.list)`, and
-/// can apply it to an entire list, like any other style.
+@available(*, deprecated, message: "Use .tint(.primary) instead")
 public struct ListButtonStyle: ButtonStyle {
     
     /// Create a custom style.
@@ -36,6 +32,7 @@ public struct ListButtonStyle: ButtonStyle {
     }
 }
 
+@available(*, deprecated, message: "Use .tint(.primary) instead")
 public extension ButtonStyle where Self == ListButtonStyle {
 
     /// The standard list card button style.
@@ -48,38 +45,3 @@ public extension ButtonStyle where Self == ListButtonStyle {
         .init(pressedOpacity: pressedOpacity)
     }
 }
-
-#if os(iOS) || os(macOS)
-#Preview {
-
-    struct Preview: View {
-
-        @State
-        private var overlayText = ""
-
-        var body: some View {
-            List {
-                ForEach(0...100, id: \.self) { index in
-                    Button("Preview.Button.\(index)") {
-                        overlayText = "\(index) tapped!"
-                    }
-                    .buttonStyle(index == 0 ? .list : .list(pressedOpacity: 0.1))
-                }
-            }
-            .overlay(overlay)
-            .buttonStyle(.list)
-        }
-
-        var overlay: some View {
-            Text(overlayText)
-                .padding()
-                .background(Color.yellow)
-                .cornerRadius(10)
-                .opacity(overlayText.isEmpty ? 0 : 1)
-                .onTapGesture { overlayText = "" }
-        }
-    }
-
-    return Preview()
-}
-#endif

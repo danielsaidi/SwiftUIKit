@@ -8,53 +8,72 @@
 
 import SwiftUI
 
-/**
- This view wraps the provided content within an `HStack` and
- adds a trailing image if the view is selected.
-
- Although the `selectedImage` is a checkmark by default, the
- selection indicator view can be any custom view.
- */
+/// This view wraps the provided content view in an `HStack` and adds a custom
+/// `selectIndicator` to the trailing edge if the item is selected.
 public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
 
-    /**
-     Create a list select item.
+    /// Create a list select item with a custom selection indicator view.
+    ///
+    /// - Parameters:
+    ///   - isSelected: Whether or not the item is selected.
+    ///   - selectionIndicator: The view to show for selected views.
+    ///   - content: The list item content view.
+    public init(
+        isSelected: Bool,
+        selectionIndicator: SelectIndicator,
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.isSelected = isSelected
+        self.selectionIndicator = selectionIndicator
+        self.content = content
+    }
 
-     - Parameters:
-       - isSelected: Whether or not the item is selected.
-       - selectIndicator: The view to show for selected views.
-       - content: The list item content view.
-     */
+    /// Create a list select item with a custom selection indicator image.
+    ///
+    /// - Parameters:
+    ///   - isSelected: Whether or not the item is selected.
+    ///   - selectionIndicatorImage: The image to show for selected views, by default `.checkmark`.
+    ///   - content: The list item content view.
+    public init(
+        isSelected: Bool,
+        selectionIndicatorImage: Image = Image(systemName: "checkmark"),
+        @ViewBuilder content: @escaping () -> Content
+    ) where SelectIndicator == Image {
+        self.init(
+            isSelected: isSelected,
+            selectionIndicator: selectionIndicatorImage,
+            content: content
+        )
+    }
+
+    @available(*, deprecated, renamed: "init(isSelected:selectionIndicator:content:)")
     public init(
         isSelected: Bool,
         selectIndicator: SelectIndicator,
         @ViewBuilder content: @escaping () -> Content
     ) {
-        self.isSelected = isSelected
-        self.selectedIndicator = selectIndicator
-        self.content = content
+        self.init(
+            isSelected: isSelected,
+            selectionIndicator: selectIndicator,
+            content: content
+        )
     }
 
-    /**
-     Create a list select item.
-
-     - Parameters:
-       - isSelected: Whether or not the item is selected.
-       - selectedImage: The image to show for selected views, by default `.checkmark`.
-       - content: The list item content view.
-     */
+    @available(*, deprecated, renamed: "init(isSelected:selectionIndicatorImage:content:)")
     public init(
         isSelected: Bool,
-        selectedImage: Image = Image(systemName: "checkmark"),
+        selectedImage: Image,
         @ViewBuilder content: @escaping () -> Content
     ) where SelectIndicator == Image {
-        self.isSelected = isSelected
-        self.selectedIndicator = selectedImage
-        self.content = content
+        self.init(
+            isSelected: isSelected,
+            selectionIndicatorImage: selectedImage,
+            content: content
+        )
     }
-    
+
     private let isSelected: Bool
-    private let selectedIndicator: SelectIndicator
+    private let selectionIndicator: SelectIndicator
     private let content: () -> Content
     
     public var body: some View {
@@ -62,7 +81,7 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
             content()
             Spacer()
             if isSelected {
-                selectedIndicator
+                selectionIndicator
             }
         }
     }
@@ -88,8 +107,10 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
                         }
                         ListSelectItem(
                             isSelected: index == selection,
-                            selectIndicator: Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.green)
+                            selectionIndicator: Image(
+                                systemName: "checkmark.circle.fill"
+                            )
+                            .foregroundColor(.green)
                         ) {
                             Image.symbol("\(index).circle")
                                 .label("Preview.Item.\(index)", bundle: .module)

@@ -20,28 +20,34 @@ public extension Date {
     func isBefore(_ date: Date) -> Bool {
         self < date
     }
-    
+
+    /// Whether the date is the same as another date, for a certain granularity.
+    func isCurrent(
+        _ granularity: Calendar.Component,
+        for calendar: Calendar = .current
+    ) -> Bool {
+        isSame(granularity, as: Date(), for: calendar)
+    }
+
+    @available(*, deprecated, renamed: "isCurrent")
+    func isThis(
+        _ granularity: Calendar.Component,
+        for calendar: Calendar = .current
+    ) -> Bool {
+        isCurrent(granularity, for: calendar)
+    }
+
     /// Whether the date is the same as another date.
     func isSame(as date: Date) -> Bool {
         self == date
     }
 
-    /// Whether the date is the same as another date, for an
-    /// explicity granularity, like `.day`.
+    /// Whether the date is the same as another date, for a certain granularity.
     func isSame(
         _ granularity: Calendar.Component,
         as date: Date,
         for calendar: Calendar = .current
     ) -> Bool {
         calendar.isDate(self, equalTo: date, toGranularity: granularity)
-    }
-
-    /// Whether the date is the same as another date, for an
-    /// explicity granularity, like `.day`.
-    func isThis(
-        _ granularity: Calendar.Component,
-        for calendar: Calendar = .current
-    ) -> Bool {
-        isSame(granularity, as: Date(), for: calendar)
     }
 }

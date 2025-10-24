@@ -15,7 +15,7 @@ public extension Color {
     ///
     /// - Parameters:
     ///   - range: The random color range, by default `0...1`.
-    ///   - randomOpacity: Whether or not to randomize opacity as well, by default `false`.
+    ///   - randomOpacity: Whether to randomize opacity, by default `false`.
     static func random(
         in range: ClosedRange<Double> = 0...1,
         randomOpacity: Bool = false

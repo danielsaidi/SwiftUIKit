@@ -11,71 +11,23 @@
 #if os(iOS) || os(macOS)
 import SwiftUI
 
-/// This type represents a reorderable item that can be used
-/// in a ``ReorderableForEach`` view.
+/// This type represents items that can be used in ``ReorderableForEach``.
 public typealias Reorderable = Identifiable & Equatable
 
-/// This view can be used instead of `ForEach` to let a user
-/// reorder the items by dragging.
+/// This view can be used instead of a `ForEach`, to make it possble to reorder
+/// the items by just dragging them.
 ///
-/// You can for instance add this view to a `LazyVGrid` that
-/// is wrapped in a `ScrollView`:
+/// The `preview` parameter is optional and can be used to customize the view
+/// that is shown when an item is dragged. If you don't use it, the original view will
+/// be used.
 ///
-/// ```swift
-/// struct GridData: Identifiable, Equatable {
-///     let id: Int
-/// }
-
-/// struct ContentView {
+/// A `.reorderableForEachContainer` view modifier must be added to the
+/// outmost view, to ensure that ending a drag operation outside the list still works.
 ///
-///     @State
-///     private var items = (1...100).map { GridData(id: $0) }
-///
-///     @State
-///     private var active: GridData?
-///
-///     var body: some View {
-///         ScrollView(.vertical) {
-///             VStack {
-///                 LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
-///                     ReorderableForEach(items, active: $active) { item in
-///                         shape
-///                             .fill(.white.opacity(0.5))
-///                             .frame(height: 100)
-///                             .overlay(Text("\(item.id)"))
-///                             .contentShape(.dragPreview, shape)
-///                     } preview: { item in
-///                         Color.white
-///                             .frame(width: 200, height: 200)
-///                             .overlay(Text("\(item.id)"))
-///                             .contentShape(.dragPreview, shape)
-///                     } moveAction: { from, to in
-///                         items.move(fromOffsets: from, toOffset: to)
-///                     }
-///                 }
-///             }.padding()
-///         }
-///         .background(Color.blue.gradient)
-///         .scrollContentBackground(.hidden)
-///         .reorderableForEachContainer(active: $active)
-///     }
-///
-///     var shape: some Shape {
-///         RoundedRectangle(cornerRadius: 40)
-///     }
-/// }
-///
-/// The `preview` parameter is optional. If you don't use it,
-/// the original item view will be used.
-///
-/// The `.reorderableForEachContainer` view modifier must be
-/// applied to the outmost view to ensure that ending a drag
-/// operation outside the list still works.
-///
-/// > Note: This view doesn't work well in the simulator. It
-/// will not show the drag preview, and will randomly cancel
-/// the drag gestures. Also, using a material background can
-/// cause the dragged view to flicker black.
+/// > Note: This doesn't work well in the simulator. It will not show the drag preview,
+/// and will randomly cancel the drag gestures. Also, using a material background
+/// can cause the dragged view to flicker black. If possible, test the result on a real
+/// device, to ensure that it works as intended.
 public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View>: View {
     
     /// Create a reorderable list with a custom drag preview.
@@ -168,12 +120,8 @@ private extension ReorderableForEach {
 
 public extension View {
     
-    /**
-     Apply the modifier to the root view of a view hierarchy
-     that contains a ``ReorderableForEach`` view, to make it
-     end an reorder drag gesture when it ends outside of the
-     drag source view.
-     */
+    /// This view modifier must be applied to the root of a view hierarchy that has
+    /// a ``ReorderableForEach`` view.
     func reorderableForEachContainer<Item: Reorderable>(active: Binding<Item?>) -> some View {
         onDrop(of: [.text], delegate: ReorderableDropOutsideDelegate(active: active))
     }

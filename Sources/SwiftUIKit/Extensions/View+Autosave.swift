@@ -13,8 +13,7 @@ public extension View {
     
     /// This modifier can be applied to a view, to autosave.
     ///
-    /// This modifier will call the provided action whenever
-    /// the provided publisher changes.
+    /// This will call the provided action whenever the provided publisher changes.
     func autosave<T>(
         _ obj: Published<T>.Publisher,
         debounceInterval: RunLoop.SchedulerTimeType.Stride = 2,

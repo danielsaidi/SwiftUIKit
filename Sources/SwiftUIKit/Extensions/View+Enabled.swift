@@ -12,8 +12,7 @@ public extension View {
     
     /// Enable the view is a certain condition is met.
     ///
-    /// This is just an inverted version of `disabled`. It's
-    /// intended to increase readability.
+    /// This is an inverted `disabled` that is intended to increase readability.
     func enabled(_ condition: Bool) -> some View {
         disabled(!condition)
     }

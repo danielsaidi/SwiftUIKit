@@ -8,13 +8,11 @@
 
 import Foundation
 
-/// This class can sync iCloud document changes, in a shared
-/// uqibuity container.
+/// This class can sync iCloud document changes, in a shared uqibuity container.
 ///
-/// Note that you must have iCloud entitlements and added an
-/// iCloud node to Info.plist. All apps that should sync any
-/// documents must belong to the same ubiquity container and
-/// be identically configured.
+/// Note that you must have iCloud entitlements and must also have added iCloud
+/// information to `Info.plist`. All apps that should sync any documents must
+/// belong to the same ubiquity container and be identically configured.
 open class iCloudDocumentSync {
     
     public init(

@@ -8,13 +8,14 @@
 
 import SwiftUI
 
-/**
- This view mimics the `Section` title in a grouped `List` to
- let us use that style outside of lists.
- 
- The view doesn't add any insets by default, but you can set
- `withInsets` to `true` to apply a standard padding.
- */
+#if os(iOS)
+/// This view mimics the `Section` title od a grouped `List`.
+///
+/// This font uses `.headline` with a `.scaleEffect` in iOS 26 to allow for
+/// dynamic type support.
+///
+/// This doesn't add insets by default, but you can set `withInsets` to `true`
+/// to apply a standard padding.
 public struct ListSectionTitle: View {
 
     public init(
@@ -32,11 +33,18 @@ public struct ListSectionTitle: View {
     private let applyInsets: Bool
     
     public var body: some View {
-        Text(text, bundle: bundle)
-            .textCase(.uppercase)
-            .foregroundColor(.secondary)
-            .font(.footnote)
-            .withGroupedListSectionHeaderInsets(if: applyInsets)
+        if #available(iOS 26.0, *) {
+            Text(text, bundle: bundle)
+                .font(.headline)
+                .foregroundColor(.secondary)
+                .scaleEffect(0.98)
+        } else {
+            Text(text, bundle: bundle)
+                .textCase(.uppercase)
+                .foregroundColor(.secondary)
+                .font(.footnote)
+                .withGroupedListSectionHeaderInsets(if: applyInsets)
+        }
     }
 }
 
@@ -63,3 +71,4 @@ private extension View {
         }
     }
 }
+#endif

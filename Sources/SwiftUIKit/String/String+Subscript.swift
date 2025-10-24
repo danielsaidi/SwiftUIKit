@@ -8,12 +8,8 @@
 
 import Foundation
 
-/**
- This extension makes it possible to fetch characters from a
- string, as discussed here:
- 
- https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
- */
+/// This makes it possible to fetch characters from a string, as discussed here:
+/// https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
 public extension StringProtocol {
     
     func character(

@@ -8,10 +8,8 @@
 
 import SwiftUI
 
-/**
- This view modifier can be applied to a multiline `TextField`
- to make it submit when the primary key is pressed.
- */
+/// This view modifier can be applied to a multiline `TextField`, to auto-submit
+/// when the the primary key is pressed.
 public struct MultilineSubmitViewModifier: ViewModifier {
     
     /// Create a multiline submit view modifier.
@@ -61,8 +59,7 @@ public struct MultilineSubmitViewModifier: ViewModifier {
 
 public extension View {
     
-    /// Make a multiline textfield dismiss the keyboard when
-    /// the primary button is pressed.
+    /// Make a multiline textfield auto-submit when the primary button is pressed.
     ///
     /// - Parameters:
     ///   - text: The text binding used by the text field.

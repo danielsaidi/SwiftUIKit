@@ -9,8 +9,8 @@
 #if os(iOS)
 import SwiftUI
 
-/// This button style can generate inline button groups that
-/// mimics the look of the topmost iOS Contact buttons.
+/// This button style can generate inline button groups that mimics the look of the
+/// topmost iOS Contact button group.
 public struct ListButtonGroupStyle: ButtonStyle {
     
     /// Create a custom form group button style.

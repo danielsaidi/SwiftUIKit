@@ -23,25 +23,18 @@ private let paramSecAttrAccount = kSecAttrAccount as String
 private let paramSecAttrAccessGroup = kSecAttrAccessGroup as String
 private let paramSecReturnAttributes = kSecReturnAttributes as String
 
-
-/**
- This class help make device keychain access easier in Swift.
- It is designed to make accessing the Keychain services more
- like using `NSUserDefaults`, which is much more familiar to
- developers in general.
- 
- `serviceName` is used for `kSecAttrService`, which uniquely
- identifies keychain accessors. If no name is specified, the
- value defaults to the current bundle identifier.
- 
- `accessGroup` is used for `kSecAttrAccessGroup`. This value
- is used to identify which keychain access group an entry is
- belonging to. This allows you to use `KeychainWrapper` with
- shared keychain access between different applications.
- 
- `NOTE` In SwiftKit, you can use a `StandardKeychainService`
- to isolate keychain access from contract design.
- */
+/// This class help make device keychain access easier in Swift.
+///
+/// The class is designed to make using the Keychain services more like using the
+/// `UserDefaults` type, which is much more familiar to developers in general.
+///
+/// `serviceName` is used for `kSecAttrService`, which uniquely identifies
+/// the keychain accessor. If no name is specified, the value defaults to the current
+/// bundle identifier.
+///
+/// `accessGroup` is used for `kSecAttrAccessGroup`, which is used to
+/// identify which keychain access group an entry belongs to. This lets you use a
+/// `KeychainWrapper` with shared keychain access between applications.
 open class KeychainWrapper {
     
     
@@ -56,12 +49,11 @@ open class KeychainWrapper {
     
     /// Create a custom instance of this class.
     ///
-    /// The `serviceName` is used to uniquely identify every
-    /// key that has been stored in the keychain, using this
-    /// wrapper instance.
+    /// The `serviceName` is used to identify every key that has been stored
+    /// in the keychain, using this wrapper instance.
     ///
-    /// Use matching access groups between applications when
-    /// you want to allow shared keychain access.
+    /// Use matching `accessGroup` values to allow shared keychain access
+    /// between different applications.
     ///
     /// - Parameters:
     ///   - serviceName: The service name to use for this instance.
