@@ -72,28 +72,15 @@ done
 
 # If no TARGET was provided, try to get package name
 if [ -z "$TARGET" ]; then
-    # Use the script folder to refer to other scripts
     FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    SCRIPT_PACKAGE_NAME="$FOLDER/package_name.sh"
-    
-    # Check if package_name.sh exists
-    if [ -f "$SCRIPT_PACKAGE_NAME" ]; then
-        echo "No target provided, attempting to get package name..."
-        if TARGET=$("$SCRIPT_PACKAGE_NAME"); then
-            echo "Using package name: $TARGET"
-        else
-            echo ""
-            read -p "Failed to get package name. Please enter the target to test: " TARGET
-            if [ -z "$TARGET" ]; then
-                show_error_and_exit "TARGET is required"
-            fi
-        fi
-    else
-        echo ""
-        read -p "Please enter the target to test: " TARGET
-        if [ -z "$TARGET" ]; then
-            show_error_and_exit "TARGET is required"
-        fi
+    SCRIPT_PACKAGE_NAME="$FOLDER/package-name.sh"
+
+    if [ ! -f "$SCRIPT_PACKAGE_NAME" ]; then
+        show_error_and_exit "Script not found: $SCRIPT_PACKAGE_NAME"
+    fi
+
+    if ! TARGET=$("$SCRIPT_PACKAGE_NAME"); then
+        show_error_and_exit "Failed to get package name"
     fi
 fi
 

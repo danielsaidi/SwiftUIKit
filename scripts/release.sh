@@ -6,29 +6,32 @@ set -e
 # Function to display usage information
 show_usage() {
     echo
-    echo "This script creates a new release for the provided <TARGET> and <BRANCH>."
+    echo "This script creates a new release for the provided <TARGET>."
 
     echo
-    echo "Usage: $0 [TARGET] [BRANCH] [-p|--platforms <PLATFORM1> <PLATFORM2> ...]"
+    echo "Usage: $0 [TARGET] [-b|--branch <BRANCH>] [-p|--platforms <PLATFORM1> <PLATFORM2> ...]"
     echo "  [TARGET]              Optional. The target to release (defaults to package name)"
-    echo "  [BRANCH]              Optional. The branch to validate (auto-detects main/master if not specified)"
+    echo "  -b, --branch          Optional. The branch to validate (auto-detects default branch if not specified)"
     echo "  -p, --platforms       Optional. List of platforms (default: iOS macOS tvOS watchOS xrOS)"
-    
+
     echo
     echo "This script will:"
-    echo "  * Call validate_release.sh to run tests, swiftlint, git validation, etc."
-    echo "  * Call version_bump.sh if all validation steps above passed"
-    
+    echo "  * Call release-validate-git.sh to validate the git repository for release."
+    echo "  * Call release-validate-package.sh to run unit tests, swiftlint, etc."
+    echo "  * Call version-bump.sh if all validation steps above passed"
+
     echo
     echo "Examples:"
     echo "  $0"
     echo "  $0 MyTarget"
-    echo "  $0 MyTarget master"
-    echo "  $0 -p iOS macOS"
-    echo "  $0 MyTarget master -p iOS macOS"
-    echo "  $0 MyTarget master --platforms iOS macOS tvOS watchOS xrOS"
+    echo "  $0 -b main"
+    echo "  $0 MyTarget -b develop"
+    echo "  $0 MyTarget -b main -p iOS macOS"
+    echo "  $0 MyTarget --branch main --platforms iOS macOS tvOS watchOS xrOS"
     echo
 }
+
+echo
 
 # Function to display error message, show usage, and exit
 show_usage_error_and_exit() {
@@ -56,16 +59,24 @@ PLATFORMS="iOS macOS tvOS watchOS xrOS"  # Default platforms
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
+        -b|--branch)
+            shift
+            if [[ $# -eq 0 || "$1" =~ ^- ]]; then
+                show_usage_error_and_exit "--branch requires a branch name"
+            fi
+            BRANCH="$1"
+            shift
+            ;;
         -p|--platforms)
             shift  # Remove --platforms from arguments
             PLATFORMS=""  # Clear default platforms
-            
+
             # Collect all platform arguments until we hit another flag or run out of args
             while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
                 PLATFORMS="$PLATFORMS $1"
                 shift
             done
-            
+
             # Remove leading space and check if we got any platforms
             PLATFORMS=$(echo "$PLATFORMS" | sed 's/^ *//')
             if [ -z "$PLATFORMS" ]; then
@@ -79,8 +90,6 @@ while [[ $# -gt 0 ]]; do
         *)
             if [ -z "$TARGET" ]; then
                 TARGET="$1"
-            elif [ -z "$BRANCH" ]; then
-                BRANCH="$1"
             else
                 show_usage_error_and_exit "Unexpected argument '$1'"
             fi
@@ -91,47 +100,37 @@ done
 
 # If no TARGET was provided, try to get package name
 if [ -z "$TARGET" ]; then
-    # Use the script folder to refer to other scripts
     FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    SCRIPT_PACKAGE_NAME="$FOLDER/package_name.sh"
-    
-    # Check if package_name.sh exists
-    if [ -f "$SCRIPT_PACKAGE_NAME" ]; then
-        echo "No target provided, attempting to get package name..."
-        if TARGET=$("$SCRIPT_PACKAGE_NAME"); then
-            echo "Using package name: $TARGET"
-        else
-            echo ""
-            read -p "Failed to get package name. Please enter the target to release: " TARGET
-            if [ -z "$TARGET" ]; then
-                show_usage_error_and_exit "TARGET is required"
-            fi
-        fi
-    else
-        echo ""
-        read -p "Please enter the target to release: " TARGET
-        if [ -z "$TARGET" ]; then
-            show_usage_error_and_exit "TARGET is required"
-        fi
+    SCRIPT_PACKAGE_NAME="$FOLDER/package-name.sh"
+
+    if [ ! -f "$SCRIPT_PACKAGE_NAME" ]; then
+        show_error_and_exit "Script not found: $SCRIPT_PACKAGE_NAME"
+    fi
+
+    if ! TARGET=$("$SCRIPT_PACKAGE_NAME"); then
+        show_error_and_exit "Failed to get package name"
     fi
 fi
 
-# Set default branch if none provided
+# If no BRANCH was provided, try to get the default branch name
 if [ -z "$BRANCH" ]; then
-    # Check if main or master branch exists and set default accordingly
-    if git show-ref --verify --quiet refs/heads/main; then
-        BRANCH="main"
-    elif git show-ref --verify --quiet refs/heads/master; then
-        BRANCH="master"
-    else
-        BRANCH="main"  # Default to main if neither exists
+    FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+    SCRIPT_DEFAULT_BRANCH="$FOLDER/git-default-branch.sh"
+
+    if [ ! -f "$SCRIPT_DEFAULT_BRANCH" ]; then
+        show_error_and_exit "Script not found: $SCRIPT_DEFAULT_BRANCH"
+    fi
+
+    if ! BRANCH=$("$SCRIPT_DEFAULT_BRANCH"); then
+        show_error_and_exit "Failed to get default branch"
     fi
 fi
 
 # Use the script folder to refer to other scripts
 FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-SCRIPT_VALIDATE="$FOLDER/validate_release.sh"
-SCRIPT_VERSION_BUMP="$FOLDER/version_bump.sh"
+SCRIPT_VALIDATE_GIT="$FOLDER/release-validate-git.sh"
+SCRIPT_VALIDATE_PACKAGE="$FOLDER/release-validate-package.sh"
+SCRIPT_VERSION_BUMP="$FOLDER/version-bump.sh"
 
 # A function that runs a certain script and checks for errors
 run_script() {
@@ -152,9 +151,12 @@ run_script() {
 echo
 echo "Creating a new release for $TARGET on the $BRANCH branch with platforms [$PLATFORMS]..."
 
-# Validate git and project
-echo "Validating project..."
-run_script "$SCRIPT_VALIDATE" "$TARGET" -p $PLATFORMS
+# Validate git
+run_script "$SCRIPT_VALIDATE_GIT" -b "$BRANCH"
+
+# Validate project
+echo "Validating package..."
+run_script "$SCRIPT_VALIDATE_PACKAGE" "$TARGET" -p $PLATFORMS
 
 # Bump version
 echo "Bumping version..."
