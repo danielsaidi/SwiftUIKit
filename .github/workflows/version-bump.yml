@@ -1,0 +1,66 @@
+# This workflow bumps the repository version.
+# You can bump it a  major, minor, or patch step, or use a custom version.
+
+# For this to work, you must define these repository secrets:
+# - BUILD_CERTIFICATE_BASE64
+# - P12_PASSWORD
+# - KEYCHAIN_PASSWORD
+
+# OBS! You must also change FRAMEWORK_NAME below to use your
+# framework's name.
+
+# For more information see: 
+# https://danielsaidi.com/blog/2025/11/09/building-closed-source-binaries-with-github-actions
+
+name: Bump Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Version bump'
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - custom
+      custom_version:
+        description: 'Custom version (for "custom")'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history and tags
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump Version
+        run: |
+          if [ "${{ inputs.bump_type }}" = "custom" ]; then
+            if [ -z "${{ inputs.custom_version }}" ]; then
+              echo "Error: Custom version not provided"
+              exit 1
+            fi
+            ./scripts/version-bump.sh --version "${{ inputs.custom_version }}"
+          else
+            ./scripts/version-bump.sh --type "${{ inputs.bump_type }}"
+          fi

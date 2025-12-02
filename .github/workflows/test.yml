@@ -1,9 +1,9 @@
-# This workflow builds the project for all platforms.
+# This workflow tests the project on all platforms.
 
 # For more information see: 
 # https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
-name: Build Runner
+name: Test Runner
 
 on:
   push:
@@ -28,5 +28,5 @@ jobs:
         with:
           xcode-version: latest-stable # 16.4
 
-      - name: Build All Platforms
-        run: bash scripts/build.sh
+      - name: Tests All Platforms
+        run: bash scripts/test.sh
