@@ -4,6 +4,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-05-18.
+//  Copyright © 2023-2026 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
