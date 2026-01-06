@@ -51,7 +51,7 @@ get_absolute_path() {
         echo "$path"
     else
         # Make it absolute relative to current directory
-        echo "$(cd "$(dirname "$path")" 2>/dev/null && pwd)/$(basename "$path")"
+        echo "$(pwd)/$path"
     fi
 }
 

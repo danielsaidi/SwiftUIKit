@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
   name: "StringCatalogKeyBuilder",
   platforms: [
-    .macOS(.v13),
+    .iOS(.v16), .macOS(.v13), .tvOS(.v16), .watchOS(.v9), .visionOS(.v1)
   ],
   products: [
     .executable(
@@ -14,10 +14,6 @@ let package = Package(
   ],
   dependencies: [
     .package(
-      name: "SwiftPackageScripts",
-      path: "../../../"
-    ),
-    .package(
       url: "https://github.com/apple/swift-argument-parser.git",
       .upToNextMajor(from: "1.5.0")
     ),
@@ -26,7 +22,6 @@ let package = Package(
     .executableTarget(
       name: "StringCatalogKeyBuilder",
       dependencies: [
-        "SwiftPackageScripts",
         .product(name: "ArgumentParser", package: "swift-argument-parser"),
       ]
     )
