@@ -11,6 +11,12 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 6.1.1
+
+This version renames the `onMultilineSubmit` view extension.
+
+
+
 ## 6.1
 
 This version bumps the package to Swift 6.1 and deprecates some list views.

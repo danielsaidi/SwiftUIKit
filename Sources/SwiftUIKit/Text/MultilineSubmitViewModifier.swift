@@ -16,31 +16,26 @@ public struct MultilineSubmitViewModifier: ViewModifier {
     ///
     /// - Parameters:
     ///   - text: The text binding used by the text field.
-    ///   - submitLabel: The submit label to use.
     ///   - onSubmit: The function to call when return is pressed.
     public init(
         text: Binding<String>,
-        submitLabel: SubmitLabel,
-        onSubmit: @escaping () -> Void
+        action: @escaping () -> Void
     ) {
         self._text = text
-        self.submitLabel = submitLabel
-        self.onSubmit = onSubmit
+        self.action = action
     }
     
     @Binding
     private var text: String
     
-    private let submitLabel: SubmitLabel
-    private let onSubmit: () -> Void
-    
+    private let action: () -> Void
+
     @FocusState
     private var isFocused: Bool
     
     public func body(content: Content) -> some View {
         content
             .focused($isFocused)
-            .submitLabel(submitLabel)
             #if os(visionOS)
             .onChange(of: text) { handle($1) }
             #else
@@ -53,28 +48,35 @@ public struct MultilineSubmitViewModifier: ViewModifier {
         guard newText.contains("\n") else { return }
         isFocused = false
         text = newText.replacingOccurrences(of: "\n", with: "")
-        onSubmit()
+        action()
     }
 }
 
 public extension View {
     
-    /// Make a multiline textfield auto-submit when the primary button is pressed.
-    ///
-    /// - Parameters:
-    ///   - text: The text binding used by the text field.
-    ///   - submitLabel: The submit label to use, by default `.done`.
-    ///   - action: The function to call when return is pressed.
+    @available(*, deprecated, renamed: "onMultilineSubmit(of:action:)")
     func multilineSubmit(
         for text: Binding<String>,
         submitLabel: SubmitLabel = .done,
         action: @escaping () -> Void = {}
     ) -> some View {
+        self.submitLabel(submitLabel)
+            .onMultilineSubmit(of: text, action: action)
+    }
+
+    /// Make a multiline textfield auto-submit when the primary button is pressed.
+    ///
+    /// - Parameters:
+    ///   - text: The text binding used by the text field.
+    ///   - action: The function to call when return is pressed.
+    func onMultilineSubmit(
+        of text: Binding<String>,
+        action: @escaping () -> Void = {}
+    ) -> some View {
         self.modifier(
             MultilineSubmitViewModifier(
                 text: text,
-                submitLabel: submitLabel,
-                onSubmit: action
+                action: action
             )
         )
     }
