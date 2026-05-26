@@ -9,10 +9,7 @@
 #if os(iOS)
 import SwiftUI
 
-/// This group applies zero insets and a clear background to render buttons in the
-/// content as a horizontal group.
-///
-/// You can style the view with `.listButtonGroupStyle(...)`.
+@available(*, deprecated, renamed: "ListActionButtonGroup")
 public struct ListButtonGroup<Content: View>: View {
     
     /// Create a form button group section.
@@ -37,74 +34,6 @@ public struct ListButtonGroup<Content: View>: View {
         .buttonStyle(style)
         .listRowInsets(.init(all: 0))
         .listRowBackground(Color.clear)
-    }
-}
-
-#Preview {
-    
-    struct PreviewList: View {
-        
-        var body: some View {
-            List {
-                "Add something".previewButton(.add)
-
-                ListButtonGroup {
-                    HStack {
-                        "Bug".previewButton(.bug)
-                        "Camera".previewButton(.camera).disabled(true)
-                        "Photos".previewButton(.camera).opacity(0.5)
-                        "Feedback".previewButton(.feedback)
-                    }
-                }
-                
-                Section {
-                    Text("Preview.Row")
-                }
-            }
-        }
-    }
-    
-    return VStack(spacing: 0) {
-        PreviewList()
-        Divider()
-        PreviewList()
-            .listButtonGroupStyle(.swedish)
-        Divider()
-        PreviewList()
-            .environment(\.colorScheme, .dark)
-    }
-    .frame(maxHeight: .infinity)
-    .background(Color.black.opacity(0.08).ignoresSafeArea())
-}
-
-private extension ButtonStyle where Self == ListButtonGroupStyle {
-    
-    static var swedish: Self {
-        .init(
-            backgroundColor: .blue,
-            labelStyle: .init(color: .yellow)
-        )
-    }
-}
-
-@MainActor
-private extension String {
-    
-    func previewButton(_ icon: Image) -> some View {
-        Button {} label: { Label(LocalizedStringKey(self), icon) }
-    }
-}
-
-private extension Image {
-    
-    static let add = systemImage("plus")
-    static let bug = systemImage("ladybug")
-    static let camera = systemImage("camera")
-    static let feedback = systemImage("envelope")
-    static let photoLibrary = systemImage("photo.on.rectangle.angled")
-    
-    static func systemImage(_ name: String) -> Image {
-        Image(systemName: name)
     }
 }
 #endif

@@ -11,6 +11,14 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 6.2
+
+This version adds a `ListActionButton` and `ListActionButtonGroup`.
+
+The old `ListButtonGroup` view has been deprecated.
+
+
+
 ## 6.1.1
 
 This version renames the `onMultilineSubmit` view extension.
