@@ -13,9 +13,15 @@ These release notes cover the current major version. See older versions for olde
 
 ## 6.2
 
-This version adds a `ListActionButton` and `ListActionButtonGroup`.
 
-The old `ListButtonGroup` view has been deprecated.
+### ✨ Features
+
+* `ListActionButton` and `ListActionButtonGroup` are two new list views.
+* `OpenURLAction` has new optional extensions.
+
+### 🗑️ Deprecations
+
+* `ListButtonGroup` has been deprecated.
 
 
 
