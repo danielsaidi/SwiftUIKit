@@ -110,11 +110,11 @@ fi
 
 # Use the script folder to refer to other scripts
 FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-SCRIPT_VERSION_NUMBER="$FOLDER/version-number.sh"
+SCRIPT_VERSION_NUMBER="$FOLDER/version-number"
 
 # Check if version script exists
 if [ ! -f "$SCRIPT_VERSION_NUMBER" ]; then
-    show_error_and_exit "version-number.sh script not found at $SCRIPT_VERSION_NUMBER"
+    show_error_and_exit "version-number script not found at $SCRIPT_VERSION_NUMBER"
 fi
 
 # Function to validate semver format, including optional -rc.<INT> suffix

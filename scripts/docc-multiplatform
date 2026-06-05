@@ -96,7 +96,7 @@ done
 # If no TARGET was provided, try to get package name
 if [ -z "$TARGET" ]; then
     FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    SCRIPT_PACKAGE_NAME="$FOLDER/package-name.sh"
+    SCRIPT_PACKAGE_NAME="$FOLDER/package-name"
 
     if [ ! -f "$SCRIPT_PACKAGE_NAME" ]; then
         show_error_and_exit "Script not found: $SCRIPT_PACKAGE_NAME"

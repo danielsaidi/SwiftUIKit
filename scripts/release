@@ -6,28 +6,32 @@ set -e
 # Function to display usage information
 show_usage() {
     echo
-    echo "This script validates a <TARGET> for release by running lint and unit tests for all platforms."
+    echo "This script creates a new release for the provided <TARGET>."
 
     echo
-    echo "Usage: $0 [TARGET] [-p|--platforms <PLATFORM1> <PLATFORM2> ...]"
-    echo "  [TARGET]              Optional. The target to validate (defaults to package name)"
+    echo "Usage: $0 [TARGET] [-b|--branch <BRANCH>] [-p|--platforms <PLATFORM1> <PLATFORM2> ...]"
+    echo "  [TARGET]              Optional. The target to release (defaults to package name)"
+    echo "  -b, --branch          Optional. The branch to validate (auto-detects default branch if not specified)"
     echo "  -p, --platforms       Optional. List of platforms (default: iOS macOS tvOS watchOS xrOS)"
-    echo "  --swiftlint           Optional. Run SwiftLint (1) or skip it (0) (default: 1)"
 
     echo
     echo "This script will:"
-    echo "  * Validate that swiftlint passes"
-    echo "  * Validate that all unit tests pass for all platforms"
+    echo "  * Call release-validate-git to validate the git repository for release."
+    echo "  * Call release-validate-package to run unit tests, swiftlint, etc."
+    echo "  * Call version-bump if all validation steps above passed"
 
     echo
     echo "Examples:"
     echo "  $0"
     echo "  $0 MyTarget"
-    echo "  $0 -p iOS macOS"
-    echo "  $0 MyTarget -p iOS macOS --swiftlint 0"
-    echo "  $0 MyTarget --platforms iOS macOS tvOS watchOS xrOS"
+    echo "  $0 -b main"
+    echo "  $0 MyTarget -b develop"
+    echo "  $0 MyTarget -b main -p iOS macOS"
+    echo "  $0 MyTarget --branch main --platforms iOS macOS tvOS watchOS xrOS"
     echo
 }
+
+echo
 
 # Function to display error message, show usage, and exit
 show_usage_error_and_exit() {
@@ -49,12 +53,20 @@ show_error_and_exit() {
 
 # Define argument variables
 TARGET=""
+BRANCH=""
 PLATFORMS="iOS macOS tvOS watchOS xrOS"  # Default platforms
-SWIFTLINT=1  # Default to running SwiftLint
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
+        -b|--branch)
+            shift
+            if [[ $# -eq 0 || "$1" =~ ^- ]]; then
+                show_usage_error_and_exit "--branch requires a branch name"
+            fi
+            BRANCH="$1"
+            shift
+            ;;
         -p|--platforms)
             shift  # Remove --platforms from arguments
             PLATFORMS=""  # Clear default platforms
@@ -70,14 +82,6 @@ while [[ $# -gt 0 ]]; do
             if [ -z "$PLATFORMS" ]; then
                 show_usage_error_and_exit "--platforms requires at least one platform"
             fi
-            ;;
-        --swiftlint)
-            shift
-            if [[ "$1" != "0" && "$1" != "1" ]]; then
-                show_usage_error_and_exit "--swiftlint requires 0 or 1"
-            fi
-            SWIFTLINT="$1"
-            shift
             ;;
         -h|--help)
             show_usage; exit 0 ;;
@@ -97,7 +101,7 @@ done
 # If no TARGET was provided, try to get package name
 if [ -z "$TARGET" ]; then
     FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    SCRIPT_PACKAGE_NAME="$FOLDER/package-name.sh"
+    SCRIPT_PACKAGE_NAME="$FOLDER/package-name"
 
     if [ ! -f "$SCRIPT_PACKAGE_NAME" ]; then
         show_error_and_exit "Script not found: $SCRIPT_PACKAGE_NAME"
@@ -108,9 +112,25 @@ if [ -z "$TARGET" ]; then
     fi
 fi
 
+# If no BRANCH was provided, try to get the default branch name
+if [ -z "$BRANCH" ]; then
+    FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+    SCRIPT_DEFAULT_BRANCH="$FOLDER/git-default-branch"
+
+    if [ ! -f "$SCRIPT_DEFAULT_BRANCH" ]; then
+        show_error_and_exit "Script not found: $SCRIPT_DEFAULT_BRANCH"
+    fi
+
+    if ! BRANCH=$("$SCRIPT_DEFAULT_BRANCH"); then
+        show_error_and_exit "Failed to get default branch"
+    fi
+fi
+
 # Use the script folder to refer to other scripts
 FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-SCRIPT_TEST="$FOLDER/test.sh"
+SCRIPT_VALIDATE_GIT="$FOLDER/release-validate-git"
+SCRIPT_VALIDATE_PACKAGE="$FOLDER/release-validate-package"
+SCRIPT_VERSION_BUMP="$FOLDER/version-bump"
 
 # A function that runs a certain script and checks for errors
 run_script() {
@@ -129,24 +149,20 @@ run_script() {
 
 # Start script
 echo
-echo "Validating project for target '$TARGET' with platforms [$PLATFORMS]..."
+echo "Creating a new release for $TARGET on the $BRANCH branch with platforms [$PLATFORMS]..."
 
-# Run SwiftLint
-if [ "$SWIFTLINT" = "1" ]; then
-    echo "Running SwiftLint..."
-    if ! swiftlint --strict; then
-        show_error_and_exit "SwiftLint failed"
-    fi
-    echo "SwiftLint passed"
-else
-    echo "Skipping SwiftLint (disabled)"
-fi
+# Validate git
+run_script "$SCRIPT_VALIDATE_GIT" -b "$BRANCH"
 
-# Run unit tests
-echo "Running unit tests..."
-run_script $SCRIPT_TEST $TARGET -p $PLATFORMS
+# Validate project
+echo "Validating package..."
+run_script "$SCRIPT_VALIDATE_PACKAGE" "$TARGET" -p $PLATFORMS
+
+# Bump version
+echo "Bumping version..."
+run_script "$SCRIPT_VERSION_BUMP"
 
 # Complete successfully
 echo
-echo "Project successfully validated!"
+echo "Release created successfully!"
 echo

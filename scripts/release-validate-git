@@ -68,7 +68,7 @@ done
 # If no BRANCH was provided, try to get the default branch name
 if [ -z "$BRANCH" ]; then
     FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    SCRIPT_DEFAULT_BRANCH="$FOLDER/git-default-branch.sh"
+    SCRIPT_DEFAULT_BRANCH="$FOLDER/git-default-branch"
 
     if [ ! -f "$SCRIPT_DEFAULT_BRANCH" ]; then
         show_error_and_exit "Script not found: $SCRIPT_DEFAULT_BRANCH"

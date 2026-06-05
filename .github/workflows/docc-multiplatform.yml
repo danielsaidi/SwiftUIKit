@@ -1,4 +1,4 @@
-# This workflow builds and publishes DocC docs for one platform to GitHub Pages.
+# This workflow builds and publishes multiplatform DocC docs to GitHub Pages.
 
 # Source: https://maxxfrazer.medium.com/deploying-docc-with-github-actions-218c5ca6cad5
 # Sample: https://github.com/AgoraIO-Community/VideoUIKit-iOS/blob/main/.github/workflows/deploy_docs.yml
@@ -6,8 +6,6 @@
 name: DocC Runner
 
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
     inputs:
       platform:
@@ -21,6 +19,7 @@ on:
           - tvOS
           - watchOS
           - xrOS
+          - Multiplatform
 
 permissions:
   contents: read
@@ -52,12 +51,12 @@ jobs:
           xcode-version: latest-stable
 
       - name: Build DocC
-        run: bash scripts/docc --platforms ${{ github.event.inputs.platform || 'iOS' }}
+        run: bash scripts/docc-multiplatform
 
       - name: Upload DocC Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ format('.build/docs-{0}', github.event.inputs.platform || 'iOS') }}
+          path: .build/docc
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

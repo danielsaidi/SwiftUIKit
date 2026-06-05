@@ -88,25 +88,25 @@ CURRENT_DIR=$(pwd)
 # Get absolute path of source
 SOURCE_ABS=$(cd "$SOURCE" && pwd)
 
-# Find sync-to.sh script (should be in current directory's scripts folder)
-SYNC_TO_SCRIPT="$CURRENT_DIR/scripts/sync-to.sh"
+# Find sync-to script (should be in current directory's scripts folder)
+SYNC_TO_SCRIPT="$CURRENT_DIR/scripts/sync-to"
 
 if [ ! -f "$SYNC_TO_SCRIPT" ]; then
-    show_error_and_exit "sync-to.sh script not found at '$SYNC_TO_SCRIPT'"
+    show_error_and_exit "sync-to script not found at '$SYNC_TO_SCRIPT'"
 fi
 
-# Build arguments for sync-to.sh
+# Build arguments for sync-to
 SYNC_TO_ARGS="$CURRENT_DIR"
 if [ "$GITHUB_WORKFLOWS" -eq 1 ]; then
-    SYNC_TO_ARGS="$SYNC_TO_ARGS --ghw 1"
+    SYNC_TO_ARGS="$SYNC_TO_ARGS -ghw 1"
 fi
 
-# Navigate to source directory and run sync-to.sh
+# Navigate to source directory and run sync-to
 echo
 echo "Syncing scripts from $SOURCE_ABS..."
 cd "$SOURCE_ABS"
 
-# Run sync-to.sh
+# Run sync-to
 if ! bash "$SYNC_TO_SCRIPT" $SYNC_TO_ARGS; then
     cd "$CURRENT_DIR"
     show_error_and_exit "Failed to sync scripts"

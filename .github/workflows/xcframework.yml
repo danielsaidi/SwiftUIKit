@@ -19,6 +19,18 @@ name: Create Binary Artifacts
 on:
   workflow_dispatch:
     inputs:
+      platform:
+        description: 'Target platform'
+        required: false
+        type: choice
+        options:
+          - Multiplatform   # Uses MULTIPLATFORM_PLATFORMS below
+          - iOS
+          - macOS
+          - tvOS
+          - watchOS
+          - xrOS
+        default: iOS        # Change this if needed
       bump_type:
         description: 'Version bump'
         required: false
@@ -34,6 +46,9 @@ on:
         description: 'Custom version (for "custom")'
         required: false
         type: string
+
+env:
+  MULTIPLATFORM_PLATFORMS: iOS macOS tvOS watchOS xrOS
 
 permissions:
   contents: write
@@ -54,7 +69,7 @@ jobs:
 
       - name: Get Package Name
         run: |
-          PACKAGE_NAME=$(./scripts/package-name.sh)
+          PACKAGE_NAME=$(./scripts/package-name)
           echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
 
       - name: Install build certificate
@@ -83,16 +98,24 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable # 16.4
+          xcode-version: latest-stable  # 16.4
+
+      - name: Set Platform Arguments
+        run: |
+          if [ "${{ inputs.platform }}" = "Multiplatform" ]; then
+            echo "PLATFORM_ARGS=${{ env.MULTIPLATFORM_PLATFORMS }}" >> $GITHUB_ENV
+          else
+            echo "PLATFORM_ARGS= ${{ inputs.platform || 'iOS' }}" >> $GITHUB_ENV
+          fi
 
       - name: Validate git
-        run: ./scripts/release-validate-git.sh
+        run: ./scripts/release-validate-git
 
       - name: Validate project
-        run: ./scripts/release-validate-package.sh -p iOS --swiftlint 0
+        run: ./scripts/release-validate-package -p ${{ env.PLATFORM_ARGS }} --swiftlint 0
 
       - name: Run framwork script
-        run: ./scripts/framework.sh -p iOS --dsyms 1 --zip 1
+        run: ./scripts/xcframework -p ${{ env.PLATFORM_ARGS }} --dsyms 1 --zip 1
 
       - name: Upload XCFramework Container
         uses: actions/upload-artifact@v4
@@ -122,7 +145,7 @@ jobs:
               echo "Error: Custom version not provided"
               exit 1
             fi
-            ./scripts/version-bump.sh --version "${{ inputs.custom_version }}"
+            ./scripts/version-bump --version "${{ inputs.custom_version }}"
           else
-            ./scripts/version-bump.sh --type "${{ inputs.bump_type }}"
+            ./scripts/version-bump --type "${{ inputs.bump_type }}"
           fi

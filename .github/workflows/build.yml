@@ -29,4 +29,4 @@ jobs:
           xcode-version: latest-stable # 16.4
 
       - name: Build All Platforms
-        run: bash scripts/build.sh
+        run: bash scripts/build
