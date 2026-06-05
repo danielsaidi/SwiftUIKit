@@ -1,0 +1,2 @@
+# Exclude scripts from language analysis
+scripts/** linguist-vendored=true
