@@ -25,15 +25,10 @@ public struct ListShelfSection<Title: View, Content: View>: View {
     }
     
     private let shadowSpacing = 50.0
-
-    @ViewBuilder
     private let title: () -> Title
-
-    @ViewBuilder
     private let content: () -> Content
     
-    @Environment(\.listShelfSectionStyle)
-    private var style
+    @Environment(\.listShelfSectionStyle) private var style
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {

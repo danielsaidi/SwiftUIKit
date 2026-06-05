@@ -8,10 +8,11 @@
 
 import SwiftUI
 
-/// This view can be used as floating cards in lists and grids.
+/// This view can be used as floating list or grid card.
 ///
-/// The card can be styled with a corner radius and shadow, and can be provided
-/// with a list of context menu items.
+/// The view wraps any content view and can be styled with a
+/// corner radius and shadow. You can also provide a list of
+/// context menu items.
 public struct ListCard<Content: View, ContextMenuView: View>: View {
 
     /// Create a list card.
@@ -41,14 +42,10 @@ public struct ListCard<Content: View, ContextMenuView: View>: View {
     public typealias ContentBuilder = () -> Content
     public typealias ContextMenuBuilder = () -> ContextMenuView
 
-    @ViewBuilder
     private let content: ContentBuilder
-
-    @ViewBuilder
     private let contextMenu: ContextMenuBuilder
-    
-    @Environment(\.listCardStyle)
-    private var style
+
+    @Environment(\.listCardStyle) private var style
 
     public var body: some View {
         content()

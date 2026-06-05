@@ -63,9 +63,8 @@ public extension TextField {
 
     struct Preview: View {
 
-        @State
-        private var text = ""
-        
+        @State private var text = "a"
+
         var placeholder: String {
             .init(localized: "Preview.Placeholder", bundle: .module)
         }

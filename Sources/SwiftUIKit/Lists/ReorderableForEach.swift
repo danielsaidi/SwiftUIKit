@@ -11,23 +11,26 @@
 #if os(iOS) || os(macOS)
 import SwiftUI
 
-/// This type represents items that can be used in ``ReorderableForEach``.
+/// This typealias defines the item type that can be used in
+/// a ``ReorderableForEach`` view.
 public typealias Reorderable = Identifiable & Equatable
 
-/// This view can be used instead of a `ForEach`, to make it possble to reorder
-/// the items by just dragging them.
+/// This view can be used instead of a `ForEach`, to make it
+/// possble to reorder items by dragging them.
 ///
-/// The `preview` parameter is optional and can be used to customize the view
-/// that is shown when an item is dragged. If you don't use it, the original view will
-/// be used.
+/// The `preview` parameter can be used to define any custom
+/// view to show when an item is being dragged. If you don't
+/// provide a preview, the original view will be used.
 ///
-/// A `.reorderableForEachContainer` view modifier must be added to the
-/// outmost view, to ensure that ending a drag operation outside the list still works.
+/// The `.reorderableForEachContainer` view modifier must be
+/// added to the outermost view to ensure that ending a drag
+/// operation outside the list still works.
 ///
-/// > Note: This doesn't work well in the simulator. It will not show the drag preview,
-/// and will randomly cancel the drag gestures. Also, using a material background
-/// can cause the dragged view to flicker black. If possible, test the result on a real
-/// device, to ensure that it works as intended.
+/// > Note: This doesn't work well in the simulator. It will
+/// not show the drag preview, and randomly cancels the drag
+/// gesture. Also, using a material background can cause the
+/// dragged view to flicker. If possible, test the result on
+/// a real device to ensure that it works as intended.
 public struct ReorderableForEach<Item: Reorderable, Content: View, Preview: View>: View {
     
     /// Create a reorderable list with a custom drag preview.

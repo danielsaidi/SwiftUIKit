@@ -9,13 +9,13 @@
 #if os(macOS)
 import class AppKit.NSFont
 
-/// This typealias bridges platform-specific font types.
+@available(*, deprecated, message: "This has been moved to FontKit")
 public typealias FontRepresentable = NSFont
 #endif
 
 #if canImport(UIKit)
 import class UIKit.UIFont
 
-/// This typealias bridges platform-specific font types.
+@available(*, deprecated, message: "This has been moved to FontKit")
 public typealias FontRepresentable = UIFont
 #endif

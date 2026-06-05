@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-/// This view wraps the provided content view in an `HStack` and adds a custom
+/// This view wraps the provided content view in an `HStack`
+/// and adds a custom
 /// `selectIndicator` to the trailing edge if the item is selected.
 public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
 
-    /// Create a list select item with a custom selection indicator view.
+    /// Create an item with a custom indicator view.
     ///
     /// - Parameters:
     ///   - isSelected: Whether or not the item is selected.
@@ -28,7 +29,7 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
         self.content = content
     }
 
-    /// Create a list select item with a custom selection indicator image.
+    /// Create an item with a custom indicator image.
     ///
     /// - Parameters:
     ///   - isSelected: Whether or not the item is selected.

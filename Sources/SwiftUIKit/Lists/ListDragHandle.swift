@@ -9,10 +9,11 @@
 
 import SwiftUI
 
-/// This view can be used to display a drag handle for items in reorderable `List`.
+/// This view can be used to display a drag handle for items
+/// in reorderable `List`.
 ///
-/// The handle is only displayed when a list is not edited, since enabling edit mode
-/// will render the native drag handle.
+/// The handle is only displayed when the list is not edited,
+/// since edit mode will render the native drag handle.
 public struct ListDragHandle: View {
 
     public init() {}

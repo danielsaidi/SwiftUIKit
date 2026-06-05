@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-/// This button style can be used to style a ``ListCard``.
+/// This style can be used to style a ``ListCard``.
 public struct ListCardButtonStyle: ButtonStyle {
 
     /// Create a list card button style

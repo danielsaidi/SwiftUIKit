@@ -9,7 +9,8 @@
 #if os(iOS)
 import SwiftUI
 
-/// This sheet can present a `UIActivityViewController` when sharing.
+/// This sheet can present a `UIActivityViewController` when
+/// sharing.
 public struct ShareSheet: UIViewControllerRepresentable {
     
     public init(

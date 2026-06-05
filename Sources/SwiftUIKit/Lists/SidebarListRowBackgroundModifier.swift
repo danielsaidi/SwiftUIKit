@@ -11,20 +11,20 @@ import SwiftUI
 
 public extension View {
 
-    /// Apply a list row background color for a sidebar list.
+    /// Apply a sidebar list row background color.
     ///
-    /// Unlike `.listRowBackground`, this modifier has no effect on regular
-    /// sized user interfaces.
+    /// Unlike `.listRowBackground`, this has no effect when
+    /// the sidebar is presented in regular sized interfaces.
     func sidebarListRowBackground(
         _ color: Color
     ) -> some View {
         self.modifier(SidebarListRowBackgroundModifier(color))
     }
     
-    /// Apply a list row background view for a sidebar list.
+    /// Apply a sidebar list row background style.
     ///
-    /// Unlike `.listRowBackground`, this modifier has no effect on regular
-    /// sized user interfaces.
+    /// Unlike `.listRowBackground`, this has no effect when
+    /// the sidebar is presented in regular sized interfaces. 
     func sidebarListRowBackground<Style: View>(
         _ style: Style
     ) -> some View {
@@ -32,11 +32,11 @@ public extension View {
     }
 }
 
-/// This modifier can be used to apply a list row background to a list that appears
-/// in the sidebar.
+/// This modifier can be used to apply a list row background
+/// to a list that appears in the sidebar.
 ///
-/// Unlike `listRowBackground` this has no effect on regular sized lists, since
-/// a sidebar then doesn't use row background.
+/// Unlike `listRowBackground` this has no effect on regular
+/// sized lists, since such sidebars has now row backgrounds.
 public struct SidebarListRowBackgroundModifier<Style: View>: ViewModifier {
     
     public init(_ style: Style) {

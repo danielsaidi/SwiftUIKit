@@ -10,7 +10,8 @@ import SwiftUI
 
 /// This styles defines shadow types, to allow strong typing.
 ///
-/// You can specify your own styles by creating new static properties, for instance:
+/// You can specify your own styles by creating static value
+/// extensions, for instance:
 ///
 /// ```swift
 /// extension ShadowStyle {
@@ -51,17 +52,17 @@ public extension ViewShadowStyle {
         .init(color: .clear)
     }
 
-    /// The shadow of a badge that is attached to its parent, in a separate layer.
+    /// The shadow of a badge that is attached to its parent.
     static var badge: Self {
         .init(radius: 1, y: 1)
     }
 
-    /// The shadow of a view that is elevated a bit above its parent view.
+    /// The shadow of a view that elevates above its parent.
     static var elevated: Self {
         .init(radius: 3, x: 0, y: 2)
     }
 
-    /// The shadow of a thin sticker that is attached to its parent view.
+    /// The shadow of a sticker that is attached to its parent.
     static var sticker: Self {
         .init(radius: 0, y: 1)
     }

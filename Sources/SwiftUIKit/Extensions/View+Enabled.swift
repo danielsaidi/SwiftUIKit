@@ -9,10 +9,8 @@
 import SwiftUI
 
 public extension View {
-    
+
     /// Enable the view is a certain condition is met.
-    ///
-    /// This is an inverted `disabled` that is intended to increase readability.
     func enabled(_ condition: Bool) -> some View {
         disabled(!condition)
     }

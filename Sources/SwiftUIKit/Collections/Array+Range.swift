@@ -10,7 +10,8 @@ import Foundation
 
 public extension Array where Element: Comparable & Strideable {
     
-    /// Create an array from a `range` with `stepSize` between each value.
+    /// Create an array for a certain `range` with a certain
+    /// `stepSize` between each value.
     init(
         _ range: ClosedRange<Element>,
         stepSize: Element.Stride

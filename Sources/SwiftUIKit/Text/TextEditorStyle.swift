@@ -29,7 +29,8 @@ public extension TextEditor {
 
     /// Apply a ``TextEditorStyle`` to a text editor.
     ///
-    /// Due to how the modifier works, it must be applied to the `TextEditor`.
+    /// Due to how the modifier works, it must be applied to
+    /// the `TextEditor`.
     @ViewBuilder
     func textEditorStyle(_ style: TextEditorStyle) -> some View {
         switch style {

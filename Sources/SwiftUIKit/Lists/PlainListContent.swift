@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-/// This view can be used to add a plain content view to any part of a `List`.
+/// This view can be used to add a plain content view to any
+/// part of a `List`.
 private struct PlainListContent<Content: View>: View {
 
     public init(
@@ -31,7 +32,8 @@ private struct PlainListContent<Content: View>: View {
 
 /// This view can be used to add a plain footer to a `List`.
 ///
-/// The view adds negative padding to account for spacing on certain platforms.
+/// The view adds negative padding to account for spacing on
+/// certain platforms.
 public struct ListFooter<Content: View>: View {
 
     public init(
@@ -56,7 +58,8 @@ public struct ListFooter<Content: View>: View {
 
 /// This view can be used to add a plain header to a `List`.
 ///
-/// The view adds negative padding to account for spacing on certain platforms.
+/// The view adds negative padding to account for spacing on
+/// certain platforms.
 public struct ListHeader<Content: View>: View {
 
     /// Create a list header.

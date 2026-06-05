@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-/// This protocol can be used to check if the code is running in a SwiftUI preview.
+/// This protocol can be used to check if code is running in
+/// a SwiftUI preview.
 ///
 /// The protocol is implemented by `ProcessInfo`.
 public protocol SwiftUIPreviewInspector {

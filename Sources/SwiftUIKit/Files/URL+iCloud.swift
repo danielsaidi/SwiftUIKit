@@ -10,9 +10,7 @@ import Foundation
 
 public extension URL {
     
-    /// The url to the iCloud ubiquity container.
-    ///
-    /// This is where documents and data will be saved and synced with iCloud.
+    /// The iCloud ubiquity container URL.
     static func ubiquityContainerUrl(
         for manager: FileManager = .default,
         containerId: String? = nil
@@ -20,9 +18,7 @@ public extension URL {
         manager.url(forUbiquityContainerIdentifier: nil)
     }
     
-    /// The url to the iCloud ubiquity container Documents root.
-    ///
-    /// This is where documents and data will be saved and synced with iCloud.
+    /// The iCloud ubiquity container Documents root URL.
     static func ubiquityContainerDocumentsUrl(
         for manager: FileManager = .default,
         containerId: String? = nil
@@ -31,8 +27,8 @@ public extension URL {
             .appendingPathComponent("Documents")
     }
     
-    /// The url to a local document fallback directory that can be used when the
-    /// `ubiquityContainer` urls are nil.
+    /// The url to a local document fallback directory, that
+    /// can be used when the `ubiquityContainer` url is `nil`.
     static func ubiquityContainerDocumentsLocalFallbackUrl(
         for manager: FileManager = .default
     ) -> URL? {

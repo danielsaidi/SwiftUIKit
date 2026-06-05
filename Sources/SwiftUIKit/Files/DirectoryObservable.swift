@@ -14,8 +14,8 @@ import SwiftUI
 
 /// This class can observe file system changes for a folder.
 ///
-/// The view uses an internal ``DirectoryMonitor`` to keep the ``files``
-/// property in sync.
+/// This view uses an internal ``DirectoryMonitor``, to keep
+/// the ``files`` property in sync.
 @MainActor
 public class DirectoryObservable: ObservableObject {
     

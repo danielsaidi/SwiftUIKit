@@ -12,7 +12,7 @@ public extension Sequence {
 
     /// Group the sequence into a dictionary.
     ///
-    /// The operation can use any element property as dictionary key.
+    /// The operation can use any element property as key.
     func grouped<T>(by grouper: (Element) -> T) -> [T: [Element]] {
         Dictionary(grouping: self, by: grouper)
     }

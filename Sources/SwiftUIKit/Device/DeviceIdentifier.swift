@@ -8,10 +8,11 @@
 
 import Foundation
 
-/// This class can generate a unique device identifier that is persisted in both user
-/// defaults and the user keychain.
+/// This class can generate a unique device identifier, that
+/// is persisted in both user defaults and the user keychain.
 ///
-/// This means that the identifier will be persisted even when uninstalling the app.
+/// This means that the identifier will be persisted even if
+/// the user uninstalls the app.
 open class DeviceIdentifier {
     
     /// Create a device identifier.
@@ -36,8 +37,8 @@ open class DeviceIdentifier {
     
     /// Get a unique device identifier from any store.
     ///
-    /// If no device identifier exists, an identifier will be generated and persisted
-    /// in both the keychain and in user defaults.
+    /// If no identifier exists, a new value will be created
+    /// and persisted in both the keychain and user defaults.
     open func getDeviceIdentifier() -> String {
         let keychainId = keychainService.string(for: key, with: accessibility)
         let storeId = store.string(forKey: key)

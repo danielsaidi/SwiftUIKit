@@ -11,11 +11,12 @@
 import Foundation
 import SwiftUI
 
-/// This extension makes `Array` able to store `Codable` types.
+/// This extension lets `Array` store `Codable` types.
 ///
-/// > Important: Values will be encoded and decoded with JSON. This may cause
-/// loss of important data. For instance, a JSON encoded `Color` will not include
-/// any dynamic color information, like dark mode and high contrast variants.
+/// > Important: JSON will be used to encode and decode data.
+/// This could cause loss of important data. For instance, a
+/// JSON encoded `Color` will lose dynamic information, like
+/// dark mode and high contrast variants.
 extension Array: @retroactive RawRepresentable where Element: Codable {
 
     public init?(rawValue: String) {
@@ -35,11 +36,12 @@ extension Array: @retroactive RawRepresentable where Element: Codable {
     }
 }
 
-/// This extension makes `Dictionary` able to store `Codable` types.
+/// This extension lets `Dictionary` store `Codable` types.
 ///
-/// > Important: Values will be encoded and decoded with JSON. This may cause
-/// loss of important data. For instance, a JSON encoded `Color` will not include
-/// any dynamic color information, like dark mode and high contrast variants.
+/// > Important: JSON will be used to encode and decode data.
+/// This could cause loss of important data. For instance, a
+/// JSON encoded `Color` will lose dynamic information, like
+/// dark mode and high contrast variants.
 extension Dictionary: @retroactive RawRepresentable where Key: Codable, Value: Codable {
 
     public init?(rawValue: String) {

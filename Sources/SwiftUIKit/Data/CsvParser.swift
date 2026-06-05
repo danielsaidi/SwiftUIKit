@@ -8,10 +8,11 @@
 
 import Foundation
 
-/// This type can parse comma-separated value files and strings.
+/// This type can be used to parse comma-separated files and
+/// strings.
 ///
-/// When parsing a CSV file or string, each line will be split up into components by
-/// splitting the string with the provided `componentSeparator`.
+/// When parsing CSV, every line is split up into components
+/// by splitting on the provided `componentSeparator`.
 public class CsvParser {
 
     /// Create a CSV parser.

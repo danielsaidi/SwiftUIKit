@@ -10,8 +10,8 @@ import Foundation
 
 public extension String {
     
-    /// Clean up spaces and other characters that can be added during dictation,
-    /// for instance when dictating text into a text field.
+    /// Clean up characters that can be added when dictating
+    /// text into a text field.
     func cleanedUpAfterDictation() -> String {
         self
             .replacingOccurrences(of: "\u{fffc}", with: "")

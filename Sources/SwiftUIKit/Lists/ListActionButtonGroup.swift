@@ -32,3 +32,17 @@ public struct ListActionButtonGroup<Content: View>: View {
         .listRowInsets(.init(top: 16, leading: 0, bottom: 16, trailing: 0))
     }
 }
+
+#Preview {
+
+    if #available(iOS 26.0, *) {
+        List {
+            ListActionButtonGroup {
+                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
+                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
+                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
+                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
+            }
+        }
+    }
+}

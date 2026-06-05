@@ -8,7 +8,9 @@
 
 import Foundation
 
-/// This makes it possible to fetch characters from a string, as discussed here:
+/// This makes it possible to fetch characters from a string,
+/// as discussed here:
+/// 
 /// https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
 public extension StringProtocol {
     

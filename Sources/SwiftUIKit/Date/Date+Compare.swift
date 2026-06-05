@@ -21,7 +21,8 @@ public extension Date {
         self < date
     }
 
-    /// Whether the date is the same as another date, for a certain granularity.
+    /// Whether the date is the same as another date, with a
+    /// certain granularity.
     func isCurrent(
         _ granularity: Calendar.Component,
         for calendar: Calendar = .current
@@ -42,7 +43,8 @@ public extension Date {
         self == date
     }
 
-    /// Whether the date is the same as another date, for a certain granularity.
+    /// Whether the date is the same as another date, with a
+    /// certain granularity.
     func isSame(
         _ granularity: Calendar.Component,
         as date: Date,

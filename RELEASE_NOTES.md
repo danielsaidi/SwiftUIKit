@@ -5,7 +5,7 @@
 * Deprecations can happen at any time.
 * Deprecations are removed in `major` updates.
 * Breaking changes should only occur in `major` updates.
-* Breaking changes *can* occur in `minor` and `patch` updates, if the alternative is worse.
+* Breaking changes *can* occur in non-major updates, if the alternative is worse.
 
 These release notes cover the current major version. See older versions for older release notes.
 
@@ -13,10 +13,9 @@ These release notes cover the current major version. See older versions for olde
 
 ## 6.2
 
-
 ### ✨ Features
 
-* `ListActionButton` and `ListActionButtonGroup` are two new list views.
+* `ListActionButton` replaces `ListButtonGroup`.
 * `OpenURLAction` has new optional extensions.
 
 ### 🗑️ Deprecations
