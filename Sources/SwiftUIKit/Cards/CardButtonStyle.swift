@@ -1,5 +1,5 @@
 //
-//  ListCardButtonStyle.swift
+//  CardButtonStyle.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-04-26.
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-/// This style can be used to style a ``ListCard``.
-public struct ListCardButtonStyle: ButtonStyle {
+/// This style can be used to style a ``Card``.
+public struct CardButtonStyle: ButtonStyle {
 
     /// Create a list card button style
     ///
@@ -37,13 +37,13 @@ public struct ListCardButtonStyle: ButtonStyle {
     }
 }
 
-public extension ButtonStyle where Self == ListCardButtonStyle {
+public extension ButtonStyle where Self == CardButtonStyle {
 
     /// The standard list card button style.
-    static var listCard: ListCardButtonStyle { .init() }
+    static var card: CardButtonStyle { .init() }
 
     /// A custom list card button style.
-    static func listCard(
+    static func card(
         animation: Animation? = nil,
         pressedScale: Double? = nil
     ) -> Self {

@@ -65,11 +65,11 @@ public struct ListShelfSection<Title: View, Content: View>: View {
         
         var body: some View {
             ListShelfSection {
-                ListSectionTitle("Preview.SectionTitle", bundle: .module)
+                Text("Preview.SectionTitle", bundle: .module)
             } content: {
                 Group {
                     Button {} label: {
-                        ListCard {
+                        Card {
                             Color.red
                         } contextMenu: {
                             button(1)
@@ -78,7 +78,7 @@ public struct ListShelfSection<Title: View, Content: View>: View {
                         }
                     }
                     
-                    ListCard {
+                    Card {
                         Color.green
                     } contextMenu: {
                         button(1)
@@ -86,7 +86,7 @@ public struct ListShelfSection<Title: View, Content: View>: View {
                         button(3)
                     }
                     
-                    ListCard {
+                    Card {
                         Color.blue
                     } contextMenu: {
                         button(1)
@@ -94,7 +94,7 @@ public struct ListShelfSection<Title: View, Content: View>: View {
                         button(3)
                     }
                 }
-                .buttonStyle(.listCard)
+                .buttonStyle(.card)
                 .frame(width: 150, height: 150)
             }
         }

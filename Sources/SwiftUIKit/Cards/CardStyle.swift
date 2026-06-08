@@ -8,17 +8,17 @@
 
 import SwiftUI
 
-/// This style can be used to style a ``ListCard``.
-public struct ListCardStyle {
+/// This style can be used to style a ``Card``.
+public struct CardStyle {
 
     /// Create a list card style
     ///
     /// - Parameters:
     ///   - cornerRadius: The corner radius to apply, by default `8.0`.
-    ///   - shadowStyle: The shadowStyle to apply, by default ``ViewShadowStyle/listCard``.
+    ///   - shadowStyle: The shadowStyle to apply, by default ``ViewShadowStyle/card``.
     public init(
         cornerRadius: Double = 8.0,
-        shadowStyle: ViewShadowStyle = .listCard
+        shadowStyle: ViewShadowStyle = .card
     ) {
         self.cornerRadius = cornerRadius
         self.shadowStyle = shadowStyle
@@ -31,7 +31,7 @@ public struct ListCardStyle {
     public var shadowStyle: ViewShadowStyle
 }
 
-public extension ListCardStyle {
+public extension CardStyle {
 
     /// The standard list card style.
     static var standard: Self { .init() }
@@ -39,19 +39,19 @@ public extension ListCardStyle {
 
 public extension View {
 
-    /// Apply a ``ListCardStyle`` style to the view.
-    func listCardStyle(
-        _ style: ListCardStyle
+    /// Apply a ``CardStyle`` style to the view.
+    func cardStyle(
+        _ style: CardStyle
     ) -> some View {
-        self.environment(\.listCardStyle, style)
+        self.environment(\.cardStyle, style)
     }
 }
 
-private extension ListCardStyle {
+private extension CardStyle {
 
     struct Key: EnvironmentKey {
 
-        public static var defaultValue: ListCardStyle {
+        public static var defaultValue: CardStyle {
             .standard
         }
     }
@@ -59,8 +59,8 @@ private extension ListCardStyle {
 
 public extension EnvironmentValues {
 
-    var listCardStyle: ListCardStyle {
-        get { self [ListCardStyle.Key.self] }
-        set { self [ListCardStyle.Key.self] = newValue }
+    var cardStyle: CardStyle {
+        get { self [CardStyle.Key.self] }
+        set { self [CardStyle.Key.self] = newValue }
     }
 }

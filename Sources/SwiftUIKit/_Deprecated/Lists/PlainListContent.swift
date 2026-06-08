@@ -8,8 +8,7 @@
 
 import SwiftUI
 
-/// This view can be used to add a plain content view to any
-/// part of a `List`.
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 private struct PlainListContent<Content: View>: View {
 
     public init(
@@ -30,10 +29,7 @@ private struct PlainListContent<Content: View>: View {
     }
 }
 
-/// This view can be used to add a plain footer to a `List`.
-///
-/// The view adds negative padding to account for spacing on
-/// certain platforms.
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public struct ListFooter<Content: View>: View {
 
     public init(
@@ -56,10 +52,7 @@ public struct ListFooter<Content: View>: View {
     }
 }
 
-/// This view can be used to add a plain header to a `List`.
-///
-/// The view adds negative padding to account for spacing on
-/// certain platforms.
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public struct ListHeader<Content: View>: View {
 
     /// Create a list header.
@@ -99,29 +92,5 @@ private extension View {
             self
         }
         #endif
-    }
-}
-
-#Preview {
-    
-    func item() -> some View {
-        Text("Preview.Item", bundle: .module)
-    }
-    
-    return VStack {
-        List {
-            ListHeader {
-                Color.red.frame(square: 150)
-            }
-            Section {
-                item()
-                item()
-                item()
-                item()
-            }
-            ListFooter {
-                Color.red.frame(square: 150)
-            }
-        }
     }
 }

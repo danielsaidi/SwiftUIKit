@@ -20,7 +20,8 @@ These release notes cover the current major version. See older versions for olde
 
 ### 🗑️ Deprecations
 
-* `ListButtonGroup` has been deprecated.
+* `List` types have been moved to the new `ListKit` library.
+* `ListCard` and its related types has been renamed to `Card`.
 
 
 

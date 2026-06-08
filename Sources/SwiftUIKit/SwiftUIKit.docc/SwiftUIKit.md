@@ -50,6 +50,12 @@ SwiftUIKit is available under the MIT license.
 
 ## Topics
 
+### Cards
+
+- ``Card``
+- ``CardButtonStyle``
+- ``CardStyle``
+
 ### Colors
 
 - ``SwiftUICore/Color``
@@ -95,16 +101,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Lists
 
-- ``ListButtonGroup``
-- ``ListButtonGroupStyle``
-- ``ListCard``
-- ``ListCardButtonStyle``
-- ``ListCardStyle``
-- ``ListDragHandle``
-- ``ListFooter``
-- ``ListHeader``
-- ``ListSectionTitle``
-- ``ListSelectItem``
 - ``ListShelfSection``
 - ``ListShelfSectionStyle``
 - ``Reorderable``

@@ -1,5 +1,5 @@
 //
-//  ListCard.swift
+//  Card.swift
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-04-26.
@@ -13,7 +13,7 @@ import SwiftUI
 /// The view wraps any content view and can be styled with a
 /// corner radius and shadow. You can also provide a list of
 /// context menu items.
-public struct ListCard<Content: View, ContextMenuView: View>: View {
+public struct Card<Content: View, ContextMenuView: View>: View {
 
     /// Create a list card.
     ///
@@ -45,7 +45,7 @@ public struct ListCard<Content: View, ContextMenuView: View>: View {
     private let content: ContentBuilder
     private let contextMenu: ContextMenuBuilder
 
-    @Environment(\.listCardStyle) private var style
+    @Environment(\.cardStyle) private var style
 
     public var body: some View {
         content()
@@ -65,7 +65,7 @@ public struct ListCard<Content: View, ContextMenuView: View>: View {
 public extension ViewShadowStyle {
 
     /// The standard list card shadow style.
-    static var listCard: Self {
+    static var card: Self {
         .init(
             color: .black.opacity(0.2),
             radius: 2,
@@ -80,25 +80,25 @@ public extension ViewShadowStyle {
     VStack {
         Group {
             Button {} label: {
-                ListCard {
+                Card {
                     Color.red.frame(width: 200, height: 200)
                 }
             }
             .buttonStyle(
-                .listCard(
+                .card(
                     animation: .bouncy,
                     pressedScale: 0.9
                 )
             )
             Button {} label: {
-                ListCard {
+                Card {
                     Color.red.frame(width: 200, height: 200)
                 } contextMenu: {
                     Button("Preview.Button") {}
                 }
             }
         }
-        .buttonStyle(.listCard)
+        .buttonStyle(.card)
         .padding(50)
         .background(Color.gray)
         .cornerRadius(20)
