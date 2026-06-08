@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(*, deprecated, message: "Use .tint(.primary) instead")
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public struct ListButtonStyle: ButtonStyle {
     
     /// Create a custom style.
@@ -32,7 +32,7 @@ public struct ListButtonStyle: ButtonStyle {
     }
 }
 
-@available(*, deprecated, message: "Use .tint(.primary) instead")
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public extension ButtonStyle where Self == ListButtonStyle {
 
     /// The standard list card button style.

@@ -8,13 +8,7 @@
 
 import SwiftUI
 
-/// This view mimics the `Section` title od a grouped `List`.
-///
-/// This font uses `.headline` with `.scaleEffect` in iOS 26
-/// to allow for dynamic type support.
-///
-/// Since this doesn't add insets by default, you can enable
-/// `withInsets` to apply a standard padding.
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public struct ListSectionTitle: View {
 
     public init(
@@ -58,15 +52,6 @@ private extension View {
                 .padding(.top, -3)
         } else {
             self
-        }
-    }
-}
-
-#Preview {
-
-    List {
-        Section(header: Text("Preview.SectionTitle", bundle: .module)) {
-            ListSectionTitle("Preview.SectionTitle", bundle: .module)
         }
     }
 }

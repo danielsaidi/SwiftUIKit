@@ -9,7 +9,7 @@
 #if os(iOS)
 import SwiftUI
 
-@available(*, deprecated, message: "Use ListActionButtonGroup instead.")
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public struct ListButtonGroup<Content: View>: View {
     
     /// Create a form button group section.

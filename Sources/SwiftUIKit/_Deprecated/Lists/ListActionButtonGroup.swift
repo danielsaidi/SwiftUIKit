@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-/// This view renders a horizontal list action buttons list.
-@available(iOS 26.0, *)
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
 public struct ListActionButtonGroup<Content: View>: View {
 
     public init(
@@ -30,19 +30,5 @@ public struct ListActionButtonGroup<Content: View>: View {
         }
         .listRowBackground(Color.clear)
         .listRowInsets(.init(top: 16, leading: 0, bottom: 16, trailing: 0))
-    }
-}
-
-#Preview {
-
-    if #available(iOS 26.0, *) {
-        List {
-            ListActionButtonGroup {
-                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
-                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
-                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
-                ListActionButton(title: "Do It", icon: .symbol("checkmark")) {}
-            }
-        }
     }
 }

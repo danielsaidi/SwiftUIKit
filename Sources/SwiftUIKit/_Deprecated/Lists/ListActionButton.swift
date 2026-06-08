@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-/// This view can be used in a ``ListActionButtonGroup``.
-@available(iOS 26.0, *)
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
 public struct ListActionButton: View {
 
     public init(

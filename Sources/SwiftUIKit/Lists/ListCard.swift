@@ -87,7 +87,7 @@ public extension ViewShadowStyle {
             .buttonStyle(
                 .listCard(
                     animation: .bouncy,
-                    pressedScale: 0.2
+                    pressedScale: 0.9
                 )
             )
             Button {} label: {
