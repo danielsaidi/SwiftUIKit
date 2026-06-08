@@ -101,8 +101,6 @@ SwiftUIKit is available under the MIT license.
 
 ### Lists
 
-- ``ListShelfSection``
-- ``ListShelfSectionStyle``
 - ``Reorderable``
 - ``ReorderableForEach``
 - ``SidebarListRowBackgroundModifier``

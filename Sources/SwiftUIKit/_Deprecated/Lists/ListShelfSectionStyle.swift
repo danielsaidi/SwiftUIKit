@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-/// This style can be used to style a ``ListShelfSection``.
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public struct ListShelfSectionStyle {
     
     /// Create a custom list shelf section style.
@@ -43,12 +43,14 @@ public struct ListShelfSectionStyle {
     public var rowItemSpacing: Double
 }
 
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public extension ListShelfSectionStyle {
     
     /// The standard list sheld section style.
     static var standard: Self { .init() }
 }
 
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public extension View {
 
     /// Apply a ``ListShelfSectionStyle`` style to the view.
@@ -59,6 +61,7 @@ public extension View {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 private extension ListShelfSectionStyle {
 
     @MainActor struct Key: @preconcurrency EnvironmentKey {
@@ -69,6 +72,7 @@ private extension ListShelfSectionStyle {
     }
 }
 
+@available(*, deprecated, message: "This has been moved to the new ListKit library.")
 public extension EnvironmentValues {
 
     var listShelfSectionStyle: ListShelfSectionStyle {

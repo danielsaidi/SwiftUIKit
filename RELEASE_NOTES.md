@@ -15,7 +15,6 @@ These release notes cover the current major version. See older versions for olde
 
 ### ✨ Features
 
-* `ListActionButton` replaces `ListButtonGroup`.
 * `OpenURLAction` has new optional extensions.
 
 ### 🗑️ Deprecations
