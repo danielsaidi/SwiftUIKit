@@ -74,6 +74,12 @@ SwiftUIKit is available under the MIT license.
 
 - ``DeviceIdentifier``
 
+### Favorites
+
+- ``FavoriteContext``
+- ``FavoriteStore``
+- ``UserDefaultsFavoriteStore``
+
 ### Files
 
 - ``BundleFileFinder``

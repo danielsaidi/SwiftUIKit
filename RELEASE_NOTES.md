@@ -16,6 +16,9 @@ These release notes cover the current major version. See older versions for olde
 ### ✨ Features
 
 * `OpenURLAction` has new optional extensions.
+* `FavoriteContext` is a new observable class.
+* `FavoriteStore` is a new store protocol.
+* `UserDefaultsFavoriteStore` is a new store implementation.
 
 ### 🗑️ Deprecations
 
