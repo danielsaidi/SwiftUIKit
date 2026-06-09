@@ -13,6 +13,8 @@ These release notes cover the current major version. See older versions for olde
 
 ## 6.2
 
+This version moves most list-related to the new ListKit library, and adds a new way to handle favorites in a very easy way.
+
 ### ✨ Features
 
 * `OpenURLAction` has new optional extensions.
