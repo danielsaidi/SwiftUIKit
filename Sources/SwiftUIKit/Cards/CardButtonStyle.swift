@@ -11,7 +11,7 @@ import SwiftUI
 /// This style can be used to style a ``Card``.
 public struct CardButtonStyle: ButtonStyle {
 
-    /// Create a list card button style
+    /// Create a card button style
     ///
     /// - Parameters:
     ///   - animation: The animation to apply when the button is pressed, by default `.linear`.
@@ -39,8 +39,10 @@ public struct CardButtonStyle: ButtonStyle {
 
 public extension ButtonStyle where Self == CardButtonStyle {
 
+    #if !os(tvOS)
     /// The standard list card button style.
     static var card: CardButtonStyle { .init() }
+    #endif
 
     /// A custom list card button style.
     static func card(

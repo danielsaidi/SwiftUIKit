@@ -24,8 +24,10 @@ public extension ViewShadowStyle {
 
 public extension ButtonStyle where Self == CardButtonStyle {
 
+    #if !os(tvOS)
     @available(*, deprecated, renamed: "card")
     static var listCard: CardButtonStyle { .card }
+    #endif
 
     @available(*, deprecated, renamed: "card")
     static func listCard(

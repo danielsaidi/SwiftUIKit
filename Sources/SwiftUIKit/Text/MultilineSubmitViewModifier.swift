@@ -16,7 +16,7 @@ public struct MultilineSubmitViewModifier: ViewModifier {
     ///
     /// - Parameters:
     ///   - text: The text binding used by the text field.
-    ///   - onSubmit: The function to call when return is pressed.
+    ///   - action: The function to call when return is pressed.
     public init(
         text: Binding<String>,
         action: @escaping () -> Void

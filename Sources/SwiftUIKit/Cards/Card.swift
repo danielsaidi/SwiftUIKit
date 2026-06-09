@@ -8,11 +8,18 @@
 
 import SwiftUI
 
-/// This view can be used as floating list or grid card.
+/// This view can be used as floating list or grid card, and
+/// lets you adjust its elevation and press animation.
 ///
 /// The view wraps any content view and can be styled with a
-/// corner radius and shadow. You can also provide a list of
-/// context menu items.
+/// corner radius and a shadow. You can also provide context
+/// menu items to show when the card is long pressed.
+///
+/// The idea with the view is to get a universal way to wrap
+/// any view and make it look like a card, like you get with
+/// the `.card` button style on tvOS. And since tvOS already
+/// has a `card` button style, the default ``CardButtonStyle``
+/// in this package is not available on that platform.
 public struct Card<Content: View, ContextMenuView: View>: View {
 
     /// Create a list card.
@@ -61,6 +68,50 @@ public struct Card<Content: View, ContextMenuView: View>: View {
     }
 }
 
+/// This style can be used to style a ``Card``.
+public struct CardStyle {
+
+    /// Create a list card style
+    ///
+    /// - Parameters:
+    ///   - cornerRadius: The corner radius to apply, by default `8.0`.
+    ///   - shadowStyle: The shadowStyle to apply, by default ``ViewShadowStyle/card``.
+    public init(
+        cornerRadius: Double = 8.0,
+        shadowStyle: ViewShadowStyle = .card
+    ) {
+        self.cornerRadius = cornerRadius
+        self.shadowStyle = shadowStyle
+    }
+
+    /// The corner radius to apply.
+    public var cornerRadius: Double
+
+    /// The shadow style to apply.
+    public var shadowStyle: ViewShadowStyle
+}
+
+public extension CardStyle {
+
+    /// The standard list card style.
+    static var standard: Self { .init() }
+}
+
+public extension View {
+
+    /// Apply a ``CardStyle`` style to the view.
+    func cardStyle(
+        _ style: CardStyle
+    ) -> some View {
+        self.environment(\.cardStyle, style)
+    }
+}
+
+public extension EnvironmentValues {
+
+    /// Applies a ``CardStyle`` to the view hierarchy.
+    @Entry var cardStyle: CardStyle = .standard
+}
 
 public extension ViewShadowStyle {
 
