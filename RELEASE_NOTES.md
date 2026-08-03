@@ -11,6 +11,16 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 6.3
+
+### ✨ Features
+
+* `Labelable` is a new protocol.
+* `Button` has a new `Labelable`-based initializer.
+* `Label` has a new `Labelable`-based initializer.
+
+
+
 ## 6.2
 
 This version moves most list-related to the new ListKit library, and adds a new way to handle favorites in a very easy way.

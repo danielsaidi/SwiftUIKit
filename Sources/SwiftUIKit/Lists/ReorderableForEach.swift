@@ -181,20 +181,20 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
 }
 
 #Preview {
-    
+
     struct Preview: View {
-        
+
         @State
         private var items = (1...100).map { GridData(id: $0) }
-        
+
         @State
         private var active: GridData?
-        
+
         private struct GridData: Identifiable, Equatable {
-            
+
             let id: Int
         }
-         
+
         var body: some View {
             NavigationView {
                 #if os(macOS)
@@ -233,12 +233,89 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
                 }
             }
         }
-        
+
         var shape: some Shape {
             RoundedRectangle(cornerRadius: 20)
         }
     }
-    
+
+    return Preview()
+}
+
+@available(iOS 27.0, macOS 27.0, *)
+extension ReorderDifference where CollectionID == ReorderableSingleCollectionIdentifier {
+
+    /// Apply the reorder difference to a single-collection list.
+    func apply<C>(to collection: inout C)
+        where C: RangeReplaceableCollection,
+              C.Element: Identifiable,
+              C.Element.ID == ItemID
+    {
+        let moving = Set(sources)
+        guard !moving.isEmpty else { return }
+
+        // One in-place pass: drop the moved items and capture them in order.
+        var moved: [C.Element] = []
+        moved.reserveCapacity(moving.count)
+        collection.removeAll { element in
+            guard moving.contains(element.id) else { return false }
+            moved.append(element)
+            return true
+        }
+
+        switch destination.position {
+        case .before(let id):
+            let index = collection.firstIndex { $0.id == id } ?? collection.endIndex
+            collection.insert(contentsOf: moved, at: index)
+        case .end:
+            collection.append(contentsOf: moved)
+        }
+    }
+}
+
+@available(iOS 27, macOS 27, tvOS 27, watchOS 27, visionOS 27, *)
+#Preview("Native") {
+
+    struct Preview: View {
+
+        @State
+        private var items = (1...100).map { GridData(id: $0) }
+
+        private struct GridData: Identifiable, Equatable {
+
+            let id: Int
+        }
+
+        var body: some View {
+            NavigationView {
+                ScrollView(.vertical) {
+                    VStack {
+                        LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
+                            ForEach(items) { item in
+                                shape
+                                    .fill(.thinMaterial)
+                                    .frame(height: 100)
+                                    .overlay(Text("\(item.id)"))
+                                    .contentShape(.dragPreview, shape)
+                            }
+                            .reorderable()
+                        }
+                    }
+                    .padding()
+                    .reorderContainer(for: GridData.self) { difference in
+                        difference.apply(to: &items)
+                    }
+                }
+                .background(Color.blue)
+                .scrollContentBackground(.hidden)
+            }
+        }
+
+        var shape: some Shape {
+            RoundedRectangle(cornerRadius: 20)
+        }
+    }
+
     return Preview()
 }
 
