@@ -105,6 +105,10 @@ SwiftUIKit is available under the MIT license.
 - ``KeychainService``
 - ``KeychainWrapper``
 
+### Labels
+
+- ``Labelable``
+
 ### Lists
 
 - ``Reorderable``
