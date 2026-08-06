@@ -13,6 +13,7 @@ show_usage() {
     echo "  [TARGET]              Optional. The target to release (defaults to package name)"
     echo "  -b, --branch          Optional. The branch to validate (auto-detects default branch if not specified)"
     echo "  -p, --platforms       Optional. List of platforms (default: iOS macOS tvOS watchOS xrOS)"
+    echo "  --swiftlint           Optional. Run SwiftLint (1) or skip it (0) (default: 1)"
 
     echo
     echo "This script will:"
@@ -55,6 +56,7 @@ show_error_and_exit() {
 TARGET=""
 BRANCH=""
 PLATFORMS="iOS macOS tvOS watchOS xrOS"  # Default platforms
+SWIFTLINT=1  # Default to running SwiftLint
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -82,6 +84,14 @@ while [[ $# -gt 0 ]]; do
             if [ -z "$PLATFORMS" ]; then
                 show_usage_error_and_exit "--platforms requires at least one platform"
             fi
+            ;;
+        --swiftlint)
+            shift
+            if [[ "$1" != "0" && "$1" != "1" ]]; then
+                show_usage_error_and_exit "--swiftlint requires 0 or 1"
+            fi
+            SWIFTLINT="$1"
+            shift
             ;;
         -h|--help)
             show_usage; exit 0 ;;
@@ -156,7 +166,7 @@ run_script "$SCRIPT_VALIDATE_GIT" -b "$BRANCH"
 
 # Validate project
 echo "Validating package..."
-run_script "$SCRIPT_VALIDATE_PACKAGE" "$TARGET" -p $PLATFORMS
+run_script "$SCRIPT_VALIDATE_PACKAGE" "$TARGET" -p $PLATFORMS --swiftlint $SWIFTLINT
 
 # Bump version
 echo "Bumping version..."
