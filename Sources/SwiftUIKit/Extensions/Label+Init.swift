@@ -12,7 +12,7 @@ public extension Label where Icon == Image, Title == Text {
     
     /// Create a label with a string and a plain image icon.
     init(
-        _ text: LocalizedStringKey,
+        _ text: LocalizedStringReso,
         _ image: Image,
         _ bundle: Bundle? = nil
     ) {

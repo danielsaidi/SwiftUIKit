@@ -28,6 +28,11 @@ https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
 
+## Supported Platforms
+
+SwiftUIKit supports iOS 16, macOS 14, tvOS 16, watchOS 9, and visionOS 1.
+
+
 
 ## Getting Started
 

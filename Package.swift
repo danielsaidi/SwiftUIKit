@@ -6,10 +6,10 @@ let package = Package(
     name: "SwiftUIKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v15),
-        .tvOS(.v15),
-        .watchOS(.v8),
-        .macOS(.v12),
+        .iOS(.v16),
+        .macOS(.v14),
+        .tvOS(.v16),
+        .watchOS(.v9),
         .visionOS(.v1)
     ],
     products: [

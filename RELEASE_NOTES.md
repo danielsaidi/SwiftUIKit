@@ -15,6 +15,8 @@ These release notes cover the current major version. See older versions for olde
 
 This version bumps deployment targets and uses localized string resources instead of keys.
 
+SwiftUIKit now supports iOS 16, macOS 14, tvOS 16, watchOS 9, and visionOS 1.
+
 ### ‼️ Breaking Changes
 
 * All deprecated code has been removed.
