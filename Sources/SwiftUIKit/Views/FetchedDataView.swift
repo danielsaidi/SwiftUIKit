@@ -21,21 +21,6 @@ import SwiftUI
 /// This lets you manage all three states with a single view.
 public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataView: View>: View {
     
-    @available(*, deprecated, message: "Use the view builder-based initializer instead.")
-    public init(
-        data: Model?,
-        isLoading: Bool,
-        loadingView: LoadingView,
-        noDataView: NoDataView,
-        @ViewBuilder content: @escaping (Model) -> Content
-    ) {
-        self.data = data
-        self.isLoading = isLoading
-        self.loadingView = { loadingView }
-        self.noDataView = { noDataView }
-        self.content = { content($0) }
-    }
-    
     public init(
         data: Model?,
         isLoading: Bool,

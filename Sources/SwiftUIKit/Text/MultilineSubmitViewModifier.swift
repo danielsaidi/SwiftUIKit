@@ -54,16 +54,6 @@ public struct MultilineSubmitViewModifier: ViewModifier {
 
 public extension View {
     
-    @available(*, deprecated, renamed: "onMultilineSubmit(of:action:)")
-    func multilineSubmit(
-        for text: Binding<String>,
-        submitLabel: SubmitLabel = .done,
-        action: @escaping () -> Void = {}
-    ) -> some View {
-        self.submitLabel(submitLabel)
-            .onMultilineSubmit(of: text, action: action)
-    }
-
     /// Make a multi-line textfield auto-submit whenever the
     /// primary button is pressed.
     ///

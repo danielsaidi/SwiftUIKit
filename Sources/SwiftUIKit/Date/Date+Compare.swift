@@ -30,14 +30,6 @@ public extension Date {
         isSame(granularity, as: Date(), for: calendar)
     }
 
-    @available(*, deprecated, renamed: "isCurrent")
-    func isThis(
-        _ granularity: Calendar.Component,
-        for calendar: Calendar = .current
-    ) -> Bool {
-        isCurrent(granularity, for: calendar)
-    }
-
     /// Whether the date is the same as another date.
     func isSame(as date: Date) -> Bool {
         self == date

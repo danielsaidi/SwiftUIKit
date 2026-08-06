@@ -13,17 +13,6 @@ import Foundation
 
 public extension String {
     
-    @available(*, deprecated, message: "Use the new options-based version instead.")
-    func replacing(
-        _ string: String,
-        with: String,
-        caseSensitive: Bool
-    ) -> String {
-        caseSensitive
-            ? replacingOccurrences(of: string, with: with)
-            : replacingOccurrences(of: string, with: with, options: .caseInsensitive)
-    }
-    
     /// Replace a certain string with another one.
     func replacing(
         _ string: String,

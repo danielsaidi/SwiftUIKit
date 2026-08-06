@@ -11,6 +11,16 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 7.0
+
+This version bumps deployment targets and uses localized string resources instead of keys.
+
+### ‼️ Breaking Changes
+
+* All deprecated code has been removed.
+
+
+
 ## 6.3
 
 ### ✨ Features

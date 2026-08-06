@@ -25,18 +25,6 @@ public extension View {
             self
         }
     }
-    
-    @available(*, deprecated, renamed: "label(_:bundle:)")
-    func localizedLabel(
-        _ text: LocalizedStringKey,
-        bundle: Bundle? = nil
-    ) -> some View {
-        Label {
-            Text(text, bundle: bundle)
-        } icon: {
-            self
-        }
-    }
 }
 
 #Preview {
