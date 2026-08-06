@@ -17,60 +17,14 @@ This version bumps deployment targets and uses localized string resources instea
 
 SwiftUIKit now supports iOS 16, macOS 14, tvOS 16, watchOS 9, and visionOS 1.
 
+### ✨ Features
+
+* `Label` has a new custom view icon initializer.
+
+### 💡 Changes
+
+* The SDK now uses LocalizedStringResource instead of LocalizedStringKey.
+
 ### ‼️ Breaking Changes
 
 * All deprecated code has been removed.
-
-
-
-## 6.3
-
-### ✨ Features
-
-* `Labelable` is a new protocol.
-* `Button` has a new `Labelable`-based initializer.
-* `Label` has a new `Labelable`-based initializer.
-
-
-
-## 6.2
-
-This version moves most list-related to the new ListKit library, and adds a new way to handle favorites in a very easy way.
-
-### ✨ Features
-
-* `OpenURLAction` has new optional extensions.
-* `FavoriteContext` is a new observable class.
-* `FavoriteStore` is a new store protocol.
-* `UserDefaultsFavoriteStore` is a new store implementation.
-
-### 🗑️ Deprecations
-
-* `List` types have been moved to the new `ListKit` library.
-* `ListCard` and its related types has been renamed to `Card`.
-
-
-
-## 6.1.1
-
-This version renames the `onMultilineSubmit` view extension.
-
-
-
-## 6.1
-
-This version bumps the package to Swift 6.1 and deprecates some list views.
-
-
-
-## 6.0
-
-This version removes all deprecations, which means that many parts of the library are no longer available.
-
-Most components have been extracted into separate packages. See [this page](https://danielsaidi.com/opensource) for my various open-source libraries. If something you used is missing, you will most probably find it there.
-
-Many things have just been removed, when it has better, native alternatives. The last `5.9.4` version provides you with proper deprecation warnings to let you adjust.
-
-Some components that should have been removed still remain, since we need more time. They will be deprecated in future minor versions,using the same deprecation strategy as in version 5.
-
-The future of this library will be to extend native types. This will be fully realized in version 7.0.
