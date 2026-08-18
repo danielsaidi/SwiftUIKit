@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 16, macOS 14, tvOS 16, watchOS 10, *)
 public protocol Labelable {
 
     associatedtype LabelIcon: View
@@ -21,7 +20,6 @@ public protocol Labelable {
 }
 
 
-@available(iOS 16, macOS 14, tvOS 16, watchOS 10, *)
 public extension Label where Title == Text {
 
     /// Create a label with a `Labelable` value.
@@ -36,7 +34,6 @@ public extension Label where Title == Text {
     }
 }
 
-@available(iOS 16, macOS 14, tvOS 16, watchOS 10, *)
 public extension Button {
 
     /// Create a button with a `Labelable` value.
@@ -45,12 +42,24 @@ public extension Button {
         action: @escaping () -> Void
     ) where Label == SwiftUI.Label<Text, Value.LabelIcon> {
         self.init(action: action) {
-            SwiftUI.Label(value)
+            Label(value)
         }
     }
 }
 
-@available(iOS 16, macOS 14, tvOS 16, watchOS 10, *)
+public extension NavigationLink {
+
+    /// Create a button with a `Labelable` value.
+    init<Value: Labelable & Hashable>(
+        _ value: Value,
+        action: @escaping () -> Void
+    ) where Label == SwiftUI.Label<Text, Value.LabelIcon>, Destination == Never {
+        self.init(value: value) {
+            Label(value)
+        }
+    }
+}
+
 private enum PreviewScreen: Labelable {
 
     case settings

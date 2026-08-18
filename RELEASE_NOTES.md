@@ -11,6 +11,14 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 7.0.1
+
+### ✨ Features
+
+* `NavigationLink` can be created with a `Labelable & Hashable` type.
+
+
+
 ## 7.0
 
 This version bumps deployment targets and uses localized string resources instead of keys.
