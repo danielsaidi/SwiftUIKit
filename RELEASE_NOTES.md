@@ -11,6 +11,15 @@ These release notes cover the current major version. See older versions for olde
 
 
 
+## 7.0.2
+
+### ✨ Features
+
+* `NavigationLink` has a new `Labelable`-based initializer.
+* `Labelable` initializers now use `for:` as parameter name.
+
+
+
 ## 7.0.1
 
 ### ✨ Features

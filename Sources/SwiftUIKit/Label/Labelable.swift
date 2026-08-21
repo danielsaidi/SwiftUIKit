@@ -24,7 +24,7 @@ public extension Label where Title == Text {
 
     /// Create a label with a `Labelable` value.
     init<Value: Labelable>(
-        _ value: Value
+        for value: Value
     ) where Icon == Value.LabelIcon {
         self.init {
             Text(value.labelTitle)
@@ -32,31 +32,63 @@ public extension Label where Title == Text {
             value.labelIcon
         }
     }
+
+    @available(*, deprecated, renamed: "init(for:)")
+    init<Value: Labelable>(
+        _ value: Value
+    ) where Icon == Value.LabelIcon {
+        self.init(for: value)
+    }
 }
 
 public extension Button {
 
     /// Create a button with a `Labelable` value.
     init<Value: Labelable>(
-        _ value: Value,
+        for value: Value,
         action: @escaping () -> Void
     ) where Label == SwiftUI.Label<Text, Value.LabelIcon> {
         self.init(action: action) {
-            Label(value)
+            Label(for: value)
         }
+    }
+
+    @available(*, deprecated, renamed: "init(for:action:)")
+    init<Value: Labelable>(
+        _ value: Value,
+        action: @escaping () -> Void
+    ) where Label == SwiftUI.Label<Text, Value.LabelIcon> {
+        self.init(for: value, action: action)
     }
 }
 
 public extension NavigationLink {
 
-    /// Create a button with a `Labelable` value.
+    /// Create a value-based link with a `Labelable` value.
+    init<Value: Labelable & Hashable>(
+        for value: Value
+    ) where Label == SwiftUI.Label<Text, Value.LabelIcon>, Destination == Never {
+        self.init(value: value) {
+            Label(for: value)
+        }
+    }
+
+    /// Create a destination-based link with a `Labelable` value.
+    init<Value: Labelable & Hashable>(
+        for value: Value,
+        @ViewBuilder destination: () -> Destination
+    ) where Label == SwiftUI.Label<Text, Value.LabelIcon> {
+        self.init(destination: destination) {
+            Label(for: value)
+        }
+    }
+
+    @available(*, deprecated, renamed: "init(for:)")
     init<Value: Labelable & Hashable>(
         _ value: Value,
         action: @escaping () -> Void
     ) where Label == SwiftUI.Label<Text, Value.LabelIcon>, Destination == Never {
-        self.init(value: value) {
-            Label(value)
-        }
+        self.init(for: value)
     }
 }
 
@@ -72,8 +104,8 @@ private enum PreviewScreen: Labelable {
 
     if #available(iOS 16, macOS 14, tvOS 16, watchOS 10, *) {
         List {
-            Label(PreviewScreen.settings)
-            Button(PreviewScreen.settings) {
+            Label(for: PreviewScreen.settings)
+            Button(for: PreviewScreen.settings) {
                 print("Settings tapped")
             }
         }
